@@ -1,0 +1,145 @@
+priority -50
+
+snippet main "main()"
+int main(void){
+	${VISUAL}${0}
+	return 0;
+}
+
+endsnippet
+
+snippet Main "Main()"
+int main(int argc, char * argv[]){
+	${VISUAL}${0}
+	return 0;
+}
+
+endsnippet
+snippet winmain "WinMain()"
+int WINAPI WinMain(HINSTANCE instance, HINSTANCE prev_instance,
+		char * cmd_param, int cmd_show)
+{
+	${VISUAL}${0}
+	return 0;
+}
+
+endsnippet
+snippet dllmain "DllMain()"
+BOOL APIENTRY DllMain(HANDLE module, DWORD reason_for_call, LPVOID reserved)
+{
+	switch (reason_for_call)
+	{
+	case DLL_PROCESS_ATTACH:${0}
+		break;
+	case DLL_THREAD_ATTACH:
+		break;
+	case DLL_THREAD_DETACH:
+		break;
+	case DLL_PROCESS_DETACH:
+		break;
+	}
+	return TRUE;
+}
+
+endsnippet
+snippet Inc "#include <...>"
+#include <${1:stdio}.h>
+endsnippet
+snippet inc "#include"
+#include "${1:`!v Filename("$1")`}.h"
+endsnippet
+snippet Def "#ifndef ... #define ... #endif"
+#ifndef $1
+#define ${1:SYMBOL} ${2:value}
+#endif
+endsnippet
+snippet def "#define"
+#define 
+endsnippet
+snippet ifdef "#ifdef"
+#ifdef ${1}
+${VISUAL}${0}
+#endif /* $1 */
+endsnippet
+snippet #if "#if"
+#if ${1}
+${VISUAL}${0}
+#endif /* $1 */
+endsnippet
+snippet once "Include header once only guard"
+#ifndef TAJGA_${1:`!p
+if not snip.c:
+	import string
+	snip.rv = re.sub(r'[^A-Za-z0-9]+','_', path).upper()
+	i = snip.rv.find("_SRC_")
+	if i != -1:
+		snip.rv = snip.rv[i+5:]
+else:
+	snip.rv = snip.c`}_
+#define TAJGA_$1_
+
+${VISUAL}${0}
+
+#endif /* TAJGA_$1_ */
+
+endsnippet
+snippet if "If Condition"
+if (${1}) {
+	${VISUAL}${0}
+}
+endsnippet
+snippet el "Else"
+else {
+	${VISUAL}${0}
+}
+endsnippet
+snippet t "Ternary conditional"
+${1} ? ${2:a} : ${3:b}
+endsnippet
+snippet do "Do While Loop"
+do {
+	${VISUAL}${0}
+} while (${1});
+endsnippet
+snippet wh "While Loop"
+while (${1}) {
+	${VISUAL}${0}
+}
+endsnippet
+snippet for "For Loop"
+for (int ${2:i} = 0; $2 < ${1:count}; ${3:++}$2) {
+	${VISUAL}${0}
+}
+endsnippet
+snippet forr "Custom For Loop"
+for (int ${1:i} = ${2:0}; ${3:$1 < 10}; ${4:++}$1) {
+	${VISUAL}${0}
+}
+endsnippet
+snippet fun "Function"
+${1:void} ${2:function_name}(${3}){
+	${VISUAL}${0}
+}
+endsnippet
+snippet fund "Function Declaration"
+${1:void} ${2:function_name}(${3});
+endsnippet
+snippet td "Typedef"
+typedef ${1:int} ${2:MyCustomType};
+endsnippet
+snippet st "Struct"
+struct ${1} {
+	${0:/* data */}
+}; /* struct $1 */
+endsnippet
+snippet en "Enum"
+enum ${1:name} {
+	${2:/* data */}
+}; /* enum $1 */
+endsnippet
+snippet pr "printf"
+printf("${1:%d}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
+endsnippet
+snippet fpr "fprintf"
+fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
+endsnippet
