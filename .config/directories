@@ -1,0 +1,27 @@
+# You can add comments to these files with #
+h	~/ d	~/Documents
+D	~/Downloads
+m	~/Music
+pp	~/Pictures
+vv	~/Videos
+cf	~/.config
+pgs	~/programs_drivers
+games	~/programs_drivers/games
+sc	~/.local/bin
+desk	/mnt/01D5707D40B081F0/Users/ascol/Desktop
+doc	/mnt/01D5707D40B081F0/Users/ascol/Documents
+dow	/mnt/01D5707D40B081F0/Users/ascol/Downloads
+mus	/mnt/01D5707D40B081F0/Users/ascol/Music
+pics	/mnt/01D5707D40B081F0/Users/ascol/Pictures
+uni	/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI
+unirob 	/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile
+aritm	/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/Aritmetica
+geom	/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/Geometria
+ana	/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/Analisi
+fis	/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/Fisica_1_lab
+compl	/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/ComplMat
+ib	/mnt/01D5707D40B081F0/Users/ascol/Documents/IB
+wsp	/mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/roba!
+mthstf	/mnt/01D5707D40B081F0/Users/ascol/Documents/mathstuff
+movies	/mnt/01D5707D40B081F0/Users/ascol/Documents/stuff/movies
+m	/mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/Music
