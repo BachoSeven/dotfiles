@@ -1,0 +1,35 @@
+# zathurarc
+
+# colors
+set statusbar-bg "#00FF00"
+set statusbar-fg red
+
+#selection to clipboard
+set selection-clipboard clipboard
+
+set page-padding 1
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+
+# settings
+set window-height 1024
+set window-width 768
+set adjust-open width
+
+# use sqlite as bookmarks database backend
+set database sqlite
+
+# key bindings
+map <C-u> navigate previous
+map <C-d> navigate next
+
+map r reload
+map R rotate
+map i recolor
+map p print
+
+map K zoom in
+map J zoom out
+
+map <C-q> quit
