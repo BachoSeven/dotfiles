@@ -1,0 +1,120 @@
+# vi: ft=zsh
+
+# Proper shell shortcuts
+alias cvpn='sudo systemctl is-active openvpn@server ; sudo systemctl is-active openvpn@client'
+alias svpn='sudo systemctl stop openvpn@server ; sudo systemctl stop openvpn@client'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias udg='sudo apt-get update && sudo apt-get upgrade'
+alias udgp='update && sudo apt-get --with-new-pkgs upgrade'
+alias aptinstall='sudo apt-get install -y'
+alias aptremove='sudo apt-get remove'
+alias aptpurge='sudo apt-get purge'
+alias aptshow='sudo apt show'
+alias sau='sudo apt autoremove --purge'
+
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias :q='exit' # vim user :)
+alias lc='colorls -lA --sd --dark --gs'
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ccat="highlight --out-format=ansi"
+
+#git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.config/dots/  --work-tree=$HOME'
+
+alias cx='chmod +x'
+alias xclip="xclip -sel clip"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+#remove spaces!
+alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
+alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
+#256 colors!
+function 256color {
+	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
+alias 256col='256color'
+
+#really cool aliases for navigating folders
+d='dirs -v | head -10'
+1='cd -'
+2='cd -2'
+3='cd -3'
+4='cd -4'
+5='cd -5'
+6='cd -6'
+7='cd -7'
+8='cd -8'
+9='cd -9'
+
+#various stuff
+alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
+alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
+alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
+alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
+alias cbh='connectHeadphones'
+
+alias flp='flashplayer'
+
+alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
+
+alias cwp='gcc -Wall -pedantic'
+alias chill="mpv 'https://www.youtube.com/watch?v=5qap5aO4i9A'"
+alias gotop='gotop --color=solarized -asbp'
+alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
+
+#rice
+alias cfx='nvim /home/francesco/.config/sxiv/exec/key-handler'
+alias cfs='nvim ~/.config/ncspot/config.toml'
+alias cfa='nvim ~/.config/aliasrc'
+alias mim='nvim ~/.config/mimi/mime.conf'
+alias zarc='nvim /home/francesco/.config/zathura/zathurarc'
+alias lfrc='nvim ~/.config/lf/lfrc'
+alias trop='nvim ~/.toprc'
+alias zshrc='source ~/.config/zsh/.zshrc'
+#personal files
+alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
+alias desk='lfcd /mnt/01D5707D40B081F0/Users/ascol/Desktop'
+alias doc='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents'
+alias dow='lfcd /mnt/01D5707D40B081F0/Users/ascol/Downloads'
+alias mus='lfcd /mnt/01D5707D40B081F0/Users/ascol/Music'
+alias m='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/Music'
+alias koln='locate -i0 "*koln*flac"|xargs -0 mpv'
+alias bl='locate -i0 "*bach*mp3*"|xargs -0 mpv'
+alias b='find /mnt/01D5707D40B081F0/Users -type f \( -iname "*bach*.mp3" -o -iname "*bach*.mp4"  -o -iname "*bach*.m4a" \) -print0|xargs -0 mpv'
+alias pics='lfcd /mnt/01D5707D40B081F0/Users/ascol/Pictures'
+alias uni='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI'
+alias u='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi'
+alias ib='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/IB'
+alias wsp='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/roba!'
+alias mthstf='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/mathstuff'
+alias movies='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/stuff/movies'
+
+alias -s tex=nvim
+alias nv='nvim .'
+
+#awk 'BEGIN{
+    #s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
+    #for (colnum = 0; colnum<77; colnum++) {
+        #r = 255-(colnum*255/76);
+        #g = (colnum*510/76);
+        #b = (colnum*255/76);
+        #if (g>255) g = 510-g;
+        #printf "\033[48;2;%d;%d;%dm", r,g,b;
+        #printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
+        #printf "%s\033[0m", substr(s,colnum+1,1);
+    #}
+    #printf "\n";
+#}'
+
+alias weather='curl "wttr.in/Pisa?pqtF&lang=it" '
+alias weather2='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
