@@ -194,7 +194,7 @@ cmd Paste %{{
 			# get 'basename' of the selection
 			filename="${file##*/}"
 			# quote it so we won't deal with quotes in the lf -remote command
-			filename="$(printf '%q' '$filename')"
+			filename="$(printf '%q' "$filename")"
 			break
 		fi
 	done
