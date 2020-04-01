@@ -31,8 +31,8 @@ Plug 'Shougo/neco-syntax'
 
 Plug 'preservim/nerdtree'
 
-map <C-i> :call NERDTreeToggleAndFind()<cr>
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :call NERDTreeToggleAndFind()<cr>
+"map <C-n> :NERDTreeToggle<CR>
 function! NERDTreeToggleAndFind()
     if (exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1)
       execute ':NERDTreeClose'
@@ -63,9 +63,6 @@ endfor
 endfunction
 nnoremap <leader>rr :call CleanReg()<CR>
 
-"vim i3 config sy_hl plugin
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'cespare/vim-toml'
 "Vim-Airline! 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -76,6 +73,8 @@ let g:airline_powerline_fonts = 1
 Plug 'aserebryakov/vim-todo-lists'
 "syntax highlighting
 Plug 'arakashic/chromatica.nvim'
+Plug 'VebbNix/lf-vim'
+Plug 'cespare/vim-toml'
 let g:chromatica#libclang_path='/usr/lib/llvm-6.0/lib/libclang.so'
 let g:chromatica#enable_at_startup=1
 
