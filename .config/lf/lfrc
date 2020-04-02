@@ -17,7 +17,6 @@ set previewer ~/.config/lf/scope
 set shellopts '-eu:--shwordsplit'
 
 
-
 # set internal field separator (IFS) to "\n" for shell commands
 # This is useful to automatically split file names in $fs and $fx properly
 # since default file separator used in these variables (i.e. 'filesep' option)
@@ -93,6 +92,8 @@ cmd fzf_jump ${{
 lf -remote "send $id $cmd \"$res\""
 }}
 map <c-f> :fzf_jump
+
+map c $lf -remote "send $id cd $(cut -d'	' -f2 ~/.config/directories | fzf)"
 
 # dedicated keys for file opener actions
 map o &mimeopen "$f"
