@@ -70,7 +70,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 
-eval `dircolors ~/.dir_colors`
+#eval `dircolors ~/.dir_colors`
 
 #autocomplete lfcd
 fpath=(/home/francesco/.config/ $fpath)

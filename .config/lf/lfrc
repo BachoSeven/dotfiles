@@ -83,7 +83,7 @@ map M moveto
 
 #fzf integration
 cmd fzf_jump ${{
-   res="$(find . -maxdepth 2 | fzf --reverse --header='Jump to location+1subdir')"
+   res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location+2subdir')"
    if [ -f "$res" ]; then
      cmd="select"
    elif [ -d "$res" ]; then
