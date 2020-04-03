@@ -1,8 +1,6 @@
 # vi: ft=zsh
 
 # Proper shell shortcuts
-alias cvpn='sudo systemctl is-active openvpn@server ; sudo systemctl is-active openvpn@client'
-alias svpn='sudo systemctl stop openvpn@server ; sudo systemctl stop openvpn@client'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias udg='sudo apt-get update && sudo apt-get upgrade'
@@ -81,6 +79,13 @@ alias zarc='nvim /home/francesco/.config/zathura/zathurarc'
 alias lfrc='nvim ~/.config/lf/lfrc'
 alias trop='nvim ~/.toprc'
 alias zshrc='source ~/.config/zsh/.zshrc'
+alias bd='nvim ~/.config/directories'
+alias cfz='nvim $ZDOTDIR/.zshrc'
+alias cfv='nvim ~/.config/nvim/init.vim'
+alias cfm='nvim ~/.config/mutt/muttrc'
+alias cfr='nvim ~/.Xresources'
+alias cfmb='nvim ~/.config/ncmpcpp/bindings'
+alias cfmc='nvim ~/.config/ncmpcpp/config'
 #personal files
 alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
 alias desk='lfcd /mnt/01D5707D40B081F0/Users/ascol/Desktop'

@@ -7,6 +7,10 @@
   title_hide_sizetext = True
   window_state = maximise
 [keybindings]
+  line_down = <Alt>j
+  line_up = <Alt>k
+  page_down_half = <Alt>d
+  page_up_half = <Alt>u
 [layouts]
   [[default]]
     [[[child1]]]
