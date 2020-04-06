@@ -21,7 +21,7 @@ export READER="zathura"
 export OPENER='xdg-open'
 export EDITOR=nvim
 export FILE="terminator -x lf"
-export BROWSER="brave-browser"
+export BROWSER=brave-browser-nightly
 
 #cleanup
 export XDG_CONFIG_HOME="$HOME/.config"

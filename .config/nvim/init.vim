@@ -5,12 +5,12 @@ set shell=/usr/bin/zsh
 
 Plug 'wlemuel/vim-tldr'
 
-Plug 'junegunn/fzf'
-  nnoremap <silent> <C-p> :FZF -m<cr>
-" Better command history with q:
-  command! CmdHist call fzf#vim#command_history({'right': '40'})
-  nnoremap q: :CmdHist<CR>
-  let g:fzf_layout = { 'window': '10new' }
+"Plug 'junegunn/fzf'
+  "nnoremap <silent> <C-p> :FZF -m<cr>
+"" Better command history with q:
+  "command! CmdHist call fzf#vim#command_history({'right': '40'})
+  "nnoremap q: :CmdHist<CR>
+  "let g:fzf_layout = { 'window': '10new' }
 
 
 
@@ -181,6 +181,11 @@ set background=dark
 "Transparent Background settings
 au ColorScheme * hi Normal ctermbg=none guibg=none
 
+"lilypond config
+filetype off
+set runtimepath+=/usr/share/lilypond/2.18.2/vim/
+filetype on
+syntax on
 
 "randomstuff
 set wildmenu
