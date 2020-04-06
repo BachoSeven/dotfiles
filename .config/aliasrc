@@ -62,13 +62,14 @@ alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 alias cbh='connectHeadphones'
 
 alias flp='flashplayer'
-
+alias sqm='xlinks2 https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
 
 alias cwp='gcc -Wall -pedantic'
 alias chill="mpv 'https://www.youtube.com/watch?v=5qap5aO4i9A'"
 alias gotop='gotop --color=solarized -asbp'
-alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
+alias l073642ibgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
+alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
 
 #rice
 alias cfx='nvim /home/francesco/.config/sxiv/exec/key-handler'

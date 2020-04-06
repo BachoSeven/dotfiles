@@ -3,13 +3,13 @@ zmodload zsh/zpty
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
  #Uncomment the following line to automatically update without prompting.
-DISABLE_UPDATE_PROMPT="true"
+#DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=5
 
 # DISABLE_AUTO_TITLE="true"
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
@@ -52,7 +52,7 @@ lfcd () {
 export GOPATH=~/.local/go
 export PATH=/snap/bin:/usr/local/texlive/2019/bin/x86_64-linux:$GOPATH/bin:~/.local/bin:$CARGO_HOME/bin:$PATH
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
-export BROWSER=brave-browser-beta
+export GS_FONTPATH=/usr/local/share/pmw/psfonts
 
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
@@ -91,11 +91,6 @@ if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
     source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
 fi
 
-
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 #bindkeys
@@ -120,7 +115,9 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/lf/lficons
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source $(dirname $(gem which colorls))/tab_complete.sh
+#complete colorls, unneeded
+#source $(dirname $(gem which colorls))/tab_complete.sh
+
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ -f ~/.config/zsh/.p10k.zsh ]] && source ~/.config/zsh/.p10k.zsh
