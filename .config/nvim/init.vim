@@ -179,7 +179,7 @@ Plug 'iCyMind/NeoSolarized' "NeoSolarized
 colorscheme NeoSolarized
 set background=dark
 "Transparent Background settings
-au ColorScheme * hi Normal ctermbg=none guibg=none
+"au ColorScheme * hi Normal ctermbg=none guibg=none
 
 "lilypond config
 filetype off
