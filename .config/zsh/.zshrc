@@ -1,32 +1,27 @@
 export ZSH="/home/francesco/.oh-my-zsh"
-zmodload zsh/zpty
+#zmodload zsh/zpty
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
- #Uncomment the following line to automatically update without prompting.
+#Uncomment the following line to automatically update without prompting.
 #DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=5
 
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 #ENABLE_CORRECTION="true"
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode zsh-autosuggestions)
+plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
 
-export LANG=en_US.UTF-8
+#export LANG=en_US.UTF-8
 
 #export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
 
 eval $(thefuck --alias)
 
-source $ZSH/oh-my-zsh.sh
-source ~/.oh-my-zsh/plugins/vi-mode/vi-mode.plugin.zsh
 
 #spotify in vim
 #function vimspo {
@@ -72,6 +67,8 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 #eval `dircolors ~/.dir_colors`
 
+source $ZSH/oh-my-zsh.sh
+
 #autocomplete lfcd
 fpath=(/home/francesco/.config/ $fpath)
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
@@ -87,9 +84,9 @@ if [[ -s '/etc/zsh_command_not_found' ]]; then
   source '/etc/zsh_command_not_found'
 fi
 
-if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
-    source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
-fi
+#if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
+    #source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
+#fi
 
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
@@ -111,11 +108,11 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-bindkey '^ ' autosuggest-accept
 
-source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/lf/lficons
-source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+#source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.config/lf/lficons
+#source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+#source ~/.oh-my-zsh/plugins/vi-mode/vi-mode.plugin.zsh
 #complete colorls, unneeded
 #source $(dirname $(gem which colorls))/tab_complete.sh
 
