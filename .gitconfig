@@ -1,0 +1,7 @@
+[core]
+	editor = nvim
+[user]
+	email = ad17fmin@uwcad.it
+	name = Francesco Minnocci
+[credential]
+	helper = cache --timeout=7200
