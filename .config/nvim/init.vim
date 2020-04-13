@@ -3,9 +3,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 "set shell to zsh
 set shell=/usr/bin/zsh
 
+
 Plug 'wlemuel/vim-tldr'
 
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   nnoremap <silent> <C-p> :FZF -m<cr>
 " Better command history with q:
   command! CmdHist call fzf#vim#command_history({'right': '40'})
@@ -153,6 +154,14 @@ let g:vimtex_compiler_progname = 'nvr'
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
+"deoplete integration for vimtex
+"call deoplete#custom#var('omni', 'input_patterns', {
+	"\ 'tex': g:vimtex#re#deoplete
+	"\})
+"fzf integration for vimtex
+nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
+
+
 "plugin for lf file manager
     Plug 'ptzz/lf.vim'
     Plug 'rbgrouleff/bclose.vim'
@@ -182,10 +191,10 @@ set background=dark
 "au ColorScheme * hi Normal ctermbg=none guibg=none
 
 "lilypond config
-filetype off
-set runtimepath+=/usr/share/lilypond/2.18.2/vim/
-filetype on
-syntax on
+"filetype off
+"set runtimepath+=/usr/share/lilypond/2.18.2/vim/
+"filetype on
+"syntax on
 
 "randomstuff
 set wildmenu

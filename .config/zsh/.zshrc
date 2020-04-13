@@ -15,10 +15,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
 
-#export LANG=en_US.UTF-8
-
-#export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
-export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
 
 eval $(thefuck --alias)
 
@@ -44,10 +40,10 @@ lfcd () {
 }
 
 #exports
-export GOPATH=~/.local/go
-export PATH=/snap/bin:/usr/local/texlive/2019/bin/x86_64-linux:$GOPATH/bin:~/.local/bin:$CARGO_HOME/bin:$PATH
-export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
-export GS_FONTPATH=/usr/local/share/pmw/psfonts
+#export GOPATH=~/.local/go
+#export PATH=/snap/bin:/usr/local/texlive/2019/bin/x86_64-linux:$GOPATH/bin:~/.local/bin:$CARGO_HOME/bin:$PATH
+#export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
+#export GS_FONTPATH=/usr/local/share/pmw/psfonts
 
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
@@ -115,7 +111,67 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 #source ~/.oh-my-zsh/plugins/vi-mode/vi-mode.plugin.zsh
 #complete colorls, unneeded
 #source $(dirname $(gem which colorls))/tab_complete.sh
-
+[ "$TERM" != "st-256color" ] &&	export LF_ICONS="di=📁:\
+fi=📃:\
+tw=🤝:\
+ow=📂:\
+ln=⛓:\
+or=❌:\
+ex=🎯:\
+*.txt=✍:\
+*.mom=✍:\
+*.me=✍:\
+*.ms=✍:\
+*.png=🖼:\
+*.ico=🖼:\
+*.jpg=📸:\
+*.jpeg=📸:\
+*.gif=🖼:\
+*.svg=🗺:\
+*.xcf=🖌:\
+*.html=🌎:\
+*.xml=📰:\
+*.gpg=🔒:\
+*.css=🎨:\
+*.pdf=📚:\
+*.djvu=📚:\
+*.epub=📚:\
+*.csv=📓:\
+*.xlsx=📓:\
+*.tex=📜:\
+*.md=📘:\
+*.r=📊:\
+*.R=📊:\
+*.rmd=📊:\
+*.Rmd=📊:\
+*.mp3=🎵:\
+*.opus=🎵:\
+*.ogg=🎵:\
+*.m4a=🎵:\
+*.flac=🎼:\
+*.mkv=🎥:\
+*.mp4=🎥:\
+*.webm=🎥:\
+*.mpeg=🎥:\
+*.avi=🎥:\
+*.zip=📦:\
+*.rar=📦:\
+*.7z=📦:\
+*.tar.gz=📦:\
+*.z64=🎮:\
+*.v64=🎮:\
+*.n64=🎮:\
+*.1=ℹ:\
+*.nfo=ℹ:\
+*.info=ℹ:\
+*.log=📙:\
+*.iso=📀:\
+*.img=📀:\
+*.bib=🎓:\
+*.ged=👪:\
+*.part=💔:\
+*.torrent=🔽:\
+"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ -f ~/.config/zsh/.p10k.zsh ]] && source ~/.config/zsh/.p10k.zsh

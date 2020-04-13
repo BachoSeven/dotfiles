@@ -14,7 +14,7 @@ map D toggle_page_mode
 
 # settings
 set window-height 1024
-set indow-width 768
+set window-width 768
 set adjust-open width
 
 # use sqlite as bookmarks database backend

@@ -18,6 +18,7 @@ alias lc='colorls -lA --sd --dark --gs'
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ccat="highlight --out-format=ansi"
+alias path='echo $PATH | tr : "\n"'
 
 #git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.config/dots/  --work-tree=$HOME'
