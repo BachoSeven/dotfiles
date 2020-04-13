@@ -83,7 +83,7 @@ fi
 #if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
     #source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
 #fi
-
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 #bindkeys

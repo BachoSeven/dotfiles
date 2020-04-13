@@ -6,12 +6,12 @@ set shell=/usr/bin/zsh
 
 Plug 'wlemuel/vim-tldr'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  nnoremap <silent> <C-p> :FZF -m<cr>
-" Better command history with q:
-  command! CmdHist call fzf#vim#command_history({'right': '40'})
-  nnoremap q: :CmdHist<CR>
-  let g:fzf_layout = { 'window': '10new' }
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  "nnoremap <silent> <C-p> :FZF -m<cr>
+"" Better command history with q:
+  "command! CmdHist call fzf#vim#command_history({'right': '40'})
+  "nnoremap q: :CmdHist<CR>
+  "let g:fzf_layout = { 'window': '10new' }
 
 
 
@@ -159,7 +159,7 @@ let g:tex_conceal='abdmg'
 	"\ 'tex': g:vimtex#re#deoplete
 	"\})
 "fzf integration for vimtex
-nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
+"nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
 
 
 "plugin for lf file manager
