@@ -20,7 +20,7 @@ export TERMINAL="st"
 export READER="zathura"
 export OPENER='xdg-open'
 export EDITOR="nvim"
-export FILE="terminator -x lf"
+export FILE="lf"
 export BROWSER="brave-browser"
 
 #cleanup
@@ -50,9 +50,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 #program setings:
 export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
-export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
+export FZF_DEFAULT_OPTS="--layout=reverse --height 60% --border "
 export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
-export FZF_ALT_C_COMMAND='lfcd'
 
 #PATHHHHH
 export GOPATH="$HOME/.local/go"

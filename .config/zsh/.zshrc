@@ -19,27 +19,7 @@ plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
 eval $(thefuck --alias)
 
 
-#spotify in vim
-#function vimspo {
-	#nvim -c 'execute "normal \\sp"'
-#}
-
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
-
-#exports
+#exports, now in .zprofile and .zshenv
 #export GOPATH=~/.local/go
 #export PATH=/snap/bin:/usr/local/texlive/2019/bin/x86_64-linux:$GOPATH/bin:~/.local/bin:$CARGO_HOME/bin:$PATH
 #export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
@@ -95,7 +75,7 @@ bindkey -s '^q' 'udg\n'
 bindkey -s '^u' 'u\n'
 bindkey -s '^h' 'htop\n'
 bindkey -s '^f' 'fast\n'
-bindkey -s '^n' 'neomutt\n'
+bindkey -s '^[n' 'neomutt\n'
 bindkey -s "^[s" 'ncspot\n'
 
 
