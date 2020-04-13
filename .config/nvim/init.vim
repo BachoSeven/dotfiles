@@ -6,12 +6,12 @@ set shell=/usr/bin/zsh
 
 Plug 'wlemuel/vim-tldr'
 
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  "nnoremap <silent> <C-p> :FZF -m<cr>
-"" Better command history with q:
-  "command! CmdHist call fzf#vim#command_history({'right': '40'})
-  "nnoremap q: :CmdHist<CR>
-  "let g:fzf_layout = { 'window': '10new' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  nnoremap <silent> <C-p> :FZF -m<cr>
+" Better command history with q:
+  command! CmdHist call fzf#vim#command_history({'right': '40'})
+  nnoremap q: :CmdHist<CR>
+  let g:fzf_layout = { 'window': '10new' }
 
 
 
@@ -22,32 +22,8 @@ let g:deoplete#enable_at_startup = 1
 Plug 'deoplete-plugins/deoplete-zsh'
 "vim completion with deoplete
 Plug 'Shougo/neco-vim'
-"mail_deoplete_stuff
-Plug 'paretje/deoplete-notmuch', {'for': 'mail'}
-let g:deoplete#sources#notmuch#command = ['notmuch', 'address', '--format=json', '--deduplicate=address', '*']
-Plug 'fszymanski/deoplete-abook'
 "misc_deoplete
 Plug 'Shougo/neco-syntax'
-
-
-Plug 'preservim/nerdtree'
-
-map <C-n> :call NERDTreeToggleAndFind()<cr>
-"map <C-n> :NERDTreeToggle<CR>
-function! NERDTreeToggleAndFind()
-    if (exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1)
-      execute ':NERDTreeClose'
-    else
-      execute ':NERDTreeFind'
-    endif
-  endfunction
-
-"close vim if nerdtree is the last thing open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"let NERDTreeShowHidden=1
-let g:NERDTreeMinimalUI = 1
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "try to experiment with tabs:
 map <C-t>k :tabr<cr>
@@ -159,7 +135,7 @@ let g:tex_conceal='abdmg'
 	"\ 'tex': g:vimtex#re#deoplete
 	"\})
 "fzf integration for vimtex
-"nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
+nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
 
 
 "plugin for lf file manager
@@ -184,6 +160,8 @@ Plug 'scrooloose/nerdcommenter'
 
 "Color Settings
 set termguicolors
+"Plug 'ap/vim-css-color'
+Plug 'chrisbra/Colorizer'
 Plug 'iCyMind/NeoSolarized' "NeoSolarized
 colorscheme NeoSolarized
 set background=dark

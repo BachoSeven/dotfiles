@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.36 for francesco on Sun Mar 22 01:11:00 2020.
+# Written by xscreensaver-demo 5.36 for francesco on Mon Apr 13 19:25:03 2020.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:15:00
@@ -29,15 +29,15 @@ dpmsQuickOff:	False
 dpmsStandby:	2:00:00
 dpmsSuspend:	2:00:00
 dpmsOff:	4:00:00
-grabDesktopImages:  False
+grabDesktopImages:  True
 grabVideoFrames:    False
-chooseRandomImages: True
-imageDirectory:	/home/francesco/Pictures/lukesWallpapers/Vibrant
+chooseRandomImages: False
+imageDirectory:	
 
 mode:		random
 selected:	-1
 
-textMode:	url
+textMode:	program
 textLiteral:	XScreenSaver
 textFile:	
 textProgram:	fortune
