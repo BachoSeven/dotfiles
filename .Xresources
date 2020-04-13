@@ -1,6 +1,6 @@
 !! my Xresources, mainly for solarized in st
 
-*.alpha:	0.70
+*.alpha:	0.80
 
 
 ! Sol_dark_patched [https://github.com/Eugeny/terminus/blob/master/terminus-community-color-schemes/schemes/Solarized%20Dark%20-%20Patched]
