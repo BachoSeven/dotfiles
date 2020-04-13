@@ -43,6 +43,26 @@ function 256color {
 }
 alias 256col='256color'
 
+#spotify in vim(deprecated, switched to ncspot)
+#function vimspo {
+	#nvim -c 'execute "normal \\sp"'
+#}
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+
 #really cool aliases for navigating folders
 d='dirs -v | head -10'
 1='cd -'
