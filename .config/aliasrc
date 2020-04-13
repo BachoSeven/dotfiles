@@ -37,11 +37,9 @@ alias ff='find . -type f -name'
 #remove spaces!
 alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
 alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
-#256 colors!
 function 256color {
 	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
-alias 256col='256color'
 
 #spotify in vim(deprecated, switched to ncspot)
 #function vimspo {

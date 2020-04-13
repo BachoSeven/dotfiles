@@ -3,7 +3,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 "set shell to zsh
 set shell=/usr/bin/zsh
 
-
 Plug 'wlemuel/vim-tldr'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -40,11 +39,24 @@ endfor
 endfunction
 nnoremap <leader>rr :call CleanReg()<CR>
 
-"Vim-Airline! 
+"Vim-Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='base16_solarized'
 let g:airline_powerline_fonts = 1
+
+Plug 'itchyny/lightline.vim'
+set noshowmode "remove useless --INSERT--
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'component_function': {
+      \   'readonly': 'LightlineReadonly',
+      \ },
+      \ }
+
+function! LightlineReadonly()
+  return &readonly && &filetype !=# 'help' ? 'RO' : ''
+endfunction
 
 "Todos :))))
 Plug 'aserebryakov/vim-todo-lists'
@@ -158,9 +170,11 @@ set relativenumber
 "Nerd Commenting
 Plug 'scrooloose/nerdcommenter'
 
+"terminal exit
+tnoremap <Esc> <C-\><C-n>
+
 "Color Settings
 set termguicolors
-"Plug 'ap/vim-css-color'
 Plug 'chrisbra/Colorizer'
 Plug 'iCyMind/NeoSolarized' "NeoSolarized
 colorscheme NeoSolarized
@@ -196,4 +210,5 @@ set spelllang=en_us
 
 Plug '907th/vim-auto-save'
 let g:auto_save = 1
+
 call plug#end()
