@@ -1,43 +1,16 @@
-# interpreter for shell commands (needs to be POSIX compatible)
+#			Builtin Variables
 set shell zsh
-
-# set previewer
-set previewer ~/.config/lf/scope
-
-
-# set '-eu' options for shell commands
-# These options are used to have safer shell commands. Option '-e' is used to
-# exit on error and option '-u' is used to give error for unset variables.
-# Option '-f' disables pathname expansion which can be useful when $f, $fs, and
-# $fx variables contain names with '*' or '?' characters. However, this option
-# is used selectively within individual commands as it can be limiting at
-# times.
-
-# Do as explained here: https://github.com/gokcehan/lf/wiki/Tips#split-words-by-default-in-zsh
-set shellopts '-eu:--shwordsplit'
-
-
-# set internal field separator (IFS) to "\n" for shell commands
-# This is useful to automatically split file names in $fs and $fx properly
-# since default file separator used in these variables (i.e. 'filesep' option)
-# is newline. You need to consider the values of these options and create your
-# commands accordingly.
+set shellopts '-eu:--shwordsplit'	# https://github.com/gokcehan/lf/wiki/Tips#split-words-by-default-in-zsh
 set ifs "\n"
 set filesep "\n"  # default already
-
-# leave some space at the top and the bottom of the screen
 set scrolloff 10
-
-#set colors&icons
 set color256
 set icons
+set period 1
+set drawbox on
+set globsearch on
 
-# use enter for shell commands
-map <enter> shell
-
-# execute current file (must be executable)
-map x $$f
-map X !$f
+$lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"	# set previewer with env vars
 
 #adjust coloumn width to terminal
 %{{
@@ -51,39 +24,32 @@ map X !$f
     fi
 }}
 
-#reload
-map <c-r> reload
+#			Commands & Functions
 
-#Clean Latex Compilation
-cmd cleanlatex ${{
+cmd cleanlatexcompile ${{
 	latexcompile $fx &&
 	notify-send "File(s) compiled."
 }}
-map L cleanlatex
 
-#MOVE files
 cmd moveto ${{
 	set -f
 	clear; echo "Move to where?"
-	dest="$(cut -d'	' -f2- ~/.config/directories | fzf)" &&
+	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)" &&
+
 	eval mv -iv $fx $dest &&
-	notify-send "File(s) moved." "File(s) moved to $dest."
+	notify-send "🚚File(s) moved." "File(s) moved to $dest."
 }}
 
-#COPY files
 cmd copyto ${{
 	set -f
 	clear; echo "Copy to where?"
-	dest="$(cut -d'	' -f2- ~/.config/directories | fzf)" &&
+	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)" &&
 	eval cp -ivr $fx $dest &&
-	notify-send "File(s) copied." "File(s) copies to $dest."
+	notify-send "📋File(s) copied." "File(s) copies to $dest."
 }}
-map C copyto
-map M moveto
 
-#fzf integration
 cmd fzf_jump ${{
-   res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location+2subdir')"
+   res="$(find . -maxdepth 2 | fzf --header='Jump to:')"
    if [ -f "$res" ]; then
      cmd="select"
    elif [ -d "$res" ]; then
@@ -91,82 +57,32 @@ cmd fzf_jump ${{
    fi
 lf -remote "send $id $cmd \"$res\""
 }}
-map <c-f> :fzf_jump
 
-map c $lf -remote "send $id cd $(cut -d'	' -f2 ~/.config/directories | fzf)"
-
-# dedicated keys for file opener actions
-map o &mimeopen "$f"
-map O $mimeopen --ask "$f"
-
-# define a custom 'open' command
-# This command is called when current file is not a directory. You may want to
-# use either file extensions and/or mime types here. Below uses an editor for
-# text files and a file opener for the rest.
 cmd open ${{
-
     case $(file --mime-type $f -b) in
         text/*) $EDITOR $fx;;
-	image/vnd.djvu) setsid zathura $fx >/dev/null 2>&1 & ;;
+	image/vnd.djvu|application/pdf|application/octet-stream) setsid zathura $fx >/dev/null 2>&1 & ;;
 	image/x-xcf|image/svg+xml) setsid gimp $f >/dev/null 2>&1 & ;;
-        image/*) rotdir $f | setsid sxiv -aio 2>/dev/null | lf-select & ;;
+	image/*) rotdir $f | grep -i "\.\(png\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio 2>/dev/null | lf-select & ;;
 	audio/*) mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s) $f ;;
-	video/*) setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s) $f -quiet >/dev/null 2>&1 & ;;
-        application/pdf) setsid zathura $fx >/dev/null 2>&1 & ;;
+	audio/*) mpv $f ;;
+	video/*) setsid mpv $f -quiet >/dev/null 2>&1 & ;;
         *) for f in $fx; do setsid $OPENER $f >/dev/null 2> /dev/null & done;;
     esac
 }}
 
-
-
-# define a custom 'rename' command without prompt for overwrite
- cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
-# Unmap the default binding
-map r
-# Rename the file with a completely different name
-map rc push :rename<space>
-# Edit the current filename
-map ra ${{
-	# get 'basename' of the selection
-	filename="${f##*/}"
-	# quote it so we won't deal with quotes in the lf -remote command
-	filename="$(printf '%q' "$filename")"
-	filename="${filename// /<space>}"
-	lf -remote "send $id push :rename<space>$filename"
-}}
-# Edit filename before the extension
-map re ${{
-	# get 'basename' of the selection
-	filename="${f##*/}"
-	# quote it so we won't deal with quotes in the lf -remote command
-	filename="$(printf '%q' "$filename")"
-	filename="${filename// /<space>}"
-	lf -remote "send $id push :rename<space>$filename<a-b><c-b>"
-}}
-
-
-
-# move current file or selected files to trash folder
-# (also see 'man mv' for backup/overwrite options)
-cmd trash %set -f; mv $fx ~/.trash
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
 cmd delete ${{
-     set -f
-     printf "$fx\n"
-     printf "delete?[y/n]"
-     read ans
-     [ $ans = "y" ] && rm -rf $fx
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf $fx
 }}
 
-# use '<delete>' key for either 'trash' or 'delete' command
-map <bs2> set hidden!
-map <delete> delete
 
-
-# Add delete with sudo command
-#cmd Delete !{{
-	#echo $fs | xargs -d$'\n' sudo rm -r
-#}}
 # Add paste with sudo command
 cmd SudoPaste !{{
 	lf -remote 'load' | while read file; do
@@ -189,8 +105,8 @@ cmd SudoPaste !{{
 	lf -remote "send $id reload"
 	lf -remote "send $id select $filename"
 }}
-# paste and select the file pasted
-cmd Paste %{{
+
+cmd PasteSelect %{{
 	lf -remote 'load' | while read file; do
 		if [ ! -n "${mode+1}" ]; then
 			mode="$file"
@@ -207,12 +123,10 @@ cmd Paste %{{
 	lf -remote "send $id paste"
 	lf -remote "send $id select $filename"
 #}}
-#map p Paste
 
 
 
 
-# extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
 cmd extract ${{
     set -f
@@ -249,18 +163,47 @@ cmd mpv_playlist_dir ${{
 	set -f
 	mpv $fx
 }}
+
+cmd bulkrename ${{
+    vidir
+}}
+
+#			Bindings
+
+#			File Operations
+map A rename # at the very end
+map c push A<c-u> # new rename
+map I push A<c-a> # at the very beginning
+map i push A<a-b><a-b><a-f> # before extention
+map a push A<a-b> # after extention
+map b bulkrename
+map <c-n> push :mkdir<space>
+map E extract	#extract and compress
+map C copyto
+map M moveto
+map <delete> delete
+map p PasteSelect
+
+#			Navigation
+map <c-r> reload
+map <bs2> set hidden!
+map t :set sortby time; set info time; set reverse!	#set by most recent
+map gh	#unmap useless key
+map g top
+map <c-e> down	#enable mouse scroll
+map <c-y> up
+map <c-f> :fzf_jump
+
+#			Modifications to builtins
+map / $lf -remote "send $id select $(printf '%q' $(all_files=(./*(ND)); printf '%s\n' ${all_files[@]} | fzf))"	# better asynchronious search
+map <enter> shell
+
+#			Personal utils
 map P mpv_playlist_dir
-
-#set by most recent:
-map t :set sortby time; set info time; set reverse!
-
-# better asynchronious search
-map / $lf -remote "send $id select $(printf '%q' $(all_files=(./*(ND)); printf '%s\n' ${all_files[@]} | fzf))"
-
-set drawbox on
-set globsearch on
-
+map L cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
-
-#extract and compress
-map E extract
+map x $$f
+map X !$f
+map o &mimeopen "$f"
+map O $mimeopen --ask "$f"
+map V push :!nvim<space>

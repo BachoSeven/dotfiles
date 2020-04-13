@@ -51,9 +51,9 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 #program setings:
 export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60% --border "
-export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!snap/*" --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
 
-#PATHHHHH
+#PATHS
 export GOPATH="$HOME/.local/go"
 export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0"
 export GS_FONTPATH="/usr/local/share/pmw/psfonts"
