@@ -45,18 +45,18 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='base16_solarized'
 let g:airline_powerline_fonts = 1
 
-Plug 'itchyny/lightline.vim'
-set noshowmode "remove useless --INSERT--
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'component_function': {
-      \   'readonly': 'LightlineReadonly',
-      \ },
-      \ }
+"Plug 'itchyny/lightline.vim'
+"set noshowmode "remove useless --INSERT--
+"let g:lightline = {
+      "\ 'colorscheme': 'solarized',
+      "\ 'component_function': {
+      "\   'readonly': 'LightlineReadonly',
+      "\ },
+      "\ }
 
-function! LightlineReadonly()
-  return &readonly && &filetype !=# 'help' ? 'RO' : ''
-endfunction
+"function! LightlineReadonly()
+  "return &readonly && &filetype !=# 'help' ? 'RO' : ''
+"endfunction
 
 "Todos :))))
 Plug 'aserebryakov/vim-todo-lists'
