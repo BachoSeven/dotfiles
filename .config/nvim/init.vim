@@ -80,17 +80,17 @@ endfunction
 nnoremap <leader>rr :call CleanReg()<CR>
 
 " Sessions
-let g:session_dir = '~/.config/nvim/vim-sessions'
-let g:session#default_opener = 'edit'
-let g:session#default_session = 'default'
-exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
-exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+	let g:session_dir = '~/.config/nvim/vim-sessions'
+	let g:session#default_opener = 'edit'
+	let g:session#default_session = 'default'
+	exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+	exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
+" File opener with gx
+let g:netrw_browsex_viewer= "$OPENER"
 
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-zsh'
@@ -98,73 +98,63 @@ Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
 
 Plug 'lervag/vimtex'
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_latexlog = {'fix_paths':0}
-let g:vimtex_quickfix_mode=0
-let g:vimtex_compiler_progname = 'nvr'
-let g:tex_conceal='abdmg'
+	let g:tex_flavor='latex'
+	let g:vimtex_view_method='zathura'
+	let g:vimtex_quickfix_latexlog = {'fix_paths':0}
+	let g:vimtex_quickfix_mode=0
+	let g:vimtex_compiler_progname = 'nvr'
+	let g:tex_conceal='abdmg'
 
+"Plug 'benwoodward/vimify', { 'branch': 'playlists' }
+	"let g:spotify_token='M2RhYWQ3Y2RjZTRmNDM0Yzg5MDlkOGNlNzBhMWEzMTk6YjBhMmM0NzU1ZGUwNDEzNGI5YzI4NjUxZjNlZWM2MTg='
+
+	" Reminder [:-2] Rimuove l'ultimo byte di output di System()
+	"function!  SpotOpen()
+		"let Val=system("if [[ $(ps axch -o cmd:18,%mem,pid --sort -%mem|head|grep spotify) ]]; then echo ciao; else echo boh;fi")[:-2]
+		"if Val=~"boh"
+			"exe "silent !nohup /snap/bin/spotify 2>&1 &"
+			"exe "SpPlaylists"
+		"elseif Val=~"ciao"
+			"exe "SpPlaylists"
+		"endif
+	"endfunction
+	"nnoremap <leader>sp :call SpotOpen()<CR>
+
+" Utilities
+Plug 'ptzz/lf.vim'
+Plug 'rbgrouleff/bclose.vim'
+	let g:lf_command_override = 'lf -command "set hidden"'
+Plug 'sirver/ultisnips'
+	let g:UltiSnipsExpandTrigger = '<tab>'
+	let g:UltiSnipsJumpForwardTrigger = '<tab>'
+	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+	let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
+	let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
+Plug 'lukelbd/vim-scrollwrapped'
+Plug 'wlemuel/vim-tldr'
+Plug '907th/vim-auto-save'
+	let g:auto_save = 1
+Plug 'scrooloose/nerdcommenter'
+	let g:NERDSpaceDelims = 1
+	let g:NERDCompactSexyComs = 1
+	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } } "fix lfrc comments
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Appearance
+Plug 'chrisbra/Colorizer'
+	nnoremap <leader>hc :ColorToggle<cr>
+Plug 'morhetz/gruvbox'	"Gruvbox
+Plug 'iCyMind/NeoSolarized' "NeoSolarized
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+	let g:airline_powerline_fonts = 1
 " Syntax highlighting
 Plug 'VebbNix/lf-vim'
 Plug 'cespare/vim-toml'
 " Plug 'arakashic/chromatica.nvim'
-" let g:chromatica#libclang_path='/usr/lib/llvm-6.0/lib/libclang.so'
-" let g:chromatica#enable_at_startup=1
-
-"NOT NECESSARY
-"Plug 'benwoodward/vimify', { 'branch': 'playlists' }
-"let g:spotify_token='M2RhYWQ3Y2RjZTRmNDM0Yzg5MDlkOGNlNzBhMWEzMTk6YjBhMmM0NzU1ZGUwNDEzNGI5YzI4NjUxZjNlZWM2MTg='
-
-""remap spotify search//OSS:  Alternativamente, [:-2] Rimuove l'ultimo byte di output di System() :)
-"function!  SpotOpen()
-"let Val=system("if [[ $(ps axch -o cmd:18,%mem,pid --sort -%mem|head|grep spotify) ]]; then echo ciao; else echo boh;fi")[:-2]
-"if Val=~"boh"
-	"exe "silent !nohup /snap/bin/spotify 2>&1 &"
-	"exe "SpPlaylists"
-"elseif Val=~"ciao"
-	"exe "SpPlaylists"
-"endif
-"endfunction
-"nnoremap <leader>sp :call SpotOpen()<CR>
-
-
-" Utilities
-Plug 'lukelbd/vim-scrollwrapped'
-Plug 'wlemuel/vim-tldr'
-
-Plug 'ptzz/lf.vim'
-Plug 'rbgrouleff/bclose.vim'
-let g:lf_command_override = 'lf -command "set hidden"'
-
-Plug 'sirver/ultisnips'
-    let g:UltiSnipsExpandTrigger = '<tab>'
-    let g:UltiSnipsJumpForwardTrigger = '<tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
-    let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
-
-Plug '907th/vim-auto-save'
-let g:auto_save = 1
-
-" Nerdcommenter
-Plug 'scrooloose/nerdcommenter'
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } } "fix lfrc comments
-
-
-let g:netrw_browsex_viewer= "xdg-open"
-
-" Color Settings
-Plug 'chrisbra/Colorizer'
-Plug 'morhetz/gruvbox'	"Gruvbox
-Plug 'iCyMind/NeoSolarized' "NeoSolarized
-
-" Vim-Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_powerline_fonts = 1
+	" let g:chromatica#libclang_path='/usr/lib/llvm-7.0/lib/libclang.so'
+	" let g:chromatica#enable_at_startup=1
 
 call plug#end()
 
@@ -173,15 +163,59 @@ call plug#end()
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
 
-" fzf config:
+" Fuzzy Finder
+	let g:fzf_layout = { 'window': '10new' }
 	nnoremap <silent> <C-p> :FZF -m<cr>
+
 " Better command history with q:
 	command! CmdHist call fzf#vim#command_history({'right': '40'})
 	nnoremap q: :CmdHist<CR>
-	let g:fzf_layout = { 'window': '10new' }
+
+" Change Colorscheme using fzf
+	nnoremap <silent> <Leader>sc :call fzf#run({
+	\   'source':
+	\     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
+	\         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
+	\   'sink':    'colo',
+	\   'options': '+m',
+	\   'left':    30
+	\ })<CR>
+
+" Change buffers with fzf
+	function! s:buflist()
+	  redir => ls
+	  silent ls
+	  redir END
+	  return split(ls, '\n')
+	endfunction
+
+	function! s:bufopen(e)
+	  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+	endfunction
+
+	nnoremap <silent> <Leader><Enter> :call fzf#run({
+	\   'source':  reverse(<sid>buflist()),
+	\   'sink':    function('<sid>bufopen'),
+	\   'options': '+m',
+	\   'down':    len(<sid>buflist()) + 2
+	\ })<CR>
+
+" Custom statusline for fzf
+	" autocmd! FileType fzf set laststatus=0 noshowmode noruler
+	  " \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+	function! s:fzf_statusline()
+		highlight fzf1 ctermfg=161 ctermbg=251
+		highlight fzf2 ctermfg=23 ctermbg=251
+		highlight fzf3 ctermfg=237 ctermbg=251
+		setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+	endfunction
+
+	autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " fzf integration for vimtex
 	nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
+
 " vimtex deoplete
 	call deoplete#custom#var('omni', 'input_patterns', {
 		\ 'tex': g:vimtex#re#deoplete
