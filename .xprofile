@@ -1,3 +1,2 @@
 mpd & 			#mpd:)
 setbg &			# set the background with the `setbg` script
- xrdb -load .Xresources & #Set solarized in st

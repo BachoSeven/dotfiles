@@ -41,8 +41,6 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 
-#eval `dircolors ~/.dir_colors`
-
 source $ZSH/oh-my-zsh.sh
 
 #autocomplete lfcd
