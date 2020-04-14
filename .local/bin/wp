@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+dir=""
+[ ! -z "$1" ] && dir=$1
+find ~/pics/papes/$dir -type f | shuf | sxiv -

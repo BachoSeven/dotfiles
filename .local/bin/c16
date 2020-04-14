@@ -1,0 +1,165 @@
+#!/bin/bash
+
+#
+# ANSI Color code (16colors)
+#
+#  http://ascii-table.com/ansi-escape-sequences.php
+#  http://archive.linux.or.jp/JF/JFdocs/Bash-Prompt-HOWTO-5.html
+
+
+# Escape sequence
+#   \033[<code>m or \e[<code>m
+#
+#   color : \[\033[ <code>m\] \]
+#
+#   e.g.
+#    bg=Blue, Bold, fg=Red
+#     1. \033[44;1;31m
+#     2. \033[44m\033[1;31m
+
+
+# Text attributes
+#  0  All attributes off
+#  1  Bold on
+#  4  Underscore (on monochrome display adapter only)
+#  5  Blink on
+#  7  Reverse video on
+#  8  Concealed on
+
+
+# Foreground colors
+#  0;30   Black          1;30   Dark Gray
+#  0;34   Blue           1;34   Light Blue
+#  0;32   Green          1;32   Light Green
+#  0;36   Cyan           1;36   Light Cyan
+#  0;31   Red            1;31   Light Red
+#  0;35   Purple         1;35   Light Purple
+#  0;33   Brown          1;33   Yellow
+#  0;37   Light Gray     1;37   White
+
+
+# Background colors
+#  40   Black
+#  41   Red
+#  42   Green
+#  43   Yellow
+#  44   Blue
+#  45   Magenta
+#  46   Cyan
+#  47   White
+
+###############################################################################
+
+echo " On White(47)     On Black(40)     On Default     Color Code"
+
+echo -e "\
+\033[47m\033[1;37m  White        \033[0m  \
+\033[40m\033[1;37m  White        \033[0m  \
+\033[1;37m  White        \033[0m\
+  1;37\
+"
+
+echo -e "\
+\033[47m\033[37m  Light Gray   \033[0m  \
+\033[40m\033[37m  Light Gray   \033[0m  \
+\033[37m  Light Gray   \033[0m  \
+37\
+"
+
+echo -e "\
+\033[47m\033[1;30m  Gray         \033[0m  \
+\033[40m\033[1;30m  Gray         \033[0m  \
+\033[130m  Gray         \033[0m  \
+1;30\
+"
+
+echo -e "\
+\033[47m\033[30m  Black        \033[0m  \
+\033[40m\033[30m  Black        \033[0m  \
+\033[30m  Black        \033[0m  \
+30\
+"
+
+echo -e "\
+\033[47m\033[31m  Red          \033[0m  \
+\033[40m\033[31m  Red          \033[0m  \
+\033[31m  Red          \033[0m  \
+31\
+"
+
+echo -e "\
+\033[47m\033[1;31m  Light Red    \033[0m  \
+\033[40m\033[1;31m  Light Red    \033[0m  \
+\033[1;31m  Light Red    \033[0m  \
+1;31\
+"
+
+echo -e "\
+\033[47m\033[32m  Green        \033[0m  \
+\033[40m\033[32m  Green        \033[0m  \
+\033[32m  Green        \033[0m  \
+32\
+"
+
+echo -e "\
+\033[47m\033[1;32m  Light Green  \033[0m  \
+\033[40m\033[1;32m  Light Green  \033[0m  \
+\033[1;32m  Light Green  \033[0m  \
+1;32\
+"
+
+echo -e "\
+\033[47m\033[33m  Brown        \033[0m  \
+\033[40m\033[33m  Brown        \033[0m  \
+\033[33m  Brown        \033[0m  \
+33\
+"
+
+echo -e "\
+\033[47m\033[1;33m  Yellow       \033[0m  \
+\033[40m\033[1;33m  Yellow       \033[0m  \
+\033[1;33m  Yellow       \033[0m  \
+1;33\
+"
+
+echo -e "\
+\033[47m\033[34m  Blue         \033[0m  \
+\033[40m\033[34m  Blue         \033[0m  \
+\033[34m  Blue         \033[0m  \
+34\
+"
+
+echo -e "\
+\033[47m\033[1;34m  Light Blue   \033[0m  \
+\033[40m\033[1;34m  Light Blue   \033[0m  \
+\033[1;34m  Light Blue   \033[0m  \
+1;34\
+"
+
+echo -e "\
+\033[47m\033[35m  Purple       \033[0m  \
+\033[40m\033[35m  Purple       \033[0m  \
+\033[35m  Purple       \033[0m  \
+35\
+"
+
+echo -e "\
+\033[47m\033[1;35m  Pink         \033[0m  \
+\033[40m\033[1;35m  Pink         \033[0m  \
+\033[1;35m  Pink         \033[0m  \
+1;35\
+"
+
+echo -e "\
+\033[47m\033[36m  Cyan         \033[0m  \
+\033[40m\033[36m  Cyan         \033[0m  \
+\033[36m  Cyan         \033[0m  \
+36\
+"
+
+echo -e "\
+\033[47m\033[1;36m  Light Cyan   \033[0m  \
+\033[40m\033[1;36m  Light Cyan   \033[0m  \
+\033[1;36m  Light Cyan   \033[0m  \
+1;36\
+";
