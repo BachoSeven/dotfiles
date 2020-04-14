@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# In LARBS, ~/.config/wall.png is the location of the system wallpaper.  This
+# script, if given an argument, moves it there.  This script without an
+# argument sets ~/.config/wall.png as the wallpaper, which is required on login
+# if you don't want a black screen.
+[ ! -z "$1" ] && cp "$1" ~/.config/wall.png && notify-send -i "$HOME/.config/wall.png" "Wallpaper changed."
+[ ! -z "$2" ] &&  gsettings set org.gnome.desktop.background picture-uri file:///home/francesco/.config/wall.png || wal -i ~/.config/wall.png && wal -c

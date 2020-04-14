@@ -1,0 +1,199 @@
+#!/usr/bin/python
+
+""" pafy - Command Line Downloader Tool - ytdl.
+
+Copyright (C)  2013-2014 np1
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Lesser General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along
+with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+"""
+
+from __future__ import print_function, unicode_literals
+import pafy
+import sys
+import os
+
+early_py_version = sys.version_info[:2] < (2, 7)
+
+try:
+    import argparse
+
+except ImportError:
+
+    if early_py_version:
+        msg = ("ytdl requires the argparse library to be installed separately "
+               "for Python versions earlier than 2.7")
+        sys.exit(msg)
+
+    else:
+        raise
+
+
+__version__ = "0.3.67"
+__author__ = "np1"
+__license__ = "LGPLv3"
+
+mswin = os.name == "nt"
+
+not_utf8_environment = mswin or "UTF-8" not in os.environ.get("LANG", "")
+
+def utf8_replace(txt):
+    """ Replace unsupported characters in unicode string, returns unicode. """
+    sse = sys.stdout.encoding
+    txt = txt.encode(sse, "replace").decode("utf8", "ignore")
+    return txt
+
+
+def xenc(stuff):
+    """ Replace unsupported characters. """
+    if sys.stdout.isatty():
+        return utf8_replace(stuff) if not_utf8_environment else stuff
+
+    else:
+        return stuff.encode("utf8", errors="replace")
+
+
+def xprint(stuff, end=None):
+    """ Compatible print. """
+    print(xenc(stuff), end=end)
+
+
+def download(video, audio=False, stream=None, preftype=None):
+    """ Download a video. """
+
+    preftype = "mp4" if preftype is None else preftype
+
+    if not stream and not audio:
+        stream = video.getbest(preftype=preftype)
+
+    if not stream and audio:
+        stream = video.getbestaudio()
+
+    size = stream.get_filesize()
+    dl_str = "-Downloading '{0}' [{1:,} Bytes]"
+
+    if early_py_version:
+        dl_str = "-Downloading '{0}' [{1} Bytes]"
+
+    xprint(dl_str.format(stream.filename, size))
+    xprint("-Quality: %s; Format: %s" % (stream.quality, stream.extension))
+    stream.download(quiet=False)
+    xprint("\nDone")
+
+
+def printstreams(streams):
+    """ Dump stream info. """
+
+    fstring = "{0:<7}{1:<8}{2:<7}{3:<15}{4:<10}       "
+    out = []
+    l = len(streams)
+    text = " [Fetching stream info]      >"
+
+    for n, s in enumerate(streams):
+        sys.stdout.write(text + "-" * n + ">" + " " * (l - n - 1) + "<\r")
+        sys.stdout.flush()
+        megs = "%3.f" % (s.get_filesize() / 1024 ** 2) + " MB"
+        q = "[%s]" % s.quality
+        out.append(fstring.format(n + 1, s.mediatype, s.extension, q, megs))
+
+    sys.stdout.write("\r")
+    xprint(fstring.format("Stream", "Type", "Format", "Quality", " Size"))
+    xprint(fstring.format("------", "----", "------", "-------", " ----"))
+
+    for x in out:
+        xprint(x)
+
+
+def main():
+    """ Parse args and show info or download. """
+
+    # pylint: disable=R0912
+    # too many branches
+    description = "YouTube Download Tool"
+    parser = argparse.ArgumentParser(description=description)
+    paa = parser.add_argument
+    paa('url', help="YouTube video URL to download")
+    paa('-i', required=False, help="Display vid info", action="store_true")
+    paa('-s', help="Display available streams", action="store_true")
+    paa('-t', help="Stream types to display", type=str, nargs="+",
+        choices="audio video normal all".split())
+    paa('-n', required=False, metavar="N", type=int, help='Specify stream to '
+        'download by stream number (use -s to list available streams)')
+    paa('-b', required=False, help='Download the best quality video (ignores '
+        '-n)', action="store_true")
+    paa('-a', required=False, help='Download the best quality audio (ignores '
+        '-n)', action="store_true")
+    paa('-p', default='mp4', help='Use the specified preferred type of video. '
+        'This could be mp4, webm, etc. [default: %(default)s]',
+        metavar='TEXT')
+
+    args = parser.parse_args()
+    vid = pafy.new(args.url)
+    streams = []
+
+    if args.t:
+
+        if "video" in args.t:
+            streams += vid.videostreams
+
+        if "audio" in args.t:
+            streams += vid.audiostreams[::-1]
+
+        if "normal" in args.t:
+            streams += vid.streams
+
+        if "all" in args.t:
+            streams = vid.allstreams
+
+    else:
+        streams = vid.streams + vid.audiostreams[::-1]
+
+    # if requested print vid info and list streams
+    if args.i:
+        xprint(vid)
+
+    if args.s:
+        printstreams(streams)
+
+    if args.b or args.a:
+
+        if args.a and args.b:
+            xprint("-a and -b cannot be used together! Use only one.")
+
+        else:
+            download(vid, audio=args.a, preftype=args.p)
+            sys.exit()
+
+    elif args.n:
+        streamnumber = int(args.n) - 1
+
+        try:
+            download(vid, stream=streams[streamnumber])
+
+        except IndexError:
+            em = "Sorry, %s is not a valid option, use 1-%s"
+            em = em % (int(args.n), len(streams))
+            xprint(em)
+
+    if not any([args.i, args.s, args.b, args.n, args.t, args.a]):
+        streams = vid.streams + vid.audiostreams[::-1]
+        printstreams(streams)
+
+    elif args.t and not args.a and not args.b and not args.s:
+        printstreams(streams)
+
+    else:
+        pass
+
+if __name__ == "__main__":
+    main()

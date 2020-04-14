@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# important! requires 'ssgen' script
+
+script_path="$HOME/.local/bin"
+ssgen_path="$script_path"
+
+# dmenu theming
+. $HOME/.local/bin/dmenu-theming
+
+prompt="-p Script:"
+
+# list only executable non-binay files
+
+list="$(find $script_path -maxdepth 1 -type f -executable \
+       -exec grep -Iq . {} \; -print \
+       | sed 's|^'$script_path/'||' \
+       | sort \
+       )"
+
+# output list to dmenu
+
+select="$(dmenu $prompt $font $colors $lines <<< $list)"
+
+# run 'ssgen' with the selected file name
+
+if [[ ! -z "$select" ]]; then
+    eval "$ssgen_path/ssgen $select"
+fi
+
+exit 0;
