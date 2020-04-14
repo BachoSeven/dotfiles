@@ -36,7 +36,6 @@ cmd moveto ${{
 	set -f
 	clear; echo "Move to where?"
 	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)" &&
-
 	eval mv -iv $fx $dest &&
 	notify-send "🚚File(s) moved." "File(s) moved to $dest."
 }}

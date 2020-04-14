@@ -1,2 +1,2 @@
 mpd & 			#mpd:)
-setbg &			# set the background with the `setbg` script
+xrdb -load $XDG_CONFIG_HOME/Xresources &

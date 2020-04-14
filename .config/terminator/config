@@ -57,7 +57,7 @@
     cursor_color = "#aaaaaa"
   [[Solarized Dark - Patched]]
     background_color = "#fbf1c7"
-    background_darkness = 0.85
+    background_darkness = 0.8
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#708284"
