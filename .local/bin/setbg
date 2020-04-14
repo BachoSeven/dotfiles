@@ -29,5 +29,13 @@ while true; do
 			shift 2
 			continue
 		;;
+		'--')
+			shift
+			break
+		;;
+		*)
+			echo 'Error!' >&2
+			exit 1
+		;;
 	esac
 done

@@ -1,36 +1,76 @@
-call plug#begin('~/.local/share/nvim/plugged')
+" Basic Settings
+	set shell=/usr/bin/zsh
+	set number
+	set relativenumber
+	set wildmenu
+	set wildmode=longest,list,full
+	set autoindent
+	set cursorline
+	set incsearch
+	set hidden
+	set conceallevel=1
+	set termguicolors
+	set splitbelow splitright
+	set spelllang=en_us
+	setlocal spell
+	set splitbelow splitright
 
-"set shell to zsh
-set shell=/usr/bin/zsh
+" Some mappings and shortcuts
 
-Plug 'wlemuel/vim-tldr'
+	map <C-h> <C-w>h
+	map <C-l> <C-w>l
+	map <leader>h <C-w>h:q<CR>
+	map <leader>j <C-w>j:q<CR>
+	map <leader>k <C-w>k:q<CR>
+	map <leader>l <C-w>l:q<CR>
+	nnoremap c "_c
+	map <C-t>k :tabr<cr>
+	map <C-t>j :tabl<cr>
+	map <C-t>h :tabp<cr>
+	map <C-t>l :tabn<cr>
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  nnoremap <silent> <C-p> :FZF -m<cr>
-" Better command history with q:
-  command! CmdHist call fzf#vim#command_history({'right': '40'})
-  nnoremap q: :CmdHist<CR>
-  let g:fzf_layout = { 'window': '10new' }
+" Compile document, be it groff/LaTeX/markdown/etc.
+	map <leader>C :w! \| !compiler <c-r>%<CR>
+" Open corresponding .pdf/.html or preview
+	map <leader>p :!opout <c-r>%<CR><CR>
 
+" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+	autocmd VimLeave *.tex !texclear %
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+	cmap w!! w !sudo tee > /dev/null %
 
-set hidden
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-"deoplete_zsh
-Plug 'deoplete-plugins/deoplete-zsh'
-"vim completion with deoplete
-Plug 'Shougo/neco-vim'
-"misc_deoplete
-Plug 'Shougo/neco-syntax'
+" Insert new lines in Normal Mode
+	nnoremap <leader>o mao<Esc>`a
+	nnoremap <leader>O maO<Esc>`a
 
-"try to experiment with tabs:
-map <C-t>k :tabr<cr>
-map <C-t>j :tabl<cr>
-map <C-t>h :tabp<cr>
-map <C-t>l :tabn<cr>
+" Turn off search highlight
+	nnoremap <leader><space> :nohlsearch<CR>
 
-"Command for clearing all register entries&REMOVING them form :reg
+" Edit vimrc/zshrc and load vimrc bindings
+	nnoremap <leader>ev :vsp ~/.config/nvim/init.vim<CR>
+	nnoremap <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
+	nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
+
+" C compiling
+	nnoremap <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
+	nnoremap <leader>cp :vsp<CR>:te<CR>a ./
+
+" Open Terminal
+	nnoremap <leader>t :te<CR>a
+
+" Automatically deletes all trailing whitespace and newlines at end of file on save.
+	autocmd BufWritePre * %s/\s\+$//e
+	autocmd BufWritepre * %s/\n\+\%$//e
+
+" Run xrdb whenever Xdefaults or Xresources are updated.
+	autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+
+" Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
+	if &diff
+	    highlight! link DiffText MatchParen
+	endif
+
 function! CleanReg()
 let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
 for r in regs
@@ -39,78 +79,38 @@ endfor
 endfunction
 nnoremap <leader>rr :call CleanReg()<CR>
 
-"Vim-Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='base16_solarized'
-let g:airline_powerline_fonts = 1
+" Sessions
+let g:session_dir = '~/.config/nvim/vim-sessions'
+let g:session#default_opener = 'edit'
+let g:session#default_session = 'default'
+exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
-"Plug 'itchyny/lightline.vim'
-"set noshowmode "remove useless --INSERT--
-"let g:lightline = {
-      "\ 'colorscheme': 'solarized',
-      "\ 'component_function': {
-      "\   'readonly': 'LightlineReadonly',
-      "\ },
-      "\ }
 
-"function! LightlineReadonly()
-  "return &readonly && &filetype !=# 'help' ? 'RO' : ''
-"endfunction
+"Plugins
+call plug#begin('~/.local/share/nvim/plugged')
 
-"Todos :))))
-Plug 'aserebryakov/vim-todo-lists'
-"syntax highlighting
-Plug 'arakashic/chromatica.nvim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-zsh'
+Plug 'Shougo/neco-vim'
+Plug 'Shougo/neco-syntax'
+
+Plug 'lervag/vimtex'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_latexlog = {'fix_paths':0}
+let g:vimtex_quickfix_mode=0
+let g:vimtex_compiler_progname = 'nvr'
+let g:tex_conceal='abdmg'
+
+" Syntax highlighting
 Plug 'VebbNix/lf-vim'
 Plug 'cespare/vim-toml'
-let g:chromatica#libclang_path='/usr/lib/llvm-6.0/lib/libclang.so'
-let g:chromatica#enable_at_startup=1
-
-"universal luke compiler:
-" Compile document, be it groff/LaTeX/markdown/etc.
-	map <leader>C :w! \| !compiler <c-r>%<CR>
-
-" Shortcutting split navigation, saving a keypress:
-	map <C-h> <C-w>h
-	"map <C-j> <C-w>j doesn't work..
-	"map <C-k> <C-w>k
-	map <C-l> <C-w>l
-	map <leader>h <C-w>h:q<CR>
-	map <leader>j <C-w>j:q<CR>
-	map <leader>k <C-w>k:q<CR>
-	map <leader>l <C-w>l:q<CR>
-
-"Remap \y to COPYYYYYY
-nnoremap <leader>Y yy:!echo '<C-r>"'<bar>xclip -sel clip<CR><CR>
-nnoremap <leader>yw yw:!echo '<C-r>"'<bar>xclip -sel clip<CR><CR>
-xnoremap <leader>y y:!echo '<C-r>"'<bar>xclip -sel clip<CR><CR>
-
-"remapping for insert new line without leaving NormMode & staying where you
-"are
-nnoremap <leader>o mao<Esc>`a
-nnoremap <leader>O maO<Esc>`a
-
-
-" turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
-" edit vimrc/zshrc and load vimrc bindings
-nnoremap <leader>ev :vsp ~/.config/nvim/init.vim<CR>
-nnoremap <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
-nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
-"non funzia...
-nnoremap <leader>sz :!source ~/.zshrc
-
-"C compiling
-nnoremap <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
-nnoremap <leader>cp :vsp<CR>:te<CR>a ./
-
-"Open Terminal
-nnoremap <leader>t :te<CR>a
+" Plug 'arakashic/chromatica.nvim'
+" let g:chromatica#libclang_path='/usr/lib/llvm-6.0/lib/libclang.so'
+" let g:chromatica#enable_at_startup=1
 
 "NOT NECESSARY
 "Plug 'benwoodward/vimify', { 'branch': 'playlists' }
@@ -129,69 +129,13 @@ nnoremap <leader>t :te<CR>a
 "nnoremap <leader>sp :call SpotOpen()<CR>
 
 
-"FIX annoying cursor movement while updown,backforward scrolling
+" Utilities
 Plug 'lukelbd/vim-scrollwrapped'
-
-"tex options
-Plug 'lervag/vimtex'
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_latexlog = {'fix_paths':0}
-let g:vimtex_quickfix_mode=0
-let g:vimtex_compiler_progname = 'nvr'
-set conceallevel=1
-let g:tex_conceal='abdmg'
-
-"fzf integration for vimtex
-nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
+Plug 'wlemuel/vim-tldr'
 
 Plug 'ptzz/lf.vim'
 Plug 'rbgrouleff/bclose.vim'
 let g:lf_command_override = 'lf -command "set hidden"'
-
-
-"sessions
-let g:session_dir = '~/.config/nvim/vim-sessions'
-let g:session#default_opener = 'edit'
-let g:session#default_session = 'default'
-exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
-exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
-
-
-"line numbers
-set number
-set relativenumber
-
-"Nerd Commenting
-Plug 'scrooloose/nerdcommenter'
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } } "fix lfrc comments
-
-"terminal exit
-tnoremap <Esc> <C-\><C-n>
-
-"Color Settings
-set termguicolors
-Plug 'chrisbra/Colorizer'
-Plug 'iCyMind/NeoSolarized' "NeoSolarized
-colorscheme NeoSolarized
-set background=dark
-"Transparent Background settings
-"au ColorScheme * hi Normal ctermbg=none guibg=none
-
-"lilypond config
-"filetype off
-"set runtimepath+=/usr/share/lilypond/2.18.2/vim/
-"filetype on
-"syntax on
-
-"randomstuff
-set wildmenu
-set wildmode=longest,list,full
-set autoindent
-set cursorline
-set incsearch           " search as characters are entered
 
 Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger = '<tab>'
@@ -200,13 +144,55 @@ Plug 'sirver/ultisnips'
     let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
     let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
 
-"set browser
-let g:netrw_browsex_viewer= "xdg-open"
-
-setlocal spell
-set spelllang=en_us
-
 Plug '907th/vim-auto-save'
 let g:auto_save = 1
 
+" Nerdcommenter
+Plug 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } } "fix lfrc comments
+
+
+let g:netrw_browsex_viewer= "xdg-open"
+
+" Color Settings
+Plug 'chrisbra/Colorizer'
+Plug 'morhetz/gruvbox'	"Gruvbox
+Plug 'iCyMind/NeoSolarized' "NeoSolarized
+
+" Vim-Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+
 call plug#end()
+
+"Post-Plugin
+
+" Deoplete
+	let g:deoplete#enable_at_startup = 1
+
+" fzf config:
+	nnoremap <silent> <C-p> :FZF -m<cr>
+" Better command history with q:
+	command! CmdHist call fzf#vim#command_history({'right': '40'})
+	nnoremap q: :CmdHist<CR>
+	let g:fzf_layout = { 'window': '10new' }
+
+" fzf integration for vimtex
+	nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
+" vimtex deoplete
+	call deoplete#custom#var('omni', 'input_patterns', {
+		\ 'tex': g:vimtex#re#deoplete
+		\})
+
+" ColorSchemes
+	let g:airline_theme='base16_solarized'
+	colorscheme NeoSolarized
+	" colorscheme gruvbox
+	set background=dark
+	hi Normal ctermbg=NONE guibg=NONE
+	hi NonText ctermbg=NONE guibg=NONE
+	hi EndOfBuffer ctermbg=NONE guibg=NONE
+	" hi LineNr ctermbg=NONE guibg=NONE
