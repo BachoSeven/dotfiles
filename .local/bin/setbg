@@ -1,8 +1,33 @@
-#!/bin/sh
+#!/bin/bash
 
-# In LARBS, ~/.config/wall.png is the location of the system wallpaper.  This
-# script, if given an argument, moves it there.  This script without an
-# argument sets ~/.config/wall.png as the wallpaper, which is required on login
-# if you don't want a black screen.
-[ ! -z "$1" ] && cp "$1" ~/.config/wall.png && notify-send -i "$HOME/.config/wall.png" "Wallpaper changed."
-[ ! -z "$2" ] &&  gsettings set org.gnome.desktop.background picture-uri file:///home/francesco/.config/wall.png || wal -i ~/.config/wall.png && wal -c
+# This script sets the background, using pywal to set a terminal colorscheme,or otherwise
+# using Xresources.
+
+#	Usage: 
+#		`setbg [ -s, --no-scheme ] [ -i, --input="path/to/img" ]`
+
+TEMP=$(getopt -o 'si:' --long 'no-scheme,input:' -- "$@" )
+
+eval set -- "$TEMP"
+unset TEMP
+
+scheme=true
+
+while true; do
+	case "$1" in
+		'-s'|'--no-scheme')
+			scheme=false
+			shift
+			continue
+		;;
+		'-i'|'--input')
+			cp "$2" ~/.config/wall.png && notify-send -i "$HOME/.config/wall.png" "Wallpaper changed." && [ $scheme ] && wal -i ~/.config/wall.png && wal -c || gsettings set org.gnome.desktop.background picture-uri file://$XDG_CONFIG_HOME/wall.png && xrdb -load $XDG_CONFIG_HOME/Xresources
+			shift 2
+			continue
+		;;
+		'--')
+			shift
+			break
+		;;
+	esac
+done

@@ -142,18 +142,12 @@ let g:vimtex_compiler_progname = 'nvr'
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-"deoplete integration for vimtex
-"call deoplete#custom#var('omni', 'input_patterns', {
-	"\ 'tex': g:vimtex#re#deoplete
-	"\})
 "fzf integration for vimtex
 nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
 
-
-"plugin for lf file manager
-    Plug 'ptzz/lf.vim'
-    Plug 'rbgrouleff/bclose.vim'
-	let g:lf_command_override = 'lf -command "set hidden"'
+Plug 'ptzz/lf.vim'
+Plug 'rbgrouleff/bclose.vim'
+let g:lf_command_override = 'lf -command "set hidden"'
 
 
 "sessions
@@ -167,8 +161,12 @@ exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS
 "line numbers
 set number
 set relativenumber
+
 "Nerd Commenting
 Plug 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } } "fix lfrc comments
 
 "terminal exit
 tnoremap <Esc> <C-\><C-n>

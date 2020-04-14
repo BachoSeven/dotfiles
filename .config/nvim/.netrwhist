@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/francesco'
 let g:netrw_dirhist_2='/home/francesco/.config/zsh'
 let g:netrw_dirhist_1='/etc/sudoers.d'
 let g:netrw_dirhist_0='/home/francesco/Downloads/GhostWheelBundle1.2/DEVCHAT/Spooky Ghost Wheel town'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Aritmetic
 let g:netrw_dirhist_6='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Aritmetica/read/CambridgeUndergradMath/cam-notes/III_E'
 let g:netrw_dirhist_5='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Aritmetica/read/CambridgeUndergradMath/cam-notes/III_E/images'
 let g:netrw_dirhist_4='/mnt/01D5707D40B081F0/Users/ascol/Documents'
-let g:netrw_dirhist_3='/mnt/01D5707D40B081F0/Users/ascol'

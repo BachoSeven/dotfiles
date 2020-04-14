@@ -3,9 +3,9 @@ while read file
 do
         case "$1" in
         "w") 
-		setbg "$file" & ;;
+		setbg -i "$file" & ;;
 	"W") 	
-		setbg "$file" noscheme & ;;
+		setbg -s -i "$file" & ;;
         "c")
 		[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
 		[ -z "$destdir" ] && exit
