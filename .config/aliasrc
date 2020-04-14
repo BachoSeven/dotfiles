@@ -37,6 +37,7 @@ alias ff='find . -type f -name'
 #remove spaces!
 alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
 alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
+
 function 256color {
 	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
@@ -46,7 +47,7 @@ function 256color {
 	#nvim -c 'execute "normal \\sp"'
 #}
 
-# Use lf to switch directories and bind it to ctrl-o
+# Navigation
 lfcd () {
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
@@ -57,7 +58,6 @@ lfcd () {
     fi
 }
 
-#really cool aliases for navigating folders
 d='dirs -v | head -10'
 1='cd -'
 2='cd -2'
@@ -69,7 +69,7 @@ d='dirs -v | head -10'
 8='cd -8'
 9='cd -9'
 
-#various stuff
+# Various
 alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
 alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
@@ -86,23 +86,23 @@ alias gotop='gotop --color=solarized -asbp'
 alias l073642ibgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
 
-#rice
-alias cfx='nvim /home/francesco/.config/sxiv/exec/key-handler'
-alias cfs='nvim ~/.config/ncspot/config.toml'
-alias cfa='nvim ~/.config/aliasrc'
-alias mim='nvim ~/.config/mimi/mime.conf'
-alias zarc='nvim /home/francesco/.config/zathura/zathurarc'
-alias lfrc='nvim ~/.config/lf/lfrc'
-alias trop='nvim ~/.toprc'
-alias zshrc='source ~/.config/zsh/.zshrc'
-alias bd='nvim ~/.config/directories'
+# Rice
+alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
+alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
+alias cfa='nvim $XDG_CONFIG_HOME/aliasrc'
+alias mim='nvim $XDG_CONFIG_HOME/mimi/mime.conf'
+alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
+alias lfrc='nvim $XDG_CONFIG_HOME/lf/lfrc'
+alias zshrc='source $XDG_CONFIG_HOME/zsh/.zshrc'
+alias bd='nvim $XDG_CONFIG_HOME/directories'
 alias cfz='nvim $ZDOTDIR/.zshrc'
-alias cfv='nvim ~/.config/nvim/init.vim'
-alias cfm='nvim ~/.config/mutt/muttrc'
-alias cfr='nvim ~/.Xresources'
-alias cfmb='nvim ~/.config/ncmpcpp/bindings'
-alias cfmc='nvim ~/.config/ncmpcpp/config'
-#personal files
+alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
+alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'
+alias cfr='nvim $XDG_CONFIG_HOME/Xresources'
+alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
+alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
+
+# Personal files
 alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
 alias desk='lfcd /mnt/01D5707D40B081F0/Users/ascol/Desktop'
 alias doc='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents'

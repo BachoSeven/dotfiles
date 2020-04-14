@@ -49,7 +49,7 @@ export LF_ICONS="di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 #program setings:
-export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l --glob "!snap/* " "" '
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60% --border "
 export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!snap/*" --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
 
