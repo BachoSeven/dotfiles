@@ -21,7 +21,7 @@ alias ccat="highlight --out-format=ansi"
 alias path='echo $PATH | tr : "\n"'
 
 #git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.config/dots/  --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
 
 alias cx='chmod +x'
 alias xclip="xclip -sel clip"
@@ -85,6 +85,8 @@ alias chill="mpv 'https://www.youtube.com/watch?v=5qap5aO4i9A'"
 alias gotop='gotop --color=solarized -asbp'
 alias l073642ibgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
+alias tldr='tldr -t base16'
+alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
 
 # Rice
 alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
