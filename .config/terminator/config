@@ -1,82 +1,55 @@
 [global_config]
+  always_split_with_profile = True
   borderless = True
   enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = system
   geometry_hinting = True
   inactive_color_offset = 0.623529411765
   title_hide_sizetext = True
-  window_state = maximise
 [keybindings]
   line_down = <Alt>j
   line_up = <Alt>k
+  next_profile = <Alt>p
   page_down_half = <Alt>d
   page_up_half = <Alt>u
+  previous_profile = <Shift><Alt>p
 [layouts]
   [[default]]
     [[[child1]]]
       directory = ""
       parent = window0
-      profile = Solarized Dark - Patched
+      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""
       type = Window
-  [[ubuntu]]
-    [[[child0]]]
-      fullscreen = False
-      last_active_term = ef0475f6-72f5-44c1-b4a4-7402509d5b7d
-      last_active_window = True
-      maximised = True
-      order = 0
-      parent = ""
-      position = 0:27
-      size = 1920, 1053
-      title = francesco@fra-UX310UQK: ~
-      type = Window
-    [[[terminal1]]]
-      order = 0
-      parent = child0
-      profile = Ubuntu
-      type = Terminal
-      uuid = ef0475f6-72f5-44c1-b4a4-7402509d5b7d
 [plugins]
 [profiles]
   [[default]]
+    background_color = "#282828"
+    background_darkness = 0.8
+    background_type = transparent
+    copy_on_selection = True
+    cursor_blink = False
+    cursor_color = "#729fcf"
+    font = MesloLGS NF 12
+    foreground_color = "#ebdbb2"
+    icon_bell = False
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    scroll_on_output = True
+    scrollback_lines = 2000
+    scrollbar_position = hidden
+  [[Solarized Dark - Patched]]
     background_color = "#002b36"
     background_darkness = 0.8
     background_type = transparent
     copy_on_selection = True
-    cursor_color = "#729fcf"
-    font = MesloLGS NF 12
-    foreground_color = "#839496"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    scroll_on_output = True
-    scrollback_lines = 2000
-    scrollbar_position = hidden
-  [[Gruvbox Dark]]
-    cursor_color = "#aaaaaa"
-  [[Solarized Dark - Patched]]
-    background_color = "#fbf1c7"
-    background_darkness = 0.8
-    background_type = transparent
-    copy_on_selection = True
+    cursor_blink = False
     cursor_color = "#708284"
     font = MesloLGS NF 12
-    foreground_color = "#3c3836"
+    foreground_color = "#839496"
+    icon_bell = False
     palette = "#002831:#d11c24:#738a05:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#475b62:#bd3613:#475b62:#536870:#708284:#5956ba:#819090:#fcf4dc"
-    scroll_on_output = True
-    scrollback_lines = 2001
-    scrollbar_position = hidden
-    use_theme_colors = True
-  [[Ubuntu]]
-    background_color = "#1e1e1e"
-    background_darkness = 0.85
-    background_type = transparent
-    copy_on_selection = True
-    cursor_color = "#bbbbbb"
-    font = MesloLGS NF 12
-    foreground_color = "#e6d4a3"
-    palette = "#161819:#f73028:#aab01e:#f7b125:#719586:#c77089:#7db669:#faefbb:#7f7061:#be0f17:#868715:#cc881a:#377375:#a04b73:#578e57:#e6d4a3"
     scroll_on_output = True
     scrollback_lines = 2000
     scrollbar_position = hidden
