@@ -19,10 +19,10 @@
 
 	map <C-h> <C-w>h
 	map <C-l> <C-w>l
-	map <leader>h <C-w>h:q<CR>
-	map <leader>j <C-w>j:q<CR>
-	map <leader>k <C-w>k:q<CR>
-	map <leader>l <C-w>l:q<CR>
+	map <leader>h <C-w>h:q<cr>
+	map <leader>j <C-w>j:q<cr>
+	map <leader>k <C-w>k:q<cr>
+	map <leader>l <C-w>l:q<cr>
 	nnoremap c "_c
 	map <C-t>k :tabr<cr>
 	map <C-t>j :tabl<cr>
@@ -143,7 +143,7 @@ Plug 'junegunn/fzf.vim'
 
 " Appearance
 Plug 'chrisbra/Colorizer'
-	nnoremap <leader>hc :ColorToggle<cr>
+	nnoremap <leader>H :ColorToggle<cr>
 Plug 'morhetz/gruvbox'	"Gruvbox
 Plug 'iCyMind/NeoSolarized' "NeoSolarized
 Plug 'vim-airline/vim-airline'
@@ -222,9 +222,9 @@ call plug#end()
 		\})
 
 " ColorSchemes
-	let g:airline_theme='base16_solarized'
-	colorscheme NeoSolarized
-	" colorscheme gruvbox
+	" let g:airline_theme='base16_solarized'
+	" colorscheme NeoSolarized
+	colorscheme gruvbox
 	set background=dark
 	hi Normal ctermbg=NONE guibg=NONE
 	hi NonText ctermbg=NONE guibg=NONE
