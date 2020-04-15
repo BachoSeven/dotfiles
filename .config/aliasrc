@@ -29,11 +29,6 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias dud='du -d 1 -h'
-alias duf='du -sh *'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
-
 #remove spaces!
 alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
 alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
@@ -77,7 +72,7 @@ alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 alias cbh='connectHeadphones'
 
 alias flp='flashplayer'
-alias sqm='xlinks2 https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
+alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
 
 alias cwp='gcc -Wall -pedantic'
@@ -87,6 +82,7 @@ alias l073642ibgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents
 alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
 alias tldr='tldr -t base16'
 alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
+alias define='define -c $XDG_CONFIG_HOME/define/define.conf.json'
 
 # Rice
 alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
