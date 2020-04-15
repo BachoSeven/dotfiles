@@ -27,6 +27,8 @@ export BROWSER="brave-browser"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
@@ -39,6 +41,10 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GEM_HOME="$XDG_DATA_HOME/gem"
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
+export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+
+#viminfo in .config/vim
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 #mpd env_vars
 export MPD_HOST="127.0.0.1"
