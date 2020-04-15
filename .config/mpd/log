@@ -35730,3 +35730,11 @@ Apr 15 11:33 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
 Apr 15 11:33 : ffmpeg/aac: Could not update timestamps for skipped samples.
 Apr 15 11:33 : player: played "moosica/Talking Heads (WEB AAC)/1983 - Speaking In Tongues (Remastered)/10 Two Note Swivel (Unfinished Outta.m4a"
 Apr 15 11:39 : player: played "moosica/Talking Heads (WEB AAC)/1983 - Speaking In Tongues (Remastered)/11 Burning Down the House (Alternate.m4a"
+Apr 15 16:55 : config: option 'device' on line 17 was not recognized
+Apr 15 16:55 : config: option 'buffer_time' on line 19 was not recognized
+Apr 15 16:55 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 15 16:55 : avahi: Service 'Music Player' successfully established.
+Apr 15 17:01 : config: option 'device' on line 17 was not recognized
+Apr 15 17:01 : config: option 'buffer_time' on line 19 was not recognized
+Apr 15 17:01 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 15 17:01 : avahi: Service 'Music Player' successfully established.
