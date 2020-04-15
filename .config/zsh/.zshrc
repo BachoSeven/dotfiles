@@ -9,21 +9,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 export UPDATE_ZSH_DAYS=5
 
 DISABLE_AUTO_TITLE="true"
-#ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
 
-
-eval $(thefuck --alias)
-
-
-#exports, now in .zprofile and .zshenv
-#export GOPATH=~/.local/go
-#export PATH=/snap/bin:/usr/local/texlive/2019/bin/x86_64-linux:$GOPATH/bin:~/.local/bin:$CARGO_HOME/bin:$PATH
-#export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
-#export GS_FONTPATH=/usr/local/share/pmw/psfonts
+export THEFUCK_DEBUG=true
+eval $(thefuck --alias --enable-experimental-instant-mode)
 
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
@@ -64,23 +57,31 @@ fi
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+# Directly Execute with CTRL-X CTRL-R
+	fzf-history-widget-accept() {
+	  fzf-history-widget
+	  zle accept-line
+	}
+	zle     -N     fzf-history-widget-accept
+	bindkey '^X^R' fzf-history-widget-accept
+
 #bindkeys
-bindkey -s '^o' 'lfcd\n'
-#bindkey -s '^y' 'vimspo\n'
-bindkey -s '^g' 'gotop\n'
-bindkey -s '^v' 'nvim\n'
-bindkey -s '^q' 'udg\n'
-bindkey -s '^u' 'u\n'
-bindkey -s '^h' 'htop\n'
-bindkey -s '^f' 'fast\n'
-bindkey -s '^[n' 'neomutt\n'
-bindkey -s "^[s" 'ncspot\n'
+	bindkey -s '^o' 'lfcd\n'
+	#bindkey -s '^y' 'vimspo\n'
+	bindkey -s '^g' 'gotop\n'
+	bindkey -s '^v' 'nvim\n'
+	bindkey -s '^q' 'udg\n'
+	bindkey -s '^u' 'u\n'
+	bindkey -s '^h' 'htop\n'
+	bindkey -s '^f' 'fast\n'
+	bindkey -s '^[n' 'neomutt\n'
+	bindkey -s "^[s" 'ncspot\n'
 
 
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+	bindkey -M menuselect 'h' vi-backward-char
+	bindkey -M menuselect 'k' vi-up-line-or-history
+	bindkey -M menuselect 'l' vi-forward-char
+	bindkey -M menuselect 'j' vi-down-line-or-history
 
 
 #source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
