@@ -15,8 +15,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
 
-export THEFUCK_DEBUG=true
-eval $(thefuck --alias --enable-experimental-instant-mode)
+eval $(thefuck --alias)
 
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
