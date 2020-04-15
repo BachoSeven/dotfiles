@@ -71,6 +71,7 @@ alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 alias cbh='connectHeadphones'
 
+alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 alias flp='flashplayer'
 alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
