@@ -43,9 +43,6 @@ export GEM_HOME="$XDG_DATA_HOME/gem"
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 
-#viminfo in .config/vim
-export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
-
 #mpd env_vars
 export MPD_HOST="127.0.0.1"
 export MPD_PORT="6602"
