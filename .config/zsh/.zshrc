@@ -14,7 +14,6 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
-
 eval $(thefuck --alias)
 
 autoload -Uz bracketed-paste-magic
@@ -56,6 +55,17 @@ fi
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+	d='dirs -v | head -10'
+	1='cd -'
+	2='cd -2'
+	3='cd -3'
+	4='cd -4'
+	5='cd -5'
+	6='cd -6'
+	7='cd -7'
+	8='cd -8'
+	9='cd -9'
+
 # Directly Execute with CTRL-X CTRL-R
 	fzf-history-widget-accept() {
 	  fzf-history-widget
@@ -82,11 +92,6 @@ fi
 	bindkey -M menuselect 'l' vi-forward-char
 	bindkey -M menuselect 'j' vi-down-line-or-history
 
-
-#source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.config/lf/lficons
-#source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-#source ~/.oh-my-zsh/plugins/vi-mode/vi-mode.plugin.zsh
 #complete colorls, unneeded
 #source $(dirname $(gem which colorls))/tab_complete.sh
 [ "$TERM" != "st-256color" ] &&	export LF_ICONS="di=📁:\
@@ -150,6 +155,4 @@ ex=🎯:\
 *.part=💔:\
 *.torrent=🔽:\
 "
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ -f ~/.config/zsh/.p10k.zsh ]] && source ~/.config/zsh/.p10k.zsh

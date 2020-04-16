@@ -53,17 +53,6 @@ lfcd () {
     fi
 }
 
-d='dirs -v | head -10'
-1='cd -'
-2='cd -2'
-3='cd -3'
-4='cd -4'
-5='cd -5'
-6='cd -6'
-7='cd -7'
-8='cd -8'
-9='cd -9'
-
 # Various
 alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
 alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
@@ -71,7 +60,6 @@ alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 alias cbh='connectHeadphones'
 
-alias lingot='lingot -c $XDG_CONFIG_HOME/lingot/lingot.conf'
 alias waterfox='waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
 alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 alias flp='flashplayer'
@@ -81,10 +69,9 @@ alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
 alias cwp='gcc -Wall -pedantic'
 alias chill="mpv 'https://www.youtube.com/watch?v=5qap5aO4i9A'"
 alias gotop='gotop --color=solarized -asbp'
-alias l073642ibgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
+alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
 alias tldr='tldr -t base16'
-alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
 alias define='define -c $XDG_CONFIG_HOME/define/define.conf.json'
 
 # Rice
@@ -121,7 +108,6 @@ alias wsp='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/roba!'
 alias mthstf='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/mathstuff'
 alias movies='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/stuff/movies'
 
-alias -s tex=nvim
 alias nv='nvim .'
 
 #awk 'BEGIN{
