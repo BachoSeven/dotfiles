@@ -45,6 +45,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 60% --border "
 export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!snap/*" --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
 export FZF_ALT_C_OPTS="--exact --select-1 --exit-0 --preview 'tree -C {} | head -200'"
+export FZF_ALT_C_COMMAND="${FZF_DEFAULT_COMMAND} --type directory"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind 'F1:toggle-preview'"
 
 # Paths

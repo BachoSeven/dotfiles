@@ -1,7 +1,9 @@
 sw_volume: 100
 audio_device_state:1:MPD
 audio_device_state:1:toggle_visualizer
-state: stop
+state: play
+current: 0
+time: 4.156000
 random: 0
 repeat: 0
 single: 0
@@ -10,4 +12,19 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
+0:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/04 Take Me to the River.m4a
+1:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/05 Found a Job.m4a
+2:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/06 Life During Wartime.m4a
+3:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/07 Heaven.m4a
+4:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/08 Memories Can't Wait.m4a
+5:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/09 Once In a Lifetime.m4a
+6:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/10 Houses In Motion.m4a
+7:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/11 This Must Be the Place (Naive Mel.m4a
+8:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/12 Girlfriend Is Better.m4a
+9:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/13 Burning Down the House.m4a
+10:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/14 Road to Nowhere.m4a
+11:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/15 And She Was.m4a
+12:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/16 Wild Wild Life.m4a
+13:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/17 Blind.m4a
+14:moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/18 (Nothing But) Flowers.m4a
 playlist_end
