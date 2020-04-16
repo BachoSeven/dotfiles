@@ -35738,3 +35738,37 @@ Apr 15 17:01 : config: option 'device' on line 17 was not recognized
 Apr 15 17:01 : config: option 'buffer_time' on line 19 was not recognized
 Apr 15 17:01 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
 Apr 15 17:01 : avahi: Service 'Music Player' successfully established.
+Apr 16 01:39 : config: option 'device' on line 17 was not recognized
+Apr 16 01:39 : config: option 'buffer_time' on line 19 was not recognized
+Apr 16 01:39 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 16 01:39 : avahi: Service 'Music Player' successfully established.
+Apr 16 11:58 : config: option 'device' on line 17 was not recognized
+Apr 16 11:58 : config: option 'buffer_time' on line 19 was not recognized
+Apr 16 11:58 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 16 11:58 : avahi: Service 'Music Player' successfully established.
+Apr 16 11:59 : client: [0] opened from 127.0.0.1:43772
+Apr 16 11:59 : client: [0] closed
+Apr 16 11:59 : client: [1] opened from 127.0.0.1:43774
+Apr 16 12:00 : client: [1] closed
+Apr 16 12:44 : client: [2] opened from 127.0.0.1:44706
+Apr 16 12:44 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 12:44 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 12:44 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 16 12:44 : client: [3] opened from 127.0.0.1:44710
+Apr 16 12:44 : client: [3] closed
+Apr 16 12:47 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 12:47 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 12:47 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/01 Love -_ Building On Fire.m4a"
+Apr 16 12:47 : client: [4] opened from 127.0.0.1:44720
+Apr 16 12:47 : client: [4] closed
+Apr 16 12:51 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 12:51 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 12:52 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/02 Psycho Killer.m4a"
+Apr 16 12:52 : client: [5] opened from 127.0.0.1:44742
+Apr 16 12:52 : client: [5] closed
+Apr 16 12:54 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 12:54 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 12:54 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/03 Uh-Oh, Love Comes to Town.m4a"
+Apr 16 12:54 : client: [6] opened from 127.0.0.1:44762
+Apr 16 12:54 : client: [6] closed
+Apr 16 12:55 : client: [2] closed
