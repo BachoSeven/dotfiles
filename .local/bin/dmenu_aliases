@@ -30,7 +30,7 @@ case "$1" in
 
 	[[ $cmd == *';'* ]] && cmdexec="st -e $cmdexec"
 
-	[[ $cmd == *':'* ]] && cmdexec="xdotool mousemove - 1 mousemove restore; gksu '$cmdexec'"
+	[[ $cmd == *':'* ]] && cmdexec="xdotool mousemove - 1 mousemove restore; sudo -Ai '$cmdexec'"
 
         echo "$cmdexec" | bash
     fi
