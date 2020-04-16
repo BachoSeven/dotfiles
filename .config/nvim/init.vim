@@ -1,18 +1,16 @@
 " Basic Settings
 	set shell=/usr/bin/zsh
-	set number
-	set relativenumber
+	set number relativenumber
 	set wildmenu
 	set wildmode=longest,list,full
 	set autoindent
 	set cursorline
 	set incsearch
 	set hidden
-	set conceallevel=1
 	set termguicolors
 	set splitbelow splitright
-	set spelllang=en_us
 	setlocal spell
+	set spelllang=en_us
 	set splitbelow splitright
 
 " Some mappings and shortcuts
@@ -103,7 +101,11 @@ Plug 'lervag/vimtex'
 	let g:vimtex_quickfix_latexlog = {'fix_paths':0}
 	let g:vimtex_quickfix_mode=0
 	let g:vimtex_compiler_progname = 'nvr'
-	let g:tex_conceal='abdmg'
+Plug 'KeitaNakamura/tex-conceal.vim'
+	set conceallevel=2
+	let g:tex_conceal='abdgm'
+	hi Conceal ctermbg=none
+
 
 "Plug 'benwoodward/vimify', { 'branch': 'playlists' }
 	"let g:spotify_token='M2RhYWQ3Y2RjZTRmNDM0Yzg5MDlkOGNlNzBhMWEzMTk6YjBhMmM0NzU1ZGUwNDEzNGI5YzI4NjUxZjNlZWM2MTg='
@@ -140,6 +142,7 @@ Plug 'scrooloose/nerdcommenter'
 	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } } "fix lfrc comments
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 
 " Appearance
 Plug 'chrisbra/Colorizer'
@@ -214,12 +217,20 @@ call plug#end()
 	autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " fzf integration for vimtex
-	nnoremap <localleader>lt :call vimtex#fzf#run()<cr>
+	nnoremap <localleader>lt :call vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
 
 " vimtex deoplete
 	call deoplete#custom#var('omni', 'input_patterns', {
 		\ 'tex': g:vimtex#re#deoplete
 		\})
+
+" Goyo mapping and configuration
+	map <leader>g :Goyo \| set bg=light \| set linebreak<CR>
+" Enable Goyo by default for mutt writting
+	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set linebreak | set bg=light
+	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
+	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
 " ColorSchemes
 	" let g:airline_theme='base16_solarized'

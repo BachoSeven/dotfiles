@@ -3,7 +3,7 @@
 # This script sets the background, using pywal to set a terminal colorscheme,or otherwise
 # using Xresources.
 
-#	Usage: 
+#	Usage:
 #		`setbg [ -s, --no-scheme ] [ -i, --input="path/to/img" ]`
 
 TEMP=$(getopt -o 'si:' --long 'no-scheme,input:' -- "$@" )
@@ -21,11 +21,12 @@ while true; do
 			continue
 		;;
 		'-i'|'--input')
-			cp "$2" ~/.config/wall.png && notify-send -i "$HOME/.config/wall.png" "Wallpaper changed." && if [ $scheme = true ]; then
-																wal -i ~/.config/wall.png && wal -c
-															else
-																gsettings set org.gnome.desktop.background picture-uri file://$XDG_CONFIG_HOME/wall.png && xrdb -load $XDG_CONFIG_HOME/Xresources
-															fi
+			cp "$2" ~/.config/wall.png && notify-send -i "$HOME/.config/wall.png" "Wallpaper changed."
+			if [ $scheme = true ]; then
+				wal -i ~/.config/wall.png && wal -c
+			else
+				gsettings set org.gnome.desktop.background picture-uri file://$XDG_CONFIG_HOME/wall.png && xrdb -load $XDG_CONFIG_HOME/Xresources
+			fi
 			shift 2
 			continue
 		;;
