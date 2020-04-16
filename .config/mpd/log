@@ -35772,3 +35772,29 @@ Apr 16 12:54 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best o
 Apr 16 12:54 : client: [6] opened from 127.0.0.1:44762
 Apr 16 12:54 : client: [6] closed
 Apr 16 12:55 : client: [2] closed
+Apr 16 12:59 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 12:59 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 12:59 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/04 Take Me to the River.m4a"
+Apr 16 13:04 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 13:04 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 13:04 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/05 Found a Job.m4a"
+Apr 16 13:08 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 13:08 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 13:08 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/06 Life During Wartime.m4a"
+Apr 16 13:12 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 13:12 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 13:12 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/07 Heaven.m4a"
+Apr 16 13:16 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 13:16 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 13:16 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/08 Memories Can't Wait.m4a"
+Apr 16 13:20 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 13:20 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 13:20 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/09 Once In a Lifetime.m4a"
+Apr 16 13:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 13:24 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 13:25 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/10 Houses In Motion.m4a"
+Apr 16 13:29 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 16 13:29 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 16 13:29 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/11 This Must Be the Place (Naive Mel.m4a"
+Apr 16 13:31 : client: [7] opened from 127.0.0.1:45036
+Apr 16 13:31 : client: [7] closed
