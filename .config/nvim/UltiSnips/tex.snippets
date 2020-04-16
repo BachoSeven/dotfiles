@@ -1,5 +1,5 @@
 global !p
-texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z']]
+texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC', 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES', 'AmsFS', 'AmsGS' ]]
 
 texIgnoreMathZones = ['texMathText']
 
@@ -155,7 +155,7 @@ stripped = match.string[:-1]
 depth = 0
 i = len(stripped) - 1
 while True:
-	if stripped[i] == ')': depth += 1
+	if strippe[i] == ')': depth += 1
 	if stripped[i] == '(': depth -= 1
 	if depth == 0: break;
 	i-=1
@@ -210,7 +210,7 @@ snippet == "equals" iA
 endsnippet
 
 snippet != "equals" iA
-\neq 
+\neq
 endsnippet
 
 context "math()"
@@ -278,11 +278,11 @@ snippet taylor "taylor" w
 endsnippet
 
 snippet lim "limit" w
-\lim_{${1:n} \to ${2:\infty}} 
+\lim_{${1:n} \to ${2:\infty}}
 endsnippet
 
 snippet limsup "limsup" w
-\limsup_{${1:n} \to ${2:\infty}} 
+\limsup_{${1:n} \to ${2:\infty}}
 endsnippet
 
 snippet prod "product" w
@@ -331,21 +331,21 @@ snippet rij "mrij" i
 endsnippet
 
 snippet <= "leq" iA
-\le 
+\le
 endsnippet
 
 snippet >= "geq" iA
-\ge 
+\ge
 endsnippet
 
 context "math()"
 snippet EE "geq" iA
-\exists 
+\exists
 endsnippet
 
 context "math()"
 snippet AA "forall" iA
-\forall 
+\forall
 endsnippet
 
 context "math()"
@@ -426,17 +426,17 @@ endsnippet
 
 context "math()"
 snippet nabl "nabla" iA
-\nabla 
+\nabla
 endsnippet
 
 context "math()"
 snippet xx "cross" iA
-\times 
+\times
 endsnippet
 
 priority 100
 snippet ** "cdot" iA
-\cdot 
+\cdot
 endsnippet
 
 context "math()"
@@ -466,7 +466,7 @@ endsnippet
 priority 100
 context "math()"
 snippet -> "to" iA
-\to 
+\to
 endsnippet
 
 priority 200
@@ -477,7 +477,7 @@ endsnippet
 
 context "math()"
 snippet !> "mapsto" iA
-\mapsto 
+\mapsto
 endsnippet
 
 context "math()"
@@ -505,7 +505,7 @@ endsnippet
 
 
 snippet ~~ "~" iA
-\sim 
+\sim
 endsnippet
 
 context "math()"
@@ -514,22 +514,22 @@ snippet set "set" wA
 endsnippet
 
 snippet || "mid" iA
- \mid 
+ \mid
 endsnippet
 
 
 context "math()"
 snippet cc "subset" Ai
-\subset 
+\subset
 endsnippet
 
 snippet notin "not in " iA
-\not\in 
+\not\in
 endsnippet
 
 context "math()"
 snippet inn "in " iA
-\in 
+\in
 endsnippet
 
 snippet NN "n" iA
@@ -537,11 +537,11 @@ snippet NN "n" iA
 endsnippet
 
 snippet Nn "cap" iA
-\cap 
+\cap
 endsnippet
 
 snippet UU "cup" iA
-\cup 
+\cup
 endsnippet
 
 snippet uuu "bigcup" iA
@@ -569,11 +569,11 @@ snippet ZZ "Z" iA
 endsnippet
 
 snippet <! "normal" iA
-\triangleleft 
+\triangleleft
 endsnippet
 
 snippet <> "hokje" iA
-\diamond 
+\diamond
 endsnippet
 
 

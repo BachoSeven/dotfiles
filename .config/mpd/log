@@ -35798,3 +35798,7 @@ Apr 16 13:29 : ffmpeg/aac: Could not update timestamps for skipped samples.
 Apr 16 13:29 : player: played "moosica/Talking Heads (WEB AAC)/2004 - The Best of Talking Heads (Remastered)/11 This Must Be the Place (Naive Mel.m4a"
 Apr 16 13:31 : client: [7] opened from 127.0.0.1:45036
 Apr 16 13:31 : client: [7] closed
+Apr 16 19:35 : client: [8] opened from 127.0.0.1:50892
+Apr 16 19:35 : client: [9] opened from 127.0.0.1:50894
+Apr 16 19:35 : client: [9] closed
+Apr 16 19:35 : client: [8] closed
