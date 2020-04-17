@@ -1,7 +1,7 @@
 !! my Xresources, mainly for solarized in st
 
 !! Transparency (0-1):
-st.alpha: 0.90
+st.alpha: 0.80
 
 !! Solarized
 *background:            #002b36
