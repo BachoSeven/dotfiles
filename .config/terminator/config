@@ -13,6 +13,8 @@
   page_down_half = <Alt>d
   page_up_half = <Alt>u
   previous_profile = <Shift><Alt>p
+  zoom_in = <Shift><Alt>k
+  zoom_out = <Shift><Alt>j
 [layouts]
   [[default]]
     [[[child1]]]
