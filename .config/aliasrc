@@ -65,6 +65,7 @@ alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_
 alias flp='flashplayer'
 alias sqm='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
+alias tldrl="tldr --list | fzf --preview 'tldr {}' |xargs tldr"
 
 alias chill="mpv https://tinyurl.com/wbl4fya"
 alias gotop='gotop --color=solarized -asbp'
