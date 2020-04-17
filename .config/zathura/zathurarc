@@ -1,23 +1,16 @@
 # zathurarc
 
-# colors
-set statusbar-bg "#00FF00"
-set statusbar-fg red
-
-#selection to clipboard
 set selection-clipboard clipboard
-
 set page-padding 1
+
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
 
-# settings
 set window-height 1024
 set window-width 768
-set adjust-open width
-
-# use sqlite as bookmarks database backend
+set render-loading "false"
+set adjust-open "best-fit"
 set database sqlite
 
 # key bindings
@@ -32,4 +25,47 @@ map p print
 map K zoom in
 map J zoom out
 
-map <C-q> quit
+# One page per row by default
+
+#stop at page boundries
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 50
+set incremental-search true
+set guioptions "s"
+
+# zathurarc-dark
+
+set font "inconsolata 15"
+set default-bg "#1a1729"
+set default-fg "#ebdbb2"
+
+set statusbar-fg "#93a1a1"
+set statusbar-bg "#1d2021"
+
+set inputbar-bg "#151515"
+set inputbar-fg "#FFFFFF"
+
+set notification-error-bg "#dc322f"
+set notification-error-fg "#151515"
+
+set notification-warning-bg "#dc322f"
+set notification-warning-fg "#151515"
+
+set highlight-color "#F4BF75"
+set highlight-active-color "#6A9FB5"
+
+set completion-highlight-fg "#151515"
+set completion-highlight-bg "#90A959"
+
+set completion-bg "#303030"
+set completion-fg "#E0E0E0"
+
+set notification-bg "#90A959"
+set notification-fg "#151515"
+
+set recolor "true"
+set recolor-lightcolor "#1a1729"
+set recolor-darkcolor "#fdf6e3"
+set recolor-reverse-video "true"
+set recolor-keephue "false"
