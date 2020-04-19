@@ -25,6 +25,10 @@ alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
 alias cfc='config commit -a -m'
 alias cfp='config push'
 
+# Backup
+alias rsdry='rsync -r -n -t -v --delete -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /media/francesco/myData/hyperversum'
+alias rsbkp='rsync -r -t -v --delete -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /media/francesco/myData/hyperversum'
+
 # find processes
 alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
 
