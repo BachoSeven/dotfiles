@@ -35853,3 +35853,204 @@ Apr 17 22:23 : config: option 'device' on line 17 was not recognized
 Apr 17 22:23 : config: option 'buffer_time' on line 19 was not recognized
 Apr 17 22:23 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
 Apr 17 22:23 : avahi: Service 'Music Player' successfully established.
+Apr 18 11:22 : client: [0] opened from 127.0.0.1:34834
+Apr 18 11:22 : client: [0] closed
+Apr 18 11:22 : client: [1] opened from 127.0.0.1:34836
+Apr 18 11:23 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 18 11:23 : client: [2] opened from 127.0.0.1:34838
+Apr 18 11:23 : client: [2] closed
+Apr 18 11:23 : client: [1] closed
+Apr 18 11:26 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/01. Sense.mp3"
+Apr 18 11:28 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/02. Bone.mp3"
+Apr 18 11:31 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/03. Dirt.mp3"
+Apr 18 11:34 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/04. Paper Mache Dream Balloon.mp3"
+Apr 18 11:37 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/05. Trapdoor.mp3"
+Apr 18 11:39 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/06. Cold Cadaver.mp3"
+Apr 18 11:44 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/07. The Bitter Boogie.mp3"
+Apr 18 11:46 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/08. N.G.R.I. (Bloodstain).mp3"
+Apr 18 11:49 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/09. Time = Fate.mp3"
+Apr 18 11:51 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/10. Time = $$$.mp3"
+Apr 18 11:54 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/11. Most Of What I Like.mp3"
+Apr 18 11:56 : client: [3] opened from 127.0.0.1:35644
+Apr 18 11:56 : client: [4] opened from 127.0.0.1:35646
+Apr 18 11:56 : client: [4] closed
+Apr 18 11:56 : client: [3] closed
+Apr 18 11:57 : player: played "moosica/King Gizzard And The Lizard Wizard/Albums/2015 - Paper Mache Dream Balloon/12. Paper Mache.mp3"
+Apr 18 11:57 : client: [5] opened from 127.0.0.1:35682
+Apr 18 11:57 : client: [6] opened from 127.0.0.1:35684
+Apr 18 11:57 : client: [6] closed
+Apr 18 11:58 : client: [5] closed
+Apr 18 11:58 : client: [7] opened from 127.0.0.1:35690
+Apr 18 11:58 : client: [8] opened from 127.0.0.1:35692
+Apr 18 11:58 : client: [8] closed
+Apr 18 11:58 : client: [7] closed
+Apr 18 12:01 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/01 - Digestion Machine.mp3"
+Apr 18 12:06 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/02 - Calypso.mp3"
+Apr 18 12:08 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/03 - My Dreamgirl Don't Exist.mp3"
+Apr 18 12:10 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/04 - Calypso2.mp3"
+Apr 18 12:13 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/05 - Chocolate Coffin.mp3"
+Apr 18 12:15 : client: [9] opened from 127.0.0.1:36020
+Apr 18 12:15 : client: [9] closed
+Apr 18 12:56 : client: [10] opened from 127.0.0.1:36494
+Apr 18 12:56 : client: [10] closed
+Apr 18 12:56 : client: [11] opened from 127.0.0.1:36496
+Apr 18 12:56 : client: [11] closed
+Apr 18 12:56 : client: [12] opened from 127.0.0.1:36498
+Apr 18 12:56 : client: [12] closed
+Apr 18 12:56 : client: [13] opened from 127.0.0.1:36500
+Apr 18 12:56 : client: [14] opened from 127.0.0.1:36502
+Apr 18 12:56 : client: [14] closed
+Apr 18 12:56 : client: [15] opened from 127.0.0.1:36504
+Apr 18 12:56 : client: [15] closed
+Apr 18 12:56 : client: [13] closed
+Apr 18 12:57 : client: [16] opened from 127.0.0.1:36560
+Apr 18 12:57 : client: [16] closed
+Apr 18 12:57 : client: [17] opened from 127.0.0.1:36610
+Apr 18 12:57 : client: [17] closed
+Apr 18 12:57 : client: [18] opened from 127.0.0.1:36612
+Apr 18 12:57 : client: [18] closed
+Apr 18 12:57 : client: [19] opened from 127.0.0.1:36614
+Apr 18 12:57 : client: [19] closed
+Apr 18 12:58 : client: [20] opened from 127.0.0.1:36620
+Apr 18 12:58 : client: [20] closed
+Apr 18 12:58 : client: [21] opened from 127.0.0.1:36622
+Apr 18 12:58 : client: [21] closed
+Apr 18 12:58 : client: [22] opened from 127.0.0.1:36624
+Apr 18 12:58 : client: [22] closed
+Apr 18 12:58 : client: [23] opened from 127.0.0.1:36626
+Apr 18 12:58 : client: [24] opened from 127.0.0.1:36628
+Apr 18 12:58 : client: [24] closed
+Apr 18 12:58 : client: [25] opened from 127.0.0.1:36630
+Apr 18 12:58 : client: [25] closed
+Apr 18 12:58 : client: [26] opened from 127.0.0.1:36652
+Apr 18 12:58 : client: [26] closed
+Apr 18 12:58 : client: [27] opened from 127.0.0.1:36654
+Apr 18 12:58 : client: [27] closed
+Apr 18 12:58 : client: [28] opened from 127.0.0.1:36656
+Apr 18 12:58 : client: [28] closed
+Apr 18 12:58 : client: [23] closed
+Apr 18 13:16 : exception: "MPD" [pulse] failed to pause: failed to connect the stream: Connection terminated
+Apr 18 13:19 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/11 - More Random Noise.mp3"
+Apr 18 13:20 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 18 13:20 : config: option 'device' on line 17 was not recognized
+Apr 18 13:20 : config: option 'buffer_time' on line 19 was not recognized
+Apr 18 13:20 : avahi: Service 'Music Player' successfully established.
+Apr 18 14:00 : client: [0] opened from 127.0.0.1:41482
+Apr 18 14:00 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 18 14:00 : client: [0] closed
+Apr 18 14:00 : client: [1] opened from 127.0.0.1:41484
+Apr 18 14:00 : client: [1] closed
+Apr 18 18:41 : client: [2] opened from 127.0.0.1:41684
+Apr 18 18:41 : client: [3] opened from 127.0.0.1:41686
+Apr 18 18:41 : client: [3] closed
+Apr 18 18:41 : client: [2] closed
+Apr 18 18:41 : client: [4] opened from 127.0.0.1:41688
+Apr 18 18:41 : client: [5] opened from 127.0.0.1:41690
+Apr 18 18:41 : client: [5] closed
+Apr 18 18:42 : client: [4] closed
+Apr 18 18:43 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/11 - More Random Noise.mp3"
+Apr 18 18:44 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/12 - Synthetic Flying Machine.mp3"
+Apr 18 18:44 : client: [6] opened from 127.0.0.1:41826
+Apr 18 18:44 : client: [7] opened from 127.0.0.1:41828
+Apr 18 18:44 : client: [7] closed
+Apr 18 18:44 : client: [6] closed
+Apr 18 18:46 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/13 - Charlotte.mp3"
+Apr 18 18:48 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/14 - Love You On Tuesday.mp3"
+Apr 18 18:52 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/15 - Spooky Sounds.mp3"
+Apr 18 18:54 : player: played "moosica/Neutral Milk Hotel/releases/1991 - Invent Yourself A Shortcake/16 - Preacherman.mp3"
+Apr 18 18:54 : client: [8] opened from 127.0.0.1:42166
+Apr 18 18:54 : client: [9] opened from 127.0.0.1:42168
+Apr 18 18:54 : client: [9] closed
+Apr 18 18:54 : client: [8] closed
+Apr 18 18:58 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/01 - Engine.mp3"
+Apr 18 19:01 : client: [10] opened from 127.0.0.1:42366
+Apr 18 19:01 : client: [11] opened from 127.0.0.1:42368
+Apr 18 19:01 : client: [11] closed
+Apr 18 19:02 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/02 - Circle Of Friends.mp3"
+Apr 18 19:02 : client: [12] opened from 127.0.0.1:42370
+Apr 18 19:02 : client: [12] closed
+Apr 18 19:02 : client: [10] closed
+Apr 18 19:08 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/03 - Wishful Eyes.mp3"
+Apr 18 19:13 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/04 - Gardenhead Leave Me Alone.mp3"
+Apr 18 19:18 : client: [13] opened from 127.0.0.1:42572
+Apr 18 19:18 : client: [13] closed
+Apr 18 19:19 : client: [14] opened from 127.0.0.1:42584
+Apr 18 19:19 : client: [15] opened from 127.0.0.1:42586
+Apr 18 19:19 : client: [15] closed
+Apr 18 19:19 : client: [16] opened from 127.0.0.1:42588
+Apr 18 19:19 : client: [16] closed
+Apr 18 19:19 : client: [14] closed
+Apr 18 19:19 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/05 - Sailing Through.mp3"
+Apr 18 19:22 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/06 - Bucket.mp3"
+Apr 18 19:26 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/07 - Noisy Racket.mp3"
+Apr 18 19:33 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/08 - Conversation With Robert.mp3"
+Apr 18 19:35 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/09 - Someone Is Waiting.mp3"
+Apr 18 19:36 : client: [17] opened from 127.0.0.1:42990
+Apr 18 19:36 : client: [18] opened from 127.0.0.1:42992
+Apr 18 19:36 : client: [18] closed
+Apr 18 19:36 : client: [17] closed
+Apr 18 19:36 : client: [19] opened from 127.0.0.1:42994
+Apr 18 19:36 : client: [20] opened from 127.0.0.1:42996
+Apr 18 19:36 : client: [20] closed
+Apr 18 19:36 : client: [19] closed
+Apr 18 19:41 : player: played "moosica/Neutral Milk Hotel/releases/1992 - Beauty/10 - Hypnotic Sounds.mp3"
+Apr 18 19:43 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/01 - Synthetic Flying Machine.mp3"
+Apr 18 19:46 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/02 - Wood Guitar .mp3"
+Apr 18 19:50 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/03 - Tuesday Moon.mp3"
+Apr 18 19:52 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/04 - Swallowed .mp3"
+Apr 18 19:52 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/05 - Tea Time .mp3"
+Apr 18 19:54 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/06 - Rubby Bulbs .mp3"
+Apr 18 19:57 : client: [21] opened from 127.0.0.1:43198
+Apr 18 19:57 : client: [21] closed
+Apr 18 19:59 : client: [22] opened from 127.0.0.1:43228
+Apr 18 19:59 : client: [22] closed
+Apr 18 20:00 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/07 - Gardenhead, Leave Me Alone .mp3"
+Apr 18 20:03 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/08 - Biscuit .mp3"
+Apr 18 20:04 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/09 - Los Angeles.mp3"
+Apr 18 20:08 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/10 - Piggy.mp3"
+Apr 18 20:09 : client: [23] opened from 127.0.0.1:43262
+Apr 18 20:09 : client: [24] opened from 127.0.0.1:43264
+Apr 18 20:09 : client: [24] closed
+Apr 18 20:09 : client: [23] closed
+Apr 18 20:12 : player: played "moosica/Neutral Milk Hotel/releases/1993 - Hype City/11 - Engine.mp3"
+Apr 18 20:12 : client: [25] opened from 127.0.0.1:43282
+Apr 18 20:12 : client: [26] opened from 127.0.0.1:43284
+Apr 18 20:12 : client: [26] closed
+Apr 18 20:12 : client: [25] closed
+Apr 18 20:16 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/01 - Song Against Sex.mp3"
+Apr 18 20:19 : client: [27] opened from 127.0.0.1:43602
+Apr 18 20:19 : client: [27] closed
+Apr 19 15:49 : client: [28] opened from 127.0.0.1:44948
+Apr 19 15:49 : client: [28] closed
+Apr 19 15:49 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/02 - You've Passed.mp3"
+Apr 19 15:51 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/03 - Someone Is Waiting.mp3"
+Apr 19 15:53 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/04 - A Baby for Pree.mp3"
+Apr 19 15:56 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/05 - Marching Theme.mp3"
+Apr 19 16:00 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/06 - Where You'll Find Me Now.mp3"
+Apr 19 16:02 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/07 - Avery Island_April 1st.mp3"
+Apr 19 16:05 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/08 - Gardenhead_Leave Me Alone.mp3"
+Apr 19 16:09 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/09 - Three Peaches.mp3"
+Apr 19 16:14 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/10 - Naomi.mp3"
+Apr 19 16:17 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/11 - April 8th.mp3"
+Apr 19 16:30 : player: played "moosica/Neutral Milk Hotel/releases/1996 - On Avery Island/12 - Pree-Sisters Swallowing a Donkey's Eye.mp3"
+Apr 19 16:34 : player: played "moosica/Neutral Milk Hotel/releases/1998 - Holland, 1945/01 holland.mp3"
+Apr 19 16:37 : player: played "moosica/Neutral Milk Hotel/releases/1998 - Holland, 1945/02 engine.mp3"
+Apr 19 16:39 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/01 - King of Carrot Flowers Part 1.mp3"
+Apr 19 16:40 : client: [29] opened from 127.0.0.1:45514
+Apr 19 16:40 : client: [30] opened from 127.0.0.1:45516
+Apr 19 16:40 : client: [30] closed
+Apr 19 16:40 : client: [29] closed
+Apr 19 16:42 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/02 - King of Carrot Flowers Part 2 & 3.mp3"
+Apr 19 16:46 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/03 - In the Aeroplane Over the Sea.mp3"
+Apr 19 16:50 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/04 - Two-Headed Boy.mp3"
+Apr 19 16:52 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/05 - The Fool.mp3"
+Apr 19 16:55 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/06 - Holland, 1945.mp3"
+Apr 19 16:57 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/07 - Communist Daughter.mp3"
+Apr 19 17:05 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/08 - Oh Comely.mp3"
+Apr 19 17:09 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/09 - Ghost.mp3"
+Apr 19 17:12 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/10 - Untitled.mp3"
+Apr 19 17:17 : player: played "moosica/Neutral Milk Hotel/releases/1998 - In the Aeroplane Over the Sea/11 - Two-Headed Boy Part 2.mp3"
+Apr 19 17:21 : player: played "moosica/Neutral Milk Hotel/releases/2001 - Everything Is (Orange Twin release)/01 - Everything Is.mp3"
+Apr 19 17:25 : player: played "moosica/Neutral Milk Hotel/releases/2001 - Everything Is (Orange Twin release)/02 - Snow Song, Pt.1.mp3"
+Apr 19 17:30 : player: played "moosica/Neutral Milk Hotel/releases/2001 - Everything Is (Orange Twin release)/03 - Aunt Eggma Blowtorch.mp3"
+Apr 19 17:32 : player: played "moosica/Neutral Milk Hotel/releases/2001 - Everything Is (Orange Twin release)/04 - Tuesday Moon.mp3"

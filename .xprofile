@@ -1,2 +1,2 @@
 mpd & 			#mpd:)
-#xrdb -load $XDG_CONFIG_HOME/Xresources &
+xrdb -load $XDG_CONFIG_HOME/Xresources &

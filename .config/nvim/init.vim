@@ -9,12 +9,14 @@
 	set hidden
 	set termguicolors
 	set splitbelow splitright
-	setlocal spell
-	set spelllang=en_us
+	set nospell
 	set splitbelow splitright
 
 " Some mappings and shortcuts
 
+	inoremap <c-L> <c-g>u<Esc>[s1z=`]a<c-g>u
+	inoremap <c-K> <c-g>u<esc>u[s2z=gi<c-g>u
+	inoremap <c-J> <c-g>u<esc>u[s3z=gi<c-g>u
 	map <C-h> <C-w>h
 	map <C-l> <C-w>l
 	map <leader>h <C-w>h:q<cr>
@@ -87,7 +89,7 @@ nnoremap <leader>rr :call CleanReg()<CR>
 " File opener with gx
 let g:netrw_browsex_viewer= "$OPENER"
 
-"Plugins
+" Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -103,7 +105,7 @@ Plug 'lervag/vimtex'
 	let g:vimtex_compiler_progname = 'nvr'
 Plug 'KeitaNakamura/tex-conceal.vim'
 	set conceallevel=2
-	let g:tex_conceal='abdgm'
+	let g:tex_conceal='abdmg'
 	hi Conceal ctermbg=none
 
 
@@ -143,6 +145,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
+
+" Spelling
+Plug 'kamykn/spelunker.vim'
+let g:spelunker_check_type = 2
 
 " Appearance
 Plug 'chrisbra/Colorizer'
@@ -235,9 +241,9 @@ call plug#end()
 " ColorSchemes
 	let g:airline_theme='base16_solarized'
 	colorscheme NeoSolarized
-	" colorscheme gruvbox
+	" colorscheme grub ox
 	set background=dark
-	hi Normal ctermbg=NONE guibg=NONE
-	hi NonText ctermbg=NONE guibg=NONE
-	hi EndOfBuffer ctermbg=NONE guibg=NONE
-	hi LineNr ctermbg=NONE guibg=NONE
+	" hi Normal ctermbg=NONE guibg=NONE
+	" hi NonText ctermbg=NONE guibg=NONE
+	" hi EndOfBuffer ctermbg=NONE guibg=NONE
+	" hi LineNr ctermbg=NONE guibg=NONE
