@@ -3,9 +3,9 @@
 # b - browse Chrome bookmarks with fzf
 
 /usr/bin/ruby -x "$0"                                          |
-  fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin |
+  fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin --preview 'echo {}|awk "{ print $2 }"|xargs w3m -dump' |
   awk 'BEGIN { FS = "\t" } { print $2 }'                       |
-  xargs xdg-open
+  xargs -n 1 xdg-open > /dev/null 2>&1
 
 exit $?
 
@@ -51,4 +51,3 @@ items.each do |item|
   puts [just(name, width),
         item[:url]].join("\t\x1b[36m") + "\x1b[m"
 end
-

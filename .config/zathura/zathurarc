@@ -32,11 +32,11 @@ set scroll-page-aware "true"
 set scroll-full-overlap 0.01
 set scroll-step 50
 set incremental-search true
-set guioptions "s"
+set guioptions ""
 
 # zathurarc-dark
 
-set font "inconsolata 15"
+set font "mono 14"
 set default-bg "#1a1729"
 set default-fg "#ebdbb2"
 
