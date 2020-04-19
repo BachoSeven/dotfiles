@@ -154,5 +154,6 @@ ex=🎯:\
 *.ged=👪:\
 *.part=💔:\
 *.torrent=🔽:\
+*.nix=::\
 "
 [[ -f ~/.config/zsh/.p10k.zsh ]] && source ~/.config/zsh/.p10k.zsh
