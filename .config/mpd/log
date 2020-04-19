@@ -36066,3 +36066,31 @@ Apr 19 19:57 : client: [0] opened from 127.0.0.1:39486
 Apr 19 19:57 : client: [0] closed
 Apr 19 19:57 : client: [1] opened from 127.0.0.1:39488
 Apr 19 19:57 : client: [1] closed
+Apr 19 22:13 : client: [2] opened from 127.0.0.1:41312
+Apr 19 22:14 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 19 22:14 : client: [3] opened from 127.0.0.1:41318
+Apr 19 22:14 : client: [3] closed
+Apr 19 22:18 : player: played "music_stuff_dir/ProgPlaylist/Hungry_freaks,_Daddy.mp3"
+Apr 19 22:18 : client: [4] opened from 127.0.0.1:41430
+Apr 19 22:18 : client: [4] closed
+Apr 19 22:18 : client: [5] opened from 127.0.0.1:41432
+Apr 19 22:18 : client: [6] opened from 127.0.0.1:41434
+Apr 19 22:18 : client: [6] closed
+Apr 19 22:18 : client: [7] opened from 127.0.0.1:41436
+Apr 19 22:18 : client: [7] closed
+Apr 19 22:18 : client: [8] opened from 127.0.0.1:41438
+Apr 19 22:18 : client: [8] closed
+Apr 19 22:18 : client: [5] closed
+Apr 19 22:19 : client: [2] closed
+Apr 19 22:20 : player: played "pc_acer_music/Freak_out!/02_Traccia_2.mp3"
+Apr 19 22:24 : player: played "pc_acer_music/Freak_out!/03_Traccia_3.mp3"
+Apr 19 22:28 : player: played "pc_acer_music/Freak_out!/04_Traccia_4.mp3"
+Apr 19 22:30 : player: played "pc_acer_music/Freak_out!/05_Traccia_5.mp3"
+Apr 19 22:33 : player: played "pc_acer_music/Freak_out!/06_Traccia_6.mp3"
+Apr 19 22:35 : player: played "pc_acer_music/Freak_out!/07_Traccia_7.mp3"
+Apr 19 22:39 : player: played "pc_acer_music/Freak_out!/08_Traccia_8.mp3"
+Apr 19 22:42 : player: played "pc_acer_music/Freak_out!/09_Traccia_9.mp3"
+Apr 19 22:44 : player: played "pc_acer_music/Freak_out!/10_Traccia_10.mp3"
+Apr 19 22:48 : player: played "pc_acer_music/Freak_out!/11_Traccia_11.mp3"
+Apr 19 22:54 : player: played "pc_acer_music/Freak_out!/12_Traccia_12.mp3"
+Apr 19 22:59 : player: played "pc_acer_music/Freak_out!/13_Traccia_13.mp3"
