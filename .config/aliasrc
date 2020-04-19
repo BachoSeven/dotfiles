@@ -22,6 +22,11 @@ alias path='echo $PATH | tr : "\n"'
 
 #git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
+alias cfc='config commit -a -m'
+alias cfp='config push'
+
+# find processes
+alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
 
 alias cx='chmod +x'
 alias xclip="xclip -sel clip"
