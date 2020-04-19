@@ -36054,3 +36054,11 @@ Apr 19 17:21 : player: played "moosica/Neutral Milk Hotel/releases/2001 - Everyt
 Apr 19 17:25 : player: played "moosica/Neutral Milk Hotel/releases/2001 - Everything Is (Orange Twin release)/02 - Snow Song, Pt.1.mp3"
 Apr 19 17:30 : player: played "moosica/Neutral Milk Hotel/releases/2001 - Everything Is (Orange Twin release)/03 - Aunt Eggma Blowtorch.mp3"
 Apr 19 17:32 : player: played "moosica/Neutral Milk Hotel/releases/2001 - Everything Is (Orange Twin release)/04 - Tuesday Moon.mp3"
+Apr 19 17:51 : client: [31] opened from 127.0.0.1:46312
+Apr 19 17:51 : client: [31] closed
+Apr 19 17:51 : client: [32] opened from 127.0.0.1:46314
+Apr 19 17:51 : client: [32] closed
+Apr 19 18:04 : config: option 'device' on line 17 was not recognized
+Apr 19 18:04 : config: option 'buffer_time' on line 19 was not recognized
+Apr 19 18:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 19 18:04 : avahi: Service 'Music Player' successfully established.
