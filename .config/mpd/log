@@ -36062,3 +36062,7 @@ Apr 19 18:04 : config: option 'device' on line 17 was not recognized
 Apr 19 18:04 : config: option 'buffer_time' on line 19 was not recognized
 Apr 19 18:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
 Apr 19 18:04 : avahi: Service 'Music Player' successfully established.
+Apr 19 19:57 : client: [0] opened from 127.0.0.1:39486
+Apr 19 19:57 : client: [0] closed
+Apr 19 19:57 : client: [1] opened from 127.0.0.1:39488
+Apr 19 19:57 : client: [1] closed

@@ -7,6 +7,7 @@
   inactive_color_offset = 0.623529411765
   title_hide_sizetext = True
 [keybindings]
+  help = <Shift>F1
   line_down = <Alt>j
   line_up = <Alt>k
   next_profile = <Alt>p
