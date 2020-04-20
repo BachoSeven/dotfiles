@@ -36193,3 +36193,15 @@ Note: Trying to resync...
 Note: Hit end of (available) data during resync.
 Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
 Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Apr 20 18:00 : config: option 'device' on line 17 was not recognized
+Apr 20 18:00 : config: option 'buffer_time' on line 19 was not recognized
+Apr 20 18:00 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 20 18:00 : avahi: Service 'Music Player' successfully established.
+Apr 21 00:02 : client: [0] opened from 127.0.0.1:48698
+Apr 21 00:02 : client: [0] closed
+Apr 21 00:02 : client: [1] opened from 127.0.0.1:48700
+Apr 21 00:02 : client: [1] closed
+Apr 21 00:21 : config: option 'device' on line 17 was not recognized
+Apr 21 00:21 : config: option 'buffer_time' on line 19 was not recognized
+Apr 21 00:21 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 21 00:21 : avahi: Service 'Music Player' successfully established.
