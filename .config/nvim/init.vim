@@ -127,7 +127,7 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 " Utilities
 Plug 'ptzz/lf.vim'
 Plug 'rbgrouleff/bclose.vim'
-	let g:lf_command_override = 'lf -command "set hidden"'
+
 Plug 'sirver/ultisnips'
 	let g:UltiSnipsExpandTrigger = '<tab>'
 	let g:UltiSnipsJumpForwardTrigger = '<tab>'
@@ -142,13 +142,9 @@ Plug 'scrooloose/nerdcommenter'
 	let g:NERDSpaceDelims = 1
 	let g:NERDCompactSexyComs = 1
 	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } } "fix lfrc comments
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-
-" Spelling
-Plug 'kamykn/spelunker.vim'
-let g:spelunker_check_type = 2
 
 " Appearance
 Plug 'chrisbra/Colorizer'
@@ -168,6 +164,10 @@ Plug 'cespare/vim-toml'
 call plug#end()
 
 "Post-Plugin
+
+" lf
+	let g:lf_command_override = 'lf -command "set hidden"'
+	let g:lf_replace_netrw = 1 " open lf when vim open a directory
 
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
@@ -232,6 +232,7 @@ call plug#end()
 
 " Goyo mapping and configuration
 	map <leader>g :Goyo \| set bg=light \| set linebreak<CR>
+	map <leader>G :Goyo \| set bg=dark  \| set nolinebreak<CR>
 " Enable Goyo by default for mutt writting
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set linebreak | set bg=light
@@ -241,7 +242,7 @@ call plug#end()
 " ColorSchemes
 	let g:airline_theme='base16_solarized'
 	colorscheme NeoSolarized
-	" colorscheme grub ox
+	" colorscheme gruvbox
 	set background=dark
 	" hi Normal ctermbg=NONE guibg=NONE
 	" hi NonText ctermbg=NONE guibg=NONE
