@@ -195,7 +195,7 @@ cmd Link %{{
 cmd video_preview ${{
     CACHE=$(mktemp /tmp/thumb_cache.XXXXX)
     ffmpegthumbnailer -i "$f" -o $CACHE -s 0
-    /path/to/draw_img.sh $CACHE && rm $CACHE
+    ~/.local/bin/draw_img $CACHE && rm $CACHE
 }}
 map + :video_preview
 

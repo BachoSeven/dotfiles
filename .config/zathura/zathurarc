@@ -1,6 +1,7 @@
 # zathurarc
 
 set selection-clipboard clipboard
+set window-title-home-tilde true
 set page-padding 1
 
 map u scroll half-up
@@ -36,7 +37,7 @@ set guioptions ""
 
 # zathurarc-dark
 
-set font "mono 14"
+set font "mono 13"
 set default-bg "#1a1729"
 set default-fg "#ebdbb2"
 
@@ -69,3 +70,34 @@ set recolor-lightcolor "#1a1729"
 set recolor-darkcolor "#fdf6e3"
 set recolor-reverse-video "true"
 set recolor-keephue "false"
+
+
+
+# temptative solarized colours
+set completion-bg "#002b36"
+set completion-fg "#657b83"
+set completion-group-bg "#002b36"
+set completion-group-fg "#859900"
+set completion-highlight-bg "#657b83"
+set completion-highlight-fg "#002b36"
+
+set recolor-lightcolor "#002b36"
+set recolor-darkcolor "#fdf6e3"
+set default-bg "#002b36"
+
+set inputbar-bg "#002b36"
+set inputbar-fg "#657b83"
+set notification-bg "#002b36"
+set notification-fg "#657b83"
+set notification-error-bg "#dc322f"
+set notification-error-fg "#657b83"
+set notification-warning-bg "#dc322f"
+set notification-warning-fg "#657b83"
+set statusbar-bg "#002b36"
+set statusbar-fg "#657b83"
+set index-bg "#002b36"
+set index-fg "#657b83"
+set index-active-bg "#657b83"
+set index-active-fg "#002b36"
+set render-loading-bg "#002b36"
+set render-loading-fg "#657b83"
