@@ -9,7 +9,7 @@ set color256
 set icons
 set period 1
 set drawbox on
-set globsearch on
+set incsearch true
 
 $lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"	# set previewer with env vars
 
@@ -32,20 +32,31 @@ cmd cleanlatexcompile ${{
 	notify-send "File(s) compiled."
 }}
 
+cmd delete ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf $fx
+}}
+
 cmd moveto ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
 	clear; echo "Move to where?"
 	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)" &&
 	eval mv -iv $fx $dest &&
-	notify-send "🚚File(s) moved." "File(s) moved to $dest."
+	notify-send "🚚 File(s) moved." "File(s) moved to $dest."
 }}
 
 cmd copyto ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
 	clear; echo "Copy to where?"
 	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)" &&
 	eval cp -ivr $fx $dest &&
-	notify-send "📋File(s) copied." "File(s) copies to $dest."
+	notify-send "📋 File(s) copied." "File(s) copies to $dest."
 }}
 
 cmd fzf_jump ${{
@@ -59,49 +70,31 @@ lf -remote "send $id $cmd \"$res\""
 }}
 
 cmd open ${{
-    case $(file --mime-type $f -b) in
-        text/*) $EDITOR $fx;;
-	image/vnd.djvu|application/pdf|application/octet-stream) setsid zathura $fx >/dev/null 2>&1 & ;;
-	image/x-xcf|image/svg+xml) setsid gimp $f >/dev/null 2>&1 & ;;
-	image/*) rotdir $f | grep -i "\.\(png\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio 2>/dev/null | lf-select & ;;
-	audio/*) mpv $f ;;
-	video/*) setsid mpv $f -quiet >/dev/null 2>&1 & ;;
-        *) for f in $fx; do setsid $OPENER $f >/dev/null 2> /dev/null & done;;
+    case "$f" in
+	*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.gz|*.tgz|*.tar.xz|*.txz|*.zip|*.rar|*.iso)
+            mntdir="$f-archivemount"
+            [ ! -d "$mntdir" ] && {
+                mkdir "$mntdir"
+                archivemount "$f" "$mntdir"
+                echo "$mntdir" >> "/tmp/__lf_archivemount_$id"
+            }
+            lf -remote "send $id cd \"$mntdir\""
+            lf -remote "send $id reload"
+            ;;
+	*.pdf|*.djvu|*.ps) setsid zathura $fx >/dev/null 2>&1 & ;;
+	*)
+	    case $(file --mime-type $f -b) in
+		text/*) $EDITOR $fx;;
+		image/*) rotdir $f | grep -i "\.\(png\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio 2>/dev/null | lf-select & ;;
+		# image/x-xcf|image/svg+xml) setsid gimp $f >/dev/null 2>&1 & ;;
+		audio/*) mpv $f ;;
+		video/*) setsid mpv $f -quiet >/dev/null 2>&1 & ;;
+		*) for f in $fx; do setsid $OPENER $f >/dev/null 2> /dev/null & done;;
+	    esac
     esac
 }}
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
-
-cmd delete ${{
-	clear; tput cup $(($(tput lines)/3)); tput bold
-	set -f
-	printf "%s\n\t" "$fx"
-	printf "delete?[y/N]"
-	read ans
-	[ $ans = "y" ] && rm -rf $fx
-}}
-
-cmd SudoPaste !{{
-	lf -remote 'load' | while read file; do
-		if [ ! -n "${mode+1}" ]; then
-			mode="$file"
-			continue
-		fi
-		files+=("$file")
-	done
-	if [[ "$mode" == copy ]]; then
-		sudo cp -Rgi $files .
-	elif [[ "$mode" == move ]]; then
-		sudo mv -gi $files .
-	fi
-	# get 'basename' of the selection
-	filename="${files[1]##*/}"
-	# quote it so we won't deal with quotes in the lf -remote command
-	filename="$(printf '%q' "$filename")"
-	# need to reload before selecting
-	lf -remote "send $id reload"
-	lf -remote "send $id select $filename"
-}}
 
 cmd PasteSelect %{{
 	lf -remote 'load' | while read file; do
@@ -121,8 +114,21 @@ cmd PasteSelect %{{
 	lf -remote "send $id select $filename"
 }}
 
-
-
+cmd paste ${{
+    send="while read -r line; do lf -remote \"send $id echo \$line\"; done && lf -remote 'send reload'"
+    load=$(lf -remote 'load')
+    mode=$(echo "$load" | sed -n '1p')
+    srcF=$(mktemp)
+    echo "$load" | sed '1d' > "$srcF"
+    s='' && [ ! -w . ] && s='sudo'
+    case "$mode" in
+        copy) cmd='cp-p';; move) cmd='mv-p';;
+    esac
+    cmd="$cmd --new-line"
+    $s sh -c "$cmd --backup=numbered -F \"$srcF\" . | $send && rm -f \"$srcF\" &"
+    lf -remote 'send load'
+    lf -remote 'send clear'
+}}
 
 # (xkcd link: https://xkcd.com/1168/)
 cmd extract ${{
@@ -165,6 +171,34 @@ cmd bulkrename ${{
     vidir
 }}
 
+cmd Link %{{
+	lf -remote 'load' | while read file; do
+		if [ ! -n "${mode+1}" ]; then
+			mode="$file"
+			continue
+		fi
+		files+=("$file")
+	done
+	if [ "${#files[@]}" -le 1 ]; then
+		lf -remote "send $id echo no files to link"
+		exit 0
+	fi
+	# symbolicly copy mode is indicating a soft link
+	if [[ "$mode" == copy ]]; then
+		ln -sr $files -t .
+	# while a move mode is indicating a hard link
+	elif [[ "$mode" == move ]]; then
+		ln $files -t .
+	fi
+}}
+
+cmd video_preview ${{
+    CACHE=$(mktemp /tmp/thumb_cache.XXXXX)
+    ffmpegthumbnailer -i "$f" -o $CACHE -s 0
+    /path/to/draw_img.sh $CACHE && rm $CACHE
+}}
+map + :video_preview
+
 #			Bindings
 
 #			File Operations
@@ -179,21 +213,21 @@ map E extract	#extract and compress
 map C copyto
 map M moveto
 map <delete> delete
-map p PasteSelect
+# map p PasteSelect
+map S :Link
 
 #			Navigation
 map <c-r> reload
-map <bs2> set hidden!
+map . set hidden!
+map <enter> shell
 map t :set sortby time; set info time; set reverse!	#set by most recent
 map gh	#unmap useless key
 map g top
 map <c-e> down	#enable mouse scroll
 map <c-y> up
+map <c-s> $lf -remote "send $id select $(printf '%q' $(all_files=(./*(ND)); printf '%s\n' ${all_files[@]} | fzf))"	# better asynchronious search
+map <c-g> set globsearch!
 map <c-f> :fzf_jump
-
-#			Modifications to builtins
-map / $lf -remote "send $id select $(printf '%q' $(all_files=(./*(ND)); printf '%s\n' ${all_files[@]} | fzf))"	# better asynchronious search
-map <enter> shell
 
 #			Personal utils
 map P mpv_playlist_dir
@@ -204,3 +238,7 @@ map X !$f
 map o &mimeopen "$f"
 map O $mimeopen --ask "$f"
 map V push :!nvim<space>
+
+# 			Experimental proper previewing
+map - $~/.local/bin/draw_img $f
+map + :video_preview

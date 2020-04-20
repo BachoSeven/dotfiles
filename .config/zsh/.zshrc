@@ -85,6 +85,7 @@ fi
 	bindkey -s '^f' 'fast\n'
 	bindkey -s '^[n' 'neomutt\n'
 	bindkey -s "^[s" 'ncspot\n'
+	bindkey -s '^a' 'bc -l\n'
 
 
 	bindkey -M menuselect 'h' vi-backward-char
