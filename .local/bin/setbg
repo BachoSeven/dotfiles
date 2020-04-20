@@ -21,11 +21,12 @@ while true; do
 			continue
 		;;
 		'-i'|'--input')
-			cp "$2" ~/.config/wall.png && notify-send -i "$HOME/.config/wall.png" "Wallpaper changed."
+			[ -n $2 ] && cp "$2" ~/.config/wall.png && notify-send -i "$HOME/.config/wall.png" "Wallpaper changed."
 			if [ $scheme = true ]; then
 				wal -i ~/.config/wall.png && wal -c
 			else
-				gsettings set org.gnome.desktop.background picture-uri file://$XDG_CONFIG_HOME/wall.png && xrdb -load $XDG_CONFIG_HOME/Xresources
+				# gsettings set org.gnome.desktop.background picture-uri file://$XDG_CONFIG_HOME/wall.png && # need to set it only once
+				xrdb -load $XDG_CONFIG_HOME/Xresources
 			fi
 			shift 2
 			continue
