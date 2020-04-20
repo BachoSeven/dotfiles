@@ -36094,3 +36094,102 @@ Apr 19 22:44 : player: played "pc_acer_music/Freak_out!/10_Traccia_10.mp3"
 Apr 19 22:48 : player: played "pc_acer_music/Freak_out!/11_Traccia_11.mp3"
 Apr 19 22:54 : player: played "pc_acer_music/Freak_out!/12_Traccia_12.mp3"
 Apr 19 22:59 : player: played "pc_acer_music/Freak_out!/13_Traccia_13.mp3"
+Apr 19 23:02 : player: played "pc_acer_music/Freak_out!/14_Traccia_14.mp3"
+Apr 19 23:15 : player: played "pc_acer_music/Freak_out!/15_Traccia_15.mp3"
+Apr 19 23:46 : config: option 'device' on line 17 was not recognized
+Apr 19 23:46 : config: option 'buffer_time' on line 19 was not recognized
+Apr 19 23:46 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 19 23:46 : avahi: Service 'Music Player' successfully established.
+Apr 20 08:45 : config: option 'device' on line 17 was not recognized
+Apr 20 08:45 : config: option 'buffer_time' on line 19 was not recognized
+Apr 20 08:45 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 20 08:45 : avahi: Service 'Music Player' successfully established.
+Apr 20 11:19 : client: [0] opened from 127.0.0.1:35284
+Apr 20 11:19 : client: [0] closed
+Apr 20 11:19 : client: [1] opened from 127.0.0.1:35286
+Apr 20 11:19 : client: [1] closed
+Apr 20 11:19 : client: [2] opened from 127.0.0.1:35288
+Apr 20 11:19 : client: [2] closed
+Apr 20 11:19 : client: [3] opened from 127.0.0.1:35290
+Apr 20 11:19 : client: [3] closed
+Apr 20 11:19 : client: [4] opened from 127.0.0.1:35292
+Apr 20 11:19 : client: [4] closed
+Apr 20 11:19 : client: [5] opened from 127.0.0.1:35294
+Apr 20 11:19 : client: [5] closed
+Apr 20 11:19 : client: [6] opened from 127.0.0.1:35296
+Apr 20 11:20 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 20 11:20 : client: [7] opened from 127.0.0.1:35302
+Apr 20 11:20 : client: [7] closed
+Apr 20 11:20 : player: played "moosica/alt-J/EPs and Singles/2009 - films - EP/01 Matilda.flac"
+Apr 20 11:20 : client: [8] opened from 127.0.0.1:35304
+Apr 20 11:20 : client: [8] closed
+Apr 20 11:20 : player: played "moosica/alt-J/EPs and Singles/2009 - films - EP/01 Matilda.flac"
+Apr 20 11:20 : client: [9] opened from 127.0.0.1:35306
+Apr 20 11:20 : client: [9] closed
+Apr 20 11:20 : client: [10] opened from 127.0.0.1:35308
+Apr 20 11:20 : client: [10] closed
+Apr 20 11:20 : client: [11] opened from 127.0.0.1:35310
+Apr 20 11:20 : client: [11] closed
+Apr 20 11:20 : client: [12] opened from 127.0.0.1:35312
+Apr 20 11:20 : client: [12] closed
+Apr 20 11:20 : client: [13] opened from 127.0.0.1:35314
+Apr 20 11:20 : client: [13] closed
+Apr 20 11:20 : client: [14] opened from 127.0.0.1:35316
+Apr 20 11:20 : client: [14] closed
+Apr 20 11:20 : client: [6] closed
+Apr 20 11:24 : player: played "moosica/alt-J/EPs and Singles/2009 - films - EP/01 Matilda.flac"
+Apr 20 11:27 : player: played "moosica/alt-J/EPs and Singles/2009 - films - EP/02 Leon.flac"
+Apr 20 11:31 : player: played "moosica/alt-J/EPs and Singles/2009 - films - EP/03 Something Good.flac"
+Apr 20 11:33 : player: played "moosica/alt-J/EPs and Singles/2009 - films - EP/04 Portrait.flac"
+Apr 20 11:53 : client: [15] opened from 127.0.0.1:35930
+Apr 20 11:53 : client: [15] closed
+Apr 20 13:37 : config: option 'device' on line 17 was not recognized
+Apr 20 13:37 : config: option 'buffer_time' on line 19 was not recognized
+Apr 20 13:37 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 20 13:37 : avahi: Service 'Music Player' successfully established.
+Apr 20 14:52 : inotify: music directory was removed - cannot continue to watch it
+Apr 20 14:53 : inotify: music directory was removed - cannot continue to watch it
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 20 14:59 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 20 14:59 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.

@@ -26,8 +26,8 @@ alias cfc='config commit -a -m'
 alias cfp='config push'
 
 # Backup
-alias rsdry='rsync -r -n -t -v --delete -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /media/francesco/myData/hyperversum'
-alias rsbkp='rsync -r -t -v --delete -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /media/francesco/myData/hyperversum'
+alias rsdry='rsync -r -n -t -v --delete -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/myData/hyperversum'
+alias rsbkp='rsync -r -t -v --delete -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/myData/hyperversum'
 
 # find processes
 alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
@@ -54,7 +54,18 @@ function 256color {
 # Navigation
 lfcd () {
     tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
+    fid="$(mktemp)"
+    lf -command '$printf $id > '"$fid"'' -last-dir-path="$tmp" "$@"
+    id="$(cat "$fid")"
+    archivemount_dir="/tmp/__lf_archivemount_$id"
+    if [ -f "$archivemount_dir" ]; then
+        cat "$archivemount_dir" | \
+            while read -r line; do
+                sudo umount "$line"
+                rmdir "$line"
+            done
+        rm -f "$archivemount_dir"
+    fi
     if [ -f "$tmp" ]; then
         dir="$(cat "$tmp")"
         rm -f "$tmp" >/dev/null
