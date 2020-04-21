@@ -36205,3 +36205,11 @@ Apr 21 00:21 : config: option 'device' on line 17 was not recognized
 Apr 21 00:21 : config: option 'buffer_time' on line 19 was not recognized
 Apr 21 00:21 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
 Apr 21 00:21 : avahi: Service 'Music Player' successfully established.
+Apr 21 09:02 : config: option 'device' on line 17 was not recognized
+Apr 21 09:02 : config: option 'buffer_time' on line 19 was not recognized
+Apr 21 09:02 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 21 09:02 : avahi: Service 'Music Player' successfully established.
+Apr 21 13:03 : config: option 'device' on line 17 was not recognized
+Apr 21 13:03 : config: option 'buffer_time' on line 19 was not recognized
+Apr 21 13:03 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 21 13:03 : avahi: Service 'Music Player' successfully established.
