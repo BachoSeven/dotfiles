@@ -240,11 +240,11 @@ call plug#end()
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
 " ColorSchemes
-	let g:airline_theme='base16_solarized'
-	colorscheme NeoSolarized
-	" colorscheme gruvbox
+	" let g:airline_theme='base16_solarized'
+	" colorscheme NeoSolarized
+	colorscheme gruvbox
 	set background=dark
-	" hi Normal ctermbg=NONE guibg=NONE
-	" hi NonText ctermbg=NONE guibg=NONE
-	" hi EndOfBuffer ctermbg=NONE guibg=NONE
-	" hi LineNr ctermbg=NONE guibg=NONE
+	hi Normal ctermbg=NONE guibg=NONE
+	hi NonText ctermbg=NONE guibg=NONE
+	hi EndOfBuffer ctermbg=NONE guibg=NONE
+	hi LineNr ctermbg=NONE guibg=NONE
