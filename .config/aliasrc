@@ -19,6 +19,8 @@ alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ccat="highlight --out-format=ansi"
 alias path='echo $PATH | tr : "\n"'
+alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
+alias matrix='unimatrix -a -f -b -s 96 -l m'
 
 #git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
