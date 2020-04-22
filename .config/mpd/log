@@ -36213,3 +36213,644 @@ Apr 21 13:03 : config: option 'device' on line 17 was not recognized
 Apr 21 13:03 : config: option 'buffer_time' on line 19 was not recognized
 Apr 21 13:03 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
 Apr 21 13:03 : avahi: Service 'Music Player' successfully established.
+Apr 22 01:20 : config: option 'device' on line 17 was not recognized
+Apr 22 01:20 : config: option 'buffer_time' on line 19 was not recognized
+Apr 22 01:20 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 22 01:20 : avahi: Service 'Music Player' successfully established.
+Apr 22 01:28 : client: [0] opened from 127.0.0.1:55228
+Apr 22 01:30 : client: [1] opened from 127.0.0.1:55352
+Apr 22 01:30 : client: [1] closed
+Apr 22 01:30 : client: [2] opened from 127.0.0.1:55354
+Apr 22 01:31 : client: [2] closed
+Apr 22 01:31 : client: [3] opened from 127.0.0.1:55358
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Apr 22 01:32 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:32 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:32 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:32 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:32 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:32 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:32 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:32 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 01:32 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 01:32 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Apr 22 01:34 : client: [3] closed
+Apr 22 01:34 : client: [0] closed
+Apr 22 01:36 : client: [4] opened from 127.0.0.1:55408
+Apr 22 01:36 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 22 01:36 : client: [5] opened from 127.0.0.1:55410
+Apr 22 01:36 : client: [5] closed
+Apr 22 01:36 : client: [6] opened from 127.0.0.1:55412
+Apr 22 01:36 : client: [7] opened from 127.0.0.1:55414
+Apr 22 01:36 : client: [7] closed
+Apr 22 01:36 : client: [4] closed
+Apr 22 01:36 : client: [6] closed
+Apr 22 01:37 : client: [8] opened from 127.0.0.1:55416
+Apr 22 01:37 : client: [9] opened from 127.0.0.1:55418
+Apr 22 01:37 : client: [9] closed
+Apr 22 01:37 : player: played "ascol_music/download_for_ad/Leo_BROUWER_-_#_1_Estudio_Sencillo.mp3"
+Apr 22 01:37 : client: [8] closed
+Apr 22 01:39 : client: [10] opened from 127.0.0.1:55492
+Apr 22 01:40 : client: [11] opened from 127.0.0.1:55498
+Apr 22 01:40 : client: [11] closed
+Apr 22 01:40 : client: [10] closed
+Apr 22 01:40 : client: [12] opened from 127.0.0.1:55502
+Apr 22 01:40 : client: [13] opened from 127.0.0.1:55504
+Apr 22 01:40 : client: [13] closed
+Apr 22 01:40 : client: [12] closed
+Apr 22 01:41 : client: [14] opened from 127.0.0.1:55506
+Apr 22 01:41 : client: [15] opened from 127.0.0.1:55508
+Apr 22 01:41 : client: [15] closed
+Apr 22 01:42 : client: [14] closed
+Apr 22 01:42 : client: [16] opened from 127.0.0.1:55514
+Apr 22 01:42 : client: [17] opened from 127.0.0.1:55516
+Apr 22 01:42 : client: [17] closed
+Apr 22 01:42 : player: played "moosica/alt-J/Albums/2012 - An Awesome Wave/2012 - An Awesome Wave/01 Intro.flac"
+Apr 22 01:42 : client: [18] opened from 127.0.0.1:55518
+Apr 22 01:42 : client: [18] closed
+Apr 22 01:42 : player: played "moosica/alt-J/EPs and Singles/2009 - films - EP/01 Matilda.flac"
+Apr 22 01:42 : client: [19] opened from 127.0.0.1:55520
+Apr 22 01:42 : client: [19] closed
+Apr 22 01:42 : player: played "moosica/alt-J/EPs and Singles/2009 - films - EP/01 Matilda.flac"
+Apr 22 01:42 : client: [20] opened from 127.0.0.1:55522
+Apr 22 01:42 : client: [20] closed
+Apr 22 01:43 : client: [16] closed
+Apr 22 01:43 : client: [21] opened from 127.0.0.1:55524
+Apr 22 01:43 : client: [22] opened from 127.0.0.1:55526
+Apr 22 01:43 : client: [22] closed
+Apr 22 01:43 : client: [21] closed
+Apr 22 01:44 : client: [23] opened from 127.0.0.1:55542
+Apr 22 01:44 : client: [24] opened from 127.0.0.1:55544
+Apr 22 01:44 : client: [24] closed
+Apr 22 01:44 : client: [23] closed
+Apr 22 01:45 : client: [25] opened from 127.0.0.1:55546
+Apr 22 01:45 : client: [26] opened from 127.0.0.1:55548
+Apr 22 01:45 : client: [26] closed
+Apr 22 01:45 : client: [25] closed
+Apr 22 01:45 : client: [27] opened from 127.0.0.1:55550
+Apr 22 01:45 : client: [28] opened from 127.0.0.1:55552
+Apr 22 01:45 : client: [28] closed
+Apr 22 01:45 : client: [27] closed
+Apr 22 01:46 : client: [29] opened from 127.0.0.1:55560
+Apr 22 01:46 : client: [30] opened from 127.0.0.1:55562
+Apr 22 01:46 : client: [30] closed
+Apr 22 01:46 : client: [29] closed
+Apr 22 01:46 : player: played "moosica/alt-J/EPs and Singles/2017 - Pleader - Single/2017 - Pleader (feat. The Age of L.U.N.A) [Mr. Jukes Remix] - Single/01 Pleader (feat. The Age of L.U.N.A) [Mr. Jukes Remix].flac"
+Apr 22 01:46 : client: [31] opened from 127.0.0.1:55564
+Apr 22 01:46 : client: [32] opened from 127.0.0.1:55566
+Apr 22 01:46 : client: [32] closed
+Apr 22 01:48 : client: [33] opened from 127.0.0.1:55576
+Apr 22 01:48 : client: [34] opened from 127.0.0.1:55578
+Apr 22 01:48 : client: [34] closed
+Apr 22 01:48 : client: [31] closed
+Apr 22 01:48 : client: [33] closed
+Apr 22 01:49 : player: played "ascol_music/Bach_-_The_Very_Best_Of_Bach_(2CD)_(naxos_2005)_MP3_V0/CD1/Toccata_and_Fugue_in_D_minor_-_Toccata.mp3"
+Apr 22 01:51 : player: played "ascol_music/Bach_-_The_Very_Best_Of_Bach_(2CD)_(naxos_2005)_MP3_V0/CD1/Suite_No._2_-_Badinerie.mp3"
+Apr 22 01:51 : client: [35] opened from 127.0.0.1:55642
+Apr 22 01:51 : client: [36] opened from 127.0.0.1:55644
+Apr 22 01:51 : client: [36] closed
+Apr 22 01:51 : client: [35] closed
+Apr 22 01:52 : client: [37] opened from 127.0.0.1:55650
+Apr 22 01:52 : client: [38] opened from 127.0.0.1:55652
+Apr 22 01:52 : client: [38] closed
+Apr 22 01:52 : client: [37] closed
+Apr 22 01:52 : client: [39] opened from 127.0.0.1:55654
+Apr 22 01:52 : client: [40] opened from 127.0.0.1:55656
+Apr 22 01:52 : client: [40] closed
+Apr 22 01:53 : client: [39] closed
+Apr 22 01:53 : client: [41] opened from 127.0.0.1:55658
+Apr 22 01:53 : client: [42] opened from 127.0.0.1:55660
+Apr 22 01:53 : client: [42] closed
+Apr 22 01:53 : client: [41] closed
+Apr 22 01:54 : client: [43] opened from 127.0.0.1:55670
+Apr 22 01:54 : client: [44] opened from 127.0.0.1:55672
+Apr 22 01:54 : client: [44] closed
+Apr 22 01:54 : client: [43] closed
+Apr 22 01:54 : client: [45] opened from 127.0.0.1:55674
+Apr 22 01:54 : client: [46] opened from 127.0.0.1:55676
+Apr 22 01:54 : client: [46] closed
+Apr 22 01:54 : client: [45] closed
+Apr 22 01:54 : client: [47] opened from 127.0.0.1:55678
+Apr 22 01:54 : client: [48] opened from 127.0.0.1:55680
+Apr 22 01:54 : client: [48] closed
+Apr 22 01:54 : client: [47] closed
+Apr 22 01:55 : client: [49] opened from 127.0.0.1:55682
+Apr 22 01:55 : client: [49] closed
+Apr 22 01:55 : client: [50] opened from 127.0.0.1:55684
+Apr 22 01:55 : client: [50] closed
+Apr 22 01:57 : player: played "ascol_music/Bach_-_The_Very_Best_Of_Bach_(2CD)_(naxos_2005)_MP3_V0/CD1/Concerto_for_2_violins_-_Largo_ma_non_tanto.mp3"
+Apr 22 02:00 : client: [51] opened from 127.0.0.1:55778
+Apr 22 02:00 : client: [52] opened from 127.0.0.1:55780
+Apr 22 02:00 : client: [52] closed
+Apr 22 02:00 : client: [51] closed
+Apr 22 02:00 : client: [53] opened from 127.0.0.1:55782
+Apr 22 02:00 : client: [54] opened from 127.0.0.1:55784
+Apr 22 02:00 : client: [54] closed
+Apr 22 02:00 : client: [53] closed
+Apr 22 02:00 : client: [55] opened from 127.0.0.1:55786
+Apr 22 02:00 : client: [56] opened from 127.0.0.1:55788
+Apr 22 02:00 : client: [56] closed
+Apr 22 02:02 : client: [57] opened from 127.0.0.1:55800
+Apr 22 02:02 : client: [58] opened from 127.0.0.1:55802
+Apr 22 02:02 : client: [58] closed
+Apr 22 02:02 : client: [57] closed
+Apr 22 02:03 : client: [59] opened from 127.0.0.1:55806
+Apr 22 02:03 : client: [60] opened from 127.0.0.1:55808
+Apr 22 02:03 : client: [60] closed
+Apr 22 02:03 : client: [61] opened from 127.0.0.1:55810
+Apr 22 02:03 : client: [62] opened from 127.0.0.1:55812
+Apr 22 02:03 : client: [62] closed
+Apr 22 02:03 : client: [59] closed
+Apr 22 02:04 : client: [61] closed
+Apr 22 02:04 : client: [63] opened from 127.0.0.1:55848
+Apr 22 02:04 : client: [63] closed
+Apr 22 02:04 : client: [64] opened from 127.0.0.1:55850
+Apr 22 02:04 : client: [64] closed
+Apr 22 02:04 : client: [55] closed
+Apr 22 02:04 : client: [65] opened from 127.0.0.1:55856
+Apr 22 02:04 : client: [66] opened from 127.0.0.1:55858
+Apr 22 02:04 : client: [66] closed
+Apr 22 02:04 : client: [65] closed
+Apr 22 02:04 : client: [67] opened from 127.0.0.1:55860
+Apr 22 02:04 : client: [68] opened from 127.0.0.1:55862
+Apr 22 02:04 : client: [68] closed
+Apr 22 02:05 : client: [67] closed
+Apr 22 02:05 : client: [69] opened from 127.0.0.1:55864
+Apr 22 02:05 : client: [70] opened from 127.0.0.1:55866
+Apr 22 02:05 : client: [70] closed
+Apr 22 02:05 : client: [69] closed
+Apr 22 02:05 : client: [71] opened from 127.0.0.1:55870
+Apr 22 02:05 : client: [72] opened from 127.0.0.1:55872
+Apr 22 02:05 : client: [72] closed
+Apr 22 02:06 : client: [73] opened from 127.0.0.1:55874
+Apr 22 02:06 : client: [74] opened from 127.0.0.1:55876
+Apr 22 02:06 : client: [74] closed
+Apr 22 02:06 : client: [75] opened from 127.0.0.1:55882
+Apr 22 02:06 : client: [75] closed
+Apr 22 02:06 : client: [76] opened from 127.0.0.1:55884
+Apr 22 02:06 : client: [76] closed
+Apr 22 02:07 : client: [71] closed
+Apr 22 02:07 : client: [73] closed
+Apr 22 02:07 : client: [77] opened from 127.0.0.1:55886
+Apr 22 02:07 : client: [78] opened from 127.0.0.1:55888
+Apr 22 02:07 : client: [78] closed
+Apr 22 02:08 : client: [77] closed
+Apr 22 02:08 : client: [79] opened from 127.0.0.1:55894
+Apr 22 02:08 : client: [80] opened from 127.0.0.1:55896
+Apr 22 02:08 : client: [80] closed
+Apr 22 02:08 : client: [79] closed
+Apr 22 02:09 : client: [81] opened from 127.0.0.1:55900
+Apr 22 02:09 : client: [82] opened from 127.0.0.1:55902
+Apr 22 02:09 : client: [82] closed
+Apr 22 02:09 : player: played "ascol_music/Bach_-_The_Very_Best_Of_Bach_(2CD)_(naxos_2005)_MP3_V0/CD2/Oboe_Concerto_in_G_minor_-_Largo.mp3"
+Apr 22 02:09 : client: [83] opened from 127.0.0.1:55904
+Apr 22 02:09 : client: [83] closed
+Apr 22 02:09 : client: [81] closed
+Apr 22 02:10 : client: [84] opened from 127.0.0.1:55910
+Apr 22 02:10 : client: [85] opened from 127.0.0.1:55912
+Apr 22 02:10 : client: [85] closed
+Apr 22 02:10 : player: played "ascol_music/Bach_-_The_Very_Best_Of_Bach_(2CD)_(naxos_2005)_MP3_V0/CD2/Harpsichord_Concerto_in_D_minor_-_Allegro.mp3"
+Apr 22 02:10 : client: [86] opened from 127.0.0.1:55914
+Apr 22 02:10 : client: [86] closed
+Apr 22 02:13 : client: [87] opened from 127.0.0.1:55940
+Apr 22 02:13 : client: [88] opened from 127.0.0.1:55942
+Apr 22 02:13 : client: [88] closed
+Apr 22 02:13 : client: [87] closed
+Apr 22 02:14 : client: [84] closed
+Apr 22 02:14 : client: [89] opened from 127.0.0.1:55952
+Apr 22 02:14 : client: [90] opened from 127.0.0.1:55954
+Apr 22 02:14 : client: [90] closed
+Apr 22 02:14 : client: [89] closed
+Apr 22 02:14 : client: [91] opened from 127.0.0.1:55956
+Apr 22 02:14 : client: [92] opened from 127.0.0.1:55958
+Apr 22 02:14 : client: [92] closed
+Apr 22 02:15 : client: [91] closed
+Apr 22 02:15 : client: [93] opened from 127.0.0.1:55960
+Apr 22 02:15 : client: [94] opened from 127.0.0.1:55962
+Apr 22 02:15 : client: [94] closed
+Apr 22 02:15 : client: [93] closed
+Apr 22 02:16 : client: [95] opened from 127.0.0.1:55972
+Apr 22 02:16 : client: [96] opened from 127.0.0.1:55974
+Apr 22 02:16 : client: [96] closed
+Apr 22 02:16 : player: played "ascol_music/download_for_ad/Rick_&_Jemma_Wakeman-_Amazing_Grace.mp3"
+Apr 22 02:16 : client: [97] opened from 127.0.0.1:55976
+Apr 22 02:16 : client: [97] closed
+Apr 22 02:16 : client: [95] closed
+Apr 22 02:16 : client: [98] opened from 127.0.0.1:55978
+Apr 22 02:16 : client: [99] opened from 127.0.0.1:55980
+Apr 22 02:16 : client: [99] closed
+Apr 22 02:16 : client: [98] closed
+Apr 22 02:17 : client: [100] opened from 127.0.0.1:55982
+Apr 22 02:17 : client: [101] opened from 127.0.0.1:55984
+Apr 22 02:17 : client: [101] closed
+Apr 22 02:17 : client: [100] closed
+Apr 22 02:17 : client: [102] opened from 127.0.0.1:55986
+Apr 22 02:17 : client: [103] opened from 127.0.0.1:55988
+Apr 22 02:17 : client: [103] closed
+Apr 22 02:17 : client: [104] opened from 127.0.0.1:55990
+Apr 22 02:17 : client: [105] opened from 127.0.0.1:55992
+Apr 22 02:17 : client: [105] closed
+Apr 22 02:17 : client: [104] closed
+Apr 22 02:17 : client: [106] opened from 127.0.0.1:55994
+Apr 22 02:17 : client: [107] opened from 127.0.0.1:55996
+Apr 22 02:17 : client: [107] closed
+Apr 22 02:17 : client: [108] opened from 127.0.0.1:55998
+Apr 22 02:17 : client: [109] opened from 127.0.0.1:56000
+Apr 22 02:17 : client: [109] closed
+Apr 22 02:17 : client: [106] closed
+Apr 22 02:17 : client: [108] closed
+Apr 22 02:17 : client: [110] opened from 127.0.0.1:56002
+Apr 22 02:17 : client: [111] opened from 127.0.0.1:56004
+Apr 22 02:17 : client: [111] closed
+Apr 22 02:17 : client: [110] closed
+Apr 22 02:17 : client: [102] closed
+Apr 22 02:18 : client: [112] opened from 127.0.0.1:56010
+Apr 22 02:18 : client: [113] opened from 127.0.0.1:56012
+Apr 22 02:18 : client: [113] closed
+Apr 22 02:18 : client: [112] closed
+Apr 22 02:18 : client: [114] opened from 127.0.0.1:56014
+Apr 22 02:18 : client: [115] opened from 127.0.0.1:56016
+Apr 22 02:18 : client: [115] closed
+Apr 22 02:18 : client: [116] opened from 127.0.0.1:56018
+Apr 22 02:18 : client: [117] opened from 127.0.0.1:56020
+Apr 22 02:18 : client: [117] closed
+Apr 22 02:19 : client: [116] closed
+Apr 22 02:19 : client: [114] closed
+Apr 22 02:19 : client: [118] opened from 127.0.0.1:56024
+Apr 22 02:19 : client: [119] opened from 127.0.0.1:56026
+Apr 22 02:19 : client: [119] closed
+Apr 22 02:19 : client: [120] opened from 127.0.0.1:56028
+Apr 22 02:19 : client: [121] opened from 127.0.0.1:56030
+Apr 22 02:19 : client: [121] closed
+Apr 22 02:19 : client: [120] closed
+Apr 22 02:19 : client: [118] closed
+Apr 22 02:19 : client: [122] opened from 127.0.0.1:56032
+Apr 22 02:19 : client: [123] opened from 127.0.0.1:56034
+Apr 22 02:19 : client: [123] closed
+Apr 22 02:19 : client: [122] closed
+Apr 22 02:19 : client: [124] opened from 127.0.0.1:56036
+Apr 22 02:19 : client: [125] opened from 127.0.0.1:56038
+Apr 22 02:19 : client: [125] closed
+Apr 22 02:19 : client: [126] opened from 127.0.0.1:56040
+Apr 22 02:19 : client: [127] opened from 127.0.0.1:56042
+Apr 22 02:19 : client: [127] closed
+Apr 22 02:19 : client: [126] closed
+Apr 22 02:19 : client: [124] closed
+Apr 22 02:19 : player: played "pc_acer_music/8_-_American_Nomad.mp3"
+Apr 22 02:20 : client: [128] opened from 127.0.0.1:56044
+Apr 22 02:20 : client: [129] opened from 127.0.0.1:56046
+Apr 22 02:20 : client: [129] closed
+Apr 22 02:20 : client: [130] opened from 127.0.0.1:56052
+Apr 22 02:20 : client: [131] opened from 127.0.0.1:56054
+Apr 22 02:20 : client: [131] closed
+Apr 22 02:20 : client: [130] closed
+Apr 22 02:20 : client: [128] closed
+Apr 22 02:20 : client: [132] opened from 127.0.0.1:56056
+Apr 22 02:20 : client: [133] opened from 127.0.0.1:56058
+Apr 22 02:20 : client: [133] closed
+Apr 22 02:20 : client: [132] closed
+Apr 22 02:20 : client: [134] opened from 127.0.0.1:56060
+Apr 22 02:20 : client: [135] opened from 127.0.0.1:56062
+Apr 22 02:20 : client: [135] closed
+Apr 22 02:20 : client: [134] closed
+Apr 22 02:20 : client: [136] opened from 127.0.0.1:56092
+Apr 22 02:20 : client: [137] opened from 127.0.0.1:56094
+Apr 22 02:20 : client: [137] closed
+Apr 22 02:20 : client: [136] closed
+Apr 22 02:21 : client: [138] opened from 127.0.0.1:56096
+Apr 22 02:21 : client: [139] opened from 127.0.0.1:56098
+Apr 22 02:21 : client: [139] closed
+Apr 22 02:21 : client: [138] closed
+Apr 22 02:21 : client: [140] opened from 127.0.0.1:56100
+Apr 22 02:21 : client: [141] opened from 127.0.0.1:56102
+Apr 22 02:21 : client: [141] closed
+Apr 22 02:22 : client: [140] closed
+Apr 22 02:22 : client: [142] opened from 127.0.0.1:56108
+Apr 22 02:22 : client: [143] opened from 127.0.0.1:56110
+Apr 22 02:22 : client: [143] closed
+Apr 22 02:22 : client: [142] closed
+Apr 22 02:22 : client: [144] opened from 127.0.0.1:56112
+Apr 22 02:22 : client: [145] opened from 127.0.0.1:56114
+Apr 22 02:22 : client: [145] closed
+Apr 22 02:22 : client: [146] opened from 127.0.0.1:56116
+Apr 22 02:22 : client: [147] opened from 127.0.0.1:56118
+Apr 22 02:22 : client: [147] closed
+Apr 22 02:22 : client: [146] closed
+Apr 22 02:22 : client: [148] opened from 127.0.0.1:56120
+Apr 22 02:22 : client: [149] opened from 127.0.0.1:56122
+Apr 22 02:22 : client: [149] closed
+Apr 22 02:23 : client: [148] closed
+Apr 22 02:23 : client: [144] closed
+Apr 22 02:23 : client: [150] opened from 127.0.0.1:56124
+Apr 22 02:23 : client: [151] opened from 127.0.0.1:56126
+Apr 22 02:23 : client: [151] closed
+Apr 22 02:23 : client: [152] opened from 127.0.0.1:56128
+Apr 22 02:23 : client: [153] opened from 127.0.0.1:56130
+Apr 22 02:23 : client: [153] closed
+Apr 22 02:23 : client: [152] closed
+Apr 22 02:23 : client: [150] closed
+Apr 22 02:23 : client: [154] opened from 127.0.0.1:56132
+Apr 22 02:23 : client: [155] opened from 127.0.0.1:56134
+Apr 22 02:23 : client: [155] closed
+Apr 22 02:24 : client: [156] opened from 127.0.0.1:56136
+Apr 22 02:24 : client: [157] opened from 127.0.0.1:56138
+Apr 22 02:24 : client: [157] closed
+Apr 22 02:24 : client: [156] closed
+Apr 22 02:24 : client: [158] opened from 127.0.0.1:56150
+Apr 22 02:24 : client: [159] opened from 127.0.0.1:56152
+Apr 22 02:24 : client: [159] closed
+Apr 22 02:24 : client: [158] closed
+Apr 22 02:24 : client: [160] opened from 127.0.0.1:56154
+Apr 22 02:24 : client: [161] opened from 127.0.0.1:56156
+Apr 22 02:24 : client: [161] closed
+Apr 22 02:24 : client: [162] opened from 127.0.0.1:56158
+Apr 22 02:24 : client: [163] opened from 127.0.0.1:56160
+Apr 22 02:24 : client: [163] closed
+Apr 22 02:24 : client: [162] closed
+Apr 22 02:24 : client: [160] closed
+Apr 22 02:24 : client: [164] opened from 127.0.0.1:56162
+Apr 22 02:24 : client: [165] opened from 127.0.0.1:56164
+Apr 22 02:24 : client: [165] closed
+Apr 22 02:24 : client: [164] closed
+Apr 22 02:25 : client: [154] closed
+Apr 22 02:25 : player: played "pc_acer_music/De_Andrè_OMNIA/PFM - Vol. 2/01 - Avventura a Durango.mp3"
+Apr 22 02:26 : client: [166] opened from 127.0.0.1:56176
+Apr 22 02:26 : client: [166] closed
+Apr 22 02:26 : client: [167] opened from 127.0.0.1:56178
+Apr 22 02:26 : client: [168] opened from 127.0.0.1:56180
+Apr 22 02:26 : client: [168] closed
+Apr 22 02:26 : client: [167] closed
+Apr 22 02:27 : client: [169] opened from 127.0.0.1:56182
+Apr 22 02:27 : client: [170] opened from 127.0.0.1:56184
+Apr 22 02:27 : client: [170] closed
+Apr 22 02:27 : player: played "ascol_music/download_for_ad/Leo_BROUWER_-_#_1_Estudio_Sencillo.mp3"
+Apr 22 02:28 : client: [171] opened from 127.0.0.1:56190
+Apr 22 02:28 : client: [172] opened from 127.0.0.1:56192
+Apr 22 02:28 : client: [172] closed
+Apr 22 02:28 : client: [173] opened from 127.0.0.1:56194
+Apr 22 02:28 : client: [173] closed
+Apr 22 02:29 : client: [174] opened from 127.0.0.1:56196
+Apr 22 02:29 : client: [174] closed
+Apr 22 02:29 : client: [175] opened from 127.0.0.1:56198
+Apr 22 02:29 : client: [175] closed
+Apr 22 02:29 : client: [171] closed
+Apr 22 02:29 : client: [176] opened from 127.0.0.1:56202
+Apr 22 02:29 : client: [177] opened from 127.0.0.1:56204
+Apr 22 02:29 : client: [177] closed
+Apr 22 02:29 : client: [178] opened from 127.0.0.1:56206
+Apr 22 02:29 : client: [179] opened from 127.0.0.1:56208
+Apr 22 02:29 : client: [179] closed
+Apr 22 02:29 : client: [180] opened from 127.0.0.1:56210
+Apr 22 02:29 : client: [181] opened from 127.0.0.1:56212
+Apr 22 02:29 : client: [181] closed
+Apr 22 02:29 : client: [180] closed
+Apr 22 02:29 : client: [176] closed
+Apr 22 02:29 : client: [178] closed
+Apr 22 02:30 : client: [182] opened from 127.0.0.1:56218
+Apr 22 02:30 : client: [183] opened from 127.0.0.1:56220
+Apr 22 02:30 : client: [183] closed
+Apr 22 02:30 : client: [184] opened from 127.0.0.1:56222
+Apr 22 02:30 : client: [185] opened from 127.0.0.1:56224
+Apr 22 02:30 : client: [185] closed
+Apr 22 02:30 : client: [184] closed
+Apr 22 02:30 : client: [186] opened from 127.0.0.1:56226
+Apr 22 02:30 : client: [187] opened from 127.0.0.1:56228
+Apr 22 02:30 : client: [187] closed
+Apr 22 02:30 : client: [188] opened from 127.0.0.1:56230
+Apr 22 02:30 : client: [189] opened from 127.0.0.1:56232
+Apr 22 02:30 : client: [188] closed
+Apr 22 02:30 : client: [189] closed
+Apr 22 02:30 : client: [190] opened from 127.0.0.1:56234
+Apr 22 02:30 : client: [190] closed
+Apr 22 02:30 : player: played "moosica/alt-J/Albums/2012 - An Awesome Wave/2012 - An Awesome Wave/01 Intro.flac"
+Apr 22 02:30 : client: [186] closed
+Apr 22 02:31 : client: [182] closed
+Apr 22 02:31 : client: [169] closed
+Apr 22 02:31 : client: [191] opened from 127.0.0.1:56238
+Apr 22 02:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 02:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1026.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 02:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 02:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 02:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 02:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 02:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 02:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 4092.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Apr 22 02:31 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Apr 22 02:31 : ffmpeg/mp3: Failed to read frame size: Could not seek to 5119.
+Apr 22 02:32 : client: [191] closed
+Apr 22 02:32 : client: [192] opened from 127.0.0.1:56244
+Apr 22 02:32 : client: [192] closed
+Apr 22 02:33 : client: [193] opened from 127.0.0.1:56266
+Apr 22 02:33 : client: [194] opened from 127.0.0.1:56268
+Apr 22 02:33 : client: [195] opened from 127.0.0.1:56270
+Apr 22 02:33 : client: [196] opened from 127.0.0.1:56272
+Apr 22 02:33 : client: [196] closed
+Apr 22 02:33 : client: [195] closed
+Apr 22 02:34 : client: [194] closed
+Apr 22 02:34 : client: [193] closed
+Apr 22 02:34 : client: [197] opened from 127.0.0.1:56278
+Apr 22 02:34 : client: [198] opened from 127.0.0.1:56280
+Apr 22 02:34 : client: [198] closed
+Apr 22 02:34 : client: [199] opened from 127.0.0.1:56282
+Apr 22 02:34 : client: [200] opened from 127.0.0.1:56284
+Apr 22 02:34 : client: [200] closed
+Apr 22 02:34 : client: [201] opened from 127.0.0.1:56286
+Apr 22 02:34 : client: [202] opened from 127.0.0.1:56288
+Apr 22 02:34 : client: [202] closed
+Apr 22 02:34 : client: [203] opened from 127.0.0.1:56292
+Apr 22 02:34 : client: [204] opened from 127.0.0.1:56294
+Apr 22 02:34 : client: [204] closed
+Apr 22 02:34 : client: [203] closed
+Apr 22 02:34 : client: [199] closed
+Apr 22 02:37 : player: played "pc_acer_music/Bob_Dylan/The Bootleg Series, Vols. 1-3 (Rare & Unreleased) 1961-1991 Disc 3/01 If You See Her, Say Hello.mp3"
+Apr 22 02:37 : client: [205] opened from 127.0.0.1:56408
+Apr 22 02:37 : client: [205] closed
+Apr 22 02:37 : client: [206] opened from 127.0.0.1:56410
+Apr 22 02:37 : client: [206] closed
+Apr 22 02:45 : player: played "music_stuff_dir/LP/DjangoReinhardtLatoA(1-3).MP3"
+Apr 22 08:45 : config: option 'device' on line 17 was not recognized
+Apr 22 08:45 : config: option 'buffer_time' on line 19 was not recognized
+Apr 22 08:45 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 22 08:45 : avahi: Service 'Music Player' successfully established.
+Apr 22 09:18 : client: [0] opened from 127.0.0.1:52000
+Apr 22 09:18 : client: [0] closed
+Apr 22 09:18 : client: [1] opened from 127.0.0.1:52002
+Apr 22 09:18 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 22 09:18 : client: [2] opened from 127.0.0.1:52004
+Apr 22 09:18 : client: [2] closed
+Apr 22 09:18 : client: [1] closed
+Apr 22 09:26 : player: played "pc_acer_music/King_Crimson-In_the_wake_of_Poseidon/02_Pictures_of_a_city.mp3"
+Apr 22 16:23 : client: [3] opened from 127.0.0.1:56220
+Apr 22 16:23 : client: [4] opened from 127.0.0.1:56222
+Apr 22 16:23 : client: [4] closed
+Apr 22 16:29 : player: played "ascol_music/Brad_Mehldau_-_After_Bach_(2018)_Mp3_(320kbps)_[Hunter]/Brad_Mehldau_-_After_Bach_(2018)/1._Before_Bach__Benediction.mp3"
+Apr 22 16:29 : client: [5] opened from 127.0.0.1:56376
+Apr 22 16:29 : client: [5] closed
+Apr 22 16:29 : client: [3] closed
+Apr 22 16:30 : player: played "ascol_music/Brad_Mehldau_-_After_Bach_(2018)_Mp3_(320kbps)_[Hunter]/Brad_Mehldau_-_After_Bach_(2018)/2._Prelude_No._3_in_C#_Major_from_The_Well-Tempered_Clavier_Book_I,_BWV_848.mp3"
+Apr 22 16:38 : client: [6] opened from 127.0.0.1:56518
+Apr 22 16:38 : client: [7] opened from 127.0.0.1:56520
+Apr 22 16:38 : client: [7] closed
+Apr 22 16:38 : player: played "ascol_music/Brad_Mehldau_-_After_Bach_(2018)_Mp3_(320kbps)_[Hunter]/Brad_Mehldau_-_After_Bach_(2018)/3._After_Bach__Rondo.mp3"
+Apr 22 16:38 : client: [8] opened from 127.0.0.1:56522
+Apr 22 16:38 : client: [8] closed
+Apr 22 16:38 : client: [9] opened from 127.0.0.1:56524
+Apr 22 16:38 : client: [9] closed
+Apr 22 16:38 : client: [10] opened from 127.0.0.1:56528
+Apr 22 16:38 : client: [10] closed
+Apr 22 16:39 : client: [11] opened from 127.0.0.1:56532
+Apr 22 16:39 : client: [11] closed
+Apr 22 16:39 : client: [6] closed
+Apr 22 17:44 : client: [12] opened from 127.0.0.1:57300
+Apr 22 17:44 : client: [12] closed
+Apr 22 17:49 : player: played "ascol_music/Brad_Mehldau_-_After_Bach_(2018)_Mp3_(320kbps)_[Hunter]/Brad_Mehldau_-_After_Bach_(2018)/7._After_Bach__Flux.mp3"
+Apr 22 17:55 : player: played "ascol_music/Brad_Mehldau_-_After_Bach_(2018)_Mp3_(320kbps)_[Hunter]/Brad_Mehldau_-_After_Bach_(2018)/8._Prelude_and_Fugue_No._12_in_F_Minor_from_The_Well-Tempered_Clavier_Book_I,_BWV_857.mp3"
+Apr 22 18:03 : player: played "ascol_music/Brad_Mehldau_-_After_Bach_(2018)_Mp3_(320kbps)_[Hunter]/Brad_Mehldau_-_After_Bach_(2018)/9._After_Bach__Dream.mp3"
+Apr 22 18:06 : player: played "ascol_music/Brad_Mehldau_-_After_Bach_(2018)_Mp3_(320kbps)_[Hunter]/Brad_Mehldau_-_After_Bach_(2018)/10._Fugue_No._16_in_G_Minor_from_The_Well-Tempered_Clavier_Book_II,_BWV_885.mp3"
+Apr 22 18:16 : client: [13] opened from 127.0.0.1:57466
+Apr 22 18:16 : client: [13] closed
+Apr 22 18:26 : client: [14] opened from 127.0.0.1:57496
+Apr 22 18:26 : client: [14] closed
+Apr 22 18:26 : client: [15] opened from 127.0.0.1:57498
+Apr 22 18:26 : client: [15] closed
+Apr 22 18:26 : client: [16] opened from 127.0.0.1:57500
+Apr 22 18:26 : client: [17] opened from 127.0.0.1:57502
+Apr 22 18:26 : client: [17] closed
+Apr 22 18:26 : client: [16] closed
+Apr 22 18:33 : client: [18] opened from 127.0.0.1:57884
+Apr 22 18:33 : client: [18] closed
+Apr 22 18:36 : player: played "ascol_music/Brad_Mehldau_-_After_Bach_(2018)_Mp3_(320kbps)_[Hunter]/Brad_Mehldau_-_After_Bach_(2018)/11._After_Bach__Ostinato.mp3"
+Apr 22 18:47 : player: played "ascol_music/Brad_Mehldau_-_After_Bach_(2018)_Mp3_(320kbps)_[Hunter]/Brad_Mehldau_-_After_Bach_(2018)/12._Prayer_for_Healing.mp3"
