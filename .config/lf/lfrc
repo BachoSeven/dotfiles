@@ -197,7 +197,6 @@ cmd video_preview ${{
     ffmpegthumbnailer -i "$f" -o $CACHE -s 0
     ~/.local/bin/draw_img $CACHE && rm $CACHE
 }}
-map + :video_preview
 
 #			Bindings
 

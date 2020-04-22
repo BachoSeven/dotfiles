@@ -44,7 +44,7 @@ visualizer_fifo_path = /tmp/mpd.fifo
 ## sound as currently there are some problems with it.
 ##
 #
-visualizer_output_name = Visualizer feed
+visualizer_output_name = Visualizer
 #
 ##
 ## If you set format to 44100:16:2, make it 'yes'.
@@ -69,12 +69,13 @@ visualizer_sync_interval = 30
 ##
 
 visualizer_type = ellipse
+
 visualizer_look = ●▮
 
 #visualizer_color = blue, cyan, green, yellow, magenta, red
 #
 ## Alternative subset of 256 colors for terminals that support it.
-visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+# visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 #
 ##### system encoding #####
 ##
@@ -95,11 +96,11 @@ visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 ## Time of inactivity (in seconds) after playlist highlighting will be disabled
 ## (0 = always on).
 ##
-playlist_disable_highlight_delay = 4
+playlist_disable_highlight_delay = 3
 #
 ## Defines how long messages are supposed to be visible.
 ##
-message_delay_time = 1
+message_delay_time = 2
 #
 ##### song format #####
 ##
@@ -211,7 +212,7 @@ current_item_inactive_column_suffix = $/r$(end)
 #
 #browser_sort_mode = name
 #
-#browser_sort_format = {%a - }{%t}|{%f} {(%l)}
+browser_sort_format = {(%l)} {%a - }{%t}|{%f}
 #
 ##### columns settings #####
 ##
@@ -281,29 +282,30 @@ playlist_display_mode = columns
 #
 browser_display_mode = columns
 #
-#search_engine_display_mode = classic
+search_engine_display_mode = columns
 #
-#playlist_editor_display_mode = classic
+playlist_editor_display_mode = columns
 #
 #discard_colors_if_item_is_selected = yes
 #
 #show_duplicate_tags = true
 #
-#incremental_seeking = yes
+incremental_seeking = yes
 #
 #seek_time = 1
 #
 #volume_change_step = 2
 #
-#autocenter_mode = no
+autocenter_mode = yes
 #
-#centered_cursor = no
+centered_cursor = yes
 #
 ##
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-progressbar_look = ->
+progressbar_look = ﰣ
+
 #
 ## Available values: database, playlist.
 ##
@@ -311,7 +313,7 @@ progressbar_look = ->
 #
 ## Available values: classic, alternative.
 ##
-#user_interface = classic
+user_interface = alternative
 #
 #data_fetching_delay = yes
 #
@@ -393,7 +395,7 @@ startup_screen = media_library
 ## Default width of locked screen (in %).  Acceptable values are from 20 to 80.
 ##
 #
-#locked_screen_width_part = 50
+locked_screen_width_part = 60
 #
 #ask_for_locked_screen_width_part = yes
 #
@@ -428,7 +430,7 @@ ignore_leading_the = yes
 #
 #block_search_constraints_change_if_items_found = yes
 #
-#mouse_support = yes
+mouse_support = no
 #
 #mouse_list_scroll_whole_page = yes
 #
@@ -458,7 +460,7 @@ ignore_leading_the = yes
 #
 #search_engine_default_search_mode = 1
 #
-external_editor = vim
+external_editor = nvim
 #
 ## Note: set to yes if external editor is a console application.
 ##
@@ -493,18 +495,20 @@ use_console_editor = yes
 ## Note: due to technical limitations of older ncurses version, if 256 colors
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
-#
-#colors_enabled = yes
+
+
+colors_enabled = yes
 #
 empty_tag_color = magenta
 #
-#header_window_color = magenta
+header_window_color = cyan
 #
 #volume_color = default
+volume_color = "red"
 #
-#state_line_color = default
+state_line_color = "yellow"
 #
-#state_flags_color = default:b
+state_flags_color = default:b
 #
 main_window_color = white
 #
@@ -512,19 +516,19 @@ main_window_color = white
 #
 #color2 = green
 #
-progressbar_color = black:b
+progressbar_color = "yellow"
 #
 progressbar_elapsed_color = blue:b
 #
-statusbar_color = red
+# statusbar_color = red
+statusbar_color = "cyan"
 #
 statusbar_time_color = cyan:b
 #
 #player_state_color = default:b
 #
-#alternative_ui_separator_color = black:b
+alternative_ui_separator_color = green:b
 #
 #window_border_color = green
 #
 #active_window_border = red
-#e
