@@ -28,8 +28,14 @@ alias cfc='config commit -a -m'
 alias cfp='config push'
 
 # Backup
-alias rsdry='rsync -r -n -t -v --delete -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/myData/hyperversum'
-alias rsbkp='rsync -r -t -v --delete -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/myData/hyperversum'
+alias ehdry='rsync -r -n -t -v --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraEl/hyperversum'
+alias ehbkp='rsync -r -t -v --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraEl/hyperversum'
+alias phdry='rsync -r -n -t -v --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraPass/hyperversum'
+alias phbkp='rsync -r -t -v --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraPass/hyperversum'
+alias eddry='rsync -r -n -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
+alias edbkp='rsync -r -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
+alias pddry='rsync -r -n -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
+alias pdbkp='rsync -r -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 
 # find processes
 alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
@@ -115,7 +121,6 @@ alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
 
 # Personal files
 alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
-alias desk='lfcd /mnt/01D5707D40B081F0/Users/ascol/Desktop'
 alias doc='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents'
 alias dow='lfcd /mnt/01D5707D40B081F0/Users/ascol/Downloads'
 alias mus='lfcd /mnt/01D5707D40B081F0/Users/ascol/Music'

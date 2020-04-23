@@ -85,7 +85,7 @@ cmd open ${{
 	*)
 	    case $(file --mime-type $f -b) in
 		text/*) $EDITOR $fx;;
-		image/*) rotdir $f | grep -i "\.\(png\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio 2>/dev/null | lf-select & ;;
+		image/*) rotdir $f | grep -i "\.\(png\|ico\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio 2>/dev/null | lf-select & ;;
 		# image/x-xcf|image/svg+xml) setsid gimp $f >/dev/null 2>&1 & ;;
 		audio/*) mpv $f ;;
 		video/*) setsid mpv $f -quiet >/dev/null 2>&1 & ;;
