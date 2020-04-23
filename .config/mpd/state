@@ -1,4 +1,4 @@
-sw_volume: 100
+sw_volume: 80
 audio_device_state:1:MPD
 audio_device_state:1:toggle_visualizer
 state: stop
