@@ -66,14 +66,14 @@
       nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
       #ranger                  # ranger shell (https://github.com/ranger/ranger)
       # vpn_ip                # virtual private network indicator
-       #ram                   # free RAM
-       #load                  # CPU load
-       #time                  # current time
+      # ram                   # free RAM
+      # load                  # CPU load
+      # time                  # current time
       # public_ip             # public IP address
       # proxy                 # system-wide http/https/ftp proxy
-       battery               # internal battery
-       #example               # example user-defined segment (see prompt_example function below)
-	context                 # user@hostname
+      battery               # internal battery
+      # example               # example user-defined segment (see prompt_example function below)
+      context                 # user@hostname
   )
 
   # To disable default icons for all segments, set POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION=''.

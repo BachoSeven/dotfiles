@@ -1,0 +1,295 @@
+2020-04-23 17:46:36.8218 Info Starting Jackett v0.16.105.0 
+2020-04-23 17:46:37.5152 Info Environment version: 3.1.3 (/home/francesco/downloads/Jackett/) 
+2020-04-23 17:46:37.5152 Info OS version: Unix 5.3.0.46 (64bit OS) (64bit process) 
+2020-04-23 17:46:37.5152 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-23 17:46:37.5184 Info File /etc/issue: Ubuntu 18.04.4 LTS \n \l 
+2020-04-23 17:46:37.5184 Info Running in Docker: No 
+2020-04-23 17:46:37.5184 Info ThreadPool MaxThreads: 32767 workerThreads, 1000 completionPortThreads 
+2020-04-23 17:46:37.5184 Info App config/log directory: /home/francesco/.config/Jackett 
+2020-04-23 17:46:37.5184 Info Using Proxy: No 
+2020-04-23 17:46:37.5184 Info Using HTTP Client: HttpWebClient2NetCore 
+2020-04-23 17:46:37.7014 Error System.IO.FileNotFoundException: Could not load file or assembly 'YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e'. The system cannot find the file specified.
+
+File name: 'YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e'
+   at Jackett.Common.Services.IndexerManagerService.InitCardigannIndexers(IEnumerable`1 path)
+   at Jackett.Common.Services.IndexerManagerService.InitIndexers(IEnumerable`1 path)
+   at Jackett.Server.Services.ServerService.Initalize()
+   at Jackett.Server.Helper.Initialize()
+   at Jackett.Server.Startup.ConfigureServices(IServiceCollection services)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.StartupLoader.ConfigureServicesDelegateBuilder`1.<>c__DisplayClass15_0.<BuildStartupServicesFilterPipeline>g__RunPipeline|0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.StartupLoader.ConfigureServicesDelegateBuilder`1.<>c__DisplayClass14_0.<ConfigureServices>g__ConfigureServicesWithContainerConfiguration|0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.ConfigureServices(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.WebHost.EnsureApplicationServices()
+   at Microsoft.AspNetCore.Hosting.WebHost.Initialize()
+   at Microsoft.AspNetCore.Hosting.WebHostBuilder.Build()
+   at Jackett.Server.Program.Main(String[] args)
+
+ System.IO.FileNotFoundException: Could not load file or assembly 'YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e'. The system cannot find the file specified.
+
+File name: 'YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e'
+   at Jackett.Common.Services.IndexerManagerService.InitCardigannIndexers(IEnumerable`1 path)
+   at Jackett.Common.Services.IndexerManagerService.InitIndexers(IEnumerable`1 path)
+   at Jackett.Server.Services.ServerService.Initalize()
+   at Jackett.Server.Helper.Initialize()
+   at Jackett.Server.Startup.ConfigureServices(IServiceCollection services)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.StartupLoader.ConfigureServicesDelegateBuilder`1.<>c__DisplayClass15_0.<BuildStartupServicesFilterPipeline>g__RunPipeline|0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.StartupLoader.ConfigureServicesDelegateBuilder`1.<>c__DisplayClass14_0.<ConfigureServices>g__ConfigureServicesWithContainerConfiguration|0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.ConfigureServices(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.WebHost.EnsureApplicationServices()
+   at Microsoft.AspNetCore.Hosting.WebHost.Initialize()
+   at Microsoft.AspNetCore.Hosting.WebHostBuilder.Build()
+   at Jackett.Server.Program.Main(String[] args)
+
+
+2020-04-23 17:46:48.8438 Info Starting Jackett v0.16.105.0 
+2020-04-23 17:46:49.4820 Info Environment version: 3.1.3 (/home/francesco/programs_drivers/web_stuff/Jackett/) 
+2020-04-23 17:46:49.4820 Info OS version: Unix 5.3.0.46 (64bit OS) (64bit process) 
+2020-04-23 17:46:49.4820 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-23 17:46:49.4820 Info File /etc/issue: Ubuntu 18.04.4 LTS \n \l 
+2020-04-23 17:46:49.4820 Info Running in Docker: No 
+2020-04-23 17:46:49.4820 Info ThreadPool MaxThreads: 32767 workerThreads, 1000 completionPortThreads 
+2020-04-23 17:46:49.4820 Info App config/log directory: /home/francesco/.config/Jackett 
+2020-04-23 17:46:49.4820 Info Using Proxy: No 
+2020-04-23 17:46:49.4853 Info Using HTTP Client: HttpWebClient2NetCore 
+2020-04-23 17:46:49.6339 Info Loading Cardigann definitions from: /home/francesco/.config/cardigann/definitions/, /etc/xdg/cardigan/definitions/, /home/francesco/programs_drivers/web_stuff/Jackett/Definitions 
+2020-04-23 17:46:51.2321 Info Cardigann definitions loaded: pier720, abnormal, alpharatio, anidex, anidub, animebytes, animetorrents, tehconnectionme, avistaz, awesomehd, bakabt, bb, bitcityreloaded, bithdtv, bjshare, broadcastthenet, brokenstones, cgpeers, cinecalidad, cinemaz, corsarored, danishbits, digitalcore, digitalhive, divxtotal, elitetracker, epublibre, filelist, funfile, fuzer, gazellegames, gimmepeers, hdbitsapi, hdolimpo, hdonly, hdspace, hdtorrents, hebits, horriblesubs, immortalseed, internetarchive, iptorrents, lostfilm, mejortorrent, milkie, morethantv, myamity, myanonamouse, ncore, newpct, newrealworld, norbits, nordicbits, notwhatcd, orpheus, partis, passthepopcorn, piratethenet, pixelhd, polishtracker, pornolab, pretome, privatehd, psytorrents, rarbg, passtheheadphones, revolutiontt, rutracker, scenehd, scenetime, secretcinema, shazbat, showrss, solidtorrents, speedcd, superbits, toloka, torrentbytes, torrentday, torrentech, torrentheaven, torrentleech, torrentnetwork, torrentscsv, torrentseeds, torrentsyndikat, transmithenet, tvstore, tvvault, xspeeds, xthor, yts, animetosho, sukebeinyaasi, classix, hdtime, hdsky, torrentgalaxyorg, piratbit, baibako, alexfilm, torrentbomb, 7torrents, asiancinema, btsow, xwtorrents, nyaasi, netcosmo, torrentslocal, demonoid, leaguehd, bit-titan, hdroute, filmsclub, underverse, theshinning, polishsource, metaliplayro, 0daykiev, greekteam, cinematik, speedmasterhd, netlab, torrent9clone, brobits, purovicio, inperil, nethd, pixelcove, tlfbits, rutracker-ru, 2fast4you, underversel, bithumen, pleasuredome, sharewood, tvchaosuk, totheglory, bitturk, gaytorrentru, hamsterstudio, torrentproject2, proaudiotorrents, ilcorsaronero, hdcenter, torrentoyunindir, asgaard, theshow, jpopsuki, sktorrent-org, cili180, pornbits, brasiltracker, kinonavse100, eniahd, u2, concen, hqsource, xtremezone, btgigs, hdbits, hd4fans, cpasbienclone, scenerush, bluebirdhd, finelite, film-paleis, turktorrent, ast4u, diablotorrent, ccfbits, badasstorrents, racingforme, ebookparadijs, icetorrent, torrentsectorcrew, iv-torrents, trezzor, torrentquest, takeabyte, soundpark, thevault, tntvillage, unionfansub, springsunday, concertos, pwtorrents, torrentparadise, torrentfactory, ptsbao, learnflakes, torrentdownload, crnaberza, hdhome, xtremefile, Channelx, spacetorrent, hdme, casatorrent, speedtorrentreloaded, girotorrent, blutopia, mma-torrents, yggtorrent, bitru, 3evils, pornolive, funkytorrents, nostalgic, hdtorrentsit, isohunt2, deildu, arabp2p, torrentv, estrenosdtl, thegeeks, scenefz, finvip, backups, erzsebet, torrentz2, beyond-hd, nbtorrents, cinemamovies, nitro, femdomcult, Bittorrentfiles, shareuniversity, sharespacedb, extremlymtorrents, u-torrents, rintor, ptfiles, marinetracker, bitspyder, sdbits, ethor, hdbitscom, limetorrents, 4thd, gamestorrents, zamundanet, torrentdb, zooqle, theoccult, ttsweb, cpasbien, bigtower, magnet4you, aniRena, uniongang, legittorrents, hdreactor, desireleasers, hdturk, thefallingangels, rus-media, newretro, documentarytorrents, riperam, pornleech, torrentkitty, skytorrentsclone, kinorun, aftershock, torrentfunk, mypornclub, extremetorrents, kickasstorrent, magnetdl, 52pt, shareisland, torrenthane, pctorrent, nnm-club, crazyscorner, theplace, torrent-explosiv, 3changtrai, pt99, filebase, gfxpeers, newstudiol, parnuxi, turkseed, mvgroupforum, pussytorrents, lechaudron, divteam, siambit, audiobookbay, piratbitl, ibit, academictorrents, xbytesv2, fullmixmusic, dxp, torrent9, mteamtp2fa, ourbits, broadcity, teamos, leporno, RockBox, desitorrents, acgrip, losslessclub, beyond-hd-oneurl, uniondht, downloadville, zetorrents, retroflix, carpathians, peersfm, idope, datascene, moviesdvdr, rutor, zelkaorg, mteamtp, firebit, moecat, sportscult, fanoin, bigtorrent, gay-torrentsorg, demonsite, sporthd, btschool, yourbittorrent, p2pbg, pornbay, scenepalace, hachede, cztorrent, elitetorrent-biz, glodls, the-madhouse, topnow, fantasticheaven, prostylex, sktorrent, rodvd, audiobooktorrents, sosulki, tellytorrent, tenyardtracker, dragonworldreloaded, thepiratebay, metaltracker, lastfiles, pornorip, spiritofrevolution, myspleen, torrenthr, theaudioscene, thehorrorcharnel, ettv, libranet, hush, haidan, ztracker, epizod, kapaki, torrentdownloads, r3vwtf, acgsou, extratorrent-ag, horrorsite, toros, torrentland, vizuk, btdb, korsar, hdforever, torrentz2k, torrentlt, wdt, audionews, pirateiro, exttorrents, exkinoray, oxtorrent, pthome, kickasstorrent-kathow, Das-Unerwartete, linkomanija, hdspain, yggcookie, arabafenice, snowpt, beitai, lesaloon, p2pelite, xwtclassics, eztv, newstudio, torrentccf, bibliotik, btdigg, itorrent, dmhy, boxingtorrents, nntt, rptorrents, amigosshare, rapidzona, unlimitz, muziekfabriek, tokyotosho, hon3yhd, onlineselfeducation, hddisk, empornium, tapochek, bteye, tekno3d, torrent-pirat, movcr, uhdbits, hdchina, torrentbd, gigatorrents, pornotor, 3dtorrents, torrentview, gktorrent, focusx, linuxtracker, galeriens, rustorka, world-of-tomorrow, esharenet, racing4everyone, estone, 1337x, seedfile, dxdhd, mactorrents, fouducinema, shokweb, dark-shadow, frozenlayer, torlock, chdbits, torrenting, hdzone, nyaa-pantsu, bigfangroup, insanetracker, bithorlo, tasmanit, trancetraffic, twilightszoom, karagarga, hdu, sukebei-pantsu, microbit, extratorrent-cd, ebooks-shares, ilcorsaroblu, kinozal, rstorrent, arenabg, dimeadozen, legacyhd, crazyhd, btetree, teamhd, wihd, shellife, cinemageddon, hdarea, crazyspirits, torrent-turk, hdcity, btnext, acidlounge, totallykids, onejav, efectodoppler, cartoonchaos, puntorrent, immortuos, torrent4you, freetorrent, magico, chilebt, darktracker, torrentleech-pl, booktracker, majomparade, generationfree, gay-torrents, hddolby, yourexotic, pterclub, casstudiotv, tribalmixes, mvgroupmain, xiteme, kaztorka, monova, twilight, mononokebt, theempire, xxxtor 
+2020-04-23 17:46:51.2321 Info Adding aggregate indexer 
+2020-04-23 17:46:51.3678 Warn No XML encryptor configured. Key {d23cc423-68d0-44f7-8024-f2b1362fb3a4} may be persisted to storage in unencrypted form. 
+2020-04-23 17:46:51.3678 Warn No XML encryptor configured. Key {d23cc423-68d0-44f7-8024-f2b1362fb3a4} may be persisted to storage in unencrypted form. 
+2020-04-23 17:46:51.4065 Info Jackett startup finished in 3.344 s 
+2020-04-23 17:48:55.9646 Info Found 0 releases from AggregateSearch for: asdf 
+2020-04-23 17:49:00.0398 Info Found 0 releases from AggregateSearch for: brian 
+2020-04-23 17:49:53.1470 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-23 17:49:53.9297 Info Checked for a updated release but none was found. Current: v0.16.105 Latest: v0.16.105 
+2020-04-23 17:50:22.3632 Info Manual search for "brian" on  with 0 results. 
+2020-04-23 17:52:25.7886 Info Found 49 releases from RuTracker 
+2020-04-23 17:54:16.9068 Error rutracker: Error while parsing row '<tr id="trs-tr-1546122" class="tCenter hl-tr">
+		<td class="row1 t-ico">
+						<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1" alt="o">
+					</td>
+		<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">√</span></td>
+		<td class="row1 f-name">
+			<div class="f-name"><a class="gen f ts-text" href="tracker.php?f=1912">Электронная музыка (Видео)</a></div>
+		</td>
+		<td class="row4 med tLeft t-title">
+									<div class="wbr t-title">
+												<a data-topic_id="1546122" class="med tLink ts-text hl-tags bold" href="viewtopic.php?t=1546122">Tycho - The Daydream (Brian Levi Bowman) [2008, Downtempo, HR HDTV]</a>
+			</div>
+			<div id="tg-1546122" class="t-tags"></div>
+		</td>
+		<td class="row1 u-name">
+			<div class="wbr u-name"><a class="med ts-text" href="tracker.php?pid=1056217">1man</a></div>
+		</td>
+		<td class="row4 small nowrap tor-size" data-ts_text="401261167">
+			<a class="small tr-dl dl-stub" href="dl.php?t=1546122">382.7&nbsp;MB ↓</a>		</td>
+		<td class="row4 nowrap" data-ts_text="-18375">
+			<b class="small">никогда</b>		</td>
+		<td class="row4 leechmed bold" title="Личи">0</td>
+		<td class="row4 small number-format">5</td>
+		<td class="row4 small nowrap" style="padding: 1px 3px 2px;" data-ts_text="1585141640">
+						<p>25-Мар-20</p>
+					</td>
+	</tr>':
+
+System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at Jackett.Common.Indexers.RuTracker.PerformQuery(TorznabQuery query) in /home/vsts/work/1/s/src/Jackett.Common/Indexers/rutracker.cs:line 1459 
+2020-04-23 17:54:16.9120 Error rutracker: Error while parsing row '<tr id="trs-tr-3526099" class="tCenter hl-tr">
+		<td class="row1 t-ico">
+						<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1" alt="o">
+					</td>
+		<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">√</span></td>
+		<td class="row1 f-name">
+			<div class="f-name"><a class="gen f ts-text" href="tracker.php?f=984">Классическая музыка (DVD и HD Видео)</a></div>
+		</td>
+		<td class="row4 med tLeft t-title">
+									<div class="wbr t-title">
+												<a data-topic_id="3526099" class="med tLink ts-text hl-tags bold" href="viewtopic.php?t=3526099">Brian Johnson - Love Came Down [2010, Contemporary Worship Music/Christian Music. DVD5]</a>
+			</div>
+			<div id="tg-3526099" class="t-tags"></div>
+		</td>
+		<td class="row1 u-name">
+			<div class="wbr u-name"><a class="med ts-text" href="tracker.php?pid=21993061">YWM2</a></div>
+		</td>
+		<td class="row4 small nowrap tor-size" data-ts_text="2324281344">
+			<a class="small tr-dl dl-stub" href="dl.php?t=3526099">2.16&nbsp;GB ↓</a>		</td>
+		<td class="row4 nowrap" data-ts_text="-18375">
+			<b class="small">никогда</b>		</td>
+		<td class="row4 leechmed bold" title="Личи">1</td>
+		<td class="row4 small number-format">6</td>
+		<td class="row4 small nowrap" style="padding: 1px 3px 2px;" data-ts_text="1585140933">
+						<p>25-Мар-20</p>
+					</td>
+	</tr>':
+
+System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at Jackett.Common.Indexers.RuTracker.PerformQuery(TorznabQuery query) in /home/vsts/work/1/s/src/Jackett.Common/Indexers/rutracker.cs:line 1459 
+2020-04-23 17:54:17.6343 Info Manual search for "brian" on kickasstorrent, kickasstorrent-kathow, rutracker, rutracker-ru, thepiratebay with 202 results. 
+2020-04-23 17:54:23.9105 Info Manual search for "brian eno" on kickasstorrent, kickasstorrent-kathow, rutracker, rutracker-ru, thepiratebay with 141 results. 
+2020-04-23 17:54:59.4777 Error rutracker: Error while parsing row '<tr id="trs-tr-1546122" class="tCenter hl-tr">
+		<td class="row1 t-ico">
+						<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1" alt="o">
+					</td>
+		<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">√</span></td>
+		<td class="row1 f-name">
+			<div class="f-name"><a class="gen f ts-text" href="tracker.php?f=1912">Электронная музыка (Видео)</a></div>
+		</td>
+		<td class="row4 med tLeft t-title">
+									<div class="wbr t-title">
+												<a data-topic_id="1546122" class="med tLink ts-text hl-tags bold" href="viewtopic.php?t=1546122">Tycho - The Daydream (Brian Levi Bowman) [2008, Downtempo, HR HDTV]</a>
+			</div>
+			<div id="tg-1546122" class="t-tags"></div>
+		</td>
+		<td class="row1 u-name">
+			<div class="wbr u-name"><a class="med ts-text" href="tracker.php?pid=1056217">1man</a></div>
+		</td>
+		<td class="row4 small nowrap tor-size" data-ts_text="401261167">
+			<a class="small tr-dl dl-stub" href="dl.php?t=1546122">382.7&nbsp;MB ↓</a>		</td>
+		<td class="row4 nowrap" data-ts_text="-18375">
+			<b class="small">никогда</b>		</td>
+		<td class="row4 leechmed bold" title="Личи">0</td>
+		<td class="row4 small number-format">5</td>
+		<td class="row4 small nowrap" style="padding: 1px 3px 2px;" data-ts_text="1585141640">
+						<p>25-Мар-20</p>
+					</td>
+	</tr>':
+
+System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at Jackett.Common.Indexers.RuTracker.PerformQuery(TorznabQuery query) in /home/vsts/work/1/s/src/Jackett.Common/Indexers/rutracker.cs:line 1459 
+2020-04-23 17:54:59.4777 Error rutracker: Error while parsing row '<tr id="trs-tr-3526099" class="tCenter hl-tr">
+		<td class="row1 t-ico">
+						<img src="https://static.t-ru.org/templates/v1/images/icon_minipost.gif" class="icon1" alt="o">
+					</td>
+		<td class="row1 t-ico" title="проверено"><span class="tor-icon tor-approved">√</span></td>
+		<td class="row1 f-name">
+			<div class="f-name"><a class="gen f ts-text" href="tracker.php?f=984">Классическая музыка (DVD и HD Видео)</a></div>
+		</td>
+		<td class="row4 med tLeft t-title">
+									<div class="wbr t-title">
+												<a data-topic_id="3526099" class="med tLink ts-text hl-tags bold" href="viewtopic.php?t=3526099">Brian Johnson - Love Came Down [2010, Contemporary Worship Music/Christian Music. DVD5]</a>
+			</div>
+			<div id="tg-3526099" class="t-tags"></div>
+		</td>
+		<td class="row1 u-name">
+			<div class="wbr u-name"><a class="med ts-text" href="tracker.php?pid=21993061">YWM2</a></div>
+		</td>
+		<td class="row4 small nowrap tor-size" data-ts_text="2324281344">
+			<a class="small tr-dl dl-stub" href="dl.php?t=3526099">2.16&nbsp;GB ↓</a>		</td>
+		<td class="row4 nowrap" data-ts_text="-18375">
+			<b class="small">никогда</b>		</td>
+		<td class="row4 leechmed bold" title="Личи">1</td>
+		<td class="row4 small number-format">6</td>
+		<td class="row4 small nowrap" style="padding: 1px 3px 2px;" data-ts_text="1585140933">
+						<p>25-Мар-20</p>
+					</td>
+	</tr>':
+
+System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at Jackett.Common.Indexers.RuTracker.PerformQuery(TorznabQuery query) in /home/vsts/work/1/s/src/Jackett.Common/Indexers/rutracker.cs:line 1459 
+2020-04-23 17:54:59.4873 Info Found 202 releases from AggregateSearch for: brian 
+2020-04-23 18:00:01.1904 Info Starting Jackett v0.16.105.0 
+2020-04-23 18:00:02.0955 Info Environment version: 3.1.3 (/home/francesco/programs_drivers/web_stuff/Jackett/) 
+2020-04-23 18:00:02.0955 Info OS version: Unix 5.3.0.46 (64bit OS) (64bit process) 
+2020-04-23 18:00:02.0963 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-23 18:00:02.0963 Info File /etc/issue: Ubuntu 18.04.4 LTS \n \l 
+2020-04-23 18:00:02.0963 Info Running in Docker: No 
+2020-04-23 18:00:02.0963 Info ThreadPool MaxThreads: 32767 workerThreads, 1000 completionPortThreads 
+2020-04-23 18:00:02.0963 Info App config/log directory: /home/francesco/.config/Jackett 
+2020-04-23 18:00:02.0963 Info Using Proxy: No 
+2020-04-23 18:00:02.0963 Info Using HTTP Client: HttpWebClient2NetCore 
+2020-04-23 18:00:02.4417 Info Loading Cardigann definitions from: /home/francesco/.config/cardigann/definitions/, /etc/xdg/cardigan/definitions/, /home/francesco/programs_drivers/web_stuff/Jackett/Definitions 
+2020-04-23 18:00:05.3906 Info Cardigann definitions loaded: pier720, abnormal, alpharatio, anidex, anidub, animebytes, animetorrents, tehconnectionme, avistaz, awesomehd, bakabt, bb, bitcityreloaded, bithdtv, bjshare, broadcastthenet, brokenstones, cgpeers, cinecalidad, cinemaz, corsarored, danishbits, digitalcore, digitalhive, divxtotal, elitetracker, epublibre, filelist, funfile, fuzer, gazellegames, gimmepeers, hdbitsapi, hdolimpo, hdonly, hdspace, hdtorrents, hebits, horriblesubs, immortalseed, internetarchive, iptorrents, lostfilm, mejortorrent, milkie, morethantv, myamity, myanonamouse, ncore, newpct, newrealworld, norbits, nordicbits, notwhatcd, orpheus, partis, passthepopcorn, piratethenet, pixelhd, polishtracker, pornolab, pretome, privatehd, psytorrents, rarbg, passtheheadphones, revolutiontt, rutracker, scenehd, scenetime, secretcinema, shazbat, showrss, solidtorrents, speedcd, superbits, toloka, torrentbytes, torrentday, torrentech, torrentheaven, torrentleech, torrentnetwork, torrentscsv, torrentseeds, torrentsyndikat, transmithenet, tvstore, tvvault, xspeeds, xthor, yts, animetosho, sukebeinyaasi, classix, hdtime, hdsky, torrentgalaxyorg, piratbit, baibako, alexfilm, torrentbomb, 7torrents, asiancinema, btsow, xwtorrents, nyaasi, netcosmo, torrentslocal, demonoid, leaguehd, bit-titan, hdroute, filmsclub, underverse, theshinning, polishsource, metaliplayro, 0daykiev, greekteam, cinematik, speedmasterhd, netlab, torrent9clone, brobits, purovicio, inperil, nethd, pixelcove, tlfbits, rutracker-ru, 2fast4you, underversel, bithumen, pleasuredome, sharewood, tvchaosuk, totheglory, bitturk, gaytorrentru, hamsterstudio, torrentproject2, proaudiotorrents, ilcorsaronero, hdcenter, torrentoyunindir, asgaard, theshow, jpopsuki, sktorrent-org, cili180, pornbits, brasiltracker, kinonavse100, eniahd, u2, concen, hqsource, xtremezone, btgigs, hdbits, hd4fans, cpasbienclone, scenerush, bluebirdhd, finelite, film-paleis, turktorrent, ast4u, diablotorrent, ccfbits, badasstorrents, racingforme, ebookparadijs, icetorrent, torrentsectorcrew, iv-torrents, trezzor, torrentquest, takeabyte, soundpark, thevault, tntvillage, unionfansub, springsunday, concertos, pwtorrents, torrentparadise, torrentfactory, ptsbao, learnflakes, torrentdownload, crnaberza, hdhome, xtremefile, Channelx, spacetorrent, hdme, casatorrent, speedtorrentreloaded, girotorrent, blutopia, mma-torrents, yggtorrent, bitru, 3evils, pornolive, funkytorrents, nostalgic, hdtorrentsit, isohunt2, deildu, arabp2p, torrentv, estrenosdtl, thegeeks, scenefz, finvip, backups, erzsebet, torrentz2, beyond-hd, nbtorrents, cinemamovies, nitro, femdomcult, Bittorrentfiles, shareuniversity, sharespacedb, extremlymtorrents, u-torrents, rintor, ptfiles, marinetracker, bitspyder, sdbits, ethor, hdbitscom, limetorrents, 4thd, gamestorrents, zamundanet, torrentdb, zooqle, theoccult, ttsweb, cpasbien, bigtower, magnet4you, aniRena, uniongang, legittorrents, hdreactor, desireleasers, hdturk, thefallingangels, rus-media, newretro, documentarytorrents, riperam, pornleech, torrentkitty, skytorrentsclone, kinorun, aftershock, torrentfunk, mypornclub, extremetorrents, kickasstorrent, magnetdl, 52pt, shareisland, torrenthane, pctorrent, nnm-club, crazyscorner, theplace, torrent-explosiv, 3changtrai, pt99, filebase, gfxpeers, newstudiol, parnuxi, turkseed, mvgroupforum, pussytorrents, lechaudron, divteam, siambit, audiobookbay, piratbitl, ibit, academictorrents, xbytesv2, fullmixmusic, dxp, torrent9, mteamtp2fa, ourbits, broadcity, teamos, leporno, RockBox, desitorrents, acgrip, losslessclub, beyond-hd-oneurl, uniondht, downloadville, zetorrents, retroflix, carpathians, peersfm, idope, datascene, moviesdvdr, rutor, zelkaorg, mteamtp, firebit, moecat, sportscult, fanoin, bigtorrent, gay-torrentsorg, demonsite, sporthd, btschool, yourbittorrent, p2pbg, pornbay, scenepalace, hachede, cztorrent, elitetorrent-biz, glodls, the-madhouse, topnow, fantasticheaven, prostylex, sktorrent, rodvd, audiobooktorrents, sosulki, tellytorrent, tenyardtracker, dragonworldreloaded, thepiratebay, metaltracker, lastfiles, pornorip, spiritofrevolution, myspleen, torrenthr, theaudioscene, thehorrorcharnel, ettv, libranet, hush, haidan, ztracker, epizod, kapaki, torrentdownloads, r3vwtf, acgsou, extratorrent-ag, horrorsite, toros, torrentland, vizuk, btdb, korsar, hdforever, torrentz2k, torrentlt, wdt, audionews, pirateiro, exttorrents, exkinoray, oxtorrent, pthome, kickasstorrent-kathow, Das-Unerwartete, linkomanija, hdspain, yggcookie, arabafenice, snowpt, beitai, lesaloon, p2pelite, xwtclassics, eztv, newstudio, torrentccf, bibliotik, btdigg, itorrent, dmhy, boxingtorrents, nntt, rptorrents, amigosshare, rapidzona, unlimitz, muziekfabriek, tokyotosho, hon3yhd, onlineselfeducation, hddisk, empornium, tapochek, bteye, tekno3d, torrent-pirat, movcr, uhdbits, hdchina, torrentbd, gigatorrents, pornotor, 3dtorrents, torrentview, gktorrent, focusx, linuxtracker, galeriens, rustorka, world-of-tomorrow, esharenet, racing4everyone, estone, 1337x, seedfile, dxdhd, mactorrents, fouducinema, shokweb, dark-shadow, frozenlayer, torlock, chdbits, torrenting, hdzone, nyaa-pantsu, bigfangroup, insanetracker, bithorlo, tasmanit, trancetraffic, twilightszoom, karagarga, hdu, sukebei-pantsu, microbit, extratorrent-cd, ebooks-shares, ilcorsaroblu, kinozal, rstorrent, arenabg, dimeadozen, legacyhd, crazyhd, btetree, teamhd, wihd, shellife, cinemageddon, hdarea, crazyspirits, torrent-turk, hdcity, btnext, acidlounge, totallykids, onejav, efectodoppler, cartoonchaos, puntorrent, immortuos, torrent4you, freetorrent, magico, chilebt, darktracker, torrentleech-pl, booktracker, majomparade, generationfree, gay-torrents, hddolby, yourexotic, pterclub, casstudiotv, tribalmixes, mvgroupmain, xiteme, kaztorka, monova, twilight, mononokebt, theempire, xxxtor 
+2020-04-23 18:00:05.3906 Info Adding aggregate indexer 
+2020-04-23 18:00:05.5488 Info Jackett startup finished in 5.536 s 
+2020-04-23 18:24:19.5871 Info Found 91 releases from AggregateSearch for: brian eno 
+2020-04-23 19:00:05.4162 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-23 19:00:07.1061 Info Checked for a updated release but none was found. Current: v0.16.105 Latest: v0.16.105 
+2020-04-23 22:29:51.2053 Info Found 141 releases from AggregateSearch for: brian eno 
+2020-04-23 22:30:23.4112 Info Found 141 releases from AggregateSearch for: brian eno 
+2020-04-23 23:05:30.9082 Info Found 214 releases from AggregateSearch for: Finale 
+2020-04-23 23:05:33.8145 Info Found 0 releases from AggregateSearch for: MMFinal 
+2020-04-23 23:05:47.0684 Info Found 0 releases from AggregateSearch for: MMFinal 
+2020-04-23 23:05:53.3195 Info Found 1 releases from AggregateSearch for: Finale  make music 
+2020-04-23 23:06:50.1414 Info Found 108 releases from AggregateSearch for: Finale 
+2020-04-24 13:32:45.0523 Info Starting Jackett v0.16.105.0 
+2020-04-24 13:32:46.1019 Info Environment version: 3.1.3 (/home/francesco/programs_drivers/web_stuff/Jackett/) 
+2020-04-24 13:32:46.1019 Info OS version: Unix 5.3.0.46 (64bit OS) (64bit process) 
+2020-04-24 13:32:46.1019 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-24 13:32:46.1019 Info File /etc/issue: Ubuntu 18.04.4 LTS \n \l 
+2020-04-24 13:32:46.1019 Info Running in Docker: No 
+2020-04-24 13:32:46.1019 Info ThreadPool MaxThreads: 32767 workerThreads, 1000 completionPortThreads 
+2020-04-24 13:32:46.1019 Info App config/log directory: /home/francesco/.config/Jackett 
+2020-04-24 13:32:46.1019 Info Using Proxy: No 
+2020-04-24 13:32:46.1065 Info Using HTTP Client: HttpWebClient2NetCore 
+2020-04-24 13:32:46.3962 Info Loading Cardigann definitions from: /home/francesco/.config/cardigann/definitions/, /etc/xdg/cardigan/definitions/, /home/francesco/programs_drivers/web_stuff/Jackett/Definitions 
+2020-04-24 13:32:48.8499 Info Cardigann definitions loaded: pier720, abnormal, alpharatio, anidex, anidub, animebytes, animetorrents, tehconnectionme, avistaz, awesomehd, bakabt, bb, bitcityreloaded, bithdtv, bjshare, broadcastthenet, brokenstones, cgpeers, cinecalidad, cinemaz, corsarored, danishbits, digitalcore, digitalhive, divxtotal, elitetracker, epublibre, filelist, funfile, fuzer, gazellegames, gimmepeers, hdbitsapi, hdolimpo, hdonly, hdspace, hdtorrents, hebits, horriblesubs, immortalseed, internetarchive, iptorrents, lostfilm, mejortorrent, milkie, morethantv, myamity, myanonamouse, ncore, newpct, newrealworld, norbits, nordicbits, notwhatcd, orpheus, partis, passthepopcorn, piratethenet, pixelhd, polishtracker, pornolab, pretome, privatehd, psytorrents, rarbg, passtheheadphones, revolutiontt, rutracker, scenehd, scenetime, secretcinema, shazbat, showrss, solidtorrents, speedcd, superbits, toloka, torrentbytes, torrentday, torrentech, torrentheaven, torrentleech, torrentnetwork, torrentscsv, torrentseeds, torrentsyndikat, transmithenet, tvstore, tvvault, xspeeds, xthor, yts, animetosho, sukebeinyaasi, classix, hdtime, hdsky, torrentgalaxyorg, piratbit, baibako, alexfilm, torrentbomb, 7torrents, asiancinema, btsow, xwtorrents, nyaasi, netcosmo, torrentslocal, demonoid, leaguehd, bit-titan, hdroute, filmsclub, underverse, theshinning, polishsource, metaliplayro, 0daykiev, greekteam, cinematik, speedmasterhd, netlab, torrent9clone, brobits, purovicio, inperil, nethd, pixelcove, tlfbits, rutracker-ru, 2fast4you, underversel, bithumen, pleasuredome, sharewood, tvchaosuk, totheglory, bitturk, gaytorrentru, hamsterstudio, torrentproject2, proaudiotorrents, ilcorsaronero, hdcenter, torrentoyunindir, asgaard, theshow, jpopsuki, sktorrent-org, cili180, pornbits, brasiltracker, kinonavse100, eniahd, u2, concen, hqsource, xtremezone, btgigs, hdbits, hd4fans, cpasbienclone, scenerush, bluebirdhd, finelite, film-paleis, turktorrent, ast4u, diablotorrent, ccfbits, badasstorrents, racingforme, ebookparadijs, icetorrent, torrentsectorcrew, iv-torrents, trezzor, torrentquest, takeabyte, soundpark, thevault, tntvillage, unionfansub, springsunday, concertos, pwtorrents, torrentparadise, torrentfactory, ptsbao, learnflakes, torrentdownload, crnaberza, hdhome, xtremefile, Channelx, spacetorrent, hdme, casatorrent, speedtorrentreloaded, girotorrent, blutopia, mma-torrents, yggtorrent, bitru, 3evils, pornolive, funkytorrents, nostalgic, hdtorrentsit, isohunt2, deildu, arabp2p, torrentv, estrenosdtl, thegeeks, scenefz, finvip, backups, erzsebet, torrentz2, beyond-hd, nbtorrents, cinemamovies, nitro, femdomcult, Bittorrentfiles, shareuniversity, sharespacedb, extremlymtorrents, u-torrents, rintor, ptfiles, marinetracker, bitspyder, sdbits, ethor, hdbitscom, limetorrents, 4thd, gamestorrents, zamundanet, torrentdb, zooqle, theoccult, ttsweb, cpasbien, bigtower, magnet4you, aniRena, uniongang, legittorrents, hdreactor, desireleasers, hdturk, thefallingangels, rus-media, newretro, documentarytorrents, riperam, pornleech, torrentkitty, skytorrentsclone, kinorun, aftershock, torrentfunk, mypornclub, extremetorrents, kickasstorrent, magnetdl, 52pt, shareisland, torrenthane, pctorrent, nnm-club, crazyscorner, theplace, torrent-explosiv, 3changtrai, pt99, filebase, gfxpeers, newstudiol, parnuxi, turkseed, mvgroupforum, pussytorrents, lechaudron, divteam, siambit, audiobookbay, piratbitl, ibit, academictorrents, xbytesv2, fullmixmusic, dxp, torrent9, mteamtp2fa, ourbits, broadcity, teamos, leporno, RockBox, desitorrents, acgrip, losslessclub, beyond-hd-oneurl, uniondht, downloadville, zetorrents, retroflix, carpathians, peersfm, idope, datascene, moviesdvdr, rutor, zelkaorg, mteamtp, firebit, moecat, sportscult, fanoin, bigtorrent, gay-torrentsorg, demonsite, sporthd, btschool, yourbittorrent, p2pbg, pornbay, scenepalace, hachede, cztorrent, elitetorrent-biz, glodls, the-madhouse, topnow, fantasticheaven, prostylex, sktorrent, rodvd, audiobooktorrents, sosulki, tellytorrent, tenyardtracker, dragonworldreloaded, thepiratebay, metaltracker, lastfiles, pornorip, spiritofrevolution, myspleen, torrenthr, theaudioscene, thehorrorcharnel, ettv, libranet, hush, haidan, ztracker, epizod, kapaki, torrentdownloads, r3vwtf, acgsou, extratorrent-ag, horrorsite, toros, torrentland, vizuk, btdb, korsar, hdforever, torrentz2k, torrentlt, wdt, audionews, pirateiro, exttorrents, exkinoray, oxtorrent, pthome, kickasstorrent-kathow, Das-Unerwartete, linkomanija, hdspain, yggcookie, arabafenice, snowpt, beitai, lesaloon, p2pelite, xwtclassics, eztv, newstudio, torrentccf, bibliotik, btdigg, itorrent, dmhy, boxingtorrents, nntt, rptorrents, amigosshare, rapidzona, unlimitz, muziekfabriek, tokyotosho, hon3yhd, onlineselfeducation, hddisk, empornium, tapochek, bteye, tekno3d, torrent-pirat, movcr, uhdbits, hdchina, torrentbd, gigatorrents, pornotor, 3dtorrents, torrentview, gktorrent, focusx, linuxtracker, galeriens, rustorka, world-of-tomorrow, esharenet, racing4everyone, estone, 1337x, seedfile, dxdhd, mactorrents, fouducinema, shokweb, dark-shadow, frozenlayer, torlock, chdbits, torrenting, hdzone, nyaa-pantsu, bigfangroup, insanetracker, bithorlo, tasmanit, trancetraffic, twilightszoom, karagarga, hdu, sukebei-pantsu, microbit, extratorrent-cd, ebooks-shares, ilcorsaroblu, kinozal, rstorrent, arenabg, dimeadozen, legacyhd, crazyhd, btetree, teamhd, wihd, shellife, cinemageddon, hdarea, crazyspirits, torrent-turk, hdcity, btnext, acidlounge, totallykids, onejav, efectodoppler, cartoonchaos, puntorrent, immortuos, torrent4you, freetorrent, magico, chilebt, darktracker, torrentleech-pl, booktracker, majomparade, generationfree, gay-torrents, hddolby, yourexotic, pterclub, casstudiotv, tribalmixes, mvgroupmain, xiteme, kaztorka, monova, twilight, mononokebt, theempire, xxxtor 
+2020-04-24 13:32:48.8499 Info Adding aggregate indexer 
+2020-04-24 13:32:49.1027 Info Jackett startup finished in 5.570 s 
+2020-04-24 14:32:48.1299 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-24 14:32:48.7985 Info Checked for a updated release but none was found. Current: v0.16.105 Latest: v0.16.105 
+2020-04-24 19:12:40.1302 Info Starting Jackett v0.16.105.0 
+2020-04-24 19:12:41.1557 Info Environment version: 3.1.3 (/home/francesco/programs_drivers/web_stuff/Jackett/) 
+2020-04-24 19:12:41.1557 Info OS version: Unix 5.3.0.46 (64bit OS) (64bit process) 
+2020-04-24 19:12:41.1557 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-24 19:12:41.1557 Info File /etc/issue: Ubuntu 18.04.4 LTS \n \l 
+2020-04-24 19:12:41.1572 Info Running in Docker: No 
+2020-04-24 19:12:41.1572 Info ThreadPool MaxThreads: 32767 workerThreads, 1000 completionPortThreads 
+2020-04-24 19:12:41.1572 Info App config/log directory: /home/francesco/.config/Jackett 
+2020-04-24 19:12:41.1572 Info Using Proxy: No 
+2020-04-24 19:12:41.1572 Info Using HTTP Client: HttpWebClient2NetCore 
+2020-04-24 19:12:41.4432 Info Loading Cardigann definitions from: /home/francesco/.config/cardigann/definitions/, /etc/xdg/cardigan/definitions/, /home/francesco/programs_drivers/web_stuff/Jackett/Definitions 
+2020-04-24 19:12:43.7830 Info Cardigann definitions loaded: pier720, abnormal, alpharatio, anidex, anidub, animebytes, animetorrents, tehconnectionme, avistaz, awesomehd, bakabt, bb, bitcityreloaded, bithdtv, bjshare, broadcastthenet, brokenstones, cgpeers, cinecalidad, cinemaz, corsarored, danishbits, digitalcore, digitalhive, divxtotal, elitetracker, epublibre, filelist, funfile, fuzer, gazellegames, gimmepeers, hdbitsapi, hdolimpo, hdonly, hdspace, hdtorrents, hebits, horriblesubs, immortalseed, internetarchive, iptorrents, lostfilm, mejortorrent, milkie, morethantv, myamity, myanonamouse, ncore, newpct, newrealworld, norbits, nordicbits, notwhatcd, orpheus, partis, passthepopcorn, piratethenet, pixelhd, polishtracker, pornolab, pretome, privatehd, psytorrents, rarbg, passtheheadphones, revolutiontt, rutracker, scenehd, scenetime, secretcinema, shazbat, showrss, solidtorrents, speedcd, superbits, toloka, torrentbytes, torrentday, torrentech, torrentheaven, torrentleech, torrentnetwork, torrentscsv, torrentseeds, torrentsyndikat, transmithenet, tvstore, tvvault, xspeeds, xthor, yts, animetosho, sukebeinyaasi, classix, hdtime, hdsky, torrentgalaxyorg, piratbit, baibako, alexfilm, torrentbomb, 7torrents, asiancinema, btsow, xwtorrents, nyaasi, netcosmo, torrentslocal, demonoid, leaguehd, bit-titan, hdroute, filmsclub, underverse, theshinning, polishsource, metaliplayro, 0daykiev, greekteam, cinematik, speedmasterhd, netlab, torrent9clone, brobits, purovicio, inperil, nethd, pixelcove, tlfbits, rutracker-ru, 2fast4you, underversel, bithumen, pleasuredome, sharewood, tvchaosuk, totheglory, bitturk, gaytorrentru, hamsterstudio, torrentproject2, proaudiotorrents, ilcorsaronero, hdcenter, torrentoyunindir, asgaard, theshow, jpopsuki, sktorrent-org, cili180, pornbits, brasiltracker, kinonavse100, eniahd, u2, concen, hqsource, xtremezone, btgigs, hdbits, hd4fans, cpasbienclone, scenerush, bluebirdhd, finelite, film-paleis, turktorrent, ast4u, diablotorrent, ccfbits, badasstorrents, racingforme, ebookparadijs, icetorrent, torrentsectorcrew, iv-torrents, trezzor, torrentquest, takeabyte, soundpark, thevault, tntvillage, unionfansub, springsunday, concertos, pwtorrents, torrentparadise, torrentfactory, ptsbao, learnflakes, torrentdownload, crnaberza, hdhome, xtremefile, Channelx, spacetorrent, hdme, casatorrent, speedtorrentreloaded, girotorrent, blutopia, mma-torrents, yggtorrent, bitru, 3evils, pornolive, funkytorrents, nostalgic, hdtorrentsit, isohunt2, deildu, arabp2p, torrentv, estrenosdtl, thegeeks, scenefz, finvip, backups, erzsebet, torrentz2, beyond-hd, nbtorrents, cinemamovies, nitro, femdomcult, Bittorrentfiles, shareuniversity, sharespacedb, extremlymtorrents, u-torrents, rintor, ptfiles, marinetracker, bitspyder, sdbits, ethor, hdbitscom, limetorrents, 4thd, gamestorrents, zamundanet, torrentdb, zooqle, theoccult, ttsweb, cpasbien, bigtower, magnet4you, aniRena, uniongang, legittorrents, hdreactor, desireleasers, hdturk, thefallingangels, rus-media, newretro, documentarytorrents, riperam, pornleech, torrentkitty, skytorrentsclone, kinorun, aftershock, torrentfunk, mypornclub, extremetorrents, kickasstorrent, magnetdl, 52pt, shareisland, torrenthane, pctorrent, nnm-club, crazyscorner, theplace, torrent-explosiv, 3changtrai, pt99, filebase, gfxpeers, newstudiol, parnuxi, turkseed, mvgroupforum, pussytorrents, lechaudron, divteam, siambit, audiobookbay, piratbitl, ibit, academictorrents, xbytesv2, fullmixmusic, dxp, torrent9, mteamtp2fa, ourbits, broadcity, teamos, leporno, RockBox, desitorrents, acgrip, losslessclub, beyond-hd-oneurl, uniondht, downloadville, zetorrents, retroflix, carpathians, peersfm, idope, datascene, moviesdvdr, rutor, zelkaorg, mteamtp, firebit, moecat, sportscult, fanoin, bigtorrent, gay-torrentsorg, demonsite, sporthd, btschool, yourbittorrent, p2pbg, pornbay, scenepalace, hachede, cztorrent, elitetorrent-biz, glodls, the-madhouse, topnow, fantasticheaven, prostylex, sktorrent, rodvd, audiobooktorrents, sosulki, tellytorrent, tenyardtracker, dragonworldreloaded, thepiratebay, metaltracker, lastfiles, pornorip, spiritofrevolution, myspleen, torrenthr, theaudioscene, thehorrorcharnel, ettv, libranet, hush, haidan, ztracker, epizod, kapaki, torrentdownloads, r3vwtf, acgsou, extratorrent-ag, horrorsite, toros, torrentland, vizuk, btdb, korsar, hdforever, torrentz2k, torrentlt, wdt, audionews, pirateiro, exttorrents, exkinoray, oxtorrent, pthome, kickasstorrent-kathow, Das-Unerwartete, linkomanija, hdspain, yggcookie, arabafenice, snowpt, beitai, lesaloon, p2pelite, xwtclassics, eztv, newstudio, torrentccf, bibliotik, btdigg, itorrent, dmhy, boxingtorrents, nntt, rptorrents, amigosshare, rapidzona, unlimitz, muziekfabriek, tokyotosho, hon3yhd, onlineselfeducation, hddisk, empornium, tapochek, bteye, tekno3d, torrent-pirat, movcr, uhdbits, hdchina, torrentbd, gigatorrents, pornotor, 3dtorrents, torrentview, gktorrent, focusx, linuxtracker, galeriens, rustorka, world-of-tomorrow, esharenet, racing4everyone, estone, 1337x, seedfile, dxdhd, mactorrents, fouducinema, shokweb, dark-shadow, frozenlayer, torlock, chdbits, torrenting, hdzone, nyaa-pantsu, bigfangroup, insanetracker, bithorlo, tasmanit, trancetraffic, twilightszoom, karagarga, hdu, sukebei-pantsu, microbit, extratorrent-cd, ebooks-shares, ilcorsaroblu, kinozal, rstorrent, arenabg, dimeadozen, legacyhd, crazyhd, btetree, teamhd, wihd, shellife, cinemageddon, hdarea, crazyspirits, torrent-turk, hdcity, btnext, acidlounge, totallykids, onejav, efectodoppler, cartoonchaos, puntorrent, immortuos, torrent4you, freetorrent, magico, chilebt, darktracker, torrentleech-pl, booktracker, majomparade, generationfree, gay-torrents, hddolby, yourexotic, pterclub, casstudiotv, tribalmixes, mvgroupmain, xiteme, kaztorka, monova, twilight, mononokebt, theempire, xxxtor 
+2020-04-24 19:12:43.7830 Info Adding aggregate indexer 
+2020-04-24 19:12:44.0529 Info Jackett startup finished in 5.200 s 
+2020-04-24 20:34:40.4714 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-24 20:34:41.5279 Info Checked for a updated release but none was found. Current: v0.16.105 Latest: v0.16.105 
+2020-04-24 20:35:05.5387 Info Adding aggregate indexer 
+2020-04-24 20:35:06.0410 Info Restarting webhost due to configuration change 
+2020-04-24 20:35:06.0410 Info Restart of the web application host (not process) initiated 
+2020-04-24 20:35:06.1064 Info Jackett stopped 
+2020-04-24 20:35:06.2280 Info Environment version: 3.1.3 (/home/francesco/programs_drivers/web_stuff/Jackett/) 
+2020-04-24 20:35:06.2282 Info OS version: Unix 5.3.0.46 (64bit OS) (64bit process) 
+2020-04-24 20:35:06.2282 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-24 20:35:06.2282 Info File /etc/issue: Ubuntu 18.04.4 LTS \n \l 
+2020-04-24 20:35:06.2282 Info Running in Docker: No 
+2020-04-24 20:35:06.2282 Info ThreadPool MaxThreads: 32767 workerThreads, 1000 completionPortThreads 
+2020-04-24 20:35:06.2282 Info App config/log directory: /home/francesco/.config/Jackett 
+2020-04-24 20:35:06.2282 Info Using Proxy: No 
+2020-04-24 20:35:06.2282 Info Using HTTP Client: HttpWebClient2NetCore 
+2020-04-24 20:35:06.2648 Info Loading Cardigann definitions from: /home/francesco/.config/cardigann/definitions/, /etc/xdg/cardigan/definitions/, /home/francesco/programs_drivers/web_stuff/Jackett/Definitions 
+2020-04-24 20:35:07.8415 Info Cardigann definitions loaded: pier720, abnormal, alpharatio, anidex, anidub, animebytes, animetorrents, tehconnectionme, avistaz, awesomehd, bakabt, bb, bitcityreloaded, bithdtv, bjshare, broadcastthenet, brokenstones, cgpeers, cinecalidad, cinemaz, corsarored, danishbits, digitalcore, digitalhive, divxtotal, elitetracker, epublibre, filelist, funfile, fuzer, gazellegames, gimmepeers, hdbitsapi, hdolimpo, hdonly, hdspace, hdtorrents, hebits, horriblesubs, immortalseed, internetarchive, iptorrents, lostfilm, mejortorrent, milkie, morethantv, myamity, myanonamouse, ncore, newpct, newrealworld, norbits, nordicbits, notwhatcd, orpheus, partis, passthepopcorn, piratethenet, pixelhd, polishtracker, pornolab, pretome, privatehd, psytorrents, rarbg, passtheheadphones, revolutiontt, rutracker, scenehd, scenetime, secretcinema, shazbat, showrss, solidtorrents, speedcd, superbits, toloka, torrentbytes, torrentday, torrentech, torrentheaven, torrentleech, torrentnetwork, torrentscsv, torrentseeds, torrentsyndikat, transmithenet, tvstore, tvvault, xspeeds, xthor, yts, animetosho, sukebeinyaasi, classix, hdtime, hdsky, torrentgalaxyorg, piratbit, baibako, alexfilm, torrentbomb, 7torrents, asiancinema, btsow, xwtorrents, nyaasi, netcosmo, torrentslocal, demonoid, leaguehd, bit-titan, hdroute, filmsclub, underverse, theshinning, polishsource, metaliplayro, 0daykiev, greekteam, cinematik, speedmasterhd, netlab, torrent9clone, brobits, purovicio, inperil, nethd, pixelcove, tlfbits, rutracker-ru, 2fast4you, underversel, bithumen, pleasuredome, sharewood, tvchaosuk, totheglory, bitturk, gaytorrentru, hamsterstudio, torrentproject2, proaudiotorrents, ilcorsaronero, hdcenter, torrentoyunindir, asgaard, theshow, jpopsuki, sktorrent-org, cili180, pornbits, brasiltracker, kinonavse100, eniahd, u2, concen, hqsource, xtremezone, btgigs, hdbits, hd4fans, cpasbienclone, scenerush, bluebirdhd, finelite, film-paleis, turktorrent, ast4u, diablotorrent, ccfbits, badasstorrents, racingforme, ebookparadijs, icetorrent, torrentsectorcrew, iv-torrents, trezzor, torrentquest, takeabyte, soundpark, thevault, tntvillage, unionfansub, springsunday, concertos, pwtorrents, torrentparadise, torrentfactory, ptsbao, learnflakes, torrentdownload, crnaberza, hdhome, xtremefile, Channelx, spacetorrent, hdme, casatorrent, speedtorrentreloaded, girotorrent, blutopia, mma-torrents, yggtorrent, bitru, 3evils, pornolive, funkytorrents, nostalgic, hdtorrentsit, isohunt2, deildu, arabp2p, torrentv, estrenosdtl, thegeeks, scenefz, finvip, backups, erzsebet, torrentz2, beyond-hd, nbtorrents, cinemamovies, nitro, femdomcult, Bittorrentfiles, shareuniversity, sharespacedb, extremlymtorrents, u-torrents, rintor, ptfiles, marinetracker, bitspyder, sdbits, ethor, hdbitscom, limetorrents, 4thd, gamestorrents, zamundanet, torrentdb, zooqle, theoccult, ttsweb, cpasbien, bigtower, magnet4you, aniRena, uniongang, legittorrents, hdreactor, desireleasers, hdturk, thefallingangels, rus-media, newretro, documentarytorrents, riperam, pornleech, torrentkitty, skytorrentsclone, kinorun, aftershock, torrentfunk, mypornclub, extremetorrents, kickasstorrent, magnetdl, 52pt, shareisland, torrenthane, pctorrent, nnm-club, crazyscorner, theplace, torrent-explosiv, 3changtrai, pt99, filebase, gfxpeers, newstudiol, parnuxi, turkseed, mvgroupforum, pussytorrents, lechaudron, divteam, siambit, audiobookbay, piratbitl, ibit, academictorrents, xbytesv2, fullmixmusic, dxp, torrent9, mteamtp2fa, ourbits, broadcity, teamos, leporno, RockBox, desitorrents, acgrip, losslessclub, beyond-hd-oneurl, uniondht, downloadville, zetorrents, retroflix, carpathians, peersfm, idope, datascene, moviesdvdr, rutor, zelkaorg, mteamtp, firebit, moecat, sportscult, fanoin, bigtorrent, gay-torrentsorg, demonsite, sporthd, btschool, yourbittorrent, p2pbg, pornbay, scenepalace, hachede, cztorrent, elitetorrent-biz, glodls, the-madhouse, topnow, fantasticheaven, prostylex, sktorrent, rodvd, audiobooktorrents, sosulki, tellytorrent, tenyardtracker, dragonworldreloaded, thepiratebay, metaltracker, lastfiles, pornorip, spiritofrevolution, myspleen, torrenthr, theaudioscene, thehorrorcharnel, ettv, libranet, hush, haidan, ztracker, epizod, kapaki, torrentdownloads, r3vwtf, acgsou, extratorrent-ag, horrorsite, toros, torrentland, vizuk, btdb, korsar, hdforever, torrentz2k, torrentlt, wdt, audionews, pirateiro, exttorrents, exkinoray, oxtorrent, pthome, kickasstorrent-kathow, Das-Unerwartete, linkomanija, hdspain, yggcookie, arabafenice, snowpt, beitai, lesaloon, p2pelite, xwtclassics, eztv, newstudio, torrentccf, bibliotik, btdigg, itorrent, dmhy, boxingtorrents, nntt, rptorrents, amigosshare, rapidzona, unlimitz, muziekfabriek, tokyotosho, hon3yhd, onlineselfeducation, hddisk, empornium, tapochek, bteye, tekno3d, torrent-pirat, movcr, uhdbits, hdchina, torrentbd, gigatorrents, pornotor, 3dtorrents, torrentview, gktorrent, focusx, linuxtracker, galeriens, rustorka, world-of-tomorrow, esharenet, racing4everyone, estone, 1337x, seedfile, dxdhd, mactorrents, fouducinema, shokweb, dark-shadow, frozenlayer, torlock, chdbits, torrenting, hdzone, nyaa-pantsu, bigfangroup, insanetracker, bithorlo, tasmanit, trancetraffic, twilightszoom, karagarga, hdu, sukebei-pantsu, microbit, extratorrent-cd, ebooks-shares, ilcorsaroblu, kinozal, rstorrent, arenabg, dimeadozen, legacyhd, crazyhd, btetree, teamhd, wihd, shellife, cinemageddon, hdarea, crazyspirits, torrent-turk, hdcity, btnext, acidlounge, totallykids, onejav, efectodoppler, cartoonchaos, puntorrent, immortuos, torrent4you, freetorrent, magico, chilebt, darktracker, torrentleech-pl, booktracker, majomparade, generationfree, gay-torrents, hddolby, yourexotic, pterclub, casstudiotv, tribalmixes, mvgroupmain, xiteme, kaztorka, monova, twilight, mononokebt, theempire, xxxtor 
+2020-04-24 20:35:07.8415 Info Adding aggregate indexer 
+2020-04-24 20:35:07.8746 Info Jackett startup finished in 4949.024 s 
+2020-04-24 20:36:00.3617 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-24 20:36:00.5833 Info Checked for a updated release but none was found. Current: v0.16.105 Latest: v0.16.105 
+2020-04-24 21:36:04.3234 Info Starting Jackett v0.16.105.0 
+2020-04-24 21:36:05.1856 Info Environment version: 3.1.3 (/home/francesco/programs_drivers/web_stuff/Jackett/) 
+2020-04-24 21:36:05.1856 Info OS version: Unix 5.3.0.46 (64bit OS) (64bit process) 
+2020-04-24 21:36:05.1856 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-24 21:36:05.1856 Info File /etc/issue: Ubuntu 18.04.4 LTS \n \l 
+2020-04-24 21:36:05.1856 Info Running in Docker: No 
+2020-04-24 21:36:05.1856 Info ThreadPool MaxThreads: 32767 workerThreads, 1000 completionPortThreads 
+2020-04-24 21:36:05.1856 Info App config/log directory: /home/francesco/.config/Jackett 
+2020-04-24 21:36:05.1856 Info Using Proxy: No 
+2020-04-24 21:36:05.1897 Info Using HTTP Client: HttpWebClient2NetCore 
+2020-04-24 21:36:05.4592 Info Loading Cardigann definitions from: /home/francesco/.config/cardigann/definitions/, /etc/xdg/cardigan/definitions/, /home/francesco/programs_drivers/web_stuff/Jackett/Definitions 
+2020-04-24 21:36:07.5879 Info Cardigann definitions loaded: pier720, abnormal, alpharatio, anidex, anidub, animebytes, animetorrents, tehconnectionme, avistaz, awesomehd, bakabt, bb, bitcityreloaded, bithdtv, bjshare, broadcastthenet, brokenstones, cgpeers, cinecalidad, cinemaz, corsarored, danishbits, digitalcore, digitalhive, divxtotal, elitetracker, epublibre, filelist, funfile, fuzer, gazellegames, gimmepeers, hdbitsapi, hdolimpo, hdonly, hdspace, hdtorrents, hebits, horriblesubs, immortalseed, internetarchive, iptorrents, lostfilm, mejortorrent, milkie, morethantv, myamity, myanonamouse, ncore, newpct, newrealworld, norbits, nordicbits, notwhatcd, orpheus, partis, passthepopcorn, piratethenet, pixelhd, polishtracker, pornolab, pretome, privatehd, psytorrents, rarbg, passtheheadphones, revolutiontt, rutracker, scenehd, scenetime, secretcinema, shazbat, showrss, solidtorrents, speedcd, superbits, toloka, torrentbytes, torrentday, torrentech, torrentheaven, torrentleech, torrentnetwork, torrentscsv, torrentseeds, torrentsyndikat, transmithenet, tvstore, tvvault, xspeeds, xthor, yts, animetosho, sukebeinyaasi, classix, hdtime, hdsky, torrentgalaxyorg, piratbit, baibako, alexfilm, torrentbomb, 7torrents, asiancinema, btsow, xwtorrents, nyaasi, netcosmo, torrentslocal, demonoid, leaguehd, bit-titan, hdroute, filmsclub, underverse, theshinning, polishsource, metaliplayro, 0daykiev, greekteam, cinematik, speedmasterhd, netlab, torrent9clone, brobits, purovicio, inperil, nethd, pixelcove, tlfbits, rutracker-ru, 2fast4you, underversel, bithumen, pleasuredome, sharewood, tvchaosuk, totheglory, bitturk, gaytorrentru, hamsterstudio, torrentproject2, proaudiotorrents, ilcorsaronero, hdcenter, torrentoyunindir, asgaard, theshow, jpopsuki, sktorrent-org, cili180, pornbits, brasiltracker, kinonavse100, eniahd, u2, concen, hqsource, xtremezone, btgigs, hdbits, hd4fans, cpasbienclone, scenerush, bluebirdhd, finelite, film-paleis, turktorrent, ast4u, diablotorrent, ccfbits, badasstorrents, racingforme, ebookparadijs, icetorrent, torrentsectorcrew, iv-torrents, trezzor, torrentquest, takeabyte, soundpark, thevault, tntvillage, unionfansub, springsunday, concertos, pwtorrents, torrentparadise, torrentfactory, ptsbao, learnflakes, torrentdownload, crnaberza, hdhome, xtremefile, Channelx, spacetorrent, hdme, casatorrent, speedtorrentreloaded, girotorrent, blutopia, mma-torrents, yggtorrent, bitru, 3evils, pornolive, funkytorrents, nostalgic, hdtorrentsit, isohunt2, deildu, arabp2p, torrentv, estrenosdtl, thegeeks, scenefz, finvip, backups, erzsebet, torrentz2, beyond-hd, nbtorrents, cinemamovies, nitro, femdomcult, Bittorrentfiles, shareuniversity, sharespacedb, extremlymtorrents, u-torrents, rintor, ptfiles, marinetracker, bitspyder, sdbits, ethor, hdbitscom, limetorrents, 4thd, gamestorrents, zamundanet, torrentdb, zooqle, theoccult, ttsweb, cpasbien, bigtower, magnet4you, aniRena, uniongang, legittorrents, hdreactor, desireleasers, hdturk, thefallingangels, rus-media, newretro, documentarytorrents, riperam, pornleech, torrentkitty, skytorrentsclone, kinorun, aftershock, torrentfunk, mypornclub, extremetorrents, kickasstorrent, magnetdl, 52pt, shareisland, torrenthane, pctorrent, nnm-club, crazyscorner, theplace, torrent-explosiv, 3changtrai, pt99, filebase, gfxpeers, newstudiol, parnuxi, turkseed, mvgroupforum, pussytorrents, lechaudron, divteam, siambit, audiobookbay, piratbitl, ibit, academictorrents, xbytesv2, fullmixmusic, dxp, torrent9, mteamtp2fa, ourbits, broadcity, teamos, leporno, RockBox, desitorrents, acgrip, losslessclub, beyond-hd-oneurl, uniondht, downloadville, zetorrents, retroflix, carpathians, peersfm, idope, datascene, moviesdvdr, rutor, zelkaorg, mteamtp, firebit, moecat, sportscult, fanoin, bigtorrent, gay-torrentsorg, demonsite, sporthd, btschool, yourbittorrent, p2pbg, pornbay, scenepalace, hachede, cztorrent, elitetorrent-biz, glodls, the-madhouse, topnow, fantasticheaven, prostylex, sktorrent, rodvd, audiobooktorrents, sosulki, tellytorrent, tenyardtracker, dragonworldreloaded, thepiratebay, metaltracker, lastfiles, pornorip, spiritofrevolution, myspleen, torrenthr, theaudioscene, thehorrorcharnel, ettv, libranet, hush, haidan, ztracker, epizod, kapaki, torrentdownloads, r3vwtf, acgsou, extratorrent-ag, horrorsite, toros, torrentland, vizuk, btdb, korsar, hdforever, torrentz2k, torrentlt, wdt, audionews, pirateiro, exttorrents, exkinoray, oxtorrent, pthome, kickasstorrent-kathow, Das-Unerwartete, linkomanija, hdspain, yggcookie, arabafenice, snowpt, beitai, lesaloon, p2pelite, xwtclassics, eztv, newstudio, torrentccf, bibliotik, btdigg, itorrent, dmhy, boxingtorrents, nntt, rptorrents, amigosshare, rapidzona, unlimitz, muziekfabriek, tokyotosho, hon3yhd, onlineselfeducation, hddisk, empornium, tapochek, bteye, tekno3d, torrent-pirat, movcr, uhdbits, hdchina, torrentbd, gigatorrents, pornotor, 3dtorrents, torrentview, gktorrent, focusx, linuxtracker, galeriens, rustorka, world-of-tomorrow, esharenet, racing4everyone, estone, 1337x, seedfile, dxdhd, mactorrents, fouducinema, shokweb, dark-shadow, frozenlayer, torlock, chdbits, torrenting, hdzone, nyaa-pantsu, bigfangroup, insanetracker, bithorlo, tasmanit, trancetraffic, twilightszoom, karagarga, hdu, sukebei-pantsu, microbit, extratorrent-cd, ebooks-shares, ilcorsaroblu, kinozal, rstorrent, arenabg, dimeadozen, legacyhd, crazyhd, btetree, teamhd, wihd, shellife, cinemageddon, hdarea, crazyspirits, torrent-turk, hdcity, btnext, acidlounge, totallykids, onejav, efectodoppler, cartoonchaos, puntorrent, immortuos, torrent4you, freetorrent, magico, chilebt, darktracker, torrentleech-pl, booktracker, majomparade, generationfree, gay-torrents, hddolby, yourexotic, pterclub, casstudiotv, tribalmixes, mvgroupmain, xiteme, kaztorka, monova, twilight, mononokebt, theempire, xxxtor 
+2020-04-24 21:36:07.5894 Info Adding aggregate indexer 
+2020-04-24 21:36:07.9013 Info Jackett startup finished in 5.069 s 
+2020-04-24 22:36:07.6023 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-24 22:36:09.0892 Info Checked for a updated release but none was found. Current: v0.16.105 Latest: v0.16.105 
