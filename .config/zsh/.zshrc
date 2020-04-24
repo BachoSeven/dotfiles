@@ -1,6 +1,4 @@
-# unimatrix -s 99 -w -af
 export ZSH="/home/francesco/.oh-my-zsh"
-#zmodload zsh/zpty
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 #Uncomment the following line to automatically update without prompting.

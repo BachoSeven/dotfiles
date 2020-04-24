@@ -51,6 +51,7 @@ handle_mime() {
         video/* | audio/*|application/octet-stream) mediainfo "${FILE_PATH}" || exit 1;;
         */pdf) pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - ;;
         *opendocument*) odt2txt "${FILE_PATH}" ;;
+	*torrent*) { echo "$(eval 'transmission-show "${FILE_PATH}"')" | head -n 200; exit 5; } || exit 1;;
     esac
 }
 if [ "$(readlink -f "${FILE_PATH}")" != "${FILE_PATH}" ]; then

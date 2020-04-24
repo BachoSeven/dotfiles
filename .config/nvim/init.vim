@@ -9,7 +9,7 @@
 	set hidden
 	set termguicolors
 	set splitbelow splitright
-	set nospell
+	setlocal spell spelllang=en_us
 	set splitbelow splitright
 
 " Some mappings and shortcuts

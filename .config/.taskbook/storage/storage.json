@@ -36,7 +36,7 @@
         "_id": 19,
         "_date": "Mon Dec 30 2019",
         "_timestamp": 1577667582153,
-        "description": "CAS: Mathics, Sage, MatLab, Wxmaxima",
+        "description": "Matlab, Sage, Mathics",
         "isStarred": false,
         "boards": [
             "@Math"
@@ -137,6 +137,48 @@
         "isStarred": false,
         "boards": [
             "@ToDo"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "41": {
+        "_id": 41,
+        "_date": "Fri Apr 24 2020",
+        "_timestamp": 1587765251199,
+        "description": "recupera g1-24-4",
+        "isStarred": false,
+        "boards": [
+            "@Uni"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "42": {
+        "_id": 42,
+        "_date": "Fri Apr 24 2020",
+        "_timestamp": 1587765275026,
+        "description": "recupera esercitazione-fino-PS",
+        "isStarred": false,
+        "boards": [
+            "@Uni"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "43": {
+        "_id": 43,
+        "_date": "Fri Apr 24 2020",
+        "_timestamp": 1587765395465,
+        "description": "analisi riguarda compitino e lavora sul prob di majer",
+        "isStarred": false,
+        "boards": [
+            "@Uni"
         ],
         "_isTask": true,
         "isComplete": false,

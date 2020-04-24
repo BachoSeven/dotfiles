@@ -71,8 +71,9 @@ visualizer_sync_interval = 30
 visualizer_type = ellipse
 
 visualizer_look = ●▮
+# visualizer_look = ■■
 
-#visualizer_color = blue, cyan, green, yellow, magenta, red
+visualizer_color = blue, cyan, green, yellow, magenta, red
 #
 ## Alternative subset of 256 colors for terminals that support it.
 # visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
@@ -249,7 +250,7 @@ browser_sort_format = {(%l)} {%a - }{%t}|{%f}
 ##   available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (7f)[magenta]{l} (25)[cyan]{a} (50)[white]{t|f:Title} (20)[red]{b}
 #
 ##### various settings #####
 #
@@ -305,6 +306,7 @@ centered_cursor = yes
 ## part of progressbar.
 ##
 progressbar_look = ﰣ
+# progressbar_look = ▬▬▬
 
 #
 ## Available values: database, playlist.
@@ -321,7 +323,7 @@ user_interface = alternative
 ##
 media_library_primary_tag = artist
 #
-media_library_albums_split_by_date = no
+media_library_albums_split_by_date = yes
 #
 ## Available values: wrapped, normal.
 ##
@@ -430,7 +432,7 @@ ignore_leading_the = yes
 #
 #block_search_constraints_change_if_items_found = yes
 #
-mouse_support = no
+mouse_support = yes
 #
 #mouse_list_scroll_whole_page = yes
 #
