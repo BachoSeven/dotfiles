@@ -9,7 +9,7 @@
     "id": "cookieheader",
     "type": "hiddendata",
     "name": "CookieHeader",
-    "value": ""
+    "value": "__cfduid=d44048b22fedf9a294e91dc6b8ede2b831587657256"
   },
   {
     "id": "lasterror",

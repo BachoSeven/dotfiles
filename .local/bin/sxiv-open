@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+file=$1
+
+rotdir $file | grep -i "\.\(png\|ico\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio 2>/dev/null | lf-select

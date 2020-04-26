@@ -1,65 +1,5 @@
 # vi: ft=zsh
 
-# Proper shell shortcuts
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-alias udg='sudo apt-get update && sudo apt-get upgrade'
-alias udgp='update && sudo apt-get --with-new-pkgs upgrade'
-alias aptinstall='sudo apt-get install -y'
-alias aptremove='sudo apt-get remove'
-alias aptpurge='sudo apt-get purge'
-alias aptshow='apt show'
-alias sau='sudo apt autoremove --purge'
-
-alias ..='cd ..'
-alias ...='cd ../../../'
-alias :q='exit' # vim user :)
-alias lc='colorls -lA --sd --dark --gs'
-alias grep="grep --color=auto"
-alias diff="diff --color=auto"
-alias ccat="highlight --out-format=ansi"
-alias path='echo $PATH | tr : "\n"'
-alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
-alias matrix='unimatrix -a -f -b -s 96 -l m'
-
-#git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
-alias cfc='config commit -a -m'
-alias cfp='config push'
-
-# Backup
-alias ehdry='rsync -r -n -t -v --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraEl/hyperversum'
-alias ehbkp='rsync -r -t -v --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraEl/hyperversum'
-alias phdry='rsync -r -n -t -v --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraPass/hyperversum'
-alias phbkp='rsync -r -t -v --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraPass/hyperversum'
-alias eddry='rsync -r -n -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
-alias edbkp='rsync -r -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
-alias pddry='rsync -r -n -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
-alias pdbkp='rsync -r -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
-
-# find processes
-alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
-
-alias cx='chmod +x'
-alias xclip="xclip -sel clip"
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-#remove spaces!
-alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
-alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
-
-function 256color {
-	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
-}
-
-#spotify in vim(deprecated, switched to ncspot)
-#function vimspo {
-	#nvim -c 'execute "normal \\sp"'
-#}
-
-# Navigation
 lfcd () {
     tmp="$(mktemp)"
     fid="$(mktemp)"
@@ -81,12 +21,74 @@ lfcd () {
     fi
 }
 
+
+# Proper shell shortcuts
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias udg='sudo apt-get update && sudo apt-get upgrade'
+alias udgp='update && sudo apt-get --with-new-pkgs upgrade'
+alias aptinstall='sudo apt-get install -y'
+alias aptremove='sudo apt-get remove'
+alias aptpurge='sudo apt-get purge'
+alias aptshow='apt show'
+alias sau='sudo apt autoremove --purge'
+
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias :q='exit' # vim user :)
+alias lc='colorls -lA --sd --dark --gs'
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ccat="highlight --out-format=ansi"
+alias path='echo $PATH | tr : "\n"'
+
+#git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
+alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
+alias cfc='config commit -a -m'
+alias cfp='config push'
+
+# Backup:
+	# Elements
+		alias ehdry='rsync -r -n -t -v --delete --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraEl/hyperversum'
+		alias ehbkp='rsync -r -t -v --delete --delete-excluded -l -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraEl/hyperversum'
+		alias eddry='rsync -r -n -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
+		alias edbkp='rsync -r -t -v --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
+	# Passport
+		alias phdry='rsync -rLtv -n --delete --delete-excluded -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraPass/hyperversum'
+		alias phbkp='rsync -rLtv --delete --delete-excluded -i -s --exclude-from=/var/tmp/ignorelist /home/francesco/ /mnt/fraPass/hyperversum'
+		alias pddry='rsync -rLtv -n --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
+		alias pdbkp='rsync -rLtv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
+
+# Utils
+alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
+alias matrix='unimatrix -a -f -b -s 96 -l m'
+alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
+alias cx='chmod +x'
+alias xclip="xclip -sel clip"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+#remove spaces!
+alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
+alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
+
+function 256color {
+	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
+
+#spotify in vim(deprecated, switched to ncspot)
+#function vimspo {
+	#nvim -c 'execute "normal \\sp"'
+#}
+
 # Various
 alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
 alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 alias cbh='connectHeadphones'
+alias nf='neofetch'
 
 alias waterfox='waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
 alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
@@ -98,7 +100,7 @@ alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr"
 alias chill="mpv https://tinyurl.com/wbl4fya"
 alias gotop='gotop --color=solarized -asbp'
 alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
-alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
+# alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
 alias define='define -c $XDG_CONFIG_HOME/define/define.conf.json'
 
 alias mcl='java -jar /home/francesco/programs_drivers/games/mc/mcTE.jar'
@@ -116,7 +118,7 @@ alias bd='nvim $XDG_CONFIG_HOME/directories'
 alias cfz='nvim $ZDOTDIR/.zshrc'
 alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
 alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'
-alias cfr='nvim $XDG_CONFIG_HOME/Xresources'
+alias cfr='nvim $XDG_CONFIG_HOME/Xresources/Xresources'
 alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
 alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
 

@@ -9,12 +9,12 @@
     "id": "cookieheader",
     "type": "hiddendata",
     "name": "CookieHeader",
-    "value": "katsecalert=25939d985e8654ddb75c66f491af21a7"
+    "value": "katsecalert=8630bf8123a25e391ba7f62c9647831e"
   },
   {
     "id": "lasterror",
     "type": "hiddendata",
     "name": "LastError",
-    "value": ""
+    "value": null
   }
 ]

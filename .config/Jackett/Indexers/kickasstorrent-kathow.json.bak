@@ -9,13 +9,13 @@
     "id": "cookieheader",
     "type": "hiddendata",
     "name": "CookieHeader",
-    "value": "__cfduid=d43a610af6e6f49e53399f88ebc9df7371587657256; __cf_bm=dffa44c5e84b81f156059f9e0b52aeaf4c0882f2-1587675952-1800-AT6Aobp+XSYF9vHXeaBGuApF94mHbZyumHnsdck6B1iti/ZjXPHmQ4TDZtB62vXBzmNYD8mdiu8IhfsTxxLebDg="
+    "value": "__cfduid=d43a610af6e6f49e53399f88ebc9df7371587657256; __cf_bm=568812bf3c985e620fb62cdefce5e59042fa080e-1587832569-1800-AYaO2bodxb9iKoCQxkB26AeyPh3WYAJPdtiq1CqDdvToNEFP1AmD2KVvLTgXhg2E9MVhbjQV5O/yIlmWik5P69U="
   },
   {
     "id": "lasterror",
     "type": "hiddendata",
     "name": "LastError",
-    "value": ""
+    "value": null
   },
   {
     "id": "sortrequestedfromsite",

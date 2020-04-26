@@ -26,7 +26,7 @@ while true; do
 				wal -i ~/.config/wall.png && wal -c
 			else
 				# gsettings set org.gnome.desktop.background picture-uri file://$XDG_CONFIG_HOME/wall.png && # need to set it only once
-				xrdb -load $XDG_CONFIG_HOME/Xresources
+				xrdb -load $XDG_CONFIG_HOME/Xresources/Xresources
 			fi
 			shift 2
 			continue

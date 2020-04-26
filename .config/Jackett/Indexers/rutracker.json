@@ -27,7 +27,7 @@
     "id": "password",
     "type": "inputstring",
     "name": "Password",
-    "value": "CfDJ8CPEPNLQaPdEgCTysTYvs6TJVwEGWbzEaC2m5NW8RDCDxmLh3r8acqkmY6Lo13wG9po5bjB4359EGQY_dmiZ_M3_yLnZ8Hhoqi3lCyf7tr8tgp4asanK4zgnRIrRFp53tw"
+    "value": "CfDJ8CPEPNLQaPdEgCTysTYvs6QS_7QeUhyKfYhEzXXvu9Uood1JIA9EVo1UUM7vzP5KJz3xWVDkp-blijqBMHWWHTd-SjSwt3gMkkh7FKn9K-BB5m7HYsANftzDOH8lnW7o0g"
   },
   {
     "id": "captchatext",
@@ -57,6 +57,6 @@
     "id": "lasterror",
     "type": "hiddendata",
     "name": "LastError",
-    "value": ""
+    "value": null
   }
 ]
