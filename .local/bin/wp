@@ -1,4 +1,10 @@
 #!/usr/bin/env sh
+
 dir=""
-[ ! -z "$1" ] && dir=$1
-find ~/pics/papes/$dir -type f | shuf | sxiv -
+
+if [ ! "$1" = "d" ]; then
+	[ ! -z "$1" ] && dir=$1
+	find ~/pics/papes/$dir -type f | shuf | sxiv -
+else
+	[ ! -z "$2" ] && dir=$2 && find $dir -type f | shuf | sxiv -
+fi
