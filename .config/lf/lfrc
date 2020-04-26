@@ -81,7 +81,7 @@ cmd open ${{
             lf -remote "send $id cd \"$mntdir\""
             lf -remote "send $id reload"
             ;;
-	*.pdf|*.djvu|*.ps) setsid zathura $fx >/dev/null 2>&1 & ;;
+	*.pdf|*.djvu|*.ps|*.epub) setsid zathura $fx >/dev/null 2>&1 & ;;
 	*)
 	    case $(file --mime-type $f -b) in
 		text/*) $EDITOR $fx;;

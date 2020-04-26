@@ -161,6 +161,10 @@ Plug 'cespare/vim-toml'
 	" let g:chromatica#libclang_path='/usr/lib/llvm-7.0/lib/libclang.so'
 	" let g:chromatica#enable_at_startup=1
 
+" Icons
+Plug 'ryanoasis/vim-devicons'
+
+
 call plug#end()
 
 "Post-Plugin
@@ -231,8 +235,8 @@ call plug#end()
 		\})
 
 " Goyo mapping and configuration
-	map <leader>g :Goyo \| set bg=light \| set linebreak<CR>
-	map <leader>G :Goyo \| set bg=dark  \| set nolinebreak<CR>
+	map <leader>g :Goyo \| colorscheme gruvbox \| set linebreak<CR>
+	map <leader>G :Goyo \| colorscheme NeoSolarized  \| set nolinebreak<CR>
 " Enable Goyo by default for mutt writting
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set linebreak | set bg=light
@@ -242,7 +246,6 @@ call plug#end()
 " ColorSchemes
 	let g:airline_theme='base16_solarized'
 	colorscheme NeoSolarized
-	" colorscheme gruvbox
 	set background=dark
 	" hi Normal ctermbg=NONE guibg=NONE
 	" hi NonText ctermbg=NONE guibg=NONE
