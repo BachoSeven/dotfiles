@@ -1,24 +1,24 @@
 export ZSH="/home/francesco/.oh-my-zsh"
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-#Uncomment the following line to automatically update without prompting.
-#DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=5
-
+export UPDATE_ZSH_DAYS=7
 DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
-
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
+source $ZSH/oh-my-zsh.sh
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 eval $(thefuck --alias)
 
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
-# This speeds up pasting w/ autosuggest (WORKS!!!)
-# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+# This speeds up pasting (especially with autosuggest):  https://github.com/zsh-users/zsh-autosuggestions/issues/238
 pasteinit() {
   OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
   zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
@@ -30,30 +30,22 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-
-source $ZSH/oh-my-zsh.sh
-
-#autocomplete lfcd
-fpath=(/home/francesco/.config/ $fpath)
-zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
-
-autoload -Uz compinit
-if [[ -n ${ZDOTDIR:-${HOME}}/$ZSH_COMPDUMP(#qN.mh+24) ]]; then
-	compinit -d $ZSH_COMPDUMP;
-else
-	compinit -C;
-fi;
-
 if [[ -s '/etc/zsh_command_not_found' ]]; then
   source '/etc/zsh_command_not_found'
 fi
 
-#if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
-    #source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
-#fi
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+# Directly Execute with CTRL-X CTRL-R
+	fzf-history-widget-accept() {
+	  fzf-history-widget
+	  zle accept-line
+	}
+	zle     -N     fzf-history-widget-accept
+	bindkey '^X^R' fzf-history-widget-accept
+
+# Autocompletion
 	d='dirs -v | head -10'
 	1='cd -'
 	2='cd -2'
@@ -65,15 +57,21 @@ fi
 	8='cd -8'
 	9='cd -9'
 
-# Directly Execute with CTRL-X CTRL-R
-	fzf-history-widget-accept() {
-	  fzf-history-widget
-	  zle accept-line
-	}
-	zle     -N     fzf-history-widget-accept
-	bindkey '^X^R' fzf-history-widget-accept
+	fpath=(/home/francesco/.config/ $fpath)
+	zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 
-#bindkeys
+	autoload -Uz compinit
+	if [[ -n ${ZDOTDIR:-${HOME}}/$ZSH_COMPDUMP(#qN.mh+24) ]]; then
+		compinit -d $ZSH_COMPDUMP;
+	else
+		compinit -C;
+	fi;
+
+	#if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
+	    #source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
+	#fi
+
+# Bind keys
 	bindkey -s '^o' 'lfcd\n'
 	#bindkey -s '^y' 'vimspo\n'
 	bindkey -s '^g' 'gotop\n'

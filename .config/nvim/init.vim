@@ -98,11 +98,6 @@ Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
 
 Plug 'lervag/vimtex'
-	let g:tex_flavor='latex'
-	let g:vimtex_view_method='zathura'
-	let g:vimtex_quickfix_latexlog = {'fix_paths':0}
-	let g:vimtex_quickfix_mode=0
-	let g:vimtex_compiler_progname = 'nvr'
 Plug 'KeitaNakamura/tex-conceal.vim'
 	set conceallevel=2
 	let g:tex_conceal='abdmg'
@@ -226,6 +221,13 @@ call plug#end()
 
 	autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
+" Vimtex Configuration
+	let g:tex_flavor='latex'
+	let g:vimtex_quickfix_latexlog = {'fix_paths':0}
+	let g:vimtex_quickfix_mode=0
+	let g:vimtex_compiler_progname = 'nvr'
+	let g:vimtex_view_method='zathura'
+
 " fzf integration for vimtex
 	nnoremap <localleader>lt :call vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
 
@@ -239,7 +241,7 @@ call plug#end()
 	map <leader>G :Goyo \| colorscheme NeoSolarized  \| set nolinebreak<CR>
 " Enable Goyo by default for mutt writting
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set linebreak | set bg=light
+	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | colorscheme gruvbox |set linebreak
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Spotify
+Type=Application
+Terminal=false
+Exec=st -c ncspot -e ncspot
+Icon=spotify
+StartupWMClass=ncspot

@@ -1,0 +1,4 @@
+[MIME Cache]
+x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tg=telegramdesktop.desktop;
