@@ -525,3 +525,20 @@ Path 'message', line 1, position 11.
 2020-04-25 18:35:49.3020 Info Manual search for "brian" on kickasstorrent, kickasstorrent-kathow, rutracker, rutracker-ru, thepiratebay with 204 results. 
 2020-04-25 18:36:13.1002 Info Manual search for "sex" on kickasstorrent, kickasstorrent-kathow, rutracker, rutracker-ru, thepiratebay with 190 results. 
 2020-04-25 22:45:15.5830 Info Manual search for "valter longo" on kickasstorrent, kickasstorrent-kathow, rutracker, rutracker-ru, thepiratebay with 0 results. 
+2020-04-27 16:59:35.1852 Info Jackett variant: CoreLinuxAmdx64 
+2020-04-27 16:59:55.2846 Error Error checking for updates. System.Net.Http.HttpRequestException: Name or service not known
+ ---> System.Net.Sockets.SocketException (0xFFFDFFFF): Name or service not known
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CloudflareSolverRe.ClearanceHandler.SendRequestAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CloudflareSolverRe.ClearanceHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Jackett.Common.Utils.Clients.HttpWebClient2NetCore.Run(WebRequest webRequest) in /home/vsts/work/1/s/src/Jackett.Common/Utils/Clients/HttpWebClient2NetCore.cs:line 229
+   at Jackett.Common.Utils.Clients.WebClient.GetString(WebRequest request) in /home/vsts/work/1/s/src/Jackett.Common/Utils/Clients/WebClient.cs:line 114
+   at Jackett.Common.Services.UpdateService.CheckForUpdates() in /home/vsts/work/1/s/src/Jackett.Common/Services/UpdateService.cs:line 117
