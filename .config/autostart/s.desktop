@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=s -s --port 8081
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_GB]=s server
+Name=s server
+Comment[en_GB]=
+Comment=

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Notion
+Name[en_US]=Lotion
+Comment=Unofficial Notion.so application for Linux
+Exec="/home/francesco/programs_drivers/web_stuff/lotion/Lotion/Lotion"
+Terminal=false
+Categories=Office;TextEditor;Utility
+Type=Application
+Icon=/home/francesco/programs_drivers/web_stuff/lotion/icon.png
+StartupWMClass=lotion-binary

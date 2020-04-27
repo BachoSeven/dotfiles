@@ -13,6 +13,8 @@ set window-width 768
 set render-loading "false"
 set adjust-open "best-fit"
 set database sqlite
+set synctex true
+set synctex-editor-command "nvr --remote-silent %f -c %l"
 
 # key bindings
 map <C-u> navigate previous
@@ -26,78 +28,55 @@ map p print
 map K zoom in
 map J zoom out
 
-# One page per row by default
-
 #stop at page boundries
 set scroll-page-aware "true"
 set scroll-full-overlap 0.01
 set scroll-step 50
 set incremental-search true
 set guioptions ""
-
-# zathurarc-dark
-
 set font "mono 13"
-set default-bg "#1a1729"
-set default-fg "#ebdbb2"
 
-set statusbar-fg "#93a1a1"
-set statusbar-bg "#1d2021"
+# Base16 Solarized Dark
+# Author: Ethan Schoonover (modified by aramisgithub)
 
-set inputbar-bg "#151515"
-set inputbar-fg "#FFFFFF"
+set default-bg                  "#002b36"
+set default-fg                  "#073642"
 
-set notification-error-bg "#dc322f"
-set notification-error-fg "#151515"
+set statusbar-fg                "#839496"
+set statusbar-bg                "#586e75"
 
-set notification-warning-bg "#dc322f"
-set notification-warning-fg "#151515"
+set inputbar-bg                 "#002b36"
+set inputbar-fg                 "#fdf6e3"
 
-set highlight-color "#F4BF15"
-set highlight-active-color "#6A9FB5"
+set notification-bg             "#002b36"
+set notification-fg             "#fdf6e3"
 
-set completion-highlight-fg "#151515"
-set completion-highlight-bg "#90A959"
+set notification-error-bg       "#002b36"
+set notification-error-fg       "#dc322f"
 
-set completion-bg "#303030"
-set completion-fg "#E0E0E0"
+set notification-warning-bg     "#002b36"
+set notification-warning-fg     "#dc322f"
 
-set notification-bg "#90A959"
-set notification-fg "#151515"
+set highlight-color             "#b58900"
+set highlight-active-color      "#268bd2"
 
-set recolor "true"
-set recolor-lightcolor "#1a1729"
-set recolor-darkcolor "#fdf6e3"
-set recolor-reverse-video "true"
-set recolor-keephue "false"
+set completion-bg               "#073642"
+set completion-fg               "#268bd2"
 
+set completion-highlight-fg     "#fdf6e3"
+set completion-highlight-bg     "#268bd2"
 
+set recolor-lightcolor          "#002b36"   # base03
+set recolor-darkcolor           "#eee8d5"
+# set recolor-lightcolor          "#073642"   # base02
 
-# temptative solarized colours
-set completion-bg "#002b36"
-set completion-fg "#657b83"
-set completion-group-bg "#002b36"
-set completion-group-fg "#859900"
-set completion-highlight-bg "#657b83"
-set completion-highlight-fg "#002b36"
+set recolor			true
+set recolor-keephue             false
 
-set recolor-lightcolor "#002b36"
-set recolor-darkcolor "#fdf6e3"
-set default-bg "#002b36"
+set completion-group-bg         "#002b36"   # base03
+set completion-group-fg         "#839496"   # base0
 
-set inputbar-bg "#002b36"
-set inputbar-fg "#657b83"
-set notification-bg "#002b36"
-set notification-fg "#657b83"
-set notification-error-bg "#dc322f"
-set notification-error-fg "#657b83"
-set notification-warning-bg "#dc322f"
-set notification-warning-fg "#657b83"
-set statusbar-bg "#002b36"
-set statusbar-fg "#657b83"
-set index-bg "#002b36"
-set index-fg "#657b83"
-set index-active-bg "#657b83"
-set index-active-fg "#002b36"
-set render-loading-bg "#002b36"
-set render-loading-fg "#657b83"
+set index-bg			"#073642"   # base02
+set index-fg			"#93a1a1"   # base1
+set index-active-bg             "#586e75"   # base01
+set index-active-fg		"#eee8d5"   # base2

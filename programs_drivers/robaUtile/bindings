@@ -1,0 +1,86 @@
+
+# Output
+
+'St'
+'st'
+'<Alt>1'
+
+'Ferdi'
+'ferdi'
+'<Primary><Shift>a'
+
+'Terminator'
+'terminator'
+'<Alt>2'
+
+'Telegram'
+'telegram'
+'<Primary><Shift>x'
+
+'Centered_windows'
+'gsettings set org.gnome.mutter center-new-windows true'
+'<Super>c'
+
+'Normal_windows'
+'gsettings set org.gnome.mutter center-new-windows false'
+'<Shift><Super>c'
+
+'Teams'
+'teams'
+'<Shift><Super>t'
+
+'Dmenu'
+"dmenu_aliases -fn 'Hack Nerd Font-14' -sb '#dc322f' -nb '#002b36' -nf '#859900'"
+'<Super>d'
+
+'Screensaver'
+'xscreensaver-command -activate'
+'<Shift><Super>s'
+
+'Discord'
+'discord'
+'<Shift><Super>d'
+
+'Restart'
+'prompt "Reboot computer?" "sudo -A reboot"'
+'<Shift><Super>BackSpace'
+
+'Shutdown'
+'prompt "Shutdown computer?" "sudo -A shutdown -h now"'
+'<Primary><Shift><Alt>BackSpace'
+
+'Stig'
+'stig'
+'<Shift><Super>q'
+
+'Neomutt'
+'terminator -x neomutt'
+'<Shift><Super>n'
+
+'dmenu&scripts'
+'dmenu-ssgen'
+'<Shift><Alt>s'
+
+'lf'
+'st -e lf'
+'<Super>r'
+
+'Ncmpcpp'
+'st -e ncmpcpp'
+'<Shift><Super>m'
+
+'Notion'
+'notion-desktop'
+'<Primary><Shift>n'
+
+'prev_song'
+'mpc prev'
+'<Super>less'
+
+'next_song'
+'mpc next'
+'<Shift><Super>greater'
+
+'music_toggle'
+'mpc toggle'
+'<Shift>Menu'

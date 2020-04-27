@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.36 for francesco on Mon Apr 13 19:25:03 2020.
+# Written by xscreensaver-demo 5.36 for francesco on Mon Apr 27 16:40:04 2020.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:15:00
@@ -48,17 +48,18 @@ programs:								      \
 - GL: 				superquadrics -root			    \n\
 				attraction -root			    \n\
 -				blitspin -root				    \n\
--				greynetic -root				    \n\
+				greynetic -root				    \n\
 -				helix -root				    \n\
--				hopalong -root				    \n\
--				imsmap -root				    \n\
+				hopalong -root				    \n\
+-				imsmap -root -delay 9 -iterations 6	      \
+				  -ncolors 36				    \n\
 -				noseguy -root				    \n\
 -				pyro -root				    \n\
 -				qix -root				    \n\
 -				rocks -root				    \n\
 -				rorschach -root				    \n\
-				decayscreen -root			    \n\
--				flame -root				    \n\
+-				decayscreen -root			    \n\
+				flame -root				    \n\
 -				halo -root				    \n\
 				slidescreen -root			    \n\
 -				pedal -root				    \n\
@@ -70,11 +71,12 @@ programs:								      \
 -				fadeplot -root				    \n\
 				galaxy -root				    \n\
 -				goop -root				    \n\
--				grav -root				    \n\
--				ifs -root				    \n\
+				grav -root -count 11 -ncolors 184	    \n\
+-				ifs -root -delay 13636 -colors 153	    \n\
 -				unicode -root				    \n\
 - GL: 				jigsaw -root				    \n\
--				julia -root				    \n\
+				julia -root -delay 9091 -count 4705	      \
+				  -cycles 41 -ncolors 166		    \n\
 -				kaleidescope -root			    \n\
 - GL: 				moebius -root				    \n\
 -				moire -root				    \n\
@@ -106,7 +108,7 @@ programs:								      \
 -				flow -root				    \n\
 - GL: 				glplanet -root				    \n\
 -				interference -root			    \n\
--				kumppa -root				    \n\
+				kumppa -root -delay 0			    \n\
 - GL: 				lament -root				    \n\
 -				moire2 -root				    \n\
 - GL: 				sonar -root				    \n\
@@ -164,7 +166,7 @@ programs:								      \
 - GL: 				glblur -root				    \n\
 - GL: 				glsnake -root				    \n\
 -				halftone -root				    \n\
-- GL: 				juggler3d -root				    \n\
+  GL: 				juggler3d -root -tail 0			    \n\
 - GL: 				lavalite -root				    \n\
 -				polyominoes -root			    \n\
 - GL: 				queens -root				    \n\
@@ -184,15 +186,17 @@ programs:								      \
   GL: 				cubestorm -root				    \n\
 -				eruption -root				    \n\
 - GL: 				flipflop -root				    \n\
-- GL: 				flyingtoasters -root			    \n\
+  GL: 				flyingtoasters -root			    \n\
 -				fontglide -root				    \n\
 - GL: 				gleidescope -root			    \n\
 - GL: 				glknots -root				    \n\
   GL: 				glmatrix -root -delay 20000 -density 40	      \
 				  -mode binary -no-fog			    \n\
 - GL: 				glslideshow -root			    \n\
-- GL: 				hypertorus -root			    \n\
-- GL: 				jigglypuff -root			    \n\
+  GL: 				hypertorus -root -appearance spirals-16	    \n\
+  GL: 				jigglypuff -root -delay 14394 -speed 446      \
+				  -damping 229 -hold 621 -spherism 114	      \
+				  -distance 394 -spooky 1		    \n\
 				metaballs -root				    \n\
 - GL: 				mirrorblob -root			    \n\
 -				piecewise -root				    \n\
@@ -207,8 +211,10 @@ programs:								      \
   GL: 				antinspect -root			    \n\
 -				fireworkx -root				    \n\
 -				fuzzyflakes -root			    \n\
--				interaggregate -root			    \n\
--				intermomentary -root			    \n\
+				interaggregate -root -growth-delay 9091	      \
+				  -num-circles 108			    \n\
+-				intermomentary -root -draw-delay 20000	      \
+				  -num-discs 100			    \n\
 -				memscroller -root			    \n\
 - GL: 				noof -root				    \n\
 -				pacman -root				    \n\
@@ -241,16 +247,17 @@ programs:								      \
 - GL: 				moebiusgears -root			    \n\
   GL: 				voronoi -root				    \n\
 - GL: 				hypnowheel -root			    \n\
-- GL: 				klein -root				    \n\
+  GL: 				klein -root -orientation-marks		    \n\
 -				lcdscrub -root				    \n\
 - GL: 				photopile -root				    \n\
 - GL: 				skytentacles -root			    \n\
 - GL: 				rubikblocks -root			    \n\
 - GL: 				companioncube -root			    \n\
-- GL: 				hilbert -root				    \n\
+  GL: 				hilbert -root -delay 25758 -max-depth 6	      \
+				  -wander				    \n\
 - GL: 				tronbit -root				    \n\
-- GL: 				geodesic -root				    \n\
-  Best: 			hexadrop -root				    \n\
+  GL: 				geodesic -root				    \n\
+- Best: 			hexadrop -root				    \n\
 - GL: 				kaleidocycle -root			    \n\
 - GL: 				quasicrystal -root			    \n\
   GL: 				unknownpleasures -root			    \n\
@@ -269,7 +276,8 @@ programs:								      \
 - GL: 				dymaxionmap -root			    \n\
 - GL: 				energystream -root			    \n\
 - GL: 				hexstrut -root				    \n\
-- GL: 				hydrostat -root				    \n\
+- GL: 				hydrostat -root -count 13 -head-radius 78     \
+				  -tentacles 31 -thickness 19 -length 37    \n\
 - GL: 				raverhoop -root				    \n\
 - GL: 				splodesic -root				    \n\
 - GL: 				unicrud -root				    \n\
