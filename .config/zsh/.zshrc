@@ -1,18 +1,12 @@
 export ZSH="/home/francesco/.oh-my-zsh"
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
 export UPDATE_ZSH_DAYS=7
 DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-
 plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
 source $ZSH/oh-my-zsh.sh
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 eval $(thefuck --alias)
 
@@ -71,6 +65,7 @@ fi
 	    #source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
 	#fi
 
+
 # Bind keys
 	bindkey -s '^o' 'lfcd\n'
 	#bindkey -s '^y' 'vimspo\n'
@@ -90,8 +85,6 @@ fi
 	bindkey -M menuselect 'l' vi-forward-char
 	bindkey -M menuselect 'j' vi-down-line-or-history
 
-#complete colorls, unneeded
-#source $(dirname $(gem which colorls))/tab_complete.sh
 [ "$TERM" != "st-256color" ] &&	export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
@@ -154,4 +147,5 @@ ex=🎯:\
 *.torrent=🔽:\
 *.nix=::\
 "
+
 [[ -f ~/.config/zsh/.p10k.zsh ]] && source ~/.config/zsh/.p10k.zsh

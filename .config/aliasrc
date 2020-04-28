@@ -113,7 +113,12 @@ alias mim='nvim $XDG_CONFIG_HOME/mimi/mime.conf'
 alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
 alias lfrc='nvim $XDG_CONFIG_HOME/lf/lfrc'
 alias zshrc='source $XDG_CONFIG_HOME/zsh/.zshrc'
-alias zt='time zsh -i -c exit'
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time --output=/tmp/zt$i $shell -i -c exit; done
+  for i in $(seq 1 10); do awk '{print $3}' /tmp/zt$i | grep -v swap | sed 's/elapsed//g'|sed 's/0:00\.//g' && rm -f /tmp/zt$i ;done
+}
+alias zt='timezsh'
 alias bd='nvim $XDG_CONFIG_HOME/directories'
 alias cfz='nvim $ZDOTDIR/.zshrc'
 alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
