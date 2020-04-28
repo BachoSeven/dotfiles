@@ -4,7 +4,7 @@
   enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = system
   geometry_hinting = True
-  inactive_color_offset = 0.729411764706
+  inactive_color_offset = 0.623529411765
   title_hide_sizetext = True
 [keybindings]
   help = <Shift>F1
@@ -19,23 +19,14 @@
   zoom_out = <Shift><Alt>j
 [layouts]
   [[default]]
-    [[[child0]]]
-      fullscreen = False
-      last_active_term = 576f1a4b-3d45-4862-aa3a-c57a925417ba
-      last_active_window = True
-      maximised = False
-      order = 0
-      parent = ""
-      position = 960:28
-      size = 960, 1052
-      title = /usr/bin/zsh
-      type = Window
-    [[[terminal1]]]
-      order = 0
-      parent = child0
+    [[[child1]]]
+      directory = ""
+      parent = window0
       profile = Solarized Dark - Patched
       type = Terminal
-      uuid = 576f1a4b-3d45-4862-aa3a-c57a925417ba
+    [[[window0]]]
+      parent = ""
+      type = Window
 [plugins]
 [profiles]
   [[default]]
