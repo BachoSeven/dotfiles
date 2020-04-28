@@ -3,7 +3,7 @@
         "_id": 11,
         "_date": "Sun Oct 27 2019",
         "_timestamp": 1572210248910,
-        "description": "d gives the last 10 locations that you visited, _ is equivalent to sudo,history gives you commandHistory, l is useful, md is mkdir with parent directories, rd is RemoveDirectory, yt is the youtube stream, ytmp3 is obvious, zshrc sources.",
+        "description": "d gives the last 10 locations that you visited, _ is equivalent to sudo,history gives you commandHistory, l(c) is useful, md is mkdir with parent directories, rd is RemoveDirectory, ytmp3 works; zshrc sources",
         "isStarred": false,
         "boards": [
             "@Shortcuts"
