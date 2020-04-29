@@ -5,6 +5,7 @@ DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
+# gitfast
 source $ZSH/oh-my-zsh.sh
 
 autoload -Uz bracketed-paste-magic
@@ -48,7 +49,7 @@ fi
 	8='cd -8'
 	9='cd -9'
 
-	fpath=(/home/francesco/.config/ $fpath)
+	fpath=($ZDOTDIR/completions $fpath)
 	zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 
 	autoload -Uz compinit

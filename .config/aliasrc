@@ -42,10 +42,10 @@ alias diff="diff --color=auto"
 alias ccat="highlight --out-format=ansi"
 alias path='echo $PATH | tr : "\n"'
 
-#git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
-alias cfc='config commit -a -m'
-alias cfp='config push'
+# Git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
+	alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
+	alias cfc='config commit -a -m'
+	alias cfp='config push'
 
 # Backup:
 	# Elements
@@ -60,18 +60,18 @@ alias cfp='config push'
 		alias pdbkp='rsync -rLtv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 
 # Utils
-alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
-alias matrix='unimatrix -a -f -b -s 96 -l m'
-alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
-alias cx='chmod +x'
-alias xclip="xclip -sel clip"
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
+	alias matrix='unimatrix -a -f -b -s 96 -l m'
+	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
+	alias cx='chmod +x'
+	alias xclip="xclip -sel clip"
+	alias rm='rm -i'
+	alias cp='cp -i'
+	alias mv='mv -i'
 
-#remove spaces!
-alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
-alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
+# Remove spaces
+	alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
+	alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
 
 function 256color {
 	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
@@ -83,28 +83,28 @@ function 256color {
 #}
 
 # Various
-alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
-alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
-alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
-alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
-alias cbh='connectHeadphones'
-alias nf='neofetch'
+	alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
+	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
+	alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
+	alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
+	alias cbh='connectHeadphones'
+	alias nf='neofetch'
 
-alias waterfox='waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
-alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
-alias flp='flashplayer'
-alias sqm='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
-alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
-alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr"
-alias fb="sudo sed -i '/Actions=new-window;new-private-window;/ a StartupWMClass=brave-browser' /usr/share/applications/brave-browser-nightly.desktop"
+	alias waterfox='waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
+	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
+	alias flp='flashplayer'
+	alias sqm='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
+	alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
+	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr"
+	alias fb="sudo sed -i '/Actions=new-window;new-private-window;/ a StartupWMClass=brave-browser' /usr/share/applications/brave-browser-nightly.desktop"
 
-alias chill="mpv https://tinyurl.com/wbl4fya"
-alias gotop='gotop --color=solarized -asbp'
-alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
-# alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
-alias define='define -c $XDG_CONFIG_HOME/define/define.conf.json'
-alias vip='vis -c $XDG_CONFIG_HOME/vis/config_pulse'
-alias mcl='java -jar /home/francesco/programs_drivers/games/mc/mcTE.jar'
+	alias chill="mpv https://tinyurl.com/wbl4fya"
+	alias gotop='gotop --color=solarized -asbp'
+	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
+	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
+	alias define='define -c $XDG_CONFIG_HOME/define/define.conf.json'
+	alias vip='vis -c $XDG_CONFIG_HOME/vis/config_pulse'
+	alias mcl='java -jar /home/francesco/programs_drivers/games/mc/mcTE.jar'
 
 # Rice
 alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
