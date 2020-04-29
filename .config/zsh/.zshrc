@@ -7,9 +7,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
 source $ZSH/oh-my-zsh.sh
 
-
-eval $(thefuck --alias)
-
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
 # This speeds up pasting (especially with autosuggest):  https://github.com/zsh-users/zsh-autosuggestions/issues/238
@@ -65,6 +62,7 @@ fi
 	    #source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
 	#fi
 
+eval $(thefuck --alias)
 
 # Bind keys
 	bindkey -s '^o' 'lfcd\n'
