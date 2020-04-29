@@ -3,7 +3,7 @@ audio_device_state:1:MPD
 audio_device_state:1:toggle_visualizer
 state: play
 current: 0
-time: 4.028000
+time: 4.179000
 random: 0
 repeat: 0
 single: 0
@@ -12,7 +12,6 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:ascol_music/moosica/Brian_Eno/BrENO [Discography]/02. [Ambient Series]/1978, Ambient 1 Music For Airports (CD, Album, Remastered 2004) (ENOCD 6)/02. [2 1].mp3
-1:ascol_music/moosica/Brian_Eno/BrENO [Discography]/02. [Ambient Series]/1978, Ambient 1 Music For Airports (CD, Album, Remastered 2004) (ENOCD 6)/03. [1 2].mp3
-2:ascol_music/moosica/Brian_Eno/BrENO [Discography]/02. [Ambient Series]/1978, Ambient 1 Music For Airports (CD, Album, Remastered 2004) (ENOCD 6)/04. [2 2].mp3
+0:ascol_music/moosica/Brian_Eno/BrENO [Discography]/02. [Ambient Series]/1978, Ambient 1 Music For Airports (CD, Album, Remastered 2004) (ENOCD 6)/03. [1 2].mp3
+1:ascol_music/moosica/Brian_Eno/BrENO [Discography]/02. [Ambient Series]/1978, Ambient 1 Music For Airports (CD, Album, Remastered 2004) (ENOCD 6)/04. [2 2].mp3
 playlist_end
