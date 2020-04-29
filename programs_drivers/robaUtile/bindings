@@ -49,7 +49,7 @@
 '<Primary><Shift><Alt>BackSpace'
 
 'Stig'
-'st -e stig'
+'gtk-launch stig'
 '<Shift><Super>q'
 
 'Neomutt'
