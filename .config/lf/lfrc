@@ -8,7 +8,7 @@ set scrolloff 10
 set color256
 set icons
 set period 1
-set drawbox on
+# set drawbox on
 set incsearch true
 
 $lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"	# set previewer with env vars
@@ -212,7 +212,7 @@ map E extract	#extract and compress
 map C copyto
 map M moveto
 map <delete> delete
-# map p PasteSelect
+map p paste
 map S :Link
 
 #			Navigation
