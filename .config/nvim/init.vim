@@ -12,8 +12,11 @@
 	setlocal spell spelllang=en_us
 	set splitbelow splitright
 
+
 " Some mappings and shortcuts
 
+" vsplit file under cursor; C-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
+	nnoremap <C-W><C-F> <C-W>vgf
 	inoremap <c-L> <c-g>u<Esc>[s1z=`]a<c-g>u
 	inoremap <c-K> <c-g>u<esc>u[s2z=gi<c-g>u
 	inoremap <c-J> <c-g>u<esc>u[s3z=gi<c-g>u

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=stig
+Type=Application
+Terminal=false
+Exec=st -c stig -e stig
+Icon=transmission-qt
+StartupWMClass=stig

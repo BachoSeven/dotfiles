@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=ncmpcpp
+Exec=/home/francesco/.local/share/applications/ncmpcpp -e ncmpcpp
+Terminal=false
+Categories=Music
+Icon=/home/francesco/.local/share/icons/Guyman-Helmet-Music-icon.png

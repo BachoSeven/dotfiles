@@ -1,5 +1,4 @@
-
-# Output
+# Output:
 
 'St'
 'st'
@@ -30,7 +29,7 @@
 '<Shift><Super>t'
 
 'Dmenu'
-"dmenu_aliases -fn 'Hack Nerd Font-14' -sb '#dc322f' -nb '#002b36' -nf '#859900'"
+'dmenu_aliases'
 '<Super>d'
 
 'Screensaver'
@@ -50,7 +49,7 @@
 '<Primary><Shift><Alt>BackSpace'
 
 'Stig'
-'stig'
+'st -e stig'
 '<Shift><Super>q'
 
 'Neomutt'
@@ -66,7 +65,7 @@
 '<Super>r'
 
 'Ncmpcpp'
-'st -e ncmpcpp'
+'gtk-launch ncmpcpp'
 '<Shift><Super>m'
 
 'Notion'

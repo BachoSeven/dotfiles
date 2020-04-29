@@ -258,7 +258,7 @@ song_columns_list_format = (7f)[magenta]{l} (25)[cyan]{a} (50)[white]{t|f:Title}
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+execute_on_song_change = notify-send -i ~/.local/share/icons/music-player_black.png "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
 #
 ##
 ## Note: Custom command that will be executed each time player state

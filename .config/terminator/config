@@ -4,7 +4,7 @@
   enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = system
   geometry_hinting = True
-  inactive_color_offset = 0.623529411765
+  inactive_color_offset = 1.0
   title_hide_sizetext = True
 [keybindings]
   help = <Shift>F1
@@ -27,25 +27,44 @@
     [[[window0]]]
       parent = ""
       type = Window
+  [[gruvbox]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = d3aa15fc-8244-4847-9bfe-4f5970ae5ae1
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 157:42
+      size = 802, 504
+      title = /usr/bin/zsh
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+      uuid = d3aa15fc-8244-4847-9bfe-4f5970ae5ae1
 [plugins]
 [profiles]
   [[default]]
     background_color = "#282828"
-    background_darkness = 0.8
+    background_darkness = 0.85
     background_type = transparent
     copy_on_selection = True
     cursor_blink = False
     cursor_color = "#729fcf"
-    font = MesloLGS NF 12
+    font = Hack Nerd Font Mono 16
     foreground_color = "#ebdbb2"
     icon_bell = False
     palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    rewrap_on_resize = False
     scroll_on_output = True
     scrollback_lines = 2000
     scrollbar_position = hidden
   [[Solarized Dark - Patched]]
     background_color = "#002b36"
-    background_darkness = 0.8
+    background_darkness = 0.85
     background_type = transparent
     copy_on_selection = True
     cursor_blink = False
@@ -54,7 +73,7 @@
     foreground_color = "#839496"
     icon_bell = False
     palette = "#002831:#d11c24:#738a05:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#475b62:#bd3613:#475b62:#536870:#708284:#5956ba:#819090:#fcf4dc"
+    rewrap_on_resize = False
     scroll_on_output = True
     scrollback_lines = 2000
     scrollbar_position = hidden
-    use_system_font = False
