@@ -203,7 +203,7 @@
         "_id": 45,
         "_date": "Wed Apr 29 2020",
         "_timestamp": 1588121048522,
-        "description": "requests is a python pkg for terminator-themes; joypixel-fonts are manually installed from the aur.",
+        "description": "requests is a python pkg for terminator-themes; joypixel-fonts are manually installed from the aur, and so is libsynctex for zathura.",
         "isStarred": false,
         "boards": [
             "@Reminders"
