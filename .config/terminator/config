@@ -5,6 +5,7 @@
   focus = system
   geometry_hinting = True
   inactive_color_offset = 1.0
+  suppress_multiple_term_dialog = True
   title_hide_sizetext = True
 [keybindings]
   help = <Shift>F1
@@ -54,7 +55,7 @@
     copy_on_selection = True
     cursor_blink = False
     cursor_color = "#729fcf"
-    font = Hack Nerd Font Mono 16
+    font = Hack Nerd Font 13
     foreground_color = "#ebdbb2"
     icon_bell = False
     palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
@@ -62,6 +63,7 @@
     scroll_on_output = True
     scrollback_lines = 2000
     scrollbar_position = hidden
+    use_system_font = False
   [[Solarized Dark - Patched]]
     background_color = "#002b36"
     background_darkness = 0.85
@@ -69,7 +71,7 @@
     copy_on_selection = True
     cursor_blink = False
     cursor_color = "#708284"
-    font = Hack Nerd Font Mono 16
+    font = Hack Nerd Font 13
     foreground_color = "#839496"
     icon_bell = False
     palette = "#002831:#d11c24:#738a05:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#475b62:#bd3613:#475b62:#536870:#708284:#5956ba:#819090:#fcf4dc"
@@ -77,3 +79,4 @@
     scroll_on_output = True
     scrollback_lines = 2000
     scrollbar_position = hidden
+    use_system_font = False

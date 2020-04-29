@@ -61,7 +61,7 @@
 '<Shift><Alt>s'
 
 'lf'
-'st -e lf'
+'gtk-launch lf'
 '<Super>r'
 
 'Ncmpcpp'

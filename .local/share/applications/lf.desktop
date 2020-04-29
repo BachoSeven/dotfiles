@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=lf
+Comment=Launches the lf file manager
+Icon=terminal-tango
+Terminal=false
+Exec=st -c lf -e lf
+Categories=ConsoleOnly;System;FileTools;FileManager
+MimeType=inode/directory;
+StartupWMClass=lf

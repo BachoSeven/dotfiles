@@ -2,7 +2,7 @@
 visualizer.fps=20
 
 ##Sets the audio sources to use. Currently available ones are "mpd", "pulse" and "alsa". Defaults to "mpd".
-audio.sources=mpd
+audio.sources=pulse
 
 ##vis tries to find the correct pulseaudio sink, however this will not work on all systems.
 ##If pulse audio is not working with vis try switching the audio source. A list can be found by running the
@@ -13,7 +13,7 @@ audio.sources=mpd
 mpd.fifo.path=/tmp/mpd.fifo
 
 ##If set to false the visualizers will use mono mode instead of stereo. Some visualizers will
-##behave differently when mono is enabled. For example, spectrum show two sets of bars.
+##behave differently when mono is enabled. For example, spectrum show two sets of bas.
 #audio.stereo.enabled=false
 
 ##Specifies how often the visualizer will change in seconds. 0 means do not rotate. Default is 0.
@@ -88,3 +88,4 @@ colors.override.terminal=fase
 
 ##Specifies the color scheme. The color scheme must be in ~/.config/vis/colors/ directory. The default scheme is "colors".
 colors.scheme=rainbow,basic_colors
+r
