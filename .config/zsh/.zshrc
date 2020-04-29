@@ -50,7 +50,9 @@ fi
 	9='cd -9'
 
 	fpath=($ZDOTDIR/completions $fpath)
-	zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+	zstyle ':completion:*' list-colors "${(@s.:.)LSCOLORS}"
+	eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
+	# eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
 
 	autoload -Uz compinit
 	if [[ -n ${ZDOTDIR:-${HOME}}/$ZSH_COMPDUMP(#qN.mh+24) ]]; then

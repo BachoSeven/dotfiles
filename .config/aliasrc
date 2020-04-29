@@ -37,6 +37,10 @@ alias ..='cd ..'
 alias ...='cd ../../../'
 alias :q='exit' # vim user :)
 alias lc='colorls -lA --sd --dark --gs'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ccat="highlight --out-format=ansi"
@@ -46,6 +50,7 @@ alias path='echo $PATH | tr : "\n"'
 	alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
 	alias cfc='config commit -a -m'
 	alias cfp='config push'
+	alias clols="config log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
 
 # Backup:
 	# Elements
