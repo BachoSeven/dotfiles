@@ -21,7 +21,7 @@ while true; do
 			continue
 		;;
 		'-i'|'--input')
-			[ -n $2 ] && cp "$2" ~/.config/wall.png && notify-send -i "$HOME/.config/wall.png" "Wallpaper changed."
+			[ -n $2 ] && cp "$2" ~/.config/wall.png > /dev/null 2>&1 && notify-send -i "$HOME/.config/wall.png" "Wallpaper changed."
 			if [ $scheme = true ]; then
 				wal -i ~/.config/wall.png && wal -c
 			else
