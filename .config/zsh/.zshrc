@@ -86,6 +86,21 @@ eval $(thefuck --alias)
 	bindkey -M menuselect 'l' vi-forward-char
 	bindkey -M menuselect 'j' vi-down-line-or-history
 
+# Change cursor shape for different vi modes.
+	function zle-keymap-select {
+	  if [[ ${KEYMAP} == vicmd ]] ||
+	     [[ $1 = 'block' ]]; then
+	    echo -ne '\e[1 q'
+
+	  elif [[ ${KEYMAP} == main ]] ||
+	       [[ ${KEYMAP} == viins ]] ||
+	       [[ ${KEYMAP} = '' ]] ||
+	       [[ $1 = 'beam' ]]; then
+	    echo -ne '\e[5 q'
+	  fi
+	}
+	zle -N zle-keymap-select
+
 [ "$TERM" != "st-256color" ] &&	export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
