@@ -1,4 +1,5 @@
 " Basic Settings
+	let mapleader =","
 	set shell=/usr/bin/zsh
 	set number relativenumber
 	set wildmenu
