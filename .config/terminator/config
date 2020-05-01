@@ -3,7 +3,6 @@
   borderless = True
   enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = system
-  geometry_hinting = True
   inactive_color_offset = 1.0
   suppress_multiple_term_dialog = True
   title_hide_sizetext = True
@@ -23,29 +22,11 @@
     [[[child1]]]
       directory = ""
       parent = window0
-      profile = Solarized Dark
+      profile = Gruvbox Dark
       type = Terminal
     [[[window0]]]
       parent = ""
       type = Window
-  [[gruvbox]]
-    [[[child0]]]
-      fullscreen = False
-      last_active_term = d3aa15fc-8244-4847-9bfe-4f5970ae5ae1
-      last_active_window = True
-      maximised = False
-      order = 0
-      parent = ""
-      position = 157:42
-      size = 802, 504
-      title = /usr/bin/zsh
-      type = Window
-    [[[terminal1]]]
-      order = 0
-      parent = child0
-      profile = Gruvbox Dark
-      type = Terminal
-      uuid = d3aa15fc-8244-4847-9bfe-4f5970ae5ae1
 [plugins]
 [profiles]
   [[default]]

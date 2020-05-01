@@ -106,7 +106,6 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 	let g:tex_conceal='abdmg'
 	hi Conceal ctermbg=none
 
-
 "Plug 'benwoodward/vimify', { 'branch': 'playlists' }
 	"let g:spotify_token='M2RhYWQ3Y2RjZTRmNDM0Yzg5MDlkOGNlNzBhMWEzMTk6YjBhMmM0NzU1ZGUwNDEzNGI5YzI4NjUxZjNlZWM2MTg='
 
@@ -139,7 +138,7 @@ Plug '907th/vim-auto-save'
 Plug 'scrooloose/nerdcommenter'
 	let g:NERDSpaceDelims = 1
 	let g:NERDCompactSexyComs = 1
-	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } } "fix lfrc comments
+	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } }	" Fix lfrc comments
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
@@ -147,8 +146,8 @@ Plug 'junegunn/goyo.vim'
 " Appearance
 Plug 'chrisbra/Colorizer'
 	nnoremap <leader>H :ColorToggle<cr>
-Plug 'morhetz/gruvbox'	"Gruvbox
-Plug 'iCyMind/NeoSolarized' "NeoSolarized
+Plug 'morhetz/gruvbox'		" Gruvbox
+Plug 'iCyMind/NeoSolarized' 	" NeoSolarized
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 	let g:airline_powerline_fonts = 1
@@ -162,6 +161,7 @@ Plug 'cespare/vim-toml'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -239,23 +239,25 @@ call plug#end()
 		\ 'tex': g:vimtex#re#deoplete
 		\})
 
-" Goyo mapping and configuration
-	map <leader>g :Goyo \| colorscheme gruvbox \| set linebreak<CR>
-	map <leader>G :Goyo \| colorscheme NeoSolarized  \| set nolinebreak<CR>
-" Enable Goyo by default for mutt writting
-	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | colorscheme gruvbox |set linebreak
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
-
 " ColorSchemes
-	let g:airline_theme='base16_solarized'
-	colorscheme NeoSolarized
 	set background=dark
+	colorscheme gruvbox
+	" colorscheme NeoSolarized
+	" let g:airline_theme='base16_solarized'
+
 	" hi Normal ctermbg=NONE guibg=NONE
 	" hi NonText ctermbg=NONE guibg=NONE
 	" hi EndOfBuffer ctermbg=NONE guibg=NONE
 	" hi LineNr ctermbg=NONE guibg=NONE
+
+" Goyo mapping and configuration
+	map <leader>g :Goyo \| set linebreak<CR>
+	map <leader>G :Goyo \| set nolinebreak<CR>
+" Enable Goyo by default for mutt writting
+	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set linebreak
+	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
+	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
 " Remove annoying tilde
 	set fcs=eob:\ " Protecting trailing whitespace
