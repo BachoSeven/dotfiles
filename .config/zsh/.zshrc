@@ -1,27 +1,16 @@
-export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git colored-man-pages vi-mode)
-source $ZSH/oh-my-zsh.sh
+autoload -U colors && colors
+setopt autocd		# Automatically cd into typed directory.
+stty stop undef		# Disable ctrl-s to freeze terminal.
 
-autoload -Uz bracketed-paste-magic
-zle -N bracketed-paste bracketed-paste-magic
-# This speeds up pasting (especially with autosuggest):  https://github.com/zsh-users/zsh-autosuggestions/issues/238
-pasteinit() {
-  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
-}
+eval $(thefuck --alias)
 
-pastefinish() {
-  zle -N self-insert $OLD_SELF_INSERT
-}
-zstyle :bracketed-paste-magic paste-init pasteinit
-zstyle :bracketed-paste-magic paste-finish pastefinish
+# Always ask before rm folder/*
+unsetopt RM_STAR_SILENT
 
-if [[ -s '/etc/zsh_command_not_found' ]]; then
-  source '/etc/zsh_command_not_found'
-fi
-
-[ -f $ZDOTDIR/fzf/fzf.zsh ] && source $ZDOTDIR/fzf/fzf.zsh
+source $ZDOTDIR/plugins/history/history.zsh
+source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
+source $ZDOTDIR/.p10k.zsh
+[ -f $ZDOTDIR/plugins/fzf/fzf.zsh ] && source $ZDOTDIR/plugins/fzf/fzf.zsh
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 # Directly Execute with CTRL-X CTRL-R
@@ -32,52 +21,26 @@ fi
 	zle     -N     fzf-history-widget-accept
 	bindkey '^X^R' fzf-history-widget-accept
 
-# Autocompletion
-	d='dirs -v | head -10'
-	1='cd -'
-	2='cd -2'
-	3='cd -3'
-	4='cd -4'
-	5='cd -5'
-	6='cd -6'
-	7='cd -7'
-	8='cd -8'
-	9='cd -9'
+# # Autocompletion
 
 	fpath=($ZDOTDIR/completions $fpath)
-	zstyle ':completion:*' list-colors "${(@s.:.)LSCOLORS}"
 	# eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
 	eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
 
-	autoload -Uz compinit
-	if [[ -n ${ZDOTDIR:-${HOME}}/$ZSH_COMPDUMP(#qN.mh+24) ]]; then
-		compinit -d $ZSH_COMPDUMP;
-	else
-		compinit -C;
-	fi;
+	autoload -U compinit
+	zmodload zsh/complist
+	compinit
 
-	#if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
-	    #source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
-	#fi
+	zstyle ':completion:*' list-colors ''
+	zstyle ':completion:*:*:*:*:*' menu select
 
-eval $(thefuck --alias)
+	# #if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
+	    # #source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
+	# #fi
 
-# Always ask before rm folder/*
-unsetopt RM_STAR_SILENT
-
-# Bind keys
-	bindkey -s '^o' 'lfcd\n'
-	#bindkey -s '^y' 'vimspo\n'
-	bindkey -s '^g' 'gotop\n'
-	bindkey -s '^v' 'nvim\n'
-	bindkey -s '^q' 'udg\n'
-	bindkey -s '^u' 'u\n'
-	bindkey -s '^h' 'htop\n'
-	bindkey -s '^f' 'fast\n'
-	bindkey -s '^[n' 'neomutt\n'
-	bindkey -s "^[s" 'ncspot\n'
-	bindkey -s '^a' 'bc -l\n'
-
+# # Vi-mode
+	source $ZDOTDIR/plugins/vi-mode/vi-mode.zsh
+	export KEYTIMEOUT=1
 
 	bindkey -M menuselect 'h' vi-backward-char
 	bindkey -M menuselect 'k' vi-up-line-or-history
@@ -98,6 +61,26 @@ unsetopt RM_STAR_SILENT
 	  fi
 	}
 	zle -N zle-keymap-select
+
+	echo -ne '\e[5 q' # Use beam shape cursor on startup.
+	preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Edit line in vim with ctrl-e:
+	autoload edit-command-line; zle -N edit-command-line
+	bindkey '^e' edit-command-line
+
+# Bind keys
+	bindkey -s '^o' 'lfcd\n'
+	#bindkey -s '^y' 'vimspo\n'
+	bindkey -s '^g' 'gotop\n'
+	bindkey -s '^v' 'nvim\n'
+	bindkey -s '^q' 'udg\n'
+	bindkey -s '^u' 'u\n'
+	bindkey -s '^h' 'htop\n'
+	bindkey -s '^f' 'fast\n'
+	bindkey -s '^[n' 'neomutt\n'
+	bindkey -s "^[s" 'ncspot\n'
+	bindkey -s '^a' 'bc -l\n'
 
 [ "$TERM" != "st-256color" ] &&	export LF_ICONS="di=📁:\
 fi=📃:\
@@ -161,6 +144,5 @@ ex=🎯:\
 *.torrent=🔽:\
 *.nix=::\
 "
-source $XDG_CONFIG_HOME/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.config/zsh/.p10k.zsh
-source $XDG_CONFIG_HOME/zsh/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+
+source $ZDOTDIR/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
