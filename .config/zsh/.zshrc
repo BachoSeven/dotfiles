@@ -1,11 +1,6 @@
-export ZSH="/home/francesco/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-export UPDATE_ZSH_DAYS=7
-DISABLE_AUTO_TITLE="true"
-# ENABLE_CORRECTION="true"
+export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git colored-man-pages zsh-syntax-highlighting vi-mode)
-# gitfast
+plugins=(git colored-man-pages vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 autoload -Uz bracketed-paste-magic
@@ -26,7 +21,7 @@ if [[ -s '/etc/zsh_command_not_found' ]]; then
   source '/etc/zsh_command_not_found'
 fi
 
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
+[ -f $ZDOTDIR/fzf/fzf.zsh ] && source $ZDOTDIR/fzf/fzf.zsh
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 # Directly Execute with CTRL-X CTRL-R
@@ -51,8 +46,8 @@ fi
 
 	fpath=($ZDOTDIR/completions $fpath)
 	zstyle ':completion:*' list-colors "${(@s.:.)LSCOLORS}"
-	eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
-	# eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
+	# eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
+	eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
 
 	autoload -Uz compinit
 	if [[ -n ${ZDOTDIR:-${HOME}}/$ZSH_COMPDUMP(#qN.mh+24) ]]; then
@@ -66,6 +61,9 @@ fi
 	#fi
 
 eval $(thefuck --alias)
+
+# Always ask before rm folder/*
+unsetopt RM_STAR_SILENT
 
 # Bind keys
 	bindkey -s '^o' 'lfcd\n'
@@ -148,5 +146,6 @@ ex=🎯:\
 *.torrent=🔽:\
 *.nix=::\
 "
-
-[[ -f ~/.config/zsh/.p10k.zsh ]] && source ~/.config/zsh/.p10k.zsh
+source $XDG_CONFIG_HOME/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/zsh/.p10k.zsh
+source $XDG_CONFIG_HOME/zsh/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null

@@ -3,7 +3,7 @@ audio_device_state:1:MPD
 audio_device_state:1:toggle_visualizer
 state: stop
 random: 0
-repeat: 0
+repeat: 1
 single: 0
 consume: 1
 crossfade: 0
