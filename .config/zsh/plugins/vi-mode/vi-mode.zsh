@@ -1,41 +1,32 @@
-# Updates editor information when the keymap changes.
-function zle-keymap-select() {
-  # update keymap variable for the prompt
-  VI_KEYMAP=$KEYMAP
+	bindkey -v
 
-  zle reset-prompt
-  zle -R
-}
+	export KEYTIMEOUT=1
 
-zle -N zle-keymap-select
+	bindkey -M menuselect 'h' vi-backward-char
+	bindkey -M menuselect 'k' vi-up-line-or-history
+	bindkey -M menuselect 'l' vi-forward-char
+	bindkey -M menuselect 'j' vi-down-line-or-history
 
-function vi-accept-line() {
-  VI_KEYMAP=main
-  zle accept-line
-}
+	function zle-keymap-select {	# Change cursor shape for different vi modes.
+	  if [[ ${KEYMAP} == vicmd ]] ||
+	     [[ $1 = 'block' ]]; then
+	    echo -ne '\e[1 q'
 
-zle -N vi-accept-line
+	  elif [[ ${KEYMAP} == main ]] ||
+	       [[ ${KEYMAP} == viins ]] ||
+	       [[ ${KEYMAP} = '' ]] ||
+	       [[ $1 = 'beam' ]]; then
+	    echo -ne '\e[5 q'
+	  fi
+	}
+	zle -N zle-keymap-select
+	echo -ne '\e[5 q' # Use beam shape cursor on startup.
+	preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-bindkey -v
-
-# use custom accept-line widget to update $VI_KEYMAP
-bindkey -M vicmd '^J' vi-accept-line
-bindkey -M vicmd '^M' vi-accept-line
-
-# allow v to edit the command line (standard behaviour)
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd 'v' edit-command-line
+# Edit line in vim with ctrl-e:
+	autoload edit-command-line; zle -N edit-command-line
+	bindkey '^e' edit-command-line
 
 # allow ctrl-p, ctrl-n for navigate history (standard behaviour)
-bindkey '^P' up-history
-bindkey '^N' down-history
-
-# allow ctrl-h, ctrl-w, ctrl-? for char and word deletion (standard behaviour)
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
-bindkey '^w' backward-kill-word
-
-# allow ctrl-a and ctrl-e to move to beginning/end of line
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
+	bindkey '^P' up-history
+	bindkey '^N' down-history
