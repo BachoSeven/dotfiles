@@ -11,7 +11,8 @@
 	" setlocal spell spelllang=en_us
 	set splitbelow splitright
 	set lazyredraw
-
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " Return to last edit position when opening files (You want this!)
+	set fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 
 " Some mappings and shortcuts
 
@@ -96,21 +97,6 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 	set conceallevel=2
 	let g:tex_conceal='abdmg'
 	hi Conceal ctermbg=none
-
-"Plug 'benwoodward/vimify', { 'branch': 'playlists' }
-	"let g:spotify_token='M2RhYWQ3Y2RjZTRmNDM0Yzg5MDlkOGNlNzBhMWEzMTk6YjBhMmM0NzU1ZGUwNDEzNGI5YzI4NjUxZjNlZWM2MTg='
-
-	" Reminder [:-2] Rimuove l'ultimo byte di output di System()
-	"function!  SpotOpen()
-		"let Val=system("if [[ $(ps axch -o cmd:18,%mem,pid --sort -%mem|head|grep spotify) ]]; then echo ciao; else echo boh;fi")[:-2]
-		"if Val=~"boh"
-			"exe "silent !nohup /snap/bin/spotify 2>&1 &"
-			"exe "SpPlaylists"
-		"elseif Val=~"ciao"
-			"exe "SpPlaylists"
-		"endif
-	"endfunction
-	"nnoremap <leader>sp :call SpotOpen()<CR>
 
 " Utilities
 Plug 'ptzz/lf.vim'
@@ -247,6 +233,3 @@ call plug#end()
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set linebreak
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
-
-" Remove annoying tilde
-	set fcs=eob:\ " Protecting trailing whitespace

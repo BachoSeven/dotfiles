@@ -30,6 +30,9 @@ do
 			notify-send "$(readlink -f "$file") copied to clipboard" & ;;
 	"d")
 		[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
-	"g")	gimp "$file" & ;;
+	"g")
+		gimp "$file" & ;;
+	"i")
+		sxiv-info "$file" & ;;
         esac
 done
