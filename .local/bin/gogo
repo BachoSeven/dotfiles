@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+""" A Python logger with super powers """
+
+from __future__ import (
+    absolute_import, division, print_function, with_statement,
+    unicode_literals)
+
+import sys
+sys.path.append('../pygogo')
+
+from pygogo import main
+
+if __name__ == '__main__':
+    main.run()

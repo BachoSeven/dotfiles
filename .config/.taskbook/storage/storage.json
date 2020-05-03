@@ -192,5 +192,16 @@
             "@Reminders"
         ],
         "_isTask": false
+    },
+    "47": {
+        "_id": 47,
+        "_date": "Sun May 03 2020",
+        "_timestamp": 1588497417609,
+        "description": "Upgrade Ubuntu && install pop_os Shell",
+        "isStarred": false,
+        "boards": [
+            "@FreeTime"
+        ],
+        "_isTask": false
     }
 }
