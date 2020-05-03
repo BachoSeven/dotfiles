@@ -61,8 +61,8 @@
 
 # Bind keys
 	bindkey -s '^o' 'lfcd\n'
-	#bindkey -s '^y' 'vimspo\n'
-	bindkey -s '^g' 'gotop\n'
+	bindkey -s '^g' 'ytop\n'
+	bindkey -s '^y' 'bashtop\n'
 	bindkey -s '^v' 'nvim\n'
 	bindkey -s '^u' 'u\n'
 	bindkey -s '^h' 'htop\n'

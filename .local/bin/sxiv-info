@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+file=$1
+
+info="$(mediainfo $file)"
+
+dmenu -c -p Info: -fn Hack:hinting=True:antialias=True:size=14 -i -nb "#002b36" -nf "#586e75" -sb "#073642" -sf "#fdf6e3" -l 15 <<< $info

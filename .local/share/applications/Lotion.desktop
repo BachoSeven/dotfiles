@@ -7,4 +7,4 @@ Terminal=false
 Categories=Office;TextEditor;Utility
 Type=Application
 Icon=/home/francesco/programs_drivers/web_stuff/lotion/icon.png
-StartupWMClass=lotion-binary
+StartupWMClass=Lotion

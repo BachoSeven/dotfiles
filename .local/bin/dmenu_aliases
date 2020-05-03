@@ -1,38 +1,78 @@
 #!/bin/bash
-
-# Dmenu script to use aliases with dmenu_run; orginally by https://github.com/jukil/dmenu-scripts-collection/tree/master/dmenu-recent-aliases
-#
-# Credits also to ewancoder (https://github.com/ewancoder/dotfiles/blob/master/bin/dm)
-
 cache=$XDG_CACHE_HOME/dmenu_run
 freq=$XDG_CACHE_HOME/dmenu_history
 aliases=$XDG_CONFIG_HOME/aliasrc
+dmenucmd='dmenu -fn Hack:hinting=True:antialias=True:size=14 -i -h 20 -nb #002b36 -nf #586e75 -sb #073642 -sf #fdf6e3'
+
 source $aliases
 
-case "$1" in
-    remove)
-        # To remove a file from history:
-        # $ dmenu_aliases remove <name>
-        grep -v "$2" $freq > temp && mv temp $freq
-    ;;
-    *)
-    (compgen -a; compgen -c | grep -vxF "$(compgen -a)") | sort | tail -n +10 > $cache
+#pull our previously run commands in
+history=$(<$freq)
+#for ones that have arguments, condense them down to an asterisk
+history=$(sed "s/[[:space:]].*/*/" <<< "$history")
 
-    sorted=$(sort $freq | uniq -c | sort -hr | colrm 1 8)
-    cmd=`(echo "$sorted"; cat $cache | grep -vxF "$sorted") | dmenu -fn 'Hack Nerd Font-14' -sb '#dc322f' -nb '#002b36' -nf '#859900' "$@"`
-    if ! [ "$cmd" == "" ] && ! [ "$(grep `echo $cmd | tr -d ':;'` $cache)" == "" ]; then
-    echo $cmd | tr -d ':;' >> $freq
+#generate list of commands including functions and alias'
+#tail command gets rid of a few of the weird bash builtins
+#at the beginning of the list
+cache=$(compgen -a; compgen -c | grep -vxF "$(compgen -a)" | sort | tail -n +10)
 
-	cmdexec=$(alias | grep "`echo $cmd | tr -d ':;'`=" | cut -f2 -d"'" | tr -d "'")
-        if [ -z "$cmdexec" ]; then
-		cmdexec=`echo $cmd | tr -d ':;'`
-        fi
+# sort history by frequency of use
+sorted=$(sort <<< "$history" | uniq -c | sort -hr | colrm 1 8)
+filter=$(sed 's/[*;]*$//' <<< "$sorted")
 
-	[[ $cmd == *';'* ]] && cmdexec="st -e $cmdexec"
+echo "$filter"
+# grep removes the duplicates from the unsorted list
+cache_deduped=$(grep -vxF "$filter" <<< "$cache")
 
-	[[ $cmd == *':'* ]] && cmdexec="xdotool mousemove - 1 mousemove restore; sudo -Ai '$cmdexec'"
+# run the actual dmenu and let the user choose a command
+cmd="$(echo "$sorted"$'\n'"$cache_deduped" | $dmenucmd)"
 
-        echo "$cmdexec" | bash
+# To remove a file from history:
+# Trail the selected item with ;remove
+if [[ $cmd == *";remove" ]]; then
+    cmd=${cmd/;remove/}
+    grep -vx "$cmd" $freq > temp
+    mv temp $freq
+    exit 0
+fi
+
+# expand an asterisked command to include argument history
+regex='.+[*]$'
+if [[ "$cmd" =~ $regex ]]; then
+    history=$(grep "${cmd/[*]/}" $freq)
+    sorted=$(sort <<< "$history" | uniq -c | sort -hr | colrm 1 8)
+    # remove trailing whitespace and asterisks from arguments
+    cmd=$(sed 's/[[:space:]*]*$//' <<< "$@")
+    dmenucmd+=' -l 17'
+    (sleep .1; xdotool key Tab) &
+    cmd="$(echo "$sorted"$'\n'"$cache" | $dmenucmd)"
+    if [[ $cmd == *";remove" ]]; then
+        cmd=${cmd/;remove/}
+        egrep -vx "$cmd" $freq > temp
+        mv temp $freq
+        exit 0
     fi
-    ;;
-esac
+fi
+
+if ! [ "$cmd" == "" ]; then
+    # remember which commands have been run
+    echo "$cmd" >> $freq
+    cmdexec=$(alias | grep "${cmd/;/}=" | cut -f2 -d "'" | tr -d "'")
+    if [ -z "$cmdexec" ]; then
+        cmdexec=${cmd/;/}
+    fi
+
+    # open a command up in a terminal
+    # a second semicolon uses sudo -A
+
+	if [[ $cmd == *';;' ]]; then
+		cmdexec="xdotool mousemove - 1 mousemove restore; sudo -Ai '$cmdexec'"
+	elif [[ $cmd == *";" ]]; then
+		cmdexec="st -e $cmdexec"
+	fi
+
+    # Workaround to run functions...
+    echo "$cmdexec" | compgen -F "$cmdexec" | bash -i
+    # ...and aliases
+    echo "$cmdexec" | bash -i
+fi
