@@ -22,7 +22,7 @@
     [[[child1]]]
       directory = ""
       parent = window0
-      profile = Gruvbox Dark
+      profile = Solarized Dark
       type = Terminal
     [[[window0]]]
       parent = ""

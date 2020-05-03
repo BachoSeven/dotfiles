@@ -1,17 +1,21 @@
-autoload -U colors && colors
-setopt autocd		# Automatically cd into typed directory.
-stty stop undef		# Disable ctrl-s to freeze terminal.
+# Powerlevel10k
+	source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
+	if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+	  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	fi
 
-eval $(thefuck --alias)
+	source $ZDOTDIR/.p10k.zsh
 
-# Always ask before rm folder/*
-unsetopt RM_STAR_SILENT
+# Basic Settings
+	setopt autocd		# Automatically cd into typed directory.
+	stty stop undef		# Disable ctrl-s to freeze terminal.
+	unsetopt RM_STAR_SILENT # Always ask before rm folder/*
+	[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
-source $ZDOTDIR/plugins/history/history.zsh
-source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
-source $ZDOTDIR/.p10k.zsh
-[ -f $ZDOTDIR/plugins/fzf/fzf.zsh ] && source $ZDOTDIR/plugins/fzf/fzf.zsh
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+# Plugins
+	[ -f $ZDOTDIR/plugins/fzf/fzf.zsh ] && source $ZDOTDIR/plugins/fzf/fzf.zsh
+	source $ZDOTDIR/plugins/history/history.zsh
+	eval $(thefuck --alias) # ;)
 
 # Directly Execute with CTRL-X CTRL-R
 	fzf-history-widget-accept() {
@@ -21,11 +25,25 @@ source $ZDOTDIR/.p10k.zsh
 	zle     -N     fzf-history-widget-accept
 	bindkey '^X^R' fzf-history-widget-accept
 
+# Colors
+	autoload -U colors && colors
+	eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
+	# eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
+
+	man() {					# Colored man pages
+		LESS_TERMCAP_mb=$'\e[01;31m' \
+		LESS_TERMCAP_md=$'\e[01;31m' \
+		LESS_TERMCAP_me=$'\e[0m' \
+		LESS_TERMCAP_se=$'\e[0m' \
+		LESS_TERMCAP_so=$'\e[01;44;33m' \
+		LESS_TERMCAP_ue=$'\e[0m' \
+		LESS_TERMCAP_us=$'\e[01;32m' \
+		command man "$@"
+	    }
+
 # # Autocompletion
 
 	fpath=($ZDOTDIR/completions $fpath)
-	# eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
-	eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
 
 	autoload -U compinit
 	zmodload zsh/complist
@@ -40,47 +58,19 @@ source $ZDOTDIR/.p10k.zsh
 
 # # Vi-mode
 	source $ZDOTDIR/plugins/vi-mode/vi-mode.zsh
-	export KEYTIMEOUT=1
-
-	bindkey -M menuselect 'h' vi-backward-char
-	bindkey -M menuselect 'k' vi-up-line-or-history
-	bindkey -M menuselect 'l' vi-forward-char
-	bindkey -M menuselect 'j' vi-down-line-or-history
-
-# Change cursor shape for different vi modes.
-	function zle-keymap-select {
-	  if [[ ${KEYMAP} == vicmd ]] ||
-	     [[ $1 = 'block' ]]; then
-	    echo -ne '\e[1 q'
-
-	  elif [[ ${KEYMAP} == main ]] ||
-	       [[ ${KEYMAP} == viins ]] ||
-	       [[ ${KEYMAP} = '' ]] ||
-	       [[ $1 = 'beam' ]]; then
-	    echo -ne '\e[5 q'
-	  fi
-	}
-	zle -N zle-keymap-select
-
-	echo -ne '\e[5 q' # Use beam shape cursor on startup.
-	preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-# Edit line in vim with ctrl-e:
-	autoload edit-command-line; zle -N edit-command-line
-	bindkey '^e' edit-command-line
 
 # Bind keys
 	bindkey -s '^o' 'lfcd\n'
 	#bindkey -s '^y' 'vimspo\n'
 	bindkey -s '^g' 'gotop\n'
 	bindkey -s '^v' 'nvim\n'
-	bindkey -s '^q' 'udg\n'
 	bindkey -s '^u' 'u\n'
 	bindkey -s '^h' 'htop\n'
 	bindkey -s '^f' 'fast\n'
 	bindkey -s '^[n' 'neomutt\n'
 	bindkey -s "^[s" 'ncspot\n'
 	bindkey -s '^a' 'bc -l\n'
+	bindkey -s '^s' 'udg\n'
 
 [ "$TERM" != "st-256color" ] &&	export LF_ICONS="di=📁:\
 fi=📃:\

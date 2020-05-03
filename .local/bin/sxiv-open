@@ -1,5 +1,5 @@
 #!/bin/sh
 
-file=$1
-
-rotdir $file | grep -i "\.\(png\|ico\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio 2>/dev/null | lf-select
+DIR="$(dirname "$1")"
+base="$(basename "$1")"
+ls "$DIR" | awk "BEGIN { lines = \"\"; m = 0; } /^$base$/ { m = 1; } { if (!m) { if (lines) { lines = lines\"\n\"; } lines = lines\"\"\$0; } else { print \$0; } } END { print lines; }" | grep -i "\.\(png\|ico\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio $DIR/ 2>/dev/null

@@ -37,13 +37,13 @@ alias ..='cd ..'
 alias ...='cd ../../../'
 alias :q='exit' # vim user :)
 
-alias ls='ls --color'
-alias lsa='ls -lah'
-alias l='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lAh'
+alias ls='ls --color -hN'
+alias lsa='ls -la'
+alias l='ls -la'
+alias ll='ls -l'
+alias la='ls -lA'
 alias md='mkdir -p'
-alias rd=rmdir
+alias rd='rmdir'
 
 alias lc='colorls -lA --sd --dark --gs'
 alias dir='dir --color=auto'
@@ -54,6 +54,13 @@ alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ccat="highlight --out-format=ansi"
 alias path='echo $PATH | tr : "\n"'
+
+# Shorter commands
+alias \
+	ka='killall' \
+	g='git' \
+	trem='transmission-remote' \
+	z='zathura'
 
 # Git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
 	alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'

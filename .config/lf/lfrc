@@ -211,7 +211,7 @@ map <c-n> push :mkdir<space>
 map E extract	#extract and compress
 map C copyto
 map M moveto
-map <delete> delete
+map D delete
 map p paste
 map S :Link
 

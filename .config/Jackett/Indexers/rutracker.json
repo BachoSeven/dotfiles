@@ -3,13 +3,13 @@
     "id": "sitelink",
     "type": "inputstring",
     "name": "Site Link",
-    "value": "https://rutracker.org/"
+    "value": "https://rutracker.net/"
   },
   {
     "id": "striprussianletters",
     "type": "inputbool",
     "name": "Strip Russian Letters",
-    "value": true
+    "value": false
   },
   {
     "id": "captchainfo",
@@ -27,13 +27,13 @@
     "id": "password",
     "type": "inputstring",
     "name": "Password",
-    "value": "CfDJ8CPEPNLQaPdEgCTysTYvs6QS_7QeUhyKfYhEzXXvu9Uood1JIA9EVo1UUM7vzP5KJz3xWVDkp-blijqBMHWWHTd-SjSwt3gMkkh7FKn9K-BB5m7HYsANftzDOH8lnW7o0g"
+    "value": "CfDJ8CPEPNLQaPdEgCTysTYvs6S3gStevThRj1ac_mAr5rcQybdilyRnx1JAP7mwILAf89ZJbgUO8gxeozfJMECSs7euUkC-rMfyDPreolec9xEXSB4qr8e89OT-aZ_fnGAHmQ"
   },
   {
     "id": "captchatext",
     "type": "inputstring",
     "name": "Captcha Text",
-    "value": "s99ce"
+    "value": ""
   },
   {
     "id": "captchacookie",
@@ -57,6 +57,6 @@
     "id": "lasterror",
     "type": "hiddendata",
     "name": "LastError",
-    "value": null
+    "value": "Exception (rutracker): Operation canceled: The operation was canceled."
   }
 ]

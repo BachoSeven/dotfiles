@@ -3,13 +3,13 @@
     "id": "sitelink",
     "type": "inputstring",
     "name": "Site Link",
-    "value": "https://katcr.co/"
+    "value": "https://katcr.unblocked.casa/"
   },
   {
     "id": "cookieheader",
     "type": "hiddendata",
     "name": "CookieHeader",
-    "value": "katsecalert=402ca3e82a4ede96c7aa45f6d46e181e"
+    "value": "katsecalert=70ea71bbb762132a35490964109bf50b; __cfduid=d1a9f10146071cb371ef3ba281ee46bdc1588431999"
   },
   {
     "id": "lasterror",
