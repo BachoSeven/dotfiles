@@ -15,7 +15,7 @@
     "id": "lasterror",
     "type": "hiddendata",
     "name": "LastError",
-    "value": null
+    "value": "Exception (rutracker-ru): Operation canceled: The operation was canceled."
   },
   {
     "id": "striprussianletters",

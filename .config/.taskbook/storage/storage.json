@@ -139,35 +139,7 @@
             "@ToDo"
         ],
         "_isTask": true,
-        "isComplete": false,
-        "inProgress": false,
-        "priority": 1
-    },
-    "41": {
-        "_id": 41,
-        "_date": "Fri Apr 24 2020",
-        "_timestamp": 1587765251199,
-        "description": "recupera g1-24-4",
-        "isStarred": false,
-        "boards": [
-            "@Uni"
-        ],
-        "_isTask": true,
-        "isComplete": false,
-        "inProgress": false,
-        "priority": 1
-    },
-    "42": {
-        "_id": 42,
-        "_date": "Fri Apr 24 2020",
-        "_timestamp": 1587765275026,
-        "description": "recupera esercitazione-fino-PS",
-        "isStarred": false,
-        "boards": [
-            "@Uni"
-        ],
-        "_isTask": true,
-        "isComplete": false,
+        "isComplete": true,
         "inProgress": false,
         "priority": 1
     },

@@ -1,17 +1,16 @@
 " Basic Settings
 	let mapleader =","
 	set shell=/usr/bin/zsh
-	set number relativenumber
+	set number
 	set wildmenu
 	set wildmode=longest,list,full
 	set autoindent
-	set cursorline
 	set incsearch
 	set hidden
 	set termguicolors
+	" setlocal spell spelllang=en_us
 	set splitbelow splitright
-	setlocal spell spelllang=en_us
-	set splitbelow splitright
+	set lazyredraw
 
 
 " Some mappings and shortcuts
@@ -75,28 +74,19 @@
 	    highlight! link DiffText MatchParen
 	endif
 
-function! CleanReg()
-let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
-for r in regs
-  call setreg(r, [])
-endfor
-endfunction
-nnoremap <leader>rr :call CleanReg()<CR>
-
 " Sessions
-	let g:session_dir = '~/.config/nvim/vim-sessions'
-	let g:session#default_opener = 'edit'
-	let g:session#default_session = 'default'
-	exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
-	exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
-
-" File opener with gx
-let g:netrw_browsex_viewer= "$OPENER"
+	" let g:session_dir = '~/.config/nvim/vim-sessions'
+	" let g:session#default_opener = 'edit'
+	" let g:session#default_session = 'default'
+	" exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+	" exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tpope/vim-fugitive'
+
+Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-zsh'
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
@@ -126,12 +116,12 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 Plug 'ptzz/lf.vim'
 Plug 'rbgrouleff/bclose.vim'
 
-Plug 'sirver/ultisnips'
-	let g:UltiSnipsExpandTrigger = '<tab>'
-	let g:UltiSnipsJumpForwardTrigger = '<tab>'
-	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-	let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
-	let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
+" Plug 'sirver/ultisnips'
+	" let g:UltiSnipsExpandTrigger = '<tab>'
+	" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+	" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+	" let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
+	" let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
 Plug 'lukelbd/vim-scrollwrapped'
 Plug 'wlemuel/vim-tldr'
 Plug '907th/vim-auto-save'
@@ -161,8 +151,6 @@ Plug 'cespare/vim-toml'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
-
-Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -242,9 +230,9 @@ call plug#end()
 
 " ColorSchemes
 	set background=dark
-	colorscheme gruvbox
-	" colorscheme NeoSolarized
-	" let g:airline_theme='base16_solarized'
+	" colorscheme gruvbox
+	colorscheme NeoSolarized
+	let g:airline_theme='base16_solarized'
 
 	" hi Normal ctermbg=NONE guibg=NONE
 	" hi NonText ctermbg=NONE guibg=NONE
