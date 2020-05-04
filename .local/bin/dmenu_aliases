@@ -2,7 +2,7 @@
 cache=$XDG_CACHE_HOME/dmenu_run
 freq=$XDG_CACHE_HOME/dmenu_history
 aliases=$XDG_CONFIG_HOME/aliasrc
-dmenucmd='dmenu -fn Hack:hinting=True:antialias=True:size=14 -i -h 20 -nb #002b36 -nf #586e75 -sb #073642 -sf #fdf6e3'
+dmenucmd='dmenu -i -h 20'
 
 source $aliases
 
