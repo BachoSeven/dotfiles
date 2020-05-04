@@ -15,6 +15,6 @@
     "id": "lasterror",
     "type": "hiddendata",
     "name": "LastError",
-    "value": null
+    "value": "Exception (kickasstorrent): Operation canceled: The operation was canceled."
   }
 ]
