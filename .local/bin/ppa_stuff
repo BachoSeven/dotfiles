@@ -2,7 +2,7 @@
 
 # List all repos:
 if [ "$1" = "-a" ]; then
-	echo "All repos: "|lolcat&&
+	echo "All repos: "
 # Script to get all the PPA installed on a system
 	for APT in `find /etc/apt/ -name \*.list`; do
 	    grep -Po "(?<=^deb\s).*?(?=#|$)" $APT | while read ENTRY ; do
@@ -18,7 +18,7 @@ if [ "$1" = "-a" ]; then
 	    done
 	done
 else if [ "$1" = "-p" ]; then
-		echo "only personall PPAs: "|lolcat &&
+		echo "only personall PPAs: "
 	#Script to get all the PPA installed on a system ready to share for reininstall
 		for APT in `find /etc/apt/ -name \*.list`; do
 		    grep -o "^deb http://ppa.launchpad.net/[a-z0-9\-]\+/[a-z0-9\-]\+" $APT | while read ENTRY ; do
