@@ -18,9 +18,13 @@
 
 " vsplit file under cursor; C-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
 	nnoremap <C-W><C-F> <C-W>vgf
+
+" Spell check bindings
 	inoremap <c-L> <c-g>u<Esc>[s1z=`]a<c-g>u
 	inoremap <c-K> <c-g>u<esc>u[s2z=gi<c-g>u
 	inoremap <c-J> <c-g>u<esc>u[s3z=gi<c-g>u
+
+" Save a few keypresses
 	map <C-h> <C-w>h
 	map <C-l> <C-w>l
 	map <leader>h <C-w>h:q<cr>
@@ -28,6 +32,7 @@
 	map <leader>k <C-w>k:q<cr>
 	map <leader>l <C-w>l:q<cr>
 	nnoremap c "_c
+	nnoremap <silent> Q @q
 	map <C-t>k :tabr<cr>
 	map <C-t>j :tabl<cr>
 	map <C-t>h :tabp<cr>
@@ -85,8 +90,7 @@
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'tpope/vim-fugitive'
-
+Plug 'mbbill/undotree'
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-zsh'
 Plug 'Shougo/neco-vim'
@@ -101,6 +105,9 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 " Utilities
 Plug 'ptzz/lf.vim'
 Plug 'rbgrouleff/bclose.vim'
+
+" Discord
+" Plug 'hugolgst/vimsence'
 
 " Plug 'sirver/ultisnips'
 	" let g:UltiSnipsExpandTrigger = '<tab>'
@@ -127,7 +134,6 @@ Plug 'morhetz/gruvbox'		" Gruvbox
 Plug 'iCyMind/NeoSolarized' 	" NeoSolarized
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-	let g:airline_powerline_fonts = 1
 " Syntax highlighting
 Plug 'VebbNix/lf-vim'
 Plug 'cespare/vim-toml'
@@ -199,6 +205,9 @@ call plug#end()
 
 	autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
+" UndoTree
+	nnoremap <F5> :UndotreeToggle<cr>
+
 " Vimtex Configuration
 	let g:tex_flavor='latex'
 	let g:vimtex_quickfix_latexlog = {'fix_paths':0}
@@ -213,6 +222,9 @@ call plug#end()
 	call deoplete#custom#var('omni', 'input_patterns', {
 		\ 'tex': g:vimtex#re#deoplete
 		\})
+" Appearance
+	let g:airline_powerline_fonts = 1
+	let g:airline#extensions#tabline#enabled = 1
 
 " ColorSchemes
 	set background=dark
