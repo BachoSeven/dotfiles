@@ -134,5 +134,4 @@ ex=🎯:\
 *.torrent=🔽:\
 *.nix=::\
 "
-
 source $ZDOTDIR/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null

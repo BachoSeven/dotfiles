@@ -23,7 +23,7 @@ fi
 if [ $mod -eq 2 ]
 then
 let n=n+1
-cp b.pdf pagina_$n.pdf 
+cp b.pdf pagina_$n.pdf
 
 let n=$n+1
 cp b.pdf pagina_$n.pdf
@@ -71,4 +71,3 @@ done
 
 mv p$def.pdf File_Impaginato.pdf
 rm b.pdf doc_data.txt
-

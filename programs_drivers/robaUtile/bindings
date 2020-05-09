@@ -60,9 +60,7 @@
 'dmenu-ssgen'
 '<Shift><Alt>s'
 
-'lf'
-'gtk-launch lf'
-'<Super>r'
+
 
 'Ncmpcpp'
 'gtk-launch ncmpcpp'

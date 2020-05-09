@@ -2,10 +2,3 @@
 set connect.host localhost
 set connect.port 9091
 set connect.user transmission
-set connect.password pwd # trailing whitespace yeeee
-
-# Update torrent/peer/file/etc lists every 10 seconds
-set tui.poll 10
-
-# Default columns in torrent lists
-set columns.torrents name ratio rate-up rate-down

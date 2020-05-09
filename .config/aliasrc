@@ -94,15 +94,11 @@ alias \
 # Remove spaces
 	alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
 	alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
+	alias rsb='find -name "*(*)*" -type f | rename "s/\(|\)|\[|\]//g"'
 
 function 256color {
 	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
-
-#spotify in vim(deprecated, switched to ncspot)
-#function vimspo {
-	#nvim -c 'execute "normal \\sp"'
-#}
 
 # Various
 	alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
@@ -123,7 +119,6 @@ function 256color {
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias ytop='ytop --colorscheme=solarized-dark -asbp'
 	alias ncdu='ncdu --color dark'
-	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
 	alias define='define -c $XDG_CONFIG_HOME/define/define.conf.json'
 	alias vip='vis -c $XDG_CONFIG_HOME/vis/config_pulse'
@@ -183,6 +178,14 @@ alias nv='nvim .'
     #}
     #printf "\n";
 #}'
+
+cowfortune() {
+  f=/tmp/cowsaytemp
+  fortune | cowsay -f stegosaurus -W 80 > $f
+  let "N = `cat $f | wc -l`-14"
+  head -$N $f
+  tail -14 $f | toilet -f term --termwidth --gay
+  }
 
 alias weather='curl "wttr.in/Pisa?pqtF&lang=it" '
 alias weather2='curl "v2.wttr.in/Pisa?pqtF&lang=it" '

@@ -34,7 +34,6 @@ export GEM_HOME="$XDG_DATA_HOME/gem"
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/ripgreprc"
 
-export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0"
 export GS_FONTPATH="/usr/local/share/pmw/psfonts"
 
 export MPD_HOST="127.0.0.1"

@@ -27,7 +27,7 @@
     "id": "password",
     "type": "inputstring",
     "name": "Password",
-    "value": "CfDJ8CPEPNLQaPdEgCTysTYvs6S3gStevThRj1ac_mAr5rcQybdilyRnx1JAP7mwILAf89ZJbgUO8gxeozfJMECSs7euUkC-rMfyDPreolec9xEXSB4qr8e89OT-aZ_fnGAHmQ"
+    "value": "CfDJ8CPEPNLQaPdEgCTysTYvs6SaHu7P6gh79noiimkjDqD0U7fakzAPpJwP3oa5TmHsQc_eCgQ144kYnG6lQU_TmTygvEYMANW0N6YVVgFdpDMoGXk4b4Ng5kUdQhPAIY8ySg"
   },
   {
     "id": "captchatext",
@@ -57,6 +57,6 @@
     "id": "lasterror",
     "type": "hiddendata",
     "name": "LastError",
-    "value": "Exception (rutracker): Operation canceled: The operation was canceled."
+    "value": null
   }
 ]

@@ -7,11 +7,8 @@ sudo mkswap /swapfile
 
 sudo swapon /swapfile
 
-
-
-/swapfile swap swap defaults 0 0
-
-
+# Fstab entry
+# /swapfile swap swap defaults 0 0
 
 
 sudo swapon --show
