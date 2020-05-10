@@ -24,7 +24,7 @@ use_nerdfont=true
 # cmdline = "#eae3cb"
 # cmdline_bg = "#475b62"
 
-# Base16_sol_dark
+# Base16_sol_dark, modified closer to spotify colors by BachoSeven, originally https://github.com/gidsi/base16-ncspot
 [theme]
 background = "#002b36"
 primary = "#eee8d5"

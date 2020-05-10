@@ -107,7 +107,8 @@ Plug 'ptzz/lf.vim'
 Plug 'rbgrouleff/bclose.vim'
 
 " Discord
-" Plug 'hugolgst/vimsence'
+Plug 'hugolgst/vimsence'
+
 
 " Plug 'sirver/ultisnips'
 	" let g:UltiSnipsExpandTrigger = '<tab>'
