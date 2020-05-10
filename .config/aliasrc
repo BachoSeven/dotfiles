@@ -1,27 +1,5 @@
 # vi: ft=zsh
 
-lfcd () {
-    tmp="$(mktemp)"
-    fid="$(mktemp)"
-    lf -command '$printf $id > '"$fid"'' -last-dir-path="$tmp" "$@"
-    id="$(cat "$fid")"
-    archivemount_dir="/tmp/__lf_archivemount_$id"
-    if [ -f "$archivemount_dir" ]; then
-        cat "$archivemount_dir" | \
-            while read -r line; do
-                sudo umount "$line"
-                rmdir "$line"
-            done
-        rm -f "$archivemount_dir"
-    fi
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp" >/dev/null
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-
-
 # Proper shell shortcuts
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
@@ -45,7 +23,6 @@ alias la='ls -lA'
 alias md='mkdir -p'
 alias rd='rmdir'
 
-alias lc='colorls -lA --sd --dark --gs'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias fgrep='fgrep --color=auto'

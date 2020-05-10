@@ -35,6 +35,7 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/ripgreprc"
 
 export GS_FONTPATH="/usr/local/share/pmw/psfonts"
+export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/"
 
 export MPD_HOST="127.0.0.1"
 export MPD_PORT="6602"
@@ -57,3 +58,8 @@ export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!sna
 export FZF_ALT_C_OPTS="--exact --select-1 --exit-0 --preview 'tree -C {} | head -200'"
 export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --exclude .git"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind 'F1:toggle-preview'"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -8,7 +8,6 @@ set scrolloff 10
 set color256
 set icons
 set period 1
-# set drawbox on
 set incsearch true
 
 $lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"	# set previewer with env vars
@@ -47,7 +46,7 @@ cmd moveto ${{
 	clear; echo "Move to where?"
 	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)" &&
 	eval mv -iv $fx $dest &&
-	notify-send "🚚 File(s) moved." "File(s) moved to $dest."
+	notify-send "ﲆ File(s) moved." "File(s) moved to $dest."
 }}
 
 cmd copyto ${{
@@ -56,7 +55,7 @@ cmd copyto ${{
 	clear; echo "Copy to where?"
 	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)" &&
 	eval cp -ivr $fx $dest &&
-	notify-send "📋 File(s) copied." "File(s) copies to $dest."
+	notify-send " File(s) copied." "File(s) copies to $dest."
 }}
 
 cmd fzf_jump ${{
