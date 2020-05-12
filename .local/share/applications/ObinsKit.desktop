@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ObinsKit
+Exec=env WINEPREFIX="/home/francesco/.local/share/wineprefixes/default" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/francesco/.local/share/wineprefixes/default/dosdevices/c:/users/Public/Desktop/ObinsKit.lnk
+Type=Application
+StartupNotify=true
+Comment=Obinskit let you customize keyboard layout, light effects and macro for ANNE PRO2
+Path=/home/francesco/.local/share/wineprefixes/default/dosdevices/c:/Program Files/ObinsKit
+StartupWMClass=obinskit.exe

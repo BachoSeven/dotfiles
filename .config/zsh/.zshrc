@@ -1,13 +1,21 @@
+#                  __
+#                 /\ \
+#    ____     ____\ \ \___   _ __   ___
+#   /\_ ,`\  /',__\\ \  _ `\/\`'__\/'___\
+# __\/_/  /_/\__, `\\ \ \ \ \ \ \//\ \__/
+#/\_\ /\____\/\____/ \ \_\ \_\ \_\\ \____\
+#\/_/ \/____/\/___/   \/_/\/_/\/_/ \/____/
+#
+#
 # Powerlevel10k
 	[ -f $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme ] && source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 	[[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-
-	source $ZDOTDIR/.p10k.zsh
+	[ -f $ZDOTDIR/.p10k.zsh ] && source $ZDOTDIR/.p10k.zsh
 
 # Basic Settings
-	setopt autocd		# Automatically cd into typed directory.
-	stty stop undef		# Disable ctrl-s to freeze terminal.
-	unsetopt RM_STAR_SILENT # Always ask before rm folder/*
+	setopt AUTO_CD          	# `dirname` is equivalent to `cd dirname`
+	stty stop undef			# Disable ctrl-s to freeze terminal.
+	unsetopt RM_STAR_SILENT 	# Always ask before rm folder/*
 	[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 # Plugins
@@ -15,14 +23,6 @@
 	[ -f $ZDOTDIR/plugins/history/history.zsh ] && source $ZDOTDIR/plugins/history/history.zsh
 	[ -f $ZDOTDIR/plugins/lf/lf.zsh ] && source $ZDOTDIR/plugins/lf/lf.zsh 2>/dev/null
 	eval $(thefuck --alias)
-
-# Directly Execute with CTRL-X CTRL-R
-	fzf-history-widget-accept() {
-	  fzf-history-widget
-	  zle accept-line
-	}
-	zle     -N     fzf-history-widget-accept
-	bindkey '^X^R' fzf-history-widget-accept
 
 # Colors
 	autoload -U colors && colors
