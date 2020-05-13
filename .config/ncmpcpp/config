@@ -70,13 +70,19 @@ visualizer_sync_interval = 30
 
 visualizer_type = ellipse
 
-visualizer_look = ●▮
-# visualizer_look = ■■
+# visualizer_look = ●▮
+visualizer_look = |○
+#visualizer_look = "◆│"
+#visualizer_look = "▌▌"
+# visualizer_look = "▌▌"
 
-visualizer_color = blue, cyan, green, yellow, magenta, red
+
+# visualizer_color = cyan, green, yellow, magenta, red, blue
 #
 ## Alternative subset of 256 colors for terminals that support it.
 # visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+ visualizer_color = 46,45,44,43,42,41,40,39,38,37,36,35
+
 #
 ##### system encoding #####
 ##
@@ -307,6 +313,7 @@ centered_cursor = yes
 ##
 progressbar_look = ﰣ
 # progressbar_look = ▬▬▬
+# progressbar_look = 						"◾◾◽"
 
 #
 ## Available values: database, playlist.
