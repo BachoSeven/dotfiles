@@ -15,6 +15,7 @@ I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I 
 - **neomutt** as an email client
 - **brave** browser
 - **[sxiv](https://github.com/muennich/sxiv)** image viewer
+- **zathura** pdf & djvu reader
 
 
 <img src="pics/screens/ricing/new_rice1.png" alt="screenshot"/>
