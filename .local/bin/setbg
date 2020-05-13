@@ -6,6 +6,8 @@
 #	Usage:
 #		`setbg [ -s, --no-scheme ] [ -i, --input="path/to/img" ]`
 
+[ ! "$(gsettings get org.gnome.desktop.background picture-uri)" = "'file:///home/francesco/.config/wall.png'" ] && gsettings set org.gnome.desktop.background picture-uri file:///home/francesco/.config/wall.png
+
 TEMP=$(getopt -o 'si:' --long 'no-scheme,input:' -- "$@" )
 
 eval set -- "$TEMP"
