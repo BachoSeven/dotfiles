@@ -161,7 +161,7 @@
         "_id": 45,
         "_date": "Wed Apr 29 2020",
         "_timestamp": 1588121048522,
-        "description": "requests is a python pkg for terminator-themes; joypixel-fonts are manually installed from the aur, and so is libsynctex for zathura.",
+        "description": "requests is a python pkg for terminator-themes; joypixel-fonts are manually installed from the aur, and so is libsynctex for zathura.; jq is needed for taskbook.",
         "isStarred": false,
         "boards": [
             "@Reminders"
@@ -176,17 +176,6 @@
         "isStarred": false,
         "boards": [
             "@Reminders"
-        ],
-        "_isTask": false
-    },
-    "47": {
-        "_id": 47,
-        "_date": "Sun May 03 2020",
-        "_timestamp": 1588497417609,
-        "description": "Upgrade Ubuntu && install pop_os Shell",
-        "isStarred": false,
-        "boards": [
-            "@FreeTime"
         ],
         "_isTask": false
     },
@@ -226,6 +215,17 @@
         "isStarred": false,
         "boards": [
             "@Reminders"
+        ],
+        "_isTask": false
+    },
+    "51": {
+        "_id": 51,
+        "_date": "Wed May 13 2020",
+        "_timestamp": 1589325452702,
+        "description": "gtypist: q3",
+        "isStarred": false,
+        "boards": [
+            "@FreeTime"
         ],
         "_isTask": false
     }
