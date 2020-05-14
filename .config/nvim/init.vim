@@ -1,3 +1,10 @@
+"  _____         _____ _____           _____
+"  ___(_)_______ ___(_)__  /_  ___   _____(_)_______ ___
+"  __  / __  __ \__  / _  __/  __ | / /__  / __  __ `__ \
+"  _  /  _  / / /_  /  / /____ __ |/ / _  /  _  / / / / /
+"  /_/   /_/ /_/ /_/   \__/_(_)_____/  /_/   /_/ /_/ /_/
+"
+
 " Basic Settings
 	let mapleader =","
 	set shell=/usr/bin/zsh
@@ -104,6 +111,7 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 " Utilities
 Plug 'ptzz/lf.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'mbbill/undotree'
 
 " Discord
 Plug 'hugolgst/vimsence'
@@ -219,6 +227,9 @@ call plug#end()
 	call deoplete#custom#var('omni', 'input_patterns', {
 		\ 'tex': g:vimtex#re#deoplete
 		\})
+" UndoTree
+	nnoremap <F5> :UndotreeToggle<cr>
+
 " Appearance
 	let g:airline_powerline_fonts = 1
 	let g:airline#extensions#tabline#enabled = 1

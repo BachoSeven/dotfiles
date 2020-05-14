@@ -236,6 +236,7 @@ map X !$f
 map o &mimeopen "$f"
 map O $mimeopen --ask "$f"
 map V push :!nvim<space>
+map <c-a> !neomutt -a $fx
 
 # 			Experimental proper previewing
 map - $~/.local/bin/draw_img $f
