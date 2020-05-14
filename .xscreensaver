@@ -1,8 +1,8 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.42 for francesco on Sun May 10 14:55:18 2020.
+# Written by xscreensaver-demo 5.42 for francesco on Thu May 14 10:50:59 2020.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	0:15:00
+timeout:	0:20:00
 cycle:		0:02:00
 lock:		False
 lockTimeout:	0:20:00
@@ -186,7 +186,7 @@ programs:								      \
   GL: 				cubestorm -root				    \n\
 -				eruption -root				    \n\
 - GL: 				flipflop -root				    \n\
-  GL: 				flyingtoasters -root			    \n\
+- GL: 				flyingtoasters -root			    \n\
 -				fontglide -root				    \n\
 - GL: 				gleidescope -root			    \n\
 - GL: 				glknots -root				    \n\
@@ -285,7 +285,7 @@ programs:								      \
   GL: 				vigilance -root				    \n\
   GL: 				crumbler -root				    \n\
 				filmleader -root			    \n\
-				glitchpeg -root				    \n\
+				glitchpeg -root -delay 84091 -count 40	    \n\
   GL: 				handsy -root				    \n\
   GL: 				maze3d -root				    \n\
   GL: 				peepers -root				    \n\
