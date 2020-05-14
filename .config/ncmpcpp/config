@@ -68,13 +68,11 @@ visualizer_sync_interval = 30
 ## Available values: spectrum, wave, wave_filled, ellipse.
 ##
 
-visualizer_type = ellipse
+# visualizer_type = ellipse
+visualizer_type = spectrum
 
-# visualizer_look = ●▮
-visualizer_look = |○
-#visualizer_look = "◆│"
-#visualizer_look = "▌▌"
-# visualizer_look = "▌▌"
+# visualizer_look = ●▮ #ellipse
+visualizer_look = "▌▌" #frequency spectrum
 
 
 # visualizer_color = cyan, green, yellow, magenta, red, blue
@@ -311,9 +309,7 @@ centered_cursor = yes
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-progressbar_look = ﰣ
-# progressbar_look = ▬▬▬
-# progressbar_look = 						"◾◾◽"
+progressbar_look = ▬▬▬
 
 #
 ## Available values: database, playlist.
