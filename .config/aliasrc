@@ -11,6 +11,7 @@ alias aptpurge='sudo apt-get purge'
 alias aptshow='apt show'
 alias sau='sudo apt autoremove --purge'
 
+alias -- -='cd -'
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias :q='exit' # vim user :)
