@@ -90,7 +90,6 @@
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'mbbill/undotree'
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-zsh'
 Plug 'Shougo/neco-vim'
@@ -205,9 +204,6 @@ call plug#end()
 	endfunction
 
 	autocmd! User FzfStatusLine call <SID>fzf_statusline()
-
-" UndoTree
-	nnoremap <F5> :UndotreeToggle<cr>
 
 " Vimtex Configuration
 	let g:tex_flavor='latex'
