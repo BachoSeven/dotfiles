@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.42 for francesco on Thu May 14 10:50:59 2020.
+# Written by xscreensaver-demo 5.42 for francesco on Thu May 14 14:59:42 2020.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:20:00
@@ -11,7 +11,7 @@ visualID:	default
 installColormap:    True
 verbose:	False
 timestamp:	True
-splash:		True
+splash:		False
 splashDuration:	0:00:05
 demoCommand:	xscreensaver-demo
 prefsCommand:	xscreensaver-demo -prefs

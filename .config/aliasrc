@@ -38,6 +38,7 @@ alias \
 	ka='killall' \
 	g='git' \
 	gc='g clone' \
+	glols="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
 	trem='transmission-remote' \
 	z='zathura'
 
@@ -86,6 +87,7 @@ function 256color {
 	alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 	alias cbh='connectHeadphones'
 	alias nf='neofetch'
+	alias pf='pfetch'
 
 	alias waterfox='waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
