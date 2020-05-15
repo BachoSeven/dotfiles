@@ -1,114 +1,26 @@
 ncmpcpp_directory = ~/.config/ncmpcpp
-#
-##
-## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
-## MPD clients (eg. ncmpc) also use that location.
-##
-#
 lyrics_directory = ~/.local/share/lyrics
 #
-##### connection settings #####
-#
 mpd_host = 127.0.0.1
-#
 mpd_port = 6602
-#
 mpd_connection_timeout = 5
-#
-## Needed for tag editor and file operations to work.
-##
 mpd_music_dir = "~/music"
-#
 mpd_crossfade_time = 5
 #
-##### music visualizer #####
-##
-## Note: In order to make music visualizer work you'll need to use mpd fifo
-## output, whose format parameter has to be set to 44100:16:1 for mono
-## visualization or 44100:16:2 for stereo visualization. Example configuration
-## (it has to be put into mpd.conf):
-##
-## audio_output {
-##        type            "fifo"
-##        name            "Visualizer feed"
-##        path            "/tmp/mpd.fifo"
-##        format          "44100:16:2"
-## }
-##
-#
 visualizer_fifo_path = /tmp/mpd.fifo
-#
-##
-## Note: Below parameter is needed for ncmpcpp to determine which output
-## provides data for visualizer and thus allow syncing between visualization and
-## sound as currently there are some problems with it.
-##
-#
 visualizer_output_name = Visualizer
-#
-##
-## If you set format to 44100:16:2, make it 'yes'.
-##
 visualizer_in_stereo = yes
-#
-##
-## Note: Below parameter defines how often ncmpcpp has to "synchronize"
-## visualizer and audio outputs.  30 seconds is optimal value, but if you
-## experience synchronization problems, set it to lower value.  Keep in mind
-## that sane values start with >=10.
-##
-#
 visualizer_sync_interval = 30
-#
-##
-## Note: To enable spectrum frequency visualization you need to compile ncmpcpp
-## with fftw3 support.
-##
-#
-## Available values: spectrum, wave, wave_filled, ellipse.
-##
-
-# visualizer_type = ellipse
 visualizer_type = spectrum
-
 # visualizer_look = ●▮ #ellipse
 visualizer_look = "▌▌" #frequency spectrum
-
-
 # visualizer_color = cyan, green, yellow, magenta, red, blue
-#
-## Alternative subset of 256 colors for terminals that support it.
 # visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
  visualizer_color = 46,45,44,43,42,41,40,39,38,37,36,35
-
 #
-##### system encoding #####
-##
-## ncmpcpp should detect your charset encoding but if it failed to do so, you
-## can specify charset encoding you are using here.
-##
-## Note: You can see whether your ncmpcpp build supports charset detection by
-## checking output of `ncmpcpp --version`.
-##
-## Note: Since MPD uses UTF-8 by default, setting this option makes sense only
-## if your encoding is different.
-##
-#
-#system_encoding = ""
-#
-##### delays #####
-#
-## Time of inactivity (in seconds) after playlist highlighting will be disabled
-## (0 = always on).
-##
 playlist_disable_highlight_delay = 3
-#
-## Defines how long messages are supposed to be visible.
-##
 message_delay_time = 2
 #
-##### song format #####
-##
 ## For a song format you can use:
 ##
 ## %l - length
@@ -310,7 +222,7 @@ centered_cursor = yes
 ## part of progressbar.
 ##
 progressbar_look = ▬▬▬
-
+#
 #
 ## Available values: database, playlist.
 ##
@@ -500,8 +412,8 @@ use_console_editor = yes
 ## Note: due to technical limitations of older ncurses version, if 256 colors
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
-
-
+#
+#
 colors_enabled = yes
 #
 empty_tag_color = magenta

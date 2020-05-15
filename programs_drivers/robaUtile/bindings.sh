@@ -83,4 +83,16 @@ dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cust
 `\n\n`
 dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom20/name
 dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom20/command
-dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom20/binding`" > bindings
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom20/binding
+`\n\n`
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom21/name
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom21/command
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom21/binding
+`\n\n`
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom22/name
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom22/command
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom22/binding
+`\n\n`
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom23/name
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom23/command
+dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom23/binding`" > bindings

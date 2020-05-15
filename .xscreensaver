@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.42 for francesco on Thu May 14 14:59:42 2020.
+# Written by xscreensaver-demo 5.42 for francesco on Fri May 15 14:45:14 2020.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:20:00
@@ -44,12 +44,13 @@ textProgram:	fortune
 textURL:	http://feeds.feedburner.com/ubuntu-news
 
 programs:								      \
--				maze -root				    \n\
+				maze -root -pre-delay 2727273 -post-delay     \
+				  4924243				    \n\
 - GL: 				superquadrics -root			    \n\
 				attraction -root			    \n\
 -				blitspin -root				    \n\
 				greynetic -root				    \n\
--				helix -root				    \n\
+				helix -root				    \n\
 				hopalong -root				    \n\
 -				imsmap -root -delay 9 -iterations 6	      \
 				  -ncolors 36				    \n\
@@ -78,7 +79,7 @@ programs:								      \
 				julia -root -delay 9091 -count 4705	      \
 				  -cycles 41 -ncolors 166		    \n\
 -				kaleidescope -root			    \n\
-- GL: 				moebius -root				    \n\
+  GL: 				moebius -root				    \n\
 -				moire -root				    \n\
 - GL: 				morph3d -root				    \n\
 -				mountain -root				    \n\
@@ -122,8 +123,8 @@ programs:								      \
 -				deluxe -root				    \n\
 				demon -root				    \n\
 - GL: 				extrusion -root				    \n\
--				loop -root				    \n\
--				penetrate -root				    \n\
+				loop -root				    \n\
+				penetrate -root				    \n\
 -				petri -root				    \n\
 -				phosphor -root				    \n\
 - GL: 				pulsar -root				    \n\
@@ -147,7 +148,7 @@ programs:								      \
 - GL: 				flipscreen3d -root			    \n\
 - GL: 				gltext -root				    \n\
 - GL: 				menger -root				    \n\
-- GL: 				molecule -root				    \n\
+  GL: 				molecule -root				    \n\
 -				rotzoomer -root				    \n\
 -				speedmine -root				    \n\
 - GL: 				starwars -root				    \n\
@@ -174,7 +175,7 @@ programs:								      \
 - GL: 				spheremonics -root			    \n\
 				thornbird -root				    \n\
 -				twang -root				    \n\
-  GL: 				antspotlight -root			    \n\
+- GL: 				antspotlight -root			    \n\
 -				apple2 -root				    \n\
 - GL: 				atunnel -root -light			    \n\
 -				barcode -root -mode clock24		    \n\
@@ -197,7 +198,7 @@ programs:								      \
   GL: 				jigglypuff -root -delay 14394 -speed 446      \
 				  -damping 229 -hold 621 -spherism 114	      \
 				  -distance 394 -spooky 1		    \n\
-				metaballs -root				    \n\
+-				metaballs -root				    \n\
 - GL: 				mirrorblob -root			    \n\
 -				piecewise -root				    \n\
 - GL: 				polytopes -root				    \n\
@@ -208,14 +209,14 @@ programs:								      \
 -				xanalogtv -root				    \n\
 				abstractile -root			    \n\
 				anemotaxis -root			    \n\
-  GL: 				antinspect -root			    \n\
+- GL: 				antinspect -root			    \n\
 -				fireworkx -root				    \n\
 -				fuzzyflakes -root			    \n\
 				interaggregate -root -growth-delay 9091	      \
 				  -num-circles 108			    \n\
 -				intermomentary -root -draw-delay 20000	      \
 				  -num-discs 100			    \n\
--				memscroller -root			    \n\
+				memscroller -root			    \n\
 - GL: 				noof -root				    \n\
 -				pacman -root				    \n\
 - GL: 				pinion -root				    \n\
@@ -286,9 +287,9 @@ programs:								      \
   GL: 				crumbler -root				    \n\
 				filmleader -root			    \n\
 				glitchpeg -root -delay 84091 -count 40	    \n\
-  GL: 				handsy -root				    \n\
-  GL: 				maze3d -root				    \n\
-  GL: 				peepers -root				    \n\
+- GL: 				handsy -root				    \n\
+- GL: 				maze3d -root				    \n\
+- GL: 				peepers -root				    \n\
   GL: 				razzledazzle -root			    \n\
 				vfeedback -root				    \n\
 
