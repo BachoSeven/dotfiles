@@ -39,6 +39,7 @@
 	map <leader>k <C-w>k:q<cr>
 	map <leader>l <C-w>l:q<cr>
 	nnoremap c "_c
+" Quick macros
 	nnoremap <silent> Q @q
 	map <C-t>k :tabr<cr>
 	map <C-t>j :tabl<cr>
@@ -228,7 +229,9 @@ call plug#end()
 		\ 'tex': g:vimtex#re#deoplete
 		\})
 " UndoTree
+	let g:undotree_WindowLayout = 3
 	nnoremap <F5> :UndotreeToggle<cr>
+	let g:undotree_SetFocusWhenToggle = 1
 
 " Appearance
 	let g:airline_powerline_fonts = 1

@@ -32,12 +32,13 @@
 	[ -f $ZDOTDIR/plugins/vi-mode/vi-mode.zsh ] && source $ZDOTDIR/plugins/vi-mode/vi-mode.zsh
 
 ## Bind keys
+	alias -- -='cd -'
 	bindkey -s '^o' 'lfcd\n'
 	bindkey -s '^g' 'ytop\n'
 	bindkey -s '^v' 'nvim\n'
 	bindkey -s '^u' 'u\n'
 	bindkey -s '^h' 'htop\n'
-	bindkey -s '^f' 'fast\n'
+	bindkey -s '^f' 'speedtest-cli\n'
 	bindkey -s '^[n' 'neomutt\n'
 	bindkey -s "^[s" 'ncspot\n'
 	bindkey -s '^a' 'bc -l\n'

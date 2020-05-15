@@ -11,7 +11,6 @@ alias aptpurge='sudo apt-get purge'
 alias aptshow='apt show'
 alias sau='sudo apt autoremove --purge'
 
-alias -- -='cd -'
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias :q='exit' # vim user :)
@@ -88,7 +87,9 @@ function 256color {
 	alias cbh='connectHeadphones'
 	alias nf='neofetch'
 	alias pf='pfetch'
+	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 
+	alias abook='abook -C /home/francesco/.config/abook/abookrc -f /home/francesco/.config/abook/addressbook'
 	alias waterfox='waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 	alias flp='flashplayer'

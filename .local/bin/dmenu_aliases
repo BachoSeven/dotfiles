@@ -1,5 +1,5 @@
 #!/bin/bash
-cache=$XDG_CACHE_HOME/dmenu_run
+run_cache=/home/francesco/.cache/dmenu_run
 freq=$XDG_CACHE_HOME/dmenu_history
 aliases=$XDG_CONFIG_HOME/aliasrc
 dmenucmd='dmenu -i -h 20'
@@ -14,7 +14,7 @@ history=$(sed "s/[[:space:]].*/*/" <<< "$history")
 #generate list of commands including functions and alias'
 #tail command gets rid of a few of the weird bash builtins
 #at the beginning of the list
-cache=$(compgen -a; compgen -c | grep -vxF "$(compgen -a)" | sort | tail -n +10)
+cache=$( compgen -a; compgen -c | grep -vxF "$(compgen -a)" | sort | tail -n +10 )
 
 # sort history by frequency of use
 sorted=$(sort <<< "$history" | uniq -c | sort -hr | colrm 1 8)
