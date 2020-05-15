@@ -27,10 +27,14 @@
 #.local/libvirt
 #.vagrant
 #.vagrant.d
-#.wine
+.config/wineprefixes
+.local/share/wineprefixes
 #.twister
 #/twister
 #Applications/eclipse*
+
+# bare repo
+.config/dots
 /downloads
 /music
 #*Popcorntime*
@@ -101,6 +105,7 @@
 
 # Node Package Manager cache
 .npm
+.local/share/npm
 
 # Node Version Manager
 .nvm

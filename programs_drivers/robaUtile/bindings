@@ -33,7 +33,7 @@
 '<Super>d'
 
 'Screensaver'
-'xscreensaver-command -activate'
+'xscreensaver-command -lock'
 '<Shift><Super>s'
 
 'Discord'
@@ -60,7 +60,9 @@
 'dmenu-ssgen'
 '<Shift><Alt>s'
 
-
+'Network'
+'st -e nmtui'
+'<Shift><Super>w'
 
 'Ncmpcpp'
 'gtk-launch ncmpcpp'
@@ -68,7 +70,7 @@
 
 'Notion'
 'notion-desktop'
-'<Primary><Shift>n'
+'<Shift><Alt>n'
 
 'prev_song'
 'mpc prev'
@@ -81,3 +83,13 @@
 'music_toggle'
 'mpc toggle'
 '<Shift>Menu'
+
+'speed_test'
+'st -e speedtest-cli'
+'<Shift><Super>f'
+
+'Xkcd'
+'/home/francesco/.local/bin/xkcd'
+'<Shift><Super>x'
+
+
