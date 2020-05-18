@@ -1,10 +1,10 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.42 for francesco on Sat May 16 19:46:45 2020.
+# Written by xscreensaver-demo 5.42 for francesco on Mon May 18 13:30:22 2020.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:20:00
 cycle:		0:02:00
-lock:		False
+lock:		True
 lockTimeout:	0:20:00
 passwdTimeout:	0:00:30
 visualID:	default

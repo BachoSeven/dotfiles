@@ -124,7 +124,7 @@ alias bd='nvim $XDG_CONFIG_HOME/directories'
 alias cfz='nvim $ZDOTDIR/.zshrc'
 alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
 alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'
-alias cfr='nvim $XDG_CONFIG_HOME/Xresources/Xresources'
+alias cfr='nvim $HOME/.Xresources'
 alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
 alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
 

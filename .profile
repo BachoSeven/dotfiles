@@ -40,6 +40,9 @@ export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
+# subs
+export SUBS_FILE=$XDG_CONFIG_HOME/subs
+export SUBS_MENU_PROG="dmenu -nb #111111 -nf #2bbaa1 -c -l 10 -p Subs"
 
 export MPD_HOST="127.0.0.1"
 export MPD_PORT="6602"
@@ -82,4 +85,5 @@ export LC_CTYPE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # Start graphical server on tty1 if not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" && exec startx
+[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx
+sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null
