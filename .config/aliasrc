@@ -169,5 +169,5 @@ cowfortune() {
   tail -14 $f | toilet -f term --termwidth --gay
   }
 
-alias weather='curl "wttr.in/Pisa?pqtF&lang=it" '
-alias weather2='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
+alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
+alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
