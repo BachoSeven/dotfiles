@@ -87,6 +87,7 @@ function 256color {
 	alias cbh='connectHeadphones'
 	alias nf='neofetch'
 	alias pf='pfetch'
+	alias tg='$HOME/programs_drivers/web_stuff/Telegram/Telegram'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 
 	alias abook='abook -C /home/francesco/.config/abook/abookrc -f /home/francesco/.config/abook/addressbook'
