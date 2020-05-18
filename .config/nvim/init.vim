@@ -1,8 +1,8 @@
-"  _____         _____ _____           _____
-"  ___(_)_______ ___(_)__  /_  ___   _____(_)_______ ___
-"  __  / __  __ \__  / _  __/  __ | / /__  / __  __ `__ \
-"  _  /  _  / / /_  /  / /____ __ |/ / _  /  _  / / / / /
-"  /_/   /_/ /_/ /_/   \__/_(_)_____/  /_/   /_/ /_/ /_/
+" 	 _____         _____ _____           _____
+" 	 ___(_)_______ ___(_)__  /_  ___   _____(_)_______ ___
+" 	 __  / __  __ \__  / _  __/  __ | / /__  / __  __ `__ \
+" 	 _  /  _  / / /_  /  / /____ __ |/ / _  /  _  / / / / /
+" 	 /_/   /_/ /_/ /_/   \__/_(_)_____/  /_/   /_/ /_/ /_/
 "
 
 " Basic Settings
@@ -80,6 +80,9 @@
 	autocmd BufWritePre * %s/\s\+$//e
 	autocmd BufWritepre * %s/\n\+\%$//e
 
+" Recompile and run dwmblocks automatically
+	autocmd BufWritePost ~/programs_drivers/suckless_stuff/dwmblocks/config.h !cd ~/programs_drivers/suckless_stuff/dwmblocks/config.h;  sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
@@ -98,6 +101,7 @@
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'kovetskiy/sxhkd-vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-zsh'
 Plug 'Shougo/neco-vim'
@@ -214,6 +218,9 @@ call plug#end()
 
 	autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
+" sxhkd
+	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+
 " Vimtex Configuration
 	let g:tex_flavor='latex'
 	let g:vimtex_quickfix_latexlog = {'fix_paths':0}
@@ -239,9 +246,9 @@ call plug#end()
 
 " ColorSchemes
 	set background=dark
-	" colorscheme gruvbox
-	colorscheme NeoSolarized
-	let g:airline_theme='base16_solarized'
+	colorscheme gruvbox
+	" colorscheme NeoSolarized
+	" let g:airline_theme='base16_solarized'
 
 	" hi Normal ctermbg=NONE guibg=NONE
 	" hi NonText ctermbg=NONE guibg=NONE

@@ -40,86 +40,66 @@ set recolor			true
 set recolor-keephue		true
 
 
-# Base16 Solarized Dark
-# Author: Ethan Schoonover (modified by aramisgithub)
-
-set default-bg                  "#002b36"
-set default-fg                  "#073642"
-
-set statusbar-fg                "#839496"
-set statusbar-bg                "#586e75"
-
-set inputbar-bg                 "#002b36"
-set inputbar-fg                 "#fdf6e3"
-
-set notification-bg             "#002b36"
-set notification-fg             "#fdf6e3"
-
-set notification-error-bg       "#002b36"
-set notification-error-fg       "#dc322f"
-
-set notification-warning-bg     "#002b36"
-set notification-warning-fg     "#dc322f"
-
-set highlight-color             "#b58900"
-set highlight-active-color      "#268bd2"
-
-set completion-bg               "#073642"
-set completion-fg               "#268bd2"
-
-set completion-highlight-fg     "#fdf6e3"
-set completion-highlight-bg     "#268bd2"
-
-set recolor-lightcolor        "#002b36"   # base03
-set recolor-darkcolor         "#eee8d5"   # base2
-# set recolor-lightcolor      "#073642"   # base02
-
-set completion-group-bg       "#002b36"   # base03
-set completion-group-fg       "#839496"   # base0
-
-set index-bg			"#073642"   # base02
-set index-fg			"#93a1a1"   # base1
-set index-active-bg           "#586e75"   # base01
-set index-active-fg		"#eee8d5"   # base2
+## Base16 Solarized Dark
+## Author: Ethan Schoonover (modified by aramisgithub)
+# set default-bg                  "#002b36"
+# set default-fg                  "#073642"
+# set statusbar-fg                "#839496"
+# set statusbar-bg                "#586e75"
+# set inputbar-bg                 "#002b36"
+# set inputbar-fg                 "#fdf6e3"
+# set notification-bg             "#002b36"
+# set notification-fg             "#fdf6e3"
+# set notification-error-bg       "#002b36"
+# set notification-error-fg       "#dc322f"
+# set notification-warning-bg     "#002b36"
+# set notification-warning-fg     "#dc322f"
+# set highlight-color             "#b58900"
+# set highlight-active-color      "#268bd2"
+# set completion-bg               "#073642"
+# set completion-fg               "#268bd2"
+# set completion-highlight-fg     "#fdf6e3"
+# set completion-highlight-bg     "#268bd2"
+# set recolor-lightcolor        "#002b36"   # base03
+# set recolor-darkcolor         "#eee8d5"   # base2
+# # set recolor-lightcolor      "#073642"   # base02
+# set completion-group-bg       "#002b36"   # base03
+# set completion-group-fg       "#839496"   # base0
+# set index-bg			"#073642"   # base02
+# set index-fg			"#93a1a1"   # base1
+# set index-active-bg           "#586e75"   # base01
+# set index-active-fg		"#eee8d5"   # base2
 
 
 # Base16 Gruvbox
-
-# set notification-error-bg       "#282828" # bg
-# set notification-error-fg       "#fb4934" # bright:red
-# set notification-warning-bg     "#282828" # bg
-# set notification-warning-fg     "#fabd2f" # bright:yellow
-# set notification-bg             "#282828" # bg
-# set notification-fg             "#b8bb26" # bright:green
-
-# set completion-bg               "#504945" # bg2
-# set completion-fg               "#ebdbb2" # fg
-# set completion-group-bg         "#3c3836" # bg1
-# set completion-group-fg         "#928374" # gray
-# set completion-highlight-bg     "#83a598" # bright:blue
-# set completion-highlight-fg     "#504945" # bg2
-
-# # Define the color in index mode
-# set index-bg                    "#504945" # bg2
-# set index-fg                    "#ebdbb2" # fg
-# set index-active-bg             "#83a598" # bright:blue
-# set index-active-fg             "#504945" # bg2
-
-# set inputbar-bg                 "#282828" # bg
-# set inputbar-fg                 "#ebdbb2" # fg
-
-# set statusbar-bg                "#504945" # bg2
-# set statusbar-fg                "#ebdbb2" # fg
-
-# set highlight-color             "#fabd2f" # bright:yellow
-# set highlight-active-color      "#fe8019" # bright:orange
-
-# set default-bg                  "#282828" # bg
-# set default-fg                  "#ebdbb2" # fg
-# set render-loading              true
-# set render-loading-bg           "#282828" # bg
-# set render-loading-fg           "#ebdbb2" # fg
-
-# # Recolor book content's color
-# set recolor-lightcolor          "#282828" # bg
-# set recolor-darkcolor           "#ebdbb2" # fg
+set notification-error-bg       "#282828" # bg
+set notification-error-fg       "#fb4934" # bright:red
+set notification-warning-bg     "#282828" # bg
+set notification-warning-fg     "#fabd2f" # bright:yellow
+set notification-bg             "#282828" # bg
+set notification-fg             "#b8bb26" # bright:green
+set completion-bg               "#504945" # bg2
+set completion-fg               "#ebdbb2" # fg
+set completion-group-bg         "#3c3836" # bg1
+set completion-group-fg         "#928374" # gray
+set completion-highlight-bg     "#83a598" # bright:blue
+set completion-highlight-fg     "#504945" # bg2
+# Define the color in index mode
+set index-bg                    "#504945" # bg2
+set index-fg                    "#ebdbb2" # fg
+set index-active-bg             "#83a598" # bright:blue
+set index-active-fg             "#504945" # bg2
+set inputbar-bg                 "#282828" # bg
+set inputbar-fg                 "#ebdbb2" # fg
+set statusbar-bg                "#504945" # bg2
+set statusbar-fg                "#ebdbb2" # fg
+set highlight-color             "#fabd2f" # bright:yellow
+set highlight-active-color      "#fe8019" # bright:orange
+set default-bg                  "#282828" # bg
+set default-fg                  "#ebdbb2" # fg
+set render-loading              true
+set render-loading-bg           "#282828" # bg
+set render-loading-fg           "#ebdbb2" # fg
+# Recolor book content's color
+set recolor-lightcolor          "#282828" # bg
+set recolor-darkcolor           "#ebdbb2" # fg

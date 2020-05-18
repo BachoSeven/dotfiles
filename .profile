@@ -27,10 +27,19 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GEM_HOME="$XDG_DATA_HOME/gem"
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/ripgreprc"
-export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
-export WINEDLLOVERRIDES="mscoree=d;mshtml=d"
 
+# Various programs settings:
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export GS_FONTPATH="/usr/local/share/pmw/psfonts"
+export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
+export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
+export LESS_TERMCAP_me="$(printf '%b' '[0m')"
+export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
+export LESS_TERMCAP_se="$(printf '%b' '[0m')"
+export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
+export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
+export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
+export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
 export MPD_HOST="127.0.0.1"
 export MPD_PORT="6602"
@@ -64,3 +73,13 @@ export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!sna
 export FZF_ALT_C_OPTS="--exact --select-1 --exit-0 --preview 'tree -C {} | head -200'" # this is almost a file manager
 export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --exclude .git"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind 'F1:toggle-preview'"
+
+# Locales
+export LANGUAGE="en"
+export LANG="C"
+export LC_MESSAGES="C"
+export LC_CTYPE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Start graphical server on tty1 if not already running.
+[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" && exec startx

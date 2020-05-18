@@ -47,7 +47,6 @@
 8\IsGlobalShortcut=true
 8\Name=Show/hide main window
 9\Command="copyq: \n// http://doc.qt.io/qt-5/qdatetime.html#toString\nvar format = 'dddd d MMMM yyyy HH:mm:ss t'\nvar dateTime = dateString(format)\ncopy(dateTime)\ncopySelection(dateTime)\npaste()\n"
-9\GlobalShortcut=ctrl+shift+>
 9\Icon=\xf017
 9\IsGlobalShortcut=true
 9\Name=Paste current date and time
