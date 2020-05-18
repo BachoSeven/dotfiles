@@ -29,7 +29,7 @@
 '<Shift><Super>t'
 
 'Dmenu'
-'dmenu_aliases'
+'/home/francesco/.local/bin/dmenu_aliases'
 '<Super>d'
 
 'Screensaver'
@@ -57,7 +57,7 @@
 '<Shift><Super>n'
 
 'dmenu&scripts'
-'dmenu-ssgen'
+'/home/francesco/.local/bin/dmenu-ssgen'
 '<Shift><Alt>s'
 
 'Network'
@@ -92,4 +92,6 @@
 '/home/francesco/.local/bin/xkcd'
 '<Shift><Super>x'
 
-
+'emoji-select'
+'/home/francesco/.local/bin/dmenuunicode'
+'<Alt>e'
