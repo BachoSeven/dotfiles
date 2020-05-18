@@ -2,7 +2,8 @@
 run_cache=/home/francesco/.cache/dmenu_run
 freq=$XDG_CACHE_HOME/dmenu_history
 aliases=$XDG_CONFIG_HOME/aliasrc
-dmenucmd='dmenu -i -h 20'
+# configuration is done in Xresources
+dmenucmd='dmenu -i -h 18'
 
 source $aliases
 
@@ -43,7 +44,7 @@ if [[ "$cmd" =~ $regex ]]; then
     sorted=$(sort <<< "$history" | uniq -c | sort -hr | colrm 1 8)
     # remove trailing whitespace and asterisks from arguments
     cmd=$(sed 's/[[:space:]*]*$//' <<< "$@")
-    dmenucmd+=' -l 17'
+    dmenucmd+=' -l 18'
     (sleep .1; xdotool key Tab) &
     cmd="$(echo "$sorted"$'\n'"$cache" | $dmenucmd)"
     if [[ $cmd == *";remove" ]]; then
