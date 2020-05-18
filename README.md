@@ -17,6 +17,13 @@ I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I 
 - **[sxiv](https://github.com/muennich/sxiv)** image viewer
 - **zathura** pdf & djvu reader
 
+## Screens
+
+### Dwm
+
+<img src="pics/screens/ricing/dwm.png" alt="dwm"/>
+
+### Gnome-Shell
 
 <img src="pics/screens/ricing/new_rice1.png" alt="screenshot"/>
 
