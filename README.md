@@ -5,7 +5,7 @@ This is a personal dotfiles repository set up as suggested on https://news.ycomb
 ## Current Setup
 
 I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I use:
-- Suckless utilities (see my patched repos):  **[dmenu](https://github.com/BachoSeven/dmenu)** and  **[st](https://github.com/BachoSeven/st)** (terminal emulator)
+- Suckless utilities (see my patched repos):  **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), **[dmenu](https://github.com/BachoSeven/dmenu)**, **[st](https://github.com/BachoSeven/st)** (terminal emulator), and other useful tools
 - **zsh**  shell
 - **neovim** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
