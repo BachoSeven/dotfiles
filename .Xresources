@@ -6,11 +6,6 @@
 !!             (_)_/  \_\_|   \____|___/ \___/ \____|_|   \____)____|___/
 !!
 
-!! Vnc settings
-Vncviewer*grabKeyboard:	true
-
-!! Transparency (0-1):
-st.alpha: 0.85
 
 !! Solarized
 ! *background:            #002b36
@@ -128,15 +123,25 @@ xscreensaver.passwd.thermometer.width:       0
 xscreensaver.dateFormat:    %I:%M%P %b %d
 
 !! Dwm
-! dwm.normbordercolor:	#002b36
 ! dwm.normbgcolor:	#002b36
+! dwm.normbordercolor:	#073642
 ! dwm.normfgcolor:	#839496
+! dwm.selfgcolor:	#fdf6e3
 ! dwm.selbordercolor:	#2aa198
 ! dwm.selbgcolor:	#268bd2
-! dwm.selfgcolor:	#fdf6e3
-dwm.normbordercolor:	#282828
-dwm.normbgcolor:	#282828
+dwm.normbgcolor:	#1d2021
+dwm.normbordercolor:	#3c3836
 dwm.normfgcolor:	#ebdbb2
-dwm.selbordercolor:	#689d6a
-dwm.selbgcolor:		#458588
 dwm.selfgcolor:		#fbf1c7
+dwm.selbordercolor:	#9d0006
+dwm.selbgcolor:		#073642
+
+!! Vnc settings
+Vncviewer*grabKeyboard:	true
+
+!! Transparency (0-1):
+st.alpha: 0.85
+
+!! Misc
+*antialias:  true
+*autohint:   true
