@@ -1,13 +1,7 @@
 #!/bin/sh
 
-# Fix Gnome Apps Slow  Start due to failing services
-dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY
-
-mpd & 				# start MPD as user when you log in
-copyq &
 remaps &			# switch caps/super and one-tap_caps/esc, in gnome-shell I only want it as Esc
 setbg &				# basically xwallpaper+bling
-xcompmgr &			# xcompmgr for transparency
 redshift &
 xset r rate 300 50 &		# Speed xrate up
 unclutter &			# remove mouse when idle
