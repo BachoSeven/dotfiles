@@ -7,7 +7,7 @@
 $defaultBG=#146
 $brightFG=#4a3
 
-$tlist_bg.uf = #022
+$tlist_bg.uf = black
 $tlist_bg.f  = #203
 
 $activity_fg           = brown

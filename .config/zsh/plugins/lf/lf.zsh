@@ -20,7 +20,7 @@ lfcd () {
 }
 
 
-[ "$TERM" != "st-256color" ] && export LF_ICONS="di=📁:\
+export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
 ow=📂:\

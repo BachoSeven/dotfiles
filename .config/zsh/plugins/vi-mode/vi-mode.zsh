@@ -1,3 +1,4 @@
+# The single most glorious option
 	bindkey -v
 
 	export KEYTIMEOUT=1
