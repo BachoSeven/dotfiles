@@ -7,57 +7,57 @@
 !!
 
 
-!! Solarized
-! *background:            #002b36
-! *foreground:		  #839496
-! *cursorColor:           #fdf6e3
-! *fadeColor:             #002b36
-! *RcursorColor:	  #073642
-! !! black dark/light
-! *color0:                #073642
-! *color8:                #002b36
-! !! red dark/light
-! *color1:                #dc322f
-! *color9:                #cb4b16
-! !! green dark/light
-! *color2:                #859900
-! *color10:               #586e75
-! !! yellow dark/light
-! *color3:                #b58900
-! *color11:               #657b83
-! !! blue dark/light
-! *color4:                #268bd2
-! *color12:               #839496
-! !! magenta dark/light
-! *color5:                #d33682
-! *color13:               #6c71c4
-! !! cyan dark/light
-! *color6:                #2aa198
-! *color14:               #93a1a1
-! !! white dark/light
-! *color7:                #eee8d5
-! *color15:               #fdf6e3
+! Solarized
+*background:            #002b36
+*foreground:		  #839496
+*cursorColor:           #fdf6e3
+*fadeColor:             #002b36
+*RcursorColor:	  #073642
+!! black dark/light
+*color0:                #073642
+*color8:                #002b36
+!! red dark/light
+*color1:                #dc322f
+*color9:                #cb4b16
+!! green dark/light
+*color2:                #859900
+*color10:               #586e75
+!! yellow dark/light
+*color3:                #b58900
+*color11:               #657b83
+!! blue dark/light
+*color4:                #268bd2
+*color12:               #839496
+!! magenta dark/light
+*color5:                #d33682
+*color13:               #6c71c4
+!! cyan dark/light
+*color6:                #2aa198
+*color14:               #93a1a1
+!! white dark/light
+*color7:                #eee8d5
+*color15:               #fdf6e3
 
-!	gruvbox dark
-*.background: #282828
-*.foreground: #ebdbb2
-*.cursorColor: white
-*.color0: #1d2021
-*.color1: #cc241d
-*.color2: #98971a
-*.color3: #d79921
-*.color4: #458588
-*.color5: #b16286
-*.color6: #689d6a
-*.color7: #a89984
-*.color8: #928374
-*.color9: #fb4934
-*.color10: #b8bb26
-*.color11: #fabd2f
-*.color12: #83a598
-*.color13: #d3869b
-*.color14: #8ec07c
-*.color15: #ebdbb2
+! !	gruvbox dark
+! *.background: #282828
+! *.foreground: #ebdbb2
+! *.cursorColor: white
+! *.color0: #1d2021
+! *.color1: #cc241d
+! *.color2: #98971a
+! *.color3: #d79921
+! *.color4: #458588
+! *.color5: #b16286
+! *.color6: #689d6a
+! *.color7: #a89984
+! *.color8: #928374
+! *.color9: #fb4934
+! *.color10: #b8bb26
+! *.color11: #fabd2f
+! *.color12: #83a598
+! *.color13: #d3869b
+! *.color14: #8ec07c
+! *.color15: #ebdbb2
 
 !!	gruvbox light
 ! *.background: #fbf1c7
@@ -82,22 +82,22 @@
 
 !! Dmenu
 dmenu.font:		Hack:hinting=True:antialias=True:size=15
-! dmenu.background:	#002b36
-! dmenu.foreground:	#839496
-! dmenu.selbackground:	#073642
-! dmenu.selforeground:	#93a1a1
-! dmenu.hibackground:	#586e75
-! dmenu.hiforeground:	#eee8d5
-! dmenu.hiselbackground:	#cb4b16
-! dmenu.hiselforeground:	#fdf6e3
-dmenu.background:	#1d2021
-dmenu.foreground:	#928374
-dmenu.selbackground:	#282828
-dmenu.selforeground:	#a89984
-dmenu.hibackground:	#458588
+dmenu.background:	#002b36
+dmenu.foreground:	#839496
+dmenu.selbackground:	#073642
+dmenu.selforeground:	#93a1a1
+dmenu.hibackground:	#586e75
 dmenu.hiforeground:	#eee8d5
-dmenu.hiselbackground:	#d79921
+dmenu.hiselbackground:	#cb4b16
 dmenu.hiselforeground:	#fdf6e3
+! dmenu.background:	#1d2021
+! dmenu.foreground:	#928374
+! dmenu.selbackground:	#282828
+! dmenu.selforeground:	#a89984
+! dmenu.hibackground:	#458588
+! dmenu.hiforeground:	#eee8d5
+! dmenu.hiselbackground:	#d79921
+! dmenu.hiselforeground:	#fdf6e3
 
 !! Xscreensaver
 !general dialog box (affects main hostname, username, password text)
@@ -123,18 +123,18 @@ xscreensaver.passwd.thermometer.width:       0
 xscreensaver.dateFormat:    %I:%M%P %b %d
 
 !! Dwm
-! dwm.normbgcolor:	#002b36
-! dwm.normbordercolor:	#073642
-! dwm.normfgcolor:	#839496
-! dwm.selfgcolor:	#fdf6e3
-! dwm.selbordercolor:	#2aa198
-! dwm.selbgcolor:	#268bd2
-dwm.normbgcolor:	#1d2021
-dwm.normbordercolor:	#3c3836
-dwm.normfgcolor:	#ebdbb2
-dwm.selfgcolor:		#fbf1c7
-dwm.selbordercolor:	#9d0006
-dwm.selbgcolor:		#073642
+dwm.normbgcolor:	#002b36
+dwm.normbordercolor:	#073642
+dwm.normfgcolor:	#839496
+dwm.selfgcolor:	#fdf6e3
+dwm.selbordercolor:	#2aa198
+dwm.selbgcolor:	#268bd2
+! dwm.normbgcolor:	#1d2021
+! dwm.normbordercolor:	#3c3836
+! dwm.normfgcolor:	#ebdbb2
+! dwm.selfgcolor:		#fbf1c7
+! dwm.selbordercolor:	#9d0006
+! dwm.selbgcolor:		#073642
 
 !! Vnc settings
 Vncviewer*grabKeyboard:	true
