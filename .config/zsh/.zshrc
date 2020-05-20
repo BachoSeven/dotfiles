@@ -43,11 +43,12 @@
 
 ## Colors & Appearance
 	autoload -U colors && colors
-	# [ -f $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark ] && eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
-	[ -f $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox ] && eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
+	[ -f $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark ] && eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
+	# [ -f $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox ] && eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
 
 	# Basic autocomplete; case-insensitive and colored (LS_COLORS)
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 	source $ZDOTDIR/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null	# FastSyntaxHighlighting
