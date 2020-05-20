@@ -143,6 +143,8 @@ Plug 'junegunn/goyo.vim'
 " Appearance
 Plug 'chrisbra/Colorizer'
 	nnoremap <leader>H :ColorToggle<cr>
+Plug 'ap/vim-css-color'
+
 Plug 'morhetz/gruvbox'		" Gruvbox
 Plug 'iCyMind/NeoSolarized' 	" NeoSolarized
 Plug 'vim-airline/vim-airline'
@@ -246,9 +248,9 @@ call plug#end()
 
 " ColorSchemes
 	set background=dark
-	" colorscheme gruvbox
-	colorscheme NeoSolarized
-	let g:airline_theme='base16_solarized'
+	colorscheme gruvbox
+	" colorscheme NeoSolarized
+	" let g:airline_theme='base16_solarized'
 
 	" hi Normal ctermbg=NONE guibg=NONE
 	" hi NonText ctermbg=NONE guibg=NONE
