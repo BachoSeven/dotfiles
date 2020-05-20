@@ -131,6 +131,7 @@ alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
 alias cfy='nvim $XDG_CONFIG_HOME/subs'
 alias cfu='nbim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
 alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
+alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
 
 
 # Personal files
