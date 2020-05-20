@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Stig
+Comment=TUI and CLI for the BitTorrent client Transmission
+Terminal=false
+Exec=stig add %U
+Type=Application
+NoDisplay=true
+MimeType=application/x-bittorrent
+Categories=Network;FileTransfer;P2P;
+Keywords=p2p;bittorrent;transmission;rpc;
