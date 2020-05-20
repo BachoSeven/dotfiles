@@ -128,6 +128,10 @@ alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'
 alias cfr='nvim $HOME/.Xresources'
 alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
 alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
+alias cfy='nvim $XDG_CONFIG_HOME/subs'
+alias cfu='nbim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
+alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
+
 
 # Personal files
 alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
