@@ -20,7 +20,7 @@ unbind --context tabs d
 bind --context tabs 'x' tab --close
 
 ## Appearance
-tui toggle topbar
+# tui toggle topbar
 set tui.theme theme.theme
 
 # Tabs

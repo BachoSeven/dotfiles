@@ -4,14 +4,11 @@
 # light_is_bold
 
 ## Definition of global variables are all here for quick access
-
 $defaultBG=#146
+$brightFG=#4a3
 
 $tlist_bg.uf = #022
 $tlist_bg.f  = #203
-
-cli         white,bold on $defaultBG
-
 
 $activity_fg           = brown
 $added_fg              = brown
@@ -37,13 +34,13 @@ $flist_bg.f            = dark gray
 $flist_bg.uf           = black
 $folder_fg             = white
 $ip_fg                 = dark gray
-$keychains_bg          = #000
+$keychains_bg          = black
 $log_bg                = $defaultBG
-$marked_fg             = #b50
+$marked_fg             = $brightFG
 $name.connected_fg     = $status.connected_fg
 $name.discovering_fg   = $status.discovering_fg
 $name.downloading_fg   = $status.downloading_fg
-$name_fg               = dark gray
+$name_fg = light blue
 $name.idle_fg          = $status.idle_fg
 $name.isolated_fg      = $status.isolated_fg
 $name.queued_fg        = $status.queued_fg
@@ -85,6 +82,47 @@ $status.stopped_fg     = dark blue
 $status.uploading_fg   = dark green
 $status.verifying_fg   = yellow
 
+$completion_bg = $defaultBG
+$id_fg = white
+
+$trklist_bg.uf = black
+$trklist_bg.f  = dark gray
+
+$torrent_fg = light gray
+$tier_fg = brown
+$domain_fg = dark magenta
+$url-announce_fg = light blue
+$url-scrape_fg = light blue
+$status_fg = dark cyan
+
+$error_fg = dark red
+$error-announce_fg = dark red
+$error-scrape_fg = dark red
+
+$downloads_fg = light gray
+$leeches_fg = light gray
+$seeds_fg = light gray
+$last-announce_fg = white
+$next-announce_fg = white
+$last-scrape_fg = white
+$next-scrape_fg = white
+
+$slist_bg.uf = black
+$slist_bg.f  = #338
+
+$value_fg = light gray
+$value_hl = white,bold
+
+$default_fg = light gray
+$description_fg = light gray
+
+
+
+## Actual color definitions
+cli         white,bold on $defaultBG
+prompt          $brightFG,bold on $defaultBG
+find.highlight  $brightFG on #103
+
 tabs.unfocused                        white                     on $defaultBG
 tabs.focused                          #000                      on white
 tabs.torrentlist.unfocused            dark cyan                 on $defaultBG
@@ -99,10 +137,10 @@ tabs.help.focused                     white                     on $defaultBG
 topbar                                light gray,bold           on $topbar_bg
 topbar.host.connected                 dark green                on $topbar_bg
 topbar.host.disconnected              dark red                  on $topbar_bg
-topbar.help.key                       dark cyan                 on $topbar_bg
-topbar.help.equals                    dark cyan                 on $topbar_bg
-topbar.help.label                     dark cyan                 on $topbar_bg
-topbar.help.space                     dark cyan                 on $topbar_bg
+topbar.help.key                       light cyan                 on $topbar_bg
+topbar.help.equals                    light cyan                 on $topbar_bg
+topbar.help.label                     light cyan                 on $topbar_bg
+topbar.help.space                     light cyan                 on $topbar_bg
 
 bottombar                             black                     on $bottombar_bg
 bottombar.important                   dark red,bold             on $bottombar_bg
@@ -118,13 +156,17 @@ log.info                              light green               on $log_bg
 log.error                             light red,bold            on $log_bg
 log.debug                             yellow                    on $log_bg
 log.dupecount                         light cyan                on $log_bg
+log.scrollbar              	      light gray    	        on dark gray
 
 keychains                             dark gray                 on $keychains_bg
-keychains.keys                        dark gray                 on $keychains_bg
+keychains.header       light cyan   on #022
+keychains.keys                        dark blue                 on $keychains_bg
 keychains.keys.next                   yellow                    on $keychains_bg
 keychains.action                      white                     on $keychains_bg
+keychains.description  white        on $keychains_bg
 
-$completion_bg = $defaultBG
+
+
 completion               light gray   on $completion_bg
 completion.category      light gray,bold,underline on $completion_bg
 completion.item          light gray   on $completion_bg
@@ -139,7 +181,6 @@ torrentlist.focused bold on $tlist_bg.f
 torrentlist.header dark gray,underline on $tlist_bg.uf
 torrentlist.scrollbar light gray  on dark gray
 
-$id_fg = white
 torrentlist.id.header                              $id_fg,underline on $tlist_bg.uf
 torrentlist.id.unfocused                           $id_fg           on $tlist_bg.uf
 torrentlist.id.focused                             $id_fg           on $tlist_bg.f
@@ -348,9 +389,16 @@ torrentlist.name.discovering.progress2.focused     $name.discovering_fg         
 torrentlist.name.discovering.complete.unfocused    $name.discovering_fg           on $tlist_bg.uf
 torrentlist.name.discovering.complete.focused      $name.discovering_fg           on $tlist_bg.f
 
+
+torrentdetails            light gray on black
+torrentdetails.error      light red  on black
+torrentdetails.scrollbar  light gray on dark gray
+
 filelist                                           default                        on $flist_bg.uf
 filelist.focused                                   default                        on $flist_bg.f
 filelist.header                                    dark gray,underline            on $flist_bg.uf
+filelist.scrollbar                        	   light gray          		  on dark gray
+
 filelist.marked.header                             $marked_fg,underline           on $tlist_bg.uf
 filelist.marked.unfocused                          $marked_fg                     on $tlist_bg.uf
 filelist.marked.focused                            $marked_fg                     on $tlist_bg.f
@@ -377,6 +425,8 @@ filelist.priority.high.focused                     $priority_hl                 
 peerlist                                           default                        on $tlist_bg.uf
 peerlist.focused                                   default                        on $tlist_bg.uf
 peerlist.header                                    dark gray,underline            on $tlist_bg.uf
+peerlist.scrollbar   	                           light gray           	  on dark gray
+
 peerlist.port.header                               $port_fg,underline             on $plist_bg
 peerlist.port.unfocused                            $port_fg                       on $plist_bg
 peerlist.client.header                             $client_fg,underline           on $plist_bg
@@ -401,120 +451,95 @@ peerlist.%downloaded.highlighted.unfocused $%downloaded_hl           on $plist_b
 
 
 # Last version entries, probably should edit them...
-$trklist_bg.uf = black
-$trklist_bg.f  = dark gray
 trackerlist                                default              on $trklist_bg.uf
 trackerlist.focused                        default              on $trklist_bg.f
 trackerlist.header                         light gray,underline on $trklist_bg.uf
 trackerlist.scrollbar                      light gray           on dark gray
 
-$torrent_fg = light gray
 trackerlist.torrent.header                 $torrent_fg,underline on $trklist_bg.uf
 trackerlist.torrent.unfocused              $tracker_fg           on $trklist_bg.uf
 trackerlist.torrent.focused                $tracker_fg           on $trklist_bg.f
 
-$tier_fg = brown
 trackerlist.tier.header                    $tier_fg,underline on $trklist_bg.uf
 trackerlist.tier.unfocused                 $tier_fg           on $trklist_bg.uf
 trackerlist.tier.focused                   $tier_fg           on $trklist_bg.f
 
-$domain_fg = dark magenta
 trackerlist.domain.header                  $domain_fg,underline on $trklist_bg.uf
 trackerlist.domain.unfocused               $domain_fg           on $trklist_bg.uf
 trackerlist.domain.focused                 $domain_fg           on $trklist_bg.f
 
-$url-announce_fg = light blue
 trackerlist.url-announce.header            $url-announce_fg,underline on $trklist_bg.uf
 trackerlist.url-announce.unfocused         $url-announce_fg           on $trklist_bg.uf
 trackerlist.url-announce.focused           $url-announce_fg           on $trklist_bg.f
 
-$url-scrape_fg = light blue
 trackerlist.url-scrape.header              $url-scrape_fg,underline on $trklist_bg.uf
 trackerlist.url-scrape.unfocused           $url-scrape_fg           on $trklist_bg.uf
 trackerlist.url-scrape.focused             $url-scrape_fg           on $trklist_bg.f
 
-$status_fg = dark cyan
 trackerlist.status.header                  $status_fg,underline on $trklist_bg.uf
 trackerlist.status.unfocused               $status_fg           on $trklist_bg.uf
 trackerlist.status.focused                 $status_fg           on $trklist_bg.f
 
-$error_fg = dark red
 trackerlist.error.header                   $error_fg,underline on $trklist_bg.uf
 trackerlist.error.unfocused                $error_fg           on $trklist_bg.uf
 trackerlist.error.focused                  $error_fg           on $trklist_bg.f
 
-$error-announce_fg = dark red
 trackerlist.error-announce.header          $error_fg,underline on $trklist_bg.uf
 trackerlist.error-announce.unfocused       $error_fg           on $trklist_bg.uf
 trackerlist.error-announce.focused         $error_fg           on $trklist_bg.f
 
-$error-scrape_fg = dark red
 trackerlist.error-scrape.header            $error_fg,underline on $trklist_bg.uf
 trackerlist.error-scrape.unfocused         $error_fg           on $trklist_bg.uf
 trackerlist.error-scrape.focused           $error_fg           on $trklist_bg.f
 
-$downloads_fg = light gray
 trackerlist.downloads.header               $downloads_fg,underline on $trklist_bg.uf
 trackerlist.downloads.unfocused            $downloads_fg           on $trklist_bg.uf
 trackerlist.downloads.focused              $downloads_fg           on $trklist_bg.f
 
-$leeches_fg = light gray
 trackerlist.leeches.header                 $leeches_fg,underline on $trklist_bg.uf
 trackerlist.leeches.unfocused              $leeches_fg           on $trklist_bg.uf
 trackerlist.leeches.focused                $leeches_fg           on $trklist_bg.f
 
-$seeds_fg = light gray
 trackerlist.seeds.header                   $seeds_fg,underline on $trklist_bg.uf
 trackerlist.seeds.unfocused                $seeds_fg           on $trklist_bg.uf
 trackerlist.seeds.focused                  $seeds_fg           on $trklist_bg.f
 
-$last-announce_fg = white
 trackerlist.last-announce.header           $last-announce_fg,underline on $trklist_bg.uf
 trackerlist.last-announce.unfocused        $last-announce_fg           on $trklist_bg.uf
 trackerlist.last-announce.focused          $last-announce_fg           on $trklist_bg.f
 
-$next-announce_fg = white
 trackerlist.next-announce.header           $next-announce_fg,underline on $trklist_bg.uf
 trackerlist.next-announce.unfocused        $next-announce_fg           on $trklist_bg.uf
 trackerlist.next-announce.focused          $next-announce_fg           on $trklist_bg.f
 
-$last-scrape_fg = white
 trackerlist.last-scrape.header             $last-scrape_fg,underline on $trklist_bg.uf
 trackerlist.last-scrape.unfocused          $last-scrape_fg           on $trklist_bg.uf
 trackerlist.last-scrape.focused            $last-scrape_fg           on $trklist_bg.f
 
-$next-scrape_fg = white
 trackerlist.next-scrape.header             $next-scrape_fg,underline on $trklist_bg.uf
 trackerlist.next-scrape.unfocused          $next-scrape_fg           on $trklist_bg.uf
 trackerlist.next-scrape.focused            $next-scrape_fg           on $trklist_bg.f
 
 
-$slist_bg.uf = black
-$slist_bg.f  = #338
 settinglist                                default              on $slist_bg.uf
 settinglist.focused                        default              on $slist_bg.f
 settinglist.header                         light gray,underline on $slist_bg.uf
 settinglist.scrollbar                      light gray           on dark gray
 
-$name_fg = light blue
 settinglist.name.header                    $name_fg,underline on $slist_bg.uf
 settinglist.name.unfocused                 $name_fg           on $slist_bg.uf
 settinglist.name.focused                   light cyan         on $slist_bg.f
 
-$value_fg = light gray
-$value_hl = white,bold
 settinglist.value.header                   $value_fg,underline on $slist_bg.uf
 settinglist.value.unfocused                $value_fg           on $slist_bg.uf
 settinglist.value.focused                  $value_fg           on $slist_bg.f
 settinglist.value.highlighted.unfocused    $value_hl           on $slist_bg.uf
 settinglist.value.highlighted.focused      $value_hl           on $slist_bg.f
 
-$default_fg = light gray
 settinglist.default.header                 $default_fg,underline on $slist_bg.uf
 settinglist.default.unfocused              $default_fg           on $slist_bg.uf
 settinglist.default.focused                $default_fg           on $slist_bg.f
 
-$description_fg = light gray
 settinglist.description.header             $description_fg,underline on $slist_bg.uf
 settinglist.description.unfocused          $description_fg           on $slist_bg.uf
 settinglist.description.focused            $description_fg           on $slist_bg.f
