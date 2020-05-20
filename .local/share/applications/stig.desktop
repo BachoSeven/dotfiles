@@ -1,6 +1,7 @@
 [Desktop Entry]
 Version=1.0
-Name=stig
+Name=Stig
+Comment=TUI and CLI for the BitTorrent client Transmission
 Type=Application
 Terminal=false
 Exec=st -c stig -e stig
