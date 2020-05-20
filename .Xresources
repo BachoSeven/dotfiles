@@ -41,7 +41,8 @@
 ! !	gruvbox dark
 ! *.background: #282828
 ! *.foreground: #ebdbb2
-! *.cursorColor: white
+! *.cursorColor: #add8e6
+! *RcursorColor: #555555
 ! *.color0: #1d2021
 ! *.color1: #cc241d
 ! *.color2: #98971a
