@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Mail
+MimeType=x-scheme-handler/mailto;
+Exec=/usr/local/bin/st -e neomutt %u
