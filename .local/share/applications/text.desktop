@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Text editor
+MimeType=text/x-tex;text/plain;text/markdown;application/x-sharedlib;
+Exec=/usr/local/bin/st -e nvim %u
