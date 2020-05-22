@@ -149,12 +149,11 @@ Plug 'morhetz/gruvbox'		" Gruvbox
 Plug 'iCyMind/NeoSolarized' 	" NeoSolarized
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 " Syntax highlighting
 Plug 'VebbNix/lf-vim'
 Plug 'cespare/vim-toml'
-" Plug 'arakashic/chromatica.nvim'
-	" let g:chromatica#libclang_path='/usr/lib/llvm-7.0/lib/libclang.so'
-	" let g:chromatica#enable_at_startup=1
+Plug 'bfrg/vim-cpp-modern'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
