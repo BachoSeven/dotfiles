@@ -1,6 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Telegram Desktop
+MimeType=x-scheme-handler/tg;
 Comment=Official desktop version of Telegram messaging app
 TryExec=/home/francesco/programs_drivers/web_stuff/Telegram/Telegram
 Exec=/home/francesco/programs_drivers/web_stuff/Telegram/Telegram -- %u
@@ -9,6 +10,5 @@ Terminal=false
 StartupWMClass=TelegramDesktop
 Type=Application
 Categories=Chat;Network;InstantMessaging;Qt;
-MimeType=x-scheme-handler/tg;
 Keywords=tg;chat;im;messaging;messenger;sms;tdesktop;
 X-GNOME-UsesNotifications=true

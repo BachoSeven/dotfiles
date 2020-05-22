@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# xinitrc runs automatically when you run startx.
-
 # xscreensaver -no-splash & # replaced by slock atm
 xset s 600
 xss slock &
