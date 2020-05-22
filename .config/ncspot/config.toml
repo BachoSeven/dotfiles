@@ -28,7 +28,7 @@ use_nerdfont=true
 # [theme]
 # background = "#002b36"
 # primary = "#eee8d5"
-# secondary = "#008b8b"
+# secondary = "#2aa198"
 # title = "#859900"
 # playing = "#268bd2"
 # playing_bg = "#002b36"
@@ -42,20 +42,20 @@ use_nerdfont=true
 # cmdline = "#93a1a1"
 # cmdline_bg = "#002b36"
 
-# Base16 Gruvbox dark, medium - ncspot color config [ Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox) ]
+# Gruvbox dark [ based on base16 by Dawid Kurek (dawikur@gmail.com) ]
 [theme]
 background = "#282828"
 primary = "#d5c4a1"
-secondary = "#3c3836"
-title = "#ebdbb2"
-playing = "#ebdbb2"
+secondary = "#458588"
+title = "#fbf1c7"
+playing = "#b16286"
 playing_bg = "#282828"
 highlight = "#d5c4a1"
-highlight_bg = "#504945"
+highlight_bg = "#555555"
 error = "#d5c4a1"
 error_bg = "#fbf1c7"
-statusbar = "#282828"
-statusbar_progress = "#cc241d"
+statusbar = "#1d2021"
+statusbar_progress = "#8ec07c"
 statusbar_bg = "#98971a"
 cmdline = "#d5c4a1"
 cmdline_bg = "#282828"

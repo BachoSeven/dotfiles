@@ -61,7 +61,7 @@ alias \
 		alias pdbkp='rsync -rLtv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 
 # Utils
-	alias sT="tabbed -r 2 st -w id "
+	alias sT="tabbed -c -r 2 st -w id "
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
