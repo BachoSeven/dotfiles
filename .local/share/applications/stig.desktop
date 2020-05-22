@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Stig
-Comment=TUI and CLI for the BitTorrent client Transmission
-Type=Application
-Terminal=false
-Exec=st -c stig -e stig
-Icon=transmission-qt
-StartupWMClass=stig

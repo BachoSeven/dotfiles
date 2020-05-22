@@ -72,7 +72,7 @@ if ! [ "$cmd" == "" ]; then
 		cmdexec="st -e $cmdexec"
 	fi
 
-    # Workaround to run functions...
+    # NotSoNice Workaround to run functions...
     echo "$cmdexec" | compgen -F "$cmdexec" | bash -i
     # ...and aliases
     echo "$cmdexec" | bash -i

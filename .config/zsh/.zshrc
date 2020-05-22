@@ -22,7 +22,7 @@
 	zmodload zsh/complist
 	compinit
 
-## Plugins
+## Plugins (who needs a plugin manager??)
 	[ -f $ZDOTDIR/plugins/fzf/fzf.zsh ] && source $ZDOTDIR/plugins/fzf/fzf.zsh 2>/dev/null
 	[ -f $ZDOTDIR/plugins/history/history.zsh ] && source $ZDOTDIR/plugins/history/history.zsh 2>/dev/null
 	[ -f $ZDOTDIR/plugins/lf/lf.zsh ] && source $ZDOTDIR/plugins/lf/lf.zsh 2>/dev/null
