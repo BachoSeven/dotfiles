@@ -16,6 +16,7 @@ I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I 
 - **brave** browser
 - **[sxiv](https://github.com/muennich/sxiv)** image viewer
 - **zathura** pdf & djvu reader
+- Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved__ xdg-open using bash, dmenu and a very usable config file.
 
 ## Screens
 
