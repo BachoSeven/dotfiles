@@ -201,9 +201,6 @@ call plug#end()
 	\ })<CR>
 
 " Custom statusline for fzf
-	" autocmd! FileType fzf set laststatus=0 noshowmode noruler
-	  " \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-
 	function! s:fzf_statusline()
 		highlight fzf1 ctermfg=161 ctermbg=251
 		highlight fzf2 ctermfg=23 ctermbg=251

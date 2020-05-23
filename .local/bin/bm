@@ -4,10 +4,10 @@
 
 # Usage: if you use a popup, you might want to call `bm full `
 
-[[ $1 = full ]] && opts="-- --height 100%"
+[[ $1 = full ]] && opts="--height 100%"
 
 /usr/bin/ruby -x "$0"                                          |
-  fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin --preview 'echo {}|awk "{ print $2 }"|xargs w3m -dump' $opts |
+  fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin --preview " echo {-1}  | xargs w3m -dump " --preview-window=right:40% $opts |
   awk 'BEGIN { FS = "\t" } { print $2 }'                       |
   xargs -n 1 xdg-open > /dev/null 2>&1
 
