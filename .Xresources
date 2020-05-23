@@ -74,7 +74,7 @@ dwm.selbordercolor:	#fb4934
 dwm.selbgcolor:	#3c3836
 
 !! Dmenu
-dmenu.font:		Hack:hinting=True:antialias=True:size=13
+dmenu.font:		monospace:hinting=True:antialias=True:size=14
 
 ! dmenu.background:	#002b36
 ! dmenu.foreground:	#839496
@@ -122,7 +122,7 @@ xscreensaver.dateFormat:    %I:%M%P %b %d
 Vncviewer*grabKeyboard:	true
 
 !! Transparency (0-1):
-st.alpha: 0.8
+st.alpha: 0.85
 
 !! Misc
 *antialias:  true

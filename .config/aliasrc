@@ -15,11 +15,9 @@ alias ..='cd ..'
 alias ...='cd ../../../'
 alias :q='exit' # vim user :)
 
-alias ls='ls --color -hN'
-alias lsa='ls -la'
-alias l='ls -la'
+alias ls='ls -h'
+alias l='ls --color -lA'
 alias ll='ls -l'
-alias la='ls -lA'
 alias md='mkdir -p'
 alias rd='rmdir'
 
@@ -37,7 +35,7 @@ alias \
 	ka='killall' \
 	g='git' \
 	gc='g clone' \
-	glols="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
+	glols="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" \
 	trem='transmission-remote' \
 	z='zathura'
 
@@ -64,12 +62,14 @@ alias \
 	alias sT="tabbed -c -r 2 st -w id "
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
+	alias brave='brave-browser'
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
 	alias cx='chmod +x'
 	alias xclip="xclip -sel clip"
 	alias rm='rm -i'
 	alias cp='cp -i'
 	alias mv='mv -i'
+	alias p='patch'
 
 # Remove spaces
 	alias rsf='find -name "* *" -type f | rename "s/ /_/g"'

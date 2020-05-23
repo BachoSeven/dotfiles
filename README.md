@@ -24,6 +24,8 @@ I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I 
 
 <img src="pics/screens/ricing/dwm.png" alt="dwm"/>
 
+<img src="pics/screens/ricing/dwm2.png" alt="dwm2"/>
+
 ### Gnome-Shell
 
 <img src="pics/screens/ricing/new_rice1.png" alt="screenshot"/>

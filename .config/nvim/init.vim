@@ -100,7 +100,6 @@
 
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
-
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-zsh'
@@ -117,10 +116,8 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 Plug 'ptzz/lf.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'mbbill/undotree'
-
-" Discord
-Plug 'hugolgst/vimsence'
-
+" Various files support
+Plug 'Konfekt/vim-office'
 
 " Plug 'sirver/ultisnips'
 	" let g:UltiSnipsExpandTrigger = '<tab>'
@@ -130,8 +127,6 @@ Plug 'hugolgst/vimsence'
 	" let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
 Plug 'lukelbd/vim-scrollwrapped'
 Plug 'wlemuel/vim-tldr'
-Plug '907th/vim-auto-save'
-	let g:auto_save = 1
 Plug 'scrooloose/nerdcommenter'
 	let g:NERDSpaceDelims = 1
 	let g:NERDCompactSexyComs = 1
@@ -157,7 +152,6 @@ Plug 'bfrg/vim-cpp-modern'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
-
 call plug#end()
 
 "Post-Plugin
@@ -219,9 +213,6 @@ call plug#end()
 
 	autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
-" sxhkd
-	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
-
 " Vimtex Configuration
 	let g:tex_flavor='latex'
 	let g:vimtex_quickfix_latexlog = {'fix_paths':0}
@@ -241,7 +232,7 @@ call plug#end()
 	nnoremap <F5> :UndotreeToggle<cr>
 	let g:undotree_SetFocusWhenToggle = 1
 
-" Appearance
+"" Appearance
 	let g:airline_powerline_fonts = 1
 	let g:airline#extensions#tabline#enabled = 1
 
