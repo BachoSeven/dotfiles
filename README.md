@@ -4,8 +4,8 @@ This is a personal dotfiles repository set up as suggested on https://news.ycomb
 
 ## Current Setup
 
-I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I use:
-- Suckless utilities (see my patched repos):  **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), **[dmenu](https://github.com/BachoSeven/dmenu)**, and **[st](https://github.com/BachoSeven/st)** (terminal emulator).
+I run Ubuntu 20.04 on an Asus UX310UQK latptop, although I mostly make use of Gnome and apt rather than the full-fetched DE with mutter and gnome-shell; here are some of the programs I use:
+- Suckless utilities (see my patched repos):   **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), and **[st](https://github.com/BachoSeven/st)** (terminal emulator).
 - **zsh**  shell
 - **neovim** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
@@ -16,7 +16,7 @@ I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I 
 - **brave** browser
 - **[sxiv](https://github.com/muennich/sxiv)** image viewer
 - **zathura** pdf & djvu reader
-- Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved__ xdg-open using bash, dmenu and a very usable config file.
+- Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
 ## Screens
 
