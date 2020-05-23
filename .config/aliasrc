@@ -70,15 +70,13 @@ alias \
 	alias cp='cp -i'
 	alias mv='mv -i'
 	alias p='patch'
+	alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
+	alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
 
 # Remove spaces
 	alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
 	alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
 	alias rsb='find -name "*(*)*" -type f | rename "s/\(|\)|\[|\]//g"'
-
-function 256color {
-	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
-}
 
 # Various
 	alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
@@ -97,7 +95,7 @@ function 256color {
 	alias flp='flashplayer'
 	alias sqm='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
-	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr"
+	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
 	alias fb="sudo sed -i '/Actions=new-window;new-private-window;/ a StartupWMClass=brave-browser' /usr/share/applications/brave-browser-nightly.desktop"
 
 	alias chill="mpv https://tinyurl.com/wbl4fya"
@@ -116,13 +114,7 @@ alias mim='nvim $XDG_CONFIG_HOME/mimi/mime.conf'
 alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
 alias lfrc='nvim $XDG_CONFIG_HOME/lf/lfrc'
 alias zshrc='source $XDG_CONFIG_HOME/zsh/.zshrc'
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time --output=/tmp/zt$i $shell -i -c exit; done
-  for i in $(seq 1 10); do awk '{print $3}' /tmp/zt$i | grep -v swap | sed 's/elapsed//g'|sed 's/0:00\.//g' && rm -f /tmp/zt$i ;done
-}
 alias zt='timezsh'
-alias bd='nvim $XDG_CONFIG_HOME/directories'
 alias cfz='nvim $ZDOTDIR/.zshrc'
 alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
 alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'
@@ -143,7 +135,7 @@ alias mus='lfcd /mnt/01D5707D40B081F0/Users/ascol/Music'
 alias m='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/Music'
 alias koln='locate -i0 "*koln*flac"|xargs -0 mpv'
 alias bl='locate -i0 "*bach*mp3*"|xargs -0 mpv'
-alias b='find /mnt/01D5707D40B081F0/Users -type f \( -iname "*bach*.mp3" -o -iname "*bach*.mp4"  -o -iname "*bach*.m4a" \) -print0|xargs -0 mpv'
+alias bf='find /mnt/01D5707D40B081F0/Users -type f \( -iname "*bach*.mp3" -o -iname "*bach*.mp4"  -o -iname "*bach*.m4a" \) -print0|xargs -0 mpv'
 alias pics='lfcd /mnt/01D5707D40B081F0/Users/ascol/Pictures'
 alias uni='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI'
 alias u='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi'
@@ -154,19 +146,17 @@ alias movies='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/stuff/movies'
 
 alias nv='nvim .'
 
-#awk 'BEGIN{
-    #s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
-    #for (colnum = 0; colnum<77; colnum++) {
-        #r = 255-(colnum*255/76);
-        #g = (colnum*510/76);
-        #b = (colnum*255/76);
-        #if (g>255) g = 510-g;
-        #printf "\033[48;2;%d;%d;%dm", r,g,b;
-        #printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
-        #printf "%s\033[0m", substr(s,colnum+1,1);
-    #}
-    #printf "\n";
-#}'
+# Functions
+
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time --output=/tmp/zt$i $shell -i -c exit; done
+  for i in $(seq 1 10); do awk '{print $3}' /tmp/zt$i | grep -v swap | sed 's/elapsed//g'|sed 's/0:00\.//g' && rm -f /tmp/zt$i ;done
+}
+
+function 256color {
+	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
 
 cowfortune() {
   f=/tmp/cowsaytemp
@@ -174,7 +164,25 @@ cowfortune() {
   let "N = `cat $f | wc -l`-14"
   head -$N $f
   tail -14 $f | toilet -f term --termwidth --gay
-  }
+}
 
-alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
-alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
+truecolor() {
+	awk 'BEGIN{
+	    s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
+	    for (colnum = 0; colnum<77; colnum++) {
+		r = 255-(colnum*255/76);
+		g = (colnum*510/76);
+		b = (colnum*255/76);
+		if (g>255) g = 510-g;
+		printf "\033[48;2;%d;%d;%dm", r,g,b;
+		printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
+		printf "%s\033[0m", substr(s,colnum+1,1);
+	    }
+	    printf "\n";
+	}'
+}
+
+# mkdir and cd into it!
+mdcd () {
+  mkdir -p $@ && cd ${@:$#}
+}

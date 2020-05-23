@@ -11,5 +11,3 @@ fi
 # Key bindings
 # ------------
 source "/home/francesco/programs_drivers/random_stuff/fzf/shell/key-bindings.zsh"
-
-# bm script integration
