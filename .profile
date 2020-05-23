@@ -45,7 +45,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
 # subs
 export SUBS_FILE=$XDG_CONFIG_HOME/subs
-export SUBS_MENU_PROG="dmenu -nb #3c3836 -nf #fb4934 -c -l 10 -p Subs"
+export SUBS_MENU_PROG="dmenu -bw 4 -nb #3c3836 -nf #fb4934 -c -f -i -l 10 -p Subs:"
 
 export MPD_HOST="127.0.0.1"
 export MPD_PORT="6602"
@@ -54,7 +54,7 @@ export MPD_PORT="6602"
 # OFF: memory de uptime
 export PF_INFO="ascii title os wm host kernel pkgs shell editor palette"
 # name, data, title
-export PF_COL1=3
+export PF_COL1=4
 export PF_COL2=7
 export PF_COL3=6
 
