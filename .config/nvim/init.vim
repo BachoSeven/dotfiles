@@ -91,6 +91,9 @@
 	    highlight! link DiffText MatchParen
 	endif
 
+" Use xdg-open(mimi) to open files externally
+	let g:netrw_browsex_viewer="xdg-open"
+
 " Sessions
 	" let g:session_dir = '~/.config/nvim/vim-sessions'
 	" let g:session#default_opener = 'edit'
