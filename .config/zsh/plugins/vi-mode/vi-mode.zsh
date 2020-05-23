@@ -24,6 +24,24 @@
 	echo -ne '\e[5 q' # Use beam shape cursor on startup.
 	preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# ci", ci', ci`, di", etc
+	autoload -U select-quoted
+	zle -N select-quoted
+	for m in visual viopp; do
+	  for c in {a,i}{\',\",\`}; do
+	    bindkey -M $m $c select-quoted
+	  done
+	done
+
+# ci{, ci(, ci<, di{, etc
+	autoload -U select-bracketed
+	zle -N select-bracketed
+	for m in visual viopp; do
+	  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+	    bindkey -M $m $c select-bracketed
+	  done
+	done
+
 # Edit line in vim with ctrl-e:
 	autoload edit-command-line; zle -N edit-command-line
 	bindkey '^e' edit-command-line

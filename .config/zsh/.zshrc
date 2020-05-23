@@ -8,7 +8,6 @@
 ## Powerlevel10k
 	[ -f $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme ] && source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
 	[[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" 2>/dev/null
-	[ -f $ZDOTDIR/.p10k.zsh ] && source $ZDOTDIR/.p10k.zsh 2>/dev/null
 
 ## Basic Settings
 	setopt AUTO_CD          							# `dirname` is equivalent to `cd dirname`
@@ -51,4 +50,5 @@
 	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+	[ -f $ZDOTDIR/.p10k.zsh ] && source $ZDOTDIR/.p10k.zsh 2>/dev/null		# this also should be last
 	source $ZDOTDIR/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null	# FastSyntaxHighlighting
