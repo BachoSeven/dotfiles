@@ -21,12 +21,9 @@ alias ll='ls -l'
 alias md='mkdir -p'
 alias rd='rmdir'
 
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias grep="grep --color=auto"
-alias diff="diff --color=auto"
 alias ccat="highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force --"
 alias path='echo $PATH | tr : "\n"'
 
@@ -122,7 +119,7 @@ alias cfr='nvim $HOME/.Xresources'
 alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
 alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
 alias cfy='nvim $XDG_CONFIG_HOME/subs'
-alias cfu='nbim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
+alias cfu='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
 alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
 alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
 
