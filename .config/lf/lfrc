@@ -192,9 +192,10 @@ cmd Link %{{
 }}
 
 cmd video_preview ${{
-    CACHE=$(mktemp /tmp/thumb_cache.XXXXX)
-    ffmpegthumbnailer -i "$f" -o $CACHE -s 0
-    ~/.local/bin/draw_img $CACHE && rm $CACHE
+    CACHE=$(mktemp -d /tmp/thumb_cache.XXXXX)
+    DIR=$(basename "$f")
+    ffmpegthumbnailer -i "$f" -o $CACHE/cache -s 0
+    cd $CACHE && fzf-ueberzogen.sh && rm -rf $CACHE && cd $DIR
 }}
 
 #			Bindings
@@ -239,5 +240,5 @@ map V push :!nvim<space>
 map <c-a> !neomutt -a $fx
 
 # 			Experimental proper previewing
-map - $~/.local/bin/draw_img $f
+map - $~/.local/bin/fzf-ueberzogen.sh
 map + :video_preview
