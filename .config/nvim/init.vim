@@ -143,7 +143,8 @@ Plug 'chrisbra/Colorizer'
 	nnoremap <leader>H :ColorToggle<cr>
 Plug 'ap/vim-css-color'
 
-Plug 'morhetz/gruvbox'		" Gruvbox
+" Plug 'morhetz/gruvbox'		" Gruvbox
+Plug 'gruvbox-community/gruvbox'
 Plug 'iCyMind/NeoSolarized' 	" NeoSolarized
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -239,12 +240,18 @@ call plug#end()
 " ColorSchemes
 	set background=dark
 	colorscheme gruvbox
+" fix gruvbox visual selection
+	if (&background == 'dark')
+	  hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
+	else
+	  hi Visual cterm=NONE ctermfg=NONE ctermbg=223 guibg=#ffd7af
+	endif
 	" colorscheme NeoSolarized
 	" let g:airline_theme='base16_solarized'
 
-	" hi Normal ctermbg=NONE guibg=NONE
-	" hi NonText ctermbg=NONE guibg=NONE
-	" hi EndOfBuffer ctermbg=NONE guibg=NONE
+	hi Normal ctermbg=NONE guibg=NONE
+	hi NonText ctermbg=NONE guibg=NONE
+	hi EndOfBuffer ctermbg=NONE guibg=NONE
 	hi LineNr ctermbg=NONE guibg=NONE
 
 " Goyo mapping and configuration
