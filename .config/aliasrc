@@ -186,3 +186,12 @@ truecolor() {
 mdcd () {
   mkdir -p $@ && cd ${@:$#}
 }
+
+# fuzzy-find manuals
+manfd() {
+    f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf) && man $f
+}
+# find INSIDE manuals
+fman() {
+    man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
+}
