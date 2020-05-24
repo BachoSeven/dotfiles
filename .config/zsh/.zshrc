@@ -13,7 +13,7 @@
 	setopt AUTO_CD          							# `dirname` is equivalent to `cd dirname`
 	stty stop undef									# Disable ctrl-s to freeze terminal.
 	unsetopt RM_STAR_SILENT 							# Always ask before rm folder/*
-	[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc" 2>/dev/null	# Custom aliases
+	[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc" 2>/dev/null	# Custom aliases and functions
 
 ## Autocompletion
 	fpath=($ZDOTDIR/completions $fpath)
@@ -21,7 +21,7 @@
 	zmodload zsh/complist
 	compinit
 
-## Plugins (who needs a plugin manager??)
+## Plugins (who needs a plugin manager?)
 	[ -f $ZDOTDIR/plugins/fzf/fzf.zsh ] && source $ZDOTDIR/plugins/fzf/fzf.zsh 2>/dev/null
 	[ -f $ZDOTDIR/plugins/history/history.zsh ] && source $ZDOTDIR/plugins/history/history.zsh 2>/dev/null
 	[ -f $ZDOTDIR/plugins/lf/lf.zsh ] && source $ZDOTDIR/plugins/lf/lf.zsh 2>/dev/null
@@ -42,13 +42,9 @@
 
 ## Colors & Appearance
 	autoload -U colors && colors
-	# [ -f $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark ] && eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
-	[ -f $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox ] && eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
-
-	# Basic autocomplete; case-insensitive and colored (LS_COLORS)
+# Basic autocomplete; case-insensitive and colored (LS_COLORS)
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
 	[ -f $ZDOTDIR/.p10k.zsh ] && source $ZDOTDIR/.p10k.zsh 2>/dev/null		# this also should be last
 	source $ZDOTDIR/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null	# FastSyntaxHighlighting
