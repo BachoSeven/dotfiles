@@ -198,6 +198,13 @@ cmd video_preview ${{
     cd $CACHE && fzf-ueberzogen.sh && rm -rf $CACHE && cd $DIR
 }}
 
+cmd img_preview ${{
+	CACHE=$(mktemp /tmp/imgcache.XXXXX)
+	~/.local/bin/fzf-ueberzogen.sh > $CACHE && sel=$(cat $CACHE)
+	lf -remote "send $id select \"$sel\" " && rm $CACHE
+}}
+
+
 #			Bindings
 
 #			File Operations
@@ -240,5 +247,5 @@ map V push :!nvim<space>
 map <c-a> !neomutt -a $fx
 
 # 			Experimental proper previewing
-map - $~/.local/bin/fzf-ueberzogen.sh
+map - :img_preview
 map + :video_preview
