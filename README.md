@@ -1,10 +1,12 @@
-# mydotFiles
+# my  █▀▄░█▀█░▀█▀░█▀▀░▀█▀░█░░░█▀▀░█▀▀
+      █░█░█░█░░█░░█▀▀░░█░░█░░░█▀▀░▀▀█
+      ▀▀░░▀▀▀░░▀░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀
 
 This is a personal dotfiles repository set up as suggested on https://news.ycombinator.com/item?id=11071754 by Streaky Cobra.
 
 ## Current Setup
 
-I run Ubuntu 20.04 on an Asus UX310UQK latptop, although I mostly make use of Gnome and apt rather than the full-fetched DE with mutter and gnome-shell; here are some of the programs I use:
+I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I use:
 - Suckless utilities (see my patched repos):   **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), and **[st](https://github.com/BachoSeven/st)** (terminal emulator).
 - **zsh**  shell
 - **neovim** text editor

@@ -14,7 +14,7 @@ bind index,pager g noop
 bind index,pager M noop
 bind index,pager C noop
 bind index gg first-entry
-macro index o "<shell-escape>mailsync gm_uwcad<enter>" "run mbsync to sync gm_uwcad"
+macro index o "<shell-escape>mailsync -V gm_uwcad<enter>" "run mbsync to sync gm_uwcad"
 unmailboxes *
 
 set spoolfile = "+INBOX"

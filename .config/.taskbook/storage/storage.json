@@ -129,20 +129,6 @@
         "inProgress": false,
         "priority": 1
     },
-    "43": {
-        "_id": 43,
-        "_date": "Fri Apr 24 2020",
-        "_timestamp": 1587765395465,
-        "description": "analisi riguarda compitino e lavora sul prob di majer",
-        "isStarred": false,
-        "boards": [
-            "@Uni"
-        ],
-        "_isTask": true,
-        "isComplete": false,
-        "inProgress": false,
-        "priority": 1
-    },
     "44": {
         "_id": 44,
         "_date": "Mon Apr 27 2020",

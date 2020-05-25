@@ -29,22 +29,12 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GEM_HOME="$XDG_DATA_HOME/gem"
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/ripgreprc"
+export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME/mathematica"
 
 ## Various programs settings:
 
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export GS_FONTPATH="/usr/local/share/pmw/psfonts"
-# LESS (and man) colors
-export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
-export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
-export LESS_TERMCAP_me="$(printf '%b' '[0m')"
-export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
-export LESS_TERMCAP_se="$(printf '%b' '[0m')"
-export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
-export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
-export LESSOPEN='| LESSQUIET=1 lesspipe.sh %s'
-export LESSCOLORIZER='pygmentize'
-export LESS='-r'
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
 # subs
