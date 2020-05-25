@@ -4,6 +4,11 @@
 #	      _    /\_____\\/\_____\\ \_\ \_\\ \_\ \_\\ \_____\
 #	     (_)   \/_____/ \/_____/ \/_/\/_/ \/_/ /_/ \/_____/
 
+# Fix non-interactive
+ if [ -z "$PS1" ]; then
+             exit
+ fi
+
 
 ## Powerlevel10k
 	[ -f $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme ] && source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
@@ -26,6 +31,7 @@
 	[ -f $ZDOTDIR/plugins/history/history.zsh ] && source $ZDOTDIR/plugins/history/history.zsh 2>/dev/null
 	[ -f $ZDOTDIR/plugins/lf/lf.zsh ] && source $ZDOTDIR/plugins/lf/lf.zsh 2>/dev/null
 	[ -f $ZDOTDIR/plugins/vi-mode/vi-mode.zsh ] && source $ZDOTDIR/plugins/vi-mode/vi-mode.zsh 2>/dev/null # Vi-mode
+	[ -f $ZDOTDIR/plugins/less/less.zsh ] && source $ZDOTDIR/plugins/less/less.zsh 2>/dev/null
 	eval $(thefuck --alias f)
 
 ## Bind keys

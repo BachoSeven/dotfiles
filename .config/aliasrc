@@ -96,6 +96,7 @@ alias \
 	alias fb="sudo sed -i '/Actions=new-window;new-private-window;/ a StartupWMClass=brave-browser' /usr/share/applications/brave-browser-nightly.desktop"
 
 	alias chill="mpv https://tinyurl.com/wbl4fya"
+	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias ytop='ytop --colorscheme=solarized-dark -asbp'
 	alias ncdu='ncdu --color dark'
 	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'

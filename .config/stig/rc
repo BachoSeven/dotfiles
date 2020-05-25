@@ -8,7 +8,7 @@ set connect.user transmission
 # Path to command-line history directory.
 set tui.cli.history-dir ~/.config/stig/cache/history
 # TUI updates interval
-set tui.poll 2
+set tui.poll 1
 # Maximum number of torrents to remove without extra confirmation.
 set remove.max-hits 5
 # Lookup peers' host names.

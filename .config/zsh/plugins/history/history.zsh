@@ -19,9 +19,9 @@ function omz_history {
 alias history='omz_history'
 
 ## History file configuration
-HISTFILE="$XDG_DATA_HOME/zsh/.zsh_history"
 HISTSIZE=50000
 SAVEHIST=50000
+HISTFILE="$XDG_DATA_HOME/zsh/.zsh_history"
 
 ## History command configuration
 setopt share_history          # share command history data
