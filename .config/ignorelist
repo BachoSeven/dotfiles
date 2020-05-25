@@ -27,6 +27,9 @@
 #.local/libvirt
 #.vagrant
 #.vagrant.d
+/programs_drivers/random_stuff/screenkey
+/programs_drivers/random_stuff/lesspipe-lesspipe
+.config/copyq/.copyq_s
 .config/wineprefixes
 .local/share/wineprefixes
 #.twister

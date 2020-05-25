@@ -5,7 +5,7 @@
 " 	 /_/   /_/ /_/ /_/   \__/_(_)_____/  /_/   /_/ /_/ /_/
 "
 
-" Basic Settings
+"" Basic Settings
 	let mapleader =","
 	set shell=/usr/bin/zsh
 	set number
@@ -15,13 +15,13 @@
 	set incsearch
 	set hidden
 	set termguicolors
-	" setlocal spell spelllang=en_us
+	setlocal spell spelllang=en_us
 	set splitbelow splitright
 	set lazyredraw
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " Return to last edit position when opening files (You want this!)
 	set fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 
-" Some mappings and shortcuts
+"" Some mappings and shortcuts
 
 " vsplit file under cursor; C-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
 	nnoremap <C-W><C-F> <C-W>vgf
@@ -101,7 +101,8 @@
 	" exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 	" exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
-" Plugins
+"" Plugins
+
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'Shougo/deoplete.nvim'
@@ -156,9 +157,10 @@ Plug 'bfrg/vim-cpp-modern'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
-"Post-Plugin
+"" Post-Plugin
 
 " lf
 	let g:lf_command_override = 'lf -command "set hidden"'
