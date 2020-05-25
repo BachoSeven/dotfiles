@@ -1,6 +1,8 @@
+```
       █▀▄░█▀█░▀█▀░█▀▀░▀█▀░█░░░█▀▀░█▀▀
       █░█░█░█░░█░░█▀▀░░█░░█░░░█▀▀░▀▀█
       ▀▀░░▀▀▀░░▀░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀
+```
 
 This is a personal dotfiles repository set up as suggested on https://news.ycombinator.com/item?id=11071754 by Streaky Cobra.
 
