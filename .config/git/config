@@ -1,0 +1,16 @@
+[core]
+	editor = nvim
+[user]
+	name = Francesco Minnocci
+	email = ad17fmin@uwcad.it
+[credential]
+	helper = cache --timeout=7200
+[color]
+	ui = true
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[clean]
+	requireForce = false

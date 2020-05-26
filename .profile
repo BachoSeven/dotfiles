@@ -33,13 +33,30 @@ export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME/mathematica"
 
 ## Various programs settings:
 
+# Dotbare
+export DOTBARE_DIR="$XDG_CONFIG_HOME/dots"
+export DOTBARE_TREE="$HOME"
+export DOTBARE_BACKUP="${XDG_DATA_HOME:-$HOME/.local/share}/dotbare"
+# toggle all selection
+# label jump mode, sort of like easymotion
+# set cursor back to top
+# toggle sorting
+# toggle preview
+export DOTBARE_KEY="
+  --bind=alt-a:toggle-all
+  --bind=alt-i:jump
+  --bind=alt-0:top
+  --bind=alt-s:toggle-sort
+  --bind=alt-t:toggle-preview
+"
+
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export GS_FONTPATH="/usr/local/share/pmw/psfonts"
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
 # subs
 export SUBS_FILE=$XDG_CONFIG_HOME/subs
-export SUBS_MENU_PROG="dmenu -bw 4 -nb #3c3836 -nf #fb4934 -c -f -i -l 10 -p Subs:"
+export SUBS_MENU_PROG="dmenu -bw 4 -nb #3c3836 -nf #fb4934 -c -f -i -l 10 -p YT"
 
 # Mpd
 export MPD_HOST="127.0.0.1"
@@ -140,13 +157,6 @@ export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --exclude .git"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind 'F1:toggle-preview'"
 
 export MANPATH="/usr/share/man"
-
-# Locales
-export LANGUAGE="en"
-export LANG="C"
-export LC_MESSAGES="C"
-export LC_CTYPE="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
 
 # Start graphical server on tty1 if not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx

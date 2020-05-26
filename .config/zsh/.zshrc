@@ -42,7 +42,6 @@
 	bindkey -s '^u' 'u\n'
 	bindkey -s '^f' 'speedtest-cli\n'
 	bindkey -s '^[n' 'neomutt\n'
-	bindkey -s "^[s" 'ncspot\n'
 	bindkey -s '^a' 'bc -l\n'
 	bindkey -s '^s' 'udg\n'
 
