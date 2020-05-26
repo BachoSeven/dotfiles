@@ -4,7 +4,7 @@
 # Show 🌐 if connected to ethernet or ❎ if none.
 
 case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e nmtui & ;;
+	1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
 	3) notify-send "🌐 Internet module" "\- Click to connect
 📡: no wifi connection
 📶: wifi connection with quality
@@ -19,4 +19,4 @@ case "$(cat /sys/class/net/w*/operstate | grep -v down 2>/dev/null)" in
 	*) wifiicon="📡 " ;;
 esac
 
-printf "%s%s\n" "$wifiicon" "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)"
+printf "%s%s\n" "$wifiicon"  "$(ping g.co > /tmp/pinging & sleep 2s && [ -n "$(cat /tmp/pinging |grep -v -i temporary)" ] && echo 🔵 || echo 🔴)" "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)"
