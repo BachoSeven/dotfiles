@@ -44,18 +44,22 @@ cmd moveto ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
 	clear; echo "Move to where?"
-	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)" &&
-	eval mv -iv $fx $dest &&
-	notify-send "ﲆ File(s) moved." "File(s) moved to $dest."
+	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf | sed 's|~|$HOME|' )" &&
+	for x in $fx; do
+		eval mv -iv \"$x\" \"$dest\"
+	done &&
+	notify-send "🚚 File(s) moved." "File(s) moved to $dest."
 }}
 
 cmd copyto ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
 	clear; echo "Copy to where?"
-	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)" &&
-	eval cp -ivr $fx $dest &&
-	notify-send " File(s) copied." "File(s) copies to $dest."
+	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf | sed 's|~|$HOME|' )" &&
+	for x in $fx; do
+		eval cp -ivr \"$x\" \"$dest\"
+	done &&
+	notify-send "📋 File(s) copied." "File(s) copies to $dest."
 }}
 
 cmd fzf_jump ${{
@@ -85,8 +89,7 @@ cmd open ${{
 	    case $(file --mime-type $f -b) in
 		text/*) $EDITOR $fx;;
 		image/*) rotdir $f | grep -i "\.\(png\|ico\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio 2>/dev/null | lf-select & ;;
-		# image/x-xcf|image/svg+xml) setsid gimp $f >/dev/null 2>&1 & ;;
-		audio/*) mpv $f ;;
+		audio/*) mpv --audio-display=no $f ;;
 		video/*) setsid mpv $f -quiet >/dev/null 2>&1 & ;;
 		*) for f in $fx; do setsid $OPENER $f >/dev/null 2> /dev/null & done;;
 	    esac
@@ -191,20 +194,6 @@ cmd Link %{{
 	fi
 }}
 
-cmd video_preview ${{
-    CACHE=$(mktemp -d /tmp/thumb_cache.XXXXX)
-    DIR=$(basename "$f")
-    ffmpegthumbnailer -i "$f" -o $CACHE/cache -s 0
-    cd $CACHE && fzf-ueberzogen.sh && rm -rf $CACHE && cd $DIR
-}}
-
-cmd img_preview ${{
-	CACHE=$(mktemp /tmp/imgcache.XXXXX)
-	~/.local/bin/fzf-ueberzogen.sh > $CACHE && sel=$(cat $CACHE)
-	lf -remote "send $id select \"$sel\" " && rm $CACHE
-}}
-
-
 #			Bindings
 
 #			File Operations
@@ -245,7 +234,3 @@ map o &mimeopen "$f"
 map O $mimeopen --ask "$f"
 map V push :!nvim<space>
 map <c-a> !neomutt -a $fx
-
-# 			Experimental proper previewing
-map - :img_preview
-map + :video_preview
