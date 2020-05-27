@@ -12,7 +12,7 @@ ps ax | grep -q newsboat$ && /usr/bin/xdotool key --window "$(/usr/bin/xdotool s
 echo 🔃 > /tmp/newsupdate
 pkill -RTMIN+6 "${STATUSBAR:-dwmblocks}"
 /usr/bin/newsboat -x reload
-~/.local/bin/subs -u
+/usr/local/bin/subs -u
 rm -f /tmp/newsupdate
 pkill -RTMIN+6 "${STATUSBAR:-dwmblocks}"
 /usr/bin/notify-send "📰 RSS feed update complete."
