@@ -156,8 +156,6 @@ export FZF_ALT_C_OPTS="--exact --select-1 --exit-0 --preview 'tree -C {} | head 
 export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --exclude .git"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind 'F1:toggle-preview'"
 
-export MANPATH="/usr/share/man"
-
 # Start graphical server on tty1 if not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx
 sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null
