@@ -12,13 +12,15 @@ defaultu=7000
 defaultd=1000
 
 if [ -n $1 ]; then
-	if [ $1 = up ]; then
-		value="$(dmenu -p 'Input level 0-7500 [default: 7000]' )" || value=$defaultu
-	elif [ $1 = down ]; then
-		value="$(dmenu -p 'Input level 0-7500 [default: 1000]' )" || value=$defaultd
-	elif [ $1 = inc ]; then
+	if [[ $1 = up ]]; then
+		value="$(dmenu -p 'Input level 0-7500 [default: 7000]' )"
+		[[ -n "$value" ]] || value=$defaultu
+	elif [[ $1 = down ]]; then
+		value="$(dmenu -p 'Input level 0-7500 [default: 1000]' )"
+		[[ -n "$value" ]] || value=$defaultd
+	elif [[ $1 = inc ]]; then
 		value=$(bc <<< "$current + $3 " )
-	elif [ $1 = dec ]; then
+	elif [[ $1 = dec ]]; then
 		value=$(bc <<< "$current - $3 " )
 	fi
 else

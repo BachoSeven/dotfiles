@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # This script sets the background, using pywal to set a terminal colorscheme,or otherwise
-# using Xresources. It also sets the wallpaper both on gnome-shell and on dwm.
+# using Xresources. It also sets the wallpaper for me both on gnome-shell and on dwm.
 
 #	Usage:
 #		`setbg [ -s, --no-scheme ] [ -i, --input="path/to/img" ]`
 
-bgloc=/home/francesco/.config/wall.png
+bgloc=$XDG_CONFIG_HOME/wall.png
 
 
 TEMP=$(getopt -o 'si:' --long 'no-scheme,input:' -- "$@" )
