@@ -35,15 +35,11 @@ alias \
 	trem='transmission-remote' \
 	z='zathura'
 
-## Git configs bare repo, as seen in https://www.atlassian.com/git/tutorials/dotfiles
-# Standard config
-	alias config='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots/  --work-tree=$HOME'
-	alias c='config'
-	alias cfc='config commit -a -m'
-	alias cfp='config push'
-	alias clols="config log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
-# Dotbare https://github.com/kazhala/dotbare
+## Dotbare
 	alias d='dotbare'
+	alias dfc='d commit -a -m'
+	alias dfp='config push'
+	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
 
 # Backup:
 	# Elements
@@ -82,6 +78,7 @@ alias \
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 	alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 	alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
+	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias nf='neofetch'
 	alias pf='pfetch'

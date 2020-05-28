@@ -3,7 +3,7 @@
 # Displays todays precipitation chance (☔) and daily low (🥶) and high (🌞).
 # Usually intended for the statusbar.
 
-# LOCATION="pisa"
+LOCATION="pisa"
 
 # If we have internet, get a weather report from wttr.in and store it locally.
 # You could set up a shell alias to view the full file in a pager in the

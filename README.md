@@ -4,7 +4,7 @@
 ━━ ━━┛ ┛ ┛  ┛━━┛━━┛━━┛
 ```
 
-This is a personal dotfiles repository set up as suggested on https://news.ycombinator.com/item?id=11071754 by Streaky Cobra.
+This are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
 
 ## Current Setup
 
