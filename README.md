@@ -26,7 +26,7 @@ I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I 
 
 ### Dwm
 
-<img src="pics/screens/ricing/:).png" alt=":)"/>
+<img src="pics/screens/ricing/dwwm.png" alt=":)"/>
 <img src="pics/screens/ricing/dwm.png" alt="dwm"/>
 
 <img src="pics/screens/ricing/dwm2.png" alt="dwm2"/>

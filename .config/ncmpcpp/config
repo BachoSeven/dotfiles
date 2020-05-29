@@ -1,26 +1,22 @@
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.local/share/lyrics
-#
 mpd_host = 127.0.0.1
 mpd_port = 6602
-mpd_connection_timeout = 5
+mpd_connection_timeout = 4
 mpd_music_dir = "~/music"
-mpd_crossfade_time = 5
-#
+mpd_crossfade_time = 4
 visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = Visualizer
 visualizer_in_stereo = yes
 visualizer_sync_interval = 30
-visualizer_type = spectrum
-# visualizer_look = ●▮ #ellipse
-visualizer_look = "▌▌" #frequency spectrum
+visualizer_type = ellipse
+visualizer_look = "●▮" #ellipse
+# visualizer_look = "▌▌" #frequency spectrum
 # visualizer_color = cyan, green, yellow, magenta, red, blue
 # visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
  visualizer_color = 46,45,44,43,42,41,40,39,38,37,36,35
-#
-playlist_disable_highlight_delay = 3
+playlist_disable_highlight_delay = 1
 message_delay_time = 2
-#
 ## For a song format you can use:
 ##
 ## %l - length
@@ -82,12 +78,8 @@ message_delay_time = 2
 ## non-standard colors and make it have yellow background, you need to write
 ## $(197_yellow)%a$(end). Note that for standard colors this is interchangable
 ## with attributes listed above.
-##
 ## Note: colors can be nested.
-##
-#
 song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
-#
 song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
 #
 song_library_format = {%n - }{%t}|{%f}
@@ -115,7 +107,6 @@ current_item_inactive_column_suffix = $/r$(end)
 #selected_item_suffix = $9
 #
 #modified_item_prefix = $3> $9
-#
 ##
 ## Note: attributes are not supported for the following variables.
 ##
@@ -126,11 +117,8 @@ current_item_inactive_column_suffix = $/r$(end)
 ## format to specify a custom sorting format.  Available values for
 ## browser_sort_mode are "name", "mtime", "format" and "noop".
 ##
-#
 #browser_sort_mode = name
-#
 browser_sort_format = {(%l)} {%a - }{%t}|{%f}
-#
 ##### columns settings #####
 ##
 ## syntax of song columns list format is "column column etc."
@@ -175,7 +163,6 @@ song_columns_list_format = (7f)[magenta]{l} (25)[cyan]{a} (50)[white]{t|f:Title}
 ## notifications etc.
 ##
 execute_on_song_change = notify-send -i ~/.config/icons/music-player_black.png "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
-#
 ##
 ## Note: Custom command that will be executed each time player state
 ## changes. The environment variable MPD_PLAYER_STATE is set to the current
@@ -202,88 +189,42 @@ browser_display_mode = columns
 search_engine_display_mode = columns
 #
 playlist_editor_display_mode = columns
-#
-#discard_colors_if_item_is_selected = yes
-#
+discard_colors_if_item_is_selected = yes
 #show_duplicate_tags = true
-#
 incremental_seeking = yes
-#
 #seek_time = 1
-#
 #volume_change_step = 2
-#
 autocenter_mode = yes
-#
 centered_cursor = yes
-#
-##
-## Note: You can specify third character which will be used to build 'empty'
-## part of progressbar.
-##
-progressbar_look = ▬▬▬
-#
-#
+progressbar_look = ━━━
 ## Available values: database, playlist.
-##
 #default_place_to_search_in = database
-#
-## Available values: classic, alternative.
-##
 user_interface = alternative
-#
 #data_fetching_delay = yes
-#
 ## Available values: artist, album_artist, date, genre, composer, performer.
-##
 media_library_primary_tag = artist
-#
 media_library_albums_split_by_date = yes
-#
 ## Available values: wrapped, normal.
-##
 #default_find_mode = wrapped
-#
 #default_tag_editor_pattern = %n - %t
-#
 #header_visibility = yes
-#
 #statusbar_visibility = yes
-#
 #titles_visibility = yes
-#
 #header_text_scrolling = yes
-#
 #cyclic_scrolling = no
-#
 #lines_scrolled = 2
-#
-#lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
-#
-#follow_now_playing_lyrics = no
-#
-#fetch_lyrics_for_current_song_in_background = no
-#
+lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
+follow_now_playing_lyrics = yes
+fetch_lyrics_for_current_song_in_background = yes
 #store_lyrics_in_song_dir = no
-#
 #generate_win32_compatible_filenames = yes
-#
 #allow_for_physical_item_deletion = no
-#
-##
-## Note: If you set this variable, ncmpcpp will try to get info from last.fm in
-## language you set and if it fails, it will fall back to english. Otherwise it
-## will use english the first time.
-##
 ## Note: Language has to be expressed as an ISO 639 alpha-2 code.
-##
 #lastfm_preferred_language = en
 #
 #space_add_mode = add_remove
-#
 #show_hidden_files_in_local_browser = no
 #
-##
 ## How shall screen switcher work?
 ##
 ## - "previous" - switch between the current and previous screen.
@@ -298,91 +239,52 @@ media_library_albums_split_by_date = yes
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
 ##
-startup_screen = media_library
-#
-##
+startup_screen = playlist
 ## Note: You can define startup slave screen by choosing screen from the list
 ## above or an empty value for no slave screen.
-##
-#startup_slave_screen = ""
-#
-#startup_slave_screen_focus = no
+startup_slave_screen = "visualizer"
+startup_slave_screen_focus = no
 #
 ##
 ## Default width of locked screen (in %).  Acceptable values are from 20 to 80.
 ##
 #
-locked_screen_width_part = 60
+locked_screen_width_part = 50
 #
 #ask_for_locked_screen_width_part = yes
 #
 #jump_to_now_playing_song_at_start = yes
 #
 #ask_before_clearing_playlists = yes
-#
-#clock_display_seconds = no
-#
+clock_display_seconds = no
 display_volume_level = yes
-#
-#display_bitrate = no
-#
-#display_remaining_time = no
+display_bitrate = no
+display_remaining_time = no
 #
 ## Available values: none, basic, extended, perl.
 ##
 #regular_expressions = perl
 #
-##
 ## Note: if below is enabled, ncmpcpp will ignore leading "The" word while
 ## sorting items in browser, tags in media library, etc.
-##
 ignore_leading_the = yes
-#
 ##
 ## Note: if below is enabled, ncmpcpp will ignore diacritics while searching and
 ## filtering lists. This takes an effect only if boost was compiled with ICU
 ## support.
 ##
 #ignore_diacritics = no
-#
 #block_search_constraints_change_if_items_found = yes
-#
-mouse_support = yes
-#
+mouse_support = no
 #mouse_list_scroll_whole_page = yes
-#
-#empty_tag_marker = <empty>
-#
+empty_tag_marker=" -- ‼ -- "
 #tags_separator = " | "
-#
 #tag_editor_extended_numeration = no
-#
 #media_library_sort_by_mtime = no
-#
-#enable_window_title = yes
-#
-##
-## Note: You can choose default search mode for search engine. Available modes
-## are:
-##
-## - 1 - use mpd built-in searching (no regexes, pattern matching)
-##
-## - 2 - use ncmpcpp searching (pattern matching with support for regexes, but
-##       if your mpd is on a remote machine, downloading big database to process
-##       it can take a while
-##
-## - 3 - match only exact values (this mode uses mpd function for searching in
-##       database and local one for searching in current playlist)
-##
-#
-#search_engine_default_search_mode = 1
-#
+enable_window_title = no
+search_engine_default_search_mode = 2
 external_editor = nvim
-#
-## Note: set to yes if external editor is a console application.
-##
 use_console_editor = yes
-#
 ##### colors definitions #####
 ##
 ## It is possible to set a background color by setting a color value
@@ -408,44 +310,18 @@ use_console_editor = yes
 ## state_line_color, state_flags_color, progressbar_color,
 ## progressbar_elapsed_color, player_state_color, statusbar_time_color,
 ## alternative_ui_separator_color.
-##
-## Note: due to technical limitations of older ncurses version, if 256 colors
-## are used there is a possibility that you'll be able to use only colors with
-## transparent background.
-#
-#
 colors_enabled = yes
-#
 empty_tag_color = magenta
-#
 header_window_color = cyan
-#
-#volume_color = default
-volume_color = "red"
-#
+volume_color = "red:b"
 state_line_color = "yellow"
-#
 state_flags_color = default:b
-#
 main_window_color = white
-#
 #color1 = white
-#
 #color2 = green
-#
 progressbar_color = "yellow"
-#
 progressbar_elapsed_color = blue:b
-#
-# statusbar_color = red
 statusbar_color = "cyan"
-#
 statusbar_time_color = cyan:b
-#
-#player_state_color = default:b
-#
+player_state_color = default
 alternative_ui_separator_color = green:b
-#
-#window_border_color = green
-#
-#active_window_border = red
