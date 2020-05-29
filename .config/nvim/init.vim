@@ -6,9 +6,11 @@
 "
 
 "" Basic Settings
+	set title
 	let mapleader =","
 	set shell=/usr/bin/zsh
-	set number
+	set clipboard+=unnamedplus
+	set number relativenumber
 	set wildmenu
 	set wildmode=longest,list,full
 	set autoindent
@@ -18,7 +20,7 @@
 	setlocal spell spelllang=en_us
 	set splitbelow splitright
 	set lazyredraw
-	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " Return to last edit position when opening files (You want this!)
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " Return to last edit position when opening files
 	set fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 
 "" Some mappings and shortcuts
