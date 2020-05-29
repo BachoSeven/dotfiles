@@ -37,8 +37,8 @@ alias \
 
 ## Dotbare
 	alias d='dotbare'
-	alias dfc='d commit -a -m'
-	alias dfp='config push'
+	alias dfc='d commit -a'
+	alias dfp='d push'
 	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
 
 # Backup:
