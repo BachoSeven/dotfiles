@@ -6,9 +6,9 @@ xss slock &
 xrdb -merge -I$HOME ~/.Xresources
 dunst &				# dunst for notifications, which stays here as I do not want it in gnome-shell
 
+mpd & 				# start MPD as user when you log in
 # Fix Gnome Apps Slow  Start due to failing services
 dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY
-mpd & 				# start MPD as user when you log in
 copyq &
 xcompmgr &			# xcompmgr for transparency
 [ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"

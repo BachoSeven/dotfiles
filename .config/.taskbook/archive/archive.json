@@ -90,5 +90,33 @@
         "isComplete": false,
         "inProgress": false,
         "priority": 1
+    },
+    "8": {
+        "_id": 8,
+        "_date": "Thu May 07 2020",
+        "_timestamp": 1588848606903,
+        "description": "send vernazza pictures to luca",
+        "isStarred": false,
+        "boards": [
+            "@FreeTime"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "9": {
+        "_id": 9,
+        "_date": "Thu May 07 2020",
+        "_timestamp": 1588847794579,
+        "description": "try and improve dmenu Xresources patch",
+        "isStarred": false,
+        "boards": [
+            "@FreeTime"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
     }
 }

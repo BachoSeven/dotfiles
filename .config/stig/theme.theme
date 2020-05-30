@@ -1,7 +1,8 @@
+# vim: ft=cfg
 ## Stig darker theme by BachoSeven
 
 # Optional: with this option, the theme is lighter on the eyes
-# light_is_bold
+light_is_bold
 
 ## Definition of global variables are all here for quick access
 $defaultBG=#146
@@ -29,11 +30,11 @@ $created_fg            = brown
 $error_fg              = light red
 $eta_fg                = dark cyan
 $eta_hl                = yellow
-$file_fg               = dark gray
-$flist_bg.f            = dark gray
+$file_fg               = light gray
+$flist_bg.f            = light gray
 $flist_bg.uf           = black
 $folder_fg             = white
-$ip_fg                 = dark gray
+$ip_fg                 = light gray
 $keychains_bg          = black
 $log_bg                = $defaultBG
 $marked_fg             = $brightFG
@@ -47,11 +48,11 @@ $name.queued_fg        = $status.queued_fg
 $name.stopped_fg       = $status.stopped_fg
 $name.uploading_fg     = $status.uploading_fg
 $name.verifying_fg     = $status.verifying_fg
-$path_fg               = dark gray
+$path_fg               = light gray
 $peers_fg              = light gray
 $peers_hl              = white
 $plist_bg              = black
-$port_fg               = dark gray
+$port_fg               = light gray
 $priority_fg           = brown
 $priority_hl           = yellow
 $rate-down_fg          = dark cyan
@@ -62,22 +63,22 @@ $rate-up_fg            = dark green
 $rate-up_hl            = light green
 $ratio_fg              = dark blue
 $ratio_hl              = light blue
-$seeds_fg              = dark gray
+$seeds_fg              = light gray
 $seeds_hl              = white
 $size_fg               = dark magenta
 $started_fg            = brown
 $topbar_bg             = $defaultBG
-$tracker_fg            = dark gray
+$tracker_fg            = light gray
 $uploaded_fg           = dark green
 $uploaded_hl           = light green
 
 $status.connected_fg   = dark magenta
 $status.discovering_fg = light blue
 $status.downloading_fg = dark cyan
-$status.idle_fg        = dark gray
+$status.idle_fg        = light gray
 $status.isolated_fg    = dark red
 $status.queued_fg      = brown
-$status.seeding_fg     = dark gray
+$status.seeding_fg     = light gray
 $status.stopped_fg     = dark blue
 $status.uploading_fg   = dark green
 $status.verifying_fg   = yellow
@@ -86,7 +87,7 @@ $completion_bg = $defaultBG
 $id_fg = white
 
 $trklist_bg.uf = black
-$trklist_bg.f  = dark gray
+$trklist_bg.f  = light gray
 
 $torrent_fg = light gray
 $tier_fg = brown
@@ -150,15 +151,15 @@ bottombar.bandwidth.down              dark cyan                 on $bottombar_bg
 bottombar.bandwidth.down.highlighted  light cyan                on $bottombar_bg
 bottombar.marked                      black,bold                on black
 
-log                                   dark gray                 on $log_bg
+log                                   light gray                 on $log_bg
 log.timestamp                         dark cyan                 on $log_bg
 log.info                              light green               on $log_bg
 log.error                             light red,bold            on $log_bg
 log.debug                             yellow                    on $log_bg
 log.dupecount                         light cyan                on $log_bg
-log.scrollbar              	      light gray    	        on dark gray
+log.scrollbar              	      light gray    	        on light gray
 
-keychains                             dark gray                 on $keychains_bg
+keychains                             light gray                 on $keychains_bg
 keychains.header       light cyan   on #022
 keychains.keys                        dark blue                 on $keychains_bg
 keychains.keys.next                   yellow                    on $keychains_bg
@@ -178,8 +179,8 @@ helptext.scrollbar   dark green on $defaultBG
 
 torrentlist default on $tlist_bg.uf
 torrentlist.focused bold on $tlist_bg.f
-torrentlist.header dark gray,underline on $tlist_bg.uf
-torrentlist.scrollbar light gray  on dark gray
+torrentlist.header light gray,underline on $tlist_bg.uf
+torrentlist.scrollbar light gray  on light gray
 
 torrentlist.id.header                              $id_fg,underline on $tlist_bg.uf
 torrentlist.id.unfocused                           $id_fg           on $tlist_bg.uf
@@ -392,17 +393,17 @@ torrentlist.name.discovering.complete.focused      $name.discovering_fg         
 
 torrentdetails            light gray on black
 torrentdetails.error      light red  on black
-torrentdetails.scrollbar  light gray on dark gray
+torrentdetails.scrollbar  light gray on light gray
 
 filelist                                           default                        on $flist_bg.uf
 filelist.focused                                   default                        on $flist_bg.f
-filelist.header                                    dark gray,underline            on $flist_bg.uf
-filelist.scrollbar                        	   light gray          		  on dark gray
+filelist.header                                    light gray,underline            on $flist_bg.uf
+filelist.scrollbar                        	   light gray          		  on light gray
 
 filelist.marked.header                             $marked_fg,underline           on $tlist_bg.uf
 filelist.marked.unfocused                          $marked_fg                     on $tlist_bg.uf
 filelist.marked.focused                            $marked_fg                     on $tlist_bg.f
-filelist.name.header                               dark gray,underline            on $flist_bg.uf
+filelist.name.header                               light gray,underline            on $flist_bg.uf
 filelist.name.file.unfocused                       $file_fg                       on $flist_bg.uf
 filelist.name.file.focused                         $file_fg                       on $flist_bg.f
 filelist.name.folder.unfocused                     $folder_fg                     on $flist_bg.uf
@@ -424,8 +425,8 @@ filelist.priority.high.focused                     $priority_hl                 
 
 peerlist                                           default                        on $tlist_bg.uf
 peerlist.focused                                   default                        on $tlist_bg.uf
-peerlist.header                                    dark gray,underline            on $tlist_bg.uf
-peerlist.scrollbar   	                           light gray           	  on dark gray
+peerlist.header                                    light gray,underline            on $tlist_bg.uf
+peerlist.scrollbar   	                           light gray           	  on light gray
 
 peerlist.port.header                               $port_fg,underline             on $plist_bg
 peerlist.port.unfocused                            $port_fg                       on $plist_bg
@@ -454,7 +455,7 @@ peerlist.%downloaded.highlighted.unfocused $%downloaded_hl           on $plist_b
 trackerlist                                default              on $trklist_bg.uf
 trackerlist.focused                        default              on $trklist_bg.f
 trackerlist.header                         light gray,underline on $trklist_bg.uf
-trackerlist.scrollbar                      light gray           on dark gray
+trackerlist.scrollbar                      light gray           on light gray
 
 trackerlist.torrent.header                 $torrent_fg,underline on $trklist_bg.uf
 trackerlist.torrent.unfocused              $tracker_fg           on $trklist_bg.uf
@@ -524,7 +525,7 @@ trackerlist.next-scrape.focused            $next-scrape_fg           on $trklist
 settinglist                                default              on $slist_bg.uf
 settinglist.focused                        default              on $slist_bg.f
 settinglist.header                         light gray,underline on $slist_bg.uf
-settinglist.scrollbar                      light gray           on dark gray
+settinglist.scrollbar                      light gray           on light gray
 
 settinglist.name.header                    $name_fg,underline on $slist_bg.uf
 settinglist.name.unfocused                 $name_fg           on $slist_bg.uf

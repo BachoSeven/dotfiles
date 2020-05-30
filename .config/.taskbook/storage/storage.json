@@ -3,7 +3,7 @@
         "_id": 11,
         "_date": "Sun Oct 27 2019",
         "_timestamp": 1572210248910,
-        "description": "history gives you commandHistory, l(c) is useful, md is mkdir with parent directories, rd is RemoveDirectory, ytmp3 works",
+        "description": "history, l, md, mdcd, rd, ytmp3 are nice",
         "isStarred": false,
         "boards": [
             "@Shortcuts"
@@ -164,34 +164,6 @@
             "@Reminders"
         ],
         "_isTask": false
-    },
-    "48": {
-        "_id": 48,
-        "_date": "Thu May 07 2020",
-        "_timestamp": 1588847794579,
-        "description": "try and improve dmenu Xresources patch",
-        "isStarred": false,
-        "boards": [
-            "@FreeTime"
-        ],
-        "_isTask": true,
-        "isComplete": false,
-        "inProgress": false,
-        "priority": 1
-    },
-    "49": {
-        "_id": 49,
-        "_date": "Thu May 07 2020",
-        "_timestamp": 1588848606903,
-        "description": "send vernazza pictures to luca",
-        "isStarred": false,
-        "boards": [
-            "@FreeTime"
-        ],
-        "_isTask": true,
-        "isComplete": false,
-        "inProgress": false,
-        "priority": 1
     },
     "50": {
         "_id": 50,
