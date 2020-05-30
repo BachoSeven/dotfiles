@@ -1,0 +1,113 @@
+# vim: ft=cfg
+##
+##  Commands
+## ==========
+
+
+#  Setting a variable
+# --------------------
+#
+# syntax: set <option> = <value>
+#
+# See below for the list of available variables.
+
+
+#  Defining a new custom field
+# -----------------------------
+#
+# syntax: field <identifier> = <human readable name> [ , <type> ]
+#
+# with <type> being one of 'string' (default), 'emails', 'list', or 'date'
+#
+# Example of field definitions:
+field pager = Pager
+field address_lines = Address, list
+field birthday = Birthday, date
+
+
+#  Defining a view/tab
+# ---------------------
+#
+# view <view name> = <field1> [ , <field2>, ... ]
+#
+# with <fieldN> being the identifier of a field declared with the 'field'
+# command, or the identifier of a standard field.
+#
+# Standard fields:
+#    name, email,
+#    address, address2, city, state, zip, country,
+#    phone, workphone, fax, mobile,
+#    nick, url, notes, anniversary
+#
+# Note: if you don't define any view, abook will use a default display based
+#       on the above standard fields.
+#
+# Example of views:
+view CONTACT = name, email
+view ADDRESS = address_lines, city, state, zip, country
+view PHONE = phone, workphone, pager, mobile, fax
+view OTHER = url, birthday
+
+
+
+##
+##  Variables
+## ===========
+
+# Automatically save database on exit
+set autosave=true
+
+# Specify how fields not declared with the 'field' command nor
+# in a view should be preserved while loading an abook database.
+#
+# It must be one of 'all', 'standard' (default), or 'none'.
+#   * 'all': preserve any completely unknown field.
+#   * 'standard': only preserve the standard fields (see a list in the
+#                 description of the 'view' command) and the legacy
+#                 'custom[1-5]' fields.
+#   * 'none': discards any unknown field.
+set preserve_fields=standard
+
+# Show all email addresses in list
+set show_all_emails=true
+
+# Format of an entry's line in the main abook screen
+#
+# The below example displays:
+#  * the content of the 'name' field (with a maximum of 22 characters)
+#  * the first of the 'phone', 'workphone' or 'mobile' fields
+#    happening not to be empty (right aligned within 12 characters)
+#  * the 'anniversary' field, with no length limit
+set index_format=" {name:25} {phone:-12|workphone|mobile} {nniversary}"
+
+# Command used to start mutt
+set mutt_command=neomutt
+
+# Return all email addresses to a mutt query
+set mutt_return_all_emails=true
+
+# Command used to print
+set print_command=lpr
+
+# Command used to start the web browser
+set www_command=links2
+
+# address style [eu|us|uk]
+set address_style=eu
+
+# use ASCII characters only
+set use_ascii_only=false
+
+set add_email_prevent_duplicates=false
+
+# field to be used with "sort by field" command
+set sort_field=nick
+
+# show cursor in main display
+set show_cursor=true
+# colors
+set use_colors = true
+set color_header_fg = red
+set color_header_bg = default
+set color_list_header_fg = blue
+set color_list_header_bg = default

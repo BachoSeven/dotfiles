@@ -48,8 +48,12 @@
 	map <C-t>h :tabp<cr>
 	map <C-t>l :tabn<cr>
 
+" Replace all occurrences aliased to S
+	nnoremap S :%s//g<Left><Left>
+
 " Compile document, be it groff/LaTeX/markdown/etc.
 	map <leader>C :w! \| !compiler <c-r>%<CR>
+
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
 
@@ -114,7 +118,7 @@ Plug 'Shougo/neco-syntax'
 
 Plug 'lervag/vimtex'
 Plug 'KeitaNakamura/tex-conceal.vim'
-	set conceallevel=2
+	set conceallevel=1
 	let g:tex_conceal='abdmg'
 	hi Conceal ctermbg=none
 
@@ -244,18 +248,14 @@ call plug#end()
 " ColorSchemes
 	set background=dark
 	colorscheme gruvbox
-" fix gruvbox visual selection
-	if (&background == 'dark')
-	  hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
-	else
-	  hi Visual cterm=NONE ctermfg=NONE ctermbg=223 guibg=#ffd7af
-	endif
 " colorscheme NeoSolarized
 	" let g:airline_theme='base16_solarized'
 	" hi Normal ctermbg=NONE guibg=NONE
 	" hi NonText ctermbg=NONE guibg=NONE
 	" hi EndOfBuffer ctermbg=NONE guibg=NONE
 	hi LineNr ctermbg=NONE guibg=NONE
+" fix gruvbox visual selection
+	hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
 
 " Goyo mapping and configuration
 	map <leader>g :Goyo \| set linebreak<CR>

@@ -30,6 +30,7 @@ export GEM_HOME="$XDG_DATA_HOME/gem"
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/ripgreprc"
 export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME/mathematica"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 ## Various programs settings:
 
