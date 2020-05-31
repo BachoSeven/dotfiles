@@ -25,6 +25,7 @@
 	autoload -U compinit
 	zmodload zsh/complist
 	compinit
+	_comp_options+=(globdots)		# Include hidden files.
 
 ## Plugins (who needs a plugin manager?)
 	[ -f $ZDOTDIR/plugins/fzf/fzf.zsh ] && source $ZDOTDIR/plugins/fzf/fzf.zsh 2>/dev/null
