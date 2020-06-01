@@ -46,6 +46,6 @@
 	autoload edit-command-line; zle -N edit-command-line
 	bindkey '^e' edit-command-line
 
-# allow ctrl-p, ctrl-n for navigate history (standard behaviour)
+# allow ctrl-p, ctrl-n for navigate history
 	bindkey '^P' up-history
 	bindkey '^N' down-history
