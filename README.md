@@ -24,6 +24,10 @@ I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I 
 
 ## Screens
 
+#### Current Background
+
+<img src=".config/wall.png" alt="wp"/>
+
 ### Dwm
 
 <img src="pics/screens/ricing/dwwm.png" alt=":)"/>
