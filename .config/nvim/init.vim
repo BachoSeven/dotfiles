@@ -9,7 +9,8 @@
 	set title
 	let mapleader =","
 	set shell=/usr/bin/zsh
-	set clipboard+=unnamedplus
+	" set clipboard+=unnamedplus
+	set clipboard+=unnamed
 	set number relativenumber
 	set wildmenu
 	set wildmode=longest,list,full
