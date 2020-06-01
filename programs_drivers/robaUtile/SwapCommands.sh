@@ -1,4 +1,3 @@
-#! /bin/bash
 sudo dd if=/dev/zero of=/swapfile bs=1024 count=4194304
 
 sudo chmod 600 /swapfile
