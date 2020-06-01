@@ -1,24 +1,21 @@
-All repos:
-sudo apt-add-repository 'https://deb.nodesource.com/node_13.x bionic main'
-sudo apt-add-repository ppa:linuxuprising/apps
+All repos: 
+sudo apt-add-repository ppa:maxmind/ppa
 sudo apt-add-repository '[arch=amd64] https://brave-browser-apt-nightly.s3.brave.com/ stable main'
-sudo apt-add-repository ppa:malteworld/ppa
-sudo apt-add-repository 'https://dl.yarnpkg.com/debian/ stable main'
-sudo apt-add-repository ppa:takkat-nebuk/takkat
 sudo apt-add-repository 'https://deb.trendtechcn.com stable main'
-sudo apt-add-repository ppa:ubuntuhandbook1/apps
-sudo apt-add-repository ppa:linrunner/tlp
 sudo apt-add-repository '[arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
 sudo apt-add-repository 'https://repo.nordvpn.com/deb/nordvpn/debian stable main'
-sudo apt-add-repository ppa:nilarimogard/webupd8
-sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ bionic main restricted'
-sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ bionic-updates main restricted'
-sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ bionic universe'
-sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ bionic-updates universe'
-sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ bionic multiverse'
-sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ bionic-updates multiverse'
-sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse'
-sudo apt-add-repository 'http://archive.canonical.com/ubuntu bionic partner'
-sudo apt-add-repository 'http://security.ubuntu.com/ubuntu bionic-security main restricted'
-sudo apt-add-repository 'http://security.ubuntu.com/ubuntu bionic-security universe'
-sudo apt-add-repository 'http://security.ubuntu.com/ubuntu bionic-security multiverse'
+sudo apt-add-repository ppa:hluk/copyq
+sudo apt-add-repository ppa:hpjansson/chafa
+sudo apt-add-repository ppa:neovim-ppa/unstable
+sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ focal main restricted'
+sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ focal-updates main restricted'
+sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ focal universe'
+sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ focal-updates universe'
+sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ focal multiverse'
+sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ focal-updates multiverse'
+sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ focal-backports universe main restricted multiverse'
+sudo apt-add-repository 'http://archive.canonical.com/ubuntu focal partner'
+sudo apt-add-repository 'http://security.ubuntu.com/ubuntu focal-security main restricted'
+sudo apt-add-repository 'http://security.ubuntu.com/ubuntu focal-security universe'
+sudo apt-add-repository 'http://security.ubuntu.com/ubuntu focal-security multiverse'
+sudo apt-add-repository 'http://it.archive.ubuntu.com/ubuntu/ focal-proposed universe restricted multiverse main'

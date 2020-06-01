@@ -1,7 +1,5 @@
-only personall PPAs:
-sudo apt-add-repository ppa:linuxuprising/apps
-sudo apt-add-repository ppa:malteworld/ppa
-sudo apt-add-repository ppa:takkat-nebuk/takkat
-sudo apt-add-repository ppa:ubuntuhandbook1/apps
-sudo apt-add-repository ppa:linrunner/tlp
-sudo apt-add-repository ppa:nilarimogard/webupd8
+only personall PPAs: 
+sudo apt-add-repository ppa:maxmind/ppa
+sudo apt-add-repository ppa:hluk/copyq
+sudo apt-add-repository ppa:hpjansson/chafa
+sudo apt-add-repository ppa:neovim-ppa/unstable
