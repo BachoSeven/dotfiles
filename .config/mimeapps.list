@@ -1,0 +1,4 @@
+[Default Applications]
+x-scheme-handler/msteams=teams.desktop
+text/html=brave-browser-nightly.desktop;
+x-scheme-handler/tg=telegramdesktop.desktop

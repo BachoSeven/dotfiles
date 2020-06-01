@@ -26,10 +26,9 @@ set tui.theme theme.theme
 
 # Tabs
 tab ls all --columns size,ratio,status,rate-down,rate-up,name
-tab -b ls active|incomplete
-tab -b ls downloading
-tab -b ls uploading
 tab -b ls peers
+tab -b ls uploading
+tab -b ls downloading
 
 # Order of columns in their context.
 set columns.torrents marked eta %downloaded status rate-down rate-up downloaded uploaded size ratio seeds peers name

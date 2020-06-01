@@ -2,6 +2,14 @@ h	~/
 D	~/downloads
 m	~/music
 pp	~/pics
+pa	~/pics/papes/art
+pc	~/pics/papes/cityscapes
+pe	~/pics/papes/etc
+pf	~/pics/papes/future
+pl	~/pics/papes/landscapes
+ps	~/pics/papes/spacescapes
+pt	~/pics/papes/tech
+pv 	~/pics/papes/vibrant
 cf	~/.config
 pgs	~/programs_drivers
 games	~/programs_drivers/games

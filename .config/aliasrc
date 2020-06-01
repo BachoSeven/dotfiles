@@ -84,6 +84,8 @@ alias \
 	alias pf='pfetch'
 	alias tg='Telegram'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
+	alias ud='udict'
+	alias def='define'
 
 	alias abook='abook -C /home/francesco/.config/abook/abookrc -f /home/francesco/.config/abook/addressbook'
 	alias waterfox='waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
@@ -107,6 +109,7 @@ alias \
 alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
 alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
 alias cfa='nvim $XDG_CONFIG_HOME/aliasrc'
+alias cfd='nvim $XDG_CONFIG_HOME/directories'
 alias mim='nvim $XDG_CONFIG_HOME/mimi/mime.conf'
 alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
 alias lfrc='nvim $XDG_CONFIG_HOME/lf/lfrc'
