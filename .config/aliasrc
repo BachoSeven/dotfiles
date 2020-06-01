@@ -87,7 +87,7 @@ alias \
 	alias ud='udict'
 	alias def='define'
 
-	alias abook='abook -C /home/francesco/.config/abook/abookrc -f /home/francesco/.config/abook/addressbook'
+	alias abook='abook -C /home/francesco/.config/abook/abookrc --datafile /home/francesco/.config/abook/addressbook'
 	alias waterfox='waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 	alias flp='flashplayer'

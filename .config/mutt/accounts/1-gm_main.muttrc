@@ -8,6 +8,9 @@ set folder = "/home/francesco/.local/share/mail/gm_main"
 set header_cache = /home/francesco/.cache/mutt-wizard/gm_main/headers
 set message_cachedir = /home/francesco/.cache/mutt-wizard/gm_main/bodies
 set mbox_type = Maildir
+set crypt_opportunistic_encrypt = yes
+set pgp_self_encrypt = yes
+set pgp_default_key  = 56962E26A4E5F95B
 
 bind index,pager gg noop
 bind index,pager g noop

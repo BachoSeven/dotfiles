@@ -8,6 +8,9 @@ set folder = "/home/francesco/.local/share/mail/gm_uwcad"
 set header_cache = /home/francesco/.cache/mutt-wizard/gm_uwcad/headers
 set message_cachedir = /home/francesco/.cache/mutt-wizard/gm_uwcad/bodies
 set mbox_type = Maildir
+set crypt_opportunistic_encrypt = yes
+set pgp_self_encrypt = yes
+set pgp_default_key  = 
 
 bind index,pager gg noop
 bind index,pager g noop

@@ -16,6 +16,7 @@
 
 ## Basic Settings
 	setopt AUTO_CD          							# `dirname` is equivalent to `cd dirname`
+	setopt CSH_NULL_GLOB								# Only throw errors when no globs match anything
 	stty stop undef									# Disable ctrl-s to freeze terminal.
 	unsetopt RM_STAR_SILENT 							# Always ask before rm folder/*
 	[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc" 2>/dev/null	# Custom aliases and functions

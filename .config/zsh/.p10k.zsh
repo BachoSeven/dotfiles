@@ -48,7 +48,7 @@
       command_execution_time  # duration of the last command
       background_jobs         # presence of background jobs
       nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
-      battery               # internal battery
+      battery                 # internal battery
       context                 # user@hostname
       # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       # anaconda                # conda environment (https://conda.io/)
@@ -67,7 +67,7 @@
       # aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
       # aws_eb_env            # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
       # azure                 # azure account name (https://docs.microsoft.com/en-us/cli/azure)
-      ranger                  # ranger shell (https://github.com/ranger/ranger)
+      # ranger                  # ranger shell (https://github.com/ranger/ranger)
       # vpn_ip                # virtual private network indicator
       # ram                   # free RAM
       # load                  # CPU load
