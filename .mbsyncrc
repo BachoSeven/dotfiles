@@ -20,7 +20,7 @@ Slave :gm_main-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 4000
+MaxMessages 3000
 ExpireUnread no
 # End profile
 
@@ -46,7 +46,7 @@ Slave :gm_uwcad-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 4000
+MaxMessages 5000
 ExpireUnread no
 # End profile
 

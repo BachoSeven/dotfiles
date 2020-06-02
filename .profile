@@ -38,11 +38,6 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export DOTBARE_DIR="$XDG_CONFIG_HOME/dots"
 export DOTBARE_TREE="$HOME"
 export DOTBARE_BACKUP="${XDG_DATA_HOME:-$HOME/.local/share}/dotbare"
-# toggle all selection
-# label jump mode, sort of like easymotion
-# set cursor back to top
-# toggle sorting
-# toggle preview
 export DOTBARE_KEY="
   --bind=alt-a:toggle-all
   --bind=alt-i:jump
