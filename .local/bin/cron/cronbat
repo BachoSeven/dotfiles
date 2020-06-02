@@ -5,12 +5,8 @@
 
 if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 40 ]; then
 	export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-	[ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 20 ]	&&
-	notify-send -u critical "Battery critically low."		||
-	notify-send "Plug in cable"
+	[ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 15 ] && notify-send -u critical "Battery critically low." || notify-send "Plug in cable"
 else
-	if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -gt 80  ]; then
-		export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-		notify-send "Unplug cable"
-	fi
+	export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+	[ "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ] && [ "$(cat /sys/class/power_supply/BAT0/capacity)" -gt 85  ] && notify-send "Unplug cable"
 fi
