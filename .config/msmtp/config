@@ -20,35 +20,3 @@ user ad17fmin@uwcad.it
 passwordeval "pass mutt-wizard-gm_uwcad"
 tls_starttls off
 
-account gm_main
-host smtp.gmail.com
-port 587
-from ascoli.minnocci@gmail.com
-user ascoli.minnocci@gmail.com
-passwordeval "pass mutt-wizard-gm_main"
-
-
-account gm_uwcad
-host smtp.gmail.com
-port 465
-from ad17fmin@uwcad.it
-user ad17fmin@uwcad.it
-passwordeval "pass mutt-wizard-gm_uwcad"
-tls_starttls off
-
-account gm_main
-host smtp.gmail.com
-port 587
-from ascoli.minnocci@gmail.com
-user ascoli.minnocci@gmail.com
-passwordeval "pass mutt-wizard-gm_main"
-
-
-account gm_uwcad
-host smtp.gmail.com
-port 465
-from ad17fmin@uwcad.it
-user ad17fmin@uwcad.it
-passwordeval "pass mutt-wizard-gm_uwcad"
-tls_starttls off
-
