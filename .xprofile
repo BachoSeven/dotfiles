@@ -1,7 +1,8 @@
 #!/bin/sh
 
-remaps &			# switch caps/super and one-tap_caps/esc, in gnome-shell I only want it as Esc
-setbg &				# basically xwallpaper
-redshift &
+remaps &			# Switch caps/super and one-tap_caps/esc, in gnome-shell I only want it as Esc
+dunst &				# Notifications
+setbg &				# Basically xwallpaper
+redshift &			# Color temperature
 xset r rate 280 55 &		# Speed xrate up
-unclutter &			# remove mouse when idle
+unclutter &			# Remove mouse when idle
