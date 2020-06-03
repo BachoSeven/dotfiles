@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# This script is just here to switch vim colorschemes with the setbg script
+
+if [ "$1" = "-w" ]; then
+	sed -i 's/colorscheme gruvbox/" colorscheme gruvbox/g' $XDG_CONFIG_HOME/nvim/init.vim
+	sed -i 's/" colorscheme wal/colorscheme wal/g' $XDG_CONFIG_HOME/nvim/init.vim
+fi
+
+if [ "$1" = "-x" ]; then
+	sed -i 's/" colorscheme gruvbox/colorscheme gruvbox/g' $XDG_CONFIG_HOME/nvim/init.vim
+	sed -i 's/colorscheme wal/" colorscheme wal/g' $XDG_CONFIG_HOME/nvim/init.vim
+fi
