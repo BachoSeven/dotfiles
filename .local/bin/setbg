@@ -45,4 +45,7 @@ while true; do
 done
 
 # Use gifview for gifs, otherwise xwallpaper
-killall -q xwinwrap 2>/dev/null ; [[ ! $(file --dereference --brief --mime-type -- $bgloc) = "image/gif"  ]] && xwallpaper --maximize "$bgloc" || hsetroot -solid "#282828" & gifbg "$bgloc"
+	killall -q xwinwrap 2>/dev/null ;
+	[[ ! $(file --dereference --brief --mime-type -- $bgloc) = "image/gif"  ]] &&
+	xwallpaper --zoom "$bgloc" ||
+	gifbg "$bgloc"
