@@ -1,8 +1,8 @@
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.local/share/lyrics
 mpd_host = 127.0.0.1
-mpd_port = 6603
-mpd_connection_timeout = 4
+mpd_port = 6602
+mpd_connection_timeout = 5
 mpd_music_dir = "~/music"
 mpd_crossfade_time = 4
 visualizer_fifo_path = /tmp/mpd.fifo
