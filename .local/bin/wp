@@ -1,4 +1,8 @@
 #!/bin/sh
 
+## Little script to open a directory of images in sxiv in random order
+## Usage: `wp [ wallpapers_subdir ] [ number of images ] `
+
 dir=$1
-find ~/pics/papes/$dir -type f | shuf | sxiv -
+count=$2
+find ~/pics/papes/$dir -type f | shuf $count | sxiv -

@@ -21,7 +21,7 @@ IMGW=${IMGHW#*x}
 POSH=$((($SCRH/2)-($IMGH/2)))
 POSW=$((($SCRW/2)-($IMGW/2)))
 
-hsetroot -solid "#282828" &&
+hsetroot -solid "#1d2021" &&
 xwinwrap -g ${IMGHW}+${POSH}+${POSW} -ov -ni -s -nf -d -- gifview --memory-limit 100 -w WID $1 -a --no-interactive
 
 exit 0
