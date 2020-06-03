@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# This script sets the background, using pywal to set a terminal colorscheme,or otherwise
-# using Xresources. It also sets the wallpaper for me both on gnome-shell and on dwm.
+# This script sets the background image, using pywal to set a terminal colorscheme,or otherwise
+# using Xresources with xwallpaper.
 
 #	Usage:
 #		`setbg [ -s, --no-scheme ] [ -i, --input="path/to/img" ]`
@@ -26,9 +26,9 @@ while true; do
 		'-i'|'--input')
 			[ -n $2 ] && cp "$2" $bgloc > /dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			if [ $scheme = true ]; then
-				wal -i $bgloc && wal -c
+				wal -i $bgloc && wal -c && vimwal -w
 			else
-				xrdb -load $XDG_CONFIG_HOME/Xresources/Xresources
+				xrdb -load $HOME/.Xresources && vimwal -x
 			fi
 			shift 2
 			continue
@@ -44,5 +44,5 @@ while true; do
 	esac
 done
 
-[ ! "$(gsettings get org.gnome.desktop.background picture-uri)" = "'file://$bgloc'" ] && gsettings set org.gnome.desktop.background picture-uri file://$bgloc
-xwallpaper --zoom "$bgloc"
+# Use gifview for gifs, otherwise xwallpaper
+killall -q xwinwrap 2>/dev/null ; [[ ! $(file --dereference --brief --mime-type -- $bgloc) = "image/gif"  ]] && xwallpaper --maximize "$bgloc" || hsetroot -solid "#282828" & gifbg "$bgloc"
