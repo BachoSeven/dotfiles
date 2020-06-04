@@ -15,7 +15,7 @@
 
 ## Basic Settings
 	setopt AUTO_CD          							# `dirname` is equivalent to `cd dirname`
-	setopt CSH_NULL_GLOB								# Only throw errors when no globs match anything
+	setopt extended_glob								# Enable globbing
 	stty stop undef									# Disable ctrl-s to freeze terminal.
 	unsetopt RM_STAR_SILENT 							# Always ask before rm folder/*
 

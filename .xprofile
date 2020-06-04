@@ -1,5 +1,18 @@
 #!/bin/sh
 
+# Fix Gnome Apps Slow  Start due to failing services
+dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
+
+# xscreensaver -no-splash & # replaced by slock atm
+xset s 600
+xss slock &
+xrdb -merge -I$HOME ~/.Xresources
+
+mconnect -d			# mconnect daemon
+mpd & 				# start MPD as user when you log in
+copyq &				# Clipboard management
+xcompmgr &			# xcompmgr for transparency
 remaps &			# Switch caps/super and one-tap_caps/esc, in gnome-shell I only want it as Esc
 dunst &				# Notifications
 setbg &				# Basically xwallpaper

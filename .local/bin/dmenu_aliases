@@ -1,7 +1,6 @@
 #!/bin/bash
-# cache=/home/francesco/.cache/dmenu_run
 freq=$XDG_CACHE_HOME/dmenu_history
-aliases=$XDG_CONFIG_HOME/aliasrc
+aliases=$ZDOTDIR/plugins/utils/aliasrc
 # configuration is done in Xresources
 dmenucmd='dmenu -i -h 18'
 
