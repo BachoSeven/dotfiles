@@ -1,0 +1,9 @@
+[submodule ".config/dotbare"]
+	path = .config/dotbare
+	url = https://github.com/kazhala/dotbare
+[submodule ".config/mpv/scripts/mpvSockets"]
+	path = .config/mpv/scripts/mpvSockets
+	url = https://github.com/wis/mpvSockets
+[submodule ".config/zsh/plugins/powerlevel10k"]
+	path = .config/zsh/plugins/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k
