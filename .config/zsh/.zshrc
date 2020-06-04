@@ -5,10 +5,9 @@
 #	     (_)   \/_____/ \/_____/ \/_/\/_/ \/_/ /_/ \/_____/
 
 # Fix non-interactive
- if [ -z "$PS1" ]; then
-             exit
- fi
-
+	 if [ -z "$PS1" ]; then
+		     exit
+	 fi
 
 ## Powerlevel10k
 	[ -f $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme ] && source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
@@ -19,7 +18,6 @@
 	setopt CSH_NULL_GLOB								# Only throw errors when no globs match anything
 	stty stop undef									# Disable ctrl-s to freeze terminal.
 	unsetopt RM_STAR_SILENT 							# Always ask before rm folder/*
-	[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc" 2>/dev/null	# Custom aliases and functions
 
 ## Autocompletion
 	fpath=($ZDOTDIR/completions $fpath)
@@ -34,6 +32,7 @@
 	[ -f $ZDOTDIR/plugins/lf/lf.zsh ] && source $ZDOTDIR/plugins/lf/lf.zsh 2>/dev/null
 	[ -f $ZDOTDIR/plugins/vi-mode/vi-mode.zsh ] && source $ZDOTDIR/plugins/vi-mode/vi-mode.zsh 2>/dev/null # Vi-mode
 	[ -f $ZDOTDIR/plugins/less/less.zsh ] && source $ZDOTDIR/plugins/less/less.zsh 2>/dev/null
+	[ -f $ZDOTDIR/plugins/utils/utils.zsh ] && source $ZDOTDIR/plugins/utils/utils.zsh 2>/dev/null
 	eval $(thefuck --alias f)
 
 ## Bind keys

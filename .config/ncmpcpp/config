@@ -249,7 +249,7 @@ startup_slave_screen_focus = no
 ## Default width of locked screen (in %).  Acceptable values are from 20 to 80.
 ##
 #
-locked_screen_width_part = 50
+locked_screen_width_part = 40
 #
 #ask_for_locked_screen_width_part = yes
 #

@@ -74,7 +74,7 @@ dwm.selbordercolor:	#fb4934
 dwm.selbgcolor:	#3c3836
 
 !! Dmenu
-dmenu.font:		monospace:hinting=True:antialias=True:size=14
+dmenu.font:		monospace:hinting=True:antialias=True:size=15
 
 ! dmenu.background:	#002b36
 ! dmenu.foreground:	#839496

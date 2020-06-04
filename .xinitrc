@@ -2,6 +2,7 @@
 
 # Fix Gnome Apps Slow  Start due to failing services
 dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
 # xscreensaver -no-splash & # replaced by slock atm
 xset s 600
