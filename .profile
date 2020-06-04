@@ -1,14 +1,13 @@
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
 
-# Appearance
-export XCURSOR_PATH="~/.config/icons"
-
+# Basics
 export TERMINAL="st"
 export READER="zathura"
 export OPENER='xdg-open'
 export EDITOR="nvim"
 export BROWSER="brave-browser"
+export LOCATION="Pisa" # weather script
 
 # XDG BASE DIRECTORIES compliant settings
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -50,7 +49,7 @@ export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export GS_FONTPATH="/usr/local/share/pmw/psfonts"
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
-# subs
+# Yt
 export SUBS_FILE=$XDG_CONFIG_HOME/subs
 export SUBS_MENU_PROG="dmenu -bw 4 -nb #3c3836 -nf #fb4934 -c -f -i -l 10 -p YT"
 
@@ -66,7 +65,8 @@ export PF_COL1=4
 export PF_COL2=7
 export PF_COL3=6
 
-## Colors & Icons
+## Appearance
+	export XCURSOR_PATH="~/.config/icons"
 	export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 	[ -f $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox ] && eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.gruvbox`
 	# [ -f $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark ] && eval `dircolors $XDG_CONFIG_HOME/dircolors/dircolor.solarized-dark`
@@ -147,11 +147,11 @@ export JACKETT_APIKEY=wehmxuljrd6ncieuwmlq58tb34d3y7yx
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--layout=reverse --height 50% --border --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
 export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!snap/*" --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
 export FZF_ALT_C_OPTS="--exact --select-1 --exit-0 --preview 'tree -C {} | head -200'" # this is almost a file manager
 export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --exclude .git"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind 'F1:toggle-preview'"
 
 # Start graphical server on tty1 if not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx
+[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx
 sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null

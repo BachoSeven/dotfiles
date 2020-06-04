@@ -1,4 +1,6 @@
 # vi: ft=zsh
+#
+## Aliases
 
 # Proper shell shortcuts
 alias update='sudo apt-get update'
@@ -54,6 +56,7 @@ alias \
 		alias pdbkp='rsync -rLtv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 
 # Utils
+	alias nv='nvim .'
 	alias sT="tabbed -c -r 2 st -w id "
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
@@ -107,7 +110,9 @@ alias \
 # Rice
 alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
 alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
-alias cfa='nvim $XDG_CONFIG_HOME/aliasrc'
+alias cfa='nvim $ZDOTDIR/plugins/utils/aliasrc'
+alias cff='nvim $ZDOTDIR/plugins/utils/functionsrc'
+alias cfp='nvim $ZDOTDIR/.zprofile'
 alias cfd='nvim $XDG_CONFIG_HOME/directories'
 alias mim='nvim $XDG_CONFIG_HOME/mimi/mime.conf'
 alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
@@ -142,65 +147,3 @@ alias ib='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/IB'
 alias wsp='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/roba!'
 alias mthstf='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/mathstuff'
 alias movies='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/stuff/movies'
-
-alias nv='nvim .'
-
-# Functions
-
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time --output=/tmp/zt$i $shell -i -c exit; done
-  for i in $(seq 1 10); do awk '{print $3}' /tmp/zt$i | grep -v swap | sed 's/elapsed//g'|sed 's/0:00\.//g' && rm -f /tmp/zt$i ;done
-}
-
-function 256color {
-	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
-}
-
-cowfortune() {
-  f=/tmp/cowsaytemp
-  fortune | cowsay -f stegosaurus -W 80 > $f
-  let "N = `cat $f | wc -l`-14"
-  head -$N $f
-  tail -14 $f | toilet -f term --termwidth --gay
-}
-
-truecolor() {
-	awk 'BEGIN{
-	    s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
-	    for (colnum = 0; colnum<77; colnum++) {
-		r = 255-(colnum*255/76);
-		g = (colnum*510/76);
-		b = (colnum*255/76);
-		if (g>255) g = 510-g;
-		printf "\033[48;2;%d;%d;%dm", r,g,b;
-		printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
-		printf "%s\033[0m", substr(s,colnum+1,1);
-	    }
-	    printf "\n";
-	}'
-}
-
-# ffmpeg utilities
-compress() {
-	ffmpeg -i $1 -vcodec h264 -acodec mp3 $2
-}
-compressbrate() {
-	bitrate=${3:-1000k}
-	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
-}
-
-# mkdir and cd into it!
-mdcd () {
-  mkdir -p $@ && cd ${@:$#}
-}
-
-# fuzzy-find manuals
-manfd() {
-    export MANPATH="/usr/share/man"
-    f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf) && man $f
-}
-# find INSIDE manuals
-fman() {
-    man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
-}

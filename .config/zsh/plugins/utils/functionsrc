@@ -1,0 +1,67 @@
+## Functions
+
+# Update the list of processes by pressing CTRL-R
+lps() {
+ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \
+	 --header-lines=1 --layout=reverse
+}
+
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time --output=/tmp/zt$i $shell -i -c exit; done
+  for i in $(seq 1 10); do awk '{print $3}' /tmp/zt$i | grep -v swap | sed 's/elapsed//g'|sed 's/0:00\.//g' && rm -f /tmp/zt$i ;done
+}
+
+function 256color {
+	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
+
+cowfortune() {
+  f=/tmp/cowsaytemp
+  fortune | cowsay -f stegosaurus -W 80 > $f
+  let "N = `cat $f | wc -l`-14"
+  head -$N $f
+  tail -14 $f | toilet -f term --termwidth --gay
+}
+
+truecolor() {
+	awk 'BEGIN{
+	    s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
+	    for (colnum = 0; colnum<77; colnum++) {
+		r = 255-(colnum*255/76);
+		g = (colnum*510/76);
+		b = (colnum*255/76);
+		if (g>255) g = 510-g;
+		printf "\033[48;2;%d;%d;%dm", r,g,b;
+		printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
+		printf "%s\033[0m", substr(s,colnum+1,1);
+	    }
+	    printf "\n";
+	}'
+}
+
+# ffmpeg utilities
+compress() {
+	ffmpeg -i $1 -vcodec h264 -acodec mp3 $2
+}
+
+compressbrate() {
+	bitrate=${3:-1000k}
+	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
+}
+
+# mkdir and cd into it!
+mdcd () {
+  mkdir -p $@ && cd ${@:$#}
+}
+
+# fuzzy-find manuals
+manfd() {
+    export MANPATH="/usr/share/man"
+    f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf) && man $f
+}
+
+# find INSIDE manuals
+fman() {
+    man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
+}
