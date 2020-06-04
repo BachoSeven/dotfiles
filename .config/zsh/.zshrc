@@ -20,19 +20,33 @@
 	unsetopt RM_STAR_SILENT 							# Always ask before rm folder/*
 
 ## Autocompletion
-	fpath=($ZDOTDIR/completions $fpath)
 	autoload -U compinit
 	zmodload zsh/complist
 	compinit
 	_comp_options+=(globdots)		# Include hidden files.
 
-## Plugins (who needs a plugin manager?)
-	[ -f $ZDOTDIR/plugins/fzf/fzf.zsh ] && source $ZDOTDIR/plugins/fzf/fzf.zsh 2>/dev/null
-	[ -f $ZDOTDIR/plugins/history/history.zsh ] && source $ZDOTDIR/plugins/history/history.zsh 2>/dev/null
-	[ -f $ZDOTDIR/plugins/lf/lf.zsh ] && source $ZDOTDIR/plugins/lf/lf.zsh 2>/dev/null
-	[ -f $ZDOTDIR/plugins/vi-mode/vi-mode.zsh ] && source $ZDOTDIR/plugins/vi-mode/vi-mode.zsh 2>/dev/null # Vi-mode
-	[ -f $ZDOTDIR/plugins/less/less.zsh ] && source $ZDOTDIR/plugins/less/less.zsh 2>/dev/null
-	[ -f $ZDOTDIR/plugins/utils/utils.zsh ] && source $ZDOTDIR/plugins/utils/utils.zsh 2>/dev/null
+## Plugins
+	function zsh_load_plugins() {
+		local plugin
+
+		for plugin ($@); do
+			if [ -r "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh" ]; then
+				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh"
+			else
+				echo "$funcstack[1]: Unable to load '$plugin'." >&2
+			fi
+		done
+	}
+	plugins=(
+		custom-completions
+		fzf
+		history
+		less
+		lf
+		utils
+		vi-mode
+	)
+	zsh_load_plugins $plugins
 	eval $(thefuck --alias f)
 
 ## Bind keys

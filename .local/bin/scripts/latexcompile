@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# latexcompile
+# Keefer Rourke <mail@krourke.org>
+#
+# To the extent possible under law, the person who associated CC0 with
+# latexcompile has waived all copyright and related or neighboring rights
+# to latexcompile.
+#
+# See <http://creativecommons.org/publicdomain/zero/1.0/> for a copy of
+# the CC0 legalcode.
+
+if [ $# -eq 0 ]; then
+    echo "usage: latexcompile FILE.tex [--open]"
+    echo "cleanly compile LaTeX documents to PDF without cluttering the working directory."
+    exit 2
+fi
+
+BASE="${1%.*}"
+
+pdflatex $1 2>/dev/null 1>&2
+
+if [ $? -ne 0 ]; then
+    echo "Compilation error. Check log."
+    exit 1
+fi
+
+rm "$BASE.log" "$BASE.aux" "$BASE.out"
+
+if [ [ $2 == "--open" ] || [ $2 == "-o" ] ]; then
+    xdg-open "$BASE.pdf"
+fi
+exit 0

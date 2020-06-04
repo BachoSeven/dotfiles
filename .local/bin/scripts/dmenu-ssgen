@@ -2,11 +2,13 @@
 
 # important! requires 'ssgen' script
 
-script_path="$HOME/.local/bin"
+script_path="$HOME/.local/bin/scripts"
 ssgen_path="$script_path"
 
 # dmenu theming
-. $HOME/.local/bin/dmenu-theming
+lines="-l 15"
+font="-fn Hack-13"
+colors="-nb #073642 -nf #93a1a1 -sb #2aa198 -sf #eee8d5"
 
 prompt="-p Script:"
 

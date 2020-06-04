@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # where to save (or look for) the script
-script_path="$HOME/.local/bin"
+script_path="$HOME/.local/bin/scripts"
 
 # the editor of your choice
 script_editor="st -e nvim"

@@ -17,9 +17,9 @@ function history {
 }
 
 ## History file configuration
-HISTSIZE=50000
-SAVEHIST=50000
-HISTFILE="$XDG_DATA_HOME/zsh/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE="${ZDOTDIR:-$HOME/.zsh}/.zsh_history"
 
 ## History command configuration
 setopt no_bang_hist	      # disable old history syntax
