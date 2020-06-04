@@ -1,0 +1,57 @@
+#compdef copyq
+#autoload
+
+typeset -A cmds
+
+cmds=(
+    show      	'show main window and optionally open tab with given name'
+    hide      	'hide main window'
+    toggle    	'show or hide main window'
+    menu      	'open context menu'
+    exit      	'exit server'
+    disable   	'disable clipboard content storing'
+    enable    	'enable clipboard content storing'
+    clipboard 	'print clipboard content ([MIME])'
+    selection 	'print X11 selection content ([MIME])'
+    paste     	'paste clipboard to current window'
+    copy      	'set clipboard TEXT or MIME DATA ...'
+    count     	'print amount of items in current tab'
+    select    	'copy item in the ROW to clipboard'
+    next      	'copy next item from current tab to clipboard'
+    previous  	'copy previous item from current tab to clipboard'
+    add       	'add TEXT into clipboard'
+    insert    	'insert text into given row (ROW TEXT)'
+    remove    	'remove items in given rows ([ROWS=0...])'
+    edit      	'edit items or edit new one'
+    separator 	'set separator for items on output'
+    read      	'print raw data of clipboard or item in row'
+    write     	'write raw data to given row ([ROW=0] MIME DATA [MIME DATA])'
+    action    	'show action dialog / run program on ROWS (ROWS PROGRAM)'
+    popup     	'show tray popup message for TIME milliseconds'
+    tab       	'list available tab names'
+    removetab 	'remove tab (NAME)'
+    renametab 	'rename tab (NAME NEW_NAME)'
+    exporttab 	'export items to file'
+    importtab 	'import items from file'
+    config    	'list, get or set option(s) ([OPTION [VALUE]])'
+    eval      	'evaluate ECMAScript program'
+    help      	'print help for COMMAND or all cmds'
+    version   	'print version of program and libraries'
+)
+
+
+function _copyq_commands() {
+    local command_specs=()
+
+    for COMMAND DESC in ${(kv)cmds}; do
+        command_specs+=("${COMMAND}:${DESC//:/\\:}")
+    done
+
+    _describe cmds command_specs
+}
+
+_arguments -A "-*" \
+           "1:command:_copyq_commands" \
+           "--help[help for command]:command:(${(k)cmds})"
+
+unfunction _copyq_commands
