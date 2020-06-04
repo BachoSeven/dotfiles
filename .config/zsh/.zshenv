@@ -1,4 +1,4 @@
-# Path settings
+## Path settings
 	typeset -U PATH path
 	export GOPATH="$HOME/.local/go"
 	export CARGO_HOME="$HOME/.local/share/cargo"

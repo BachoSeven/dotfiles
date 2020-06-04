@@ -8,4 +8,4 @@ export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 export LESSOPEN='| LESSQUIET=1 lesspipe.sh %s'
 export LESSCOLORIZER='pygmentize'
-export LESS='-R'
+export LESS='-iR'

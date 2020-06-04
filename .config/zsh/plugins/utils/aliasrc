@@ -56,7 +56,8 @@ alias \
 		alias pdbkp='rsync -rLtv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 
 # Utils
-	alias nv='nvim .'
+	alias v="nvim"
+	alias nv='v .'
 	alias sT="tabbed -c -r 2 st -w id "
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
@@ -77,6 +78,7 @@ alias \
 	alias rsb='find -name "*(*)*" -type f | rename "s/\(|\)|\[|\]//g"'
 
 # Various
+	command -v ncdu >/dev/null && alias ncdu="ncdu --si --color dark"
 	alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 	alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
@@ -101,34 +103,34 @@ alias \
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias ytop='ytop --colorscheme=solarized-dark -asbp'
-	alias ncdu='ncdu --color dark'
-	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
+	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
 	alias define='define -c $XDG_CONFIG_HOME/define/define.conf.json'
 	alias vip='vis -c $XDG_CONFIG_HOME/vis/config_pulse'
 	alias mcl='java -jar /home/francesco/programs_drivers/games/mc/mcTE.jar'
 
 # Rice
-alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
-alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
-alias cfa='nvim $ZDOTDIR/plugins/utils/aliasrc'
-alias cff='nvim $ZDOTDIR/plugins/utils/functionsrc'
-alias cfp='nvim $ZDOTDIR/.zprofile'
-alias cfd='nvim $XDG_CONFIG_HOME/directories'
-alias mim='nvim $XDG_CONFIG_HOME/mimi/mime.conf'
-alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
-alias lfrc='nvim $XDG_CONFIG_HOME/lf/lfrc'
+alias cfx='v $XDG_CONFIG_HOME/sxiv/exec/key-handler'
+alias cfs='v $XDG_CONFIG_HOME/ncspot/config.toml'
+alias cfa='v $ZDOTDIR/plugins/utils/aliasrc'
+alias cff='v $ZDOTDIR/plugins/utils/functionsrc'
+alias cfp='v $ZDOTDIR/.zprofile'
+alias cfd='v $XDG_CONFIG_HOME/directories'
+alias mim='v $XDG_CONFIG_HOME/mimi/mime.conf'
+alias zarc='v $XDG_CONFIG_HOME/zathura/zathurarc'
+alias lfrc='v $XDG_CONFIG_HOME/lf/lfrc'
 alias zshrc='source $XDG_CONFIG_HOME/zsh/.zshrc'
 alias zt='timezsh'
-alias cfz='nvim $ZDOTDIR/.zshrc'
-alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
-alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'
-alias cfr='nvim $HOME/.Xresources'
-alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
-alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
-alias cfy='nvim $XDG_CONFIG_HOME/subs'
-alias cfu='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
-alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
-alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
+alias cfz='v $ZDOTDIR/.zshrc'
+alias cfzp='v $ZDOTDIR/plugins'
+alias cfv='v $XDG_CONFIG_HOME/v/init.vim'
+alias cfm='v $XDG_CONFIG_HOME/mutt/muttrc'
+alias cfr='v $HOME/.Xresources'
+alias cfmb='v $XDG_CONFIG_HOME/ncmpcpp/bindings'
+alias cfmc='v $XDG_CONFIG_HOME/ncmpcpp/config'
+alias cfy='v $XDG_CONFIG_HOME/subs'
+alias cfu='v ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
+alias cfn='v ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
+alias cft='v ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
 
 
 # Personal files

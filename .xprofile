@@ -9,7 +9,7 @@ xset s 600
 xss slock &
 xrdb -merge -I$HOME ~/.Xresources
 
-mconnect -d &			# mconnect daemon
+mconnect &			# Autoconnect to mconnect saved devices
 mpd & 				# start MPD as user when you log in
 copyq &				# Clipboard management
 xcompmgr &			# xcompmgr for transparency
