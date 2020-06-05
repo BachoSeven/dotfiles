@@ -1,27 +1,24 @@
 # vi: ft=zsh
-#
+
 ## Aliases
 
 # Proper shell shortcuts
 alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-alias udg='sudo apt-get update && sudo apt-get upgrade'
-alias udgp='update && sudo apt-get --with-new-pkgs upgrade'
+alias udgp='update && sudo apt-get --with-new-pkgs dist-upgrade'
 alias aptinstall='sudo apt-get install -y'
 alias aptremove='sudo apt-get remove'
 alias aptpurge='sudo apt-get purge'
 alias aptshow='apt show'
 alias sau='sudo apt autoremove --purge'
 
-alias ..='cd ..'
-alias ...='cd ../../../'
-alias :q='exit' # vim user :)
-
-alias ls='ls -h'
+# default to human readable figures and colorize
+alias df='df --si --print-type'
+alias du='du --si'
+alias ls='ls --si --classify --group-directories-first'
+alias free='free --human'
 alias l='ls --color -lA'
 alias md='mkdir -p'
 alias rd='rmdir'
-
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias grep="grep --color=auto"
@@ -36,8 +33,18 @@ alias \
 	glols="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" \
 	trem='transmission-remote' \
 	z='zathura'
+alias -g \
+	M='| more'	\
+	L='| less'	\
+	H='| head'	\
+	T='| tail'	\
+	G='| grep'	\
+	C='| wc'	\
+	S='| sort'	\
+	N='> /dev/null'
 
-## Dotbare
+
+# Dotbare
 	alias d='dotbare'
 	alias dfc='d commit -a'
 	alias dfp='d push'
@@ -55,7 +62,10 @@ alias \
 		alias pddry='rsync -rLtv -n --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 		alias pdbkp='rsync -rLtv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 
-# Utils
+## Utils
+	alias ..='cd ..'
+	alias ...='cd ../../../'
+	alias :q='exit' # vim user :)
 	alias v="nvim"
 	alias nv='v .'
 	alias sT="tabbed -c -r 2 st -w id "
@@ -119,7 +129,7 @@ alias mim='v $XDG_CONFIG_HOME/mimi/mime.conf'
 alias zarc='v $XDG_CONFIG_HOME/zathura/zathurarc'
 alias lfrc='v $XDG_CONFIG_HOME/lf/lfrc'
 alias zshrc='source $XDG_CONFIG_HOME/zsh/.zshrc'
-alias zt='timezsh'
+alias zt='zshrc_bench'
 alias cfz='v $ZDOTDIR/.zshrc'
 alias cfzp='v $ZDOTDIR/plugins'
 alias cfv='v $XDG_CONFIG_HOME/v/init.vim'

@@ -1,4 +1,99 @@
 ## Functions
+# Much stuff was stolen, among others, from https://github.com/SmartFinn/dotfiles. Thanks!
+
+extract() {
+	if [ ! -f "$1" ]; then
+		printf "extract: '%s' is not a file\n" "$1" >&2
+		return 1
+	fi
+
+	case "$1" in
+		*.tar)  tar -xf "$1"       ;;
+		*.tar.bz|*.tbz| \
+		*.tar.bz2|*.tbz2)
+				tar -xjf "$1"      ;;
+		*.tar.gz|*.tgz)
+				tar -xzf "$1"      ;;
+		*.tar.xz|*.txz)
+				tar -xJf "$1"      ;;
+		*.tar.[zZ]|*.t[zZ])
+				tar -xZf "$1"      ;;
+		*.tar.lz|*.tlz| \
+		*.tar.lzma|*.tlzma| \
+		*.tar.lzo|*.tzo| \
+		*.tar.zst|*.tzst)
+				tar -xaf "$1"      ;;
+		*.7z)   7za x -- "$1"      ;;
+		*.a|*.ar)
+				ar x -- "$1"       ;;
+		*.ace)  unace e -- "$1"    ;;
+		*.alz)  unalz -- "$1"      ;;
+		*.arc|*.ark|*.ARC|*.ARK)
+				nomarch -- "$1"    ;;
+		*.arj|*.ARJ)
+				arj e -r -- "$1"   ;;
+		*.bz|*.bz2)
+				bunzip2 -k -- "$1" ;;
+		*.cab|*.CAB|*.exe|*.EXE)
+				cabextract "$1"    ;;
+		*.cpio) cpio -id -F "$1"   ;;
+		*.deb)  dpkg -x -- "$1" .  ;;
+		*.gz)   gunzip -k "$1"     ;;
+		*.lha|*.lzh)
+				lha x "$1"         ;;
+		*.lrz|*.lrzip|*.rz)
+				lrunzip -- "$1"    ;;
+		*.lz)   lzip -d -k -- "$1" ;;
+		*.lz4)  unlz4 -- "$1"      ;;
+		*.lzma) xz -d -k "$1"      ;;
+		*.lzo)  lzop -x "$1"       ;;
+		*.rar)  unrar x -- "$1"    ;;
+		*.src.rpm|*.rpm|*.spm)
+				rpm2cpio "$1" | cpio -dium ;;
+		*.xz)   unxz -k -- "$1"    ;;
+		*.[zZ]) uncompress -- "$1" ;;
+		*.zip)  unzip -- "$1"      ;;
+		*.zst)  unzstd -- "$1"     ;;
+		*.AppImage) ./"$1" --appimage-extract ;;
+		*)
+			printf "extract: '%s' - unkwown archive format\n" "$1" >&2
+			return 1
+	esac
+}
+
+archive() {
+	local archive="$1"; shift
+
+	if [ ! -e "$1" ]; then
+		printf "usage: compress <ARCHIVE> [FILE...]\n" >&2
+		return 1
+	fi
+
+	case "$archive" in
+		*.tar.bz|*.tbz| \
+		*.tar.bz2|*.tbz2)
+			tar -cjf "$archive" "$@" ;;
+		*.tar.gz|*.tgz)
+			tar -czf "$archive" "$@" ;;
+		*.tar.xz|*.txz)
+			tar -cJf "$archive" "$@" ;;
+		*.tar.[zZ]|*.t[zZ])
+			tar -cZf "$archive" "$@" ;;
+		*.tar.lzma|*.tlzma| \
+		*.tar.lzo|*.tzo| \
+		*.tar.lz|*.tlz)
+			tar -caf "$archive" "$@" ;;
+		*.tar)
+			tar -cf  "$archive" "$@" ;;
+		*.7z)
+			7za a    "$archive" "$@" ;;
+		*.zip)
+			zip -r   "$archive" "$@" ;;
+		*)
+			printf "'%s' is unknown archive format\n" "$archive" >&2
+			return 1
+	esac
+}
 
 # Update the list of processes by pressing CTRL-R
 lps() {
@@ -6,10 +101,30 @@ ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \
 	 --header-lines=1 --layout=reverse
 }
 
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time --output=/tmp/zt$i $shell -i -c exit; done
-  for i in $(seq 1 10); do awk '{print $3}' /tmp/zt$i | grep -v swap | sed 's/elapsed//g'|sed 's/0:00\.//g' && rm -f /tmp/zt$i ;done
+most-used-commands() {
+	local -i top="${1:-10}"
+	local -i last="${2:-999999}"
+
+	tail -n "$last" "${HISTFILE:-${ZDOTDIR:-$HOME}/.zsh_history}" \
+		| awk '
+			{ $1 == "sudo" ? CMD[$2]++ : CMD[$1]++; count++; }
+			END {
+				for (a in CMD)
+					print CMD[a] " " CMD[a]/count*100 "% " a;
+				}' \
+		| sort -nr \
+		| head -n "$top" \
+		| column -c2 -s " " -t \
+		| nl
+}
+
+xopen() {
+	xdg-open "$@" >/dev/null 2>&1
+}
+
+command -v zsh >/dev/null &&
+zshrc_bench() {
+	for _ ({1..10}); time zsh -i -c exit
 }
 
 function 256col {
@@ -40,7 +155,38 @@ truecolor() {
 	}'
 }
 
-# ffmpeg utilities
+# a simple password generator
+genpasswd() {
+	# usage: genpasswd [-adhps] [length [count]]
+	local -i human_readable=0
+	local chars=""
+
+	while getopts "adhps" opt; do
+		case "$opt" in
+			a) chars+="[:alnum:]" ;;
+			d) chars+="[:digit:]" ;;
+			p) chars+="[:punct:]" ;;
+			s) chars+="[:graph:]" ;;
+			h) human_readable=1   ;;
+		esac
+	done
+	shift $((OPTIND - 1))
+
+	local -i length="${1:-8}"
+	local -i count="${2:-1}"
+
+	if [ "$human_readable" -eq 1 ]; then
+		command -v apg >/dev/null || return 1
+		apg -c /dev/urandom -m "$length" -n "$count" -E oOlL10
+	else
+		< /dev/urandom \
+			| tr -dc "${chars:-[:alnum:]}" \
+			| fold -w "$length" \
+			| head -n "$count"
+	fi
+}
+
+## ffmpeg utilities
 compress() {
 	ffmpeg -i $1 -vcodec h264 -acodec mp3 $2
 }
@@ -50,10 +196,8 @@ compressbrate() {
 	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
 }
 
-# mkdir and cd into it!
-mdcd () {
-  mkdir -p $@ && cd ${@:$#}
-}
+# create a new directory and enter it
+mkcd() { mkdir -p "$1" && cd "$1"; }
 
 # fuzzy-find manuals
 manfd() {
@@ -61,7 +205,114 @@ manfd() {
     f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf) && man $f
 }
 
-# find INSIDE manuals
+# find inside manuals
 fman() {
     man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
+}
+
+# A wget wrapper
+command -v wget >/dev/null &&
+download_files_from_page() {
+	if [ "$#" -lt 2 ]; then
+		cat <<- EOF
+		Download all files with specific extension on a webpage
+		Usage: $0 extension[,extension...] URL
+		Example:
+		$0 mp4 http://example.com/files/
+		$0 mp3,ogg,wma http://samples.com/files/
+		Google: http://lmgtfy.com/?q=intitle%3Aindex.of+mp3+-html+-htm+-php+-asp+-txt+-pls+madonna
+		based on http://stackoverflow.com/a/18709707
+		EOF
+
+		return 1
+	fi
+
+	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$1")"
+	mkdir -pv "$outputdir_name"
+	cd "$outputdir_name" && wget -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2"
+}
+
+_run() {
+	# run command if it exists
+	local -a saved_cmd=("$@")
+
+	case "$1" in
+		sudo) shift 1 ;;
+	esac
+
+	if command -v "$1" >/dev/null; then
+		echo "\e[1;32m =>\e[0m" "${saved_cmd[@]}" >&2
+		"${saved_cmd[@]}"
+	fi
+}
+
+# Updates
+up2date() {
+	_run sudo apt update
+	_run sudo apt dist-upgrade -Vy
+	_run nvim +PlugUpdate +quitall
+	_run pipx upgrade-all
+}
+
+## apt functions
+apt-history() {
+	# Parses dpkg log files to get package installation, removal, and rollback
+	# information.
+	#
+	# Based on https://github.com/blyork/apt-history
+	_logcat() {
+		for file in /var/log/dpkg.log*; do
+			[ -f "$file" ] || return 1
+			case "$file" in
+				*.log|*.log.1)
+					cat "$file"
+					;;
+				*.gz)
+					zcat "$file"
+					;;
+				*)
+					printf '*** Invalid file: "%s" ***\n' "$file" >&2
+					return 1
+			esac
+		done
+	}
+
+	logcat() {
+		_logcat | sort -g
+	}
+
+	case "$1" in
+		install|upgrade|remove)
+			logcat | grep " $1 "
+			;;
+		rollback)
+			logcat \
+				| grep upgrade \
+				| grep "$2" -A10000000 \
+				| grep "$3" -B10000000 \
+				| awk '{print $4"="$5}'
+			;;
+		*)
+			logcat
+	esac
+}
+
+ppa-find() {
+	# usage: ppa-find <search string>
+	wget -qO- "https://launchpad.net/ubuntu/+ppas?name_filter=${*// /+}" | \
+		sed -n 's#^.\+=\"\(.\+\)\">.\+</a></td>.*$#https://launchpad.net\1#p'
+}
+command -v apt-key >/dev/null &&
+apt-import-key() {
+	# usage: apt-import-key <key>
+	sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com "$1"
+}
+
+command -v apt-mark >/dev/null &&
+list_installed_packages() {
+	# returns list of packages installed by user
+	# https://askubuntu.com/a/492343/565749
+	comm -23 \
+		<(apt-mark showmanual | sort -u) \
+		<(gzip -dc /var/log/installer/initial-status.gz | awk '/Package/ {print $2}' | sort -u)
 }
