@@ -38,6 +38,7 @@
 		done
 	}
 	plugins=(
+		copyq
 		custom-completions
 		fzf
 		history
@@ -58,7 +59,7 @@
 	bindkey -s '^f' 'speedtest-cli\n'
 	bindkey -s '^[n' 'neomutt\n'
 	bindkey -s '^a' 'bc -l\n'
-	bindkey -s '^s' 'udg\n'
+	bindkey -s '^s' 'up2date\n'
 
 ## Colors & Appearance
 	autoload -U colors && colors

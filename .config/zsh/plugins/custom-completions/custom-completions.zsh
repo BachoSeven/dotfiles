@@ -1,1 +1,1 @@
-fpath=($0:A:h $fpath)
+fpath=( $0:A:h $fpath )
