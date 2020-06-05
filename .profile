@@ -45,7 +45,7 @@ export DOTBARE_KEY="
   --bind=alt-t:toggle-preview
 "
 
-export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export SUDO_ASKPASS="$HOME/.local/bin/scripts/dmenupass"
 export GS_FONTPATH="/usr/local/share/pmw/psfonts"
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 

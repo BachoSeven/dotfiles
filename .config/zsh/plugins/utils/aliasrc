@@ -40,6 +40,7 @@ alias \
 	alias dfc='d commit -a'
 	alias dfp='d push'
 	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
+	alias dupsub="d submodule foreach git pull origin master"
 
 # Backup:
 	# Elements

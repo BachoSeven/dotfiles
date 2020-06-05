@@ -1,6 +1,29 @@
 ## Functions
 # Much stuff was stolen, among others, from https://github.com/SmartFinn/dotfiles. Thanks!
 
+_run() {
+	# run command if it exists
+	local -a saved_cmd=("$@")
+
+	case "$1" in
+		sudo) shift 1 ;;
+	esac
+
+	if command -v "$1" >/dev/null; then
+		echo "\e[1;32m =>\e[0m" "${saved_cmd[@]}" >&2
+		"${saved_cmd[@]}"
+	fi
+}
+
+# Updates
+up2date() {
+	_run sudo apt update
+	_run sudo apt dist-upgrade -Vy
+	_run nvim +PlugUpdate +quitall
+	_run pipx upgrade-all
+}
+
+
 extract() {
 	if [ ! -f "$1" ]; then
 		printf "extract: '%s' is not a file\n" "$1" >&2
@@ -230,28 +253,6 @@ download_files_from_page() {
 	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$1")"
 	mkdir -pv "$outputdir_name"
 	cd "$outputdir_name" && wget -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2"
-}
-
-_run() {
-	# run command if it exists
-	local -a saved_cmd=("$@")
-
-	case "$1" in
-		sudo) shift 1 ;;
-	esac
-
-	if command -v "$1" >/dev/null; then
-		echo "\e[1;32m =>\e[0m" "${saved_cmd[@]}" >&2
-		"${saved_cmd[@]}"
-	fi
-}
-
-# Updates
-up2date() {
-	_run sudo apt update
-	_run sudo apt dist-upgrade -Vy
-	_run nvim +PlugUpdate +quitall
-	_run pipx upgrade-all
 }
 
 ## apt functions
