@@ -1,0 +1,3 @@
+#compdef cq
+
+compdef cq=copyq

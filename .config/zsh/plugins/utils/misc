@@ -1,0 +1,15 @@
+## Colors & Appearance
+	autoload -U colors && colors
+
+## Autocompletion
+	autoload -U compinit
+	zmodload zsh/complist
+	compinit
+	_comp_options+=(globdots)							# Include hidden files.
+# Basic autocomplete: case-insensitive and colored with LS_COLORS
+	zstyle ':completion:*:*:*:*:*' menu select
+	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# TheFuck
+	eval $(thefuck --alias f)
