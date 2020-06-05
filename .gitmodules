@@ -7,3 +7,6 @@
 [submodule ".config/zsh/plugins/powerlevel10k"]
 	path = .config/zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
+[submodule ".config/zsh/plugins/fsh"]
+	path = .config/zsh/plugins/fsh
+	url = https://github.com/zdharma/fast-syntax-highlighting
