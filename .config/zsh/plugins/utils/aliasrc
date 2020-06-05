@@ -1,4 +1,5 @@
 # vi: ft=zsh
+## This file is kept bash-compatible for use with dmenu_aliases
 
 ## Aliases
 
@@ -33,16 +34,6 @@ alias \
 	glols="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" \
 	trem='transmission-remote' \
 	z='zathura'
-alias -g \
-	M='| more'	\
-	L='| less'	\
-	H='| head'	\
-	T='| tail'	\
-	G='| grep'	\
-	C='| wc'	\
-	S='| sort'	\
-	N='> /dev/null'
-
 
 # Dotbare
 	alias d='dotbare'
