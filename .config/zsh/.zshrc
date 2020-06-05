@@ -18,6 +18,10 @@
 	setopt extended_glob								# Enable globbing
 	stty stop undef									# Disable ctrl-s to freeze terminal.
 	unsetopt RM_STAR_SILENT 							# Always ask before rm folder/*
+# Changing/making/removing directory
+	setopt auto_pushd
+	setopt pushd_ignore_dups
+	setopt pushdminus
 
 ## Plugins
 	function zsh_load_plugins() {
