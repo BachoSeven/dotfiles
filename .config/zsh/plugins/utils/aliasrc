@@ -5,7 +5,7 @@
 
 # Proper shell shortcuts
 alias update='sudo apt-get update'
-alias udgp='update && sudo apt-get --with-new-pkgs dist-upgrade'
+alias udgp='update && sudo apt-get --with-new-pkgs upgrade'
 alias aptinstall='sudo apt-get install -y'
 alias aptremove='sudo apt-get remove'
 alias aptpurge='sudo apt-get purge'
@@ -31,7 +31,7 @@ alias \
 	ka='killall' \
 	g='git' \
 	gc='g clone' \
-	glols="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" \
+	glol="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" \
 	trem='transmission-remote' \
 	z='zathura'
 
@@ -133,7 +133,7 @@ alias zshrc='source $XDG_CONFIG_HOME/zsh/.zshrc'
 alias zt='zshrc_bench'
 alias cfz='v $ZDOTDIR/.zshrc'
 alias cfzp='v $ZDOTDIR/plugins'
-alias cfv='v $XDG_CONFIG_HOME/v/init.vim'
+alias cfv='v $XDG_CONFIG_HOME/nvim/init.vim'
 alias cfm='v $XDG_CONFIG_HOME/mutt/muttrc'
 alias cfr='v $HOME/.Xresources'
 alias cfmb='v $XDG_CONFIG_HOME/ncmpcpp/bindings'
