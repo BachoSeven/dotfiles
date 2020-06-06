@@ -10,6 +10,7 @@
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+	zstyle ':completion:*' rehash true
 
 # function to navigate previous dirs taken from omz
 function di () {
