@@ -4,7 +4,7 @@
 ## Autocompletion
 	autoload -U compinit
 	zmodload zsh/complist
-	compinit
+	compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 	_comp_options+=(globdots)							# Include hidden files.
 # Basic autocomplete: case-insensitive and colored with LS_COLORS
 	zstyle ':completion:*:*:*:*:*' menu select

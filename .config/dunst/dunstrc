@@ -67,7 +67,7 @@
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
-    history = ctrl+dead_grave
+    history = ctrl+grave
     context = ctrl+shift+period
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
@@ -154,7 +154,7 @@
 # [shortcuts]
     # close = ctrl+space
     # close_all = ctrl+shift+space
-    # history = ctrl+dead_grave
+    # history = ctrl+grave
     # context = ctrl+shift+period
 # [urgency_low]
     # # IMPORTANT: colors have to be defined in quotation marks.

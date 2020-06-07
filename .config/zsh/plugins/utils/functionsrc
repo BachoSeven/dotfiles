@@ -17,8 +17,7 @@ _run() {
 
 # Updates
 up2date() {
-	_run sudo apt update
-	_run sudo apt dist-upgrade -Vy
+	_run yay -Syu
 	_run nvim +PlugUpdate +quitall
 	_run pipx upgrade-all
 }
@@ -255,65 +254,41 @@ download_files_from_page() {
 	cd "$outputdir_name" && wget -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2"
 }
 
-## apt functions
-apt-history() {
-	# Parses dpkg log files to get package installation, removal, and rollback
-	# information.
-	#
-	# Based on https://github.com/blyork/apt-history
-	_logcat() {
-		for file in /var/log/dpkg.log*; do
-			[ -f "$file" ] || return 1
-			case "$file" in
-				*.log|*.log.1)
-					cat "$file"
-					;;
-				*.gz)
-					zcat "$file"
-					;;
-				*)
-					printf '*** Invalid file: "%s" ***\n' "$file" >&2
-					return 1
-			esac
-		done
-	}
-
-	logcat() {
-		_logcat | sort -g
-	}
-
-	case "$1" in
-		install|upgrade|remove)
-			logcat | grep " $1 "
-			;;
-		rollback)
-			logcat \
-				| grep upgrade \
-				| grep "$2" -A10000000 \
-				| grep "$3" -B10000000 \
-				| awk '{print $4"="$5}'
-			;;
-		*)
-			logcat
-	esac
+escape() {
+    # Uber useful when you need to translate weird as fuck path into single-argument string.
+    local escape_string_input
+    echo -n "String to escape: "
+    read escape_string_input
+    printf '%q\n' "$escape_string_input"
 }
 
-ppa-find() {
-	# usage: ppa-find <search string>
-	wget -qO- "https://launchpad.net/ubuntu/+ppas?name_filter=${*// /+}" | \
-		sed -n 's#^.\+=\"\(.\+\)\">.\+</a></td>.*$#https://launchpad.net\1#p'
-}
-command -v apt-key >/dev/null &&
-apt-import-key() {
-	# usage: apt-import-key <key>
-	sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com "$1"
+confirm() {
+    local answer
+    echo -ne "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
+    read -q answer
+        echo
+    if [[ "${answer}" =~ ^[Yy]$ ]]; then
+        command "${@}"
+    else
+        return 1
+    fi
 }
 
-command -v apt-mark >/dev/null &&
-list_installed_packages() {
-	# returns list of packages installed by user
-	# https://askubuntu.com/a/492343/565749
-	comm -23 \
-		<(apt-mark showmanual | sort -u) \
-		<(gzip -dc /var/log/installer/initial-status.gz | awk '/Package/ {print $2}' | sort -u)
+confirm_wrapper() {
+    if [ "$1" = '--root' ]; then
+        local as_root='true'
+        shift
+    fi
+
+    local prefix=''
+
+    if [ "${as_root}" = 'true' ] && [ "${USER}" != 'root' ]; then
+        prefix="sudo"
+    fi
+    confirm ${prefix} "$@"
 }
+
+# stolen with the above from https://github.com/slashbeast/conf-mgmt/blob/master/roles/home_files/files/DOTzshrc
+poweroff() { confirm_wrapper --root $0 "$@"; }
+reboot() { confirm_wrapper --root $0 "$@"; }
+hibernate() { confirm_wrapper --root $0 "$@"; }

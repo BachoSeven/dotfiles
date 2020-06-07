@@ -6,7 +6,7 @@ export TERMINAL="st"
 export READER="zathura"
 export OPENER='xdg-open'
 export EDITOR="nvim"
-export BROWSER="brave-browser"
+export BROWSER="brave-nightly"
 export LOCATION="Pisa" # weather script
 
 # XDG BASE DIRECTORIES compliant settings

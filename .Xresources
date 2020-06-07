@@ -122,8 +122,13 @@ xscreensaver.dateFormat:    %I:%M%P %b %d
 Vncviewer*grabKeyboard:	true
 
 !! Transparency (0-1):
-st.alpha: 0.8
+st.alpha: 0.85
 
 !! Misc
-*antialias:  true
-*autohint:   true
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault

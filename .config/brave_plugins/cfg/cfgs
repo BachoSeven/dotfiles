@@ -1,2 +1,2 @@
-theme: sol ref dark
-plugins:vimium autologin stylish google-doc-off gtransl(<C-R>)
+theme: sol ref dark/gruvbox
+plugins:vimium autologin stylish(archlinuxdark2018 dark4chan draculagit flattube fuckyouyt gmailsollight gmailnyan rainbowtube solarizedeverythingwiki vkdarksimple) google-doc-off gtransl(<C-R>) tampermonkey(musescore-down nhentai-helper) pdf-viewer the great suspender

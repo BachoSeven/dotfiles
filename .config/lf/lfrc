@@ -116,18 +116,19 @@ cmd PasteSelect %{{
 	lf -remote "send $id select $filename"
 }}
 
-cmd paste ${{
-    send="while read -r line; do lf -remote \"send $id echo \$line\"; done && lf -remote 'send reload'"
+cmd paste &{{
     load=$(lf -remote 'load')
     mode=$(echo "$load" | sed -n '1p')
-    srcF=$(mktemp)
-    echo "$load" | sed '1d' > "$srcF"
-    s='' && [ ! -w . ] && s='sudo'
-    case "$mode" in
-        copy) cmd='cp-p';; move) cmd='mv-p';;
-    esac
-    cmd="$cmd --new-line"
-    $s sh -c "$cmd --backup=numbered -F \"$srcF\" . | $send && rm -f \"$srcF\" &"
+    list=$(echo "$load" | sed '1d')
+    if [ $mode = 'copy' ]; then
+        rsync -av --ignore-existing --progress $list . \
+        | stdbuf -i0 -o0 -e0 tr '\r' '\n' \
+        | while read line; do
+            lf -remote "send $id echo $line"
+        done
+    elif [ $mode = 'move' ]; then
+        mv -n $list .
+    fi
     lf -remote 'send load'
     lf -remote 'send clear'
 }}

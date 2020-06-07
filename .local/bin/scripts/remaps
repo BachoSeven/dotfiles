@@ -4,7 +4,7 @@
 # Increase key speed via a rate change
 xset r rate 280 55
 # Map the caps lock key to super...
-setxkbmap -option caps:super -layout us -variant intl
+setxkbmap -option caps:super -variant altgr-intl
 # But when it is pressed only once, treat it as escape.
 killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
 # Map the menu button to right super as well.
