@@ -4,9 +4,7 @@
 	bindkey -s '^g' 'ytop\n'
 	bindkey -s '^v' 'nvim\n'
 	bindkey -s '^u' 'u\n'
-	bindkey -s '^f' 'speedtest-cli\n'
 	bindkey -s '^[n' 'neomutt\n'
-	bindkey -s '^a' 'bc -l\n'
 	bindkey -s '^s' 'up2date\n'
 	bindkey -M menuselect 'h' vi-backward-char
 	bindkey -M menuselect 'k' vi-up-line-or-history

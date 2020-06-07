@@ -1,5 +1,5 @@
 [Desktop Entry]
+MimeType=image/jpeg;image/bmp;image/gif;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-tga;image/tiff;image/x-xpixmap;image/jpg;image/x-bmp;image/png;
 Type=Application
 Name=Image viewer
-MimeType=image/jpeg;image/bmp;image/gif;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-tga;image/tiff;image/x-xpixmap;image/jpg;image/x-bmp;image/png;
-Exec=~/.local/bin/sxiv-open %u
+Exec=/home/fra/.local/bin/scripts/sxiv-open" %u

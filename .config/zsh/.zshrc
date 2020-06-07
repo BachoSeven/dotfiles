@@ -11,7 +11,6 @@
 
 ## Powerlevel10k
 	[ -f $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme ] && source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
-	[[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" 2>/dev/null
 
 ## Basic Settings
 	setopt AUTO_CD          							# `dirname` is equivalent to `cd dirname`
@@ -42,6 +41,8 @@
 		for plugin ($@); do
 			if [ -r "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh" ]; then
 				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh"
+			elif [ -r "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.plugin.zsh" ]; then
+				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.plugin.zsh"
 			else
 				echo "$funcstack[1]: Unable to load '$plugin'." >&2
 			fi
@@ -50,12 +51,13 @@
 	plugins=(
 		copyq
 		custom-completions
-		fzf
+		dotbare
 		history
 		less
 		lf
 		utils
 		vi-mode
+		fzf
 	)
 	zsh_load_plugins $plugins
 

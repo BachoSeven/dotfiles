@@ -8,7 +8,7 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
 
 ## Current Setup
 
-I run Ubuntu 20.04 on an Asus UX310UQK latptop; here are some of the programs I use:
+I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I use:
 - Suckless utilities (see my patched repos):   **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), and **[st](https://github.com/BachoSeven/st)** (terminal emulator).
 - **zsh**  shell, with some custom plugins; **[powerlevel10k](https://github.com/romkatv/powerlevel10k)** with a custom lean theme; and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax higlighting.
 - **neovim** text editor

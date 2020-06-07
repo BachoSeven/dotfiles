@@ -3,14 +3,8 @@
 
 ## Aliases
 
-# Proper shell shortcuts
-alias update='sudo apt-get update'
-alias udgp='update && sudo apt-get --with-new-pkgs upgrade'
-alias aptinstall='sudo apt-get install -y'
-alias aptremove='sudo apt-get remove'
-alias aptpurge='sudo apt-get purge'
-alias aptshow='apt show'
-alias sau='sudo apt autoremove --purge'
+# Pacman
+alias clean='sudo pacman -Rs $(pacman -Qtdq)'
 
 # default to human readable figures and colorize
 alias df='df --si --print-type'
@@ -72,7 +66,7 @@ alias \
 	alias sT="tabbed -c -r 2 st -w id "
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
-	alias brave='brave-browser'
+	alias brave='brave-nightly'
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
 	alias cx='chmod +x'
 	alias xclip="xclip -sel clip"
@@ -105,7 +99,7 @@ alias \
 	alias ud='udict'
 	alias def='define'
 	alias abook='abook -C $XDG_CONFIG_HOME/abook/abookrc --datafile $XDG_DATA_HOME/abook/addressbook'
-	alias fixabook="sudo sed -i 's/abook -/abook -C \$XDG_CONFIG_HOME\/abook\/abookrc --datafile \$XDG_DATA_HOME\/abook\/addressbook -/g' /usr/local/share/mutt-wizard/mutt-wizard.muttrc"
+	alias fixabook="sudo sed -i 's/abook -/abook -C \$XDG_CONFIG_HOME\/abook\/abookrc --datafile \$XDG_DATA_HOME\/abook\/addressbook -/g' /usr/share/mutt-wizard/mutt-wizard.muttrc"
 	alias waterfox='~/programs_drivers/web_stuff/waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 	alias flp='flashplayer'
@@ -115,9 +109,7 @@ alias \
 	alias fb="sudo sed -i '/Actions=new-window;new-private-window;/ a StartupWMClass=brave-browser' /usr/share/applications/brave-browser-nightly.desktop"
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
-	alias ytop='ytop --colorscheme=solarized-dark -asbp'
 	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
-	alias define='define -c $XDG_CONFIG_HOME/define/define.conf.json'
 	alias vip='vis -c $XDG_CONFIG_HOME/vis/config_pulse'
 	alias mcl='java -jar /home/francesco/programs_drivers/games/mc/mcTE.jar'
 
