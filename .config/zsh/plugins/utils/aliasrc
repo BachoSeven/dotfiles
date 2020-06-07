@@ -94,7 +94,7 @@ alias \
 	alias pf='pfetch'
 	alias mc='mconnect'
 	alias mctl='mconnectctl'
-	alias tg='Telegram'
+	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias ud='udict'
 	alias def='define'

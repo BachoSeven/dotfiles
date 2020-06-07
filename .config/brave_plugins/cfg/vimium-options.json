@@ -4,10 +4,6 @@
     {
       "pattern": "https?://mail.google.com/*",
       "passKeys": ""
-    },
-    {
-      "pattern": "about:blank*",
-      "passKeys": ""
     }
   ],
   "filterLinkHints": true,
