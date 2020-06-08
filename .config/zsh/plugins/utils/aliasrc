@@ -97,20 +97,16 @@ alias \
 	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias ud='udict'
-	alias def='define'
 	alias abook='abook -C $XDG_CONFIG_HOME/abook/abookrc --datafile $XDG_DATA_HOME/abook/addressbook'
 	alias fixabook="sudo sed -i 's/abook -/abook -C \$XDG_CONFIG_HOME\/abook\/abookrc --datafile \$XDG_DATA_HOME\/abook\/addressbook -/g' /usr/share/mutt-wizard/mutt-wizard.muttrc"
-	alias waterfox='~/programs_drivers/web_stuff/waterfox --profile /home/francesco/.config/waterfox/gsrs4v45.68-edition-default'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 	alias flp='flashplayer'
 	alias sqm='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
 	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
-	alias fb="sudo sed -i '/Actions=new-window;new-private-window;/ a StartupWMClass=brave-browser' /usr/share/applications/brave-browser-nightly.desktop"
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
-	alias vip='vis -c $XDG_CONFIG_HOME/vis/config_pulse'
 	alias mcl='java -jar /home/francesco/programs_drivers/games/mc/mcTE.jar'
 
 # Rice
