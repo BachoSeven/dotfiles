@@ -1,0 +1,4 @@
+[Default Applications]
+text/plain=nvim.desktop;
+image/png=img.desktop;
+image/jpeg=img.desktop;

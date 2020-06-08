@@ -54,7 +54,7 @@
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/brave-nightly
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
     #
@@ -141,7 +141,7 @@
     # sticky_history = yes
     # history_length = 20
     # dmenu = /usr/bin/dmenu -p dunst:
-    # browser = /usr/bin/brave-browser --new-window
+    # browser = /usr/bin/brave-nightly
     # # Always run rule-defined scripts, even if the notification is suppressed
     # always_run_script = true
     # #
