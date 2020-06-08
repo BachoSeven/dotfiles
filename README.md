@@ -22,6 +22,10 @@ I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I us
 - **zathura** pdf & djvu reader
 - Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
+
+### Various
+- I use brave as a browser, find more in `.config/brave_plugins`; a nice addition to its setup is to set duckduckgo as a new page. Then, using `gruvboxytheme` passphrase in duckduckgo settings gives you a decent start page which supports Vimium's Vomnibar.
+
 ## Screens
 
 #### Current Background
