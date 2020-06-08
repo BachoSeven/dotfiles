@@ -9,8 +9,6 @@
 		     exit
 	 fi
 
-## Powerlevel10k
-
 ## Basic Settings
 	setopt AUTO_CD          							# `dirname` is equivalent to `cd dirname`
 	setopt extended_glob								# Enable globbing
@@ -73,3 +71,4 @@
 	)
 	zsh_load_plugins $plugins
 	source $ZDOTDIR/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+	nyan # uwu
