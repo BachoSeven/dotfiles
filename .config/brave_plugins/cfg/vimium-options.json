@@ -12,7 +12,7 @@
   "keyMappings": "map s Vomnibar.activate keyword=g\nmap w Vomnibar.activate keyword=w\nmap <a-s> Vomnibar.activateInNewTab keyword=g\nmap <a-w> Vomnibar.activateInNewTab keyword=w",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
-  "newTabUrl": "about:newtab",
+  "newTabUrl": "https://duckduckgo.com/",
   "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
   "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
   "regexFindMode": false,

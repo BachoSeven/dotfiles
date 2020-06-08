@@ -18,7 +18,7 @@ exit $?
 # encoding: utf-8
 
 require 'json'
-FILE = '~/.config/BraveSoftware/Brave-Browser-Nightly/Default/Bookmarks'
+FILE = '/home/fra/.config/BraveSoftware/Brave-Browser/Default/Bookmarks'
 CJK  = /\p{Han}|\p{Katakana}|\p{Hiragana}|\p{Hangul}/
 
 def build parent, json
