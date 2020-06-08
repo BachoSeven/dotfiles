@@ -10,7 +10,6 @@
 	 fi
 
 ## Powerlevel10k
-	[ -f $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme ] && source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
 
 ## Basic Settings
 	setopt AUTO_CD          							# `dirname` is equivalent to `cd dirname`
@@ -40,12 +39,23 @@
 		local plugin
 		for plugin ($@); do
 			if [ -r "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh" ]; then
-				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh"
+				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh" 2>/dev/null
 			elif [ -r "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.plugin.zsh" ]; then
-				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.plugin.zsh"
+				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.plugin.zsh" 2>/dev/null
+			elif [ -r "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh-theme" ]; then
+				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh-theme" 2>/dev/null
 			else
 				echo "$funcstack[1]: Unable to load '$plugin'." >&2
 			fi
+		done
+	}
+	function zsh_update_plugins() {
+		local plugin
+
+		for plugin (${ZDOTDIR:-$HOME/.zsh}/plugins/*(N/)); do
+			git -C "$plugin" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
+			printf '%s: ' "$plugin:t"
+			git -C "$plugin" pull 2>/dev/null || echo "Unable to upgrade."
 		done
 	}
 	plugins=(
@@ -58,8 +68,8 @@
 		utils
 		vi-mode
 		fzf
+		powerlevel10k
+		p10k
 	)
 	zsh_load_plugins $plugins
-
-	source $ZDOTDIR/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null	# FastSyntaxHighlighting
-	[ -f $ZDOTDIR/.p10k.zsh ] && source $ZDOTDIR/.p10k.zsh 2>/dev/null		# this also should be last
+	source $ZDOTDIR/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null

@@ -19,6 +19,7 @@ _run() {
 up2date() {
 	_run yay -Syu
 	_run nvim +PlugUpdate +quitall
+	_run zsh_update_plugins
 	_run pipx upgrade-all
 }
 
@@ -219,7 +220,7 @@ compressbrate() {
 }
 
 # create a new directory and enter it
-mkcd() { mkdir -p "$1" && cd "$1"; }
+md() { mkdir -p "$1" && cd "$1"; }
 
 # fuzzy-find manuals
 manfd() {
