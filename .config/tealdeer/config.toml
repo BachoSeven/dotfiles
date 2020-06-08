@@ -1,0 +1,28 @@
+[style.description]
+foreground = "white"
+underline = false
+bold = false
+
+[style.command_name]
+foreground = "blue"
+underline = false
+bold = false
+
+[style.example_text]
+foreground = "green"
+underline = false
+bold = false
+
+[style.example_code]
+foreground = "purple"
+underline = false
+bold = false
+
+[style.example_variable]
+foreground = "yellow"
+underline = true
+bold = false
+
+[display]
+compact = false
+use_pager = false
