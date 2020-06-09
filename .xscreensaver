@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.42 for francesco on Tue May 19 16:09:59 2020.
+# Written by xscreensaver-demo 5.44 for fra on Tue Jun  9 12:35:31 2020.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:20:00
@@ -32,14 +32,14 @@ dpmsOff:	4:00:00
 grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: False
-imageDirectory:
+imageDirectory:	
 
 mode:		random
 selected:	-1
 
 textMode:	program
 textLiteral:	XScreenSaver
-textFile:
+textFile:	
 textProgram:	fortune
 textURL:	http://feeds.feedburner.com/ubuntu-news
 
@@ -292,6 +292,12 @@ programs:								      \
 - GL: 				peepers -root				    \n\
   GL: 				razzledazzle -root			    \n\
 				vfeedback -root				    \n\
+- GL: 				dnalogo -root				    \n\
+				scooter -root				    \n\
+  GL: 				deepstars -root				    \n\
+  GL: 				gravitywell -root			    \n\
+  GL: 				etruscanvenus -root			    \n\
+  GL: 				gibson -root				    \n\
 
 
 pointerPollTime:    0:00:05
@@ -303,3 +309,4 @@ procInterrupts:	True
 xinputExtensionDev: False
 overlayStderr:	True
 authWarningSlack:   20
+

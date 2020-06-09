@@ -9,29 +9,6 @@
 		     exit
 	 fi
 
-## Basic Settings
-	setopt AUTO_CD          							# `dirname` is equivalent to `cd dirname`
-	setopt extended_glob								# Enable globbing
-	stty stop undef									# Disable ctrl-s to freeze terminal.
-	unsetopt RM_STAR_SILENT 							# Always ask before rm folder/*
-# Remembering recent directories
-	autoload -Uz add-zsh-hook
-	DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
-	if [[ -f "$DIRSTACKFILE" ]] && (( ${#dirstack} == 0 )); then
-		dirstack=("${(@f)"$(< "$DIRSTACKFILE")"}")
-		[[ -d "${dirstack[1]}" ]] && cd -- "${dirstack[1]}"
-	fi
-	chpwd_dirstack() {
-		print -l -- "$PWD" "${(u)dirstack[@]}" > "$DIRSTACKFILE"
-	}
-	add-zsh-hook -Uz chpwd chpwd_dirstack
-	DIRSTACKSIZE='20'
-	setopt auto_pushd
-	setopt pushd_silent
-	setopt pushd_to_home
-	setopt pushd_ignore_dups
-	setopt pushdminus
-
 ## Plugins
 	function zsh_load_plugins() {
 		local plugin
@@ -59,8 +36,9 @@
 		done
 	}
 	plugins=(
+		init
 		copyq
-		custom-completions
+		custom_completions
 		dotbare
 		history
 		less
@@ -69,7 +47,7 @@
 		vi-mode
 		fzf
 		powerlevel10k
-		p10k
+		p10k_theme
 		fsh/fast-syntax-highlighting
 	)
 	zsh_load_plugins $plugins
