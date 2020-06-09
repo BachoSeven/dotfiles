@@ -87,7 +87,7 @@
 	autocmd BufWritepre * %s/\n\+\%$//e
 
 " Recompile and run dwmblocks automatically
-	autocmd BufWritePost ~/programs_drivers/suckless_stuff/dwmblocks/config.h !cd ~/programs_drivers/suckless_stuff/dwmblocks;  sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+	autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks;  sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	autocmd BufWritePost *Xresources,*Xdefaults !xrdb %

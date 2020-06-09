@@ -95,6 +95,7 @@ __tb_edit() {
 			;;
 		(3)
 			arg_2=$(__get_arg_by_pos 2)
+			# Check this
 			check=`grep '@[[:digit:]]\{1,\}' <<< "$arg_2" | head -n 1`
 			if [ "$check" != "" ]; then
 				id=${arg_2##*@}

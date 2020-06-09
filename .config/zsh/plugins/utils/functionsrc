@@ -1,5 +1,5 @@
 ## Functions
-# Much stuff was stolen, among others, from https://github.com/SmartFinn/dotfiles. Thanks!
+# Some of this was stolen, amongst others, from https://github.com/SmartFinn/dotfiles. Thanks!
 
 _run() {
 	# run command if it exists
