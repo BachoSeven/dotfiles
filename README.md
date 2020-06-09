@@ -20,6 +20,7 @@ I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I us
 - **brave** browser
 - **[sxiv](https://github.com/muennich/sxiv)** image viewer
 - **zathura** pdf & djvu reader
+- **ytop** system monitoring
 - Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
 
