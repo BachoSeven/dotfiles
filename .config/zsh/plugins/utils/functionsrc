@@ -225,7 +225,7 @@ md() { mkdir -p "$1" && cd "$1"; }
 # fuzzy-find manuals
 manfd() {
     export MANPATH="/usr/share/man"
-    f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf) && man $f
+    f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf --preview 'man {}'  ) && man $f
 }
 
 # find inside manuals

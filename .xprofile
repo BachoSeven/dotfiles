@@ -2,11 +2,12 @@
 
 dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
-# xscreensaver -no-splash & # replaced by slock atm
-xset s 600
-xss slock &
-xrdb -merge -I$HOME ~/.Xresources
 
+xscreensaver -no-splash &
+xset s 600
+# xss slock &
+
+xrdb -merge -I$HOME ~/.Xresources
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
 mpd & 				# start MPD as user when you log in
 copyq &				# Clipboard management
