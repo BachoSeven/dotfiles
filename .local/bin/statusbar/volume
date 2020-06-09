@@ -18,7 +18,7 @@ case $BLOCK_BUTTON in
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-volstat="$(pactl list sinks)"
+volstat="$(pactl list sinks|tail -n 60)"
 # volstat="$(amixer get Master)" # ALSA only equivalent.
 
 echo "$volstat" | grep -q "Mute: yes" && printf "🔇\\n" && exit
