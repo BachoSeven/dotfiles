@@ -141,6 +141,7 @@ most-used-commands() {
 		| nl
 }
 
+# xdg-open wrapper
 xopen() {
 	xdg-open "$@" >/dev/null 2>&1
 }
@@ -152,14 +153,6 @@ zshrc_bench() {
 
 function 256col {
 	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
-}
-
-cowfortune() {
-  f=/tmp/cowsaytemp
-  fortune | cowsay -f stegosaurus -W 80 > $f
-  let "N = `cat $f | wc -l`-14"
-  head -$N $f
-  tail -14 $f | toilet -f term --termwidth --gay
 }
 
 truecolor() {

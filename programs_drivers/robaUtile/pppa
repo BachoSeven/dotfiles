@@ -1,5 +1,0 @@
-only personall PPAs: 
-sudo apt-add-repository ppa:maxmind/ppa
-sudo apt-add-repository ppa:hluk/copyq
-sudo apt-add-repository ppa:hpjansson/chafa
-sudo apt-add-repository ppa:neovim-ppa/unstable
