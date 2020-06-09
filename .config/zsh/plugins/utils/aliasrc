@@ -10,7 +10,7 @@ alias clean='sudo pacman -Rs $(pacman -Qtdq)'
 alias df='df --si --print-type'
 alias du='du --si'
 alias ls='ls --si --classify --group-directories-first'
-alias free='free --human'
+alias free='free --si'
 alias l='ls --color -lA'
 alias rd='rmdir'
 alias fgrep='fgrep --color=auto'
@@ -85,7 +85,6 @@ alias \
 # Various
 	command -v ncdu >/dev/null && alias ncdu="ncdu --si --color dark"
 	alias tb='taskbook'
-	alias nvidia='/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/robaUtile/nvidia_info.sh | aha -b -t "Nvidia" > nvidia.html'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 	alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
 	alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
