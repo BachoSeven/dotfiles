@@ -1,6 +1,15 @@
 ## Functions
 # Some of this was stolen, amongst others, from https://github.com/SmartFinn/dotfiles. Thanks!
 
+src_update() {
+	local dir
+	for dir ($HOME/.local/src/*(N/)); do
+		git -C "$dir" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
+		printf '%s: ' "$dir:t"
+		git -C "$dir" pull 2>/dev/null || echo "Unable to upgrade."
+	done
+}
+
 _run() {
 	# run command if it exists
 	local -a saved_cmd=("$@")
@@ -19,8 +28,9 @@ _run() {
 up2date() {
 	_run yay -Syu
 	_run nvim +PlugUpdate +quitall
-	_run zsh_update_plugins
 	_run pipx upgrade-all
+	_run zsh_update_plugins
+	_run src_update
 }
 
 

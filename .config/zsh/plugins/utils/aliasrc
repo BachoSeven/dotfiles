@@ -70,9 +70,9 @@ alias \
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
 	alias cx='chmod +x'
 	alias xclip="xclip -sel clip"
-	alias rm='rm -i'
-	alias cp='cp -i'
-	alias mv='mv -i'
+	alias rm='rm -iv'
+	alias cp='cp -iv'
+	alias mv='mv -iv'
 	alias p='patch'
 	alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
 	alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
