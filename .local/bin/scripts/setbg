@@ -49,6 +49,8 @@ while true; do
 	esac
 done
 
+pidof dwm >/dev/null && xdotool key super+F12
+
 format=${format:---zoom}
 # Use gifview for gifs, otherwise xwallpaper
 	killall -q xwinwrap 2>/dev/null ;
