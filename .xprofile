@@ -3,13 +3,12 @@
 dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
-xscreensaver -no-splash &
+# xscreensaver -no-splash &
 xset s 600
-# xss slock &
+xss slock &
 
 xrdb -merge -I$HOME ~/.Xresources
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
-mpd & 				# start MPD as user when you log in
 copyq &				# Clipboard management
 xcompmgr &			# xcompmgr for transparency
 remaps &			# Switch caps/super and one-tap_caps/esc, in gnome-shell I only want it as Esc

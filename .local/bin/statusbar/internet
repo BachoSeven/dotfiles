@@ -19,6 +19,6 @@ case "$(cat /sys/class/net/w*/operstate | grep -v down 2>/dev/null)" in
 	*) wifiicon="📡 " ;;
 esac
 
-pingicon="$([ -n "$(echo $(timeout 2s ping -q -c 1 g.co ))" ] && echo "🔵 " || echo "🔴 ")"
+pingicon="$([ -n "$(echo $(timeout 2s ping -q -c 1 g.co 2>/dev/null ))" ] && echo "🔵 " || echo "🔴 ")"
 
 printf "%s%s%s\n" "$pingicon" "$wifiicon" "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)"
