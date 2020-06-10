@@ -1,4 +1,4 @@
-#			Builtin Variables
+##			Builtin Variables
 
 set shell zsh
 set shellopts '-eu:--shwordsplit'	# https://github.com/gokcehan/lf/wiki/Tips#split-words-by-default-in-zsh
@@ -10,9 +10,7 @@ set icons
 set period 1
 set incsearch true
 
-$lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"	# set previewer with env vars
-
-#adjust coloumn width to terminal
+# adjust coloumn width to terminal
 %{{
     w=$(tput cols)
     if [ $w -le 80 ]; then
@@ -24,11 +22,35 @@ $lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"	
     fi
 }}
 
-#			Commands & Functions
+# set previewer with env vars
+$lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"
 
-cmd cleanlatexcompile ${{
-	latexcompile $fx &&
-	notify-send "File(s) compiled."
+##			Commands & Functions
+
+cmd open ${{
+    case "$f" in
+	*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.gz|*.tgz|*.tar.xz|*.txz|*.zip|*.rar|*.iso)
+            mntdir="$f-archivemount"
+            [ ! -d "$mntdir" ] && {
+                mkdir "$mntdir"
+                archivemount "$f" "$mntdir"
+                echo "$mntdir" >> "/tmp/__lf_archivemount_$id"
+            }
+            lf -remote "send $id cd \"$mntdir\""
+            lf -remote "send $id reload"
+            ;;
+	*.pdf|*.djvu|*.ps|*.epub) setsid -f zathura $fx >/dev/null 2>&1 & ;;
+	*)
+	    case $(file --mime-type $f -b) in
+		text/*) $EDITOR $fx;;
+		application/pdf|application/vnd*|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
+		image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
+		image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
+		audio/*) mpv --audio-display=no $f ;;
+		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 & ;;
+		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2> /dev/null & done;;
+	    esac
+    esac
 }}
 
 cmd delete ${{
@@ -62,6 +84,10 @@ cmd copyto ${{
 	notify-send "📋 File(s) copied." "File(s) copies to $dest."
 }}
 
+cmd bulkrename ${{
+    vidir
+}}
+
 cmd fzf_jump ${{
    res="$(find . -maxdepth 2 | fzf --header='Jump to:')"
    if [ -f "$res" ]; then
@@ -70,30 +96,6 @@ cmd fzf_jump ${{
      cmd="cd"
    fi
 lf -remote "send $id $cmd \"$res\""
-}}
-
-cmd open ${{
-    case "$f" in
-	*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.gz|*.tgz|*.tar.xz|*.txz|*.zip|*.rar|*.iso)
-            mntdir="$f-archivemount"
-            [ ! -d "$mntdir" ] && {
-                mkdir "$mntdir"
-                archivemount "$f" "$mntdir"
-                echo "$mntdir" >> "/tmp/__lf_archivemount_$id"
-            }
-            lf -remote "send $id cd \"$mntdir\""
-            lf -remote "send $id reload"
-            ;;
-	*.pdf|*.djvu|*.ps|*.epub) setsid zathura $fx >/dev/null 2>&1 & ;;
-	*)
-	    case $(file --mime-type $f -b) in
-		text/*) $EDITOR $fx;;
-		image/*) rotdir $f | grep -i "\.\(png\|ico\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | setsid sxiv -aio 2>/dev/null | lf-select & ;;
-		audio/*) mpv --audio-display=no $f ;;
-		video/*) setsid mpv $f -quiet >/dev/null 2>&1 & ;;
-		*) for f in $fx; do setsid $OPENER $f >/dev/null 2> /dev/null & done;;
-	    esac
-    esac
 }}
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
@@ -133,6 +135,27 @@ cmd paste &{{
     lf -remote 'send clear'
 }}
 
+cmd Link %{{
+	lf -remote 'load' | while read file; do
+		if [ ! -n "${mode+1}" ]; then
+			mode="$file"
+			continue
+		fi
+		files+=("$file")
+	done
+	if [ "${#files[@]}" -le 1 ]; then
+		lf -remote "send $id echo no files to link"
+		exit 0
+	fi
+	# symbolicly copy mode is indicating a soft link
+	if [[ "$mode" == copy ]]; then
+		ln -sr $files -t .
+	# while a move mode is indicating a hard link
+	elif [[ "$mode" == move ]]; then
+		ln $files -t .
+	fi
+}}
+
 # (xkcd link: https://xkcd.com/1168/)
 cmd extract ${{
     set -f
@@ -164,38 +187,18 @@ cmd zip ${{
     rm -rf $1
 }}
 
-#mpv
+# mpv
 cmd mpv_playlist_dir ${{
 	set -f
 	mpv $fx
 }}
 
-cmd bulkrename ${{
-    vidir
+cmd cleanlatexcompile ${{
+	latexcompile $fx &&
+	notify-send "File(s) compiled."
 }}
 
-cmd Link %{{
-	lf -remote 'load' | while read file; do
-		if [ ! -n "${mode+1}" ]; then
-			mode="$file"
-			continue
-		fi
-		files+=("$file")
-	done
-	if [ "${#files[@]}" -le 1 ]; then
-		lf -remote "send $id echo no files to link"
-		exit 0
-	fi
-	# symbolicly copy mode is indicating a soft link
-	if [[ "$mode" == copy ]]; then
-		ln -sr $files -t .
-	# while a move mode is indicating a hard link
-	elif [[ "$mode" == move ]]; then
-		ln $files -t .
-	fi
-}}
-
-#			Bindings
+##			Bindings
 
 #			File Operations
 map A rename # at the very end

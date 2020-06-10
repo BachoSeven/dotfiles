@@ -1,4 +1,4 @@
 #!/bin/sh
 
 deref="$(readlink -f "$1")"
-rotdir $deref | grep -i "\.\(png\|ico\|tif\|jpg\|jpeg\|gif\|webp\)\(_large\)*$" | sxiv -ai 2>/dev/null
+rotdir $deref | grep -i "\.\(png\|tif\|jpg\|jpeg\|gif\|webp\|ico\)\(_large\)*$" | sxiv -ai 2>/dev/null
