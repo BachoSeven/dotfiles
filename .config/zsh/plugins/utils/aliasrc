@@ -86,14 +86,13 @@ alias \
 	command -v ncdu >/dev/null && alias ncdu="ncdu --si --color dark"
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
-	alias mpva='mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
-	alias mpvv='setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s)'
-	alias bctl='bluetoothctl'
-	alias cbh='connectHeadphones'
 	alias nf='neofetch'
 	alias pf='pfetch'
 	alias mc='mconnect'
 	alias mctl='mconnectctl'
+	alias sctl='systemctl'
+	alias bctl='bluetoothctl'
+	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias ud='udict'
