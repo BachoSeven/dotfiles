@@ -1,0 +1,150 @@
+html {
+      align-items: center;
+      background-color: #1d2021;
+      color: #2aa198;
+      display: flex;
+      font: 20px/1 "Hack Nerd Font", monospace;
+      height: 100%;
+      justify-content: center;
+}
+body {
+      background-color: #282828;
+      border-radius: 3px;
+      box-shadow: 2px 2px 8px #1d1f2177;
+      color: #ebdbb2;
+      display: flex;
+      flex-direction: column;
+      min-height: 60ch;
+      min-width: 55ww;
+      padding: 2em;
+}
+h1 {
+      font-family: 'Font Awesome 5 Free Regular';
+      text-align: center;
+      color: #ebdbb2;
+      font-size: 90;
+}
+p {
+      margin: 0;
+}
+p span {
+      color: #b8bb26;
+}
+a {
+      color: inherit;
+      text-decoration: none;
+}
+
+    a:focus,
+    a:hover {
+      font-weight: bold;
+}
+
+ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+}
+
+nav {
+      column-gap: 2em;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      padding: 1em 0;
+}
+
+ul:nth-child(1n) li:first-child {
+      color: #a54242;
+}
+
+ul:nth-child(2n) li:first-child {
+      color: #de935f;
+}
+
+ul:nth-child(3n) li:first-child {
+      color: #f0c674;
+}
+
+ul:nth-child(4n) li:first-child {
+      color: #8c9440;
+}
+
+ul:nth-child(5n) li:first-child {
+      color: #85678f;
+}
+
+li:first-child {
+      font-weight: bold;
+}
+
+li:last-child {
+      margin: 0 0 1em;
+}
+
+p #cursor {
+       background-color: #add8e6;
+      animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+      0% { opacity: 0; }
+      49% { opacity: 0; }
+      50% { opacity: 1; }
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+list {
+  text-align: center;
+  text-decoration: none;
+}
+
+.all {
+  display: inline-block;
+  vertical-align: top;
+  align-self: center;
+  margin-left: 1em;
+}
+
+.all:nth-child(1) {
+  margin-left: 0;
+}
+
+.title {
+  text-align: center;
+  width: 12em;
+}
+
+.search {
+  background-color: #cc241d;
+}
+
+.reddit {
+  background-color: #458588;
+}
+
+.programming {
+  background-color: #689d6a;
+}
+
+.math {
+  background-color: #d65d0e;
+}
+
+.linux {
+  background-color: #98971a;
+}
+
+.links {
+  text-align: center;
+  color: #282828;
+  font-family: 'Source Code', monospace;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #ebdbb2;
+  width: 12em;
+}
