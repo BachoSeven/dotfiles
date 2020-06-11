@@ -20,4 +20,5 @@ alias -g \
 	G='| grep'	\
 	C='| wc'	\
 	S='| sort'	\
-	N='> /dev/null'
+	N='> /dev/null' \
+	X='|xclip'

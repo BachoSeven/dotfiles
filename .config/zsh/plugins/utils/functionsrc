@@ -223,6 +223,10 @@ compressbrate() {
 	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
 }
 
+pdfsearch() {
+	command -v pdftotext >/dev/null && mkdir -p tmpd; ls *.pdf | while read file; do pdftotext $file tmpd/$file.txt; done; cd tmpd && rg $1 && cd .. && rm -rf tmpd || echo 'Error!'
+}
+
 # create a new directory and enter it
 md() { mkdir -p "$1" && cd "$1"; }
 
