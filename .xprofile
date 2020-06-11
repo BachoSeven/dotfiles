@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS
+dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS 2>/dev/null
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
 # xscreensaver -no-splash &
@@ -11,7 +11,7 @@ xrdb -merge -I$HOME ~/.Xresources
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
 copyq &				# Clipboard management
 xcompmgr &			# xcompmgr for transparency
-remaps &			# Switch caps/super and one-tap_caps/esc, in gnome-shell I only want it as Esc
+remaps &			# Switch caps/super and one-tap_caps/esc
 setbg &				# Basically xwallpaper
 dunst &				# Notifications
 redshift &			# Color temperature
