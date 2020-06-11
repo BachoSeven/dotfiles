@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+MimeType= application/x-tar: application/x-gzip: application/x-bzip2: application/x-rar: application/x-xz: application/zip:
+Type=Application
+Terminal=True
+Name=Archive Explorer
+NoDisplay=true
+Exec=lfmount %u

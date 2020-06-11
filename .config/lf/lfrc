@@ -29,15 +29,8 @@ $lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"
 
 cmd open ${{
     case "$f" in
-	*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.gz|*.tgz|*.tar.xz|*.txz|*.zip|*.rar|*.iso)
-            mntdir="$f-archivemount"
-            [ ! -d "$mntdir" ] && {
-                mkdir "$mntdir"
-                archivemount "$f" "$mntdir"
-                echo "$mntdir" >> "/tmp/__lf_archivemount_$id"
-            }
-            lf -remote "send $id cd \"$mntdir\""
-            lf -remote "send $id reload"
+	*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.gz|*.tgz|*.tar.xz|*.txz|*.xz|*.zip|*.rar|*.iso)
+	    lf -remote "send $id mount $f"
             ;;
 	*.pdf|*.djvu|*.ps|*.epub) setsid -f zathura $fx >/dev/null 2>&1 & ;;
 	*)
@@ -154,6 +147,17 @@ cmd Link %{{
 	elif [[ "$mode" == move ]]; then
 		ln $files -t .
 	fi
+}}
+
+cmd mount ${{
+	mntdir="$1-archivemount"
+	[ ! -d "$mntdir" ] && {
+	mkdir "$mntdir"
+	archivemount "$1" "$mntdir"
+	echo "$mntdir" >> "/tmp/__lf_archivemount_$id"
+	}
+	lf -remote "send $id cd \"$mntdir\""
+	lf -remote "send $id reload"
 }}
 
 # (xkcd link: https://xkcd.com/1168/)
