@@ -16,3 +16,6 @@
 [submodule ".config/brave_plugins/vimium"]
 	path = .config/brave_plugins/vimium
 	url = https://github.com/BachoSeven/vimium.git
+[submodule ".config/brave_plugins/startpage"]
+	path = .config/brave_plugins/startpage
+	url = git@github.com:BachoSeven/startpage.git
