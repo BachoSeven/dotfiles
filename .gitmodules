@@ -15,4 +15,4 @@
 	url = https://github.com/kazhala/dotbare
 [submodule ".config/brave_plugins/vimium"]
 	path = .config/brave_plugins/vimium
-	url = https://github.com/philc/vimium.git
+	url = https://github.com/BachoSeven/vimium.git
