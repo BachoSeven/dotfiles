@@ -7,7 +7,7 @@ case "$(printf "a selected area\\ncurrent window\\nfull screen\\na selected area
 	"a selected area (copy)") maim -s | xclip -selection clipboard -t image/png ;;
 	"current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png ;;
 	"full screen (copy)") maim | xclip -selection clipboard -t image/png ;;
-	"a selected area (imgur)") maim -s /tmp/screenshot.png; imgur /tmp/screenshot.png | xclip -selection clipboard ;;
+	"a selected area (imgur)") maim -s /tmp/screenshot.png; imgur.sh /tmp/screenshot.png | xclip -selection clipboard ;;
 	"current window (imgur)") maim -i "$(xdotool getactivewindow)" /tmp/screenshot.png; imgur.sh /tmp/screenshot.png | xclip -selection clipboard ;;
-	"full screen (imgur)") maim /tmp/screenshot.png; imgur /tmp/screenshot.png | xclip -selection clipboard ;;
+	"full screen (imgur)") maim /tmp/screenshot.png; imgur.sh /tmp/screenshot.png | xclip -selection clipboard ;;
 esac
