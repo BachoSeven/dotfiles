@@ -205,7 +205,7 @@
         "_id": 53,
         "_date": "Tue Jun 09 2020",
         "_timestamp": 1591655429537,
-        "description": "install xkcd, and jq for tb",
+        "description": "xkcd is from pipx",
         "isStarred": false,
         "boards": [
             "@ToDo"
