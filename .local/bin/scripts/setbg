@@ -7,7 +7,6 @@
 #		` setbg [ -w, --wal ] [ -i, --input "path/to/img" ] [ -m, --maximize ] `
 
 bgloc=$XDG_CONFIG_HOME/wp.png
-scheme=false
 
 while getopts ":hi:wm" o; do
 	case "${o}" in
@@ -24,10 +23,8 @@ while getopts ":hi:wm" o; do
 	esac
 done
 
-pidof dwm >/dev/null && xdotool key super+F12
-format=${format:---zoom}
-
 # Use gifview for gifs, or else xwallpaper
+	format=${format:---zoom}
 	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
 	killall -q xwinwrap 2>/dev/null ;
 	[ "$mime" = "image/gif" ] &&
