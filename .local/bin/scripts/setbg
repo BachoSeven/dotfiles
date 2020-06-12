@@ -4,58 +4,32 @@
 # using Xresources with xwallpaper, tested on dwm.
 
 #	Usage:
-#		` setbg [ -w, --wal ] [ -i, --input "path/to/img" ] [ -f, --format "xwallpaper_option" ] `
+#		` setbg [ -w, --wal ] [ -i, --input "path/to/img" ] [ -m, --maximize ] `
 
-bgloc=$XDG_CONFIG_HOME/wall.png
+bgloc=$XDG_CONFIG_HOME/wp.png
 scheme=false
 
-
-TEMP=$(getopt -o 'wi:f:' --long 'wal,input:,format:' -- "$@" )
-
-eval set -- "$TEMP"
-unset TEMP
-
-
-while true; do
-	case "$1" in
-		'-w'|'--wal')
-			scheme=true
-			shift
-			continue
-		;;
-		'-i'|'--input')
+while getopts ":hi:wm" o; do
+	case "${o}" in
+		h) printf "Usage :\\nsetbg [ -w, --wal ] [ -i, --input ;path/to/img; ] [ -m, --maximize ] [ -h: Show this message ]\\n" && exit ;;
+		i)
 			[ -n $2 ] && cp "$2" $bgloc > /dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
-			if [ $scheme = true ]; then
-				wal -i $bgloc && wal -c && vimwal -w
-			else
-				xrdb -load $HOME/.Xresources && vimwal -x
-			fi
-			shift 2
-			continue
-		;;
-		'-f'|'--format')
-			format="$2"
-			shift 2
-			continue
-		;;
-		'--')
-			shift
-			break
-		;;
+			xrdb -load $HOME/.Xresources && vimwal -x ;;
+		w)
+			wal -i $bgloc && wal -c && vimwal -w ;;
+		m)
+			format="--maximize" ;;
 		*)
-			echo 'Error!' >&2
-			exit 1
-		;;
+			printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
 	esac
 done
 
 pidof dwm >/dev/null && xdotool key super+F12
-
 format=${format:---zoom}
-# Use gifview for gifs, otherwise xwallpaper
+
+# Use gifview for gifs, or else xwallpaper
+	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
 	killall -q xwinwrap 2>/dev/null ;
-	if [ "$(file --dereference --brief --mime-type -- $bgloc)" = "image/gif" ]; then
-		gifbg "$bgloc"
-	else
-		xwallpaper $format "$bgloc"
-	fi
+	[ "$mime" = "image/gif" ] &&
+	gifbg "$bgloc" ||
+	xwallpaper $format "$bgloc"
