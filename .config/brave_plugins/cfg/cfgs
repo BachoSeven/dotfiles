@@ -1,6 +1,6 @@
 theme: sol ref dark/gruvbox
 
-plugins: changenewtab(ddg) vimium autologin stylish(archlinuxdark2018 dark_4chan draculagit flattube fuckyouyt gmailsollight gmailnyan rainbowtube darkcomfortwiki vkdarksimple) google-doc-off gtransl(<C-R>) tampermonkey(musescore-down nhentai-helper) pdf-viewer the great suspender
+plugins: vimium(custom) autologin stylish(archlinuxdark2018 dark_4chan draculagit flattube fuckyouyt gmailsollight gmailnyan rainbowtube darkcomfortwiki vkdarksimple) google-doc-off gtransl(<C-R>) tampermonkey(musescore-down nhentai-helper) pdf-viewer the great suspender
 
 searchengs:
 {

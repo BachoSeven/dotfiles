@@ -49,7 +49,7 @@
 
 # Yt
 	export SUBS_FILE=$XDG_CONFIG_HOME/subs
-	export SUBS_MENU_PROG="dmenu -bw 4 -nb #3c3836 -nf #fb4934 -c -f -i -l 10 -p YT"
+	export SUBS_MENU_PROG="dmenu -bw 5 -nb #1d2021 -nf #98971a -c -f -i -l 10 -p YT"
 
 # Mpd
 	export MPD_HOST="127.0.0.1"
