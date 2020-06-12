@@ -21,4 +21,5 @@ alias -g \
 	C='| wc'	\
 	S='| sort'	\
 	N='> /dev/null' \
-	X='|xclip'
+	X='|xclip'	\
+	A='|xargs'
