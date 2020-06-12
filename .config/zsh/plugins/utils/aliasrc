@@ -92,6 +92,7 @@ alias \
 	alias mc='mconnect'
 	alias mctl='mconnectctl'
 	alias sctl='systemctl'
+	alias jctl='journalctl'
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'

@@ -205,7 +205,7 @@
         "_id": 53,
         "_date": "Tue Jun 09 2020",
         "_timestamp": 1591655429537,
-        "description": "xkcd is from pipx",
+        "description": "xkcd is from pipx; jackett is installed (systemctl=>start); slsk: nicotine-plus-git.",
         "isStarred": false,
         "boards": [
             "@ToDo"

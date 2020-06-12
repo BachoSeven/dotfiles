@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Netflix
-Exec=brave-browser-nightly -app=http://www.netflix.com
-Icon=netflix
-Terminal=false
-StartupWMClass=www.netflix.com
