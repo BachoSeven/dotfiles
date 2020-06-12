@@ -26,6 +26,7 @@ I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I us
 
 ### Various
 - I use brave as a browser, find more in `.config/brave_plugins`; a nice addition to its setup is to set duckduckgo as a new page. Then, using `gruvboxytheme` passphrase in duckduckgo settings gives you a decent start page which supports Vimium's Vomnibar.
+- I also use a custome startpage with Brave, check it out [here](https://github.com/BachoSeven/startpage)
 
 ## Screens
 
