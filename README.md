@@ -31,7 +31,7 @@ I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I us
 
 #### Current Background
 
-<img src=".config/wall.png" alt="wp"/>
+<img src=".config/wp.png" alt="wp"/>
 
 ### Dwm
 
