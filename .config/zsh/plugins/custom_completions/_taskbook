@@ -1,4 +1,4 @@
-#compdef tb
+#compdef taskbook
 
 __trim() {
     arg=${@:1}
@@ -25,7 +25,7 @@ __tb_task() {
 	pos=$(__now_arg_pos)
 	now=$(__get_arg_by_pos $pos)
 	if [ "${now:0:1}" = "@" ]; then
-		tags=$(cat ~/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(.boards | .[])"' | sort | uniq)
+		tags=$(cat ~/.config/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(.boards | .[])"' | sort | uniq)
 		_alternative \
 			"tags:tags:(($tags))"
 
@@ -33,7 +33,7 @@ __tb_task() {
 }
 
 __tb_list() {
-	tags=$(cat ~/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(.boards | .[])"' | grep '@' | sort | uniq | sed 's/@//')
+	tags=$(cat ~/.config/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(.boards | .[])"' | grep '@' | sort | uniq | sed 's/@//')
 	_alternative \
 		"tags:tags:(($tags))"
 }
@@ -43,8 +43,8 @@ __tb_multi_task() {
 	zstyle ":completion::complete:tb:tasks:tasks" sort no
 	zstyle ":completion::complete:tb:tasks:tasks" list-colors "=*-- \[checked\]*=30;1"
 	if [ $pos -gt 1 ]; then
-		tasks=$(cat ~/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)\t\(.isComplete)\t\(._isTask)"' | sort -t $'\t' -k 4 -k 3rn | awk -F "\t" '{if($5 == "false" || $4 == "false"){print $1"\\" ":" $2} else {print $1"\\" ":" "'\''[checked] '\''" $2}}')
-		#tasks=$(cat ~/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)"' | sort -t $'\t' -rnk 3 | awk -F "\t" '{print $1"\\\:"$2}')
+		tasks=$(cat ~/.config/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)\t\(.isComplete)\t\(._isTask)"' | sort -t $'\t' -k 4 -k 3rn | awk -F "\t" '{if($5 == "false" || $4 == "false"){print $1"\\" ":" $2} else {print $1"\\" ":" "'\''[checked] '\''" $2}}')
+		#tasks=$(cat ~/.config/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)"' | sort -t $'\t' -rnk 3 | awk -F "\t" '{print $1"\\\:"$2}')
 		_alternative -C tasks \
 			"tasks:tasks:(($tasks))"
 	fi
@@ -55,11 +55,11 @@ __tb_move() {
 	zstyle ":completion::complete:tb:tasks:tasks" sort no
 	zstyle ":completion::complete:tb:tasks:tasks" list-colors "=*-- \[checked\]*=30;1"
 	if [ $pos -eq 2 ]; then
-		tasks=$(cat ~/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)\t\(.isComplete)\t\(._isTask)"' | sort -t $'\t' -k 4 -k 3rn | awk -F "\t" '{if($5 == "false" || $4 == "false"){print "\@"$1"\\" ":" $2} else {print "\@"$1"\\" ":" "'\''[checked] '\''" $2}}')
+		tasks=$(cat ~/.config/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)\t\(.isComplete)\t\(._isTask)"' | sort -t $'\t' -k 4 -k 3rn | awk -F "\t" '{if($5 == "false" || $4 == "false"){print "@"$1"\\" ":" $2} else {print "@"$1"\\" ":" "'\''[checked] '\''" $2}}')
                 _alternative -C tasks \
                     "tasks:tasks:(($tasks))"
 	elif [ $pos -gt 2 ]; then
-		tags=$(cat ~/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(.boards | .[])"' | grep '@' | sort | uniq | sed 's/@//')
+		tags=$(cat ~/.config/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(.boards | .[])"' | grep '@' | sort | uniq | sed 's/@//')
         _alternative \
                 "tags:tags:(($tags))"
 	fi
@@ -72,7 +72,7 @@ __tb_priority() {
 			zstyle ":completion::complete:tb:tasks:tasks" sort no
 			zstyle ":completion::complete:tb:tasks:tasks" list-colors "=*-- \[checked\]*=30;1"
 			zstyle ":completion::complete:tb:tasks:priority" list-colors '=*high=1;31' '=*medium=1;33' '=*normal=1;32';
-			tasks=$(cat ~/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)\t\(.isComplete)\t\(._isTask)"' | sort -t $'\t' -k 4 -k 3rn | awk -F "\t" '{if($5 == "false" || $4 == "false"){print "\@"$1"\\" ":" $2} else {print "\@"$1"\\" ":" "'\''[checked] '\''" $2}}')
+			tasks=$(cat ~/.config/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)\t\(.isComplete)\t\(._isTask)"' | sort -t $'\t' -k 4 -k 3rn | awk -F "\t" '{if($5 == "false" || $4 == "false"){print "@"$1"\\" ":" $2} else {print "@"$1"\\" ":" "'\''[checked] '\''" $2}}')
                         _alternative -C tasks \
                                 "tasks:tasks:(($tasks))"
 		;;
@@ -89,7 +89,7 @@ __tb_edit() {
 		(2)
 			zstyle ":completion::complete:tb:tasks:tasks" sort no
 			zstyle ":completion::complete:tb:tasks:tasks" list-colors "=*-- \[checked\]*=30;1"
-			tasks=$(cat ~/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)\t\(.isComplete)\t\(._isTask)"' | sort -t $'\t' -k 4 -k 3rn | awk -F "\t" '{if($5 == "false" || $4 == "false"){print "\@"$1"\\" ":" $2} else {print "\@"$1"\\" ":" "'\''[checked] '\''" $2}}')
+			tasks=$(cat ~/.config/.taskbook/storage/storage.json | jq --raw-output '.[] | @sh "\(._id)\t\(.description)\t\(._timestamp)\t\(.isComplete)\t\(._isTask)"' | sort -t $'\t' -k 4 -k 3rn | awk -F "\t" '{if($5 == "false" || $4 == "false"){print "@"$1"\\" ":" $2} else {print "@"$1"\\" ":" "'\''[checked] '\''" $2}}')
 			_alternative -C tasks \
 				"tasks:tasks:(($tasks))"
 			;;
@@ -98,7 +98,7 @@ __tb_edit() {
 			check=`grep '\@[[:digit:]]\{1,\}' <<< "$arg_2" | head -n 1`
 			if [ "$check" != "" ]; then
 				id=${arg_2##*@}
-				content=$(cat ~/.taskbook/storage/storage.json | jq --raw-output ".[] | select(._id==$id) | .description" | sed 's/:/\\:/g')
+				content=$(cat ~/.config/.taskbook/storage/storage.json | jq --raw-output ".[] | select(._id==$id) | .description" | sed 's/:/\\:/g')
 				local commands
 				commands=(
 					"$content:..."
