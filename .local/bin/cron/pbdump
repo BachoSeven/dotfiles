@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-[[ ! -e /home/francesco/downloads/torrent_dump_full.csv.gz ]] && wget -P /home/francesco/downloads https://thepiratebay.org/static/dump/csv/torrent_dump_full.csv.gz
