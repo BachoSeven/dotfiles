@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Jackett
-Exec=brave-browser-nightly -app=http://127.0.0.1:9117/UI/Dashboard
-Icon=/home/francesco/programs_drivers/web_stuff/Jackett/Content/jacket_medium.png
-Terminal=false
-StartupWMClass=127.0.0.1__UI_Dashboard

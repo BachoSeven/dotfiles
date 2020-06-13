@@ -1,15 +1,16 @@
 ## Bind keys
-	alias -- -='cd -'								# Cd into last dir
-	bindkey -s '^o' 'lfcd\n'
-	bindkey -s '^g' 'ytop\n'
-	bindkey -s '^v' 'nvim\n'
-	bindkey -s '^u' 'u\n'
-	bindkey -s '^[n' 'neomutt\n'
-	bindkey -s '^s' 'up2date\n'
+	alias -- -='cd -'		# Cd into last dir
 	bindkey -M menuselect 'h' vi-backward-char
 	bindkey -M menuselect 'k' vi-up-line-or-history
 	bindkey -M menuselect 'l' vi-forward-char
 	bindkey -M menuselect 'j' vi-down-line-or-history
+	# do not save these in history
+	bindkey -s '^o' ' lfcd\n'
+	bindkey -s '^g' ' ytop\n'
+	bindkey -s '^v' ' nvim\n'
+	bindkey -s '^u' ' u\n'
+	bindkey -s '^[n' ' neomutt\n'
+	bindkey -s '^s' ' up2date\n'
 
 # These need to be here because they are not compatible with bash, see aliasrc
 alias -g \

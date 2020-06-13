@@ -143,17 +143,6 @@
         "inProgress": false,
         "priority": 1
     },
-    "45": {
-        "_id": 45,
-        "_date": "Wed Apr 29 2020",
-        "_timestamp": 1588121048522,
-        "description": "requests is a python pkg for terminator-themes; joypixel-fonts are manually installed from the aur, and so is libsynctex for zathura.; jq is needed for taskbook.",
-        "isStarred": false,
-        "boards": [
-            "@Reminders"
-        ],
-        "_isTask": false
-    },
     "46": {
         "_id": 46,
         "_date": "Thu Apr 30 2020",
@@ -200,17 +189,6 @@
         "isComplete": false,
         "inProgress": false,
         "priority": 1
-    },
-    "53": {
-        "_id": 53,
-        "_date": "Tue Jun 09 2020",
-        "_timestamp": 1591655429537,
-        "description": "xkcd is from pipx; jackett is installed (systemctl=>start); slsk: nicotine-plus-git.",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
     },
     "54": {
         "_id": 54,
