@@ -17,16 +17,14 @@ function history {
 }
 
 ## History file configuration
-HISTSIZE=10000000
-SAVEHIST=10000000
+HISTSIZE=1000000
+SAVEHIST=100000
 HISTFILE="${ZDOTDIR:-$HOME/.zsh}/.zsh_history"
 
 ## History command configuration
-setopt no_bang_hist	      # disable old history syntax
 setopt share_history          # share command history data
-setopt append_history	      # append to the history instead of overwriting
-setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_verify	      # verify bangs & co. before executing
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 

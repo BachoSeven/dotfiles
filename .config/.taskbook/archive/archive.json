@@ -118,5 +118,27 @@
         "isComplete": true,
         "inProgress": false,
         "priority": 1
+    },
+    "10": {
+        "_id": 10,
+        "_date": "Wed Apr 29 2020",
+        "_timestamp": 1588121048522,
+        "description": "requests is a python pkg for terminator-themes; joypixel-fonts are manually installed from the aur, and so is libsynctex for zathura.; jq is needed for taskbook.",
+        "isStarred": false,
+        "boards": [
+            "@Reminders"
+        ],
+        "_isTask": false
+    },
+    "11": {
+        "_id": 11,
+        "_date": "Tue Jun 09 2020",
+        "_timestamp": 1591655429537,
+        "description": "xkcd is from pipx; jackett is installed (systemctl=>start); slsk: nicotine-plus-git; removed nginx; vidir",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }

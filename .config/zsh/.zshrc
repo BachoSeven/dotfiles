@@ -51,4 +51,6 @@
 		fsh/fast-syntax-highlighting
 	)
 	zsh_load_plugins $plugins
-	# nyan # uwu
+	# nyan
+	# pinguco
+	panes
