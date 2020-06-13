@@ -158,6 +158,13 @@ xopen() {
 }
 
 command -v zsh >/dev/null &&
+logzsh() {
+	zsh -xv 2>&1 | ts -i "%.s" > zshstartup.log
+	exit
+	sort --field-separator=' ' -r -k1 zshstartup.log > sorted.log
+}
+
+command -v zsh >/dev/null &&
 zshrc_bench() {
 	for _ ({1..10}); time zsh -i -c exit
 }

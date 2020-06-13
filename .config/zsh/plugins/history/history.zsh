@@ -17,8 +17,8 @@ function history {
 }
 
 ## History file configuration
-HISTSIZE=1000000
-SAVEHIST=100000
+HISTSIZE=100000
+SAVEHIST=10000
 HISTFILE="${ZDOTDIR:-$HOME/.zsh}/.zsh_history"
 
 ## History command configuration
