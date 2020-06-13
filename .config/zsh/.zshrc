@@ -53,4 +53,4 @@
 	zsh_load_plugins $plugins
 	# nyan
 	# pinguco
-	panes
+	# panes

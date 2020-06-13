@@ -70,7 +70,7 @@ dwm.normbgcolor:	#1d2021
 dwm.normbordercolor:	#3c3836
 dwm.normfgcolor:	#ebdbb2
 dwm.selfgcolor:	#fbf1c7
-dwm.selbordercolor:	#fb4934
+dwm.selbordercolor:	#cc241d
 dwm.selbgcolor:	#3c3836
 
 !! Dmenu
