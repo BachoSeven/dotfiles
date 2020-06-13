@@ -41,14 +41,13 @@
 		custom_completions
 		dotbare
 		history
-		less
 		lf
-		utils
-		vi-mode
-		fzf
-		powerlevel10k
-		p10k_theme
-		fsh/fast-syntax-highlighting
+		utils # +0.2 (autocompletion)
+		vi-mode #
+		fzf #
+		powerlevel10k # +0.05
+		p10k_theme # +0.05
+		fsh/fast-syntax-highlighting # +0.1
 	)
 	zsh_load_plugins $plugins
 	# nyan

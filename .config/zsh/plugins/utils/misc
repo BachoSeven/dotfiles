@@ -1,11 +1,12 @@
 ## Colors & Appearance
-	autoload -U colors && colors
+	autoload -U colors && colors # ok
 
-## Autocompletion
+## Autocompletion # ~+0.2
 	autoload -U compinit
 	zmodload zsh/complist
 	compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 	_comp_options+=(globdots)							# Include hidden files.
+
 # Basic autocomplete: case-insensitive and colored with LS_COLORS
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -21,6 +22,3 @@ function di () {
   fi
 }
 compdef _dirs di
-
-# TheFuck
-	eval $(thefuck --alias f)
