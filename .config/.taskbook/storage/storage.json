@@ -205,7 +205,18 @@
         "_id": 55,
         "_date": "Wed Jun 10 2020",
         "_timestamp": 1591811171184,
-        "description": "Add update functions for git submodules",
+        "description": "fix b script",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "56": {
+        "_id": 56,
+        "_date": "Sun Jun 14 2020",
+        "_timestamp": 1592148592421,
+        "description": "add colorbar patch to dwm",
         "isStarred": false,
         "boards": [
             "@ToDo"

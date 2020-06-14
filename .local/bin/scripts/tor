@@ -1,3 +1,0 @@
-#!/bin/sh
-
-sh -c '"/home/francesco/programs_drivers/web_stuff/tor-browser_en-US/Browser/start-tor-browser" --detach || ([ !  -x "/home/francesco/programs_drivers/web_stuff/tor-browser_en-US/Browser/start-tor-browser" ] && "$(dirname "$*")"/Browser/start-tor-browser --detach)' dummy %k
