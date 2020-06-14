@@ -63,15 +63,15 @@
 ! dwm.normbgcolor:	#002b36
 ! dwm.normbordercolor:	#073642
 ! dwm.normfgcolor:	#839496
-! dwm.selfgcolor:		#fdf6e3
+! dwm.selfgcolor:	#fdf6e3
 ! dwm.selbordercolor:	#2aa198
-! dwm.selbgcolor:		#073642
+! dwm.selbgcolor:	#073642
 dwm.normbgcolor:	#1d2021
 dwm.normbordercolor:	#3c3836
 dwm.normfgcolor:	#ebdbb2
-dwm.selfgcolor:	#fbf1c7
-dwm.selbordercolor:	#cc241d
-dwm.selbgcolor:	#3c3836
+dwm.selfgcolor:		#fbf1c7
+dwm.selbordercolor:	#add8e6
+dwm.selbgcolor:		#3c3836
 
 !! Dmenu
 dmenu.font:		monospace:hinting=True:antialias=True:size=15

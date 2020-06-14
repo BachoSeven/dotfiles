@@ -173,6 +173,19 @@ function 256col {
 	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
 
+xrescol() {
+read -r -d '' -A colors \
+    < <( xrdb -query | sed -n 's/.*color\([0-9]\)/\1/p' | sort -nu | cut -f2)
+printf '\e[1;37m
+ Black      Red        Green      Yellow     Blue       Magenta    Cyan       White
+───────────────────────────────────────────────────────────────────────────────────────\e[0m\n'
+
+for color in {0..7}; do printf "\e[$((30+color))m █ %s \e[0m" "${colors[color+1]}"; done
+printf '\n'
+for color in {8..15}; do printf "\e[1;$((22+color))m █ %s \e[0m" "${colors[color+1]}"; done
+printf '\n'
+}
+
 truecolor() {
 	awk 'BEGIN{
 	    s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;

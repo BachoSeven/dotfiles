@@ -61,6 +61,7 @@ alias \
 	alias 8='cd -8'
 	alias 9='cd -9'
 	alias :q='exit' # vim user :)
+	alias info='info --vi-keys'
 	alias v="nvim"
 	alias nv='v .'
 	alias sT="tabbed -c -r 2 st -w id "

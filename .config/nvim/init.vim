@@ -128,6 +128,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'mbbill/undotree'
 " Various files support
 Plug 'Konfekt/vim-office'
+Plug 'alx741/vinfo'
 
 " Plug 'sirver/ultisnips'
 	" let g:UltiSnipsExpandTrigger = '<tab>'
