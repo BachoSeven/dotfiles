@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# A dmenu binary prompt script.
-# Gives a dmenu prompt labeled with $1 to perform command $2.
-# For example:
-# `./prompt "Do you want to shutdown?" "shutdown -h now"`
-
-[ "$(printf "Yes\\nNo" | dmenu -i -p "$1" -nb '#292929' -sb '#191919' -sf '#ecbdb2' -nf '#12aa98' )" = "Yes" ] && $2

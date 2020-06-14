@@ -38,6 +38,11 @@ def_key "n"
 def_key "N"
     previous_found_item
 
+def_key "K"
+ move_selected_items_up
+def_key "J"
+ move_selected_items_down
+
 def_key "f"
   seek_forward
 #
@@ -45,11 +50,6 @@ def_key "b"
   seek_backward
 
 
-# not used but bound
-def_key "J"
-    move_sort_order_down
-def_key "K"
-    move_sort_order_up
 def_key "h"
   jump_to_parent_directory
 def_key "l"
@@ -400,14 +400,8 @@ def_key "ctrl-j"
 #def_key "m"
 #  move_sort_order_up
 #
-#def_key "m"
-#  move_selected_items_up
-#
 #def_key "n"
 #  move_sort_order_down
-#
-#def_key "n"
-#  move_selected_items_down
 #
 #def_key "M"
 #  move_selected_items_to
@@ -477,5 +471,3 @@ def_key "ctrl-j"
 #	find
 #def_key "f"
 #	find_item_forward
-
-

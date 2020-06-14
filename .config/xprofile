@@ -9,6 +9,7 @@ xss slock &
 
 xrdb -merge -I$HOME ~/.Xresources
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
+transmission-daemon &		# start torrent daemon
 copyq &				# Clipboard management
 xcompmgr &			# xcompmgr for transparency
 remaps &			# Switch caps/super and one-tap_caps/esc

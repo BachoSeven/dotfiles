@@ -4,7 +4,7 @@
 # You can set this to run via cron.
 
 if [ ! "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ] && [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 40 ]; then
-	export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus && [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 15 ] && notify-send -u critical "Battery critically low." || notify-send -u medium "Plug in cable"
+	export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus && [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 15 ] && notify-send -u critical "Battery critically low." || notify-send -u normal "Plug in cable"
 else
 	[ "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ] && export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus && [ "$(cat /sys/class/power_supply/BAT0/capacity)" -gt 80  ] && notify-send -u low "Unplug cable"
 fi
