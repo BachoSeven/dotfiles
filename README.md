@@ -10,7 +10,7 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
 
 I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I use:
 - Suckless utilities (see my patched repos):   **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), and **[st](https://github.com/BachoSeven/st)** (terminal emulator).
-- Highly configured **zsh**  shell with  custom plugins, **[powerlevel10k](https://github.com/romkatv/powerlevel10k)** with a custom lean theme and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax higlighting.
+- Highly configured **zsh**  shell with many custom plugins for completions and integrations, **[powerlevel10k](https://github.com/romkatv/powerlevel10k)** with a custom lean theme and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax higlighting. Despite all these customizations, my zsh has an average startup time of `0.047 s`.
 - **neovim** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
 - **ncmpcpp** as a music player (with mpd)
