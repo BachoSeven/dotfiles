@@ -165,7 +165,7 @@ logzsh() {
 }
 
 command -v zsh >/dev/null &&
-zshrc_bench() {
+zsh_bench() {
 	for _ ({1..10}); time zsh -i -c exit
 }
 

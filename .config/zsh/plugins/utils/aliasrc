@@ -123,7 +123,7 @@ alias \
 	alias zarc='v $XDG_CONFIG_HOME/zathura/zathurarc'
 	alias lfrc='v $XDG_CONFIG_HOME/lf/lfrc'
 	alias zshrc='source $XDG_CONFIG_HOME/zsh/.zshrc'
-	alias zt='zshrc_bench'
+	alias zt='zsh_bench'
 	alias cfz='v $ZDOTDIR/.zshrc'
 	alias cfzp='v $ZDOTDIR/plugins'
 	alias cfv='v $XDG_CONFIG_HOME/nvim/init.vim'
