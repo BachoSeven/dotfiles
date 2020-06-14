@@ -1,7 +1,7 @@
 ## Colors & Appearance
-	autoload -U colors && colors # ok
+	autoload -U colors && colors
 
-## Autocompletion # ~+0.2
+## Autocompletion # +0.2
 	autoload -U compinit
 	zmodload zsh/complist
 	compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION

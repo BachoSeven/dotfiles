@@ -42,14 +42,15 @@
 		dotbare
 		history
 		lf
-		utils # +0.2 (autocompletion)
-		vi-mode #
-		fzf #
+		utils # +0.25 (autocompletion)
+		vi_mode
+		fzf
 		powerlevel10k # +0.05
 		p10k_theme # +0.05
 		fsh/fast-syntax-highlighting # +0.1
 	)
 	zsh_load_plugins $plugins
 	# nyan
+	# xrescol
 	# pinguco
 	# panes
