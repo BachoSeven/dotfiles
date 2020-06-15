@@ -210,6 +210,7 @@ map c push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extention
 map a push A<a-b> # after extention
+map w $$PAGER $f
 map b bulkrename
 map <c-n> push :mkdir<space>
 map E extract	#extract and compress

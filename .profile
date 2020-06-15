@@ -5,6 +5,7 @@
 	export TERMINAL="st"
 	export READER="zathura"
 	export OPENER='xdg-open'
+	export PAGER='less'
 	export EDITOR="nvim"
 	export BROWSER="brave-nightly"
 	export LOCATION="Pisa" # weather script
