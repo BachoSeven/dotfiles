@@ -20,7 +20,7 @@ Slave :gm_main-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 3000
+MaxMessages 4000
 ExpireUnread no
 # End profile
 
@@ -46,59 +46,6 @@ Slave :gm_uwcad-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 5000
+MaxMessages 4000
 ExpireUnread no
 # End profile
-
-IMAPStore gm_main-remote
-Host imap.gmail.com
-Port 993
-User ascoli.minnocci@gmail.com
-PassCmd "pass mutt-wizard-gm_main"
-AuthMechs LOGIN
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-MaildirStore gm_main-local
-Subfolders Verbatim
-Path ~/.local/share/mail/gm_main/
-Inbox ~/.local/share/mail/gm_main/INBOX
-Flatten .
-
-Channel gm_main
-Expunge Both
-Master :gm_main-remote:
-Slave :gm_main-local:
-Patterns * !"[Gmail]/All Mail"
-Create Both
-SyncState *
-MaxMessages 1000
-ExpireUnread no
-# End profile
-
-IMAPStore gm_uwcad-remote
-Host imap.gmail.com
-Port 993
-User ad17fmin@uwcad.it
-PassCmd "pass mutt-wizard-gm_uwcad"
-AuthMechs LOGIN
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-MaildirStore gm_uwcad-local
-Subfolders Verbatim
-Path ~/.local/share/mail/gm_uwcad/
-Inbox ~/.local/share/mail/gm_uwcad/INBOX
-Flatten .
-
-Channel gm_uwcad
-Expunge Both
-Master :gm_uwcad-remote:
-Slave :gm_uwcad-local:
-Patterns * !"[Gmail]/All Mail"
-Create Both
-SyncState *
-MaxMessages 1000
-ExpireUnread no
-# End profile
-
