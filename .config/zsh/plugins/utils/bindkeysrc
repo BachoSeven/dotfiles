@@ -1,3 +1,4 @@
+# vi: ft=zsh
 ## Bind keys
 	alias -- -='cd -'		# Cd into last dir
 	bindkey -M menuselect 'h' vi-backward-char

@@ -1,3 +1,4 @@
+# vi: ft=zsh
 ## Colors & Appearance
 	autoload -U colors && colors
 
