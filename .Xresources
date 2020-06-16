@@ -76,9 +76,9 @@
 ! dwm.infonormbg:	#
 ! dwm.infoselfg:	#
 ! dwm.infoselbg:	#
-dwm.normbgcolor:	#1d2021
+dwm.normbgcolor:	#282828
 dwm.normfgcolor:	#ebdbb2
-dwm.normbordercolor:	#add8e6
+dwm.normbordercolor:	#1d2021
 dwm.selbgcolor:		#282828
 dwm.selfgcolor:		#fbf1c7
 dwm.selbordercolor:	#add8e6
