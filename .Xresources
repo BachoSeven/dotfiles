@@ -66,15 +66,35 @@
 ! dwm.selfgcolor:	#fdf6e3
 ! dwm.selbordercolor:	#2aa198
 ! dwm.selbgcolor:	#073642
+! dwm.statusfg:		#
+! dwm.statusbg:		#
+! dwm.tagnormfg:	#
+! dwm.tagnormbg:	#
+! dwm.tagselfg:		#fdf6e3
+! dwm.tagselbg:		#002b36
+! dwm.infonormfg:	#
+! dwm.infonormbg:	#
+! dwm.infoselfg:	#
+! dwm.infoselbg:	#
 dwm.normbgcolor:	#1d2021
-dwm.normbordercolor:	#3c3836
 dwm.normfgcolor:	#ebdbb2
+dwm.normbordercolor:	#add8e6
+dwm.selbgcolor:		#282828
 dwm.selfgcolor:		#fbf1c7
 dwm.selbordercolor:	#add8e6
-dwm.selbgcolor:		#3c3836
+dwm.statusbg:		#1d2021
+dwm.statusfg:		#ebdbb2
+dwm.tagnormbg:		#458488
+dwm.tagnormfg:		#1d2021
+dwm.tagselbg:		#83a598
+dwm.tagselfg:		#012321
+dwm.infonormbg:		#458488
+dwm.infonormfg:		#282828
+dwm.infoselbg:		#1d2021
+dm.infoselfg:		#d3869b
 
 !! Dmenu
-dmenu.font:		monospace:hinting=True:antialias=True:size=15
+dmenu.font:		monospace:hinting=True:antialias=True:size=16
 
 ! dmenu.background:	#002b36
 ! dmenu.foreground:	#839496
@@ -89,9 +109,9 @@ dmenu.background:	#1d2021
 dmenu.foreground:	#a89984
 dmenu.selbackground:	#282828
 dmenu.selforeground:	#ebdbb2
-dmenu.hibackground:	#79740e
+dmenu.hibackground:	#458488
 dmenu.hiforeground:	#eee8d5
-dmenu.hiselbackground:	#cc241d
+dmenu.hiselbackground:	#b16286
 dmenu.hiselforeground:	#fdf6e3
 
 
@@ -122,7 +142,7 @@ xscreensaver.dateFormat:    %I:%M%P %b %d
 Vncviewer*grabKeyboard:	true
 
 !! Transparency (0-1):
-st.alpha: 0.8
+st.alpha: 0.85
 
 !! Misc
 Xft.dpi: 96

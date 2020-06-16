@@ -1,6 +1,6 @@
 theme: sol ref dark/gruvbox
 
-plugins: vimium(custom) autologin stylus(Netflix Recolor Plus archlinuxdark2018 dark_4chan flattube fuckyt rainbowtube darkcomfortwiki vkdarksimple) google-doc-off gtransl(<C-R>) tampermonkey(musescore-down nhentai-helper) the great suspender dark reader
+plugins: vimium vimium_helper autologin stylus(Netflix Recolor Plus archlinuxdark2018 dark_4chan flattube fuckyt rainbowtube darkcomfortwiki vkdarksimple) google-doc-off gtransl(<C-R>) tampermonkey(musescore-down nhentai-helper) the great suspender dark reader
 
 searchengs:
 {
