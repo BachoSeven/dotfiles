@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 # vim: set filetype=ruby:
-# b - browse Chrome bookmarks with fzf
+# bm - browse Chrome bookmarks with fzf
+# Credits: junegunn https://gist.github.com/junegunn/15859538658e449b886f
 
-# Usage: if you use a popup, you might want to call `bm full `
+# Make sure $BROWSERR is set; I could have used xdg-open,
+# but for use as a popup it is more convenient this way.
+# For usage as a popup: `bm full`
 # NOTE: You might want to install w3m for the preview window.
 
 [[ $1 = full ]] && opts="--height 100%"
 
-/usr/bin/ruby -x "$0"                                          |
+/usr/bin/ruby -x "$0"                       |
   fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin --preview " echo {-1}  | xargs w3m -dump " --preview-window=right:30% $opts |
-  awk 'BEGIN { FS = "\t" } { print $2 }'                       |
-  xargs -n 1 xdg-open > /dev/null 2>&1
-
+  awk 'BEGIN { FS = "\t" } { print $2 }'    |
+  setsid xargs -r -n 1 $BROWSER >&/dev/null 2>&1
 exit $?
 
 #!ruby

@@ -55,7 +55,7 @@
 	# pinguco
 	# panes
 # barva
-	export BARVA_SOURCE=$(pa-get-default-monitor)
+	export BARVA_SOURCE=$(pa-get-default-monitor 2>/dev/null)
 	export BARVA_BG="#120021"
 	export BARVA_TARGET="#2aa198"
 	export BARVA_FPS=80

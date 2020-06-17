@@ -87,7 +87,7 @@ alias \
 	hash ncdu &>/dev/null && alias ncdu="ncdu --si --color dark"
 	hash lolcate &>/dev/null && alias \
 					locate="lolcate --db mydb" \
-					alias updb='lolcate --db mydb  --update'
+					updb='lolcate --db mydb  --update'
 	alias pp='prettyping'
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
