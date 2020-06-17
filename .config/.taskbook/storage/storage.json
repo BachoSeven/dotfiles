@@ -190,17 +190,6 @@
         "inProgress": false,
         "priority": 1
     },
-    "54": {
-        "_id": 54,
-        "_date": "Tue Jun 09 2020",
-        "_timestamp": 1591697304974,
-        "description": "abi gabaal mech keyb",
-        "isStarred": false,
-        "boards": [
-            "My Board"
-        ],
-        "_isTask": false
-    },
     "55": {
         "_id": 55,
         "_date": "Wed Jun 10 2020",

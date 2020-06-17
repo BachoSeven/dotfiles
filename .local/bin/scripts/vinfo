@@ -1,0 +1,5 @@
+#! /bin/sh
+
+# See https://github.com/alx741/vinfo
+
+nvim -c "Vinfo $1" -c 'silent only'

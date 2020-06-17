@@ -91,7 +91,7 @@ dwm.tagselfg:		#012321
 dwm.infonormbg:		#458488
 dwm.infonormfg:		#282828
 dwm.infoselbg:		#1d2021
-dm.infoselfg:		#d3869b
+dwm.infoselfg:		#d3869b
 
 !! Dmenu
 dmenu.font:		monospace:hinting=True:antialias=True:size=16

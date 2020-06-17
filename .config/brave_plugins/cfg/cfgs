@@ -43,6 +43,7 @@ nh:	https://nhentai.net/search/?q=%s nh
 oeis:	http://oeis.org/search?q=%s oeis
 om:	https://www.openstreetmap.org/search?query=%s openstreetmap
 pip:	https://www.openstreetmap.org/search?query=%s PyPI
+r: https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
 sc:	https://libgen.bban.top/s/%s scihub
