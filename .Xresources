@@ -94,8 +94,6 @@ dwm.infoselbg:		#1d2021
 dwm.infoselfg:		#d3869b
 
 !! Dmenu
-dmenu.font:		monospace:hinting=True:antialias=True:size=16
-
 ! dmenu.background:	#002b36
 ! dmenu.foreground:	#839496
 ! dmenu.selbackground:	#073642
@@ -104,7 +102,6 @@ dmenu.font:		monospace:hinting=True:antialias=True:size=16
 ! dmenu.hiforeground:	#eee8d5
 ! dmenu.hiselbackground:	#cb4b16
 ! dmenu.hiselforeground:	#fdf6e3
-
 dmenu.background:	#1d2021
 dmenu.foreground:	#a89984
 dmenu.selbackground:	#282828
