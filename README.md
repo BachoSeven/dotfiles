@@ -25,7 +25,7 @@ I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I us
 - Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
 ### Various
-- I use brave browser, you can find info about my config of it at `.config/brave_plugins`. To improve its aestethics, I use a gruvbox chrome theme, use duckduckgo with `gruvboxytheme` passphrase (try it!); which makes a decent start page together Vimium's Vomnibar. (I now use a custome startpage with Brave, check it out [here](https://github.com/BachoSeven/startpage).)
+- I use brave browser, you can find info about my config of it at `.config/brave_plugins`. To improve its aestethics, I use a gruvbox chrome theme and duckduckgo with `gruvboxytheme` passphrase (try it!); which make a decent start page together Vimium's Vomnibar. (I now use a custome startpage with Brave, check it out [here](https://github.com/BachoSeven/startpage).)
 
 ## Screens
 
