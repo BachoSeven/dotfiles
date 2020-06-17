@@ -4,18 +4,21 @@
 # using Xresources with xwallpaper, tested on dwm.
 
 #	Usage:
-#		` setbg [ -w, --wal ] [ -i, --input "path/to/img" ] [ -m, --maximize ] `
+#		` setbg [ -w, -wal ] [ -i, -input "path/to/img" ] [ -m, -maximize ] `
 
 bgloc=$XDG_CONFIG_HOME/wp.png
+mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
+format="--zoom"
 
 while getopts ":hi:wm" o; do
 	case "${o}" in
-		h) printf "Usage :\\nsetbg [ -w, --wal ] [ -i, --input ;path/to/img; ] [ -m, --maximize ] [ -h: Show this message ]\\n" && exit ;;
+		h)
+			printf "Usage :\\nsetbg\\n\\t [ -w, -wal: use pywal if installed ]\\n\\t [ -i, -input 'path/to/img' ]\\n\\t [ -m, -maximize: maximize wallpaper (default format is --zoom) ]\\n\\t [ -h, -help: Show this message ]\\n" && exit ;;
 		i)
 			[ -n $2 ] && cp "$2" $bgloc > /dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			xrdb -load $HOME/.Xresources && vimwal -x ;;
 		w)
-			wal -i $bgloc && wal -c && vimwal -w ;;
+			hash wal &>/dev/null && wal -i $bgloc && wal -c && vimwal -w ;;
 		m)
 			format="--maximize" ;;
 		*)
@@ -24,9 +27,5 @@ while getopts ":hi:wm" o; do
 done
 
 # Use gifview for gifs, or else xwallpaper
-	format=${format:---zoom}
-	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
-	killall -q xwinwrap 2>/dev/null ;
-	[ "$mime" = "image/gif" ] &&
-	gifbg "$bgloc" ||
-	xwallpaper $format "$bgloc"
+	killall -q xwinwrap 2>/dev/null;
+	[ "$mime" = "image/gif" ] && gifbg "$bgloc" || xwallpaper $format "$bgloc"
