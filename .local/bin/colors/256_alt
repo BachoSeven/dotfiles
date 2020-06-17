@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# 256 -- print colors in the 256 palette
+# (c) Kiëd Llaentenn
+# See the COPYING for more information
+
+e="$(printf "\033")"
+
+f256() {
+    i=$1
+
+    while [ $i -le 255 ]
+    do
+        printf "${i}$e[4D$e[4C$e[48;5;${i}m$e[K$e[m\n"
+        i=$(( i + 1 ))
+    done
+}
+
+if [ -z "${1}" ]; then
+    f256 0
+else
+    f256 "${1}"
+fi

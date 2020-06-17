@@ -1,0 +1,3 @@
+#!/bin/sh
+
+notify-send -u normal "Torrent completed, now seeding."

@@ -1,0 +1,39 @@
+#compdef mconnectctl
+
+local arguments
+
+arguments=(
+  '--help[Show help options]'
+  '--debug[Show debug output]'
+  '--verbose[Be verbose]'
+)
+
+_arguments -s $arguments
+
+typeset -A cmds
+
+cmds=(
+  list-devices	'List devices'
+  allow-device	'<path>  Allow device'
+  show-device	'<path>   Show device details'
+  share-url	'<path> <url>   Share URL with device'
+  share-text	'<path> <text>  Share text with device'
+  share-file	'<path> <file>  Share file with device'
+  send-sms	'<number> <message>  Send SMS'
+)
+
+function _mctl_cmds() {
+    local command_specs=()
+
+    for COMMAND DESC in ${(kv)cmds}; do
+        command_specs+=("${COMMAND}:${DESC//:/\\:}")
+    done
+
+    _describe cmds command_specs
+}
+
+_arguments -A "-*" \
+           "1:command:_mctl_cmds" \
+           "--help[help for command]:command:(${(k)cmds})"
+
+unfunction _mctl_cmds
