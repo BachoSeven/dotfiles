@@ -84,8 +84,8 @@ alias \
 	alias rsb='find -name "*(*)*" -type f | rename "s/\(|\)|\[|\]//g"'
 
 # Various
-	command -v ncdu >/dev/null && alias ncdu="ncdu --si --color dark"
-	command -v lolcate >/dev/null && alias \
+	hash ncdu &>/dev/null && alias ncdu="ncdu --si --color dark"
+	hash lolcate &>/dev/null && alias \
 					locate="lolcate --db mydb" \
 					alias updb='lolcate --db mydb  --update'
 	alias pp='prettyping'
@@ -137,7 +137,6 @@ alias \
 	alias cfu='v ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
 	alias cfn='v ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
 	alias cft='v ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
-
 
 # Personal files
 	alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'

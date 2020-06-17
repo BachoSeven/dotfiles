@@ -3,12 +3,19 @@
 # Some of this was stolen, amongst others, from https://github.com/SmartFinn/dotfiles. Thanks!
 
 src_update() {
-	local dir
+	dirs=(
+		/home/fra/.config/brave_plugins/vimium
+		/home/fra/.local/src/subs
+		/home/fra/.local/src/dwm
+		/home/fra/.local/src/dwmblocks
+		/home/fra/.local/src/st
+	)
 
-	for dir ($@); do
+	for dir in $dirs; do
 		git -C "$dir" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
 		printf '%s: ' "$dir:t"
 		git -C "$dir" pull 2>/dev/null || echo "Unable to upgrade."
+		[[ "$(git -C $dir remote -v | grep -q upstream)" ]] && { git -C "$dir" fetch upstream || echo "Could not fetch upstream changes." }
 	done
 }
 
@@ -32,10 +39,6 @@ up2date() {
 	_run nvim +PlugUpdate +quitall
 	_run pipx upgrade-all
 	_run zsh_update_plugins
-	dirs=(
-		/home/fra/.local/src/subs
-		/home/fra/.config/brave_plugins/vimium
-	)
 	_run src_update $dirs
 }
 
