@@ -143,16 +143,16 @@ foreground = default
 integral = 75
 
 # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
-monstercat = 1
-waves = 1
+# monstercat = 1
+# waves = 1
 
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.
 # Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
-gravity = 125
+gravity = 105
 
 
 # In bar height, bars that would have been lower that this will not be drawn.
-ignore = 1
+ignore = 3
 
 
 [eq]

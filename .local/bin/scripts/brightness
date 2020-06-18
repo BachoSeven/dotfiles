@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # A little script to use with dwm; can be easily changed by finding your specific /sys/class/backlight/***/brightness location, or symlinking the right one.
 # See https://askubuntu.com/questions/715306/xbacklight-no-outputs-have-backlight-property-no-sys-class-backlight-folder
@@ -7,21 +7,22 @@
 # alternatively, it can be used physical brightness increase/decrease keys by passing the options inc/dec $count
 
 current=$(cat /sys/class/backlight/intel_backlight/brightness)
+max=7500
 default=5000
-defaultu=7000
-defaultd=1000
+defaultu=6500
+defaultd=1500
 
 if [ -n $1 ]; then
 	if [[ $1 = up ]]; then
-		value="$(dmenu -p 'Input level 0-7500 [default: 7000]' )"
+		value="$(dmenu -p 'Input level 0-$max [default: $defaultu]' )"
 		[[ -n "$value" ]] || value=$defaultu
 	elif [[ $1 = down ]]; then
-		value="$(dmenu -p 'Input level 0-7500 [default: 1000]' )"
+		value="$(dmenu -p 'Input level 0-$max [default: $defaultd]' )"
 		[[ -n "$value" ]] || value=$defaultd
 	elif [[ $1 = inc ]]; then
-		value=$(bc <<< "$current + $3 " )
+		value="$(($current+$2))"
 	elif [[ $1 = dec ]]; then
-		value=$(bc <<< "$current - $3 " )
+		value="$(($current-$2))"
 	fi
 else
 	value=$default
