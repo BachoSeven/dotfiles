@@ -1,18 +1,15 @@
-[submodule ".config/dotbare"]
-	path = .config/dotbare
-	url = https://github.com/kazhala/dotbare
 [submodule ".config/mpv/scripts/mpvSockets"]
 	path = .config/mpv/scripts/mpvSockets
-	url = https://github.com/wis/mpvSockets
+	url = https://github.com/wis/mpvSockets.git
 [submodule ".config/zsh/plugins/powerlevel10k"]
 	path = .config/zsh/plugins/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
 [submodule ".config/zsh/plugins/fsh"]
-	path = .config/zsh/plugins/fsh
-	url = https://github.com/zdharma/fast-syntax-highlighting
+	path = .config/zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma/fast-syntax-highlighting.git
 [submodule ".config/zsh/plugins/dotbare"]
 	path = .config/zsh/plugins/dotbare
-	url = https://github.com/kazhala/dotbare
+	url = https://github.com/kazhala/dotbare.git
 [submodule ".config/brave_plugins/vimium"]
 	path = .config/brave_plugins/vimium
 	url = https://github.com/philc/vimium.git
