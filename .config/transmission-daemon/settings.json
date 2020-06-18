@@ -20,7 +20,7 @@
     "idle-seeding-limit-enabled": false,
     "incomplete-dir": "/home/fra",
     "incomplete-dir-enabled": false,
-    "lpd-enabled": true,
+    "lpd-enabled": false,
     "message-level": 1,
     "peer-congestion-algorithm": "",
     "peer-id-ttl-hours": 6,
@@ -32,7 +32,7 @@
     "peer-port-random-on-start": false,
     "peer-socket-tos": "default",
     "pex-enabled": true,
-    "port-forwarding-enabled": true,
+    "port-forwarding-enabled": false,
     "preallocation": 1,
     "prefetch-enabled": true,
     "queue-stalled-enabled": true,
@@ -64,5 +64,5 @@
     "trash-original-torrent-files": false,
     "umask": 18,
     "upload-slots-per-torrent": 14,
-    "utp-enabled": true
+    "utp-enabled": false
 }
