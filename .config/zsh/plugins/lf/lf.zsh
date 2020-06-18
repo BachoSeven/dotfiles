@@ -1,7 +1,7 @@
 lfcd () {
     tmp="$(mktemp)"
     fid="$(mktemp)"
-    lf -command '$printf $id > '"$fid"'' -last-dir-path="$tmp" "$@" # this takes up 15 ms for some reason
+    lf -command '$printf $id > '"$fid"'' -last-dir-path="$tmp" "$@" # this takes up time but idkw
     id="$(cat "$fid")"
     archivemount_dir="/tmp/__lf_archivemount_$id"
     if [ -f "$archivemount_dir" ]; then

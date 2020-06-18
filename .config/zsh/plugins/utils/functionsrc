@@ -165,14 +165,12 @@ xopen() {
 	xdg-open "$@" >/dev/null 2>&1
 }
 
-command -v zsh >/dev/null &&
 logzsh() {
 	zsh -xv 2>&1 | ts -i "%.s" > zshstartup.log
 	exit
 	sort --field-separator=' ' -r -k1 zshstartup.log > sorted.log
 }
 
-command -v zsh >/dev/null &&
 zsh_bench() {
 	for _ ({1..10}); time zsh -i -c exit
 }
@@ -270,7 +268,6 @@ fman() {
 }
 
 # A wget wrapper
-command -v wget >/dev/null &&
 download_files_from_page() {
 	if [ "$#" -lt 2 ]; then
 		cat <<- EOF

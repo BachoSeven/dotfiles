@@ -3,8 +3,9 @@
 
 ## Aliases
 
-# Pacman
-alias clean='sudo pacman -Rs $(pacman -Qtdq)'
+# Arch
+	alias clean='sudo pacman -Rs $(pacman -Qtdq)'
+	alias vote='ssh aur@aur.archlinux.org vote'
 
 # default to human readable figures and colorize
 alias df='df --si --print-type'
@@ -84,10 +85,10 @@ alias \
 	alias rsb='find -name "*(*)*" -type f | rename "s/\(|\)|\[|\]//g"'
 
 # Various
-	hash ncdu &>/dev/null && alias ncdu="ncdu --si --color dark"
-	hash lolcate &>/dev/null && alias \
-					locate="lolcate --db mydb" \
-					updb='lolcate --db mydb  --update'
+	alias ncdu="ncdu --si --color dark"
+	alias \
+		locate="lolcate --db mydb" \
+		updb='lolcate --db mydb  --update'
 	alias pp='prettyping'
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too

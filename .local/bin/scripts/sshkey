@@ -2,7 +2,8 @@
 
 # Print public SSH key to clipboard. Generate it if necessary
 
-file="$HOME/.ssh/id_rsa.pub"
+file="$HOME/.ssh/${1:-id_rsa.pub}"
+echo $file
 if [ ! -f "$file" ]; then
   ssh-keygen -t rsa
 fi

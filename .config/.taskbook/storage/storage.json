@@ -189,27 +189,5 @@
         "isComplete": false,
         "inProgress": false,
         "priority": 1
-    },
-    "57": {
-        "_id": 57,
-        "_date": "Mon Jun 15 2020",
-        "_timestamp": 1592242173399,
-        "description": "catdoc is for vim and less",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
-    "58": {
-        "_id": 58,
-        "_date": "Tue Jun 16 2020",
-        "_timestamp": 1592265765376,
-        "description": "tlp (sctl)",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
     }
 }
