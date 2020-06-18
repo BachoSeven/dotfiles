@@ -1,20 +1,19 @@
 #!/bin/sh
 
-mpccol="^c#d3869b^$(mpc)"
-filter() { echo $mpccol | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d" | paste -sd ' ';}
+filter() { mpc | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d" | paste -sd ' ';}
 
 pidof -x mpdup >/dev/null 2>&1 || mpdup >/dev/null 2>&1 &
 
 case $BLOCK_BUTTON in
-	1) mpc status | filter ; setsid -f "$TERMINAL" -e ncmpcpp ;;  # right click, pause/unpause
-	2) mpc toggle | filter ;;  # right click, pause/unpause
-	3) mpc status | filter ; notify-send "🎵 Music module" "\- Shows mpd song playing.
+	1) echo "^c#d3869b^$(mpc status | filter )^d^" ; setsid -f "$TERMINAL" -e ncmpcpp ;;  # right click, pause/unpause
+	2) echo "^c#d3869b^$(mpc toggle | filter )^d^" ;;  # right click, pause/unpause
+	3) echo "^c#d3869b^$(mpc status | filter )^d^" ; notify-send "🎵 Music module" "\- Shows mpd song playing.
 - ⏸ when paused.
 - Left click opens ncmpcpp.
 - Middle click pauses.
 - Scroll changes track.";;  # right click, pause/unpause
-	4) mpc prev   | echo "$(filter $1)^d^" ;;  # scroll up, previous
-	5) mpc next   | echo "$(filter $1)^d^" ;;  # scroll down, next
-	6) mpc status | echo "$(filter $1)^d^" ; "$TERMINAL" -e "$EDITOR" "$0" ;;
-	*) mpc status | echo "$(filter $1)^d^" ;;
+	4) echo "^c#d3869b^$(mpc prev   | filter )^d^" ;;  # scroll up, previous
+	5) echo "^c#d3869b^$(mpc next   | filter )^d^" ;;  # scroll down, next
+	6) echo "^c#d3869b^$(mpc status | filter )^d^" ; "$TERMINAL" -e "$EDITOR" "$0" ;;
+	*) echo "^c#d3869b^$(mpc status | filter )^d^" ;;
 esac
