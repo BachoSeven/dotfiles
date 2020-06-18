@@ -34,20 +34,18 @@ I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I us
 
 ## Screens
 
-#### Current Background
-
-<img src=".config/wp.png" alt="wp"/>
-
 ### Dwm
 
-<img src="pics/screens/ricing/dwwm.png" alt=":)"/>
+<img src="pics/screens/ricing/pink_dwm.png"/>
 
-<img src="pics/screens/ricing/dwm.png" alt="dwm"/>
+<img src="pics/screens/ricing/dwwm.png"/>
 
-<img src="pics/screens/ricing/dwm2.png" alt="dwm2"/>
+<img src="pics/screens/ricing/dwm.png"/>
+
+<img src="pics/screens/ricing/dwm2.png"/>
 
 ### Gnome-Shell
 
-<img src="pics/screens/ricing/new_rice1.png" alt="screenshot"/>
+<img src="pics/screens/ricing/new_rice1.png"/>
 
-<img src="pics/screens/ricing/new_rice-small.png" alt="pfetch"/>
+<img src="pics/screens/ricing/new_rice-small.png"/>
