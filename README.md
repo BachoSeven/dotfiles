@@ -25,7 +25,7 @@ I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I us
 - Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
 ## Eye-candy
-- I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, all suckless configs and anywhere I can.
+- I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, all suckless configs and anywhere else I could.
 - The compositor is `xcompmgr` with smooth fading, translucency and shadows
 - Icons are Joypixels (`ttf-joypixels` from aur)
 
