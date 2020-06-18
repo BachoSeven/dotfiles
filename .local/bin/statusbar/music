@@ -1,6 +1,7 @@
 #!/bin/sh
 
-filter() { mpc | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d" | paste -sd ' ';}
+mpccol="^c#d3869b^$(mpc)"
+filter() { echo $mpccol | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d" | paste -sd ' ';}
 
 pidof -x mpdup >/dev/null 2>&1 || mpdup >/dev/null 2>&1 &
 
@@ -12,8 +13,8 @@ case $BLOCK_BUTTON in
 - Left click opens ncmpcpp.
 - Middle click pauses.
 - Scroll changes track.";;  # right click, pause/unpause
-	4) mpc prev   | filter ;;  # scroll up, previous
-	5) mpc next   | filter ;;  # scroll down, next
-	6) mpc status | filter ; "$TERMINAL" -e "$EDITOR" "$0" ;;
-	*) mpc status | filter ;;
+	4) mpc prev   | echo "$(filter $1)^d^" ;;  # scroll up, previous
+	5) mpc next   | echo "$(filter $1)^d^" ;;  # scroll down, next
+	6) mpc status | echo "$(filter $1)^d^" ; "$TERMINAL" -e "$EDITOR" "$0" ;;
+	*) mpc status | echo "$(filter $1)^d^" ;;
 esac
