@@ -3,6 +3,8 @@
 	setopt extended_glob								# Enable globbing
 	stty stop undef									# Disable ctrl-s to freeze terminal.
 	unsetopt RM_STAR_SILENT 							# Always ask before rm folder/*
+# Perform command substitution, parameter and arithmetic expansion in prompt.
+	setopt prompt_subst
 
 # Remember recent directories
 	autoload -Uz add-zsh-hook
@@ -21,3 +23,13 @@
 	setopt pushd_to_home
 	setopt pushd_ignore_dups
 	setopt pushdminus
+
+# function to visualize dir stack
+	function di () {
+	  if [[ -n $1 ]]; then
+	    dirs "$@"
+	  else
+	    dirs -v | head -10
+	  fi
+	}
+	compdef _dirs di

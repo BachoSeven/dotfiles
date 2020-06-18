@@ -13,13 +13,3 @@
 	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 	zstyle ':completion:*' rehash true
-
-# function to navigate previous dirs taken from omz
-function di () {
-  if [[ -n $1 ]]; then
-    dirs "$@"
-  else
-    dirs -v | head -10
-  fi
-}
-compdef _dirs di
