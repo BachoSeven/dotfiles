@@ -9,7 +9,6 @@ xss slock &
 
 xrdb -merge -I$HOME ~/.Xresources
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
-transmission-daemon &		# bittorrent
 copyq &				# Clipboard management
 redshift &			# Color temperature
 hsetroot -solid "#282828"	# fix xcompgmr
