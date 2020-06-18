@@ -19,8 +19,6 @@
 				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.plugin.zsh" 2>/dev/null
 			elif [ -r "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh-theme" ]; then
 				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin/$plugin.zsh-theme" 2>/dev/null
-			elif [ -r "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin.plugin.zsh" ]; then
-				source "${ZDOTDIR:-$HOME/.zsh}/plugins/$plugin.plugin.zsh" 2>/dev/null
 			else
 				echo "$funcstack[1]: Unable to load '$plugin'." >&2
 			fi
@@ -47,15 +45,15 @@
 		fzf
 		powerlevel10k # +0.05
 		p10k_theme # +0.05
-		fsh/fast-syntax-highlighting # +0.1
+		fast-syntax-highlighting # +0.1
 	)
 	zsh_load_plugins $plugins
 	# nyan
 	# xrescol
 	# pinguco
 	# panes
-# barva
-	export BARVA_SOURCE=$(pa-get-default-monitor 2>/dev/null)
-	export BARVA_BG="#120021"
-	export BARVA_TARGET="#2aa198"
-	export BARVA_FPS=80
+# # barva
+	# export BARVA_SOURCE=$(pa-get-default-monitor 2>/dev/null)
+	# export BARVA_BG="#120021"
+	# export BARVA_TARGET="#2aa198"
+	# export BARVA_FPS=80
