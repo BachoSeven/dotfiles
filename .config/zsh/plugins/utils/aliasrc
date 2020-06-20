@@ -1,24 +1,23 @@
 # vi: ft=zsh
 ## This file is kept bash-compatible for use with dmenu_aliases
 
-## Aliases
-
+## Basics
 # Arch
 	alias clean='sudo pacman -Rs $(pacman -Qtdq)'
 	alias vote='ssh aur@aur.archlinux.org vote'
 
 # default to human readable figures and colorize
-alias df='df --si --print-type'
-alias du='du --si'
-alias ls='ls --si --classify --group-directories-first'
-alias free='free --si'
-alias l='ls --color -lA'
-alias rd='rmdir'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias grep="grep --color=auto"
-alias ccat="highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force --"
-alias path='echo $PATH | tr : "\n"'
+	alias df='df --si --print-type'
+	alias du='du --si'
+	alias ls='ls --si --classify --group-directories-first'
+	alias free='free --si'
+	alias l='ls --color -lA'
+	alias rd='rmdir'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+	alias grep="grep --color=auto"
+	alias ccat="highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force --"
+	alias path='echo $PATH | tr : "\n"'
 
 # Shorter commands
 alias \
@@ -36,8 +35,7 @@ alias \
 	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
 	alias dupsub="d submodule foreach git pull origin master"
 
-## Backup:
-
+## Backup
 # Elements
 	alias ehdry='rsync -r -n -t -v --delete --delete-excluded -l -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra /mnt/fraEl/hyperversum'
 	alias ehbkp='rsync -r -t -v --delete --delete-excluded -l -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra /mnt/fraEl/hyperversum'
@@ -99,6 +97,7 @@ alias \
 	alias jctl='journalctl'
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
+	alias slsk='soulseekqt'
 	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias ud='udict'
