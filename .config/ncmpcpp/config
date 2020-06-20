@@ -1,3 +1,5 @@
+# vim: ft=cfg
+
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.local/share/lyrics
 mpd_host = 127.0.0.1
@@ -196,7 +198,7 @@ incremental_seeking = yes
 #volume_change_step = 2
 autocenter_mode = yes
 centered_cursor = yes
-progressbar_look = ━━━
+progressbar_look = "━■" (─>─/━■/━╋━/━━━)
 ## Available values: database, playlist.
 #default_place_to_search_in = database
 user_interface = alternative
