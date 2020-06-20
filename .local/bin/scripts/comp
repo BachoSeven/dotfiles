@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Start a composition manager.
+# (xcompmgr in this case)
+
+comphelp() {
+    echo "Composition Manager:"
+    echo "   (re)start: COMP"
+    echo "   stop:      COMP -s"
+    echo "   query:     COMP -q"
+    echo "              returns 0 if composition manager is running, else 1"
+    exit
+}
+
+checkcomp() {
+    ps axch -o cmd:18,%mem,pid --sort -%mem|grep xcompmgr &>/dev/null
+}
+
+stopcomp() {
+    checkcomp && killall xcompmgr
+}
+
+startcomp() {
+    stopcomp
+    # Example settings only. Replace with your own.
+    xcompmgr -cCf -D3 -t-5 -l-5 -r5 -o.50 &
+    exit
+}
+
+case "$1" in
+    "")   startcomp ;;
+    "-q") checkcomp ;;
+    "-s") stopcomp; exit ;;
+    *)    comphelp ;;
+esac
