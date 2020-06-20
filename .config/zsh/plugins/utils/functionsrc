@@ -243,7 +243,6 @@ genpasswd() {
 compress() {
 	ffmpeg -i $1 -vcodec h264 -acodec mp3 $2
 }
-
 compressbrate() {
 	bitrate=${3:-1000k}
 	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2

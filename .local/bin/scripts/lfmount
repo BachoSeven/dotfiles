@@ -1,5 +1,5 @@
 #!/bin/sh
-# Little dirty wrapper to view archives in lf, workaround needed
+# Little workaround to view archives in lf needed
 # because .desktop files need to have argument as last Exec argument
 
 lf -command "mount '$1'"

@@ -1,3 +1,9 @@
+#
+#   ▜ ▗▀▖
+#   ▐ ▐  ▙▀▖▞▀▖
+# ▗▖▐ ▜▀ ▌  ▌ ▖
+# ▝▘ ▘▐  ▘  ▝▀
+#
 ##			Builtin Variables
 
 set shell zsh
@@ -234,7 +240,6 @@ map <c-g> set globsearch!
 map <c-f> :fzf_jump
 map <c-space> :toggle; up
 
-
 #			Personal utils
 map P mpv_playlist_dir
 map L cleanlatexcompile
@@ -246,3 +251,5 @@ map O $mimeopen --ask "$f"
 map V push :!nvim<space>
 map <c-a> !neomutt -a $fx
 map <c-z> $ kill -STOP $PPID	# put lf in bg
+
+# vim: ft=lf

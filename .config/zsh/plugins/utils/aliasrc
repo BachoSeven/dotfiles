@@ -70,7 +70,6 @@ alias \
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias brave='brave-nightly'
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
-	alias cx='chmod +x'
 	alias xclip="xclip -sel clip"
 	alias rm='rm -iv'
 	alias cp='cp -iv'
