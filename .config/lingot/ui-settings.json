@@ -1,0 +1,18 @@
+{
+  "appVersion":"1.1.1",
+  "spectrumVisible":true,
+  "gaugeVisible":true,
+  "winPosX":32,
+  "winPosY":36,
+  "winWidth":1856,
+  "winHeight":1008,
+  "configDialogPosX":504,
+  "configDialogPosY":36,
+  "configDialogWidth":911,
+  "configDialogHeight":1008,
+  "gaugeAdaptationConstant":150.0,
+  "gaugeDampingConstant":15.0,
+  "gaugeSamplingRate":60.0,
+  "errorDispatchRate":5.0,
+  "visualizationRate":30.0
+}
