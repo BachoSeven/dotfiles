@@ -242,6 +242,7 @@ map <c-space> :toggle; up
 
 #			Personal utils
 map P mpv_playlist_dir
+map W &setbg -i $f
 map L cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
 map x $$f

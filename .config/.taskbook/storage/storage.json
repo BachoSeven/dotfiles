@@ -147,7 +147,7 @@
         "_id": 46,
         "_date": "Thu Apr 30 2020",
         "_timestamp": 1588206086528,
-        "description": "Colorscheme change is 7 steps: Xresources, Zathura, ncspot, brave(+ddg), dircolors, dunst and nvim",
+        "description": "Colorscheme switch: xres, zathura, ncspot, brave(+ddg), dircolors, dunst, nvim and copyq",
         "isStarred": false,
         "boards": [
             "@Reminders"

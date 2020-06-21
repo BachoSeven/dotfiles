@@ -76,7 +76,7 @@ div > .vimiumHintMarker > .matchingCharacter {
 }
 
 #vomnibar li .vomnibarSource {
-  color: #cc241d;
+  color: #689d6a;
   margin-right: 4px;
 }
 #vomnibar li .vomnibarRelevancy {
@@ -116,5 +116,5 @@ div > .vimiumHintMarker > .matchingCharacter {
 }
 
 #vomnibarInput::selection {
-  background-color: #8be9fe;
+  background-color: #458588;
 }
