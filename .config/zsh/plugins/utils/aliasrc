@@ -77,9 +77,9 @@ alias \
 	alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
 
 # Remove spaces
-	alias rsf='find -name "* *" -type f | rename "s/ /_/g"'
-	alias rsd='find -name "* *" -type d | rename "s/ /_/g"'
-	alias rsb='find -name "*(*)*" -type f | rename "s/\(|\)|\[|\]//g"'
+	alias rsf='find -name "* *" -type f | perl-rename "s/ /_/g"'
+	alias rsd='find -name "* *" -type d | perl-rename "s/ /_/g"'
+	alias rsb='find -name "*(*)*" -type f | perl-rename "s/\(|\)|\[|\]//g"'
 
 # Various
 	alias ncdu="ncdu --si --color dark"
@@ -87,6 +87,7 @@ alias \
 		locate="lolcate --db mydb" \
 		updb='lolcate --db mydb  --update'
 	alias pp='prettyping'
+	alias nmdm='networkmanager_dmenu'
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 	alias nf='neofetch'

@@ -15,7 +15,7 @@ src_update() {
 		git -C "$dir" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
 		printf '%s: ' "$dir:t"
 		git -C "$dir" remote -v | grep -q upstream &&
-			{ git -C "$dir" fetch upstream || printf '%s: Could not fetch upstream.' "$dir:t" } &&
+			{ git -C "$dir" fetch upstream || printf '%s: Could not fetch upstream...\n' "$dir:t" } &&
 				{ git -C "$dir" pull 2>/dev/null || echo "Unable to upgrade." }
 	done
 }
@@ -249,10 +249,6 @@ compressbrate() {
 	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
 }
 
-pdfsearch() {
-	command -v pdftotext >/dev/null && mkdir -p tmpd; ls *.pdf | while read file; do pdftotext $file tmpd/$file.txt; done; cd tmpd && rg $1 && cd .. && rm -rf tmpd || echo 'Error!'
-}
-
 # create a new directory and enter it
 md() { mkdir -p "$1" && cd "$1"; }
 
@@ -265,6 +261,20 @@ manfd() {
 # find inside manuals
 fman() {
     man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
+}
+
+## pdf utils
+img2pdf() {
+while read file; do
+filebase=$(basename $file | cut -d'.' -f1)
+convert -density 300 -quality 100 $file $file.pdf
+done <<< $(ls)
+}
+pdfsearch() {
+	command -v pdftotext >/dev/null && mkdir -p tmpd; ls *.pdf | while read file; do pdftotext $file tmpd/$file.txt; done; cd tmpd && rg $1 && cd .. && rm -rf tmpd || echo 'Error!'
+}
+compresspdf() {
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=$2.pdf $1
 }
 
 # A wget wrapper
