@@ -72,14 +72,16 @@ alias \
 	alias rm='rm -iv'
 	alias cp='cp -iv'
 	alias mv='mv -iv'
-	alias p='patch'
 	alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
 	alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
 
-# Remove spaces
+# Remove spaces, curly+squared brackets and commas
 	alias rsf='find -name "* *" -type f | perl-rename "s/ /_/g"'
 	alias rsd='find -name "* *" -type d | perl-rename "s/ /_/g"'
-	alias rsb='find -name "*(*)*" -type f | perl-rename "s/\(|\)|\[|\]//g"'
+	alias rsbd='find -name "*(*)*" -type d | perl-rename "s/\(|\)|\[|\]//g"'
+	alias rsbf='find -name "*(*)*" -type f | perl-rename "s/\(|\)|\[|\]//g"'
+	alias rscd='find -name "*,*" -type d | perl-rename "s/,/_/g"'
+	alias rscf='find -name "*,*" -type f | perl-rename "s/,/_/g"'
 
 # Various
 	alias ncdu="ncdu --si --color dark"
