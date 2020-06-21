@@ -1,0 +1,23 @@
+description = "uwu"
+
+# Directories to index.
+dirs = [
+  "~/.config",
+  "~/.local",
+  "/mnt/01D5707D40B081F0/Users/ascol",
+  "/usr/bin",
+  "/usr/share",
+]
+
+# Set to "Dirs" or "Files" to skip directories or files.
+# If unset, or set to "None", both files and directories will be included.
+# skip = "Dirs"
+
+# Set to true if you want skip symbolic links
+ignore_symlinks = true
+
+# Set to true if you want to ignore hidden files and directories
+ignore_hidden = false
+
+# Set to true to read .gitignore files and ignore matching files
+gitignore = true
