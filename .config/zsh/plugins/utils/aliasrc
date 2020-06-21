@@ -124,7 +124,7 @@ alias \
 	alias mim='v $XDG_CONFIG_HOME/mimi/mime.conf'
 	alias zarc='v $XDG_CONFIG_HOME/zathura/zathurarc'
 	alias lfrc='v $XDG_CONFIG_HOME/lf/lfrc'
-	alias zshrc='source $XDG_CONFIG_HOME/zsh/.zshrc'
+	alias zshrc='source $ZDOTDIR/.zshrc'
 	alias zt='zsh_bench'
 	alias cfz='v $ZDOTDIR/.zshrc'
 	alias cfzp='v $ZDOTDIR/plugins'
