@@ -28,6 +28,8 @@ I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I us
 - I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, all suckless configs and anywhere else I could.
 - The compositor is `xcompmgr` with smooth fading, translucency and shadows
 - Icons are Joypixels (`ttf-joypixels` from aur)
+- The default gtk 2/3 theme is [Arc-Gruvbox](https://aur.archlinux.org/packages/gtk-theme-arc-gruvbox-git)
+- My font is `Hack Nerd Font`
 
 ### Various
 - I use brave browser, you can find info about my config of it at `.config/brave_plugins`. To improve its aestethics, I use a gruvbox chrome theme and duckduckgo with `gruvboxytheme` passphrase (try it!); which make a decent start page together Vimium's Vomnibar. (I now use a custome startpage with Brave, check it out [here](https://github.com/BachoSeven/startpage).)
