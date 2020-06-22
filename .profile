@@ -18,7 +18,7 @@
 	export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 	export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 	export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
-	export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
+	export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/settings.ini
 	export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 	export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 	export LESSHISTFILE=-
@@ -59,7 +59,7 @@
 
 # A few AMAZING fzf options
 	export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-	export FZF_DEFAULT_OPTS="--layout=reverse --height 50% --border --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
+	export FZF_DEFAULT_OPTS="--cycle --layout=reverse --height 50% --border --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
 	export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 	export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
 	export FZF_ALT_C_OPTS="--exact --select-1 --exit-0 --preview 'tree -C {} | head -200'" # this is almost a file manager
@@ -158,6 +158,11 @@ ex=🎯:\
 	export BARVA_BG="#000000"
 	export BARVA_TARGET="#f7999f"
 	export BARVA_FPS=60
+# Git
+	export GIT_PS1_SHOWDIRTYSTATE=1
+	export GIT_PS1_SHOWSTASHSTATE=1
+	export GIT_PS1_SHOWUNTRACKEDFILES=1
+	export GIT_PS1_SHOWUPSTREAM="auto"
 
 # Start graphical server on tty1 if not already running.
 	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" vt1 &> /dev/null

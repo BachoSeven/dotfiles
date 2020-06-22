@@ -26,7 +26,6 @@
 	}
 	function zsh_update_plugins() {
 		local plugin
-
 		for plugin (${ZDOTDIR:-$HOME/.zsh}/plugins/*(N/)); do
 			git -C "$plugin" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
 			printf '%s: ' "$plugin:t"
