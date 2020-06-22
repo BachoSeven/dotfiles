@@ -33,19 +33,19 @@ alias \
 	alias dfc='d commit -a'
 	alias dfp='d push'
 	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
-	alias dupsub="d submodule foreach git pull origin master"
+	alias dupdsub="d submodule foreach git pull origin master"
 
 ## Backup
 # Elements
-	alias ehdry='rsync -rtv -n --delete --delete-excluded -l -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
-	alias ehbkp='rsync -rtv --delete --delete-excluded -l -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
-	alias eddry='rsync -rtv -n --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
-	alias edbkp='rsync -rtv --delete -l -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
+	alias ehdry='rsync -rltv -n --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
+	alias ehbkp='rsync -rltv --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
+	alias eddry='rsync -rltv -n --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
+	alias edbkp='rsync -rltv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
 # Passport
-	alias phdry='rsync -rLtv -n --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraPass/hyperversum'
-	alias phbkp='rsync -rLtv --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraPass/hyperversum'
-	alias pddry='rsync -rLtv -n --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
-	alias pdbkp='rsync -rLtv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
+	alias phdry='rsync -rltv -n --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraPass/hyperversum'
+	alias phbkp='rsync -rltv --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraPass/hyperversum'
+	alias pddry='rsync -rltv -n --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
+	alias pdbkp='rsync -rltv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 
 ## Utils
 	alias ..='cd ..'
