@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ ! -z "$1" ] && var="-variant $1"
+[ -n "$1" ] && var="-variant $1"
 
 # This script is called on startup to remap keys.
 # Increase key speed via a rate change

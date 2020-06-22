@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function get_headphones_index() {
-  echo $(pacmd list-cards | grep bluez_card -B1 | grep index | awk '{print $2}')
+  pacmd list-cards | grep bluez_card -B1 | grep index | awk '{print $2}'
 }
 
 function get_headphones_mac_address() {
@@ -29,7 +29,7 @@ function connect_bluetooth_headphones() {
 
 function _set_headphones_profile() {
   local profile=${1}
-  pacmd set-card-profile $(get_headphones_index) ${profile}
+  pacmd set-card-profile "$(get_headphones_index)" "${profile}"
 }
 
 function set_headphones_profile_a2dp_sink() {

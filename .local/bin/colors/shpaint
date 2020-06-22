@@ -4,7 +4,7 @@
 #
 
 # Check input first
-if [ ! $# -eq 1 ] || [ "$1" == "-h"] || [ "$1" == "--help" ] ; then
+if [ ! $# -eq 1 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ] ; then
 	printf "Usage:\n"
 	printf "\t$0 saved_image\n"
 	printf "\n\tImage data will be saved into given filename, if file exist\n"
@@ -61,7 +61,7 @@ function at_exit() {
 	stty "$_STTY"            # reinitialize terminal settings
 	clear
 	echo "Thank for using ansipaint!"
-	if [ ! -z "$IMAGE_FILE" ] ; then
+	if [ -n "$IMAGE_FILE" ] ; then
 		echo "Your image is saved as '$IMAGE_FILE'."
 		save_image
 	fi

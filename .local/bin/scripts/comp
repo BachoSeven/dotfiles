@@ -13,7 +13,7 @@ comphelp() {
 }
 
 checkcomp() {
-    ps axch -o cmd:18,%mem,pid --sort -%mem|grep xcompmgr &>/dev/null
+    pgrep xcompmgr &>/dev/null
 }
 
 stopcomp() {

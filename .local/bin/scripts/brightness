@@ -12,7 +12,7 @@ default=5000
 defaultu=6500
 defaultd=1500
 
-if [ ! -z $1 ]; then
+if [ -n "$1" ]; then
 	if [[ $1 = up ]]; then
 		value="$(dmenu -p 'Input level 0-7500 [default: 6500]' )"
 		[[ -n "$value" ]] || value=$defaultu
@@ -20,9 +20,9 @@ if [ ! -z $1 ]; then
 		value="$(dmenu -p 'Input level 0-7500 [default: 1500]' )"
 		[[ -n "$value" ]] || value=$defaultd
 	elif [[ $1 = inc ]]; then
-		value="$(($current+$2))"
+		value="$((current+$2))"
 	elif [[ $1 = dec ]]; then
-		value="$(($current-$2))"
+		value="$((current-$2))"
 	fi
 else
 	value="$default"
