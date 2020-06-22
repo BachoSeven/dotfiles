@@ -4,7 +4,7 @@
 [submodule ".config/zsh/plugins/powerlevel10k"]
 	path = .config/zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
-[submodule ".config/zsh/plugins/fsh"]
+[submodule ".config/zsh/plugins/fast-syntax-highlighting"]
 	path = .config/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting.git
 [submodule ".config/zsh/plugins/dotbare"]
