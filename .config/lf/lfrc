@@ -242,6 +242,7 @@ map m embed mpv
 map <c-a> embed neomutt -a
 map | embed $PAGER
 map W embed dotbare add
+map <c-w> embed dotbare rm -rf --cached
 map w &setbg -i $f
 map L cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
