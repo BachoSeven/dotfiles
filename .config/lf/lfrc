@@ -197,16 +197,13 @@ cmd zip ${{
     rm -rf $1
 }}
 
-# mpv
-cmd mpv_playlist_dir ${{
-	set -f
-	mpv $fx
-}}
-
 cmd cleanlatexcompile ${{
 	latexcompile $fx &&
 	notify-send "File(s) compiled."
 }}
+
+# Execute shell command on selection
+cmd embed $$@ $fx
 
 ##			Bindings
 
@@ -216,7 +213,6 @@ map c push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extention
 map a push A<a-b> # after extention
-map w $$PAGER $f
 map b bulkrename
 map <c-n> push :mkdir<space>
 map E extract	#extract and compress
@@ -227,11 +223,11 @@ map p paste
 map S :Link
 
 #			Navigation
+map ~ cd ~
 map <c-r> reload
 map . set hidden!
 map <enter> shell
 map t :set sortby time; set info time; set reverse!	#set by most recent
-map gh	#unmap useless key
 map g top
 map <c-e> down	#enable mouse scroll
 map <c-y> up
@@ -241,8 +237,12 @@ map <c-f> :fzf_jump
 map <c-space> :toggle; up
 
 #			Personal utils
-map P mpv_playlist_dir
-map W &setbg -i $f
+map gh	# unmap useless keys
+map m embed mpv
+map <c-a> embed neomutt -a
+map | embed $PAGER
+map W embed dotbare add
+map w &setbg -i $f
 map L cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
 map x $$f
@@ -251,7 +251,6 @@ map o &mimeopen "$f"
 map O $mimeopen --ask "$f"
 map T push :!touch<space>
 map V push :!nvim<space>
-map <c-a> !neomutt -a $fx
 map <c-z> $ kill -STOP $PPID	# put lf in bg
 
 # vim: ft=lf
