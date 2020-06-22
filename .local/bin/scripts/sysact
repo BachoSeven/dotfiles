@@ -18,4 +18,6 @@ cmds="\
 
 choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu)" || exit 1
 
-`echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-`
+## https://github.com/koalaman/shellcheck/wiki/SC2091
+readonly action="$(echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-)"
+$action

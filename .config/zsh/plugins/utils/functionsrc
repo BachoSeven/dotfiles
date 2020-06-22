@@ -264,10 +264,19 @@ fman() {
     man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
 }
 
+# Shellcheck all of my scripts
 scck() {
 	scripts=(
-	/home/fra/.local/bin/exe /home/fra/.local/bin/statusbar /home/fra/.local/bin/scripts /home/fra/.local/bin/cron /home/fra/.local/bin/colors /home/fra/.local/bin
-	shellcheck
+		/home/fra/.local/bin/statusbar
+		/home/fra/.local/bin/scripts
+		/home/fra/.local/bin/cron
+		/home/fra/.local/bin/colors
+	)
+	for dir in $scripts; do
+		while read script; do
+			shellcheck -x $dir/$script
+		done <<< $(\ls --format single-column $dir)
+	done
 }
 
 ## pdf utils

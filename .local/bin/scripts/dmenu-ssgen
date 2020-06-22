@@ -26,7 +26,7 @@ select="$(dmenu $prompt $font $colors $lines <<< $list)"
 
 # run 'ssgen' with the selected file name
 
-if [[ ! -z "$select" ]]; then
+if [[ -n "$select" ]]; then
     eval "$ssgen_path/ssgen $select"
 fi
 

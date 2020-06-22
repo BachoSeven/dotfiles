@@ -10,7 +10,7 @@ script_editor="st -e nvim"
 
 script_file="$script_path/$1"
 
-if [[ -z "$@" ]]; then
+if [[ -z "$*" ]]; then
     echo -e "\n\nError!\nUsage: ssgen script_name\n\n"
     exit 0;
 fi

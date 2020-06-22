@@ -14,18 +14,18 @@ usage() { echo "usage: $(basename $0) [-c <config>] [file]"; }
 # pipe configuration
 getconfig() {
    # '#' are comments in configuration :)
-   [[ -f "$_LINOPEN_CFGARG" ]] && { egrep -v "^(#|$)" "$_LINOPEN_CFGARG"; return; }
-   [[ -f "$_LINOPEN_CFGRC" ]]  && { egrep -v "^(#|$)" "$_LINOPEN_CFGRC"; return; }
-   [[ -f "$_LINOPEN_CFGSYS" ]] && { egrep -v "^(#|$)" "$_LINOPEN_CFGSYS"; return; }
+   [[ -f "$_LINOPEN_CFGARG" ]] && { grep -Ev "^(#|$)" "$_LINOPEN_CFGARG"; return; }
+   [[ -f "$_LINOPEN_CFGRC" ]]  && { grep -Ev "^(#|$)" "$_LINOPEN_CFGRC"; return; }
+   [[ -f "$_LINOPEN_CFGSYS" ]] && { grep -Ev "^(#|$)" "$_LINOPEN_CFGSYS"; return; }
 }
 
 # match regexp
 # $1 = filename
 match_regexp() {
    open_with=''
-   getconfig | grep "^?" | while read cf; do
+   getconfig | grep "^?" | while read -r cf; do
       exp="$(echo "$cf" | sed "s/?'\(.*\)':.*/\1/")"
-      [[ -n "$(echo "$@" | grep "$exp")" ]] && {
+      [[ $(echo "$@" | grep -q "$exp") == true ]] && {
          open_with="$(echo "$cf" | sed "s/?'.*':\(.*\)/\1/")";
       }
       # exit the loop once a match is encountered
@@ -42,7 +42,7 @@ get_term() {
 # check, if program needs terminal
 # $1 = program
 needs_term() {
-   [[ -n "$(getconfig | grep -w "^interm=$@")" ]] &&
+   [[ $(getconfig | grep -qw "^interm=$@") == true ]] &&
       return 0 || return 1
 }
 
@@ -70,11 +70,11 @@ launch() {
 
    # if not directory, and file doesn't exist
    # try matching regexp
-   [[ ! -n "$program" ]] && [[ ! -f "$1" ]] &&
+   [[ -z "$program" ]] && [[ ! -f "$1" ]] &&
       regexp="$(match_regexp "$1")"
 
    # if file not found and no matching regexp
-   [[ ! -f "$1" ]] && [[ ! -d "$1" ]] && [[ ! -n "$regexp" ]] && {
+   [[ ! -f "$1" ]] && [[ ! -d "$1" ]] && [[ -z "$regexp" ]] && {
       err "file does not exist: $1";
    } || {
       [[ -n "$program" ]] || program="$regexp"

@@ -4,10 +4,10 @@ aliases=$ZDOTDIR/plugins/utils/aliasrc
 # configuration is done in Xresources
 dmenucmd='dmenu -i -h 18'
 
-source $aliases
+source "$aliases"
 
 #pull our previously run commands in
-history=$(<$freq)
+history=$(< "$freq" )
 #for ones that have arguments, condense them down to an asterisk
 history=$(sed "s/[[:space:]].*/*/" <<< "$history")
 
@@ -48,7 +48,7 @@ if [[ "$cmd" =~ $regex ]]; then
     cmd="$(echo "$sorted"$'\n'"$cache" | $dmenucmd)"
     if [[ $cmd == *";remove" ]]; then
         cmd=${cmd/;remove/}
-        egrep -vx "$cmd" $freq > temp
+        grep -Evx "$cmd" $freq > temp
         mv temp $freq
         exit 0
     fi
