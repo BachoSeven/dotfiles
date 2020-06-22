@@ -52,8 +52,3 @@
 	# xrescol
 	# pinguco
 	# panes
-# # barva
-	export BARVA_SOURCE=$(pa-get-default-monitor 2>/dev/null)
-	export BARVA_BG="#000000"
-	export BARVA_TARGET="#f7999f"
-	export BARVA_FPS=60

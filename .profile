@@ -154,7 +154,11 @@ ex=🎯:\
 *.torrent=🔽:\
 *.nix=::\
 "
+# Barva
+	export BARVA_BG="#000000"
+	export BARVA_TARGET="#f7999f"
+	export BARVA_FPS=60
 
 # Start graphical server on tty1 if not already running.
-	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" vt1
+	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" vt1 &> /dev/null
 	sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null

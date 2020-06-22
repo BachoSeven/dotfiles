@@ -200,38 +200,5 @@
             "@FreeTime"
         ],
         "_isTask": false
-    },
-    "54": {
-        "_id": 54,
-        "_date": "Fri Jun 19 2020",
-        "_timestamp": 1592524426734,
-        "description": "lingot(AUR) & pavucontrol",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
-    "55": {
-        "_id": 55,
-        "_date": "Mon Jun 22 2020",
-        "_timestamp": 1592816776256,
-        "description": "Plymouth-git addded and it needs kernel parameters config",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
-    "56": {
-        "_id": 56,
-        "_date": "Mon Jun 22 2020",
-        "_timestamp": 1592832559040,
-        "description": "blacklist noveau",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
     }
 }
