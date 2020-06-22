@@ -22,6 +22,7 @@
 	export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 	export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 	export LESSHISTFILE=-
+	export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 	export HISTFILE="$XDG_DATA_HOME/zsh/.zsh_history"
 	export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 	export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
@@ -155,5 +156,5 @@ ex=🎯:\
 "
 
 # Start graphical server on tty1 if not already running.
-	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx
+	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" vt1
 	sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null

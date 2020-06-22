@@ -7,7 +7,7 @@ dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS 
 xset s 600
 xss slock &
 
-xrdb -merge -I$HOME ~/.Xresources
+xrdb -load ~/.config/X11/Xresources
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
 copyq &				# Clipboard management
 redshift &			# Color temperature

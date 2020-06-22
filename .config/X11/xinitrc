@@ -7,6 +7,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-[ -f "$HOME/.config/xprofile" ] && . "$HOME/.config/xprofile"
+[ -f "$XDG_CONFIG_HOME/X11/xprofile" ] && . "$XDG_CONFIG_HOME/X11/xprofile"
 
 ssh-agent dwm
