@@ -26,12 +26,12 @@
 "" Some mappings and shortcuts
 
 " vsplit file under cursor; C-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
-	nnoremap <C-W><C-F> <C-W>vgf
+	nn <C-W><C-F> <C-W>vgf
 
 " Spell check bindings
-	inoremap <c-L> <c-g>u<Esc>[s1z=`]a<c-g>u
-	inoremap <c-K> <c-g>u<esc>u[s2z=gi<c-g>u
-	inoremap <c-J> <c-g>u<esc>u[s3z=gi<c-g>u
+	ino <c-L> <c-g>u<Esc>[s1z=`]a<c-g>u
+	ino <c-K> <c-g>u<esc>u[s2z=gi<c-g>u
+	ino <c-J> <c-g>u<esc>u[s3z=gi<c-g>u
 
 " Save a few keypresses
 	map <C-h> <C-w>h
@@ -40,16 +40,16 @@
 	map <leader>j <C-w>j:q<cr>
 	map <leader>k <C-w>k:q<cr>
 	map <leader>l <C-w>l:q<cr>
-	nnoremap c "_c
+	nn c "_c
 " Quick macros
-	nnoremap <silent> Q @q
+	nn <silent> Q @q
 	map <C-t>k :tabr<cr>
 	map <C-t>j :tabl<cr>
 	map <C-t>h :tabp<cr>
 	map <C-t>l :tabn<cr>
 
 " Replace all occurrences aliased to S
-	nnoremap S :%s//g<Left><Left>
+	nn S :%s//g<Left><Left>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
 	map <leader>C :w! \| !compiler <c-r>%<CR>
@@ -64,23 +64,23 @@
 	cmap w!! w !sudo tee > /dev/null %
 
 " Insert new lines in Normal Mode
-	nnoremap <leader>o mao<Esc>`a
-	nnoremap <leader>O maO<Esc>`a
+	nn <leader>o mao<Esc>`a
+	nn <leader>O maO<Esc>`a
 
 " Turn off search highlight
-	nnoremap <leader><space> :nohlsearch<CR>
+	nn <leader><space> :nohlsearch<CR>
 
 " Edit vimrc/zshrc and load vimrc bindings
-	nnoremap <leader>ev :vsp ~/.config/nvim/init.vim<CR>
-	nnoremap <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
-	nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
+	nn <leader>ev :vsp ~/.config/nvim/init.vim<CR>
+	nn <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
+	nn <leader>sv :source ~/.config/nvim/init.vim<CR>
 
 " C compiling
-	nnoremap <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
-	nnoremap <leader>cp :vsp<CR>:te<CR>a ./
+	nn <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
+	nn <leader>cp :vsp<CR>:te<CR>a ./
 
 " Open Terminal
-	nnoremap <leader>t :te<CR>a
+	nn <leader>t :te<CR>a
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 	autocmd BufWritePre * %s/\s\+$//e
@@ -104,8 +104,8 @@
 	" let g:session_dir = '~/.config/nvim/vim-sessions'
 	" let g:session#default_opener = 'edit'
 	" let g:session#default_session = 'default'
-	" exec 'nnoremap <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
-	" exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+	" exec 'nn <Leader>ss :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+	" exec 'nn <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
 "" Plugins
 
@@ -148,7 +148,7 @@ Plug 'junegunn/goyo.vim'
 
 " Appearance
 Plug 'chrisbra/Colorizer'
-	nnoremap <leader>H :ColorToggle<cr>
+	nn <leader>H :ColorToggle<cr>
 Plug 'ap/vim-css-color'
 
 Plug 'dylanaraps/wal.vim'
@@ -169,7 +169,7 @@ call plug#end()
 
 "" Post-Plugin
 
-" lf
+" Lf
 	let g:lf_command_override = 'lf -command "set hidden"'
 	let g:lf_replace_netrw = 1 " open lf when vim open a directory
 
@@ -178,14 +178,14 @@ call plug#end()
 
 " Fuzzy Finder
 	let g:fzf_layout = { 'window': '10new' }
-	nnoremap <silent> <C-p> :FZF -m<cr>
+	nn <silent> <C-p> :FZF -m<cr>
 
 " Better command history with q:
 	command! CmdHist call fzf#vim#command_history({'right': '40'})
-	nnoremap q: :CmdHist<CR>
+	nn q: :CmdHist<CR>
 
 " Change Colorscheme using fzf
-	nnoremap <silent> <Leader>sc :call fzf#run({
+	nn <silent> <Leader>sc :call fzf#run({
 	\   'source':
 	\     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
 	\         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
@@ -206,7 +206,7 @@ call plug#end()
 	  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 	endfunction
 
-	nnoremap <silent> <Leader><Enter> :call fzf#run({
+	nn <silent> <Leader><Enter> :call fzf#run({
 	\   'source':  reverse(<sid>buflist()),
 	\   'sink':    function('<sid>bufopen'),
 	\   'options': '+m',
@@ -221,7 +221,7 @@ call plug#end()
 	let g:vimtex_view_method='zathura'
 
 " fzf integration for vimtex
-	nnoremap <localleader>lt :call vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
+	nn <localleader>lt :call vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
 
 " vimtex deoplete
 	call deoplete#custom#var('omni', 'input_patterns', {
@@ -229,7 +229,7 @@ call plug#end()
 		\})
 " UndoTree
 	let g:undotree_WindowLayout = 3
-	nnoremap <F5> :UndotreeToggle<cr>
+	nn <F5> :UndotreeToggle<cr>
 	let g:undotree_SetFocusWhenToggle = 1
 
 "" Appearance

@@ -28,13 +28,6 @@ alias \
 	trem='transmission-remote' \
 	z='zathura'
 
-# Dotbare
-	alias d='dotbare'
-	alias dfc='d commit -a'
-	alias dfp='d push'
-	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
-	alias dupdsub="d submodule foreach git pull origin master"
-
 ## Backup
 # Elements
 	alias ehdry='rsync -rltv -n --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
@@ -116,7 +109,14 @@ alias \
 	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
 	alias mcl='java -jar /home/francesco/programs_drivers/games/mc/mcTE.jar'
 
-# Rice
+## Rice
+# Dotbare
+	alias d='dotbare'
+	alias dfc='d commit -a'
+	alias dfp='d push'
+	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
+	alias dupdsub="d submodule foreach git pull origin master"
+# cf... shortcuts
 	alias cfx='v $XDG_CONFIG_HOME/sxiv/exec/key-handler'
 	alias cfs='v $XDG_CONFIG_HOME/ncspot/config.toml'
 	alias cfa='v $ZDOTDIR/plugins/utils/aliasrc'

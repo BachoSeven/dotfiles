@@ -264,18 +264,28 @@ fman() {
     man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
 }
 
+scck() {
+	scripts=(
+	/home/fra/.local/bin/exe /home/fra/.local/bin/statusbar /home/fra/.local/bin/scripts /home/fra/.local/bin/cron /home/fra/.local/bin/colors /home/fra/.local/bin
+	shellcheck
+}
+
 ## pdf utils
 img2pdf() {
-while read file; do
-filebase=$(basename $file | cut -d'.' -f1)
-convert -density 300 -quality 100 $file $file.pdf
-done <<< $(ls)
+	while read file; do
+	filebase=$(basename $file | cut -d'.' -f1)
+	convert -density 300 -quality 100 $file $file.pdf
+	done <<< $(ls)
 }
 pdfsearch() {
-	command -v pdftotext >/dev/null && mkdir -p tmpd; ls *.pdf | while read file; do pdftotext $file tmpd/$file.txt; done; cd tmpd && rg $1 && cd .. && rm -rf tmpd || echo 'Error!'
+	command -v pdftotext >/dev/null && mkdir -p tmpd; ls *.pdf |
+		while read file; do
+			pdftotext $file tmpd/$file.txt;
+		done
+		cd tmpd && rg $1 && cd .. && rm -rf tmpd || echo 'Error!'
 }
 compresspdf() {
-gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=$2.pdf $1
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=$2.pdf $1
 }
 
 # A wget wrapper
