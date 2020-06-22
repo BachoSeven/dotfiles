@@ -194,10 +194,21 @@
         "_id": 53,
         "_date": "Fri Jun 19 2020",
         "_timestamp": 1592523650859,
-        "description": "update the mimi AUR package",
+        "description": "post to AUR mimi fork ",
         "isStarred": false,
         "boards": [
             "@FreeTime"
+        ],
+        "_isTask": false
+    },
+    "54": {
+        "_id": 54,
+        "_date": "Mon Jun 22 2020",
+        "_timestamp": 1592852645404,
+        "description": "fix symlink treament in fraPass either by formatting it or somehow keeping track of symlinks and restoring them someotherhow",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
         ],
         "_isTask": false
     }
