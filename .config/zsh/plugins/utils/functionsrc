@@ -5,6 +5,8 @@
 src_update() {
 	dirs=(
 		/home/fra/.config/brave_plugins/vimium
+		/home/fra/.config/brave_plugins/startpage
+		/home/fra/.config/mpv/scripts/mpvSockets
 		/home/fra/.local/src/subs
 		/home/fra/.local/src/dwm
 		/home/fra/.local/src/dwmblocks
