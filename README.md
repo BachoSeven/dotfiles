@@ -8,9 +8,9 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
 
 ## Current Setup
 
-I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I use:
+I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use:
 - Suckless utilities (links are to my patched repos): **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), and **[st](https://github.com/BachoSeven/st)** (terminal emulator).
-- Highly configured **zsh**  shell with many custom plugins for completions and integrations, **[powerlevel10k](https://github.com/romkatv/powerlevel10k)** with a custom lean theme and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax higlighting. Despite all these customizations, my zsh has an average startup time of `0.047 s`.
+- Highly configured **zsh**  shell with many custom plugins for completions and integrations, **[powerlevel10k](https://github.com/romkatv/powerlevel10k)** with a custom lean theme and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax highlighting. Despite all these customizations, my zsh has an average startup time of `0.047 s`.
 - **neovim** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
 - **ncmpcpp** as a music player (with mpd)
@@ -33,7 +33,7 @@ I run Arch Linux on an Asus UX310UQK latptop; here are some of the programs I us
 - My font is `Hack Nerd Font`
 
 ### Various
-- I use brave browser, you can find info about my config of it at `.config/brave_plugins`. To improve its aestethics, I use a gruvbox chrome theme and duckduckgo with `gruvboxytheme` passphrase (try it!); which make a decent start page together Vimium's Vomnibar. (I now use a custome startpage with Brave, check it out [here](https://github.com/BachoSeven/startpage).)
+- I use brave browser, you can find info about my config of it at `.config/brave_plugins`. To improve its aesthetics, I use a gruvbox chrome theme and duckduckgo with `gruvboxytheme` pass phrase (try it!); which make a decent start page together Vimium's Vomnibar. (I now use a custom start page with Brave, check it out [here](https://github.com/BachoSeven/startpage).)
 
 ## Screens
 

@@ -1,6 +1,14 @@
-# http://127.0.0.1:9117/api/v2.0/indexers/rutracker/results/torznab/api?apikey=wehmxuljrd6ncieuwmlq58tb34d3y7yx&t=search&cat=&q=
-# http://127.0.0.1:9117/api/v2.0/indexers/thepiratebay/results/torznab/api?apikey=wehmxuljrd6ncieuwmlq58tb34d3y7yx&t=search&cat=&q=
+
+"---ARCH---"
+https://www.archlinux.org/feeds/packages/
+https://www.archlinux.org/feeds/news/
+" "
+
+"---MISC---"
 https://xkcd.com/rss.xml
+" "
+
+"---YT---"
 https://youtube.com/feeds/videos.xml?channel_id=UCFAiFyGs6oDiF1Nf-rRJpZA
 https://youtube.com/feeds/videos.xml?channel_id=UCrNiNV2v5GlY0bGHs1TenHg
 https://youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA

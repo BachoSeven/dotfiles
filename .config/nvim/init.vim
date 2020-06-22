@@ -242,9 +242,9 @@ call plug#end()
 	" colorscheme wal
 	" colorscheme NeoSolarized
 	" let g:airline_theme='base16_solarized'
-	" hi Normal ctermbg=NONE guibg=NONE
-	" hi NonText ctermbg=NONE guibg=NONE
-	" hi EndOfBuffer ctermbg=NONE guibg=NONE
+	hi Normal ctermbg=NONE guibg=NONE
+	hi NonText ctermbg=NONE guibg=NONE
+	hi EndOfBuffer ctermbg=NONE guibg=NONE
 	hi LineNr ctermbg=NONE guibg=NONE
 " fix gruvbox visual selection
 	hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
