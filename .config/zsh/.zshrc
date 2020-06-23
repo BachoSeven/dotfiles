@@ -29,6 +29,7 @@
 		for plugin (${ZDOTDIR:-$HOME/.zsh}/plugins/*(N/)); do
 			git -C "$plugin" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
 			printf '%s: ' "$plugin:t"
+			git -C "$plugin" remote -v | grep -q upstream && { git -C "$plugin" fetch upstream || printf '%s: Could not fetch upstream...\n' "$plugin:t" }
 			git -C "$plugin" pull 2>/dev/null || echo "Unable to upgrade."
 		done
 	}
