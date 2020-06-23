@@ -94,7 +94,7 @@ alias \
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias slsk='soulseekqt'
-	alias tg='telegram-desktop'
+	alias tgg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias ud='udict'
 	alias abook='abook -C $XDG_CONFIG_HOME/abook/abookrc --datafile $XDG_DATA_HOME/abook/addressbook'

@@ -6,22 +6,22 @@
 "
 
 "" Basic Settings
-	set title
+	se title
 	let mapleader =","
-	set shell=/usr/bin/zsh
-	set clipboard+=unnamedplus
-	set number relativenumber
-	set wildmenu
-	set wildmode=longest,list,full
-	set autoindent
-	set incsearch
-	set hidden
-	set termguicolors
+	se shell=/usr/bin/zsh
+	se clipboard+=unnamedplus
+	se number relativenumber
+	se wildmenu
+	se wildmode=longest,list,full
+	se autoindent
+	se incsearch
+	se hidden
+	se termguicolors
 	setlocal spell spelllang=en_us
-	set splitbelow splitright
-	set lazyredraw
+	se splitbelow splitright
+	se lazyredraw
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " Return to last edit position when opening files
-	set fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
+	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 
 "" Some mappings and shortcuts
 " jk is Esc in insert mode
@@ -63,7 +63,7 @@
 	au VimLeave *.tex !texclear %
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-	cmap w!! w !sudo tee > /dev/null %
+	cm w!! w !sudo tee > /dev/null %
 
 " Insert new lines in Normal Mode
 	nn <leader>o mao<Esc>`a
@@ -75,7 +75,7 @@
 " Edit vimrc/zshrc and load vimrc bindings
 	nn <leader>ev :vsp ~/.config/nvim/init.vim<CR>
 	nn <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
-	nn <leader>sv :source ~/.config/nvim/init.vim<CR>
+	nn <leader>sv :so ~/.config/nvim/init.vim<CR>
 
 " C compiling
 	nn <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
@@ -94,7 +94,9 @@
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	au BufWritePost *Xresources,*Xdefaults !xrdb %
 
-" Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
+" Turns off highlighting on the bits of code that are changed,
+" so the line that is changed is highlighted but the actual
+" text that has changed stands out on the line and is readable.
 	if &diff
 	    hi! link DiffText MatchParen
 	endif
@@ -110,20 +112,24 @@
 	" exec 'nn <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
 "" Plugins
-	source ~/.config/nvim/plugins/plug.vim
-	source ~/.config/nvim/plugins/post-plug.vim
+" Definitions
+	so ~/.config/nvim/plugins/plug.vim
+" Configurations
+	so ~/.config/nvim/plugins/post-plug.vim
 
 "" Appearance
-" Highlighting
-	" hi Normal ctermbg=NONE guibg=NONE
-	" hi NonText ctermbg=NONE guibg=NONE
-	" hi EndOfBuffer ctermbg=NONE guibg=NONE
-	hi LineNr ctermbg=NONE guibg=NONE
-" Fix gruvbox visual selection
-	hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
 " ColorScheme
-	set background=dark
-	colorscheme gruvbox
+	se background=dark
+	colo gruvbox
 	" colwal
 	" colorscheme NeoSolarized
 	" let g:airline_theme='base16_solarized'
+
+" Highlighting
+	hi Comment gui=italic
+	hi Normal ctermbg=NONE guibg=NONE
+	hi NonText ctermbg=NONE guibg=NONE
+	hi EndOfBuffer ctermbg=NONE guibg=NONE
+	hi LineNr ctermbg=NONE guibg=NONE
+" Fix gruvbox visual selection
+	hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
