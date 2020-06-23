@@ -5,9 +5,9 @@
 if [ "$1" = "-w" ]; then
 	[ ! "$(grep -q '" colorscheme gruvbox' $XDG_CONFIG_HOME/nvim/init.vim)" ] &&
 	sed -i 's/colorscheme gruvbox/" colorscheme gruvbox/g' $XDG_CONFIG_HOME/nvim/init.vim
-	sed -i 's/" colorscheme wal/colorscheme wal/g' $XDG_CONFIG_HOME/nvim/init.vim
+	sed -i 's/" colwal/colorscheme wal/g' $XDG_CONFIG_HOME/nvim/init.vim
 elif [ "$1" = "-x" ]; then
-	[ ! "$(grep -q '" colorscheme wal' $XDG_CONFIG_HOME/nvim/init.vim)" ] &&
-	sed -i 's/colorscheme wal/" colorscheme wal/g' $XDG_CONFIG_HOME/nvim/init.vim
+	[ ! "$(grep -q '" colwal' $XDG_CONFIG_HOME/nvim/init.vim)" ] &&
+	sed -i 's/colorscheme wal/" colwal/g' $XDG_CONFIG_HOME/nvim/init.vim
 	sed -i 's/" colorscheme gruvbox/colorscheme gruvbox/g' $XDG_CONFIG_HOME/nvim/init.vim
 fi
