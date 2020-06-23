@@ -17,7 +17,7 @@ src_update() {
 		git -C "$dir" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
 		printf '%s: ' "$dir:t"
 		git -C "$dir" remote -v | grep -q upstream && { git -C "$dir" fetch upstream || printf '%s: Could not fetch upstream...\n' "$dir:t" }
-		{ git -C "$dir" pull 2>/dev/null || echo "Unable to upgrade." }
+		git -C "$dir" pull 2>/dev/null || echo "Unable to upgrade."
 	done
 }
 
