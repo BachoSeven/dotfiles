@@ -25,6 +25,9 @@
 
 "" Some mappings and shortcuts
 
+" jk is Esc in insert mode
+	ino jk <Esc>
+
 " vsplit file under cursor; C-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
 	nn <C-W><C-F> <C-W>vgf
 
@@ -239,7 +242,7 @@ call plug#end()
 " ColorSchemes
 	set background=dark
 	colorscheme gruvbox
-	" " " " colorscheme wal
+	" colwal
 	" colorscheme NeoSolarized
 	" let g:airline_theme='base16_solarized'
 	" hi Normal ctermbg=NONE guibg=NONE
