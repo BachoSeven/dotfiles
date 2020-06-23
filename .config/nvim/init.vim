@@ -239,7 +239,7 @@ call plug#end()
 " ColorSchemes
 	set background=dark
 	colorscheme gruvbox
-	" " colorscheme wal
+	" " " " colorscheme wal
 	" colorscheme NeoSolarized
 	" let g:airline_theme='base16_solarized'
 	" hi Normal ctermbg=NONE guibg=NONE
