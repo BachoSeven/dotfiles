@@ -7,7 +7,6 @@
 1\Output=application/x-copyq-item-pinned
 1\Shortcut=p
 10\Command="copyq: \nvar imageData = screenshotSelect()\nwrite('image/png', imageData)\ncopy('image/png', imageData)\n"
-10\GlobalShortcut=ctrl+<
 10\Icon=\xf030
 10\IsGlobalShortcut=true
 10\Name=Take screenshot
