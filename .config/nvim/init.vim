@@ -24,7 +24,6 @@
 	set fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 
 "" Some mappings and shortcuts
-
 " jk is Esc in insert mode
 	ino jk <Esc>
 
@@ -61,7 +60,7 @@
 	map <leader>p :!opout <c-r>%<CR><CR>
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
-	autocmd VimLeave *.tex !texclear %
+	au VimLeave *.tex !texclear %
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 	cmap w!! w !sudo tee > /dev/null %
@@ -86,18 +85,18 @@
 	nn <leader>t :te<CR>a
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
-	autocmd BufWritePre * %s/\s\+$//e
-	autocmd BufWritepre * %s/\n\+\%$//e
+	au BufWritePre * %s/\s\+$//e
+	au BufWritepre * %s/\n\+\%$//e
 
 " Recompile and run dwmblocks automatically
-	autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks;  sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+	au BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks;  sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
-	autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+	au BufWritePost *Xresources,*Xdefaults !xrdb %
 
 " Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
 	if &diff
-	    highlight! link DiffText MatchParen
+	    hi! link DiffText MatchParen
 	endif
 
 " Use xdg-open(mimi) to open files externally
@@ -111,152 +110,20 @@
 	" exec 'nn <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
 "" Plugins
-
-call plug#begin('~/.local/share/nvim/plugged')
-Plug 'kovetskiy/sxhkd-vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'deoplete-plugins/deoplete-zsh'
-Plug 'Shougo/neco-vim'
-Plug 'Shougo/neco-syntax'
-
-Plug 'lervag/vimtex'
-Plug 'KeitaNakamura/tex-conceal.vim'
-	set conceallevel=1
-	let g:tex_conceal='abdmg'
-	hi Conceal ctermbg=none
-
-" Utilities
-Plug 'ptzz/lf.vim'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'mbbill/undotree'
-" Various files support
-Plug 'Konfekt/vim-office'
-Plug 'alx741/vinfo'
-
-" Plug 'sirver/ultisnips'
-	" let g:UltiSnipsExpandTrigger = '<tab>'
-	" let g:UltiSnipsJumpForwardTrigger = '<tab>'
-	" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-	" let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
-	" let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
-Plug 'lukelbd/vim-scrollwrapped'
-Plug 'wlemuel/vim-tldr'
-Plug 'scrooloose/nerdcommenter'
-	let g:NERDSpaceDelims = 1
-	let g:NERDCompactSexyComs = 1
-	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } }	" Fix lfrc comments
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-
-" Appearance
-Plug 'chrisbra/Colorizer'
-	nn <leader>H :ColorToggle<cr>
-Plug 'ap/vim-css-color'
-
-Plug 'dylanaraps/wal.vim'
-Plug 'gruvbox-community/gruvbox'
-Plug 'iCyMind/NeoSolarized' 	" NeoSolarized
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Syntax highlighting
-Plug 'VebbNix/lf-vim'
-Plug 'cespare/vim-toml'
-Plug 'bfrg/vim-cpp-modern'
-
-" Icons
-Plug 'ryanoasis/vim-devicons'
-
-call plug#end()
-
-"" Post-Plugin
-
-" Lf
-	let g:lf_command_override = 'lf -command "set hidden"'
-	let g:lf_replace_netrw = 1 " open lf when vim open a directory
-
-" Deoplete
-	let g:deoplete#enable_at_startup = 1
-
-" Fuzzy Finder
-	let g:fzf_layout = { 'window': '10new' }
-	nn <silent> <C-p> :FZF -m<cr>
-
-" Better command history with q:
-	command! CmdHist call fzf#vim#command_history({'right': '40'})
-	nn q: :CmdHist<CR>
-
-" Change Colorscheme using fzf
-	nn <silent> <Leader>sc :call fzf#run({
-	\   'source':
-	\     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
-	\         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
-	\   'sink':    'colo',
-	\   'options': '+m',
-	\   'left':    30
-	\ })<CR>
-
-" Change buffers with fzf
-	function! s:buflist()
-	  redir => ls
-	  silent ls
-	  redir END
-	  return split(ls, '\n')
-	endfunction
-
-	function! s:bufopen(e)
-	  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-	endfunction
-
-	nn <silent> <Leader><Enter> :call fzf#run({
-	\   'source':  reverse(<sid>buflist()),
-	\   'sink':    function('<sid>bufopen'),
-	\   'options': '+m',
-	\   'down':    len(<sid>buflist()) + 2
-	\ })<CR>
-
-" Vimtex Configuration
-	let g:tex_flavor='latex'
-	let g:vimtex_quickfix_latexlog = {'fix_paths':0}
-	let g:vimtex_quickfix_mode=0
-	let g:vimtex_compiler_progname = 'nvr'
-	let g:vimtex_view_method='zathura'
-
-" fzf integration for vimtex
-	nn <localleader>lt :call vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
-
-" vimtex deoplete
-	call deoplete#custom#var('omni', 'input_patterns', {
-		\ 'tex': g:vimtex#re#deoplete
-		\})
-" UndoTree
-	let g:undotree_WindowLayout = 3
-	nn <F5> :UndotreeToggle<cr>
-	let g:undotree_SetFocusWhenToggle = 1
+	source ~/.config/nvim/plugins/plug.vim
+	source ~/.config/nvim/plugins/post-plug.vim
 
 "" Appearance
-	let g:airline_powerline_fonts = 1
-	let g:airline#extensions#tabline#enabled = 1
-
-" ColorSchemes
+" Highlighting
+	" hi Normal ctermbg=NONE guibg=NONE
+	" hi NonText ctermbg=NONE guibg=NONE
+	" hi EndOfBuffer ctermbg=NONE guibg=NONE
+	hi LineNr ctermbg=NONE guibg=NONE
+" Fix gruvbox visual selection
+	hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
+" ColorScheme
 	set background=dark
 	colorscheme gruvbox
 	" colwal
 	" colorscheme NeoSolarized
 	" let g:airline_theme='base16_solarized'
-	" hi Normal ctermbg=NONE guibg=NONE
-	" hi NonText ctermbg=NONE guibg=NONE
-	" hi EndOfBuffer ctermbg=NONE guibg=NONE
-	hi LineNr ctermbg=NONE guibg=NONE
-" fix gruvbox visual selection
-	hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
-
-" Goyo mapping and configuration
-	map <leader>g :Goyo \| set linebreak<CR>
-	map <leader>G :Goyo \| set nolinebreak<CR>
-" Enable Goyo by default for mutt writting
-	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set linebreak
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
