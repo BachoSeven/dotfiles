@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# setbg
 # This script sets a background image or gif animation, using pywal to set a terminal colorscheme,or otherwise
-# using Xresources with xwallpaper, tested on dwm.
+# using Xresources with xwallpaper, tested mostly on dwm.
+
+# 2020 Francesco Minnocci <ascoli.minnocci@gmail.com>
 
 #	Usage:
 #		` setbg [ -w, -wal ] [ -i, -input "path/to/img" ] [ -m, -maximize ] `
@@ -27,5 +30,5 @@ while getopts ":hi:wm" o; do
 done
 
 # Use gifview for gifs, or else xwallpaper
-	killall -q xwinwrap 2>/dev/null;
+	killall -q xwinwrap 2>/dev/null
 	[ "$mime" = "image/gif" ] && gifbg "$bgloc" || xwallpaper $format "$bgloc"
