@@ -83,10 +83,6 @@ cmd copyto ${{
 	notify-send "📋 File(s) copied." "File(s) copies to $dest."
 }}
 
-cmd bulkrename ${{
-    vidir
-}}
-
 cmd fzf_jump ${{
    res="$(find . -maxdepth 2 | fzf --header='Jump to:')"
    if [ -f "$res" ]; then
@@ -98,24 +94,6 @@ lf -remote "send $id $cmd \"$res\""
 }}
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
-
-cmd PasteSelect %{{
-	lf -remote 'load' | while read file; do
-		if [ ! -n "${mode+1}" ]; then
-			mode="$file"
-			continue
-		fi
-		if [ -f "${file}" ]; then
-			# get 'basename' of the selection
-			filename="${file##*/}"
-			# quote it so we won't deal with quotes in the lf -remote command
-			filename="$(printf '%q' "$filename")"
-			break
-		fi
-	done
-	lf -remote "send $id paste"
-	lf -remote "send $id select $filename"
-}}
 
 cmd paste &{{
     load=$(lf -remote 'load')
@@ -213,7 +191,7 @@ map c push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extention
 map a push A<a-b> # after extention
-map b bulkrename
+map b $vidir
 map <c-n> push :mkdir<space>
 map E extract	#extract and compress
 map C copyto

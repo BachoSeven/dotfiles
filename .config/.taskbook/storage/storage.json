@@ -169,7 +169,7 @@
         "_id": 51,
         "_date": "Wed May 13 2020",
         "_timestamp": 1589325452702,
-        "description": "gtypist: R2",
+        "description": "Gtypist: R3",
         "isStarred": false,
         "boards": [
             "@FreeTime"
@@ -231,6 +231,17 @@
         "isStarred": false,
         "boards": [
             "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "57": {
+        "_id": 57,
+        "_date": "Tue Jun 23 2020",
+        "_timestamp": 1592932075749,
+        "description": "add compton/picom for rounded corners",
+        "isStarred": false,
+        "boards": [
+            "@FreeTime"
         ],
         "_isTask": false
     }

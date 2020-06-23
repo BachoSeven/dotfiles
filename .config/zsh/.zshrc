@@ -48,7 +48,3 @@
 		fast-syntax-highlighting # +0.1
 	)
 	zsh_load_plugins $plugins
-	# nyan
-	# xrescol
-	# pinguco
-	# panes
