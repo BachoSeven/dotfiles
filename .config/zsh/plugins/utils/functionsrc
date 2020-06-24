@@ -3,16 +3,6 @@
 # Some of this was stolen, amongst others, from https://github.com/SmartFinn/dotfiles. Thanks!
 
 src_update() {
-	dirs=(
-		/home/fra/.config/brave_plugins/vimium
-		/home/fra/.config/brave_plugins/startpage
-		/home/fra/.config/mpv/scripts/mpvSockets
-		/home/fra/.local/src/subs
-		/home/fra/.local/src/dwm
-		/home/fra/.local/src/dwmblocks
-		/home/fra/.local/src/st
-	)
-
 	for dir in $dirs; do
 		git -C "$dir" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
 		printf '%s: ' "$dir:t"
@@ -36,6 +26,15 @@ _run() {
 }
 
 # Updates
+dirs=(
+	/home/fra/.config/brave_plugins/vimium
+	/home/fra/.config/brave_plugins/startpage
+	/home/fra/.config/mpv/scripts/mpvSockets
+	/home/fra/.local/src/subs
+	/home/fra/.local/src/dwm
+	/home/fra/.local/src/dwmblocks
+	/home/fra/.local/src/st
+)
 up2date() {
 	_run yay -Syu
 	_run nvim +PlugUpdate +quitall

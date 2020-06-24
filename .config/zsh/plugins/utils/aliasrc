@@ -145,7 +145,6 @@ alias \
 	alias doc='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents'
 	alias dow='lfcd /mnt/01D5707D40B081F0/Users/ascol/Downloads'
 	alias mus='lfcd /mnt/01D5707D40B081F0/Users/ascol/Music'
-	alias m='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/Music'
 	alias koln='locate -i0 "*koln*flac"|xargs -0 mpv'
 	alias bf='find /mnt/01D5707D40B081F0/Users -type f \( -iname "*bach*.mp3" -o -iname "*bach*.mp4"  -o -iname "*bach*.m4a" \) -print0|xargs -0 mpv'
 	alias pics='lfcd /mnt/01D5707D40B081F0/Users/ascol/Pictures'
