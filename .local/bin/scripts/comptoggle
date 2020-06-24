@@ -1,11 +1,15 @@
 #!/bin/bash
 
-if pgrep xcompmgr &>/dev/null; then
-    echo "Turning xcompmgr OFF"
-    pkill xcompmgr &
+# comp=xcompmgr
+[ "$comp" = "xcompmgr" ] && opts="-cCf -D3 -t-5 -l-5 -r5 -o.50"
+comp=picom
+
+if pgrep $comp &>/dev/null; then
+    echo "Turning $comp OFF"
+    pkill $comp &
 else
-    echo "Turning xcompmgr ON"
-    xcompmgr -cCf -D3 -t-5 -l-5 -r5 -o.50 &
+    echo "Turning $comp ON"
+    $compt $opts &
 fi
 
 exit 0
