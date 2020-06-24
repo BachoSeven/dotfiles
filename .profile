@@ -1,6 +1,3 @@
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-
 ## Basic settings
 	export TERMINAL="st"
 	export READER="zathura"
