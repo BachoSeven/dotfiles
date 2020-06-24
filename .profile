@@ -4,6 +4,7 @@
 	export OPENER='xdg-open'
 	export PAGER='less'
 	export EDITOR="nvim"
+	export VISUAL="nvim"
 	export BROWSER="brave-nightly"
 	export LOCATION="Pisa" # weather script
 	export SUDO_ASKPASS="$HOME/.local/bin/scripts/dmenupass"
