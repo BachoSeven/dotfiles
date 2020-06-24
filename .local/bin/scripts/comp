@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# Start a composition manager.
-# (xcompmgr in this case)
+# Start a compositor
 
-comp=picom
 # comp=xcompmgr
+[ "$comp" = "xcompmgr" ] && opts="-cCf -D3 -t-5 -l-5 -r5 -o.50"
+comp=picom
 
 comphelp() {
     echo "Composition Manager:"
@@ -25,9 +25,7 @@ stopcomp() {
 
 startcomp() {
     stopcomp
-    # Example settings only. Replace with your own.
-    # xcompmgr -cCf -D3 -t-5 -l-5 -r5 -o.50 &
-    picom -b --experimental-backends &
+    $compt $opts &
     exit
 }
 

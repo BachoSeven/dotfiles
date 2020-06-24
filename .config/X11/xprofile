@@ -11,8 +11,9 @@ xrdb -load ~/.config/X11/Xresources
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
 copyq &				# Clipboard management
 redshift &			# Color temperature
-hsetroot -solid "#282828"	# fix xcompgmr
-xcompmgr -cCf -D3 -t-5 -l-5 -r5 -o.50 & # xcompmgr for transparency
+# hsetroot -solid "#282828"	# fix xcompgmr
+# xcompmgr -cCf -D3 -t-5 -l-5 -r5 -o.50 & # xcompmgr for transparency
+picom &				# picom
 dunst &				# Notifications
 setbg &				# Basically xwallpaper
 unclutter &			# Remove mouse when idle
