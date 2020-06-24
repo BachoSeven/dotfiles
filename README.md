@@ -35,6 +35,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ### Various
 - I use brave browser, you can find info about my config of it at `.config/brave_plugins`. To improve its aesthetics, I use a gruvbox chrome theme and duckduckgo with `gruvboxytheme` pass phrase (try it!); which make a decent start page together Vimium's Vomnibar. (I now use a custom start page with Brave, check it out [here](https://github.com/BachoSeven/startpage).)
+- Most keys I press on any program are vim bindings, around which this setup is oriented.
 
 ## Screens
 

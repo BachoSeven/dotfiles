@@ -244,5 +244,16 @@
             "@FreeTime"
         ],
         "_isTask": false
+    },
+    "58": {
+        "_id": 58,
+        "_date": "Wed Jun 24 2020",
+        "_timestamp": 1592956398181,
+        "description": "fix telegram cli",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }
