@@ -3,6 +3,9 @@
 # Start a composition manager.
 # (xcompmgr in this case)
 
+comp=picom
+# comp=xcompmgr
+
 comphelp() {
     echo "Composition Manager:"
     echo "   (re)start: COMP"
@@ -13,17 +16,18 @@ comphelp() {
 }
 
 checkcomp() {
-    pgrep xcompmgr &>/dev/null
+    pgrep $comp &>/dev/null
 }
 
 stopcomp() {
-    checkcomp && killall xcompmgr
+    checkcomp && killall $comp
 }
 
 startcomp() {
     stopcomp
     # Example settings only. Replace with your own.
-    xcompmgr -cCf -D3 -t-5 -l-5 -r5 -o.50 &
+    # xcompmgr -cCf -D3 -t-5 -l-5 -r5 -o.50 &
+    picom -b --experimental-backends &
     exit
 }
 
