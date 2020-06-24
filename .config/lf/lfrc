@@ -218,7 +218,7 @@ map <c-space> :toggle; up
 map gh	# unmap useless keys
 map m embed mpv
 map <c-a> embed neomutt -a
-map | embed $PAGER
+map | embed less
 map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached
 map w &setsid setbg -i $f

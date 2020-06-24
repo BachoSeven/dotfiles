@@ -23,6 +23,7 @@
 alias \
 	ka='killall' \
 	g='git' \
+	gca='g commit -a && g push' \
 	gc='g clone' \
 	glol="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" \
 	trem='transmission-remote' \
@@ -77,6 +78,7 @@ alias \
 	alias rscf='find -name "*,*" -type f | perl-rename "s/,/_/g"'
 
 # Various
+	alias verifygpg='gpg --auto-key-retrieve --verify'
 	alias ncdu="ncdu --si --color dark"
 	alias \
 		locate="lolcate --db mydb" \

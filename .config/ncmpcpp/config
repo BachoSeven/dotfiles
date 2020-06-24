@@ -1,5 +1,3 @@
-# vim: ft=cfg
-
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.local/share/lyrics
 mpd_host = 127.0.0.1
@@ -8,7 +6,7 @@ mpd_connection_timeout = 5
 mpd_music_dir = "~/slsk/music"
 mpd_crossfade_time = 4
 visualizer_fifo_path = /tmp/mpd.fifo
-visualizer_output_name = Visualizer
+visualizer_output_name = toggle_visualizer
 visualizer_in_stereo = yes
 visualizer_sync_interval = 30
 visualizer_type = ellipse
@@ -327,3 +325,4 @@ statusbar_color = "cyan"
 statusbar_time_color = cyan:b
 player_state_color = default
 alternative_ui_separator_color = green:b
+# vim: ft=cfg
