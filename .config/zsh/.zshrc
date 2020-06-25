@@ -4,7 +4,7 @@
 #	      _    /\_____\\/\_____\\ \_\ \_\\ \_\ \_\\ \_____\
 #	     (_)   \/_____/ \/_____/ \/_/\/_/ \/_/ /_/ \/_____/
 
-# Fix non-interactive
+# Exit if non-interactive
 	 if [ -z "$PS1" ]; then
 		     exit
 	 fi
@@ -34,9 +34,9 @@
 		done
 	}
 	plugins=(
-		init
 		copyq
 		custom_completions
+		init
 		dotbare
 		history
 		lf

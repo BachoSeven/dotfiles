@@ -163,25 +163,7 @@ song_columns_list_format = (7f)[magenta]{l} (25)[cyan]{a} (50)[white]{t|f:Title}
 ## notifications etc.
 ##
 execute_on_song_change = notify-send -i ~/.config/icons/music-player_black.png "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
-##
-## Note: Custom command that will be executed each time player state
-## changes. The environment variable MPD_PLAYER_STATE is set to the current
-## state (either unknown, play, pause, or stop) for its duration.
-##
-#
-#execute_on_player_state_change = ""
-#
-#playlist_show_mpd_host = no
-#
-#playlist_show_remaining_time = no
-#
-#playlist_shorten_total_times = no
-#
-#playlist_separate_albums = no
-#
-##
-## Note: Possible display modes: classic, columns.
-##
+# classic or columns
 playlist_display_mode = columns
 #
 browser_display_mode = columns
@@ -214,8 +196,8 @@ media_library_primary_tag = artist
 #lines_scrolled = 2
 lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
 follow_now_playing_lyrics = yes
-fetch_lyrics_for_current_song_in_background = yes
-#store_lyrics_in_song_dir = no
+fetch_lyrics_for_current_song_in_background = no
+store_lyrics_in_song_dir = no
 #generate_win32_compatible_filenames = yes
 #allow_for_physical_item_deletion = no
 ## Note: Language has to be expressed as an ISO 639 alpha-2 code.
@@ -241,7 +223,7 @@ fetch_lyrics_for_current_song_in_background = yes
 startup_screen = playlist
 ## Note: You can define startup slave screen by choosing screen from the list
 ## above or an empty value for no slave screen.
-startup_slave_screen = "visualizer"
+startup_slave_screen = ""
 startup_slave_screen_focus = no
 #
 ##
