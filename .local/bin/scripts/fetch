@@ -6,12 +6,12 @@
 printf "\n"
 
 # Define colors
-color1='\e[38;5;063m'
-color2='\e[38;5;048m'
+color1='\e[38;5;033m'
+color2='\e[38;5;041m'
 color3='\e[38;5;202m'
 color4='\e[38;5;057m'
 color5='\e[38;5;199m'
-color6='\e[38;5;226m'
+color6='\e[38;5;190m'
 colorrest='\e[0m'
 
 # Declare function to print spaces
@@ -279,4 +279,4 @@ print_bars conv_percent $color4
 print_bars rest $color5
 printf "\n"
 
-printf "\n\n"n
+printf "\n\n"

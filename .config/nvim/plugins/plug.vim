@@ -5,7 +5,6 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'rbgrouleff/bclose.vim'
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
-	Plug 'lukelbd/vim-scrollwrapped'
 	Plug 'scrooloose/nerdcommenter'
 		let g:NERDSpaceDelims = 1
 		let g:NERDCompactSexyComs = 1
@@ -14,11 +13,11 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/goyo.vim'
 
 " Vimtex
-	Plug 'lervag/vimtex'
-	Plug 'KeitaNakamura/tex-conceal.vim'
-		se conceallevel=1
-		let g:tex_conceal='abdmg'
-		hi Conceal ctermbg=none
+	" Plug 'lervag/vimtex'
+	" Plug 'KeitaNakamura/tex-conceal.vim'
+		" se conceallevel=1
+		" let g:tex_conceal='abdmg'
+		" hi Conceal ctermbg=none
 
 " Various filetypes support
 	Plug 'Konfekt/vim-office'

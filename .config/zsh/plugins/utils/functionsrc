@@ -166,9 +166,8 @@ xopen() {
 	xdg-open "$@" >/dev/null 2>&1
 }
 
-logzsh() {
+logzsh() { # Fix
 	zsh -xv 2>&1 | ts -i "%.s" > zshstartup.log
-	exit
 	sort --field-separator=' ' -r -k1 zshstartup.log > sorted.log
 }
 

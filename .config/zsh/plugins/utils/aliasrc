@@ -134,7 +134,7 @@ alias \
 	alias cfzp='v $ZDOTDIR/plugins'
 	alias cfv='v $XDG_CONFIG_HOME/nvim/init.vim'
 	alias cfm='v $XDG_CONFIG_HOME/mutt/muttrc'
-	alias cfr='v $HOME/.Xresources'
+	alias cfr='v $XDG_CONFIG_HOME/X11/Xresources'
 	alias cfmb='v $XDG_CONFIG_HOME/ncmpcpp/bindings'
 	alias cfmc='v $XDG_CONFIG_HOME/ncmpcpp/config'
 	alias cfy='v $XDG_CONFIG_HOME/subs'

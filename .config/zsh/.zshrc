@@ -40,11 +40,11 @@
 		dotbare
 		history
 		lf
-		utils # +0.25 (autocompletion)
+		utils
 		vi_mode
 		fzf
-		powerlevel10k # +0.05
-		p10k_theme # +0.05
-		fast-syntax-highlighting # +0.1
+		powerlevel10k
+		p10k_theme
+		fast-syntax-highlighting
 	)
 	zsh_load_plugins $plugins
