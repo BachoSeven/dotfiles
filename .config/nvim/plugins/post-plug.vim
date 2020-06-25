@@ -42,20 +42,21 @@
 	\   'down':    len(<sid>buflist()) + 2
 	\ })<CR>
 
-" Vimtex Configuration
-	let g:tex_flavor='latex'
-	let g:vimtex_quickfix_latexlog = {'fix_paths':0}
-	let g:vimtex_quickfix_mode=0
-	let g:vimtex_compiler_progname = 'nvr'
-	let g:vimtex_view_method='zathura'
+" " Vimtex Configuration
+	" let g:tex_flavor='latex'
+	" let g:vimtex_quickfix_latexlog = {'fix_paths':0}
+	" let g:vimtex_quickfix_mode=0
+	" let g:vimtex_compiler_progname = 'nvr'
+	" let g:vimtex_view_method='zathura'
 
-" fzf integration for vimtex
-	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
+" " fzf integration for vimtex
+	" nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
 
-" vimtex deoplete
-	cal deoplete#custom#var('omni', 'input_patterns', {
-		\ 'tex': g:vimtex#re#deoplete
-		\})
+" " vimtex deoplete
+	" cal deoplete#custom#var('omni', 'input_patterns', {
+		" \ 'tex': g:vimtex#re#deoplete
+		" \})
+
 " UndoTree
 	let g:undotree_WindowLayout = 3
 	nn <F5> :UndotreeToggle<cr>

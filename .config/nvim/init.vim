@@ -128,9 +128,6 @@
 " Highlighting
 	hi Comment gui=italic
 	hi LineNr ctermbg=NONE guibg=NONE
-" Transparency
 	hi Normal ctermbg=NONE guibg=NONE
-	hi NonText ctermbg=NONE guibg=NONE
-	hi EndOfBuffer ctermbg=NONE guibg=NONE
 " Fix gruvbox visual selection
 	hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a

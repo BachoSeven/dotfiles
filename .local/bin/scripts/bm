@@ -13,7 +13,7 @@
 /usr/bin/ruby -x "$0"                       |
   fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin --preview " echo {-1}  | xargs w3m -dump " --preview-window=right:30% $opts |
   awk 'BEGIN { FS = "\t" } { print $2 }'    |
-  setsid -f xargs -r -n 1 $BROWSER >/dev/null 2>&1
+  setsid -f xargs -r $BROWSER >/dev/null 2>&1
 exit $?
 
 #!ruby

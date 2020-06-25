@@ -277,7 +277,6 @@ ignore_leading_the = yes
 mouse_support = no
 #mouse_list_scroll_whole_page = yes
 empty_tag_marker=" -- ‼ -- "
-#tags_separator = " | "
 #tag_editor_extended_numeration = no
 #media_library_sort_by_mtime = no
 enable_window_title = no
