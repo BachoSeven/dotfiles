@@ -228,7 +228,7 @@ map x $$f
 map X !$f
 map o &mimeopen "$f"
 map O $mimeopen --ask "$f"
-map T push :!touch<space>
+map T push :$touch<space>
 map V push :!nvim<space>
 map <c-z> $ kill -STOP $PPID	# put lf in bg
 
