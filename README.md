@@ -8,7 +8,7 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
 
 ## Current Setup
 
-My setup is pretty minimal and fast: although many packages and systemd services are launched at boot, rebooting from dwm to dwm takes approximately 15 seconds.
+My setup is pretty minimal and fast: although many packages and systemd services are launched at boot, rebooting from dwm to dwm takes approximately 15 seconds(with grub).
 I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use:
 - Suckless utilities (links are to my patched repos): **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), **[st](https://github.com/BachoSeven/st)** (terminal emulator) and **[xss-lock](https://github.com/xdbob/xss-lock)+[slock](https://github.com/BachoSeven/slock)** (screensaver).
 - Highly configured **zsh**  shell with many custom plugins for completions and integrations, **[powerlevel10k](https://github.com/romkatv/powerlevel10k)** with a custom lean theme and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax highlighting. Despite all these customizations, my zsh has an average startup time of `0.047 s`.
