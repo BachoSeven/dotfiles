@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# Start a compositor
+
+# comp=xcompmgr
+[ "$comp" = "xcompmgr" ] && opts="-cCf -D3 -t-5 -l-5 -r5 -o.50"
+comp=picom
+
+comphelp() {
+    echo "Composition Manager:"
+    echo "   (re)start: COMP"
+    echo "   stop:      COMP -s"
+    echo "   query:     COMP -q"
+    echo "              returns 0 if composition manager is running, else 1"
+    exit
+}
+
+checkcomp() {
+    pgrep $comp &>/dev/null
+}
+
+stopcomp() {
+    checkcomp && killall $comp
+}
+
+startcomp() {
+    stopcomp
+    $comp $opts &
+    exit
+}
+
+case "$1" in
+    "")   startcomp ;;
+    "-q") checkcomp ;;
+    "-s") stopcomp; exit ;;
+    *)    comphelp ;;
+esac

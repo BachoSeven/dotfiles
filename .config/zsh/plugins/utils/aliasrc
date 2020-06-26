@@ -60,6 +60,7 @@ alias \
 	alias sT="tabbed -c -r 2 st -w id "
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
+	alias bons="cbonsai -l -b 2 -M 7"
 	alias brave='brave-nightly'
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
 	alias xclip="xclip -sel clip"
