@@ -37,7 +37,7 @@
     "prefetch-enabled": true,
     "queue-stalled-enabled": true,
     "queue-stalled-minutes": 30,
-    "ratio-limit": 30,
+    "ratio-limit": 40,
     "ratio-limit-enabled": true,
     "rename-partial-files": true,
     "rpc-authentication-required": false,
@@ -58,11 +58,11 @@
     "seed-queue-size": 10,
     "speed-limit-down": 100,
     "speed-limit-down-enabled": false,
-    "speed-limit-up": 1000,
-    "speed-limit-up-enabled": true,
+    "speed-limit-up": 100,
+    "speed-limit-up-enabled": false,
     "start-added-torrents": false,
     "trash-original-torrent-files": false,
     "umask": 18,
-    "upload-slots-per-torrent": 14,
-    "utp-enabled": false
+    "upload-slots-per-torrent": 30,
+    "utp-enabled": true
 }
