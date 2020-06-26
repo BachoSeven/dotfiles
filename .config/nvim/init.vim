@@ -121,7 +121,7 @@
 " ColorScheme
 	se background=dark
 	colo gruvbox
-	colorscheme wal
+	" colwal
 	" colorscheme NeoSolarized
 	" let g:airline_theme='base16_solarized'
 
