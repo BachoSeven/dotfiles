@@ -19,10 +19,11 @@ case "$(cat /sys/class/net/w*/operstate | grep -v down 2>/dev/null)" in
 	*) wifiicon="📡 " ;;
 esac
 
-# done using status2d patch for dwm
-on="^c#689d6a^^d^"
-off="^c#cc241d^^d^"
+# # done using status2d patch for dwm
+# on="^c#689d6a^^d^"
+# off="^c#cc241d^^d^"
 
-pingicon="$([ -n "$(timeout 2s ping -q -c 1 g.co 2>/dev/null )" ] && echo "$on " || echo "$off ")"
+# pingicon="$([ -n "$(timeout 2s ping -q -c 1 g.co 2>/dev/null )" ] && echo "$on " || echo "$off ")"
 
-printf "%s%s%s\n" "$pingicon" "$wifiicon" "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)"
+# printf "%s%s%s\n" "$pingicon" "$wifiicon" "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)"
+printf "%s%s\n" "$wifiicon" "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)"
