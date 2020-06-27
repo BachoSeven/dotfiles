@@ -41,16 +41,18 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ### Dwm
 
-<img src="pics/screens/ricing/pink_dwm.png"/>
+[![1](pics/screens/ricing/surreal.mkv)]
 
-<img src="pics/screens/ricing/dwwm.png"/>
+[![2](pics/screens/ricing/pink_dwm.png)]
 
-<img src="pics/screens/ricing/dwm.png"/>
+[![3](pics/screens/ricing/dwwm.png)]
 
-<img src="pics/screens/ricing/dwm2.png"/>
+[![4](pics/screens/ricing/dwm.png)]
+
+[![5](pics/screens/ricing/dwm2.png)]
 
 ### Gnome-Shell
 
-<img src="pics/screens/ricing/new_rice1.png"/>
+[![6](pics/screens/ricing/new_rice1.png)]
 
-<img src="pics/screens/ricing/new_rice-small.png"/>
+[![7](pics/screens/ricing/new_rice-small.png)]
