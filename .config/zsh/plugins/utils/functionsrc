@@ -262,13 +262,18 @@ fman() {
     man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
 }
 
+# simple gpg encryption
+encrypt() {
+	gpg --output $1.gpg --symmetric --cipher-algo AES256 $1
+}
+
 # Shellcheck all of my scripts
 scck() {
 	scripts=(
 		/home/fra/.local/bin/statusbar
 		/home/fra/.local/bin/scripts
 		/home/fra/.local/bin/cron
-		# /home/fra/.local/bin/colors
+		/home/fra/.local/bin/colors
 	)
 	for dir in $scripts; do
 		while read script; do
