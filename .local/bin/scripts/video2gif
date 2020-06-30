@@ -1,0 +1,24 @@
+#!/bin/sh
+
+vid=$1
+filebase=$(basename $1 | cut -d'.' -f1)
+start_time=00:00:01
+duration=5
+height=ih/2      # input height halved , can replace with pixils .
+width=-2         # keeps aspect ratio . can replace with pixils .
+fps=25           # frames per a second .
+
+filters="fps=$fps,scale=$width:$height:flags=lanczos"
+
+ffmpeg -ss $start_time                             \
+       -t  $duration                               \
+       -i  "$vid"                                  \
+       -vf "$filters,palettegen"                   \
+       -y  palette.png                             &&
+ffmpeg -ss $start_time                             \
+       -t  $duration                               \
+       -i  "$vid"                                  \
+       -i  palette.png                                \
+       -lavfi "$filters [x]; [x][1:v] paletteuse"  \
+       -y  "$filebase".gif                              &&
+rm palette.png
