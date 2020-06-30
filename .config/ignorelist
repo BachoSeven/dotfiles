@@ -141,15 +141,12 @@ Thumbs.db
 # ROBA
 .local/share/mail
 .config/Ferdi
-.config/discord
+.config/discord-canary
 .config/Microsoft
 .local/share/gem
 .local/share/nvim/plugged
 .local/share/TelegramDesktop
-.config/zsh/.zcompdump*
-.local/share/zsh/zsh_history
-.oh-my-zsh
-.local/share/gnome-shell
+.config/zsh/.zsh_history
 .local/lib
 .config/yarn/global/node_modules
 .config/waterfox
@@ -159,8 +156,6 @@ Thumbs.db
 .config/skypeforlinux
 .local/share/data
 .minecraft
-.gconf
-
 
 # Common Unix Printing System
 # /.cups

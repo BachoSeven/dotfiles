@@ -14,7 +14,7 @@
 	nn q: :CmdHist<CR>
 
 " Change Colorscheme using fzf
-	nn <silent> <Leader>sc :cal fzf#run({
+	nn <silent> <leader>sc :cal fzf#run({
 	\   'source':
 	\     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
 	\         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),

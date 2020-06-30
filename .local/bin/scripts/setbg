@@ -7,7 +7,7 @@
 # 2020 Francesco Minnocci <ascoli.minnocci@gmail.com>
 
 #	Usage:
-#		` setbg [ -w, -wal ] [ -i, -input "path/to/img" ] [ -m, -maximize ] `
+#		` setbg [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -w, -wal ] `
 
 bgloc=$XDG_CONFIG_HOME/wp.png
 format="--zoom"
@@ -15,7 +15,7 @@ format="--zoom"
 while getopts ":hi:wm" o; do
 	case "${o}" in
 		h)
-			printf "Usage :\\nsetbg\\n\\t [ -w, -wal: use pywal if installed ]\\n\\t [ -i, -input 'path/to/img' ]\\n\\t [ -m, -maximize: maximize wallpaper (default format is --zoom) ]\\n\\t [ -h, -help: Show this message ]\\n" && exit ;;
+			printf "Usage :\\nsetbg\\n\\t [ -i, -input 'path/to/img' ]\\n\\t [ -m, -maximize: maximize wallpaper (default format is --zoom) ]\\n\\t [ -w, -wal: use pywal if installed ]\\n\\t [ -h, -help: Show this message ]\\n" && exit ;;
 		i)
 			[ -n "$2" ] && cp "$2" $bgloc > /dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			xrdb -load $XDG_CONFIG_HOME/X11/Xresources && vimwal -x ;;

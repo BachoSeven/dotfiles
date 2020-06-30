@@ -3,11 +3,11 @@ while read file
 do
         case "$1" in
 	"w")
-		setbg -input "$file" & ;;
+		setbg -i "$file" & ;;
         "W")
-		setbg -wal -i "$file" & ;;
+		setbg -i "$file" -w & ;;
         "M")
-		setbg -input "$file" -maximize & ;;
+		setbg -i "$file" -m & ;;
         "c")
 		[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
 		[ -z "$destdir" ] && exit

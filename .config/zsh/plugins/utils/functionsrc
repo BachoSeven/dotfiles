@@ -247,10 +247,6 @@ compressbrate() {
 	bitrate=${3:-1000k}
 	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
 }
-video2gif() {
-	filebase=$(basename $1 | cut -d'.' -f1)
-	ffmpeg -i $1  -vf "fps=20,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 $filebase.gif
-}
 
 # create a new directory and enter it
 md() { mkdir -p "$1" && cd "$1"; }
