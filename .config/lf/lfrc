@@ -44,7 +44,7 @@ cmd open ${{
 		text/*|application/json) $EDITOR $fx;;
 		application/pdf|application/vnd*|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
-		image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
+		image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
 		audio/*) mpv --audio-display=no $f ;;
 		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 & ;;
 		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2> /dev/null & done;;

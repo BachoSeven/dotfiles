@@ -80,7 +80,7 @@ dwm.normbgcolor:	#282828
 dwm.normfgcolor:	#ebdbb2
 dwm.normbordercolor:	#1d2021
 dwm.selbgcolor:		#282828
-dwm.selfgcolor:		#fbf1c7
+dwm.selfgcolor:		#ebdbb2
 dwm.selbordercolor:	#689d6a
 dwm.statusbg:		#1d2021
 dwm.statusfg:		#ebdbb2

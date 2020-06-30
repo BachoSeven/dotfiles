@@ -57,7 +57,7 @@
 	map <leader>C :w! \| !compiler <c-r>%<CR>
 
 " Open corresponding .pdf/.html or preview
-	map <leader>p :!opout <c-r>%<CR><CR>
+	map <leader>P :!opout <c-r>%<CR><CR>
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	au VimLeave *.tex !texclear %
@@ -122,7 +122,7 @@
 	se background=dark
 	colo gruvbox
 	" colwal
-	" colorscheme NeoSolarized
+	" colo NeoSolarized
 	" let g:airline_theme='base16_solarized'
 
 " Highlighting
