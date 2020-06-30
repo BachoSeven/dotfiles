@@ -5,16 +5,14 @@ dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS 
 
 # xscreensaver -no-splash &
 xset s 600
-xss slock &
+xss-lock -- /usr/local/bin/slock &
 
 xrdb -load ~/.config/X11/Xresources
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
 copyq &				# Clipboard management
 redshift &			# Color temperature
-# hsetroot -solid "#282828"	# fix xcompgmr
-# xcompmgr -cCf -D3 -t-5 -l-5 -r5 -o.50 & # xcompmgr for transparency
-picom &				# picom
 dunst &				# Notifications
 setbg &				# Basically xwallpaper
 unclutter &			# Remove mouse when idle
 remaps &			# Switch caps/super and one-tap_caps/esc
+picom &				# picom
