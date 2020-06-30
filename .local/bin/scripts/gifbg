@@ -21,7 +21,13 @@ IMGW=${IMGHW#*x}
 POSH=$(((SCRH/2)-(IMGH/2)))
 POSW=$(((SCRW/2)-(IMGW/2)))
 
+
+## PLAN to implement logic for .gif backgrounds:
+# timeout 5s convert .config/wp.png -depth 8 txt: | tail -n +2 | sed -n "s/^\(.*\):.*\(#.*\) .*$/\1 \2/p" | awk '{print $2}' > file
+# cat file | sort | uniq > file
+# # dmenu choose color (with preview?)
+# hsetroot col parameter passed to main gifview commands.
 hsetroot -solid "#1d2021" &&
-xwinwrap -g ${IMGHW}+${POSH}+${POSW} -ov -ni -s -nf -- gifview --memory-limit 100 -w WID $1 -a --no-interactive
+xwinwrap -g ${IMGHW}+${POSH}+${POSW} -ov -ni -s -nf -- gifview --memory-limit 200 -w WID $1 -a --no-interactive
 
 exit 0

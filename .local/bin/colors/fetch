@@ -154,7 +154,7 @@ printf "${msg[@]:0:5}$color1${msg[@]:5:11}$colorrest${msg[@]:16:4}$color1${msg[@
 
 
 # Now printing the main part
-for ((i=0; i<${len}; i++))
+for ((i=0; i<len; i++))
 do
     if [ $i == 7 ];then
         continue
