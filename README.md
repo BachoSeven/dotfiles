@@ -41,7 +41,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ### Dwm
 
-![1](pics/screens/ricing/surreal.mkv)
+![1](pics/screens/ricing/surreal.gif)
 
 ![2](pics/screens/ricing/pink_dwm.png)
 
