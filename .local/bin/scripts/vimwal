@@ -3,11 +3,11 @@
 # This script is just here to switch vim colorschemes with the setbg script
 
 if [ "$1" = "-w" ]; then
-	[ ! "$(grep -q '" colo gruvbox' $XDG_CONFIG_HOME/nvim/init.vim)" ] &&
 	sed -i 's/colo gruvbox/" colo gruvbox/g' $XDG_CONFIG_HOME/nvim/init.vim
 	sed -i 's/" colwal/colo wal/g' $XDG_CONFIG_HOME/nvim/init.vim
+	sed -i 's/se termguicolors/" notermgui/g' $XDG_CONFIG_HOME/nvim/init.vim
 elif [ "$1" = "-x" ]; then
-	[ ! "$(grep -q '" colwal' $XDG_CONFIG_HOME/nvim/init.vim)" ] &&
 	sed -i 's/colo wal/" colwal/g' $XDG_CONFIG_HOME/nvim/init.vim
 	sed -i 's/" colo gruvbox/colo gruvbox/g' $XDG_CONFIG_HOME/nvim/init.vim
+	sed -i 's/" notermgui/se termguicolors/g' $XDG_CONFIG_HOME/nvim/init.vim
 fi

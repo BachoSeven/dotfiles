@@ -16,7 +16,6 @@
 	se autoindent
 	se incsearch
 	se hidden
-	se termguicolors
 	setlocal spell spelllang=en_us
 	se splitbelow splitright
 	se lazyredraw
@@ -119,9 +118,10 @@
 
 "" Appearance
 " ColorScheme
+	" notermgui
 	se background=dark
-	colo gruvbox
-	" colwal
+	" colo gruvbox
+	colo wal
 	" colo NeoSolarized
 	" let g:airline_theme='base16_solarized'
 

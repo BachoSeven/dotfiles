@@ -244,5 +244,16 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "60": {
+        "_id": 60,
+        "_date": "Wed Jul 01 2020",
+        "_timestamp": 1593628380904,
+        "description": "markdown to WebSite: lowdown for conversion to html; and ssg (https://www.romanzolotarev.com/ssg.html) for html to a full website (have to have header and footer(?) ",
+        "isStarred": false,
+        "boards": [
+            "@FreeTime"
+        ],
+        "_isTask": false
     }
 }
