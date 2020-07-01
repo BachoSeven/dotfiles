@@ -11,8 +11,8 @@ xrdb -load ~/.config/X11/Xresources
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
 copyq &				# Clipboard management
 redshift &			# Color temperature
+picom &				# picom
 dunst &				# Notifications
 setbg &				# Basically xwallpaper
 unclutter &			# Remove mouse when idle
 remaps &			# Switch caps/super and one-tap_caps/esc
-picom &				# picom
