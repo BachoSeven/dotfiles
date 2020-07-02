@@ -260,7 +260,7 @@
         "_id": 61,
         "_date": "Thu Jul 02 2020",
         "_timestamp": 1593655503395,
-        "description": "Abook-configdir and isync-config-patched versions; tipyskt (>>gtypist??)",
+        "description": "Abook-configdir and isync-config-patched versions(BEFORE mutt-wizard which is from my personal GIT: we need dependencies tho); tipyskt (>>gtypist??)",
         "isStarred": false,
         "boards": [
             "@ToDo"
