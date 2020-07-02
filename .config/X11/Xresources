@@ -6,141 +6,7 @@
 !!             (_)_/  \_\_|   \____|___/ \___/ \____|_|   \____)____|___/
 !!
 
-
-! ! solarized
-! *background:            #002b36
-! *foreground:		  #839496
-! *cursorColor:           #fdf6e3
-! *RcursorColor:	  #073642
-! !! black dark/light
-! *color0:                #073642
-! *color8:                #002b36
-! !! red dark/light
-! *color1:                #dc322f
-! *color9:                #cb4b16
-! !! green dark/light
-! *color2:                #859900
-! *color10:               #586e75
-! !! yellow dark/light
-! *color3:                #b58900
-! *color11:               #657b83
-! !! blue dark/light
-! *color4:                #268bd2
-! *color12:               #839496
-! !! magenta dark/light
-! *color5:                #d33682
-! *color13:               #6c71c4
-! !! cyan dark/light
-! *color6:                #2aa198
-! *color14:               #93a1a1
-! !! white dark/light
-! *color7:                #eee8d5
-! *color15:               #fdf6e3
-
-!	gruvbox
-*.background: #282828
-*.foreground: #ebdbb2
-*.cursorColor: #add8e6
-*RcursorColor: #555555
-*.color0: #1d2021
-*.color1: #cc241d
-*.color2: #98971a
-*.color3: #d79921
-*.color4: #458588
-*.color5: #b16286
-*.color6: #689d6a
-*.color7: #a89984
-*.color8: #928374
-*.color9: #fb4934
-*.color10: #b8bb26
-*.color11: #fabd2f
-*.color12: #83a598
-*.color13: #d3869b
-*.color14: #8ec07c
-*.color15: #ebdbb2
-
-!! Dwm
-! dwm.normbgcolor:	#002b36
-! dwm.normbordercolor:	#073642
-! dwm.normfgcolor:	#839496
-! dwm.selfgcolor:	#fdf6e3
-! dwm.selbordercolor:	#2aa198
-! dwm.selbgcolor:	#073642
-! dwm.statusfg:		#
-! dwm.statusbg:		#
-! dwm.tagnormfg:	#
-! dwm.tagnormbg:	#
-! dwm.tagselfg:		#fdf6e3
-! dwm.tagselbg:		#002b36
-! dwm.infonormfg:	#
-! dwm.infonormbg:	#
-! dwm.infoselfg:	#
-! dwm.infoselbg:	#
-dwm.normbgcolor:	#282828
-dwm.normfgcolor:	#ebdbb2
-dwm.normbordercolor:	#1d2021
-dwm.selbgcolor:		#282828
-dwm.selfgcolor:		#ebdbb2
-dwm.selbordercolor:	#689d6a
-dwm.statusbg:		#1d2021
-dwm.statusfg:		#ebdbb2
-dwm.tagnormbg:		#458488
-dwm.tagnormfg:		#1d2021
-dwm.tagselbg:		#83a598
-dwm.tagselfg:		#012321
-dwm.infonormbg:		#458488
-dwm.infonormfg:		#282828
-dwm.infoselbg:		#1d2021
-dwm.infoselfg:		#d3869b
-
-!! Dmenu
-! dmenu.background:	#002b36
-! dmenu.foreground:	#839496
-! dmenu.selbackground:	#073642
-! dmenu.selforeground:	#93a1a1
-! dmenu.hibackground:	#586e75
-! dmenu.hiforeground:	#eee8d5
-! dmenu.hiselbackground:	#cb4b16
-! dmenu.hiselforeground:	#fdf6e3
-dmenu.background:	#1d2021
-dmenu.foreground:	#a89984
-dmenu.selbackground:	#282828
-dmenu.selforeground:	#ebdbb2
-dmenu.hibackground:	#458488
-dmenu.hiforeground:	#eee8d5
-dmenu.hiselbackground:	#b16286
-dmenu.hiselforeground:	#fdf6e3
-
-
-!! Xscreensaver
-!general dialog box (affects main hostname, username, password text)
-xscreensaver.splash: false
-xscreensaver.Dialog.foreground:         #b8bb26
-xscreensaver.Dialog.background:         #1d2021
-xscreensaver.Dialog.topShadowColor:     #1d2021
-xscreensaver.Dialog.bottomShadowColor:  #1d2021
-xscreensaver.Dialog.Button.foreground:  #1d2021
-xscreensaver.Dialog.Button.background:  #689d6a
-!username/password input box and date text colour
-xscreensaver.Dialog.text.foreground:    #689d6a
-xscreensaver.Dialog.text.background:    #ebdbb2
-xscreensaver.Dialog.internalBorderWidth:36
-xscreensaver.Dialog.borderWidth:        0
-xscreensaver.Dialog.shadowThickness:    2
-!timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #689d6a
-xscreensaver.passwd.thermometer.background:  #689d6a
-xscreensaver.passwd.thermometer.width:       0
-xscreensaver.dateFormat:    %I:%M%P %b %d
-
-!! Vnc settings
-Vncviewer*grabKeyboard:	true
-
-!! Transparency (0-1):
-st.alpha: 0.7
-
 !! Appearance
-
 *.scrollBar: false
 Xft.dpi: 96
 Xft.antialias: true
@@ -149,3 +15,13 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+
+#include "Xresources.d/gruvbox"
+! #include "Xresources.d/solarized"
+#include "Xresources.d/xscreensaver"
+
+!! Transparency (0-1):
+st.alpha: 0.7
+
+!! Vnc settings
+! Vncviewer*grabKeyboard:	true

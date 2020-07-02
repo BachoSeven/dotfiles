@@ -299,5 +299,27 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "65": {
+        "_id": 65,
+        "_date": "Thu Jul 02 2020",
+        "_timestamp": 1593707983408,
+        "description": "add pywal support directly in Xresources and figure out how to use those variables and unset them automatically when not using pywal maybe uncommenting those definitions directly from setbg",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "66": {
+        "_id": 66,
+        "_date": "Fri Jul 03 2020",
+        "_timestamp": 1593731926887,
+        "description": "add creating mount folders to arch setup",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }

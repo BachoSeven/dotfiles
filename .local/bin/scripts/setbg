@@ -20,7 +20,7 @@ while getopts ":hi:wm" o; do
 			[ -n "$2" ] && cp "$2" $bgloc > /dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			xrdb -load $XDG_CONFIG_HOME/X11/Xresources && vimwal -x ;;
 		w)
-			hash wal &>/dev/null && wal -i $bgloc && wal -c && vimwal -w ;;
+			hash wal &>/dev/null && wal -i $bgloc && vimwal -w ;;
 		m)
 			format="--maximize" ;;
 		*)
