@@ -255,5 +255,49 @@
             "@FreeTime"
         ],
         "_isTask": false
+    },
+    "61": {
+        "_id": 61,
+        "_date": "Thu Jul 02 2020",
+        "_timestamp": 1593655503395,
+        "description": "Abook-configdir and isync-config-patched versions; tipyskt (>>gtypist??)",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "62": {
+        "_id": 62,
+        "_date": "Thu Jul 02 2020",
+        "_timestamp": 1593657536197,
+        "description": "gtypist single space Version",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "63": {
+        "_id": 63,
+        "_date": "Thu Jul 02 2020",
+        "_timestamp": 1593659662590,
+        "description": "add libgen package to AUR",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "64": {
+        "_id": 64,
+        "_date": "Thu Jul 02 2020",
+        "_timestamp": 1593659798796,
+        "description": "tipp10 is yet another touch typing tutor",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }

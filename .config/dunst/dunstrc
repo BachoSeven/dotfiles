@@ -33,7 +33,6 @@
     separator_color = auto
     # Sort messages by urgency.
     sort = yes
-    #
     idle_threshold = 120
     font = Monospace 14
     line_height = 0
@@ -67,7 +66,6 @@
     browser = /usr/bin/brave-nightly
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
-    #
     title = Dunst
     class = Dunst
     startup_notification = false
@@ -82,17 +80,13 @@
     history = ctrl+grave
     context = ctrl+shift+period
 [urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
     background = "#282828"
     foreground = "#928374"
     timeout = 5
-    # Icon for notifications with low urgency, uncomment to enable
-    #icon = /path/to/icon
 [urgency_normal]
     background = "#458588"
     foreground = "#ebdbb2"
-    timeout = 5
+    timeout = 10
 [urgency_critical]
     background = "#1d2021"
     foreground = "#ebdbb2"
