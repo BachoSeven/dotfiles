@@ -1,0 +1,22 @@
+!# vim: ft=xdefaults
+
+!! Xscreensaver
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.splash: false
+xscreensaver.Dialog.foreground:         #b8bb26
+xscreensaver.Dialog.background:         #1d2021
+xscreensaver.Dialog.topShadowColor:     #1d2021
+xscreensaver.Dialog.bottomShadowColor:  #1d2021
+xscreensaver.Dialog.Button.foreground:  #1d2021
+xscreensaver.Dialog.Button.background:  #689d6a
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #689d6a
+xscreensaver.Dialog.text.background:    #ebdbb2
+xscreensaver.Dialog.internalBorderWidth:36
+xscreensaver.Dialog.borderWidth:        0
+xscreensaver.Dialog.shadowThickness:    2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #689d6a
+xscreensaver.passwd.thermometer.background:  #689d6a
+xscreensaver.passwd.thermometer.width:       0
+xscreensaver.dateFormat:    %I:%M%P %b %d
