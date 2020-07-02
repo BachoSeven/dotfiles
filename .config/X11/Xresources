@@ -139,7 +139,9 @@ Vncviewer*grabKeyboard:	true
 !! Transparency (0-1):
 st.alpha: 0.75
 
-!! Misc
+!! Appearance
+
+*.scrollBar: false
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
