@@ -137,7 +137,7 @@ xscreensaver.dateFormat:    %I:%M%P %b %d
 Vncviewer*grabKeyboard:	true
 
 !! Transparency (0-1):
-st.alpha: 0.75
+st.alpha: 0.7
 
 !! Appearance
 
