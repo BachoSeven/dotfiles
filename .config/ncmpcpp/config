@@ -16,7 +16,7 @@ visualizer_color = cyan, green, yellow, magenta, red, blue
 # visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 # visualizer_color = 46,45,44,43,42,41,40,39,38,37,36,35
 playlist_disable_highlight_delay = 1
-message_delay_time = 2
+message_delay_time = 1
 ## For a song format you can use:
 ##
 ## %l - length
