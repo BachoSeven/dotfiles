@@ -3,6 +3,14 @@
 # list wordlists with --list commandlineoption
 default-wordlist = english-advanced
 
+# color of active word depending on status
+# value should be an integer 0-15
+# in the background tput setaf $status-color-error
+# is used to generate the escape code
+status-color-error = 1
+status-color-correct = 2
+status-color-active = 3
+
 # can also be set with --width commandlineoption
 # or environment variable TYPISKT_WIDTH
 # maximum width (in columns) of lines

@@ -2,6 +2,10 @@
 ## This file is kept bash-compatible for use with dmenu_aliases
 
 ## Basics
+
+# Enable aliases to be sudo’ed
+	alias sudo='sudo '
+
 # Arch
 	alias clean='sudo pacman -Rs $(pacman -Qtdq)'
 	alias vote='ssh aur@aur.archlinux.org vote'

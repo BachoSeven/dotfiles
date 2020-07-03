@@ -118,10 +118,10 @@
 
 "" Appearance
 " ColorScheme
-	" notermgui
+	se termguicolors
 	se background=dark
-	" colgruvbox
-	colo wal
+	colo gruvbox
+	" colwal
 	" colo NeoSolarized
 	" let g:airline_theme='base16_solarized'
 

@@ -247,6 +247,9 @@ compressbrate() {
 	bitrate=${3:-1000k}
 	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
 }
+fixallmkv() {
+	for file in *.mkv; do ffmpeg -i $file -c copy "${file%.*}-fixed.${file##*.}"; done
+}
 
 # create a new directory and enter it
 md() { mkdir -p "$1" && cd "$1"; }

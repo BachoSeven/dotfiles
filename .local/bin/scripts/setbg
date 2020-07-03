@@ -31,4 +31,8 @@ done
 # Use gifview for gifs, or else xwallpaper
 	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
 	killall -q xwinwrap 2>/dev/null
-	[ "$mime" = "image/gif" ] && gifbg "$bgloc" || xwallpaper $format "$bgloc"
+	if [ "$mime" = "image/gif" ]; then
+		setsid gifbg "$bgloc" &
+	else
+		xwallpaper $format "$bgloc"
+	fi
