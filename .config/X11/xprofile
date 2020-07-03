@@ -8,7 +8,7 @@ xset s 600
 xss-lock -- /usr/local/bin/slock &
 
 xrdb -load ~/.config/X11/Xresources
-[ -f ~/.cache/wal/active ] && wal -R # Dirty trick to check if pywal was on at shutdown
+[ -f ~/.cache/wal/active ] && wal -R || setbg & # Dirty trick to check if pywal was on at shutdown
 mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
 copyq &				# Clipboard management
 redshift &			# Color temperature

@@ -37,14 +37,13 @@
 		copyq
 		custom_completions
 		init
-		dotbare
 		history
 		lf
 		utils
 		vi_mode
 		fzf
-		powerlevel10k
-		p10k_theme
-		fast-syntax-highlighting
+		# powerlevel10k # switching to pure
+		# p10k_theme
+		# fast-syntax-highlighting # Slow
 	)
 	zsh_load_plugins $plugins

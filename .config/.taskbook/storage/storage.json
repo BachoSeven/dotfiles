@@ -325,8 +325,19 @@
     "67": {
         "_id": 67,
         "_date": "Fri Jul 03 2020",
-        "_timestamp": 1593806288006,
-        "description": "add sx instead of startx",
+        "_timestamp": 1593812879327,
+        "description": "arch install: now dotbare is in the AUR",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "68": {
+        "_id": 68,
+        "_date": "Sat Jul 04 2020",
+        "_timestamp": 1593813989571,
+        "description": "zsh theme is now pure from the AUR",
         "isStarred": false,
         "boards": [
             "@ToDo"
