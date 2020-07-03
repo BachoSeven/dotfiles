@@ -42,8 +42,11 @@
 		utils
 		vi_mode
 		fzf
-		# powerlevel10k # switching to pure
-		# p10k_theme
-		# fast-syntax-highlighting # Slow
+		# p10k_theme # switched to pure
+		fast-syntax-highlighting
 	)
 	zsh_load_plugins $plugins
+
+# pure theme
+	autoload promptinit; promptinit
+	prompt pure
