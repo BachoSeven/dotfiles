@@ -34,6 +34,8 @@
 
 ## Various programs settings:
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
+	# Experimental: add memoy-reducing Chromium startup parameters to Brave
+	export BRAVE_FLAGS="--process-per-site  --enable-low-end-device-mode"
 
 # Dotbare
 	export DOTBARE_DIR="$XDG_CONFIG_HOME/dots"
