@@ -68,9 +68,9 @@ alias \
 	alias brave='brave-nightly'
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
 	alias xclip="xclip -sel clip"
-	alias rm='rm -iv'
-	alias cp='cp -iv'
-	alias mv='mv -iv'
+	alias rm='rm -v'
+	alias cp='cp -v'
+	alias mv='mv -v'
 	alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
 	alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
 
