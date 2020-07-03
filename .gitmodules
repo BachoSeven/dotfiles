@@ -2,14 +2,9 @@
 	path = .config/mpv/scripts/mpvSockets
 	url = https://github.com/wis/mpvSockets.git
 [submodule ".config/zsh/plugins/powerlevel10k"]
-	path = .config/zsh/plugins/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
 [submodule ".config/zsh/plugins/fast-syntax-highlighting"]
 	path = .config/zsh/plugins/fast-syntax-highlighting
 	url = git@github.com:BachoSeven/fast-syntax-highlighting.git
-[submodule ".config/zsh/plugins/dotbare"]
-	path = .config/zsh/plugins/dotbare
-	url = https://github.com/kazhala/dotbare.git
 [submodule ".config/brave_plugins/vimium"]
 	path = .config/brave_plugins/vimium
 	url = https://github.com/philc/vimium.git
