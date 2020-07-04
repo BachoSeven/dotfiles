@@ -42,7 +42,7 @@
 		utils
 		vi_mode
 		fzf
-		# p10k_theme # switched to pure
+		# p10k_theme
 		fast-syntax-highlighting
 	)
 	zsh_load_plugins $plugins
