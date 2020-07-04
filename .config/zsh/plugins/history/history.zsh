@@ -4,9 +4,7 @@ SAVEHIST=10000
 HISTFILE="${ZDOTDIR:-$HOME/.zsh}/.zsh_history"
 
 ## History command configuration
-setopt share_history          # share command history data
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_verify	      # verify bangs & co. before executing
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 
