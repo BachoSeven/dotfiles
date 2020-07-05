@@ -28,7 +28,6 @@ alias \
 	ka='killall' \
 	g='git' \
 	gca='g commit -a && g push' \
-	gc='g clone' \
 	glol="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" \
 	trem='transmission-remote' \
 	z='zathura'
