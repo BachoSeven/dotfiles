@@ -256,17 +256,6 @@
         ],
         "_isTask": false
     },
-    "62": {
-        "_id": 62,
-        "_date": "Thu Jul 02 2020",
-        "_timestamp": 1593657536197,
-        "description": "gtypist single space Version",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
     "63": {
         "_id": 63,
         "_date": "Thu Jul 02 2020",
