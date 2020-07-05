@@ -12,7 +12,7 @@
 	bindkey -s '^u' ' u\n'
 	bindkey -s '^[n' 'neomutt\n'
 	bindkey -s '^s' 'up2date\n'
-	bindkey -s '^y' "pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S\n"
+	bindkey -s '^y' "fzfpacinstall\n"
 
 # These need to be here because they are not compatible with bash, see aliasrc
 alias -g \
