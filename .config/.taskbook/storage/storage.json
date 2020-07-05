@@ -65,17 +65,6 @@
         ],
         "_isTask": false
     },
-    "27": {
-        "_id": 27,
-        "_date": "Wed Feb 05 2020",
-        "_timestamp": 1580923913597,
-        "description": "Weather and Weather2!",
-        "isStarred": false,
-        "boards": [
-            "@Shortcuts"
-        ],
-        "_isTask": false
-    },
     "36": {
         "_id": 36,
         "_date": "Sat Apr 04 2020",
@@ -289,17 +278,6 @@
         ],
         "_isTask": false
     },
-    "64": {
-        "_id": 64,
-        "_date": "Thu Jul 02 2020",
-        "_timestamp": 1593659798796,
-        "description": "tipp10 is yet another touch typing tutor",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
     "65": {
         "_id": 65,
         "_date": "Thu Jul 02 2020",
@@ -338,6 +316,39 @@
         "_date": "Sat Jul 04 2020",
         "_timestamp": 1593813989571,
         "description": "zsh theme is now pure from the AUR",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "69": {
+        "_id": 69,
+        "_date": "Sat Jul 04 2020",
+        "_timestamp": 1593887990912,
+        "description": "add expac for listing package sizes and sort them by date plus More",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "70": {
+        "_id": 70,
+        "_date": "Sat Jul 04 2020",
+        "_timestamp": 1593892734828,
+        "description": "mailsync is broken because of mbsync config path; alias to fix it",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "71": {
+        "_id": 71,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593958182859,
+        "description": "gtypist >typiskt and add-gtypist-exercises.sh",
         "isStarred": false,
         "boards": [
             "@ToDo"

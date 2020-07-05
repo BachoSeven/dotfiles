@@ -19,6 +19,7 @@
 	echo -ne '\e[5 q' # Use beam shape cursor on startup.
 	preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+
 # ci", ci', ci`, di", etc
 	autoload -U select-quoted
 	zle -N select-quoted
