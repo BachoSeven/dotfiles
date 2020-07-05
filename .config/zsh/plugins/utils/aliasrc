@@ -7,7 +7,9 @@
 	alias sudo='sudo '
 
 # Arch
-	alias clean='sudo pacman -Rs $(pacman -Qtdq)'
+	alias clean='sudo pacman -Rns $(pacman -Qtdq)'
+	alias recentpac="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20"
+	alias browsepac="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 	alias vote='ssh aur@aur.archlinux.org vote'
 
 # default to human readable figures and colorize
