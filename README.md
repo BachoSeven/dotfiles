@@ -42,15 +42,15 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ### Dwm
 
-!(pics/screens/ricing/surreal.gif)
+![](pics/screens/ricing/surreal.gif)
 
-!(pics/screens/ricing/pink_dwm.png)
+![](pics/screens/ricing/pink_dwm.png)
 
-!(pics/screens/ricing/dwm_mountains.png)
+![](pics/screens/ricing/dwm_mountains.png)
 
-!(pics/screens/ricing/dwm.png)
+![](pics/screens/ricing/dwm.png)
 
-!(pics/screens/ricing/dwm2.png)
+![](pics/screens/ricing/dwm2.png)
 
 ### Gnome-Shell
 
