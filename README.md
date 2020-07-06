@@ -29,7 +29,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 ## Eye-candy
 - I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, copyq, all suckless config and anywhere else (although I tried to keep a commented solarized alternative where I could for nostalgia).
 - The compositor is `picom`
-- Icons are Joypixels (`[ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/)`)
+- Icons are Joypixels ([ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/))
 - The default gtk 2/3 theme is [Arc-Gruvbox](https://aur.archlinux.org/packages/gtk-theme-arc-gruvbox-git)
 - My font is `Hack Nerd Font`
 
