@@ -453,5 +453,27 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "82": {
+        "_id": 82,
+        "_date": "Mon Jul 06 2020",
+        "_timestamp": 1594051080829,
+        "description": "p10k theme is now installed optionally from aur as 'zsh-theme-powerlevel10k-git'",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "83": {
+        "_id": 83,
+        "_date": "Tue Jul 07 2020",
+        "_timestamp": 1594076990129,
+        "description": "added vixl44 for pixel art with vi bindings",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }
