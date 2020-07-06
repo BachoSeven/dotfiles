@@ -1,10 +1,9 @@
 ## Basic Settings
-	setopt AUTO_CD          							# `dirname` is equivalent to `cd dirname`
+	setopt auto_cd          							# `dirname` is equivalent to `cd dirname`
 	setopt extended_glob								# Enable globbing
 	stty stop undef									# Disable ctrl-s to freeze terminal.
-	unsetopt RM_STAR_SILENT 							# Always ask before rm folder/*
-# Perform command substitution, parameter and arithmetic expansion in prompt.
-	setopt prompt_subst
+	unsetopt rm_star_silent 							# Always ask before rm folder/*
+	setopt prompt_subst 								# Command substitution, parameter and arithmetic expansion in prompt.
 
 # Remember recent directories
 	autoload -Uz add-zsh-hook
@@ -37,13 +36,21 @@
 ## Colors & Appearance
 	autoload -U colors && colors
 
-## Autocompletion # +0.2
-	autoload -U compinit
+## Autocompletion
+	autoload -Uz compinit
 	zmodload zsh/complist
-	compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+	# Speed up completion loading at startup [ https://gist.github.com/ctechols/ca1035271ad134841284 ]
+	() {
+	  if [[ $# -gt 0 ]]; then
+		compinit -d $XDG_CACHE_HOME/zsh/zcompdump
+	  else
+		compinit -C -d $XDG_CACHE_HOME/zsh/zcompdump
+	  fi
+	} ${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24)
+
 # Add .files to autocomplete
 	_comp_options+=(globdots)							# Include hidden files.
-# Basic autocomplete: case-insensitive and colored with LS_COLORS
+# Basic autocomplete: menu-listing, case-insensitive and colored with LS_COLORS
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

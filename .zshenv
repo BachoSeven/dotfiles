@@ -10,7 +10,8 @@
 	export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 ## Path settings
-	typeset -U PATH path
+# eliminates duplicates in *paths
+	typeset -gU cdpath fpath path
 	path=("$path[@]")
 # Adds `~/.local/bin` and all subdirs to $PATH
 	export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"

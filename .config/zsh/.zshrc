@@ -36,17 +36,16 @@
 	plugins=(
 		copyq
 		custom_completions
-		init
+		init # 0.17 [autocompletion]
 		history
 		lf
 		utils
 		vi_mode
 		fzf
-		# p10k_theme
-		fast-syntax-highlighting
+		fast-syntax-highlighting # 0.12
 	)
 	zsh_load_plugins $plugins
 
-# pure theme
+# pure theme # 0.1
 	autoload promptinit; promptinit
 	prompt pure

@@ -343,5 +343,93 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "72": {
+        "_id": 72,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593964577825,
+        "description": "newsboat normal version as git is bloat",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "73": {
+        "_id": 73,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593964851051,
+        "description": "ferdi is now ferdi-bin",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "74": {
+        "_id": 74,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593965072895,
+        "description": "remove calcurse if not already",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "75": {
+        "_id": 75,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593965099762,
+        "description": "discord , not -canary",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "76": {
+        "_id": 76,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593965745783,
+        "description": "fix mcl",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "77": {
+        "_id": 77,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593968031896,
+        "description": "removed bleachbit as it is very bloat and also useless",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "78": {
+        "_id": 78,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593968166312,
+        "description": "lf is now binary instead than git version",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "79": {
+        "_id": 79,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593973874976,
+        "description": "added colorz to wal configuration (from AUR)",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }
