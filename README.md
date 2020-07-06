@@ -11,7 +11,7 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
 My setup is pretty minimal and fast: although many packages and systemd services are launched at boot, rebooting from dwm to dwm takes approximately 15 seconds(with grub).
 I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use:
 - Suckless utilities (links are to my patched repos): **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), **[st](https://github.com/BachoSeven/st)** (terminal emulator) and **[xss](https://github.com/9wm/xss)+[slock](https://github.com/BachoSeven/slock)** (screensaver).
-- Highly configured **zsh**  shell with many custom plugins for completions and integrations, ~~**[powerlevel10k](https://github.com/romkatv/powerlevel10k)** with a custom lean theme~~ **[pure](https://github.com/sindresorhus/pure)** theme ( my p10k_theme is in .config/zsh/plugins ) and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax highlighting. Despite all these customizations, my zsh has an average startup time of `0.047 s`.
+- Highly configured **zsh**  shell with many custom plugins for completions and integrations, ~~**[powerlevel10k](https://github.com/romkatv/powerlevel10k)** with a custom lean theme~~ **[pure](https://github.com/sindresorhus/pure)** theme (old p10k theme [here](https://github.com/BachoSeven/dotfiles/tree/master/.config/zsh/plugins/p10k_theme)) and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax highlighting. Despite all these customizations, my zsh has an average startup time of `0.047 s`.
 - **neovim** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
 - **ncmpcpp** as a music player (with mpd)
@@ -29,7 +29,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 ## Eye-candy
 - I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, copyq, all suckless config and anywhere else (although I tried to keep a commented solarized alternative where I could for nostalgia).
 - The compositor is `picom`
-- Icons are Joypixels (`ttf-joypixels` from aur)
+- Icons are Joypixels (`[ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/)`)
 - The default gtk 2/3 theme is [Arc-Gruvbox](https://aur.archlinux.org/packages/gtk-theme-arc-gruvbox-git)
 - My font is `Hack Nerd Font`
 
