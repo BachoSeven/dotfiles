@@ -42,11 +42,17 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ### Dwm
 
+![](pics/screens/ricing/dwm_gravitazione-2.png)
+
+![](pics/screens/ricing/green_dwm-1.png)
+
+![](pics/screens/ricing/dwm_mountains.png)
+
+![](pics/screens/ricing/dwm_pinker.png)
+
 ![](pics/screens/ricing/surreal.gif)
 
 ![](pics/screens/ricing/pink_dwm.png)
-
-![](pics/screens/ricing/dwm_mountains.png)
 
 ![](pics/screens/ricing/dwm.png)
 
@@ -54,6 +60,6 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ### Gnome-Shell
 
-![6](pics/screens/ricing/new_rice1.png)
+![](pics/screens/ricing/new_rice1.png)
 
-![7](pics/screens/ricing/new_rice-small.png)
+![](pics/screens/ricing/new_rice-small.png)
