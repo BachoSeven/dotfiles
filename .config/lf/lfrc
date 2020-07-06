@@ -41,8 +41,8 @@ cmd open ${{
 	*.pdf|*.djvu|*.ps|*.epub) setsid -f zathura $fx >/dev/null 2>&1 & ;;
 	*)
 	    case $(file --mime-type $f -b) in
-		text/*|application/json) $EDITOR $fx;;
-		application/pdf|application/vnd*|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
+		text/*|application/json|*opendocument.text) $EDITOR $fx;;
+		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
 		image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
 		audio/*) mpv --audio-display=no $f ;;

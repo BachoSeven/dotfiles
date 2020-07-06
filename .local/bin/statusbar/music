@@ -1,6 +1,6 @@
 #!/bin/sh
 
-filter() { mpc | sed "/^volume:/d;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d" | paste -sd ' '; }
+filter() { mpc | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d" | paste -sd ' ';}
 
 status() { echo "^c#d3869b^$(mpc status | filter )"; }
 toggle() { echo "^c#d3869b^$(mpc toggle | filter )"; }

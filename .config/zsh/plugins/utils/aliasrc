@@ -114,7 +114,7 @@ alias \
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
-	alias mcl='java -jar /home/francesco/programs_drivers/games/mc/mcTE.jar'
+	alias mcl='java -jar ~/stuff/games/minecraft/mcTE.jar'
 
 ## Rice
 # Dotbare

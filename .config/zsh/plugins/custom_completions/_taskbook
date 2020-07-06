@@ -7,8 +7,7 @@ __trim() {
 
 __get_arg_by_pos() {
 	pos=$1
-	cmd="echo -n \"$words\" | awk '{print \$$pos}'"
-	eval $cmd
+	echo -n \"$words\" | awk '{print \$$pos}'
 }
 
 __now_arg_pos() {
