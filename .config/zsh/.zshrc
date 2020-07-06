@@ -42,10 +42,11 @@
 		utils
 		vi_mode
 		fzf
+		p10k_theme # 0.1
 		fast-syntax-highlighting # 0.12
 	)
 	zsh_load_plugins $plugins
 
 # pure theme # 0.1
-	autoload promptinit; promptinit
-	prompt pure
+	# PURE_GIT_UNTRACKED_DIRTY=0
+	# autoload promptinit; promptinit && prompt pure

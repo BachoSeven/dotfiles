@@ -1,7 +1,7 @@
 ## Basic Settings
 	setopt auto_cd          							# `dirname` is equivalent to `cd dirname`
 	setopt extended_glob								# Enable globbing
-	stty stop undef									# Disable ctrl-s to freeze terminal.
+	unsetopt flow_control								# Disable ctrl-s/ctrl-q to freeze/unfreeze terminal.
 	unsetopt rm_star_silent 							# Always ask before rm folder/*
 	setopt prompt_subst 								# Command substitution, parameter and arithmetic expansion in prompt.
 
