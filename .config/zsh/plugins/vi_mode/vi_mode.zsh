@@ -3,36 +3,27 @@
 
 	export KEYTIMEOUT=1
 
-# function zle-keymap-select {	# Change cursor shape for different vi modes.
-	  # if [[ ${KEYMAP} == vicmd ]] ||
-	     # [[ $1 = 'block' ]]; then
-	    # echo -ne '\e[1 q'
+	function zle-keymap-select {	# Change cursor shape for different vi modes.
+	  if [[ ${KEYMAP} == vicmd ]] ||
+	     [[ $1 = 'block' ]]; then
+	    echo -ne '\e[1 q'
 
-	  # elif [[ ${KEYMAP} == main ]] ||
-	       # [[ ${KEYMAP} == viins ]] ||
-	       # [[ ${KEYMAP} = '' ]] ||
-	       # [[ $1 = 'beam' ]]; then
-	    # echo -ne '\e[5 q'
-	  # fi
-	# }
-	# zle -N zle-keymap-select
-	# # init `vi insert` as keymap
-	# zle-line-init() {
-	    # zle -K viins
-	    # echo -ne "\e[5 q"
-	# }
-	# zle -N zle-line-init
-	# echo -ne '\e[5 q' # Use beam shape cursor on startup.
-	# preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-# Version control information && prompt
-	# autoload -Uz vcs_info
-	# precmd() { vcs_info }
-	# zstyle ':vcs_info:git:*' formats '(%b)'
-	# PROMPT='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[cyan]%}%~%{$fg[blue]%}${vcs_info_msg_0_}%{$fg[red]%}]%{$reset_color%}$ %b'
-
-# Disable marking untracked files under VCS as dirty.
-	DISABLE_UNTRACKED_FILES_DIRTY="true"
+	  elif [[ ${KEYMAP} == main ]] ||
+	       [[ ${KEYMAP} == viins ]] ||
+	       [[ ${KEYMAP} = '' ]] ||
+	       [[ $1 = 'beam' ]]; then
+	    echo -ne '\e[5 q'
+	  fi
+	}
+	zle -N zle-keymap-select
+	# init `vi insert` as keymap
+	zle-line-init() {
+	    zle -K viins
+	    echo -ne "\e[5 q"
+	}
+	zle -N zle-line-init
+	echo -ne '\e[5 q' # Use beam shape cursor on startup.
+	preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # ci", ci', ci`, di", etc
 	autoload -U select-quoted

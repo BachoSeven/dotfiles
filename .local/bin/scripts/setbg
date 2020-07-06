@@ -12,6 +12,7 @@
 
 bgloc=$XDG_CONFIG_HOME/wp.png
 format="--zoom"
+killall -q xwinwrap 2>/dev/null
 
 while getopts ":hi:w:m" o; do
 	case "${o}" in
@@ -23,7 +24,7 @@ while getopts ":hi:w:m" o; do
 		w)
 			[ -n "$2" ] && cp "$2" $bgloc > /dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			backend=$3
-			# exit so xwallpaper is not called
+			# exit so xwallpaper is not invoked
 			hash wal &>/dev/null && wal -c && wal --backend $backend -i $bgloc && vimwal -w && exit ;;
 		m)
 			format="--maximize" ;;
@@ -34,7 +35,6 @@ done
 
 # Use gifview for gifs, or else xwallpaper
 	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
-	killall -q xwinwrap 2>/dev/null
 	if [ "$mime" = "image/gif" ]; then
 		setsid gifbg "$bgloc" &
 	else
