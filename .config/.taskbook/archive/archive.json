@@ -305,5 +305,27 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "27": {
+        "_id": 27,
+        "_date": "Tue Jun 23 2020",
+        "_timestamp": 1592932075749,
+        "description": "add compton/picom for rounded corners",
+        "isStarred": false,
+        "boards": [
+            "@FreeTime"
+        ],
+        "_isTask": false
+    },
+    "28": {
+        "_id": 28,
+        "_date": "Sat Jul 04 2020",
+        "_timestamp": 1593813989571,
+        "description": "zsh theme is now pure from the AUR",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }

@@ -46,7 +46,3 @@
 		fast-syntax-highlighting # 0.12
 	)
 	zsh_load_plugins $plugins
-
-# pure theme # 0.1
-	# PURE_GIT_UNTRACKED_DIRTY=0
-	# autoload promptinit; promptinit && prompt pure

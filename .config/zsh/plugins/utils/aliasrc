@@ -8,7 +8,7 @@
 
 # Arch
 	alias clean='sudo pacman -Rns $(pacman -Qtdq)'
-	alias recentpac="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20"
+	alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -50"
 	alias browsepac="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 	alias vote='ssh aur@aur.archlinux.org vote'
 
@@ -62,7 +62,6 @@ alias \
 	alias info='info --vi-keys'
 	alias v="nvim"
 	alias nv='v .'
-	alias sT="tabbed -c -r 2 st -w id "
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias bons="cbonsai -l -b 2 -M 7"
@@ -84,6 +83,9 @@ alias \
 	alias rscf='find -name "*,*" -type f | perl-rename "s/,/_/g"'
 
 # Various
+	sT() { # here for use with dmenu
+		tabbed -c -r 2 st -w id
+	}
 	alias verifygpg='gpg --auto-key-retrieve --verify'
 	alias ncdu="ncdu --si --color dark"
 	alias \
