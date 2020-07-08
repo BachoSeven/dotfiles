@@ -186,7 +186,7 @@ user_interface = alternative
 ## Available values: artist, album_artist, date, genre, composer, performer.
 media_library_primary_tag = artist
 ## Available values: wrapped, normal.
-#default_find_mode = wrapped
+default_find_mode = wrapped
 #default_tag_editor_pattern = %n - %t
 #header_visibility = yes
 #statusbar_visibility = yes

@@ -201,17 +201,6 @@
         ],
         "_isTask": false
     },
-    "57": {
-        "_id": 57,
-        "_date": "Tue Jun 23 2020",
-        "_timestamp": 1592932075749,
-        "description": "add compton/picom for rounded corners",
-        "isStarred": false,
-        "boards": [
-            "@FreeTime"
-        ],
-        "_isTask": false
-    },
     "58": {
         "_id": 58,
         "_date": "Thu Jun 25 2020",
@@ -230,7 +219,7 @@
         "description": "apg is a more secure password generator",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -252,7 +241,7 @@
         "description": "Abook-configdir and isync-config-patched versions(BEFORE mutt-wizard which is from my personal GIT: we need dependencies tho); tipyskt (>>gtypist??)",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -296,18 +285,7 @@
         "description": "arch install: now dotbare is in the AUR",
         "isStarred": false,
         "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
-    "68": {
-        "_id": 68,
-        "_date": "Sat Jul 04 2020",
-        "_timestamp": 1593813989571,
-        "description": "zsh theme is now pure from the AUR",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -318,7 +296,7 @@
         "description": "add expac for listing package sizes and sort them by date plus More",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -337,10 +315,10 @@
         "_id": 71,
         "_date": "Sun Jul 05 2020",
         "_timestamp": 1593958182859,
-        "description": "gtypist >typiskt and add-gtypist-exercises.sh",
+        "description": "typiskt(+./gtypistexercises.sh), and gtypist-single-space",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -351,7 +329,7 @@
         "description": "newsboat normal version as git is bloat",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -362,7 +340,7 @@
         "description": "ferdi is now ferdi-bin",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -373,7 +351,7 @@
         "description": "remove calcurse if not already",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -384,7 +362,7 @@
         "description": "discord , not -canary",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -406,7 +384,7 @@
         "description": "removed bleachbit as it is very bloat and also useless",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -417,7 +395,7 @@
         "description": "lf is now binary instead than git version",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -428,7 +406,7 @@
         "description": "added colorz to wal configuration (from AUR)",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -439,7 +417,7 @@
         "description": "add mgba",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -458,10 +436,10 @@
         "_id": 82,
         "_date": "Mon Jul 06 2020",
         "_timestamp": 1594051080829,
-        "description": "p10k theme is now installed optionally from aur as 'zsh-theme-powerlevel10k-git'",
+        "description": "p10k theme is now from aur as 'zsh-theme-powerlevel10k-git' ",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -472,7 +450,7 @@
         "description": "added vixl44 for pixel art with vi bindings",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     }

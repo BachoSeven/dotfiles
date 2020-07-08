@@ -39,6 +39,7 @@ cmd open ${{
 	    lf -remote "send $id mount $f"
             ;;
 	*.pdf|*.djvu|*.ps|*.epub) setsid -f zathura $fx >/dev/null 2>&1 & ;;
+	*.vixl) vixl44 $f >/dev/null 2>&1 ;;
 	*)
 	    case $(file --mime-type $f -b) in
 		text/*|application/json|*opendocument.text) $EDITOR $fx;;
@@ -212,7 +213,7 @@ map <c-y> up
 map <c-s> $lf -remote "send $id select $(printf '%q' $(all_files=(./*(ND)); printf '%s\n' ${all_files[@]} | fzf))"	# better asynchronious search
 map <c-g> set globsearch!
 map <c-f> :fzf_jump
-map <c-space> :toggle; up
+map <c-space> :toggle; up; up
 
 #			Personal utils
 map gh	# unmap useless keys

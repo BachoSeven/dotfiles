@@ -1,51 +1,69 @@
 !# vim: ft=xdefaults
 
+#define BG  #282828
+#define C0  #1d2021
+#define C1  #cc241d
+#define C2  #98971a
+#define C3  #d79921
+#define C4  #458588
+#define C5  #b16286
+#define C6  #689d6a
+#define C7  #a89984
+#define C8  #928374
+#define C9  #fb4934
+#define C10 #b8bb26
+#define C11 #fabd2f
+#define C12 #83a598
+#define C13 #d3869b
+#define C14 #8ec07c
+#define C15 #ebdbb2
+
 !!	gruvbox
-*.background: #282828
-*.foreground: #ebdbb2
 *.cursorColor: #add8e6
 *RcursorColor: #555555
-*.color0: #1d2021
-*.color1: #cc241d
-*.color2: #98971a
-*.color3: #d79921
-*.color4: #458588
-*.color5: #b16286
-*.color6: #689d6a
-*.color7: #a89984
-*.color8: #928374
-*.color9: #fb4934
-*.color10: #b8bb26
-*.color11: #fabd2f
-*.color12: #83a598
-*.color13: #d3869b
-*.color14: #8ec07c
-*.color15: #ebdbb2
+*.background: BG
+*.foreground: C15
+*.color0: C0
+*.color1: C1
+*.color2: C2
+*.color3: C3
+*.color4: C4
+*.color5: C5
+*.color6: C6
+*.color7: C7
+*.color8: C8
+*.color9: C9
+*.color10: C10
+*.color11: C11
+*.color12: C12
+*.color13: C13
+*.color14: C14
+*.color15: C15
 
 !! Dwm
-dwm.normbgcolor:	#282828
-dwm.normfgcolor:	#ebdbb2
-dwm.normbordercolor:	#1d2021
-dwm.selbgcolor:		#282828
-dwm.selfgcolor:		#ebdbb2
-dwm.selbordercolor:	#689d6a
-dwm.statusbg:		#1d2021
-dwm.statusfg:		#ebdbb2
+dwm.normbgcolor:	BG
+dwm.normfgcolor:	C15
+dwm.normbordercolor:	C0
+dwm.selbgcolor:		BG
+dwm.selfgcolor:		C15
+dwm.selbordercolor:	C6
+dwm.statusbg:		C0
+dwm.statusfg:		C15
 dwm.tagnormbg:		#458488
-dwm.tagnormfg:		#1d2021
-dwm.tagselbg:		#83a598
+dwm.tagnormfg:		C0
+dwm.tagselbg:		C12
 dwm.tagselfg:		#012321
 dwm.infonormbg:		#458488
-dwm.infonormfg:		#282828
-dwm.infoselbg:		#1d2021
-dwm.infoselfg:		#d3869b
+dwm.infonormfg:		BG
+dwm.infoselbg:		C0
+dwm.infoselfg:		C13
 
 !! Dmenu
-dmenu.background:	#1d2021
-dmenu.foreground:	#a89984
-dmenu.selbackground:	#282828
-dmenu.selforeground:	#ebdbb2
+dmenu.background:	C0
+dmenu.foreground:	C7
+dmenu.selbackground:	BG
+dmenu.selforeground:	C15
 dmenu.hibackground:	#458488
 dmenu.hiforeground:	#eee8d5
-dmenu.hiselbackground:	#b16286
+dmenu.hiselbackground:	C5
 dmenu.hiselforeground:	#fdf6e3
