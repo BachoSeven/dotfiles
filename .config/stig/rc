@@ -25,7 +25,7 @@ tui toggle topbar
 set tui.theme theme.theme
 
 # Tabs
-tab ls all --columns size,ratio,status,rate-down,rate-up,name
+tab ls all --columns size,ratio,status,rate-down,rate-up,%downloaded,name
 tab -b ls peers
 tab -b ls uploading
 tab -b ls downloading
