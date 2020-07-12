@@ -117,6 +117,7 @@
 	so ~/.config/nvim/plugins/post-plug.vim
 
 "" Appearance
+	hi Comment gui=italic
 " ColorScheme
 	" notermgui
 	se background=dark
@@ -125,8 +126,6 @@
 	colo wal
 	" colo NeoSolarized
 	" let g:airline_theme='base16_solarized'
-
-" Highlighting
-	hi Comment gui=italic
+" Transparency
 	hi LineNr ctermbg=NONE guibg=NONE
 	hi Normal ctermbg=NONE guibg=NONE

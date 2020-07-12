@@ -59,7 +59,6 @@ alias \
 	alias 8='cd -8'
 	alias 9='cd -9'
 	alias :q='exit' # vim user :)
-	alias info='info --vi-keys'
 	alias v="nvim"
 	alias nv='v .'
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
@@ -73,6 +72,9 @@ alias \
 	alias mv='mv -v'
 	alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
 	alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
+# Manuals
+	alias mman='macho -i'
+	alias info='info --vi-keys'
 
 # Remove spaces, curly+squared brackets and commas
 	alias rsf='find -name "* *" -type f | perl-rename "s/ /_/g"'

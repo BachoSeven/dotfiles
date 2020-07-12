@@ -14,6 +14,7 @@ set scrolloff 10
 set color256
 set icons
 set period 1
+set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
 set incsearch true
 
 # adjust coloumn width to terminal
@@ -42,13 +43,14 @@ cmd open ${{
 	*.vixl) vixl44 $f >/dev/null 2>&1 ;;
 	*)
 	    case $(file --mime-type $f -b) in
+	    	inode/symlink) setsid -f $OPENER $(readlink -f $f) >/dev/null 2>&1 & ;;
 		text/*|application/json|*opendocument.text) $EDITOR $fx;;
 		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
 		image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
 		audio/*) mpv --audio-display=no $f ;;
 		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 & ;;
-		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2> /dev/null & done;;
+		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2> 2>&1 & done;;
 	    esac
     esac
 }}
