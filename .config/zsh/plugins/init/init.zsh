@@ -23,6 +23,12 @@
 	setopt pushd_ignore_dups
 	setopt pushdminus
 
+# This causes pasted URLs to be automatically escaped, without needing to disable globbing.
+	autoload -Uz bracketed-paste-magic
+	zle -N bracketed-paste bracketed-paste-magic
+	autoload -Uz url-quote-magic
+	zle -N self-insert url-quote-magic
+
 # function to visualize dir stack
 	function di () {
 	  if [[ -n $1 ]]; then

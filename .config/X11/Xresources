@@ -8,7 +8,7 @@
 
 !! Appearance
 *.scrollBar: false
-Xft.dpi: 96
+Xft.dpi: 102
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb

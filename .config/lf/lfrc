@@ -50,7 +50,7 @@ cmd open ${{
 		image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
 		audio/*) mpv --audio-display=no $f ;;
 		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 & ;;
-		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2> 2>&1 & done;;
+		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1 & done;;
 	    esac
     esac
 }}

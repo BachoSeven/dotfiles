@@ -453,5 +453,16 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "84": {
+        "_id": 84,
+        "_date": "Sun Jul 12 2020",
+        "_timestamp": 1594590301991,
+        "description": "added pinentry-dmenu-inco to AUR installs",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }
