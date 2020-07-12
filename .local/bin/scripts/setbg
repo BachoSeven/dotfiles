@@ -24,12 +24,11 @@ while getopts ":hi:w:m" o; do
 		w)
 			[ -n "$2" ] && cp "$2" $bgloc > /dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			backend=$3
-			# exit so xwallpaper is not invoked
-			hash wal &>/dev/null && wal -c && wal --backend $backend -i $bgloc && vimwal -w && exit ;;
+			hash wal &>/dev/null && wal -c && wal --backend $backend -i $bgloc && vimwal -w ;;
 		m)
 			format="--maximize" ;;
 		*)
-			printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
+			printf "Invalid option: -%s\\n" "$OPTARG" && exit 1 ;;
 	esac
 done
 
