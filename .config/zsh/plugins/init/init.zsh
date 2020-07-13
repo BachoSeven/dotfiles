@@ -1,7 +1,10 @@
 ## Basic Settings
+	setopt complete_in_word        # Complete from both ends of a word.
+	setopt always_to_end           # Move cursor to the end of a completed word.
 	setopt auto_cd          							# `dirname` is equivalent to `cd dirname`
 	setopt extended_glob								# Enable globbing
 	unsetopt flow_control								# Disable ctrl-s/ctrl-q to freeze/unfreeze terminal.
+	setopt short_loops             # 'for i in *; echo $i;' instead of 'for i in *; do echo $i; done'
 	unsetopt rm_star_silent 							# Always ask before rm folder/*
 	setopt prompt_subst 								# Command substitution, parameter and arithmetic expansion in prompt.
 
@@ -61,3 +64,6 @@
 	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 	zstyle ':completion:*' rehash true
+# Use caching to improve completion for commands related to packages or kernel modules
+	zstyle ':completion::complete:*' use-cache on
+	zstyle ':completion::complete:*' cache-path "$HOME/.cache/zsh"

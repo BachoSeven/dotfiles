@@ -23,7 +23,6 @@
     padding = 0
     horizontal_padding = 8
     frame_width = 3
-    frame_color = "#d79921"
     # Define a color for the separator.
     # possible values are:
     #  * auto: dunst tries to find a color fitting to the background;
@@ -82,15 +81,17 @@
 [urgency_low]
     background = "#282828"
     foreground = "#928374"
+    frame_color= "#a2a2a2"
     timeout = 5
 [urgency_normal]
     background = "#458588"
     foreground = "#ebdbb2"
+    frame_color = "#d79921"
     timeout = 10
 [urgency_critical]
     background = "#1d2021"
     foreground = "#ebdbb2"
-    frame_color = "#fb4934"
+    frame_color= "#fb4934"
     timeout = 0
 
 # # sol_dark
