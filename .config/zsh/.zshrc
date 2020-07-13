@@ -46,3 +46,6 @@
 		fast-syntax-highlighting # 0.12
 	)
 	zsh_load_plugins $plugins
+	# Alternative, lightweight prompt
+	# PS1=$'%B%(!.%F{red}.%F{yellow})%n%F{green}@%F{blue}%m %F{magenta}%~\n%F{cyan}%b%F{reset} '
+	# PS2='%B%F{yellow}•%b%F{reset} '
