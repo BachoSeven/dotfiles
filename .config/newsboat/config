@@ -36,7 +36,7 @@ macro a set browser "tsp youtube-dl --add-metadata -xic -f bestaudio/best" ; ope
 macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
 macro w set browser "lynx" ; open-in-browser ; set browser linkhandler
 macro p set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
-macro c set browser "xsel -b <<<" ; open-in-browser ; set browser linkhandler
+macro c set browser "xsel -b <" ; open-in-browser ; set browser linkhandler
 
 highlight all "---.*---" yellow
 highlight feedlist ".*(0/0))" black
@@ -50,3 +50,5 @@ highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
 highlight article ":.*\\(link\\)$" cyan default
 highlight article ":.*\\(image\\)$" blue default
 highlight article ":.*\\(embedded flash\\)$" magenta default
+
+# vim: ft=apachestyle cms=#\ %s :

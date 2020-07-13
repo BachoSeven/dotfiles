@@ -4,10 +4,10 @@
 #	      _    /\_____\\/\_____\\ \_\ \_\\ \_\ \_\\ \_____\
 #	     (_)   \/_____/ \/_____/ \/_/\/_/ \/_/ /_/ \/_____/
 
-# Exit if non-interactive
-	 if [ -z "$PS1" ]; then
-		     exit
-	 fi
+# No setup if not an interactive shell
+if [[ ! -o interactive ]] ; then
+	return
+fi
 
 ## Plugins
 	function zsh_load_plugins() {
@@ -43,9 +43,7 @@
 		vi_mode
 		fzf
 		p10k_theme # 0.1
+		# prompt
 		fast-syntax-highlighting # 0.12
 	)
 	zsh_load_plugins $plugins
-	# Alternative, lightweight prompt
-	# PS1=$'%B%(!.%F{red}.%F{yellow})%n%F{green}@%F{blue}%m %F{magenta}%~\n%F{cyan}%b%F{reset} '
-	# PS2='%B%F{yellow}•%b%F{reset} '

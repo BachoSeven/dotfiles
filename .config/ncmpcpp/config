@@ -197,15 +197,11 @@ user_interface = alternative
 #data_fetching_delay = yes
 ## Available values: artist, album_artist, date, genre, composer, performer.
 media_library_primary_tag = artist
+media_library_sort_by_mtime = yes
 ## Available values: wrapped, normal.
 default_find_mode = wrapped
 #default_tag_editor_pattern = %n - %t
-#header_visibility = yes
-#statusbar_visibility = yes
-#titles_visibility = yes
-#header_text_scrolling = yes
-#cyclic_scrolling = no
-#lines_scrolled = 2
+lines_scrolled = 2
 lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
 follow_now_playing_lyrics = yes
 fetch_lyrics_for_current_song_in_background = no
@@ -268,11 +264,9 @@ ignore_leading_the = yes
 ##
 #ignore_diacritics = no
 #block_search_constraints_change_if_items_found = yes
-mouse_support = no
-#mouse_list_scroll_whole_page = yes
+mouse_support = yes
+mouse_list_scroll_whole_page = no
 empty_tag_marker=" -- ‼ -- "
-#tag_editor_extended_numeration = no
-#media_library_sort_by_mtime = no
 enable_window_title = no
 search_engine_default_search_mode = 2
 external_editor = nvim

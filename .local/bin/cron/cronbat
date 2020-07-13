@@ -9,14 +9,14 @@ if [ ! "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ]; then
 		if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 15 ]; then
 			notify-send -u critical "Battery critically low."
 		else
-			notify-send -u normal "Plug in cable"
+			notify-send -u critical "Plug in cable"
 		fi
 	fi
 	if [ "$(cat /sys/class/power_supply/BAT0/status)" = "Not charging" ]; then
-		notify-send -u low "Unplug cable"
+		notify-send -u normal "Unplug cable"
 	fi
 else
 	if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -gt 80 ]; then
-		notify-send -u low "Unplug cable"
+		notify-send -u normal "Unplug cable"
 	fi
 fi
