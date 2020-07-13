@@ -178,7 +178,19 @@ incremental_seeking = yes
 #volume_change_step = 2
 autocenter_mode = yes
 centered_cursor = yes
-progressbar_look = "━■" (─>─/━■/━╋━/━━━)
+# Yes I have gathered all of the best-looking progressbar looks for ncmpcpp from all over the internet, yw
+progressbar_look = "•••"
+# progressbar_look = "---"
+# progressbar_look = "─>─"
+# progressbar_look = "▀▀ "
+# progressbar_look = "━■"
+# progressbar_look = "⠒⠒⠐"
+# progressbar_look = "◾◾◽"
+# progressbar_look = "━╋━"
+# progressbar_look = "━━━"
+# progressbar_look = "━━─"
+# progressbar_look = "─╼─"
+# progressbar_look = "╼·"
 ## Available values: database, playlist.
 #default_place_to_search_in = database
 user_interface = alternative

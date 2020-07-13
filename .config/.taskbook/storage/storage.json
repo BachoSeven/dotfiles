@@ -464,5 +464,27 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "85": {
+        "_id": 85,
+        "_date": "Mon Jul 13 2020",
+        "_timestamp": 1594595530456,
+        "description": "added zsh-pure-prompt for correct sudo prompts",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "86": {
+        "_id": 86,
+        "_date": "Mon Jul 13 2020",
+        "_timestamp": 1594596313337,
+        "description": "switched to pam-gnupg(non-git)",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }

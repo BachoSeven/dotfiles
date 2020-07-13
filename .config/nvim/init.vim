@@ -12,6 +12,16 @@
 	se clipboard+=unnamedplus
 	se number relativenumber
 	se wildmenu
+		se wildignore+=.git,.hg,.svn
+		se wildignore+=*.aux,*.out,*.toc
+		se wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
+		se wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
+		se wildignore+=*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
+		se wildignore+=*.mp3,*.oga,*.ogg,*.wav,*.flac
+		se wildignore+=*.eot,*.otf,*.ttf,*.woff
+		se wildignore+=*.doc,*.pdf,*.cbr,*.cbz
+		se wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
+		se wildignore+=*.swp,.lock,.DS_Store,._*
 	se wildmode=longest,list,full
 	se autoindent
 	se incsearch
