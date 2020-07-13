@@ -42,8 +42,8 @@ fi
 		utils
 		vi_mode
 		fzf
-		p10k_theme # 0.1
-		# prompt
+		# p10k_theme # 0.1
+		prompt
 		fast-syntax-highlighting # 0.12
 	)
 	zsh_load_plugins $plugins

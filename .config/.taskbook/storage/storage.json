@@ -454,17 +454,6 @@
         ],
         "_isTask": false
     },
-    "84": {
-        "_id": 84,
-        "_date": "Sun Jul 12 2020",
-        "_timestamp": 1594590301991,
-        "description": "added pinentry-dmenu-inco to AUR installs",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
     "85": {
         "_id": 85,
         "_date": "Mon Jul 13 2020",
@@ -472,7 +461,7 @@
         "description": "added zsh-pure-prompt for correct sudo prompts",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
         ],
         "_isTask": false
     },
@@ -483,7 +472,18 @@
         "description": "switched to pam-gnupg(non-git)",
         "isStarred": false,
         "boards": [
-            "@ToDo"
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "87": {
+        "_id": 87,
+        "_date": "Mon Jul 13 2020",
+        "_timestamp": 1594656688570,
+        "description": "removed telegram-tg-git until it is usable",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
         ],
         "_isTask": false
     }

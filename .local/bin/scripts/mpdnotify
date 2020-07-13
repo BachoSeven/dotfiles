@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+# Simple ncmpcpp notification script by Gerome Matilla;
+# gerome.matilla07@gmail.com
+#	Depends:
+#		- mpc, mpd, ncmpcpp, imagemagick, ffmpeg
+
+MUSIC_DIR="${HOME}/slsk/music"
+TMP_DIR="/tmp/ncmpcpp_${USER}"
+TMP_COVER_PATH="${TMP_DIR}/ncmpcpp_cover.jpg"
+TMP_SONG="/tmp/current-song"
+CHECK_DUNST=$(command -v dunst)
+
+current_title="$(mpc -f %title% current | tr -d '"')"
+current_artist="$(mpc -f %artist% current | tr -d '"')"
+
+# Exit if $USER is in TTY
+if [[ "$(ps -h -o comm -p "$PPID")" == *"login"* ]]; then
+  exit 1
+fi
+
+if [[ ! -d "$TMP_DIR" ]]; then
+	mkdir -p "$TMP_DIR"
+fi
+
+# Remove file extension name
+function check_mpc_data() {
+	if [[ -z "$current_title" ]]; then
+		file_name="$(mpc -f %file% current | tr -d '"')"
+		file_name=${file_name::-4}
+		current_title="${file_name}"
+		current_artist='unknown artist'
+	fi
+}
+
+check_mpc_data
+
+# Extract album cover using ffmpeg
+cp "$MUSIC_DIR/$(mpc --format %file% current)" "$TMP_SONG"
+ffmpeg \
+-hide_banner \
+-loglevel 0 \
+-y \
+-i "$TMP_SONG" \
+-vf scale=300:-1 \
+"$TMP_COVER_PATH" > /dev/null 2>&1
+rm "$TMP_SONG"
+
+# Check if image is valid
+function check_album_data() {
+	img_data=$(identify "$TMP_COVER_PATH" 2>&1)
+	if [[ "$img_data" == *"insufficient"* ]]; then
+		TMP_COVER_PATH="$XDG_CONFIG_HOME/ncmpcpp/vinyl.svg"
+	fi
+}
+
+check_album_data
+
+
+# Create a notification
+function notify() {
+	if [[ ! -z "$CHECK_DUNST" ]]; then
+		dunstify --urgency 'normal' --appname "ncmpcpp" \
+		--replace 3 --icon "$TMP_COVER_PATH" "$current_title" "$current_artist"
+	else
+		notify-send --urgency "normal" --app-name "ncmpcpp" \
+		--icon "$TMP_COVER_PATH" "$current_title" "$current_artist"
+	fi
+}
+
+notify

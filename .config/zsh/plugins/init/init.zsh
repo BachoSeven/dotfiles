@@ -61,9 +61,13 @@
 	_comp_options+=(globdots)							# Include hidden files.
 # Basic autocomplete: menu-listing, case-insensitive and colored with LS_COLORS
 	zstyle ':completion:*:*:*:*:*' menu select
-	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+	zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 	zstyle ':completion:*' rehash true
 # Use caching to improve completion for commands related to packages or kernel modules
 	zstyle ':completion::complete:*' use-cache on
 	zstyle ':completion::complete:*' cache-path "$HOME/.cache/zsh"
+# Fuzzy match mistyped completions.
+	zstyle ':completion:*' completer _complete _match _approximate
+	zstyle ':completion:*:match:*' original only
+	zstyle ':completion:*:approximate:*' max-errors 1 numeric
