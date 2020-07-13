@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# Macho: smart man pages
+# Credits to https://hiphish.github.io/blog/2020/05/31/macho-man-command-on-steroids/ and to Distro Tube
+
+while getopts ":hifs:" opt; do
+    case $opt in
+	h ) printf "Usage: -i for interactive mode, -f to pass a string to find, -s to pass a section number.";;
+	i ) interactive=true;;
+	f ) FIND=$OPTARG;;
+	s ) SECTION=$OPTARG; shift; shift;;
+	\?) echo "Invalid option: -$OPTARG" >&2; exit 1;;
+	: ) echo "Option -$OPTARG requires an argument" >&2; exit 1;;
+    esac
+done
+
+
+if [ $interactive ]; then
+	export FZF_DEFAULT_OPTS='
+	--height=30%
+	--layout=reverse
+	--prompt="Manual: "
+	--preview="echo {1} | sed -E \"s/^\((.+)\)/\1/\" | xargs -I{S} man -Pcat {S} {2} 2>/dev/null"'
+	manual=$(apropos -s ${SECTION:-''} ${FIND:-.} | \
+	grep -v -E '^.+ \(0\)' |\
+	awk '{print $2 "    " $1}' | \
+	sort | \
+	fzf | \
+	sed -E 's/^\((.+)\)/\1/')
+	[ -z "$manual" ] && exit 0
+	man $manual
+else
+	manual=$(apropos -s ${SECTION:-''} ${FIND:-.} | \
+	grep -v -E '^.+ \(0\)' |\
+	awk '{print $2 "    " $1}' | \
+	sort | \
+	dmenu -i -p "Manual: " | \
+	sed -E 's/^\((.+)\)/\1/')
+	[ -z "$manual" ] && exit 0
+	man -T${FORMAT:-pdf} $manual | $READER -
+fi
