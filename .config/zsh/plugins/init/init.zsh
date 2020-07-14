@@ -56,7 +56,6 @@
 		compinit -C -d $XDG_CACHE_HOME/zsh/zcompdump
 	  fi
 	} ${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24)
-
 # Add .files to autocomplete
 	_comp_options+=(globdots)							# Include hidden files.
 # Basic autocomplete: menu-listing, case-insensitive and colored with LS_COLORS
@@ -71,3 +70,9 @@
 	zstyle ':completion:*' completer _complete _match _approximate
 	zstyle ':completion:*:match:*' original only
 	zstyle ':completion:*:approximate:*' max-errors 1 numeric
+# Kill
+	zstyle ':completion:*:*:*:*:processes' command 'ps -uf'
+	zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
+	zstyle ':completion:*:*:kill:*' menu yes select
+	zstyle ':completion:*:*:kill:*' force-list always
+	zstyle ':completion:*:*:kill:*' insert-ids single

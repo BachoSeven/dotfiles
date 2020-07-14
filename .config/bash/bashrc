@@ -1,0 +1,39 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Make colorcoding available for everyone
+
+Red='\[\e[0;31m\]'              # Red
+BRed='\[\e[1;31m\]'             # Bold Red
+Green='\[\e[0;32m\]'            # Green
+BGreen='\[\e[1;32m\]'           # Bold Green
+Yellow='\[\e[0;33m\]'           # Yellow
+BYellow='\[\e[1;33m\]'          # Bold Yellow
+Blue='\[\e[0;34m\]'             # Blue
+BBlue='\[\e[1;34m\]'            # Bold Blue
+Purple='\[\e[0;35m\]'           # Purple
+BPurple='\[\e[1;35m\]'          # Bold Purple
+Cyan='\[\e[0;36m\]'             # Cyan
+BCyan='\[\e[1;36m\]'            # Bold Cyan
+NC='\[\e[m\]'                   # Color Reset
+
+# Useful aliases
+alias c='clear'
+alias ..='cd ..'
+alias ls='ls -CF --color=auto'
+alias ll='s -lisa --color=auto'
+alias mkdir='mkdir -pv'
+alias free='free -mt'
+alias ps='ps auxf'
+alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
+alias wget='wget -c'
+alias histg='history | grep'
+alias myip='curl ipv4.icanhazip.com'
+alias grep='grep --color=auto'
+
+# Set prompt
+PS1="${BYellow}\u${BGreen}@${BBlue}\h${NC} ${BPurple}\w${NC} \n${BCyan}$ "
