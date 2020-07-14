@@ -21,7 +21,7 @@ alias -g \
 	H='| head'	\
 	T='| tail'	\
 	G='| grep'	\
-	C='| wc'	\
+	C='| wc -l'	\
 	S='| sort'	\
 	N='> /dev/null' \
 	X='|xclip'	\

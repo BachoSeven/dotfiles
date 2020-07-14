@@ -23,6 +23,7 @@ eb:	https://www.ebay.com/sch/i.html?_nkw=%s ebay
 fb:	https://www.facebook.com/search/top/?q=%s facebook
 g:	https://www.google.com/search?q=%s Google
 gd:	https://drive.google.com/drive/search?q=%s gdrive
+ge:	https://genius.com/search?q=%s Genius
 gh:	https://github.com/search?q=%s GitHub
 gi:	https://www.google.com/searchbyimage?image_url=%s Google Image Search
 gm:	https://www.google.com/maps?q=%s Google maps
