@@ -19,6 +19,9 @@
 	alias free='free --si'
 	alias l='ls --color -lA'
 	alias rd='rmdir'
+	alias mkdir='mkdir -p --verbose'
+	alias dmesg='dmesg --human'
+	alias history="history -i -34"
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
 	alias grep="grep --color=auto"
