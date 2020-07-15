@@ -1,19 +1,24 @@
-# The single, most glorious option
-	bindkey -v
-
+# Reduce timeout
 	export KEYTIMEOUT=1
 
-	function zle-keymap-select {	# Change cursor shape for different vi modes.
+	vim_ins_mode="%{$fg[cyan]%}[INS]%{$reset_color%}"
+	vim_cmd_mode="%{$fg[green]%}[CMD]%{$reset_color%}"
+	# This is the old way, now it is integrated with the cursor shape change
+	# function zle-keymap-select {
+	  # vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+	# }
+
+	function zle-keymap-select {	# Change cursor shape for different vi modes + decent rprompt indicator
 	  if [[ ${KEYMAP} == vicmd ]] ||
 	     [[ $1 = 'block' ]]; then
 	    echo -ne '\e[1 q'
-
+	    vim_mode=${vim_cmd_mode}
 	  elif [[ ${KEYMAP} == main ]] ||
-	       [[ ${KEYMAP} == viins ]] ||
-	       [[ ${KEYMAP} = '' ]] ||
-	       [[ $1 = 'beam' ]]; then
+	       [[ ${KEYMAP} == viins ]]; then
 	    echo -ne '\e[5 q'
+	    vim_mode=${vim_ins_mode}
 	  fi
+	  zle reset-prompt
 	}
 	zle -N zle-keymap-select
 	# init `vi insert` as keymap
@@ -22,8 +27,6 @@
 	    echo -ne "\e[5 q"
 	}
 	zle -N zle-line-init
-	echo -ne '\e[5 q' # Use beam shape cursor on startup.
-	preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # ci", ci', ci`, di", etc
 	autoload -U select-quoted
