@@ -15,7 +15,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 - **neovim** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
 - **ncmpcpp** as a music player (with mpd)
-- **[ncspot](https://github.com/hrkfdn/ncspot)** as a tui terminal client
+- **[ncspot](https://github.com/hrkfdn/ncspot)** as a tui spotify client
 - **[lf](https://github.com/gokcehan/lf)** as my file manager
 - **neomutt** as an email client
 - **brave** browser
