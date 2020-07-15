@@ -1,0 +1,252 @@
+[server]
+server = ('server.slsknet.org', 2242)
+login = BachoSeven
+passw = qwertyawsd
+firewalled = False
+ctcpmsgs = False
+autosearch = []
+autoreply = 
+portrange = (2234, 2239)
+upnp = True
+userlist = []
+banlist = []
+ignorelist = []
+ipignorelist = {}
+ipblocklist = {'72.172.88.*': 'MediaDefender Bots'}
+autojoin = ['Progressive Rock', 'Linux', 'Italia']
+autoaway = 15
+private_chatrooms = False
+
+[transfers]
+incompletedir = /home/fra/.local/share/nicotine/incompletefiles
+downloaddir = /home/fra/slsk/incoming
+uploaddir = /home/fra
+sharedownloaddir = True
+shared = [('$$Useful_Stuff', '/home/fra/slsk/$$Useful_stuff'), ('Games', '/home/fra/slsk/games'), ('Incoming', '/home/fra/slsk/incoming'), ('Math', '/home/fra/slsk/math'), ('Movies', '/home/fra/slsk/movies'), ('Music', '/home/fra/slsk/music'), ('Wallpapers', '/home/fra/slsk/papes'), ('Programs', '/home/fra/slsk/programs')]
+buddyshared = []
+uploadbandwidth = 10
+uselimit = False
+uploadlimit = 150
+downloadlimit = 0
+preferfriends = True
+useupslots = False
+uploadslots = 2
+shownotification = False
+shownotificationperfolder = False
+afterfinish = 
+afterfolder = 
+lock = True
+reverseorder = False
+prioritize = False
+fifoqueue = False
+usecustomban = False
+limitby = True
+customban = Banned, don't bother retrying
+queuelimit = 10000
+filelimit = 1000
+friendsonly = False
+friendsnolimits = True
+enablebuddyshares = False
+enabletransferbuttons = True
+groupdownloads = 1
+groupuploads = 1
+geoblock = False
+geopanic = False
+geoblockcc = ['']
+remotedownloads = True
+uploadallowed = 2
+autoclear_downloads = 0
+autoclear_uploads = 0
+uploadsinsubdirs = 1
+rescanonstartup = False
+enablefilters = True
+downloadregexp = (\\(.*\.url|albumart(_{........-....-....-....-............}_)?(_?(large|small))?\.jpg|desktop\.ini|folder\.jpg|thumbs\.db)$)
+downloadfilters = [['*.url', 1], ['albumart(_{........-....-....-....-............}_)?(_?(large|small))?\\.jpg', 0], ['desktop.ini', 1], ['folder.jpg', 1], ['thumbs.db', 1]]
+download_doubleclick = 1
+upload_doubleclick = 1
+downloadsexpanded = True
+uploadsexpanded = True
+
+[userinfo]
+descr = ''
+pic = 
+
+[words]
+censored = []
+autoreplaced = {'teh ': 'the ', 'taht ': 'that ', 'tihng': 'thing', 'youre': "you're", 'jsut': 'just', 'thier': 'their', 'tihs': 'this'}
+censorfill = *
+censorwords = False
+replacewords = False
+tab = True
+cycle = True
+dropdown = True
+characters = 2
+roomnames = True
+buddies = True
+roomusers = True
+commands = True
+aliases = True
+onematch = True
+
+[logging]
+debug = False
+debugmodes = [0, 1]
+logcollapsed = False
+logsdir = /home/fra/.local/share/nicotine/logs
+rooms_timestamp = %H:%M:%S
+private_timestamp = %Y-%m-%d %H:%M:%S
+log_timestamp = %Y-%m-%d %H:%M:%S
+timestamps = True
+privatechat = False
+chatrooms = False
+transfers = False
+roomlogsdir = /home/fra/.local/share/nicotine/logs/rooms
+privatelogsdir = /home/fra/.local/share/nicotine/logs/private
+readroomlogs = True
+readroomlines = 15
+readprivatelines = 15
+rooms = ['Progressive Rock', 'Linux', 'Italia']
+
+[privatechat]
+store = False
+users = []
+
+[columns]
+userbrowse = [1, 1, 1, 1]
+userbrowse_widths = [600, 100, 70, 0]
+userlist = [True, 1, True, True, True, True, True, True, True, True]
+userlist_widths = [13, 25, 120, 58, 58, 76, 67, 103, 160, 1228]
+chatrooms = {'Progressive Rock': [1, 1, 1, 1, 1], 'Linux': [1, 1, 1, 1, 1], 'Italia': [1, 1, 1, 1, 1]}
+chatrooms_widths = {'Progressive Rock': [0, 25, 100, 0, 0], 'Linux': [0, 25, 100, 0, 0], 'Italia': [0, 25, 100, 0, 0]}
+download_columns = [True, True, True, True, True, True, True, True, True, True]
+download_widths = [200, 250, 250, 140, 50, 70, 170, 90, 140, 548]
+upload_columns = [True, True, True, True, True, True, True, True, True, True]
+upload_widths = [200, 250, 250, 140, 50, 70, 170, 90, 140, 548]
+filesearch_columns = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+filesearch_widths = [50, 200, 25, 20, 90, 50, 400, 400, 100, 50, 0]
+hideflags = False
+
+[searches]
+expand_searches = True
+group_searches = True
+maxresults = 50
+re_filter = False
+history = []
+enablefilters = False
+defilter = ['', '', '', '', False, '']
+filtercc = []
+reopen_tabs = False
+filterin = []
+filterout = []
+filtersize = []
+filterbr = []
+distrib_timer = False
+distrib_ignore = 60
+search_results = True
+max_displayed_results = 1000
+max_stored_results = 1500
+remove_special_chars = True
+
+[ui]
+icontheme = 
+chatme = FOREST GREEN
+chatremote = 
+chatlocal = BLUE
+chathilite = red
+urlcolor = #3D2B7F
+useronline = BLACK
+useraway = ORANGE
+useroffline = #aa0000
+usernamehotspots = True
+usernamestyle = bold
+textbg = 
+search = 
+searchq = GREY
+inputcolor = 
+spellcheck = True
+exitdialog = 1
+notexists = 1
+tab_colors = False
+tab_default = 
+tab_hilite = red
+tab_changed = #0000ff
+tab_select_previous = True
+tab_reorderable = True
+tabmain = Top
+tabrooms = Top
+tabprivate = Top
+tabinfo = Top
+tabbrowse = Top
+tabsearch = Top
+tab_icons = True
+tab_status_icons = True
+chat_hidebuttons = False
+labelmain = 0
+labelrooms = 0
+labelprivate = 0
+labelinfo = 0
+labelbrowse = 0
+labelsearch = 0
+decimalsep = ,
+chatfont = Normal
+roomlistcollapsed = False
+tabclosers = True
+searchfont = Normal
+listfont = Normal
+browserfont = Normal
+transfersfont = Normal
+last_tab_id = 0
+modes_visible = {'chatrooms': 1, 'private': 1, 'downloads': 1, 'uploads': 1, 'search': 1, 'userinfo': 1, 'userbrowse': 1, 'interests': 1}
+modes_order = ['chatrooms', 'private', 'downloads', 'uploads', 'search', 'userinfo', 'userbrowse', 'interests', 'userlist']
+searchoffline = #aa0000
+showaway = 0
+buddylistinchatrooms = 0
+trayicon = True
+soundenabled = True
+soundtheme = 
+filemanager = xdg-open $
+speechenabled = False
+speechprivate = %(user)s told you.. %(message)s
+speechrooms = In %(room)s, %(user)s said %(message)s
+speechcommand = flite -t $
+width = 1852
+height = 1002
+xposition = 32
+yposition = 52
+maximized = False
+urgencyhint = True
+
+[private_rooms]
+rooms = {}
+enabled = 0
+
+[urls]
+urlcatching = True
+protocols = {}
+humanizeurls = True
+
+[interests]
+likes = []
+dislikes = []
+
+[ticker]
+default = 
+rooms = {}
+hide = 0
+
+[players]
+default = 
+npothercommand = 
+npplayer = mpd
+npformatlist = []
+npformat = $a - $b - $t
+
+[plugins]
+enable = True
+enabled = ['leech_detector', 'anti-shout', 'memory_debugger', 'multipaste', 'plugindebugger', 'spamfilter', 'testreplier']
+leech_detector = {'message': 'You are not sharing any files, that makes me a sad panda :('}
+anti-shout = {'maxscore': 0.6, 'minlength': 10}
+multipaste = {'maxpubliclines': 4, 'maxprivatelines': 8}
+np_xmplay_windows = {'format': 'XMPlay: {%artist - }{%title }{[%album]}', 'pythonbin': 'C:\\Python27\\Python.exe', 'helperpath': 'C:\\xmplaynp.py'}
+spamfilter = {'minlength': 200, 'maxlength': 400, 'maxdiffcharacters': 10, 'badprivatephrases': ['buy viagra now', 'mybrute.com', 'mybrute.es', '0daymusic.biz']}
+
