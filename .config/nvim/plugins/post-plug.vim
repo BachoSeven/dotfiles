@@ -2,6 +2,19 @@
 	if exists('g:started_by_firenvim')
 		au BufEnter github.com_*.txt set filetype=markdown
 		nnoremap <C-z> :call firenvim#hide_frame()<CR>
+		let g:firenvim_config = {
+		    \ 'globalSettings': {
+			\ 'alt': 'all',
+		    \  },
+		    \ 'localSettings': {
+			\ '.*': {
+			    \ 'cmdline': 'firenvim',
+			    \ 'priority': 0,
+			    \ 'selector': 'textarea',
+			    \ 'takeover': 'always',
+			\ },
+		    \ }
+		\ }
 	endif
 
 " Lf

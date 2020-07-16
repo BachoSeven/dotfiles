@@ -497,5 +497,16 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "89": {
+        "_id": 89,
+        "_date": "Thu Jul 16 2020",
+        "_timestamp": 1594908752552,
+        "description": "ncspot is not from git anymore(still AUR tho)",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }
