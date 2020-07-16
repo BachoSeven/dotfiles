@@ -12,6 +12,8 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'mbbill/undotree'
 	Plug 'junegunn/goyo.vim'
 	Plug 'jamessan/vim-gnupg'
+	" Neovim in the browser :)
+	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " Vimtex
 	" Plug 'lervag/vimtex'
