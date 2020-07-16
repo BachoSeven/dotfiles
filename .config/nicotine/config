@@ -209,10 +209,10 @@ speechenabled = False
 speechprivate = %(user)s told you.. %(message)s
 speechrooms = In %(room)s, %(user)s said %(message)s
 speechcommand = flite -t $
-width = 1916
-height = 1076
-xposition = 0
-yposition = 0
+width = 1856
+height = 1006
+xposition = 30
+yposition = 50
 maximized = False
 urgencyhint = True
 
