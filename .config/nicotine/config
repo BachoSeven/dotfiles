@@ -114,10 +114,10 @@ users = []
 [columns]
 userbrowse = [1, 1, 1, 1]
 userbrowse_widths = [600, 100, 70, 0]
-userlist = [True, 1, True, True, True, True, True, True, True, True]
+userlist = [True, True, True, True, True, True, True, True, True, True]
 userlist_widths = [13, 25, 120, 58, 58, 76, 67, 103, 160, 1228]
-chatrooms = {'Progressive Rock': [1, 1, 1, 1, 1], 'Linux': [1, 1, 1, 1, 1], 'Italia': [1, 1, 1, 1, 1]}
-chatrooms_widths = {'Progressive Rock': [0, 25, 100, 0, 0], 'Linux': [0, 25, 100, 0, 0], 'Italia': [0, 25, 100, 0, 0]}
+chatrooms = {'Progressive Rock': [True, True, True, True, True], 'Linux': [True, True, True, True, True], 'Italia': [True, True, True, True, True]}
+chatrooms_widths = {'Progressive Rock': [31, 25, 100, 107, 75], 'Linux': [31, 25, 100, 107, 75], 'Italia': [31, 25, 100, 107, 75]}
 download_columns = [True, True, True, True, True, True, True, True, True, True]
 download_widths = [200, 250, 250, 140, 50, 70, 170, 90, 140, 548]
 upload_columns = [True, True, True, True, True, True, True, True, True, True]
@@ -195,7 +195,7 @@ searchfont = Normal
 listfont = Normal
 browserfont = Normal
 transfersfont = Normal
-last_tab_id = 0
+last_tab_id = 5
 modes_visible = {'chatrooms': 1, 'private': 1, 'downloads': 1, 'uploads': 1, 'search': 1, 'userinfo': 1, 'userbrowse': 1, 'interests': 1}
 modes_order = ['chatrooms', 'private', 'downloads', 'uploads', 'search', 'userinfo', 'userbrowse', 'interests', 'userlist']
 searchoffline = #aa0000
@@ -209,10 +209,10 @@ speechenabled = False
 speechprivate = %(user)s told you.. %(message)s
 speechrooms = In %(room)s, %(user)s said %(message)s
 speechcommand = flite -t $
-width = 1852
-height = 1002
-xposition = 32
-yposition = 52
+width = 1916
+height = 1076
+xposition = 0
+yposition = 0
 maximized = False
 urgencyhint = True
 
@@ -243,7 +243,7 @@ npformat = $a - $b - $t
 
 [plugins]
 enable = True
-enabled = ['leech_detector', 'anti-shout', 'memory_debugger', 'multipaste', 'plugindebugger', 'spamfilter', 'testreplier']
+enabled = ['leech_detector', 'anti-shout', 'memory_debugger', 'multipaste', 'spamfilter', 'testreplier']
 leech_detector = {'message': 'You are not sharing any files, that makes me a sad panda :('}
 anti-shout = {'maxscore': 0.6, 'minlength': 10}
 multipaste = {'maxpubliclines': 4, 'maxprivatelines': 8}
