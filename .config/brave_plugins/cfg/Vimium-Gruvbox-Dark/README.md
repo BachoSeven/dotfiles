@@ -7,5 +7,8 @@
 
 ## Screens
 
-![](screens/hints.png)
 ![](screens/vomnibar.png)
+
+![](screens/hints_letters.png)
+
+![](screens/hints.png)
