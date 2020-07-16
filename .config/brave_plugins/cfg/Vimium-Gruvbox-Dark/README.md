@@ -6,3 +6,6 @@
 - Vomnibar gruvbox colors
 
 ## Screens
+
+![](screens/hints.png)
+![](screens/vomnibar.png)
