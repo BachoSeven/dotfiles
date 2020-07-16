@@ -16,16 +16,11 @@ done
 
 
 if [ $interactive ]; then
-	export FZF_DEFAULT_OPTS='
-	--height=30%
-	--layout=reverse
-	--prompt="Manual: "
-	--preview="echo {1} | sed -E \"s/^\((.+)\)/\1/\" | xargs -I{S} man -Pcat {S} {2} 2>/dev/null"'
 	manual=$(apropos -s ${SECTION:-''} ${FIND:-.} | \
 	grep -v -E '^.+ \(0\)' |\
 	awk '{print $2 "    " $1}' | \
 	sort | \
-	fzf | \
+	fzf --height=30% --layout=reverse --prompt="Manual: " --preview="echo {1} | sed -E \"s/^\((.+)\)/\1/\" | xargs -I{S} man -Pcat {S} {2} 2>/dev/null" | \
 	sed -E 's/^\((.+)\)/\1/')
 	[ -z "$manual" ] && exit 0
 	man $manual

@@ -10,9 +10,12 @@
 	alias clean='sudo pacman -Rns $(pacman -Qtdq)'
 	alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -50"
 	alias browsepac="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
-	alias vote='ssh aur@aur.archlinux.org vote'
 
-# default to human readable figures and colorize
+# SSH
+	alias vote='ssh aur@aur.archlinux.org vote'
+	alias phc='export TERM=xterm-256color; ssh minnocci@poisson.phc.dm.unipi.it'
+
+# Default to human readable figures and colorize
 	alias df='df --si --print-type'
 	alias du='du --si'
 	alias ls='ls --si --classify --group-directories-first'
@@ -142,7 +145,7 @@ alias \
 	alias lfrc='v $XDG_CONFIG_HOME/lf/lfrc'
 	alias zreload='source $ZDOTDIR/.zshrc'
 	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
-	alias bash='bash --init-file $XDG_CONFIG_HOME/bash/bashrc'
+	alias bash='/bin/bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'
 	alias zt='zsh_bench'
 	alias cfz='v $ZDOTDIR/.zshrc'
 	alias cfzp='v $ZDOTDIR/plugins'

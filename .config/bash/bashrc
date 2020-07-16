@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+shopt -s globstar
+shopt -s histappend
+shopt -s cmdhist
+
 # Make colorcoding available for everyone
 
 Red='\[\e[0;31m\]'              # Red
@@ -36,4 +40,4 @@ alias myip='curl ipv4.icanhazip.com'
 alias grep='grep --color=auto'
 
 # Set prompt
-PS1="${BYellow}\u${BGreen}@${BBlue}\h${NC} ${BPurple}\w${NC} \n${BCyan}$ "
+PS1="${BYellow}\u${BGreen}@${BBlue}\h${NC} ${BPurple}\w${NC} \n${BCyan}$ ${NC}"

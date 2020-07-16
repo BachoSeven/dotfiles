@@ -45,6 +45,10 @@
 ## Colors & Appearance
 	autoload -U colors && colors
 
+## Misc
+# Zsh's Builtin Ncurses Tetris game :)
+	autoload -Uz tetriscurses
+
 ## Autocompletion
 	autoload -Uz compinit
 	zmodload zsh/complist
