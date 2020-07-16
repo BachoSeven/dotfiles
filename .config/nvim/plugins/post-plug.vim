@@ -1,3 +1,9 @@
+" Firenvim
+	if exists('g:started_by_firenvim')
+		au BufEnter github.com_*.txt set filetype=markdown
+		nnoremap <C-z> :call firenvim#hide_frame()<CR>
+	endif
+
 " Lf
 	let g:lf_command_override = 'lf -command "set hidden"'
 	let g:lf_replace_netrw = 1 " open lf when vim open a directory
