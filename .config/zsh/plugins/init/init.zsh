@@ -30,7 +30,25 @@
 	autoload -Uz bracketed-paste-magic
 	zle -N bracketed-paste bracketed-paste-magic
 	autoload -Uz url-quote-magic
+	zstyle ':urlglobber' url-other-schema ftp git gopher http https magnet
+	zstyle ':url-quote-magic:*' url-metas '*?[]^(|)~#='  # dropped { }
 	zle -N self-insert url-quote-magic
+
+# Allow to recover from C-c or failed history expansion (does not go in history)
+# 26may2012  +chris+
+	_recover_line_or_else() {
+	  if [[ -z $BUFFER && $CONTEXT = start && $zsh_eval_context = shfunc
+		&& -n $ZLE_LINE_ABORTED
+		&& $ZLE_LINE_ABORTED != $history[$((HISTCMD-1))] ]]; then
+	    LBUFFER+=$ZLE_LINE_ABORTED
+	    unset ZLE_LINE_ABORTED
+	  else
+	    zle .$WIDGET
+	  fi
+	}
+	zle -N up-line-or-history _recover_line_or_else
+	_zle_line_finish() { ZLE_LINE_ABORTED=$BUFFER }
+	zle -N zle-line-finish _zle_line_finish
 
 # function to visualize dir stack
 	function di () {
@@ -62,7 +80,7 @@
 	} ${HOME}/zsh/zcompdump(N.mh+24)
 # Add .files to autocomplete
 	_comp_options+=(globdots)							# Include hidden files.
-# Basic autocomplete: menu-listing, case-insensitive and colored with LS_COLORS
+# Basic autocomplete: menu-listing, hyphen- and case-insensitive, and colored with LS_COLORS
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -71,12 +89,40 @@
 	zstyle ':completion::complete:*' use-cache on
 	zstyle ':completion::complete:*' cache-path "$HOME/.cache/zsh"
 # Fuzzy match mistyped completions.
-	zstyle ':completion:*' completer _complete _match _approximate
+	zstyle ':completion:*' _expand completer _complete _match _approximate
+	zstyle ':completion:*' extra-verbose yes
+	zstyle ':completion:*:descriptions' format '%B%d%b'
+	zstyle ':completion:*:messages' format '%d'
+	zstyle ':completion:*:warnings' format 'No matches for: %d'
+	zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+	zstyle ':completion:*' group-name '' # completion in distinct groups
+# split options into groups
+	zstyle ':completion:*' tag-order \
+	    'options:-long:long\ options
+	     options:-short:short\ options
+	     options:-single-letter:single\ letter\ options'
+	zstyle ':completion:*:options-long' ignored-patterns '[-+](|-|[^-]*)'
+	zstyle ':completion:*:options-short' ignored-patterns '--*' '[-+]?'
+	zstyle ':completion:*:options-single-letter' ignored-patterns '???*'
+# insert all expansions for expand completer
+	zstyle ':completion:*:expand:*' tag-order all-expansions
+# allow one error for every four characters typed in approximate completer
 	zstyle ':completion:*:match:*' original only
-	zstyle ':completion:*:approximate:*' max-errors 1 numeric
+	zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/4 )) numeric )'
+# complete .. and .
+	zstyle ':completion:*' special-dirs true
 # Kill
 	zstyle ':completion:*:*:*:*:processes' command 'ps -uf'
-	zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
+	zstyle ':completion:*:*:*:*:processes*' force-list always
+	zstyle ':completion:*:processes-names'     command "ps -eo cmd= | sed 's:\([^ ]*\).*:\1:;s:\(/[^ ]*/\)::;/^\[/d'"
+	zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 	zstyle ':completion:*:*:kill:*' menu yes select
 	zstyle ':completion:*:*:kill:*' force-list always
 	zstyle ':completion:*:*:kill:*' insert-ids single
+# offer completions for directories from all these groups
+	zstyle ':completion:*::*:(cd|pushd):*' tag-order path-directories directory-stack
+# never offer the parent directory (e.g.: cd ../<TAB>)
+	zstyle ':completion:*:cd:*' ignore-parents parent pwd
+# don't complete things which aren't available (very annoying)
+	zstyle ':completion:*:*:-command-:*:*' tag-order 'functions:-non-comp *' functions
+zstyle ':completion:*:functions-non-comp' ignored-patterns '_*'

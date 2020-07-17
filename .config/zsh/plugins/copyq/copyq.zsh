@@ -2,8 +2,6 @@
 
 (( $+commands[copyq] )) || return 0
 
-fpath=( $0:A:h $fpath )
-
 # cq - smart alias for copyq
 #
 # Usage:

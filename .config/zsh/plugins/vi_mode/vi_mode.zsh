@@ -50,6 +50,13 @@
 	autoload edit-command-line; zle -N edit-command-line
 	bindkey '^e' edit-command-line
 
-# allow ctrl-p, ctrl-n for navigate history
-	bindkey '^P' up-history
-	bindkey '^N' down-history
+# Move by physical lines, just like gj/gk in vim :)
+# Credits to http://leahneukirchen.org/dotfiles/.zshrc# .zshrc interactive configuration file for zsh
+	_physical_up_line()   { zle backward-char -n $COLUMNS }
+	_physical_down_line() { zle forward-char  -n $COLUMNS }
+	zle -N physical-up-line _physical_up_line
+	zle -N physical-down-line _physical_down_line
+	for m in visual viopp vicmd; do
+		bindkey -M $m "gk" physical-up-line
+		bindkey -M $m "gj" physical-down-line
+	done
