@@ -1,6 +1,9 @@
 use_nerdfont=true
 
 [keybindings]
+"p" = "playpause"
+"L" = "next"
+"H" = "previous"
 "Ctrl+d" = "move down 5"
 "Ctrl+u" = "move up 5"
 "G" = "move bottom"

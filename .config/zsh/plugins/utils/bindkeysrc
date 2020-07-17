@@ -30,6 +30,7 @@ alias -g \
 	T='| tail'	\
 	G='| grep'	\
 	C='| wc -l'	\
+	F='| fzf'	\
 	S='| sort'	\
 	N='> /dev/null' \
 	X='|xclip'	\
