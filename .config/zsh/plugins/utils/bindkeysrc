@@ -1,6 +1,8 @@
 # vi: ft=zsh
 ## Bind keys
 	alias -- -='cd -'		# Cd into last dir
+	bindkey '^[[1;5C' forward-word   # move forward wordwise with ctrl-arrow
+	bindkey '^[[1;5D' backward-word  # move backward wordwise with ctrl-arrow
 	bindkey -M menuselect 'h' vi-backward-char
 	bindkey -M menuselect 'k' vi-up-line-or-history
 	bindkey -M menuselect 'l' vi-forward-char
@@ -16,6 +18,9 @@
 # allow ctrl-p, ctrl-n for navigate history
 	bindkey '^P' up-history
 	bindkey '^N' down-history
+
+# Space does history expansion (e.g., !1<space> becomes the last command input in the history)
+	bindkey ' ' magic-space
 
 # These need to be here because they are not compatible with bash, see aliasrc
 alias -g \
