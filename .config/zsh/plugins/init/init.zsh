@@ -50,16 +50,16 @@
 	autoload -Uz tetriscurses
 
 ## Autocompletion
-	autoload -Uz compinit
 	zmodload zsh/complist
-	# Speed up completion loading at startup [ https://gist.github.com/ctechols/ca1035271ad134841284 ]
+# Speed up completion loading at startup [ https://gist.github.com/ctechols/ca1035271ad134841284 ]
+	autoload -Uz compinit
 	() {
 	  if [[ $# -gt 0 ]]; then
 		compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 	  else
 		compinit -C -d $XDG_CACHE_HOME/zsh/zcompdump
 	  fi
-	} ${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24)
+	} ${HOME}/zsh/zcompdump(N.mh+24)
 # Add .files to autocomplete
 	_comp_options+=(globdots)							# Include hidden files.
 # Basic autocomplete: menu-listing, case-insensitive and colored with LS_COLORS

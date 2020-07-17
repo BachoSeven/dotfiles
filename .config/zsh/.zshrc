@@ -36,7 +36,7 @@ fi
 	plugins=(
 		copyq
 		custom_completions
-		init # 0.17 [autocompletion]
+		init # 0.17 [autocompletion 0.11]
 		history
 		lf
 		utils

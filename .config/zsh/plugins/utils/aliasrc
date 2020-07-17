@@ -103,6 +103,7 @@ alias \
 	alias nmdm='networkmanager_dmenu'
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
+	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
 	alias nf='neofetch'
 	alias pf='pfetch'
 	alias mc='mconnect'
@@ -112,13 +113,13 @@ alias \
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias slsk='soulseekqt'
-	alias tgg='telegram-desktop'
+	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias ud='udict'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 	alias spot='st -c ncspot -e ncspot'
 	alias flp='flashplayer'
-	alias sqm='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
+	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
 	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
 	alias chill="mpv https://tinyurl.com/wbl4fya"
