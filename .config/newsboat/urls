@@ -6,13 +6,10 @@ https://www.archlinux.org/feeds/packages/
 " "
 "Mathematics"
 https://math.stackexchange.com/feeds math
-http://math.andrej.com/feed.xml math
 https://polymathprojects.org/feed/ math
-http://jdh.hamkins.org/feed/ math
 http://www.neverendingbooks.org/feed math
 https://cameroncounts.wordpress.com/feed/ math
 https://gowers.wordpress.com/feed/ math
-http://lambda-the-ultimate.org/rss.xml computerScience
 " "
 
 "---SOFTWARE---"

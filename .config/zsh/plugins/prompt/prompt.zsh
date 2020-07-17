@@ -18,7 +18,7 @@
 	local rootorwhat="%(!.#.»)"
 	local return_status="%?"
 
-	PS1=$'%B%(!.%F{red}.%F{cyan} %F{yellow})%n%F{green}@%F{blue}%m %F{magenta}%~\n%F{cyan}$%b%F{reset} '
+	PS1=$'%B%(!.%F{red}.%F{blue} %F{yellow})%n%F{green}@%F{blue}%m %F{magenta}%~\n%F{cyan}$%b%F{reset} '
 	# PS1="%B%F{blue}$mytime %F{green}[$username]%f %b$curdir $rootorwhat "
 	PS2='%B%F{yellow}•%b%F{reset} '
 	setopt transientrprompt	# self-explanatory
