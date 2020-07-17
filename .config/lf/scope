@@ -32,26 +32,31 @@ HIGHLIGHT_STYLE='pablo'
 
 handle_mime() {
     local mimetype="${1}"
-    case "${mimetype}" in
-	text/html) w3m -dump "${FILE_PATH}" ;;
-	text/troff) man ./ "${FILE_PATH}" | col -b ;;
-	text/* | */xml | */json)
-            if [ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]; then
-                exit 2
-            fi
-            if [ "$( tput colors )" -ge 256 ]; then
-                local highlight_format='xterm256'
-            else
-                local highlight_format='ansi'
-            fi
-            highlight --replace-tabs="${HIGHLIGHT_TABWIDTH}" --out-format="${highlight_format}" \
-                --style="${HIGHLIGHT_STYLE}" --force -- "${FILE_PATH}" ;;
-	application/zip | application/x-bzip2 | application/x-bzip | applicatio/x-gzip | application/x-xz | rar | application/x-rar-compressed | application/x-tar | application/x-rar | application/x-7z-compressed) atool --list -- "${FILE_PATH}" ;;
-        image/*) chafa --fill=block --symbols=block -c 256 -s 80x"${HEIGHT}" "${FILE_PATH}" || exit 1;;
-        video/* | audio/*|application/octet-stream) mediainfo "${FILE_PATH}" || exit 1;;
-        */pdf) pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - ;;
-        *opendocument*) odt2txt "${FILE_PATH}" ;;
-	*torrent*) { echo "$(eval 'transmission-show "${FILE_PATH}"')" | head -n 200; exit 5; } || exit 1;;
+    case "$(basename ${FILE_PATH})" in
+	    *.md) glow -s dark "${FILE_PATH}";;
+	    *)
+	    case "${mimetype}" in
+		text/html) w3m -dump "${FILE_PATH}" ;;
+		text/troff) man ./ "${FILE_PATH}" | col -b ;;
+		text/* | */xml | */json)
+		    if [ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]; then
+			exit 2
+		    fi
+		    if [ "$( tput colors )" -ge 256 ]; then
+			local highlight_format='xterm256'
+		    else
+			local highlight_format='ansi'
+		    fi
+		    highlight --replace-tabs="${HIGHLIGHT_TABWIDTH}" --out-format="${highlight_format}" \
+			--style="${HIGHLIGHT_STYLE}" --force -- "${FILE_PATH}" ;;
+		application/zip | application/x-bzip2 | application/x-bzip | applicatio/x-gzip | application/x-xz | rar | application/x-rar-compressed | application/x-tar | application/x-rar | application/x-7z-compressed) atool --list -- "${FILE_PATH}" ;;
+		application/csv) xsv <"${FILE_PATH}" --csv --table --grid ;;
+		image/*) chafa --fill=block --symbols=block -c 256 -s 80x"${HEIGHT}" "${FILE_PATH}" || exit 1;;
+		video/* | audio/*|application/octet-stream) mediainfo "${FILE_PATH}" || exit 1;;
+		*/pdf) pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - ;;
+		*opendocument*) odt2txt "${FILE_PATH}" ;;
+		*torrent*) { echo "$(eval 'transmission-show "${FILE_PATH}"')" | head -n 200; exit 5; } || exit 1;;
+    	    esac;;
     esac
 }
 if [ "$(readlink -f "${FILE_PATH}")" != "${FILE_PATH}" ]; then

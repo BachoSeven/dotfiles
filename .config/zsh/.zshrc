@@ -4,10 +4,8 @@
 #	      _    /\_____\\/\_____\\ \_\ \_\\ \_\ \_\\ \_____\
 #	     (_)   \/_____/ \/_____/ \/_/\/_/ \/_/ /_/ \/_____/
 
-# No setup if not an interactive shell
-if [[ ! -o interactive ]] ; then
-	return
-fi
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
 ## Plugins
 	function zsh_load_plugins() {
@@ -36,13 +34,12 @@ fi
 	plugins=(
 		copyq
 		custom_completions
-		init # 0.17 [autocompletion 0.11]
+		init # 0.13
 		history
 		lf
 		utils
 		vi_mode
 		fzf
-		# p10k_theme # 0.1
 		prompt
 		fast-syntax-highlighting # 0.12
 	)

@@ -371,5 +371,16 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "33": {
+        "_id": 33,
+        "_date": "Mon Jul 13 2020",
+        "_timestamp": 1594595530456,
+        "description": "added zsh-pure-prompt for correct sudo prompts",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }

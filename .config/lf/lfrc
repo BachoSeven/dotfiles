@@ -4,6 +4,7 @@
 # ▗▖▐ ▜▀ ▌  ▌ ▖
 # ▝▘ ▘▐  ▘  ▝▀
 #
+
 ##			Builtin Variables
 
 set shell zsh
@@ -15,7 +16,7 @@ set color256
 set icons
 set period 1
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
-set incsearch true
+set incsearch
 
 # adjust coloumn width to terminal
 %{{
@@ -44,7 +45,7 @@ cmd open ${{
 	*)
 	    case $(file --mime-type $f -b) in
 	    	inode/symlink) setsid -f $OPENER $(readlink -f $f) >/dev/null 2>&1 & ;;
-		text/*|application/json|*opendocument.text) $EDITOR $fx;;
+		text/*|application/json|application/csv|*opendocument.text) $EDITOR $fx;;
 		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
 		image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
@@ -194,7 +195,7 @@ map c push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extention
 map a push A<a-b> # after extention
-map b $vidir
+map B $vidir
 map <c-n> push :mkdir<space>
 map E extract	#extract and compress
 map C copyto
@@ -221,10 +222,10 @@ map <c-space> :toggle; up; up
 map gh	# unmap useless keys
 map m embed mpv
 map <c-a> embed neomutt -a
-map | embed less
+map w embed less
 map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached
-map w &setsid setbg -i $f
+map b &setsid setbg -i $f
 map L cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
 map x $$f

@@ -14,7 +14,9 @@
 	    echo -ne '\e[1 q'
 	    vim_mode=${vim_cmd_mode}
 	  elif [[ ${KEYMAP} == main ]] ||
-	       [[ ${KEYMAP} == viins ]]; then
+	       [[ ${KEYMAP} == viins ]] ||
+	       [[ ${KEYMAP} = '' ]] ||
+	       [[ $1 = 'beam' ]]; then
 	    echo -ne '\e[5 q'
 	    vim_mode=${vim_ins_mode}
 	  fi
