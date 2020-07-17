@@ -1,7 +1,7 @@
 # Reduce timeout
 	export KEYTIMEOUT=1
 
-	vim_ins_mode="%{$fg[cyan]%}[INS]%{$reset_color%}"
+	vim_ins_mode="%{$fg[blue]%}[INS]%{$reset_color%}"
 	vim_cmd_mode="%{$fg[green]%}[CMD]%{$reset_color%}"
 	# This is the old way, now it is integrated with the cursor shape change
 	# function zle-keymap-select {

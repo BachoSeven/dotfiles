@@ -265,9 +265,9 @@ fixallmkv() {
 }
 
 genplaylist() {
-	[ -z $1 ] && playlist="playlist" || playlist=$1
+	[ -z $1 ] && name="playlist" || name=$1
 	[ -z $2 ] && ext="mp3" || ext=$2
-	playlist="${playlist}.m3u" ; if [ -f $playlist ]; then rm -i $playlist ; fi ; for f in *.$ext; do echo "$(pwd)/$f" >> "$playlist"; done
+	playlist="${name}.m3u" ; if [ -f $playlist ]; then rm -i $playlist ; fi ; for f in *.$ext; do echo "$(pwd)/$f" >> "$playlist"; done
 }
 
 # create a new directory and enter it
