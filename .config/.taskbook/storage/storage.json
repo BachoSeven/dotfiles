@@ -475,5 +475,16 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "91": {
+        "_id": 91,
+        "_date": "Sat Jul 18 2020",
+        "_timestamp": 1595068260466,
+        "description": "jre-openjdk is needed for Minecraft to work :)) ",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }
