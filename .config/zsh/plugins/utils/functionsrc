@@ -252,6 +252,13 @@ genpasswd() {
 	fi
 }
 
+# Calculate average bitrate of files in current folder
+avekbps() {
+	[ -z $"1" ] && printf "No format specified... (i.e. `avepbps mp3`)"
+	format=$1
+	mediainfo --Output=JSON *.$format | grep '"BitRate":' | cut -d: -f2 | sed "s/\"//g;s/,//g;s/ //g" | awk '{ total += $1 } END { print total/(1000*NR) }'
+}
+
 ## ffmpeg utilities
 compress() {
 	ffmpeg -i $1 -vcodec h264 -acodec mp3 $2
