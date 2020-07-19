@@ -497,5 +497,16 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "93": {
+        "_id": 93,
+        "_date": "Sun Jul 19 2020",
+        "_timestamp": 1595172002581,
+        "description": "DVD Ripping: whipper-git WITH <'python-discid'# for calculating Musicbrainz disc id> in PKGBUILD, until they fix it upstream ++ asunder for GUI :)))",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }
