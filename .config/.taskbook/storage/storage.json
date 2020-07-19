@@ -486,5 +486,16 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "92": {
+        "_id": 92,
+        "_date": "Sun Jul 19 2020",
+        "_timestamp": 1595113342691,
+        "description": "glow is for markdown preview in lf; rtl8822bu-dkms-git is for both asus nano wifi adapter, Archer T3U AND BrosTrend :)))",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }
