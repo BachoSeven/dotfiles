@@ -508,5 +508,16 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "94": {
+        "_id": 94,
+        "_date": "Mon Jul 20 2020",
+        "_timestamp": 1595200916125,
+        "description": "croc is for amazing relay-server multi-file transfers; gruvbox-dark-gtk and gruvbox-dark-icons-gtk are instead of gtk-theme-arc-gruvbox-git",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }
