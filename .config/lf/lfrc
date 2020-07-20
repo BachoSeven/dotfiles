@@ -184,12 +184,21 @@ cmd cleanlatexcompile ${{
 	notify-send "File(s) compiled."
 }}
 
+# Dragon cmds
+cmd dragon %dragon-drag-and-drop -a -x $fx
+cmd dragon-stay %dragon-drag-and-drop -a $fx
+cmd dragon-individual %dragon-drag-and-drop $fx
+cmd cpdragon %cpdragon
+cmd mvdragon %mvdragon
+cmd dlfile %dlfile
+
 # Execute shell command on selection
 cmd embed $$@ $fx
 
 ##			Bindings
 
 #			File Operations
+map x cut
 map A rename # at the very end
 map c push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
@@ -203,6 +212,10 @@ map M moveto
 map D delete
 map p paste
 map S :Link
+
+#			Unmap some defaults
+map gh
+map d
 
 #			Navigation
 map ~ cd ~
@@ -219,7 +232,6 @@ map <c-f> :fzf_jump
 map <c-space> :toggle; up; up
 
 #			Personal utils
-map gh	# unmap useless keys
 map m embed mpv
 map <c-a> embed neomutt -a
 map w embed less
@@ -228,7 +240,6 @@ map <c-w> embed dotbare rm -rf --cached
 map b &setsid setbg -i $f
 map L cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
-map x $$f
 map X !$f
 map o &mimeopen "$f"
 map O $mimeopen --ask "$f"
@@ -236,20 +247,12 @@ map T push :$touch<space>
 map V push :!nvim<space>
 map <c-z> $ kill -STOP $PPID	# put lf in bg
 
-# # Dragon cmds
-# cmd dragon %dragon-drag-and-drop -a -x $fx
-# cmd dragon-stay %dragon-drag-and-drop -a $fx
-# cmd dragon-individual %dragon-drag-and-drop $fx
-# cmd cpdragon %cpdragon
-# cmd mvdragon %mvdragon
-# cmd dlfile %dlfile
-
-# # Dragon Mapping
-# map dr dragon
-# map ds dragon-stay
-# map di dragon-individual
-# map dm mvdragon
-# map dc cpdragon
-# map dl dlfile
+#			Dragon Mappings
+map dr dragon
+map ds dragon-stay
+map di dragon-individual
+map dm mvdragon
+map dc cpdragon
+map dl dlfile
 
 # vim: ft=lf
