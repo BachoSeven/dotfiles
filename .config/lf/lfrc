@@ -188,14 +188,19 @@ cmd cleanlatexcompile ${{
 cmd dragon %dragon-drag-and-drop -a -x $fx
 cmd dragon-stay %dragon-drag-and-drop -a $fx
 cmd dragon-individual %dragon-drag-and-drop $fx
-cmd cpdragon %cpdragon
-cmd mvdragon %mvdragon
-cmd dlfile %dlfile
+cmd cpdrag %cpdrag
+cmd mvdrag %mvdrag
+cmd dldrag %dldrag
 
 # Execute shell command on selection
 cmd embed $$@ $fx
 
 ##			Bindings
+
+#			Unmap some defaults
+map gh
+map d
+map m
 
 #			File Operations
 map x cut
@@ -205,17 +210,13 @@ map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extention
 map a push A<a-b> # after extention
 map B $vidir
-map <c-n> push :mkdir<space>
+map o push :mkdir<space>
 map E extract	#extract and compress
 map C copyto
 map M moveto
 map D delete
 map p paste
 map S :Link
-
-#			Unmap some defaults
-map gh
-map d
 
 #			Navigation
 map ~ cd ~
@@ -232,7 +233,6 @@ map <c-f> :fzf_jump
 map <c-space> :toggle; up; up
 
 #			Personal utils
-map m embed mpv
 map <c-a> embed neomutt -a
 map w embed less
 map W embed dotbare add
@@ -241,7 +241,6 @@ map b &setsid setbg -i $f
 map L cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
 map X !$f
-map o &mimeopen "$f"
 map O $mimeopen --ask "$f"
 map T push :$touch<space>
 map V push :!nvim<space>
@@ -251,8 +250,8 @@ map <c-z> $ kill -STOP $PPID	# put lf in bg
 map dr dragon
 map ds dragon-stay
 map di dragon-individual
-map dm mvdragon
-map dc cpdragon
-map dl dlfile
+map dm mvdrag
+map dc cpdrag
+map dl dldrag
 
 # vim: ft=lf
