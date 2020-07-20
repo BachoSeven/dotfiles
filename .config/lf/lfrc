@@ -236,4 +236,20 @@ map T push :$touch<space>
 map V push :!nvim<space>
 map <c-z> $ kill -STOP $PPID	# put lf in bg
 
+# # Dragon cmds
+# cmd dragon %dragon-drag-and-drop -a -x $fx
+# cmd dragon-stay %dragon-drag-and-drop -a $fx
+# cmd dragon-individual %dragon-drag-and-drop $fx
+# cmd cpdragon %cpdragon
+# cmd mvdragon %mvdragon
+# cmd dlfile %dlfile
+
+# # Dragon Mapping
+# map dr dragon
+# map ds dragon-stay
+# map di dragon-individual
+# map dm mvdragon
+# map dc cpdragon
+# map dl dlfile
+
 # vim: ft=lf
