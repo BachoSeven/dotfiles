@@ -2,7 +2,7 @@
 
 # SLOC: 20
 # Set a background image or gif animation, using pywal to set a terminal colorscheme,or otherwise
-# using Xresources with xwallpaper, tested mostly on dwm.
+# using Xresources with xwallpaper, tested mostly on dwm; supports interactive usage.
 
 # 2020 Francesco Minnocci <ascoli.minnocci@gmail.com>
 
