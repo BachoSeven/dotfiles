@@ -399,17 +399,6 @@
         ],
         "_isTask": false
     },
-    "82": {
-        "_id": 82,
-        "_date": "Mon Jul 06 2020",
-        "_timestamp": 1594051080829,
-        "description": "p10k theme is now from aur as 'zsh-theme-powerlevel10k-git' ",
-        "isStarred": false,
-        "boards": [
-            "@ArchPackages"
-        ],
-        "_isTask": false
-    },
     "83": {
         "_id": 83,
         "_date": "Tue Jul 07 2020",
@@ -514,6 +503,17 @@
         "_date": "Mon Jul 20 2020",
         "_timestamp": 1595200916125,
         "description": "croc is for amazing relay-server multi-file transfers; gruvbox-dark-gtk and gruvbox-dark-icons-gtk are instead of gtk-theme-arc-gruvbox-git",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "95": {
+        "_id": 95,
+        "_date": "Tue Jul 21 2020",
+        "_timestamp": 1595282753213,
+        "description": "gtyick is my new metronome",
         "isStarred": false,
         "boards": [
             "@ArchPackages"
