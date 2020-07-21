@@ -171,6 +171,6 @@ alias \
 	alias uni='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI'
 	alias u='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi'
 	alias ib='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/IB'
-	alias wsp='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/roba!'
+	alias wsp='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/roba!/wsp'
 	alias mthstf='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/mathstuff'
 	alias movies='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/stuff/movies'
