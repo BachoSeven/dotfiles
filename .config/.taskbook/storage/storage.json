@@ -519,5 +519,27 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "96": {
+        "_id": 96,
+        "_date": "Tue Jul 21 2020",
+        "_timestamp": 1595329827412,
+        "description": "I now use ungoogled-chromium, instead of brave. Configuration is done: watching the video on how to setup extensions, and then loading the various files from .config/brave_plugins",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "97": {
+        "_id": 97,
+        "_date": "Tue Jul 21 2020",
+        "_timestamp": 1595334955933,
+        "description": "Remove brave; add dragon-drag-and-drop; add keepassxc as password manager",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }
