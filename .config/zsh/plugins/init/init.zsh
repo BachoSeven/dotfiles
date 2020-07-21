@@ -109,8 +109,6 @@
 # allow one error for every four characters typed in approximate completer
 	zstyle ':completion:*:match:*' original only
 	zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/4 )) numeric )'
-# complete .. and .
-	zstyle ':completion:*' special-dirs true
 # Kill
 	zstyle ':completion:*:*:*:*:processes' command 'ps -uf'
 	zstyle ':completion:*:*:*:*:processes*' force-list always
