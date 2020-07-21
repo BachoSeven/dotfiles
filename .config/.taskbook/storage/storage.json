@@ -541,5 +541,16 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "98": {
+        "_id": 98,
+        "_date": "Wed Jul 22 2020",
+        "_timestamp": 1595373709465,
+        "description": "xcursor-arch-cursor-complete is my new cursor theme, from the  AUR :)))",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }
