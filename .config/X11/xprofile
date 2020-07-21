@@ -9,10 +9,11 @@ xss-lock -- /usr/local/bin/slock &
 
 xrdb -load ~/.config/X11/Xresources
 [ -f ~/.cache/wal/active ] && wal -R || setbg & # Dirty trick to check if pywal was on at shutdown
-mconnect 2>/dev/null &		# Autoconnect to mconnect saved devices
+mconnect 2>/dev/null &		# Autoconnect to Android
+transmission-daemon &		# Bittorrent
 copyq &				# Clipboard management
 redshift &			# Color temperature
-picom &				# picom
+picom &				# Compositor
 dunst &				# Notifications
 unclutter &			# Remove mouse when idle
 remaps &			# Switch caps/super and one-tap_caps/esc

@@ -1,9 +1,10 @@
 UNGOOGLED-CHROMIUM
-opts: keep local cookies!
+opts: keep local cookies; gtk theme
+flags: disable search engines collection; handling of extension mime (always prompt for); force dark mode for web contents.
 
 bookmarks: file
 passwords: manager->> [keepassxc+extension(backup)]
-theme: sol ref dark/gruvbox theme(is in favourites)
+theme: sol ref dark(favs)/gtk
 
 plugins: vimium(bkp)[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup] stylus(beta)[backup;alt+shift+s] gtransl(<C-R>) the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s] Firenvim(ctrl+shift+f)
 
@@ -22,6 +23,7 @@ aw:	https://wiki.archlinux.org/index.php/Special:Search/%s archwiki
 ax:	https://arxiv.org/search?query=%s&searchtype=all&source=header arxiv
 bg:	https://it.banggood.com/search/%s.html bangood
 bit:	https://btcache.me/torrent/%s bittorcache
+cd:	javascript:location='http://www.google.com/search?num=100&q=site:'%20+%20escape(location.hostname)%20+%20'%20%S'%20;%20void%200 cd
 d: 	https://duckduckgo.com/?q=%s DuckDuckGo
 dw:	http://www.merriam-webster.com/dictionary/%s Merriam-Webster
 eb:	https://www.ebay.com/sch/i.html?_nkw=%s ebay
@@ -50,11 +52,11 @@ nh:	https://nhentai.net/search/?q=%s nh
 oeis:	http://oeis.org/search?q=%s oeis
 om:	https://www.openstreetmap.org/search?query=%s openstreetmap
 pip:	https://www.openstreetmap.org/search?query=%s PyPI
-r: https://www.reddit.com/search/?q=%s Reddit
+r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
 sc:	https://libgen.bban.top/s/%s scihub
-cd:	javascript:location='http://www.google.com/search?num=100&q=site:'%20+%20escape(location.hostname)%20+%20'%20%S'%20;%20void%200 Search
+se:	https://searx.gnu.style/search?q=%s Searx
 tldr:	https://tldr.ostera.io/%s tldr
 tp:	https://torrentproject.cc/?t=%s
 ud:	https://www.urbandictionary.com/define.php?term=%s UrbanDictionary
