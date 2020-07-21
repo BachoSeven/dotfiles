@@ -1,3 +1,6 @@
+UNGOOGLED-CHROMIUM
+opts: keep local cookies!
+
 bookmarks: file
 passwords: manager->> [keepassxc+extension(backup)]
 theme: sol ref dark/gruvbox theme(is in favourites)
