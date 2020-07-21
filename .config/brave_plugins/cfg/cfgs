@@ -1,6 +1,8 @@
-theme: sol ref dark/gruvbox
+bookmarks: file
+passwords: manager->> [keepassxc+extension]
+theme: sol ref dark/gruvbox theme(is in favourites)
 
-plugins: vimium vimium_helper Change_new_tab(url) autologin stylus[backup;alt+shijft+s] gtransl(<C-R>) tampermonkey(musescore-down nhentai-helper) the_great_suspender Firenvim
+plugins: vimium(bkp)[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup] stylus(beta)[backup;alt+shift+s] gtransl(<C-R>) the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s] Firenvim(ctrl+shift+f)
 
 searchengs:
 {
