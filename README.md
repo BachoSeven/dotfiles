@@ -31,7 +31,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 - I also use `pywal` now and then, you will find various attempts at integrating it with other programs across this repo
 - The compositor is `picom`
 - Icons are Joypixels ([ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/))
-- The default gtk 2/3 theme is [Arc-Gruvbox](https://aur.archlinux.org/packages/gtk-theme-arc-gruvbox-git)
+- The default gtk 2/3 theme is [Gruvbox-Dark](https://github.com/jmattheis/gruvbox-dark-gtk)
 - My font is `Hack Nerd Font`
 
 ### Various
