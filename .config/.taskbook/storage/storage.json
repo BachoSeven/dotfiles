@@ -552,5 +552,16 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "99": {
+        "_id": 99,
+        "_date": "Wed Jul 22 2020",
+        "_timestamp": 1595377008210,
+        "description": "xwallpaper is now the git version from AUR",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }
