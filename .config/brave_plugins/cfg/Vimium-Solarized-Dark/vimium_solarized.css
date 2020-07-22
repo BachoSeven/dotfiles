@@ -1,0 +1,189 @@
+/***
+*
+*  Solarized Dark theme for Vimium
+*  © Dawid Ferenczy 2018
+*
+*  A color theme for famous Chrome extension Vimium by Phil Crosby based on also famous
+*  Ethan Schoonover's Solarized Dark color palette.
+*  https://github.com/philc/vimium
+*  https://ethanschoonover.com/solarized/#the-values
+*
+*
+*  Installation:
+*
+*      1. Open Vimium's settings
+*      2. Click "Show Advanced Options"
+*      3. Paste the whole content of this file into the text box "CSS for Vimium UI"
+*      4. Save it
+*      5. Reload existing or open a new tab to test it
+*
+*
+*  Color palette:
+*      base03:  #002B36
+*      base02:  #073642
+*      base01:  #586E75
+*      base00:  #657B83
+*      base0:   #839496
+*      base1:   #93A1A1
+*      base2:   #EEE8D5
+*      base3:   #FDF6E3
+*      yellow:  #B58900
+*      orange:  #CB4B16
+*      red:     #DC322F
+*      magenta: #D33682
+*      violet:  #6C71C4
+*      blue:    #268BD2
+*      cyan:    #2AA198
+*      green:   #859900
+*
+***/
+
+
+/*
+    HUD
+    ---
+*/
+
+div > .vimiumHUD {
+    height: auto;
+    max-width: 600px;
+    min-width: 200px;
+    padding: 0.5em 1em;
+    color: #EEE8D5;
+    background-color: #073642;
+    border: 1px solid #B58900;
+    font-size: 12px;
+    font-family: "Source Code Pro", Consolas, Courier;
+    text-shadow: none;
+}
+
+
+/*
+    Link Hints
+    ----------
+*/
+
+/* link hint box */
+div > .vimiumHintMarker {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0%, #002B36),
+        color-stop(100%, #586E75)
+    );
+    border: 1px solid #B58900;
+    padding: 2px 4px;
+}
+
+/* link hint text */
+div > .vimiumHintMarker span {
+    color: #EEE8D5;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Source Code Pro", Consolas, Courier;
+    text-shadow: none;
+}
+
+/* active link hint box */
+div > .vimiumActiveHintMarker {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0%, #B58900),
+        color-stop(100%, #FDF6E3)
+    );
+    background-color: #B58900;
+}
+
+/* active link hint text */
+div > .vimiumActiveHintMarker span {
+    color: black !important;
+    font-weight: bold;
+}
+
+
+/*
+    Vomnibar
+    --------
+*/
+
+/* Vomnibar box */
+#vomnibar {
+    border-color: #93A1A1;
+}
+
+/* box with search input */
+#vomnibar .vomnibarSearchArea {
+    background-color: #073642;
+    border-bottom: 1px solid #002B36;
+}
+
+/* search input */
+#vomnibar input {
+    border-color: #586E75;
+}
+input#vomnibarInput.vimiumReset {
+    color: #FDF6E3 !important;
+    background-color: black !important;
+}
+
+/* result box */
+#vomnibar ul {
+    background-color: #073642;
+}
+
+/* result item box */
+#vomnibar li {
+    border: 1px solid #073642;
+}
+
+/* result item first and second line */
+#vomnibar li .vomnibarTopHalf, #vomnibar li .vomnibarBottomHalf {
+    overflow: display;
+}
+
+/* result title */
+#vomnibar li em, #vomnibar li .vomnibarTitle {
+    color: #859900;
+    font-family: "Segoe UI", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+/* result source - tab, history, bookmark, etc. */
+#vomnibar li .vomnibarSource {
+    color: #657B83;
+    font-family: "Segoe UI", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+/* result URL */
+#vomnibar li .vomnibarUrl {
+    color: #268BD2;
+    font-family: "Source Code Pro", Consolas, Courier;
+    font-size: 12px;
+}
+
+/* selected result box */
+#vomnibar li.vomnibarSelected {
+    background-color: #002B36;
+    border: 1px solid #B58900;
+}
+
+/* selected result title */
+#vomnibar li.vomnibarSelected .vomnibarTitle {
+}
+
+/* selected result source */
+#vomnibar li.vomnibarSelected .vomnibarSource {
+    color: #B58900;
+}
+
+/* highlighted search term */
+/* ...in result title */
+#vomnibar li em .vomnibarMatch, #vomnibar li .vomnibarTitle .vomnibarMatch {
+    color: #D33682;
+}
+/* ...in result URL */
+#vomnibar li .vomnibarMatch {
+    color: #D33682;
+}
