@@ -3,13 +3,13 @@ div > .vimiumHintMarker {
   background-color: #282828;
   border: 0;
   border-radius: 2px;
-  box-shadow: inset 0 -2px 0 #1d2021;
+  /* box-shadow: inset 0 -2px 0 #1d2021; */
+  box-shadow: 0em 0.1em 0.6em 0.1em rgba(0, 0, 0, 0.4);
   background-image: none;
 }
 
 div > .vimiumHintMarker span {
   font-size: inherit;
-  text-shadow: none;
   font-weight: bold;
   text-shadow: none;
   color: #458588;
