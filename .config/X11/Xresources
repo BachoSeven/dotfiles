@@ -16,12 +16,12 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
+Xcursor.theme: ArchCursorComplete
+
 #include "Xresources.d/gruvbox"
 ! #include "Xresources.d/solarized"
+
 #include "Xresources.d/xscreensaver"
 
 !! Transparency (0-1):
 st.alpha: 0.7
-
-!! Vnc settings
-! Vncviewer*grabKeyboard:	true
