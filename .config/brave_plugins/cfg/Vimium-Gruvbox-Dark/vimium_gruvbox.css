@@ -8,7 +8,8 @@ div > .vimiumHintMarker {
 }
 
 div > .vimiumHintMarker span {
-  font-size: 12px;
+  font-size: inherit;
+  text-shadow: none;
   font-weight: bold;
   text-shadow: none;
   color: #458588;
@@ -25,8 +26,7 @@ div > .vimiumHintMarker > .matchingCharacter {
 
 #vomnibar input {
   color: #ebdbb2;
-  font: -moz-window;
-  font-size: 20px;
+  font: 20px/1 "Hack Nerd Font", monospace;
   height: 34px;
   margin-bottom: 0;
   padding: 4px;
