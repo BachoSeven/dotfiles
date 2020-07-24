@@ -2,6 +2,9 @@
 
 # Add Google DNS nameservers as main ones to access otherwise unavailable stuff
 # To be run with `sudo -A`
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+export DISPLAY=:0
+. /home/fra/.profile
 
 if [ ! -f /etc/resolv.conf.head ]
 then
@@ -10,6 +13,9 @@ then
 	echo "nameserver 2001:4860:4860::8888" >> /etc/resolv.conf.head
 	echo "nameserver 2001:4860:4860::8844" >> /etc/resolv.conf.head
 	NetworkManager restart
+	sudo -u fra notify-send "Nameservers updated!"
 else
-	rm /etc/resolv.conf.head && NetworkManager restart
+	rm /etc/resolv.conf.head
+	NetworkManager restart
+	sudo -u fra notify-send "Done resetting nameservers"
 fi
