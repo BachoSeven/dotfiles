@@ -17,6 +17,8 @@ set icons
 set period 1
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
 set incsearch
+set drawbox
+set promptfmt "\033[33;1m%u\033[0m\033[32;1m@\033[0m\033[34;1m%h\033[0m:\033[35;1m%w\033[0m\033[36;1m%f\033[0m"
 
 # adjust coloumn width to terminal
 %{{
@@ -178,6 +180,21 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
+# display git repository status in your prompt
+# cmd on-cd &{{
+	# source /usr/share/git/completion/git-prompt.sh
+	# GIT_PS1_SHOWDIRTYSTATE=auto
+	# GIT_PS1_SHOWSTASHSTATE=auto
+	# GIT_PS1_SHOWUNTRACKEDFILES=auto
+	# GIT_PS1_SHOWUPSTREAM=auto
+	# git=$(__git_ps1 " (%s)") || true
+	# fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[1m%f$git\033[0m"
+	# lf -remote "send $id set promptfmt \"$fmt\""
+# }}
+# on-cd
+
+
 
 cmd cleanlatexcompile ${{
 	latexcompile $fx &&
