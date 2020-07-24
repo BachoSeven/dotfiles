@@ -37,7 +37,7 @@ $lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"
 
 cmd open ${{
     case "$f" in
-	*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.gz|*.tgz|*.tar.xz|*.txz|*.xz|*.zip|*.rar|*.iso)
+	*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.gz|*.tgz|*.tar.xz|*.txz|*.xz|*.zip|*.rar|*.iso|*.7z)
 	    lf -remote "send $id mount $f"
             ;;
 	*.pdf|*.djvu|*.ps|*.epub) setsid -f zathura $fx >/dev/null 2>&1 & ;;
