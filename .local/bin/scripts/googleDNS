@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Add Google DNS nameservers as main ones to access otherwise unavailable stuff
+# To be run with `sudo -A`
+
+if [ ! -f /etc/resolv.conf.head ]
+then
+	echo "nameserver 8.8.8.8" >> /etc/resolv.conf.head
+	printf "nameserver 8.8.4.4\n" >> /etc/resolv.conf.head
+	echo "nameserver 2001:4860:4860::8888" >> /etc/resolv.conf.head
+	echo "nameserver 2001:4860:4860::8844" >> /etc/resolv.conf.head
+	NetworkManager restart
+else
+	rm /etc/resolv.conf.head && NetworkManager restart
+fi

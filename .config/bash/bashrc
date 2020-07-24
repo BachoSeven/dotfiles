@@ -25,6 +25,9 @@ Cyan='\[\e[0;36m\]'             # Cyan
 BCyan='\[\e[1;36m\]'            # Bold Cyan
 NC='\[\e[m\]'                   # Color Reset
 
+# ViMode
+set -o vi
+
 # Useful aliases
 alias c='clear'
 alias ..='cd ..'

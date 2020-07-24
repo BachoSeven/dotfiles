@@ -15,6 +15,7 @@
 	bindkey -s '^[n' ' neomutt\n'
 	bindkey -s '^s' ' up2date\n'
 	bindkey -s '^y' ' fzfpacinstall\n'
+	bindkey -s '^q' ' browsepac\n'
 # allow ctrl-p, ctrl-n for navigate history
 	bindkey '^P' up-history
 	bindkey '^N' down-history
