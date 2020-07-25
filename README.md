@@ -6,7 +6,7 @@
 
 This are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
 
-## Current Setup
+# Current Setup
 
 My setup is pretty minimal and fast: although many packages and systemd services are launched at boot, rebooting from dwm to dwm takes approximately 15 seconds(with grub).
 I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use:

@@ -29,7 +29,7 @@ highscore-time-format = %y/%m/%d
 # in excercise mode minimum must be reached to
 # proceed to the next exercise. (0=no minimum)
 # can also be set with environment variable TYPISKT_MIN_ACC
-exercise-minimum-accuracy = 94
+exercise-minimum-accuracy = 96
 # can also be set with environment variable TYPISKT_MIN_WPM
 exercise-minimum-wpm = 0
 
