@@ -3,13 +3,13 @@
 
 ## Basics
 
-# Enable aliases to be sudo’ed
-	alias sudo='sudo '
-
-# Arch
+# Pacman
 	alias clean='sudo pacman -Rns $(pacman -Qtdq)'
 	alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -50"
 	alias browsepac="pacman -Qqe | fzf --preview 'pacman -Qi {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+
+# Enable aliases to be sudo’ed
+	alias sudo='sudo '
 
 # SSH
 	alias vote='ssh aur@aur.archlinux.org vote'

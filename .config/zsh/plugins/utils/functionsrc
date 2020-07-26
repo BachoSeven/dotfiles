@@ -7,7 +7,7 @@ getdeps() {
 	expac -l '\n' %E -S $@ | sort -u
 }
 fzfpacinstall() {
-	pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S
+	pacman -Slq | fzf --ansi --multi --preview 'pacman -Si --color always {1}' | xargs -ro sudo pacman -S
 }
 
 gc() {
