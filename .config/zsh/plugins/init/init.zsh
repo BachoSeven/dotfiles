@@ -37,6 +37,7 @@
 
 # Allow to recover from C-c or failed history expansion (does not go in history)
 # 26may2012  +chris+
+# TODO: check whether this is working or not
 	_recover_line_or_else() {
 	  if [[ -z $BUFFER && $CONTEXT = start && $zsh_eval_context = shfunc
 		&& -n $ZLE_LINE_ABORTED
@@ -119,7 +120,7 @@
 	zstyle ':completion:*:*:kill:*' force-list always
 	zstyle ':completion:*:*:kill:*' insert-ids single
 # offer completions for directories from all these groups
-	zstyle ':completion:*::*:(cd|pushd):*' tag-order path-directories directory-stack
+	zstyle ':completion:*::*:(cd|pushd):*' tag-order local-directories directory-stack path-directories
 # never offer the parent directory (e.g.: cd ../<TAB>)
 	zstyle ':completion:*:cd:*' ignore-parents parent pwd
 # don't complete things which aren't available (very annoying)

@@ -3,10 +3,6 @@
 
 	vim_ins_mode="%{$fg[blue]%}[INS]%{$reset_color%}"
 	vim_cmd_mode="%{$fg[green]%}[CMD]%{$reset_color%}"
-	# This is the old way, now it is integrated with the cursor shape change
-	# function zle-keymap-select {
-	  # vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-	# }
 
 	function zle-keymap-select {	# Change cursor shape for different vi modes + decent rprompt indicator
 	  if [[ ${KEYMAP} == vicmd ]] ||
