@@ -28,6 +28,8 @@
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
 	alias grep="grep --color=auto"
+	alias diff="diff --color=auto"
+	alias ip='ip -color=auto'
 	alias ccat="highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force --"
 	alias path='echo $PATH | tr : "\n"'
 
