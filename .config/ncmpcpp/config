@@ -163,7 +163,7 @@ song_columns_list_format = (7f)[magenta]{l} (25)[cyan]{a} (50)[white]{t|f:Title}
 ## notifications etc.
 ##
 # execute_on_song_change = notify-send -i ~/.config/icons/music-player_black.png "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
-execute_on_song_change = mpdnotify
+execute_on_song_change = musnotify
 # classic or columns
 playlist_display_mode = columns
 #

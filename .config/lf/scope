@@ -50,6 +50,7 @@ handle_mime() {
 		    highlight --replace-tabs="${HIGHLIGHT_TABWIDTH}" --out-format="${highlight_format}" \
 			--style="${HIGHLIGHT_STYLE}" --force -- "${FILE_PATH}" ;;
 		application/zip | application/x-bzip2 | application/x-bzip | applicatio/x-gzip | application/x-xz | rar | application/x-rar-compressed | application/x-tar | application/x-rar | application/x-7z-compressed) atool --list -- "${FILE_PATH}" ;;
+		application/msword) catdoc "${FILE_PATH}" ;;
 		application/csv) xsv <"${FILE_PATH}" --csv --table --grid ;;
 		image/*) chafa --fill=block --symbols=block -c 256 -s 80x"${HEIGHT}" "${FILE_PATH}" || exit 1;;
 		video/* | audio/*|application/octet-stream) mediainfo "${FILE_PATH}" || exit 1;;

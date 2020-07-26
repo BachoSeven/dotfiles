@@ -425,7 +425,7 @@
         "_id": 87,
         "_date": "Mon Jul 13 2020",
         "_timestamp": 1594656688570,
-        "description": "removed telegram-tg-git until it is usable",
+        "description": "removed telegram-tg-git; telegram is now desktop-git version",
         "isStarred": false,
         "boards": [
             "@ArchPackages"
