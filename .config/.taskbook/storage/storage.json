@@ -425,7 +425,7 @@
         "_id": 87,
         "_date": "Mon Jul 13 2020",
         "_timestamp": 1594656688570,
-        "description": "removed telegram-tg-git; telegram is now desktop-git version",
+        "description": "removed telegram-tg-git",
         "isStarred": false,
         "boards": [
             "@ArchPackages"
@@ -572,6 +572,17 @@
         "isStarred": false,
         "boards": [
             "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "101": {
+        "_id": 101,
+        "_date": "Sun Jul 26 2020",
+        "_timestamp": 1595782355148,
+        "description": "kunst-git from AUR is for musnotify ncmpcpp album arttbtb",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
         ],
         "_isTask": false
     }
