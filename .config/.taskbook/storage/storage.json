@@ -370,7 +370,7 @@
         "_id": 78,
         "_date": "Sun Jul 05 2020",
         "_timestamp": 1593968166312,
-        "description": "lf is now binary instead than git version",
+        "description": "lf is normal AUR version now",
         "isStarred": false,
         "boards": [
             "@ArchPackages"
