@@ -130,7 +130,7 @@ cmd Link %{{
 		lf -remote "send $id echo no files to link"
 		exit 0
 	fi
-	# symbolicly copy mode is indicating a soft link
+	# symbolically copy mode is indicating a soft link
 	if [[ "$mode" == copy ]]; then
 		ln -sr $files -t .
 	# while a move mode is indicating a hard link
@@ -247,7 +247,7 @@ map <c-y> up
 map <c-s> $lf -remote "send $id select $(printf '%q' $(all_files=(./*(ND)); printf '%s\n' ${all_files[@]} | fzf))"	# better asynchronious search
 map <c-g> set globsearch!
 map <c-f> :fzf_jump
-map <c-space> :toggle; up; up
+map <c-space> :toggle; up; up ## TODO: remove an "up" after r15 is released to the AUR
 
 #			Personal utils
 map <c-a> embed neomutt -a
@@ -270,5 +270,3 @@ map di dragon-individual
 map dm mvdrag
 map dc cpdrag
 map dl dldrag
-
-# vim: ft=lf

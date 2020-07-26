@@ -7,7 +7,9 @@
 	bindkey -M menuselect 'k' vi-up-line-or-history
 	bindkey -M menuselect 'l' vi-forward-char
 	bindkey -M menuselect 'j' vi-down-line-or-history
-# do not save these in history:
+# Pick but stay in completion menu
+	bindkey -M menuselect "+" accept-and-menu-complete
+# Do not save these in history:
 	bindkey -s '^o' ' lfcd\n'
 	bindkey -s '^g' ' ytop\n'
 	bindkey -s '^v' ' v\n'
@@ -16,7 +18,7 @@
 	bindkey -s '^s' ' up2date\n'
 	bindkey -s '^y' ' fzfpacinstall\n'
 	bindkey -s '^q' ' browsepac\n'
-# allow ctrl-p, ctrl-n for navigate history
+# Allow ctrl-p, ctrl-n for navigate history
 	bindkey '^P' up-history
 	bindkey '^N' down-history
 

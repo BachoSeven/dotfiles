@@ -325,7 +325,7 @@ pdfsearch() {
 		while read file; do
 			pdftotext $file tmpd/$file.txt;
 		done
-		cd tmpd && rg $1 && cd .. && rm -rf tmpd || echo 'Error!'
+		rg $1 tmpd && rm -rf tmpd || echo 'Error!'
 }
 compresspdf() {
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=$2.pdf $1

@@ -53,6 +53,7 @@ alias \
 	alias pdbkp='rsync -rltv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 
 ## Utils
+	alias perms="stat -c '%A %a %n'"
 	alias ..='cd ..'
 	alias ...='cd ../../../'
 	alias 1='cd -'
@@ -128,6 +129,7 @@ alias \
 	alias mcl='java -jar ~/stuff/games/minecraft/mcTE.jar'
 
 ## Rice
+	alias ew='lfcd ~/stuff/PersonalWiki/' # Edit wiki
 # Dotbare
 	alias d='dotbare'
 	alias dfc='d commit -a'
@@ -143,10 +145,8 @@ alias \
 	alias cfd='v $XDG_CONFIG_HOME/directories'
 	alias mim='v $XDG_CONFIG_HOME/mimi/mime.conf'
 	alias zarc='v $XDG_CONFIG_HOME/zathura/zathurarc'
-	alias zreload='source $ZDOTDIR/.zshrc'
-	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
 	alias bash='/bin/bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'
-	alias zt='zsh_bench'
+	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
 	alias cfl='v $XDG_CONFIG_HOME/lf/lfrc'
 	alias cfz='v $ZDOTDIR/.zshrc'
 	alias cfzp='v $ZDOTDIR/plugins'
@@ -159,6 +159,10 @@ alias \
 	alias cfu='v ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
 	alias cfn='v ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
 	alias cft='v ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
+# Zsh
+	alias zreload='source $ZDOTDIR/.zshrc'
+	alias printopt='printf '%s=%s\n' "${(@kv)options}"' # setopts
+	alias zt='zsh_bench'
 
 # Personal files
 	alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
