@@ -232,7 +232,7 @@ map E extract	#extract and compress
 map C copyto
 map M moveto
 map D delete
-map p paste
+map p paste ## TODO: should it be :paste??
 map S :Link
 
 #			Navigation

@@ -404,5 +404,335 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "36": {
+        "_id": 36,
+        "_date": "Sun Jun 28 2020",
+        "_timestamp": 1593310254676,
+        "description": "apg is a more secure password generator",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "37": {
+        "_id": 37,
+        "_date": "Mon Jul 20 2020",
+        "_timestamp": 1595200916125,
+        "description": "croc is for amazing relay-server multi-file transfers; gruvbox-dark-gtk and gruvbox-dark-icons-gtk are instead of gtk-theme-arc-gruvbox-git",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "38": {
+        "_id": 38,
+        "_date": "Thu Jul 02 2020",
+        "_timestamp": 1593655503395,
+        "description": "Abook-configdir and isync-config-patched versions(BEFORE mutt-wizard which is from my personal GIT: we need dependencies tho); tipyskt (>>gtypist??)",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "39": {
+        "_id": 39,
+        "_date": "Fri Jul 03 2020",
+        "_timestamp": 1593812879327,
+        "description": "arch install: now dotbare is in the AUR",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "40": {
+        "_id": 40,
+        "_date": "Sat Jul 04 2020",
+        "_timestamp": 1593887990912,
+        "description": "add expac for listing package sizes and sort them by date plus More",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "41": {
+        "_id": 41,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593958182859,
+        "description": "typiskt(+./gtypistexercises.sh), and gtypist-single-space",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "42": {
+        "_id": 42,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593964577825,
+        "description": "newsboat normal version as git is bloat",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "43": {
+        "_id": 43,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593964851051,
+        "description": "ferdi is now ferdi-bin",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "44": {
+        "_id": 44,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593965072895,
+        "description": "remove calcurse if not already",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "45": {
+        "_id": 45,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593965099762,
+        "description": "discord , not -canary",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "46": {
+        "_id": 46,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593968031896,
+        "description": "removed bleachbit as it is very bloat and also useless",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "47": {
+        "_id": 47,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593968166312,
+        "description": "lf is normal AUR version now",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "48": {
+        "_id": 48,
+        "_date": "Mon Jul 06 2020",
+        "_timestamp": 1594040901207,
+        "description": "add mgba",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "49": {
+        "_id": 49,
+        "_date": "Mon May 11 2020",
+        "_timestamp": 1589222569533,
+        "description": "ssh aur@aur.archlinux.org vote package_name",
+        "isStarred": false,
+        "boards": [
+            "@Reminders"
+        ],
+        "_isTask": false
+    },
+    "50": {
+        "_id": 50,
+        "_date": "Mon Jul 13 2020",
+        "_timestamp": 1594674097261,
+        "description": "fzwal-git is to select && preview wal preset colorschemes!",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "51": {
+        "_id": 51,
+        "_date": "Mon Jul 13 2020",
+        "_timestamp": 1594656688570,
+        "description": "removed telegram-tg-git",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "52": {
+        "_id": 52,
+        "_date": "Sat Jul 18 2020",
+        "_timestamp": 1595068260466,
+        "description": "jre-openjdk is needed for Minecraft to work :)) ",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "53": {
+        "_id": 53,
+        "_date": "Tue Jul 21 2020",
+        "_timestamp": 1595282753213,
+        "description": "gtyick is my new metronome",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "54": {
+        "_id": 54,
+        "_date": "Tue Jul 21 2020",
+        "_timestamp": 1595334955933,
+        "description": "Remove brave; add dragon-drag-and-drop; add keepassxc as password manager",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "55": {
+        "_id": 55,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593973874976,
+        "description": "added colorz to wal configuration (from AUR)",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "56": {
+        "_id": 56,
+        "_date": "Sun Jul 26 2020",
+        "_timestamp": 1595782355148,
+        "description": "kunst-git from AUR is for musnotify ncmpcpp album arttbtb",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "57": {
+        "_id": 57,
+        "_date": "Wed Jul 22 2020",
+        "_timestamp": 1595377008210,
+        "description": "xwallpaper is now the git version from AUR",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "58": {
+        "_id": 58,
+        "_date": "Wed Jul 22 2020",
+        "_timestamp": 1595373709465,
+        "description": "xcursor-arch-cursor-complete is my new cursor theme, from the  AUR :)))",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "59": {
+        "_id": 59,
+        "_date": "Mon Jul 13 2020",
+        "_timestamp": 1594596313337,
+        "description": "switched to pam-gnupg-git",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "60": {
+        "_id": 60,
+        "_date": "Tue Jul 21 2020",
+        "_timestamp": 1595329827412,
+        "description": "I now use ungoogled-chromium, instead of brave. Configuration is done: watching the video on how to setup extensions, and then loading the various files from .config/brave_plugins",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "61": {
+        "_id": 61,
+        "_date": "Tue Jul 07 2020",
+        "_timestamp": 1594076990129,
+        "description": "added vixl44 for pixel art with vi bindings",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "62": {
+        "_id": 62,
+        "_date": "Thu Jul 16 2020",
+        "_timestamp": 1594908752552,
+        "description": "ncspot is not from git anymore(still AUR tho)",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "63": {
+        "_id": 63,
+        "_date": "Fri Jul 17 2020",
+        "_timestamp": 1594999454571,
+        "description": "perl-image-exiftool is for mpd notifications",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "64": {
+        "_id": 64,
+        "_date": "Sun Jul 19 2020",
+        "_timestamp": 1595113342691,
+        "description": "glow is for markdown preview in lf; rtl8822bu-dkms-git is for both asus nano wifi adapter, Archer T3U AND BrosTrend :)))",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
+    },
+    "65": {
+        "_id": 65,
+        "_date": "Sun Jul 19 2020",
+        "_timestamp": 1595172002581,
+        "description": "DVD Ripping: whipper-git WITH <'python-discid'# for calculating Musicbrainz disc id> in PKGBUILD, until they fix it upstream ++ asunder for GUI :)))",
+        "isStarred": false,
+        "boards": [
+            "@ArchPackages"
+        ],
+        "_isTask": false
     }
 }
