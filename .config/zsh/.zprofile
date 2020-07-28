@@ -37,7 +37,7 @@
 	# Experimental: add memoy-reducing Chromium startup parameters to Brave
 	export BRAVE_FLAGS="--process-per-site  --enable-low-end-device-mode"
 	# shellcheck opts to avoid having .shellcheckrc in ~ (https://github.com/koalaman/shellcheck/wiki)
-	export SHELLCHECK_OPTS='--shell=zsh --exclude=SC1003,SC1087,SC1090,SC1091,SC2001,SC2015,SC2034,SC2038,SC2059,SC2068,SC2086,SC2115,SC2128,SC2139,SC2145,SC2153,SC2155'
+	export SHELLCHECK_OPTS='--exclude=SC1003,SC1087,SC1090,SC1091,SC2001,SC2015,SC2034,SC2038,SC2059,SC2068,SC2086,SC2115,SC2128,SC2139,SC2145,SC2153,SC2155'
 
 # Dotbare
 	export DOTBARE_DIR="$XDG_CONFIG_HOME/dots"

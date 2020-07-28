@@ -1,7 +1,0 @@
-# Dirs / files to ignore.
-# Use the same syntax as gitignore(5).
-# Common patterns:
-#
-.git
-*~
-/usr/share/polkit-1/rules.d
