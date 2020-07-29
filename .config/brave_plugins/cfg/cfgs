@@ -1,6 +1,5 @@
 UNGOOGLED-CHROMIUM
 opts: keep local cookies; gtk theme
-flags: disable search engines collection; handling of extension mime (always prompt for); force dark mode for web contents.
 
 bookmarks: file
 passwords: manager->> [keepassxc+extension(backup)]

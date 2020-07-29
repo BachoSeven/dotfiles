@@ -85,6 +85,8 @@
 # anti aliasing in the two toolkits
 	export GDK_USE_XFT=1
 	export QT_XFT=true
+# Trying to fix chromium's fonts
+	export FONTCONFIG_PATH="/etc/fonts"
 # LESS (and man) colors
 	export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"     # begin blinking
 	export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"     # begin bold

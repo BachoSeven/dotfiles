@@ -157,6 +157,10 @@ archive() {
 	esac
 }
 
+vinfo() {
+	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
+}
+
 # Update the list of processes by pressing CTRL-R
 lps() {
 ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \

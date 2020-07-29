@@ -20,7 +20,7 @@ if [ $interactive ]; then
 	grep -v -E '^.+ \(0\)' |\
 	awk '{print $2 "    " $1}' | \
 	sort | \
-	fzf --height=30% --layout=reverse --prompt="Manual: " --preview="echo {1} | sed -E \"s/^\((.+)\)/\1/\" | xargs -I{S} man -Pcat {S} {2} 2>/dev/null" | \
+	fzf --height=60% --layout=reverse --prompt="Manual: " --preview="echo {1} | sed -E \"s/^\((.+)\)/\1/\" | xargs -I{S} man -Pcat {S} {2} 2>/dev/null" | \
 	sed -E 's/^\((.+)\)/\1/')
 	[ -z "$manual" ] && exit 0
 	man $manual

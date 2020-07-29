@@ -15,7 +15,7 @@ set scrolloff 10
 set color256
 set icons
 set period 1
-set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
+set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml:Soulseek*"
 set incsearch
 set drawbox
 set promptfmt "\033[33;1m%u\033[0m\033[32;1m@\033[0m\033[34;1m%h\033[0m:\033[35;1m%w\033[0m\033[36;1m%f\033[0m"
