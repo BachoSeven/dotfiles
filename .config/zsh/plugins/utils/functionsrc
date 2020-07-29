@@ -10,7 +10,7 @@ fp() {
         | sed 's/ .*//')"
 }
 fzfpacinstall() {
-	pacman -S $(fp)
+	sudo pacman -S $(fp)
 }
 getdeps() {
 	expac -l '\n' %E -S $@ | sort -u

@@ -22,7 +22,7 @@
 		se wildignore+=*.doc,*.pdf,*.cbr,*.cbz
 		se wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 		se wildignore+=*.swp,.lock,.DS_Store,._*
-	se wildmode=longest,list,full
+	se wildmode=longest:full,list,full
 	se autoindent
 	se incsearch
 	se hidden
@@ -32,7 +32,9 @@
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " Return to last edit position when opening files
 	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 
-"" Some mappings and shortcuts
+"" Some map" Use tab to jump between blocks, because it's easier
+	nno <tab> %
+	vno <tab> %pings and shortcuts
 " jk is Esc in insert mode
 	ino jk <Esc>
 
