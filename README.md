@@ -57,6 +57,8 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ![](pics/screens/ricing/pink_dwm.png)
 
+![](pics/screens/ricing/pipes+matrices.png)
+
 ![](pics/screens/ricing/dwm.png)
 
 ![](pics/screens/ricing/dwm2.png)
