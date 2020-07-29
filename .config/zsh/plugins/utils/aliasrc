@@ -104,7 +104,6 @@ alias \
 	alias \
 		locate="lolcate --db mydb" \
 		updb='lolcate --db mydb  --update'
-	alias pp='prettyping'
 	alias nmdm='networkmanager_dmenu'
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
@@ -130,6 +129,7 @@ alias \
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias mcl='java -jar ~/stuff/games/minecraft/mcTE.jar'
+	alias smi="sudo make clean install"
 
 ## Rice
 	alias ew='lfcd ~/stuff/PersonalWiki/' # Edit wiki
