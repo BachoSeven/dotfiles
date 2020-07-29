@@ -67,9 +67,6 @@ alias \
 	alias 7='cd -7'
 	alias 8='cd -8'
 	alias 9='cd -9'
-	alias :q='exit' # vim user :)
-	alias v="nvim"
-	alias nv='v .'
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias bons="cbonsai -l -b 2 -M 7"
@@ -81,9 +78,14 @@ alias \
 	alias mv='mv -v'
 	alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
 	alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
+# vim user :)
+	alias :q='exit'
+	alias v="nvim"
+	alias nv='v .'
+	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
 # Manuals
 	alias mman='macho -i'
-	alias info='info --vi-keys'
+	alias info='vinfo'
 
 # Remove spaces, curly+squared brackets and commas
 	alias rsf='find -name "* *" -type f | perl-rename "s/ /_/g"'
@@ -127,7 +129,6 @@ alias \
 	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
-	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
 	alias mcl='java -jar ~/stuff/games/minecraft/mcTE.jar'
 
 ## Rice
