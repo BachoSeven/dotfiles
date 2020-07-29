@@ -90,7 +90,7 @@ cmd copyto ${{
 }}
 
 cmd fzf_jump ${{
-   res="$(find . -maxdepth 2 | fzf --header='Jump to:')"
+   res="$(find . -maxdepth 3 | fzf --header='Jump to:')"
    if [ -f "$res" ]; then
      cmd="select"
    elif [ -d "$res" ]; then

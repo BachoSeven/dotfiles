@@ -20,7 +20,7 @@
   "serviceLimit": 5,
   "server": "https://api.getferdi.com",
   "predefinedTodoServer": "https://app.franztodos.com",
-  "autohideMenuBar": false,
+  "autohideMenuBar": true,
   "lockingFeatureEnabled": false,
   "locked": false,
   "lockedPassword": "",

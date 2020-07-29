@@ -49,15 +49,15 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ![](pics/screens/ricing/green_dwm-1.png)
 
+![](pics/screens/ricing/pipes+matrices.png)
+
 ![](pics/screens/ricing/dwm_mountains.png)
+
+![](pics/screens/ricing/pink_dwm.png)
 
 ![](pics/screens/ricing/dwm_pinker.png)
 
 ![](pics/screens/ricing/surreal.gif)
-
-![](pics/screens/ricing/pink_dwm.png)
-
-![](pics/screens/ricing/pipes+matrices.png)
 
 ![](pics/screens/ricing/dwm.png)
 
