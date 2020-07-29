@@ -102,6 +102,7 @@
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	au BufWritePost *Xresources,*Xdefaults !xrdb %
+	au BufWritePost *.config/subs !subs -g
 
 " Turns off highlighting on the bits of code that are changed,
 " so the line that is changed is highlighted but the actual
