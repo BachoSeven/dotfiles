@@ -30,7 +30,6 @@ cal plug#begin('~/.local/share/nvim/plugged')
 
 " Autocompletion
 	Plug 'Shougo/deoplete.nvim'
-	Plug 'deoplete-plugins/deoplete-zsh'
 	Plug 'Shougo/neco-vim'
 	Plug 'Shougo/neco-syntax'
 	" Plug 'sirver/ultisnips'
