@@ -1,12 +1,8 @@
 # vi: ft=zsh
 ## Bind keys
-	alias -- -='cd -'		# Cd into last dir
+	alias -- -='cd -'		# Cd into last dir with "-"
 	bindkey '^[[1;5C' forward-word   # move forward wordwise with ctrl-arrow
 	bindkey '^[[1;5D' backward-word  # move backward wordwise with ctrl-arrow
-	bindkey -M menuselect 'h' vi-backward-char
-	bindkey -M menuselect 'k' vi-up-line-or-history
-	bindkey -M menuselect 'l' vi-forward-char
-	bindkey -M menuselect 'j' vi-down-line-or-history
 # Pick but stay in completion menu
 	bindkey -M menuselect "+" accept-and-menu-complete
 # Do not save these in history:
@@ -18,9 +14,6 @@
 	bindkey -s '^s' ' up2date\n'
 	bindkey -s '^y' ' fzfpacinstall\n'
 	bindkey -s '^q' ' browsepac\n'
-# Allow ctrl-p, ctrl-n for navigate history
-	bindkey '^P' up-history
-	bindkey '^N' down-history
 
 # Space does history expansion (e.g., !1<space> becomes the last command input in the history)
 	bindkey ' ' magic-space
@@ -37,4 +30,4 @@
 		S='| sort'	\
 		N='> /dev/null' \
 		X='|xclip'	\
-		A='|xargs'
+		A='|xargs ' # A suffixed space is needed to use aliases
