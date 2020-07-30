@@ -1,6 +1,6 @@
 UNGOOGLED-CHROMIUM
 opts: keep local cookies; gtk theme
-flags: force-dark-mode; ext-mime-request-handling; disable-search-engine-collection; ignore-gpu-blacklist; enable-gpu-rasterization; enable-zero-copy
+flags: force-dark-mode; ext-mime-request-handling[always prompt]; ext-toolbar-menu; disable-search-engine-collection
 
 bookmarks: file
 passwords: manager->> [keepassxc+extension(backup)]
