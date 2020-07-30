@@ -120,11 +120,11 @@ alias \
 	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias ud='udict'
+	alias def='sdcv'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 	alias spot='st -c ncspot -e ncspot'
 	alias flp='flashplayer'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
-	alias tlmgr='sudo /usr/local/texlive/2019/bin/x86_64-linux/tlmgr'
 	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
@@ -172,8 +172,6 @@ alias \
 	alias doc='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents'
 	alias dow='lfcd /mnt/01D5707D40B081F0/Users/ascol/Downloads'
 	alias mus='lfcd /mnt/01D5707D40B081F0/Users/ascol/Music'
-	alias koln='locate -i0 "*koln*flac"|xargs -0 mpv'
-	alias bf='find /mnt/01D5707D40B081F0/Users -type f \( -iname "*bach*.mp3" -o -iname "*bach*.mp4"  -o -iname "*bach*.m4a" \) -print0|xargs -0 mpv'
 	alias pics='lfcd /mnt/01D5707D40B081F0/Users/ascol/Pictures'
 	alias uni='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI'
 	alias u='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi'
