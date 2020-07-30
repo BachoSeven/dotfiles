@@ -32,11 +32,21 @@
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " Return to last edit position when opening files
 	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 
-"" Some map" Use tab to jump between blocks, because it's easier
+"" Some mappings
+" Use tab to jump between blocks, because it's easier
 	nno <tab> %
 	vno <tab> %pings and shortcuts
+
 " jk is Esc in insert mode
 	ino jk <Esc>
+
+" Unlink system clipboard from vim's paste buffer
+	nno <leader>u :se clipboard=<CR>
+
+" Edit vimrc/zshrc and load vimrc bindings
+	nn <leader>ev :vsp ~/.config/nvim/init.vim<CR>
+	nn <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
+	nn <leader>sv :so ~/.config/nvim/init.vim<CR>
 
 " vsplit file under cursor; C-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
 	nn <C-W><C-F> <C-W>vgf
@@ -82,11 +92,6 @@
 
 " Turn off search highlight
 	nn <leader><space> :nohlsearch<CR>
-
-" Edit vimrc/zshrc and load vimrc bindings
-	nn <leader>ev :vsp ~/.config/nvim/init.vim<CR>
-	nn <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
-	nn <leader>sv :so ~/.config/nvim/init.vim<CR>
 
 " C compiling
 	nn <leader>co :!gcc -Wall -pedantic % -o %:r<CR>

@@ -98,6 +98,9 @@
 	zstyle ':completion:*:warnings' format 'No matches for: %d'
 	zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 	zstyle ':completion:*' group-name '' # completion in distinct groups
+# allow one error for every four characters typed in approximate completer
+	zstyle ':completion:*:match:*' original only
+	zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/4 )) numeric )'
 # split options into groups
 	zstyle ':completion:*' tag-order \
 	    'options:-long:long\ options
@@ -108,9 +111,6 @@
 	zstyle ':completion:*:options-single-letter' ignored-patterns '???*'
 # insert all expansions for expand completer
 	zstyle ':completion:*:expand:*' tag-order all-expansions
-# allow one error for every four characters typed in approximate completer
-	zstyle ':completion:*:match:*' original only
-	zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/4 )) numeric )'
 # Kill
 	zstyle ':completion:*:*:*:*:processes' command 'ps -uf'
 	zstyle ':completion:*:*:*:*:processes*' force-list always
