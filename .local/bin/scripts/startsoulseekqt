@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sleep 4s
+setsid -f soulseekqt
