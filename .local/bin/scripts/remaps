@@ -3,8 +3,6 @@
 [ -n "$1" ] && var="-variant $1"
 
 # This script is called on startup to remap keys.
-# Increase key speed via a rate change
-xset r rate 300 60
 # Map the caps lock key to super...
 setxkbmap -option caps:super -layout us $var
 # But when it is pressed only once, treat it as escape.
