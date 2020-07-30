@@ -1,32 +1,114 @@
+default_keybindings = false
 use_nerdfont=true
 
 [keybindings]
+## unbinded: n, c
+######################################
+# Song controls
+######################################
+
+##################
+# Fast forward / rewind
+##################
+"b" = "seek -1000"
+"f" = "seek +1000"
+"Shift+b" = "seek -10000"
+"Shift+f" = "seek +10000"
+
+##################
+# Play / pause
+##################
 "p" = "playpause"
-"L" = "next"
-"H" = "previous"
-"Ctrl+d" = "move down 5"
-"Ctrl+u" = "move up 5"
+"Enter" = "play"
+"s" = "stop"
+
+##################
+# Track manipulation
+##################
+"Shift+H" = "previous"
+"Shift+L" = "next"
+"r" = "repeat"
+"z" = "shuffle"
+"Shift+d" = "delete"
+"Shift+s" = "save"
+# Open context menu
+"Shift+o" = "open current"
+"o" = "open selected"
+"A" = "goto artist"
+"a" = "goto album"
+
+##################
+# Queue
+##################
+# Add to queue
+" " = "queue"
+# Move selected song up/down in the queue
+"Shift+Down" = "shift down 1"
+"Shift+Up" = "shift up 1"
+"Shift+c" = "clear"
+
+######################################
+# Sound
+######################################
+"+" = "volup"
+"-" = "voldown"
+
+######################################
+# Movements
+######################################
+"F1" = "focus queue"
+"F2" = "focus search"
+"/" = "focus search"
+"F3" = "focus library"
+# Go to the playing track
+"." = "move playing"
+# Navigation
+"Down" = "move down 1"
 "G" = "move bottom"
 "gg" = "move top"
+"Left" = "move left 1"
+"Right" = "move right 1"
+"Ctrl+d" = "move down 5"
+"Ctrl+u" = "move up 5"
+"Up" = "move up 1"
+"h" = "move left 1"
+"j" = "move down 1"
+"k" = "move up 1"
+"l" = "move right 1"
+"q" = "back"
 
-# # Spotify
-# [theme]
-# background = "black"
-# primary = "light white"
-# secondary = "light black"
-# title = "green"
-# playing = "green"
-# playing_selected = "light green"
-# playing_bg = "black"
-# highlight = "light white"
-# highlight_bg = "#484848"
-# error = "light white"
-# error_bg = "red"
-# statusbar = "black"
-# statusbar_progress = "green"
-# statusbar_bg = "green"
-# cmdline = "light white"
-# cmdline_bg = "black"
+######################################
+# Sharing
+######################################
+"Shift+x" = "share selected"
+"x" = "share current"
+
+######################################
+# Other
+######################################
+"Shift+q" = "quit"
+"?" = "help"
+"Shift+u" = "update"
+
+
+# Gruvbox dark [ based on base16 by Dawid Kurek (dawikur@gmail.com) ]
+[theme]
+background = "#282828"
+primary = "#1d2021"
+secondary = "#458588"
+title = "#fbf1c7"
+playing = "#d79921"
+playing_bg = "#282828"
+playing_selected = "#98971a"
+highlight = "#d5c4a1"
+highlight_bg = "#282828"
+error = "#d5c4a1"
+error_bg = "#fbf1c7"
+statusbar = "#555555"
+statusbar_progress = "#b16286"
+statusbar_bg = "#98971a"
+cmdline = "#d5c4a1"
+cmdline_bg = "#282828"
 
 # # Base16_sol_dark, modified closer to spotify colors by BachoSeven, originally https://github.com/gidsi/base16-ncspot
 # [theme]
@@ -47,21 +129,21 @@ use_nerdfont=true
 # cmdline = "#93a1a1"
 # cmdline_bg = "#002b36"
 
-# Gruvbox dark [ based on base16 by Dawid Kurek (dawikur@gmail.com) ]
-[theme]
-background = "#282828"
-primary = "#1d2021"
-secondary = "#458588"
-title = "#fbf1c7"
-playing = "#d79921"
-playing_bg = "#282828"
-playing_selected = "#98971a"
-highlight = "#d5c4a1"
-highlight_bg = "#282828"
-error = "#d5c4a1"
-error_bg = "#fbf1c7"
-statusbar = "#555555"
-statusbar_progress = "#b16286"
-statusbar_bg = "#98971a"
-cmdline = "#d5c4a1"
-cmdline_bg = "#282828"
+# # Spotify
+# [theme]
+# background = "black"
+# primary = "light white"
+# secondary = "light black"
+# title = "green"
+# playing = "green"
+# playing_selected = "light green"
+# playing_bg = "black"
+# highlight = "light white"
+# highlight_bg = "#484848"
+# error = "light white"
+# error_bg = "red"
+# statusbar = "black"
+# statusbar_progress = "green"
+# statusbar_bg = "green"
+# cmdline = "light white"
+# cmdline_bg = "black"
