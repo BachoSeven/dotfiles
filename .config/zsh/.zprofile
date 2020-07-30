@@ -158,6 +158,11 @@ ex=🎯:\
 *.torrent=🔽:\
 *.nix=::\
 "
+
+# Define (dictionary)
+	export MERRIAM_WEBSTER_DICTIONARY_APP_KEY="92e6af34-aa61-46a2-aa83-d0a8193ab41d"
+	export OXFORD_DICTIONARY_APP_ID="5e935885"
+	export OXFORD_DICTIONARY_APP_KEY="7ca1893d75b8ac6013ea5da8bfda251f"
 # Barva
 	export BARVA_BG="#000000"
 	export BARVA_TARGET="#f7999f"

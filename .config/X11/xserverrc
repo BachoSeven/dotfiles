@@ -1,2 +1,3 @@
 #!/bin/sh
-exec /usr/bin/X -nolisten tcp "$@" -keeptty
+# Increase key speed via a rate change
+exec /usr/bin/X -ardelay 300 -arinterval 17 -nolisten tcp "$@" -keeptty
