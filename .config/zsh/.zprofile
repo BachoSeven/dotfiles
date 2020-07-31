@@ -160,7 +160,7 @@ ex=🎯:\
 "
 
 # Stardict/sdcv dictionaries
-	export STARDICT_DATA_DIR=$XDG_DATA_HOME
+	export SDCV_PAGER="less -FX"
 # Barva
 	export BARVA_BG="#000000"
 	export BARVA_TARGET="#f7999f"

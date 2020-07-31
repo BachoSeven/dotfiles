@@ -734,5 +734,27 @@
             "@ArchPackages"
         ],
         "_isTask": false
+    },
+    "66": {
+        "_id": 66,
+        "_date": "Sat Dec 28 2019",
+        "_timestamp": 1577559982827,
+        "description": "Tldr, udict, ddgr for searching stuff",
+        "isStarred": false,
+        "boards": [
+            "@Shortcuts"
+        ],
+        "_isTask": false
+    },
+    "67": {
+        "_id": 67,
+        "_date": "Fri Jan 03 2020",
+        "_timestamp": 1578071343845,
+        "description": "lynx, links2, w3m, define and s are nice web utils",
+        "isStarred": false,
+        "boards": [
+            "@Shortcuts"
+        ],
+        "_isTask": false
     }
 }
