@@ -120,7 +120,6 @@ alias \
 	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias ud='udict'
-	alias def='sdcv'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 	alias spot='st -c ncspot -e ncspot'
 	alias flp='flashplayer'
@@ -132,7 +131,7 @@ alias \
 	alias smi="sudo make clean install"
 
 ## Rice
-	alias ew='lfcd ~/stuff/PersonalWiki/' # Edit wiki
+	alias ew='v ~/stuff/PersonalWiki/' # Edit wiki
 # Dotbare
 	alias d='dotbare'
 	alias dfc='d commit -a'

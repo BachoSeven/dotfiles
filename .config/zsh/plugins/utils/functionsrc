@@ -161,7 +161,24 @@ vinfo() {
 	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
 }
 
-# Update the list of processes by pressing CTRL-R
+def() {
+	sdcv -n --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less -FRX
+}
+synon() {
+	sdcv -n -u "English Thesaurus" --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less -FRX
+}
+
+etym () {
+	sdcv -n -u "English Etymology" --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less -FRX
+}
+
+# ListProcesses - Update the list of processes by pressing CTRL-R
 lps() {
 ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \
 	 --header-lines=1 --layout=reverse

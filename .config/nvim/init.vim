@@ -64,6 +64,7 @@
 	map <leader>k <C-w>k:q<cr>
 	map <leader>l <C-w>l:q<cr>
 	nn c "_c
+	nn x "_x
 " Quick macros
 	nn <silent> Q @q
 	map <C-t>k :tabr<cr>
