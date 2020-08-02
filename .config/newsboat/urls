@@ -5,11 +5,11 @@ https://aur.archlinux.org/rss/
 https://www.archlinux.org/feeds/packages/
 " "
 "---Mathematics---"
-https://math.stackexchange.com/feeds math
-https://polymathprojects.org/feed/ math
-http://www.neverendingbooks.org/feed math
-https://cameroncounts.wordpress.com/feed/ math
-https://gowers.wordpress.com/feed/ math
+https://math.stackexchange.com/feeds
+https://polymathprojects.org/feed/
+http://www.neverendingbooks.org/feed
+https://cameroncounts.wordpress.com/feed/
+https://gowers.wordpress.com/feed/
 " "
 
 "---SOFTWARE---"
@@ -18,6 +18,10 @@ https://www.celsoazevedo.com/files/android/google-camera/dev-feed.xml
 
 "---MISC---"
 https://xkcd.com/rss.xml
+" "
+
+"---MUSIC---"
+https://classicalguitarcomposers.libsyn.com/rss
 " "
 
 "---YT---"

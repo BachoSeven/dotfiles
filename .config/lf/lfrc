@@ -232,7 +232,7 @@ map <c-y> up
 map <c-s> $lf -remote "send $id select $(printf '%q' $(all_files=(./*(ND)); printf '%s\n' ${all_files[@]} | fzf))"	# better asynchronious search
 map <c-g> set globsearch!
 map <c-f> :fzf_jump
-map <c-space> :toggle; up; up ## TODO: remove an "up" after r15 is released to the AUR
+map <c-space> :toggle; up
 
 #			Personal utils
 map <c-a> embed neomutt -a
