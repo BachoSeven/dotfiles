@@ -1,3 +1,5 @@
+Leggilo qui: [Link](https://github.com/BachoSeven/dotfiles/blob/master/notes.md)
+
 # Legenda
 
 ~~ strikethrough=elimina
