@@ -166,13 +166,13 @@ def() {
 	fold --width=$(tput cols) | \
 	less -FRX
 }
-synon() {
+the() {
 	sdcv -n -u "English Thesaurus" --utf8-output --color "$@" 2>&1 | \
 	fold --width=$(tput cols) | \
 	less -FRX
 }
 
-etym () {
+ety() {
 	sdcv -n -u "English Etymology" --utf8-output --color "$@" 2>&1 | \
 	fold --width=$(tput cols) | \
 	less -FRX

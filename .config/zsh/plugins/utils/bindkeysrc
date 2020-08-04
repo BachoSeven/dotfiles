@@ -3,6 +3,12 @@
 	alias -- -='cd -'		# Cd into last dir with "-"
 	bindkey '^[[1;5C' forward-word   # move forward wordwise with ctrl-arrow
 	bindkey '^[[1;5D' backward-word  # move backward wordwise with ctrl-arrow
+# copy current command line to clipboard
+	function clip_cmd() {
+	    echo -nE "$BUFFER" | xclip -sel clip
+	}
+	zle -N clip_cmd
+	bindkey "^X^X" clip_cmd
 # Pick but stay in completion menu
 	bindkey -M menuselect "+" accept-and-menu-complete
 # Do not save these in history:

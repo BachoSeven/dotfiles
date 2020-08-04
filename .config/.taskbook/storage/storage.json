@@ -1,15 +1,4 @@
 {
-    "11": {
-        "_id": 11,
-        "_date": "Sun Oct 27 2019",
-        "_timestamp": 1572210248910,
-        "description": "history, l, md, mdcd, rd, ytmp3 are nice",
-        "isStarred": false,
-        "boards": [
-            "@Shortcuts"
-        ],
-        "_isTask": false
-    },
     "15": {
         "_id": 15,
         "_date": "Fri Nov 29 2019",
@@ -96,20 +85,6 @@
         "inProgress": false,
         "priority": 1
     },
-    "44": {
-        "_id": 44,
-        "_date": "Mon Apr 27 2020",
-        "_timestamp": 1588022386447,
-        "description": "Make ncmpcpp playlists",
-        "isStarred": false,
-        "boards": [
-            "@FreeTime"
-        ],
-        "_isTask": true,
-        "isComplete": false,
-        "inProgress": false,
-        "priority": 1
-    },
     "46": {
         "_id": 46,
         "_date": "Thu Apr 30 2020",
@@ -139,7 +114,7 @@
         "description": "understand how to setup a home server",
         "isStarred": false,
         "boards": [
-            "My Board"
+            "@ToDo"
         ],
         "_isTask": true,
         "isComplete": false,

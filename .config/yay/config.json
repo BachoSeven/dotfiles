@@ -1,7 +1,7 @@
 {
 	"aururl": "https://aur.archlinux.org",
 	"buildDir": "$XDG_CACHE_HOME/yay",
-	"absdir": "$HOME/.cache/yay/abs",
+	"absdir": "$XDG_CACHE_HOME/yay/abs",
 	"editor": "",
 	"editorflags": "",
 	"makepkgbin": "makepkg",
@@ -36,7 +36,7 @@
 	"pgpfetch": true,
 	"upgrademenu": true,
 	"cleanmenu": true,
-	"diffmenu": true,
+	"diffmenu": false,
 	"editmenu": false,
 	"combinedupgrade": false,
 	"useask": false
