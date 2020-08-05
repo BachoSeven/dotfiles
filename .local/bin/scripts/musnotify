@@ -85,4 +85,4 @@ check_mpc_data
 	}
 
 	notify
-	command -v kunst >/dev/null && kunst --silent &
+	[ ! -f /tmp/kunst ] && touch /tmp/kunst && command -v kunst >/dev/null && kunst --silent &

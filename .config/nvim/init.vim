@@ -33,10 +33,6 @@
 	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 
 "" Some mappings
-" Use tab to jump between blocks, because it's easier
-	nno <tab> %
-	vno <tab> %pings and shortcuts
-
 " jk is Esc in insert mode
 	ino jk <Esc>
 
