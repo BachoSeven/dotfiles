@@ -167,7 +167,7 @@ ex=🎯:\
 	export BARVA_FPS=60
 # Kunst
 	export KUNST_SIZE="240x240"
-	export KUNST_POSITION="+1648+816"
+	export KUNST_POSITION="+1656+816"
 	export KUNST_MUSIC_DIR="~/slsk/music"
 # Git
 	export GIT_PS1_SHOWDIRTYSTATE=1

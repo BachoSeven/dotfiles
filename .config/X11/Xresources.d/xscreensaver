@@ -20,3 +20,6 @@ xscreensaver.passwd.thermometer.foreground:  #689d6a
 xscreensaver.passwd.thermometer.background:  #689d6a
 xscreensaver.passwd.thermometer.width:       0
 xscreensaver.dateFormat:    %I:%M%P %b %d
+!fading
+xscreensaver.fade:   false
+xscreensaver.unfade: false
