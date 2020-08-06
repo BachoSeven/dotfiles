@@ -7,6 +7,3 @@
 [submodule ".config/zsh/plugins/fast-syntax-highlighting"]
 	path = .config/zsh/plugins/fast-syntax-highlighting
 	url = git@github.com:BachoSeven/fast-syntax-highlighting.git
-[submodule ".config/brave_plugins/vimium"]
-	path = .config/brave_plugins/vimium
-	url = git@github.com:philc/vimium.git

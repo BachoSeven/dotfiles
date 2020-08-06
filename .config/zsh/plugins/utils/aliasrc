@@ -82,6 +82,8 @@ alias \
 # vim user :)
 	alias :q='exit'
 	alias v="nvim"
+	alias vim="nvim"
+	alias vimdiff="nvim -d"
 	alias nv='v .'
 	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
 # Manuals
@@ -117,7 +119,6 @@ alias \
 	alias jctl='journalctl --pager-end'
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
-	alias slsk='soulseekqt'
 	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias ud='udict'
@@ -130,12 +131,16 @@ alias \
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias mcl='java -jar ~/stuff/games/minecraft/mcTE.jar'
 	alias smi="sudo make clean install"
-
-## Nvidia
-	alias nvidia-settings='nvidia-settings --config ~/.config/nvidia/settings'
+# Soulseek
+	alias slsk='soulseekqt'
+	alias inc='lfcd ~/stuff/slsk/incoming'
 
 ## Rice
 	alias ew='v ~/stuff/PersonalWiki/' # Edit wiki
+	alias mim='v $XDG_CONFIG_HOME/mimi/mime.conf'
+	alias zarc='v $XDG_CONFIG_HOME/zathura/zathurarc'
+	alias bash='/bin/bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'
+	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
 # Dotbare
 	alias d='dotbare'
 	alias dfc='d commit -a'
@@ -149,10 +154,6 @@ alias \
 	alias cff='v $ZDOTDIR/plugins/utils/functionsrc'
 	alias cfp='v $ZDOTDIR/.zprofile'
 	alias cfd='v $XDG_CONFIG_HOME/directories'
-	alias mim='v $XDG_CONFIG_HOME/mimi/mime.conf'
-	alias zarc='v $XDG_CONFIG_HOME/zathura/zathurarc'
-	alias bash='/bin/bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'
-	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
 	alias cfl='v $XDG_CONFIG_HOME/lf/lfrc'
 	alias cfz='v $ZDOTDIR/.zshrc'
 	alias cfzp='v $ZDOTDIR/plugins'
