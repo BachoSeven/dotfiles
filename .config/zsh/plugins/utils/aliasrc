@@ -6,7 +6,7 @@
 # Pacman
 	alias clean='sudo pacman -Rns $(pacman -Qtdq)'
 	alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -50"
-	alias removeTotPkgsAfterInput="rip G -A $1 $2 | cut -d ' ' -f2 | awk '{print $2}' | xargs sudo pacman -Rsc"
+	alias removeTotPkgsAfterInput="rip | grep -A $1 $2 | cut -d ' ' -f2 | awk '{print $2}' | xargs sudo pacman -Rsc"
 	alias browsepac="pacman -Qqe | fzf --preview 'pacman -Qi {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 
 # Enable aliases to be sudo’ed
@@ -98,7 +98,7 @@ alias \
 	alias rscd='find -name "*,*" -type d | perl-rename "s/,/_/g"'
 	alias rscf='find -name "*,*" -type f | perl-rename "s/,/_/g"'
 
-# Various
+## Various
 	sT() { # here for use with dmenu
 		tabbed -c -r 2 st -w id
 	}
@@ -134,6 +134,9 @@ alias \
 # Soulseek
 	alias slsk='soulseekqt'
 	alias inc='lfcd ~/stuff/slsk/incoming'
+# Steam
+	alias tboi='steam steam://rungameid/250900'
+
 
 ## Rice
 	alias ew='v ~/stuff/PersonalWiki/' # Edit wiki
