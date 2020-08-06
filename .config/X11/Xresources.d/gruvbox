@@ -49,11 +49,11 @@ dwm.selfgcolor:		C15
 dwm.selbordercolor:	C6
 dwm.statusbg:		C0
 dwm.statusfg:		C15
-dwm.tagnormbg:		#458488
+dwm.tagnormbg:		C4
 dwm.tagnormfg:		C0
 dwm.tagselbg:		C12
-dwm.tagselfg:		#012321
-dwm.infonormbg:		#458488
+dwm.tagselfg:		C0
+dwm.infonormbg:		C4
 dwm.infonormfg:		BG
 dwm.infoselbg:		C0
 dwm.infoselfg:		C13

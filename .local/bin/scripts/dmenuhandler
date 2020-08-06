@@ -8,7 +8,7 @@ case "$(printf "copy url\\nmpv\\nmpv(loop)\\nqueue download\\n\\nqueue youtube-d
 	"mpv") setsid -f mpv -quiet "$1" >/dev/null 2>&1 ;;
 	"mpv (loop)") setsid -f mpv -quiet --loop "$1" >/dev/null 2>&1 ;;
 	"queue download") tsp curl -LO "$1" >/dev/null 2>&1 ;;
-	"queue youtube-dl") tsp youtube-dl -f 'bestvideo[height<=480]+bestaudio/best[height<=480]' --write-srt --sub-lang en --add-metadata -ic "$1" >/dev/null 2>&1 ;;
+	"queue youtube-dl") tsp youtube-dl -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic "$1" >/dev/null 2>&1 ;;
 	"browser") setsid -f "$BROWSER" "$1" >/dev/null 2>&1 ;;
 	"feh") setsid -f feh "$1" >/dev/null 2>&1 ;;
 	"w3m") w3m "$1" >/dev/null 2>&1 ;;
