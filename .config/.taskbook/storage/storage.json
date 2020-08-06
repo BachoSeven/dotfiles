@@ -96,17 +96,6 @@
         ],
         "_isTask": false
     },
-    "51": {
-        "_id": 51,
-        "_date": "Wed May 13 2020",
-        "_timestamp": 1589325452702,
-        "description": "Gtypist: R3",
-        "isStarred": false,
-        "boards": [
-            "@FreeTime"
-        ],
-        "_isTask": false
-    },
     "52": {
         "_id": 52,
         "_date": "Thu May 14 2020",
@@ -170,17 +159,6 @@
         "_date": "Fri Jul 03 2020",
         "_timestamp": 1593731926887,
         "description": "add creating mount folders to arch setup",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
-    "70": {
-        "_id": 70,
-        "_date": "Sat Jul 04 2020",
-        "_timestamp": 1593892734828,
-        "description": "mailsync is broken because of mbsync config path; alias to fix it",
         "isStarred": false,
         "boards": [
             "@ToDo"
