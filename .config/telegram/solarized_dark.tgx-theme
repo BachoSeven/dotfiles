@@ -1,0 +1,32 @@
+!
+name: "solarized_dark"
+time: 1590452867
+author: "BachoSeven"
+@
+lightStatusBar: 1
+parentTheme: 10
+subtitleAlpha: 0.85
+#
+avatar_content: #FFF
+avatarArchive, avatarBlue, avatarBlue_big, avatarSavedMessages, avatarSavedMessages_big, badge, bubbleIn_textLink, bubbleOut_file, chatListAction, chatListVerify, checkActive, circleButtonRegular, circleButtonTheme, file, fillingPositive, headerButton, iconActive, inlineIcon, inlineOutline, inlineText, inputActive, messageAuthor, messageVerticalLine, playerButtonActive, profileSectionActive, profileSectionActiveContent, seekDone, sliderActive, ticks: #268BD2
+avatarArchivePinned, avatarInactive, avatarInactive_big: #657B83
+avatarCyan, avatarCyan_big, bubbleIn_progress, bubbleOut_messageAuthor, bubbleOut_ticks, bubbleOut_waveformActive, chatSendButton, confettiCyan, controlActive, nameCyan, progress, promo, textNeutral, textSearchQueryHighlight, themeCyan, togglerActive, waveformActive: #2AA198
+avatarOrange, avatarOrange_big, circleButtonNewGroup, iconNegative, nameOrange, textNegative: #CB4B16
+avatarRed, avatarRed_big, circleButtonNegative, fillingNegative: #DC322F
+avatarViolet, avatarViolet_big, nameViolet: #6C71C4
+background, bubbleIn_background, bubbleIn_textLinkPressHighlight, filling, seekReady, togglerActiveBackground: #073642
+bubbleOut_background, chatBackground, fillingPressed, headerBackground, notification, notificationPlayer, passcode, separator: #002B36
+bubbleOut_messageAuthorPsa, messageAuthorPsa: #859900
+bubbleOut_progress, bubbleOut_textLink, bubbleOut_time: #839496
+bubbleOut_waveformInactive, headerBarCallActive, waveformInactive: #93A1A1
+circleButtonNewChannel: #B58900
+headerBarCallIncoming: #6C7
+headerIcon, headerLightIcon, headerLightText, headerTabActive, headerTabActiveText, headerTabInactiveText, headerText, unreadText: #EEE8D5
+headerPickerBackground: #FDF6E3D5
+headerPickerText: #FDF6E3E3
+headerRemoveBackground: #DC322FDF
+headerRemoveBackgroundHighlight: #C13E44F1
+messageSelection: #EEE8D5E4
+online: #849900
+overlayFilling: #14282E
+textLink: #5191C2
