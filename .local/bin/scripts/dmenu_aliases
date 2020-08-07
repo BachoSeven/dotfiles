@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 freq=$XDG_CACHE_HOME/dmenu_history
 aliases=~/.config/zsh/plugins/utils/aliasrc
@@ -29,9 +29,9 @@ cache_deduped=$(grep -vxF "$filter" <<< "$cache")
 cmd="$(echo "$sorted"$'\n'"$cache_deduped" | $dmenucmd)"
 
 # To remove a file from history:
-# Trail the selected item with ;remove
-if [[ $cmd == *";remove" ]]; then
-    cmd=${cmd/;remove/}
+# Trail the selected item with ;rm
+if [[ $cmd == *";rm" ]]; then
+    cmd=${cmd/;rm/}
     grep -vx "$cmd" $freq > temp
     mv temp $freq
     exit 0
@@ -47,8 +47,8 @@ if [[ "$cmd" =~ $regex ]]; then
     dmenucmd='dmenu -i -l 15'
     (sleep .1; xdotool key Tab) &
     cmd="$(echo "$sorted"$'\n'"$cache" | $dmenucmd)"
-    if [[ $cmd == *";remove" ]]; then
-        cmd=${cmd/;remove/}
+    if [[ $cmd == *";rm" ]]; then
+        cmd=${cmd/;rm/}
         grep -Evx "$cmd" $freq > temp
         mv temp $freq
         exit 0

@@ -16,33 +16,6 @@
 	alias vote='ssh aur@aur.archlinux.org vote'
 	alias phc='export TERM=xterm-256color; ssh minnocci@poisson.phc.dm.unipi.it'
 
-# Default to human readable figures and colorize
-	alias df='df --si --print-type'
-	alias du='du --si'
-	alias ls='ls --si --classify --group-directories-first'
-	alias free='free --si'
-	alias l='ls --color -lA'
-	alias rd='rmdir'
-	alias mkdir='mkdir -p --verbose'
-	alias dmesg='dmesg --human'
-	alias history="history -i -34"
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
-	alias grep="grep --color=auto"
-	alias diff="diff --color=auto"
-	alias ip='ip -color=auto'
-	alias ccat="highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force --"
-	alias path='echo $PATH | tr : "\n"'
-
-# Shorter commands
-alias \
-	ka='killall' \
-	g='git' \
-	gca='g commit -a && g push' \
-	glol="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" \
-	trem='transmission-remote' \
-	z='zathura'
-
 ## Backup
 # Elements
 	alias ehdry='rsync -rltv -n --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
@@ -71,6 +44,7 @@ alias \
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias bons="cbonsai -l -b 2 -M 7"
+	alias trem='transmission-remote'
 	alias brave='brave-nightly'
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
 	alias xclip="xclip -sel clip"
@@ -79,24 +53,17 @@ alias \
 	alias mv='mv -v'
 	alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
 	alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
-# vim user :)
-	alias :q='exit'
-	alias v="nvim"
-	alias vim="nvim"
-	alias vimdiff="nvim -d"
-	alias nv='v .'
-	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
 # Manuals
 	alias mman='macho -i'
 	alias info='vinfo'
 
-# Remove spaces, curly+squared brackets and commas
-	alias rsf='find -name "* *" -type f | perl-rename "s/ /_/g"'
-	alias rsd='find -name "* *" -type d | perl-rename "s/ /_/g"'
-	alias rsbd='find -name "*(*)*" -type d | perl-rename "s/\(|\)|\[|\]//g"'
-	alias rsbf='find -name "*(*)*" -type f | perl-rename "s/\(|\)|\[|\]//g"'
-	alias rscd='find -name "*,*" -type d | perl-rename "s/,/_/g"'
-	alias rscf='find -name "*,*" -type f | perl-rename "s/,/_/g"'
+# Remove spaces, curly+squared brackets and commas [buggy; TODO: use `zmv` instead!]
+	# alias rsf='find -name "* *" -type f | perl-rename "s/ /_/g"'
+	# alias rsd='find -name "* *" -type d | perl-rename "s/ /_/g"'
+	# alias rsbd='find -name "*(*)*" -type d | perl-rename "s/\(|\)|\[|\]//g"'
+	# alias rsbf='find -name "*(*)*" -type f | perl-rename "s/\(|\)|\[|\]//g"'
+	# alias rscd='find -name "*,*" -type d | perl-rename "s/,/_/g"'
+	# alias rscf='find -name "*,*" -type f | perl-rename "s/,/_/g"'
 
 ## Various
 	sT() { # here for use with dmenu
@@ -104,9 +71,6 @@ alias \
 	}
 	alias verifygpg='gpg --auto-key-retrieve --verify'
 	alias ncdu="ncdu --si --color dark"
-	alias \
-		locate="lolcate --db mydb" \
-		updb='lolcate --db mydb  --update'
 	alias nmdm='networkmanager_dmenu'
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
@@ -121,11 +85,12 @@ alias \
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
-	alias ud='udict'
+	alias udef='udict'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 	alias spot='st -c ncspot -e ncspot'
 	alias flp='flashplayer'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
+	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=v -vikeys'
 	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
@@ -137,38 +102,32 @@ alias \
 # Steam
 	alias tboi='steam steam://rungameid/250900'
 
-
-## Rice
-	alias ew='v ~/stuff/PersonalWiki/' # Edit wiki
-	alias mim='v $XDG_CONFIG_HOME/mimi/mime.conf'
-	alias zarc='v $XDG_CONFIG_HOME/zathura/zathurarc'
+# cf... shortcuts
+	alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
+	alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
+	alias cfa='nvim $ZDOTDIR/plugins/utils/aliasrc'
+	alias cff='nvim $ZDOTDIR/plugins/utils/functionsrc'
+	alias cfp='nvim $ZDOTDIR/.zprofile'
+	alias cfd='nvim $XDG_CONFIG_HOME/directories'
+	alias cfl='nvim $XDG_CONFIG_HOME/lf/lfrc'
+	alias cfz='nvim $ZDOTDIR/.zshrc'
+	alias cfzp='nvim $ZDOTDIR/plugins'
+	alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
+	alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'
+	alias cfr='nvim $XDG_CONFIG_HOME/X11/Xresources'
+	alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
+	alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
+	alias cfy='nvim $XDG_CONFIG_HOME/subs'
+	alias cfu='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
+	alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
+	alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
+# Rice
+	alias ew='nvim ~/stuff/PersonalWiki/' # Edit wiki
+	alias mim='nvim $XDG_CONFIG_HOME/mimi/mime.conf'
+	alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
 	alias bash='/bin/bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'
 	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
-# Dotbare
-	alias d='dotbare'
-	alias dfc='d commit -a'
-	alias dfp='d push'
-	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
-	alias dupdsub="d submodule foreach git pull origin master"
-# cf... shortcuts
-	alias cfx='v $XDG_CONFIG_HOME/sxiv/exec/key-handler'
-	alias cfs='v $XDG_CONFIG_HOME/ncspot/config.toml'
-	alias cfa='v $ZDOTDIR/plugins/utils/aliasrc'
-	alias cff='v $ZDOTDIR/plugins/utils/functionsrc'
-	alias cfp='v $ZDOTDIR/.zprofile'
-	alias cfd='v $XDG_CONFIG_HOME/directories'
-	alias cfl='v $XDG_CONFIG_HOME/lf/lfrc'
-	alias cfz='v $ZDOTDIR/.zshrc'
-	alias cfzp='v $ZDOTDIR/plugins'
-	alias cfv='v $XDG_CONFIG_HOME/nvim/init.vim'
-	alias cfm='v $XDG_CONFIG_HOME/mutt/muttrc'
-	alias cfr='v $XDG_CONFIG_HOME/X11/Xresources'
-	alias cfmb='v $XDG_CONFIG_HOME/ncmpcpp/bindings'
-	alias cfmc='v $XDG_CONFIG_HOME/ncmpcpp/config'
-	alias cfy='v $XDG_CONFIG_HOME/subs'
-	alias cfu='v ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
-	alias cfn='v ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
-	alias cft='v ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
+	alias za='zathura'
 # Zsh
 	alias zreload='source $ZDOTDIR/.zshrc'
 	alias printopt='printf '%s=%s\n' "${(@kv)options}"' # setopts
@@ -180,8 +139,7 @@ alias \
 	alias dow='lfcd /mnt/01D5707D40B081F0/Users/ascol/Downloads'
 	alias mus='lfcd /mnt/01D5707D40B081F0/Users/ascol/Music'
 	alias pics='lfcd /mnt/01D5707D40B081F0/Users/ascol/Pictures'
-	alias uni='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI'
-	alias u='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi'
+	alias uni='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi'
 	alias ib='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/IB'
 	alias wsp='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/roba!/wsp'
 	alias mthstf='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/mathstuff'
