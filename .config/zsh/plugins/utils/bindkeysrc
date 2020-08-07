@@ -15,7 +15,7 @@
 	bindkey -s '^o' ' lfcd\n'
 	bindkey -s '^g' ' ytop\n'
 	bindkey -s '^v' ' v\n'
-	bindkey -s '^u' ' u\n'
+	bindkey -s '^u' ' uni\n'
 	bindkey -s '^[n' ' neomutt\n'
 	bindkey -s '^s' ' up2date\n'
 	bindkey -s '^y' ' fzfpacinstall\n'
@@ -36,4 +36,40 @@
 		S='| sort'	\
 		N='> /dev/null' \
 		X='|xclip'	\
-		A='|xargs ' # A suffixed space is needed to use aliases
+		A='|xargs '	# A suffixed space is needed to use aliases
+
+## Also these aliases are here since they're too short to be parsed correctly by dmenu_aliases; and are useless for th scope of that script anyways.
+# Default to human readable figures and colorize
+	alias df='df --si --print-type'
+	alias du='du --si'
+	alias ls='ls --si --classify --group-directories-first'
+	alias free='free --si'
+	alias l='ls --color -lA'
+	alias rd='rmdir'
+	alias mkdir='mkdir -p --verbose'
+	alias dmesg='dmesg --human'
+	alias h="history -i -29"
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+	alias grep="grep --color=auto"
+	alias diff="diff --color=auto"
+	alias ip='ip -color=auto'
+	alias ccat="highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force --"
+	alias path='echo $PATH | tr : "\n"'
+# Shorter commands
+	alias \
+	ka='killall' \
+		g='git' \
+		gca='g commit -a && g push' \
+		glol="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
+# Dotbare
+	alias d='dotbare'
+	alias dfc='d commit -a'
+	alias dfp='d push'
+	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
+	alias dupdsub="d submodule foreach git pull origin master"
+# vim user :)
+	alias :q='exit'
+	alias v="nvim"
+	alias vim="nvim"
+	alias vimdiff="nvim -d"

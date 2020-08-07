@@ -32,14 +32,14 @@ dpmsOff:	4:00:00
 grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: False
-imageDirectory:	
+imageDirectory:
 
 mode:		random
 selected:	-1
 
 textMode:	program
 textLiteral:	XScreenSaver
-textFile:	
+textFile:
 textProgram:	nyan
 textURL:	http://feeds.feedburner.com/ubuntu-news
 
@@ -309,4 +309,3 @@ procInterrupts:	True
 xinputExtensionDev: False
 overlayStderr:	True
 authWarningSlack:   20
-
