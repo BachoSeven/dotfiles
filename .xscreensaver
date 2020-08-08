@@ -1,47 +1,4 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.44 for fra on Tue Jun  9 15:01:30 2020.
-# https://www.jwz.org/xscreensaver/
-
-timeout:	0:20:00
-cycle:		0:02:00
-lock:		True
-lockTimeout:	0:20:00
-passwdTimeout:	0:00:30
-visualID:	default
-installColormap:    True
-verbose:	False
-timestamp:	True
-splash:		False
-splashDuration:	0:00:05
-demoCommand:	xscreensaver-demo
-prefsCommand:	xscreensaver-demo -prefs
-nice:		10
-memoryLimit:	0
-fade:		True
-unfade:		False
-fadeSeconds:	0:00:01
-fadeTicks:	20
-captureStderr:	True
-ignoreUninstalledPrograms:False
-font:		*-medium-r-*-140-*-m-*
-dpmsEnabled:	True
-dpmsQuickOff:	False
-dpmsStandby:	2:00:00
-dpmsSuspend:	2:00:00
-dpmsOff:	4:00:00
-grabDesktopImages:  True
-grabVideoFrames:    False
-chooseRandomImages: False
-imageDirectory:
-
-mode:		random
-selected:	-1
-
-textMode:	program
-textLiteral:	XScreenSaver
-textFile:
-textProgram:	nyan
-textURL:	http://feeds.feedburner.com/ubuntu-news
 
 programs:								      \
 				maze -root -pre-delay 2727273 -post-delay     \
@@ -298,14 +255,3 @@ programs:								      \
   GL: 				gravitywell -root			    \n\
   GL: 				etruscanvenus -root			    \n\
   GL: 				gibson -root				    \n\
-
-
-pointerPollTime:    0:00:05
-pointerHysteresis:  10
-windowCreationTimeout:0:00:30
-initialDelay:	0:00:00
-GetViewPortIsFullOfLies:False
-procInterrupts:	True
-xinputExtensionDev: False
-overlayStderr:	True
-authWarningSlack:   20
