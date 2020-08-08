@@ -1,25 +1,147 @@
-!# vim: ft=xdefaults
-
 !! Xscreensaver
 !general dialog box (affects main hostname, username, password text)
-xscreensaver.splash: false
 xscreensaver.Dialog.foreground:         #b8bb26
 xscreensaver.Dialog.background:         #1d2021
-xscreensaver.Dialog.topShadowColor:     #1d2021
-xscreensaver.Dialog.bottomShadowColor:  #1d2021
+xscreensaver.Dialog.topShadowColor:     #fdf6e3
+xscreensaver.Dialog.bottomShadowColor:  #ebdbb2
 xscreensaver.Dialog.Button.foreground:  #1d2021
 xscreensaver.Dialog.Button.background:  #689d6a
+*Dialog.Button.pointBackground: #ebdbb2
+*Dialog.Button.clickBackground: #a89984
+
 !username/password input box and date text colour
 xscreensaver.Dialog.text.foreground:    #689d6a
 xscreensaver.Dialog.text.background:    #ebdbb2
-xscreensaver.Dialog.internalBorderWidth:36
-xscreensaver.Dialog.borderWidth:        0
+xscreensaver.Dialog.internalBorderWidth: 17
+xscreensaver.Dialog.borderWidth:        7
 xscreensaver.Dialog.shadowThickness:    2
-!timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #689d6a
-xscreensaver.passwd.thermometer.background:  #689d6a
-xscreensaver.passwd.thermometer.width:       0
-xscreensaver.dateFormat:    %I:%M%P %b %d
-!fading
-xscreensaver.fade:   false
-xscreensaver.unfade: false
+
+! Fading
+xscreensaver.fade:   False
+xscreensaver.unfade: False
+
+! Logo
+xscreensaver.Dialog.logo.width: 50
+xscreensaver.Dialog.logo.height: 50
+
+! Misc definitions
+xscreensaver.newLoginCommand:
+xscreensaver.installColormap: True
+xscreensaver.pointerPollTime: 0:00:05
+xscreensaver.pointerHysteresis: 10
+xscreensaver.initialDelay: 0:00:00
+xscreensaver.windowCreationTimeout: 0:00:30
+xscreensaver.bourneShell: /bin/sh
+
+! Password field characteristics
+xscreensaver.passwd.heading.label: XScreenSaver %s
+xscreensaver.passwd.body.label: Locked
+xscreensaver.passwd.unlock.label: OK
+xscreensaver.passwd.login.label:
+xscreensaver.passwd.user.label: user:
+xscreensaver.passwd.thermometer.width: 8
+xscreensaver.passwd.asterisks: True
+xscreensaver.passwd.uname: True
+
+! timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #add8e6
+xscreensaver.passwd.thermometer.background:  #282828
+
+! Splash window
+xscreensaver.splash.heading.label: XScreenSaver %s
+xscreensaver.splash.body.label: Copyright © 1991-2013 by
+xscreensaver.splash.body2.label: Jamie Zawinski <jwz@jwz.org>
+xscreensaver.splash.demo.label: Settings
+xscreensaver.splash.help.label: Help
+
+! Xscreensaver+dpms behaviour
+xscreensaver.mode: random
+xscreensaver.selected:	-1
+xscreensaver.timeout: 0:10:00
+xscreensaver.cycle: 0:10:00
+xscreensaver.lockTimeout: 0:00:00
+xscreensaver.passwdTimeout: 0:00:30
+xscreensaver.dpmsEnabled: False
+xscreensaver.dpmsQuickoffEnabled: False
+xscreensaver.dpmsStandby: 2:00:00
+xscreensaver.dpmsSuspend: 2:00:00
+xscreensaver.dpmsOff: 4:00:00
+xscreensaver.grabDesktopImages: True
+xscreensaver.grabVideoFrames: False
+xscreensaver.chooseRandomImages: True
+
+! This can be a local directory name, or the URL of an RSS or Atom feed.
+xscreensaver.imageDirectory: ~/pics/papes/vibrant
+xscreensaver.nice: 10
+xscreensaver.memoryLimit: 0
+xscreensaver.lock: False
+xscreensaver.verbose: False
+xscreensaver.timestamp: True
+xscreensaver.fadeSeconds: 0:00:03
+xscreensaver.fadeTicks: 20
+xscreensaver.splash: False
+xscreensaver.splashDuration: 0:00:05
+xscreensaver.visualID: default
+xscreensaver.captureStderr: True
+xscreensaver.ignoreUninstalledPrograms: False
+
+! Text options
+xscreensaver.textMode: file
+xscreensaver.textLiteral: XScreenSaver
+xscreensaver.textFile:
+xscreensaver.textProgram: nyan
+xscreensaver.textURL: http://en.wikipedia.org/w/index.php?title=Special:NewPages&feed=rss
+
+! Overlay settings
+xscreensaver.overlayTextForeground: #fabd2f
+xscreensaver.overlayTextBackground: #282828
+xscreensaver.overlayStderr: True
+xscreensaver.font: *-medium-r-*-150-*-m-*
+xscreensaver.autWarningSlack:	20
+
+! The default is to use these extensions if available (as noted.)
+xscreensaver.sgiSaverExtension: True
+xscreensaver.xidleExtension: True
+xscreensaver.procInterrupts: True
+
+! Turning this on makes pointerHysteresis not work.
+xscreensaver.xinputExtensionDev: False
+
+! Set this to True if you are experiencing longstanding XFree86 bug #421
+! (xscreensaver not covering the whole screen)
+xscreensaver.GetViewPortIsFullOfLies: False
+
+! This is what the "Demo" button on the splash screen runs (/bin/sh syntax.)
+xscreensaver.demoCommand: xscreensaver-demo
+
+! This is what the "Prefs" button on the splash screen runs (/bin/sh syntax.)
+xscreensaver.prefsCommand: xscreensaver-demo -prefs
+
+! This is the URL loaded by the "Help" button on the splash screen,
+! and by the "Documentation" menu item in xscreensaver-demo.
+xscreensaver.helpURL: http://www.jwz.org/xscreensaver/man.html
+
+! loadURL       -- how the "Help" buttons load the helpURL (/bin/sh syntax.)
+xscreensaver.loadURL: $BROWSER '%s'
+
+! manualCommand -- how the "Documentation" buttons display man pages.
+xscreensaver.manualCommand: st -T '%s manual' -e /bin/sh -c 'man "%s" ; read foo'
+
+! The format used for printing the date and time in the password dialog box
+! To show the time only:  %I:%M %p
+! For 24 hour time: %H:%M
+xscreensaver.dateFormat: %d-%b-%y (%a); %I:%M %p
+
+! Resources for the password and splash-screen dialog boxes of
+! the "xscreensaver" daemon.
+xscreensaver.Dialog.headingFont:*-medium-r-*-190-*-m-*
+xscreensaver.Dialog.bodyFont:*-medium-r-*-150-*-m-*
+xscreensaver.Dialog.labelFont:*-bold-r-*-150-*-m-*
+xscreensaver.Dialog.unameFont:*-bold-r-*-130-*-m-*
+xscreensaver.Dialog.buttonFont:*-bold-r-*-150-*-m-*
+xscreensaver.Dialog.dateFont:*-medium-r-*-190-*-m-*
+
+! Helvetica asterisks look terrible.
+xscreensaver.passwd.passwdFont: *-courier-medium-r-*-*-*-150-*-*-*-iso8859-1
+
+!# vim: ft=xdefaults

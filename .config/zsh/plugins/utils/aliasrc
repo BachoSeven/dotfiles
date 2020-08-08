@@ -96,7 +96,7 @@
 	alias smi="sudo make clean install"
 # Soulseek
 	alias slsk='soulseekqt'
-	alias inc='lfcd ~/stuff/slsk/incoming'
+	alias inc='lfcd ~/slsk/incoming'
 # Steam
 	alias tboi='steam steam://rungameid/250900'
 
