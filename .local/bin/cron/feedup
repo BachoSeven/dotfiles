@@ -3,7 +3,7 @@
 # Set as a cron job to check for new RSS entries for newsboat.
 # If newsboat is open, sends it an "R" key to refresh.
 
-ping -q -c 1 example.org > /dev/null || exit
+ping -q -c 1 example.org >/dev/null || exit
 
 /usr/bin/notify-send "📰 Updating RSS feeds..."
 
@@ -12,7 +12,7 @@ pgrep -f newsboat$ && /usr/bin/xdotool key --window "$(/usr/bin/xdotool search -
 echo 🔃 > /tmp/newsupdate
 pkill -RTMIN+6 "${STATUSBAR:-dwmblocks}"
 /usr/bin/newsboat -x reload
-/usr/local/bin/subs -u
+/usr/local/bin/subs -u >/dev/null
 rm -f /tmp/newsupdate
 pkill -RTMIN+6 "${STATUSBAR:-dwmblocks}"
 /usr/bin/notify-send "📰 RSS feed update complete."
