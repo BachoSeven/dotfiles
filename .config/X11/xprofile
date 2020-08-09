@@ -6,8 +6,8 @@
 
 # Screensaver
 	xset s 600
-	xscreensaver -no-splash &
-	# xss-lock -- /usr/local/bin/slock &
+	# xscreensaver -no-splash &
+	xss-lock -- /usr/local/bin/slock &
 
 # Utils
 	xrdb -load ~/.config/X11/Xresources

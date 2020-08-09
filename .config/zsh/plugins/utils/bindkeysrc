@@ -61,12 +61,12 @@
 	ka='killall' \
 		g='git' \
 		gca='g commit -a && g push' \
-		glol="git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
+		glol="git -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
 # Dotbare
 	alias d='dotbare'
 	alias dfc='d commit -a'
 	alias dfp='d push'
-	alias dlol="d log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
+	alias dlol="d -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" ## Use fzf as a git pager for this.
 	alias dupdsub="d submodule foreach git pull origin master"
 # vim user :)
 	alias :q='exit'
