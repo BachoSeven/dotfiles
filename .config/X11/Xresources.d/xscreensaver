@@ -12,8 +12,8 @@ xscreensaver.Dialog.Button.background:  #689d6a
 !username/password input box and date text colour
 xscreensaver.Dialog.text.foreground:    #689d6a
 xscreensaver.Dialog.text.background:    #ebdbb2
-xscreensaver.Dialog.internalBorderWidth: 17
-xscreensaver.Dialog.borderWidth:        7
+xscreensaver.Dialog.internalBorderWidth: 44
+xscreensaver.Dialog.borderWidth:        0
 xscreensaver.Dialog.shadowThickness:    2
 
 ! Fading
@@ -96,7 +96,7 @@ xscreensaver.textURL: http://en.wikipedia.org/w/index.php?title=Special:NewPages
 xscreensaver.overlayTextForeground: #fabd2f
 xscreensaver.overlayTextBackground: #282828
 xscreensaver.overlayStderr: True
-xscreensaver.font: *-medium-r-*-150-*-m-*
+xscreensaver.font: *-medium-r-*-160-*-m-*
 xscreensaver.autWarningSlack:	20
 
 ! The default is to use these extensions if available (as noted.)
@@ -134,14 +134,14 @@ xscreensaver.dateFormat: %d-%b-%y (%a); %I:%M %p
 
 ! Resources for the password and splash-screen dialog boxes of
 ! the "xscreensaver" daemon.
-xscreensaver.Dialog.headingFont:*-medium-r-*-190-*-m-*
-xscreensaver.Dialog.bodyFont:*-medium-r-*-150-*-m-*
-xscreensaver.Dialog.labelFont:*-bold-r-*-150-*-m-*
-xscreensaver.Dialog.unameFont:*-bold-r-*-130-*-m-*
-xscreensaver.Dialog.buttonFont:*-bold-r-*-150-*-m-*
-xscreensaver.Dialog.dateFont:*-medium-r-*-190-*-m-*
+xscreensaver.Dialog.headingFont:*-medium-r-*-200-*-m-*
+xscreensaver.Dialog.bodyFont:*-medium-r-*-160-*-m-*
+xscreensaver.Dialog.labelFont:*-bold-r-*-160-*-m-*
+xscreensaver.Dialog.unameFont:*-bold-r-*-140-*-m-*
+xscreensaver.Dialog.buttonFont:*-bold-r-*-160-*-m-*
+xscreensaver.Dialog.dateFont:*-medium-r-*-200-*-m-*
 
 ! Helvetica asterisks look terrible.
-xscreensaver.passwd.passwdFont: *-courier-medium-r-*-*-*-150-*-*-*-iso8859-1
+xscreensaver.passwd.passwdFont: *-courier-medium-r-*-*-*-160-*-*-*-iso8859-1
 
 !# vim: ft=xdefaults

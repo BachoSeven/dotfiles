@@ -1,19 +1,22 @@
 #!/bin/sh
 
-dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS 2>/dev/null
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
+# Useful misc
+	dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS 2>/dev/null
+	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
-# xscreensaver -no-splash &
-xset s 600
-xss-lock -- /usr/local/bin/slock &
+# Screensaver
+	xset s 600
+	xscreensaver -no-splash &
+	# xss-lock -- /usr/local/bin/slock &
 
-xrdb -load ~/.config/X11/Xresources
-[ -f ~/.cache/wal/active ] && wal -R || setbg & # Dirty trick to check if pywal was on at shutdown
-transmission-daemon &		# Bittorrent daemon
-mconnect 2>/dev/null &		# Autoconnect to Android
-copyq &				# Clipboard management
-redshift &			# Color temperature
-picom &				# Compositor
-dunst &				# Notifications
-unclutter &			# Remove mouse when idle
-remaps				# Switch caps/super and one-tap_caps/esc
+# Utils
+	xrdb -load ~/.config/X11/Xresources
+	[ -f ~/.cache/wal/active ] && wal -R || setbg & # Dirty trick to check if pywal was on at shutdown
+	transmission-daemon &		# Bittorrent daemon
+	mconnect 2>/dev/null &		# Autoconnect to Android
+	copyq &				# Clipboard management
+	redshift &			# Color temperature
+	picom &				# Compositor
+	dunst &				# Notifications
+	unclutter &			# Remove mouse when idle
+	remaps				# Switch caps/super and one-tap_caps/esc
