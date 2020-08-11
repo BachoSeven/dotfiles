@@ -25,7 +25,7 @@
         "_id": 24,
         "_date": "Fri Jan 31 2020",
         "_timestamp": 1580470148910,
-        "description": "nmcli WIFI (c LIST, d wifi list SCAN) or ifconfig -a",
+        "description": " nmcli: c[onnections], { d[evice] w[ifi] (l[ist] s[can]) } ",
         "isStarred": false,
         "boards": [
             "@Shortcuts"
@@ -181,6 +181,17 @@
         "_date": "Sun Jul 26 2020",
         "_timestamp": 1595756798538,
         "description": "https://github.com/mika/zsh-pony\\#replace-spaces-in-filenames-with-a-underline: remove perl-renametb G perl! we have zmv ;)",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "101": {
+        "_id": 101,
+        "_date": "Tue Aug 11 2020",
+        "_timestamp": 1597155019045,
+        "description": "add tg to wal theme generation",
         "isStarred": false,
         "boards": [
             "@ToDo"
