@@ -3,7 +3,7 @@
 # Stolen from https://github.com/agnipau/bin/blob/master/ocr
 #
 # Depends: maim, tesseract, xsel
-
+ifinstalled tesseract || exit
 tmpfile_in="$(mktemp -u).png"
 tmpfile_out="$(mktemp -u)"
 maim -s "${tmpfile_in}"
