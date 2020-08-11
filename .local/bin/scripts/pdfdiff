@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Dependencies: imagemagick, pdftk, ghostscript, md5sum, perl-rename
+
+# Initial setup
+mkdir tmp1 tmp2 out
+
+# Split pdfs
+	pdftk $1 burst output tmp1/%03d.pdf
+
+	cd tmp1
+	rm doc_data.txt
+	# Extract number of pages, which is assumed to be the same for both PDF
+	num=$(ls | paste -d " " | cut -d. -f 1 | sort | head -100 | tail -1 | sed -e 's/^[0]*//g')
+	perl-rename -v 's/^[0]*//' *
+	cd ..
+
+	pdftk $2 burst output tmp2/%03d.pdf
+
+	cd tmp2
+	rm doc_data.txt
+	perl-rename -v 's/^[0]*//' *
+	cd ..
+
+for (( i=1; i<=${num}; i++ ))
+do
+	# Compare page by page
+	## NOTE that one probably needs to comment the following line in /etc/ImageMagick-7/policy.xml in order for this to work:
+	##
+	##			<!-- <policy domain="delegate" rights="none" pattern="gs" /> -->
+	##
+	compare \
+	       -verbose \
+	       -debug coder \
+	       -log "%u %m:%l %e" \
+		tmp1/$i.pdf \
+		tmp2/$i.pdf \
+	       -compose src \
+		out/$i.pdf
+
+	size=$(identify \
+		   -format "%[fx:(w)]x%[fx:(h)]" \
+		   out/$i.pdf)
+
+	# Strip metadata from comparisons;
+	gs \
+	   -o out/$i.ppm \
+	   -sDEVICE=ppmraw \
+	   -r72 \
+	   -g${size} \
+	    out/$i.pdf
+	gs \
+	  -o out/$i_white.ppm \
+	  -sDEVICE=ppmraw \
+	  -r72 \
+	  -g${size} \
+	  -c "showpage"
+
+	# Check mdsums for white pdfs
+	MD5_1=$(md5sum out/$i.ppm | awk '{print $1}')
+	MD5_2=$(md5sum out/$i_white.ppm | awk '{print $1}')
+
+	if [ "x${MD5_1}" == "x${MD5_2}" ]; then
+	    rm
+	    rm  \
+	      out/$i.pdf \	# Remove all-white PDF
+	      out/$i_*.ppm	# Remove both PPMs
+
+	fi
+done
+
+# Cleanup
+pdftk out/*.pdf cat output pdfdiff.pdf verbose
+rm -rf out tmp1 tmp2

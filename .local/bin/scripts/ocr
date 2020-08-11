@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Stolen from https://github.com/agnipau/bin/blob/master/ocr
+#
+# Depends: maim, tesseract, xsel
+
+tmpfile_in="$(mktemp -u).png"
+tmpfile_out="$(mktemp -u)"
+maim -s "${tmpfile_in}"
+tesseract "${tmpfile_in}" "${tmpfile_out}"
+xsel -ib <"${tmpfile_out}.txt"
+rm "${tmpfile_in}" "${tmpfile_out}.txt"
