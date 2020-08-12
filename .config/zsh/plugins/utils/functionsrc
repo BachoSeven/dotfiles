@@ -28,7 +28,7 @@ src_update() {
 	for dir in $dirs; do
 		git -C "$dir" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
 		printf '%s: ' "$dir:t"
-		git -C "$dir" remote -v | grep -q upstream && { git -C "$dir" fetch upstream || printf '%s: Could not fetch upstream...\n' "$dir:t" }
+		[ "$(($(git -C "$dir" remote | wc -l) > 1))" = "1" ] && { git -C "$dir" fetch --all || printf '%s: Could not fetch upstream...\n' "$dir:t" }
 		git -C "$dir" pull 2>/dev/null || echo "Unable to upgrade."
 	done
 }
@@ -168,6 +168,11 @@ vinfo() {
 
 def() {
 	sdcv -n --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less -FRX
+}
+ita() {
+	sdcv -n -u "vocabolario" --utf8-output --color "$@" 2>&1 | \
 	fold --width=$(tput cols) | \
 	less -FRX
 }

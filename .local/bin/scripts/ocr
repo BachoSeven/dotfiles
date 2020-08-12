@@ -1,12 +1,17 @@
 #!/bin/sh
 
-# Stolen from https://github.com/agnipau/bin/blob/master/ocr
-#
-# Depends: maim, tesseract, xsel
+##	Stolen from https://github.com/agnipau/bin/blob/master/ocr
+##
+##	Depends: maim, tesseract, xsel
+
+# Setup
+lang=eng
+[ -n "$1" ] && lang="$1"
 ifinstalled tesseract || exit
+
 tmpfile_in="$(mktemp -u).png"
 tmpfile_out="$(mktemp -u)"
 maim -s "${tmpfile_in}"
-tesseract "${tmpfile_in}" "${tmpfile_out}"
+tesseract -l $lang "${tmpfile_in}" "${tmpfile_out}"
 xsel -ib <"${tmpfile_out}.txt"
 rm "${tmpfile_in}" "${tmpfile_out}.txt"
