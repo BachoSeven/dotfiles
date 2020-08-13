@@ -32,7 +32,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 ## Eye-candy
 - I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, copyq, all suckless config and anywhere else (although I tried to keep a commented solarized alternative where I could for nostalgia).
 - I also use `pywal` now and then, you will find various attempts at integrating it with other programs across this repo
-- The compositor is `picom`
+- The compositor is `picom` ([picom-ibhagwan-git](https://aur.archlinux.org/packages/picom-ibhagwan-git/) fork)
 - Icons are Joypixels ([ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/))
 - The default gtk 2/3 theme is [Gruvbox-Dark](https://github.com/jmattheis/gruvbox-dark-gtk)
 - My font is `Hack Nerd Font`
