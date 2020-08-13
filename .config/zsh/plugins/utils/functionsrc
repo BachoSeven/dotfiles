@@ -172,7 +172,7 @@ def() {
 	less -FRX
 }
 ita() {
-	sdcv -n -u "vocabolario" --utf8-output --color "$@" 2>&1 | \
+	sdcv -n --data-dir "$XDG_DATA_HOME/stardict/ita" -u "vocabolario" --utf8-output --color "$@" 2>&1 | \
 	fold --width=$(tput cols) | \
 	less -FRX
 }
@@ -184,6 +184,16 @@ the() {
 
 ety() {
 	sdcv -n -u "English Etymology" --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less -FRX
+}
+turkeng() {
+	sdcv -n --data-dir "$XDG_DATA_HOME/stardict/turk" -u "Turkish - English" --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less -FRX
+}
+engturk() {
+	sdcv -n --data-dir "$XDG_DATA_HOME/stardict/turk" -u "english-turkish" --utf8-output --color "$@" 2>&1 | \
 	fold --width=$(tput cols) | \
 	less -FRX
 }
