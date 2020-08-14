@@ -64,7 +64,7 @@ dirs=(
 	~/slsk/programs/AP2_QMK/AnnePro2-Tools
 )
 up2date() {
-	_run yay -Syu
+	_run yay
 	_run nvim +PlugUpdate +quitall
 	_run pipx upgrade-all
 	_run zsh_update_plugins
