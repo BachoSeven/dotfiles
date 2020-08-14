@@ -110,17 +110,6 @@
         "inProgress": false,
         "priority": 1
     },
-    "53": {
-        "_id": 53,
-        "_date": "Fri Jun 19 2020",
-        "_timestamp": 1592523650859,
-        "description": "post to AUR mimi fork ",
-        "isStarred": false,
-        "boards": [
-            "@FreeTime"
-        ],
-        "_isTask": false
-    },
     "60": {
         "_id": 60,
         "_date": "Wed Jul 01 2020",

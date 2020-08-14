@@ -1,0 +1,8 @@
+text/plain; $EDITOR %s ;
+text/html; openfile %s ; nametemplate=%s.html
+text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -stdin -force_html %s; nametemplate=%s.html; copiousoutput;
+image/*; openfile %s ;
+video/*; setsid mpv --quiet %s &; copiousoutput
+application/pdf; openfile %s ;
+application/pgp-encrypted; gpg -d '%s'; copiousoutput;
+application/pgp-keys; gpg --import '%s'; copiousoutput;
