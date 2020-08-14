@@ -814,5 +814,16 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "73": {
+        "_id": 73,
+        "_date": "Fri Jun 19 2020",
+        "_timestamp": 1592523650859,
+        "description": "post to AUR mimi fork ",
+        "isStarred": false,
+        "boards": [
+            "@FreeTime"
+        ],
+        "_isTask": false
     }
 }
