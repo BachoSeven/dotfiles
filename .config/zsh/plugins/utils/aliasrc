@@ -119,7 +119,7 @@
 	alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
 # Rice
 	alias ew='nvim ~/stuff/PersonalWiki/' # Edit wiki
-	alias mim='nvim $XDG_CONFIG_HOME/mimi/mime.conf'
+	alias mim='nvim $XDG_CONFIG_HOME/mimi/mimi.conf'
 	alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
 	alias bash='/bin/bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'
 	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
