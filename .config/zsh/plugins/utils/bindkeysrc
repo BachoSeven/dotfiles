@@ -20,6 +20,7 @@
 	bindkey -s '^s' ' up2date\n'
 	bindkey -s '^y' ' fzfpacinstall\n'
 	bindkey -s '^q' ' browsepac\n'
+	bindkey -s '^f' ' fzf\n'
 
 # Space does history expansion (e.g., !1<space> becomes the last command input in the history)
 	bindkey ' ' magic-space
@@ -36,7 +37,7 @@
 		S='| sort'	\
 		N='> /dev/null' \
 		X='|xclip'	\
-		A='|xargs '	# A suffixed space is needed to use aliases
+		A='|xargs -r '	# A suffixed space is needed to use aliases
 
 ## Also these aliases are here since they're too short to be parsed correctly by dmenu_aliases; and are useless for th scope of that script anyways.
 # Default to human readable figures and colorize
