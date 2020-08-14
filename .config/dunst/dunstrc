@@ -33,7 +33,7 @@
     # Sort messages by urgency.
     sort = yes
     idle_threshold = 120
-    font = "Monospace,JoyPixels" 10
+    font = Monospace 12
     line_height = 0
     markup = full
     # The format of the message.  Possible variables are:
@@ -119,7 +119,7 @@
     # sort = yes
     # #
     # idle_threshold = 120
-    # font = "Monospace,JoyPixels" 10
+    # font = Monospace 12
     # line_height = 0
     # markup = full
     # # The format of the message.  Possible variables are:
