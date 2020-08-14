@@ -6,7 +6,6 @@
 # Pacman
 	alias clean='sudo pacman -Rns $(pacman -Qtdq)'
 	alias browsepac="pacman -Qqe | fzf --preview 'pacman -Qi {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
-	alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -50"
 # Enable aliases to be sudo’ed
 	alias sudo='sudo '
 

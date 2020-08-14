@@ -3,6 +3,10 @@
 # Some of this was stolen, amongst others, from https://github.com/SmartFinn/dotfiles. Thanks!
 
 # Pacman
+rip() {
+	[ -z "$1" ] && num="50" || num="$1"
+	expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -n $num
+}
 removeTotPkgsAfterInput() {
 	expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -50 | grep -A $1 $2 | cut -d ' ' -f2 | awk '{print $2}' | xargs sudo pacman -Rsc --noconfirm
 }
