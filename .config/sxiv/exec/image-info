@@ -18,4 +18,4 @@ tags=${tags%,}
 
 timestamp="$(exiv2 -g Exif.Image.DateTime -Pv "$1")"
 
-echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}${s}${timestamp:+${s}${timestamp}}"
+echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}${timestamp:+${s}${timestamp}}"
