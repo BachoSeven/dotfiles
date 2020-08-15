@@ -50,11 +50,11 @@
 	alias mkdir='mkdir -p --verbose'
 	alias dmesg='dmesg --human'
 	alias h="history -i -29"
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
-	alias grep="grep --color=auto"
-	alias diff="diff --color=auto"
-	alias ip='ip -color=auto'
+	alias fgrep='fgrep --color=always'
+	alias egrep='egrep --color=always'
+	alias grep="grep --color=always"
+	alias diff="diff --color=always"
+	alias ip='ip -color=always'
 	alias ccat="highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force --"
 	alias path='echo $PATH | tr : "\n"'
 # Shorter commands
@@ -62,12 +62,15 @@
 	ka='killall' \
 		g='git' \
 		gca='g commit -a && g push' \
-		glol="git -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
+		# GIT_PAGER='fzf --ansi --bind \'F1:cosa complicata per vedere la roba di quella commit con sed + less (?)\' '
+		glol="GIT_PAGER='fzf --ansi' \
+		git -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
 # Dotbare
 	alias d='dotbare'
 	alias dfc='d commit -a'
 	alias dfp='d push'
-	alias dlol="d -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" ## Use fzf as a git pager for this.
+	alias dlol="GIT_PAGER='fzf --ansi' \
+	d -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" ## Use fzf as a git pager for this.
 	alias dupdsub="d submodule foreach git pull origin master"
 # vim user :)
 	alias :q='exit'

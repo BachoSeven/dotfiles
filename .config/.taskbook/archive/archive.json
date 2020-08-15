@@ -825,5 +825,16 @@
             "@FreeTime"
         ],
         "_isTask": false
+    },
+    "74": {
+        "_id": 74,
+        "_date": "Sun Jul 26 2020",
+        "_timestamp": 1595756798538,
+        "description": "https://github.com/mika/zsh-pony\\#replace-spaces-in-filenames-with-a-underline: remove perl-renametb G perl! we have zmv ;)",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }

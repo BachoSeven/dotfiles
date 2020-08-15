@@ -1,7 +1,6 @@
 [core]
 	editor = nvim
-	pager = fzf --ansi
-	; pager = fzf --ansi --bind 'F1:cosa complicata per vedere la roba di quella commit con sed + less (?)'
+	pager = less -FR
 [user]
 	name = Francesco Minnocci
 	email = ad17fmin@uwcad.it
