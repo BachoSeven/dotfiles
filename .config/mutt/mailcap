@@ -1,7 +1,6 @@
 text/plain; $EDITOR %s ;
-## FIX
-text/html; readable -q %s | lynx -assume_charset=%{charset} -display_charset=utf-8 -stdin -force_html; copiousoutput;
 text/html; openfile %s ; nametemplate=%s.html
+text/html; readable -ql force %s | w3m -I %{charset} -T text/html; copiousoutput;
 image/*; openfile %s ;
 video/*; setsid mpv --quiet %s &; copiousoutput
 application/pdf; openfile %s ;

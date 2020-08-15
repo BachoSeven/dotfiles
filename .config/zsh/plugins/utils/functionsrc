@@ -55,16 +55,15 @@ _run() {
 aurpublish() {
 	PKG="$1"
 	_run git clone ssh://aur@aur.archlinux.org/"$PKG".git; cp PKGBUILD $PKG; cd $PKG
-	_run yay -S namcap && namcap PKGBUILD; yay -R namcap
+	_run yay -S namcap && namcap PKGBUILD; yay -Rs namcap
 	_run makepkg -s && makepkg --printsrcinfo > .SRCINFO; echo "*" > .gitignore
 	_run git add -f PKGBUILD .SRCINFO && git commit -m "Initial AUR package commit" && git push
 }
 aurupdate() {
 	PKG="$1"
-	yay -S namcap && namcap PKGBUILD && yay -R namcap
-	makepkg -s && echo "*" > .gitignore && makepkg --printsrcinfo > .SRCINFO &&
-	git add -f PKGBUILD .SRCINFO
-	git commit -m "Initial AUR package commit"
+	yay -S namcap && namcap PKGBUILD && yay -Rs namcap
+	makepkg -fs && makepkg --printsrcinfo > .SRCINFO &&
+	git commit -a
 	git push
 }
 

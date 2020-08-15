@@ -95,7 +95,7 @@
 	export LESS_TERMCAP_se="$(printf '%b' '[0m')"        # end standout-mode
 	export LESSOPEN='| LESSQUIET=1 lesspipe.sh %s'
 	export LESSCOLORIZER='pygmentize'
-	export LESS='-iR'
+	export LESS='-iRX'
 export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
