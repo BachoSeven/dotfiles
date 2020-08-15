@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/zsh
 # dmoji - dmenu based emoji picker
 
 # GNU cut doesn't grok UTF-8.
-EMOJI=$(sed '1,/^exit/d' $0 | dmenu -i -l 10 -fn Symbola:size=20 | /usr/bin/grep -Po '^[^ ]*')
-if [ "$EMOJI" ]; then
-	printf %s "$EMOJI" | xclip -i
+EMOJI=$(sed '1,/^exit/d' $0 | dmenu -i -l 10 -fn monospace:size=20 | /usr/bin/grep -Po '^[^ ]*')
+if [ -n "$EMOJI" ]; then
+	printf '%s' "$EMOJI" | copyq copy -
 	sleep 0.1
 	xdotool click 2
 	exit $?
