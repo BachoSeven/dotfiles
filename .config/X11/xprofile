@@ -5,8 +5,6 @@
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
 # Screensaver
-	xset s 600
-	# xscreensaver -no-splash &
 	xss-lock -- /usr/local/bin/slock &
 
 # Utils

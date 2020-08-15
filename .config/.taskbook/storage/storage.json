@@ -125,7 +125,7 @@
         "_id": 63,
         "_date": "Thu Jul 02 2020",
         "_timestamp": 1593659662590,
-        "description": "Make PKGBUILDS for libgen-cli, mimi fork and udict.",
+        "description": "Make PKGBUILDS for libgen-cli, soulseek-cli, (imgops) and udict; and some of my suckless builds as well.",
         "isStarred": false,
         "boards": [
             "@ToDo"

@@ -62,9 +62,8 @@
 	ka='killall' \
 		g='git' \
 		gca='g commit -a && g push' \
-		# GIT_PAGER='fzf --ansi --bind \'F1:cosa complicata per vedere la roba di quella commit con sed + less (?)\' '
-		glol="GIT_PAGER='fzf --ansi' \
-		git -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
+		glol="GIT_PAGER='fzf --ansi'; git -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" # GIT_PAGER='fzf --ansi --bind \'F1:cosa complicata per vedere la roba di quella commit con sed + less (?)\' '
+
 # Dotbare
 	alias d='dotbare'
 	alias dfc='d commit -a'
