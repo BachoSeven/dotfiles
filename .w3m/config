@@ -76,19 +76,16 @@ cgi_bin
 index_file
 mime_types ~/.config/w3m/mime.types, /etc/mime.types
 mailcap ~/.config/w3m/mailcap, /etc/w3m/mailcap, /etc/mailcap
-urimethodmap ~/.config/w3m//urimethodmap, /etc/w3m/urimethodmap
+urimethodmap ~/.config/w3m/urimethodmap, /etc/w3m/urimethodmap
 editor sensible-editor
 mailto_options 1
 mailer
-extbrowser /usr/bin/open
-extbrowser2 waterfox
-extbrowser3 lynx
-extbrowser4 epiphany %s &
-extbrowser5 konqueror %s &
-extbrowser6 curl -L -O -C - %s &
-extbrowser7 wget -c
-extbrowser8 url=%s && printf %s "$url" | xsel && printf %s "$url" | xsel -b &
-extbrowser9 mpv %s &
+extbrowser $BROWSER
+extbrowser2 lynx
+extbrowser3 curl -L -O -C - %s &
+extbrowser4 wget -c
+extbrowser5 url=%s && printf %s "$url" | xsel && printf %s "$url" | xsel -b &
+extbrowser6 mpv %s &
 bgextviewer 1
 use_lessopen 0
 passwd_file ~/.config/w3m/passwd
