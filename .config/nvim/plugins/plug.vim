@@ -41,8 +41,6 @@ cal plug#begin('~/.local/share/nvim/plugged')
 
 "" Appearance
 " Color highlighting
-	Plug 'chrisbra/Colorizer'
-		nn <leader>H :ColorToggle<cr>
 	Plug 'ap/vim-css-color'
 
 " Colorschemes
