@@ -169,11 +169,6 @@ ex=🎯:\
 	export KUNST_SIZE="240x240"
 	export KUNST_POSITION="+1656+816"
 	export KUNST_MUSIC_DIR="~/slsk/music"
-# Git
-	export GIT_PS1_SHOWDIRTYSTATE=1
-	export GIT_PS1_SHOWSTASHSTATE=1
-	export GIT_PS1_SHOWUNTRACKEDFILES=1
-	export GIT_PS1_SHOWUPSTREAM="auto"
 
 # Start graphical server on tty1 if not already running.
 	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" vt1 &> /dev/null
