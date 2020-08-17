@@ -26,7 +26,6 @@
 	se autoindent
 	se incsearch
 	se hidden
-	setl spell spelllang=en_us
 	se splitbelow splitright
 	se lazyredraw
 	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde

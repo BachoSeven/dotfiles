@@ -8,7 +8,7 @@
 	aug END
 
 " Enable spell-checking for certain files
-	au FileType markdown setl spell
+	au FileType markdown setl spell spelllang=en_us
 
 " Limit line length for text files
 	au FileType text,markdown,tex setl textwidth=180
