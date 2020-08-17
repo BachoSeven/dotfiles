@@ -52,16 +52,6 @@
 	_zle_line_finish() { ZLE_LINE_ABORTED=$BUFFER }
 	zle -N zle-line-finish _zle_line_finish
 
-# function to visualize dir stack
-	function di () {
-	  if [[ -n $1 ]]; then
-	    dirs "$@"
-	  else
-	    dirs -v | head -10
-	  fi
-	}
-	compdef _dirs di
-
 ## Colors & Appearance
 	autoload -U colors && colors
 
@@ -126,3 +116,13 @@
 # don't complete things which aren't available (very annoying)
 	zstyle ':completion:*:*:-command-:*:*' tag-order 'functions:-non-comp *' functions
 	zstyle ':completion:*:functions-non-comp' ignored-patterns '_*'
+
+# function to visualize dir stack
+	function di () {
+	  if [[ -n $1 ]]; then
+	    dirs "$@"
+	  else
+	    dirs -v | head -10
+	  fi
+	}
+	compdef _dirs di

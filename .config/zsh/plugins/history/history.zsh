@@ -10,7 +10,7 @@
 	setopt hist_find_no_dups      # If duplicate lines have been saved, still show them only once.
 	setopt hist_ignore_dups       # ignore duplicated commands history list
 	setopt hist_ignore_space      # ignore commands that start with space
-	setop  hist_reduce_blanks      # remove extra blanks from each command line being added to history
+	setopt  hist_reduce_blanks      # remove extra blanks from each command line being added to history
 
 ## CTRL-X CTRL-R
 	fzf-history-widget-accept() {

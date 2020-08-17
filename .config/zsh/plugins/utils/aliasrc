@@ -10,8 +10,8 @@
 	alias sudo='sudo '
 
 # SSH
-	alias vote='ssh aur@aur.archlinux.org vote'
 	alias phc='export TERM=xterm-256color; ssh minnocci@poisson.phc.dm.unipi.it'
+	alias vote='ssh aur@aur.archlinux.org vote'
 
 ## Backup
 # Elements
@@ -81,16 +81,17 @@
 	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
 	alias udef='udict'
-	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config'
 	alias spot='st -c ncspot -e ncspot'
 	alias flp='flashplayer'
+	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config -graph'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
-	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys'
+	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys -nomargins -notitle -prettysrc'
 	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias mcl='java -jar ~/stuff/games/minecraft\ Jar/mcTE.jar'
 	alias smi="sudo make clean install"
+	alias mx='weechat -d "$XDG_CONFIG_HOME"/weechat'
 # Soulseek
 	alias slsk='soulseekqt'
 	alias inc='lfcd ~/slsk/incoming'
