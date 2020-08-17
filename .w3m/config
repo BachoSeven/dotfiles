@@ -71,12 +71,12 @@ auto_uncompress 0
 preserve_timestamp 1
 keymap_file keymap
 document_root /
-personal_document_root /home/francesco/.config/
-cgi_bin
+personal_document_root ~
+cgi_bin ~/.w3m/cgi-bin
 index_file
-mime_types ~/.config/w3m/mime.types, /etc/mime.types
-mailcap ~/.config/w3m/mailcap, /etc/w3m/mailcap, /etc/mailcap
-urimethodmap ~/.config/w3m/urimethodmap, /etc/w3m/urimethodmap
+mime_types ~/.w3m/mime.types, /etc/mime.types
+mailcap ~/.w3m/mailcap, /etc/w3m/mailcap, /etc/mailcap
+urimethodmap ~/.w3m/urimethodmap, /etc/w3m/urimethodmap
 editor sensible-editor
 mailto_options 1
 mailer
@@ -88,12 +88,12 @@ extbrowser5 url=%s && printf %s "$url" | xsel && printf %s "$url" | xsel -b &
 extbrowser6 mpv %s &
 bgextviewer 1
 use_lessopen 0
-passwd_file ~/.config/w3m/passwd
+passwd_file ~/.w3m/passwd
 disable_secret_security_check 1
 ftppasswd anonymous@
 ftppass_hostnamegen 1
-pre_form_file ~/.config/w3m/pre_form
-siteconf_file ~/.config/w3m/siteconf
+pre_form_file ~/.w3m/pre_form
+siteconf_file ~/.w3m/siteconf
 user_agent
 no_referer 0
 accept_language en;q=1.0

@@ -26,11 +26,12 @@
 	se autoindent
 	se incsearch
 	se hidden
-	setlocal spell spelllang=en_us
+	setl spell spelllang=en_us
 	se splitbelow splitright
 	se lazyredraw
-	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " Return to last edit position when opening files
 	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
+	se timeout timeoutlen=1500 " Longer leader key timeout
+	se autoread " Automatically re-read file if a change was detected outside of vim
 
 "" Some mappings
 " jk is Esc in insert mode
@@ -77,9 +78,6 @@
 " Open corresponding .pdf/.html or preview
 	map <leader>P :!opout <c-r>%<CR><CR>
 
-" Runs a script that cleans out tex build files whenever I close out of a .tex file.
-	au VimLeave *.tex !texclear %
-
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 	cm w!! w !sudo tee > /dev/null %
 
@@ -96,17 +94,6 @@
 
 " Open Terminal
 	nn <leader>t :te<CR>a
-
-" Automatically deletes all trailing whitespace and newlines at end of file on save.
-	au BufWritePre * %s/\s\+$//e
-	au BufWritepre * %s/\n\+\%$//e
-
-" Recompile and run dwmblocks automatically
-	au BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks;  sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
-
-" Run xrdb whenever Xdefaults or Xresources are updated.
-	au BufWritePost *Xresources,*Xdefaults !xrdb %
-	au BufWritePost *.config/subs !subs -g
 
 " Turns off highlighting on the bits of code that are changed,
 " so the line that is changed is highlighted but the actual
@@ -129,6 +116,12 @@
 	so ~/.config/nvim/plugins/plug.vim
 " Configurations
 	so ~/.config/nvim/plugins/post-plug.vim
+
+"" Autocmds
+	so ~/.config/nvim/autocmd.vim
+
+"" Markdown Live preview
+	so ~/.config/nvim/markdown.vim
 
 "" Appearance
 	hi Comment gui=italic
