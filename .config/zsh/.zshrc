@@ -32,7 +32,6 @@
 		done
 	}
 	plugins=(
-		copyq
 		custom_completions
 		init # 0.13
 		history

@@ -401,6 +401,15 @@ compresspdf() {
 	# ps2pdf LARGE.pdf SMALL.pdf
 }
 
+readw3m() {
+	readable -q $@ |
+	w3m -config $XDG_CONFIG_HOME/w3m/config -T text/html -graph
+}
+readlynx() {
+	readable -q $@ |
+	lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys -stdin -force_html -nomargins -notitle -prettysrc
+}
+
 # A wget wrapper
 download_files_from_page() {
 	if [ "$#" -lt 2 ]; then
