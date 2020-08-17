@@ -14,9 +14,11 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
 
 My setup is pretty minimal and fast: although many packages and systemd services are launched at boot, rebooting from dwm to dwm takes approximately 15 seconds(with grub).
 I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use:
+
 - Suckless utilities (links are to my patched repos): **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), **[st](https://github.com/BachoSeven/st)** (terminal emulator) and **[xss](https://github.com/9wm/xss)+[slock](https://github.com/BachoSeven/slock)** (screensaver).
-<img src=pics/screens/ricing/zsh.png width=40% align=right>
-- Highly configured **zsh**  shell with many custom plugins for completions and integrations, a custom [prompt](https://imgur.com/a/KwMIxDg) (old p10k themes [here](https://github.com/BachoSeven/dotfiles/tree/master/.config/zsh/plugins/p10k_theme)) and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax highlighting. My zsh has an average startup time of `0.034 s`.
+<img src="pics/screens/ricing/zsh.png" width=50% align=right>
+- Highly configured **zsh**  shell with custom plugins, completions, a custom [prompt](https://imgur.com/a/KwMIxDg) (old p10k [themes](https://github.com/BachoSeven/dotfiles/tree/master/.config/zsh/plugins/p10k_theme)) and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax highlighting; the shell startup time is `34 ms`.
+
 - **neovim** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
 - **ncmpcpp** as a music player (with mpd)
