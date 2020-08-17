@@ -16,8 +16,8 @@ My setup is pretty minimal and fast: although many packages and systemd services
 I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use:
 
 - Suckless utilities (links are to my patched repos): **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), **[st](https://github.com/BachoSeven/st)** (terminal emulator) and **[xss](https://github.com/9wm/xss)+[slock](https://github.com/BachoSeven/slock)** (screensaver).
-<img src="pics/screens/ricing/zsh.png" width=50% align=right>
 - Highly configured **zsh**  shell with custom plugins, completions, a custom [prompt](https://imgur.com/a/KwMIxDg) (old p10k [themes](https://github.com/BachoSeven/dotfiles/tree/master/.config/zsh/plugins/p10k_theme)) and **[fsh](https://github.com/zdharma/fast-syntax-highlighting)** for syntax highlighting; the shell startup time is `34 ms`.
+<img src="pics/screens/ricing/zsh.png" width=50%>
 
 - **neovim** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
