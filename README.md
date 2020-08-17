@@ -1,3 +1,5 @@
+![](pics/screens/ricing/fripp_dwm-matrix.png)<br>
+
 ``` sh
 ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
 ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
@@ -6,8 +8,7 @@
 ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
-
-This are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
+This are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)<br>
 
 # Current Setup
 
@@ -30,6 +31,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 - Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
 ## Eye-candy
+
 - I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, copyq, all suckless config and anywhere else (although I tried to keep a commented solarized alternative where I could for nostalgia).
 - I also use `pywal` now and then, you will find various attempts at integrating it with other programs across this repo
 - The compositor is `picom` ([picom-ibhagwan-git](https://aur.archlinux.org/packages/picom-ibhagwan-git/) fork)
@@ -37,7 +39,8 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 - The default gtk 2/3 theme is [Gruvbox-Dark](https://github.com/jmattheis/gruvbox-dark-gtk)
 - My font is `Hack Nerd Font`
 
-### Various
+## Various
+
 - I use ungoogled-chromium, you can find info about my config of it at `.config/brave_plugins`. To improve its aesthetics, I use a gruvbox chrome theme and duckduckgo with `gruvboxytheme` pass phrase; which make a decent start page together Vimium's Vomnibar. (I now use a custom start page with Brave, check it out [here](https://github.com/BachoSeven/startpage).)
 - Most keys I press on any program are vim bindings, around which this setup is oriented.
 
