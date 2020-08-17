@@ -24,4 +24,4 @@ Xcursor.theme: ArchCursorComplete
 #include "Xresources.d/xscreensaver"
 
 !! St Transparency (0-1):
-st.alpha: 0.65
+st.alpha: 0.6
