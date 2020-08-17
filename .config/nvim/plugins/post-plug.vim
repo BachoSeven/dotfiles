@@ -1,6 +1,6 @@
 " Firenvim
 	if exists('g:started_by_firenvim')
-		au BufEnter github.com_*.txt set filetype=markdown
+		au BufEnter github.com_*.txt se filetype=markdown
 		nnoremap <C-z> :call firenvim#hide_frame()<CR>
 		let g:firenvim_config = {
 		    \ 'globalSettings': {
@@ -83,6 +83,7 @@
 
 " Airline
 	let g:airline_powerline_fonts = 1
+	se noshowmode " Don't display mode in command line (airline already shows it)
 
 " Goyo
 	map <leader>g :Goyo \| se linebreak<CR>
@@ -92,3 +93,13 @@
 	au BufRead,BufNewFile /tmp/neomutt* :Goyo | se linebreak
 	au BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	au BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
+
+" Devicons
+	let g:webdevicons_enable = 1
+	let g:WebDevIconsUnicodeDecorateFileNodes = 1
+	let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+	let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+	let g:webdevicons_enable_airline_statusline = 1
+	let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+	let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+	let g:DevIconsDefaultFolderOpenSymbol = ''

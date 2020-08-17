@@ -17,7 +17,10 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	" GIT
 	Plug 'tpope/vim-fugitive'
 
-" Vimtex
+" Markdown Live Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" " Vimtex
 	" Plug 'lervag/vimtex'
 	" Plug 'KeitaNakamura/tex-conceal.vim'
 		" se conceallevel=1
@@ -32,12 +35,12 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'Shougo/deoplete.nvim'
 	Plug 'Shougo/neco-vim'
 	Plug 'Shougo/neco-syntax'
-	" Plug 'sirver/ultisnips'
-		" let g:UltiSnipsExpandTrigger = '<tab>'
-		" let g:UltiSnipsJumpForwardTrigger = '<tab>'
-		" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-		" let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
-		" let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
+	Plug 'sirver/ultisnips'
+		let g:UltiSnipsExpandTrigger = '<tab>'
+		let g:UltiSnipsJumpForwardTrigger = '<tab>'
+		let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+		let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
+		let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
 
 "" Appearance
 " Color highlighting

@@ -1,0 +1,18 @@
+# ~/.w3m/urimethodmap
+
+magnet:          file:/cgi-bin/magnet.py?%s
+d:               file:/cgi-bin/search_engines.cgi?%s
+g:               file:/cgi-bin/search_engines.cgi?%s
+w:               file:/cgi-bin/search_engines.cgi?%s
+wes:             file:/cgi-bin/search_engines.cgi?%s
+y:               file:/cgi-bin/search_engines.cgi?%s
+se:              file:/cgi-bin/search_engines.cgi?%s
+azlyrics:        file:/cgi-bin/search_engines.cgi?%s
+darklyrics:      file:/cgi-bin/search_engines.cgi?%s
+
+#pending
+#goo:             https://www.google.com/search?q=%s
+
+#Interpret "ttp://" as "http://"
+ttp: h%s
+tp: ht%s
