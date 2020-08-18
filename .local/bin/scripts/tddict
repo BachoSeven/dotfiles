@@ -10,7 +10,7 @@ fi
 root=$2
 export PATH=$PATH:"$(readlink -f $root)"
 
-zcat $1.dict.dz |
+zcat -f $1.dict.dz |
 	sd2td $1.idx |
 	tds >$1.td
 	tdi <$1.td >$1.ti
