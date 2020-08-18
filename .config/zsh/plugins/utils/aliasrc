@@ -93,6 +93,7 @@
 	alias mcl='java -jar ~/stuff/games/minecraft\ Jar/mcTE.jar'
 	alias smi="sudo make clean install"
 	alias mx='weechat -d "$XDG_CONFIG_HOME"/weechat'
+	alias mas='toot tui'
 	alias pstree='pstree -C age -hlUG fra'
 # Soulseek
 	alias slsk='soulseekqt'
