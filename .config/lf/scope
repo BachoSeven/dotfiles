@@ -33,7 +33,7 @@ HIGHLIGHT_STYLE='pablo'
 handle_mime() {
     local mimetype="${1}"
     case "$(basename ${FILE_PATH})" in
-	    *.md) glow -s dark "${FILE_PATH}";;
+	    *.md) glow -w 80 -s ~/.config/glow/gruvbox.json "${FILE_PATH}";;
 	    *)
 	    case "${mimetype}" in
 		text/html) w3m -dump "${FILE_PATH}" ;;
