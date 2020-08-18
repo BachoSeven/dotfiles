@@ -11,7 +11,6 @@ fi
 SCRH=$(xrandr | awk '/current/ { print $8 }')
 SCRW=$(xrandr | awk '/current/ { print $10 }')
 SCRW=${SCRW%\,}
-echo ; exit
 
 #get gif resolution
 IMGHW=$(gifsicle --info $1 | awk '/logical/ { print $3 }')

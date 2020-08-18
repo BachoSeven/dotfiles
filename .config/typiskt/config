@@ -15,7 +15,7 @@ status-color-active = 3
 # or environment variable TYPISKT_WIDTH
 # maximum width (in columns) of lines
 # if max-width > COLUMNS-2, max-width=COLUMNS-2
-maxwidth = 50
+maxwidth = 55
 
 # can also be set with environment variable TYPISKT_CACHE
 # path where to store chache files like highscores
@@ -29,8 +29,8 @@ highscore-time-format = %y/%m/%d
 # in excercise mode minimum must be reached to
 # proceed to the next exercise. (0=no minimum)
 # can also be set with environment variable TYPISKT_MIN_ACC
-exercise-minimum-accuracy = 96
+exercise-minimum-accuracy = 85
 # can also be set with environment variable TYPISKT_MIN_WPM
-exercise-minimum-wpm = 0
+exercise-minimum-wpm = 10
 
 # syntax:ssHash
