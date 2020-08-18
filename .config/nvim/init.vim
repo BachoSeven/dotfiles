@@ -5,7 +5,9 @@
 " 	 /_/   /_/ /_/ /_/   \__/_(_)_____/  /_/   /_/ /_/ /_/
 "
 
-"" Basic Settings
+"		 +----------+
+"		 | Settings |
+"		 +----------+
 	se title
 	let mapleader =","
 	se shell=/usr/bin/zsh
@@ -32,7 +34,9 @@
 	se timeout timeoutlen=1500 " Longer leader key timeout
 	se autoread " Automatically re-read file if a change was detected outside of vim
 
-"" Some mappings
+"		 +-------------+
+"		 | Key Mapping |
+"		 +-------------+
 " jk is Esc in insert mode
 	ino jk <Esc>
 
@@ -110,19 +114,27 @@
 	exec 'nn <Leader>ss :mks! ~/.config/nvim/vim-sessions/'
 	exec 'nn <Leader>sl :so ~/.config/nvim/vim-sessions/<C-D>'
 
-"" Plugins
+"		 +---------+
+"		 | Plugins |
+"		 +---------+
 " Definitions
 	so ~/.config/nvim/plugins/plug.vim
 " Configurations
 	so ~/.config/nvim/plugins/post-plug.vim
 
-"" Autocmds
+"		 +----------+
+"		 | Autocmds |
+"		 +----------+
 	so ~/.config/nvim/autocmd.vim
 
-"" Markdown Live preview
+"		 +-----------------------+
+"		 | Live Markdown Preview |
+"		 +-----------------------+
 	so ~/.config/nvim/markdown.vim
 
-"" Appearance
+"		 +------------+
+"		 | Appearance |
+"		 +------------+
 	hi Comment gui=italic
 " ColorScheme
 	se termguicolors

@@ -13,9 +13,6 @@
 " Limit line length for text files
 	au FileType text,markdown,tex setl textwidth=180
 
-""""""""""""""""""""""""""""""""""""
-" Markdown Preview Plugin Settings "
-""""""""""""""""""""""""""""""""""""
 " Contains CSS for markdown + page + higlight
 	let g:mkdp_markdown_css = '~/.config/nvim/static/markdown-preview/customStyle.css'
 
