@@ -21,12 +21,16 @@
   "h1": {
     "prefix": " ",
     "suffix": " ",
-    "color": "228",
-    "background_color": "63",
+    "color": "1",
+    "background_color": "0",
     "bold": true
   },
   "h2": {
-    "prefix": "## "
+    "prefix": "  ",
+    "suffix": " ",
+    "color": "2",
+    "background_color": "0",
+    "bold": true
   },
   "h3": {
     "prefix": "### "
@@ -93,41 +97,41 @@
     "margin": 2,
     "chroma": {
       "text": {
-        "color": "#C4C4C4"
+        "color": "#ebdbb2"
       },
       "error": {
         "color": "#F1F1F1",
-        "background_color": "#F05B5B"
+        "background_color": "#fb4934"
       },
       "comment": {
-        "color": "#676767"
+        "color": "#458588"
       },
       "comment_preproc": {
-        "color": "#FF875F"
+        "color": "#d79921"
       },
       "keyword": {
-        "color": "#00AAFF"
+        "color": "#83a598"
       },
       "keyword_reserved": {
-        "color": "#FF5FD2"
+        "color": "#dd5FD2"
       },
       "keyword_namespace": {
-        "color": "#FF5F87"
+        "color": "#dd5F87"
       },
       "keyword_type": {
-        "color": "#6E6ED8"
+        "color": "#6B6ED8"
       },
       "operator": {
-        "color": "#EF8080"
+        "color": "#b16286"
       },
       "punctuation": {
-        "color": "#E8E8A8"
+        "color": "#c8E8A8"
       },
       "name": {
-        "color": "#C4C4C4"
+        "color": "#b4b4b4"
       },
       "name_builtin": {
-        "color": "#FF8EC7"
+        "color": "#d3869b"
       },
       "name_tag": {
         "color": "#B083EA"
@@ -146,12 +150,12 @@
       },
       "name_exception": {},
       "name_function": {
-        "color": "#00D787"
+        "color": "#689d6a"
       },
       "name_other": {},
       "literal": {},
       "literal_number": {
-        "color": "#6EEFC0"
+        "color": "#8ec07c"
       },
       "literal_date": {},
       "literal_string": {
@@ -167,7 +171,7 @@
         "italic": true
       },
       "generic_inserted": {
-        "color": "#00D787"
+        "color": "#b8bb26"
       },
       "generic_strong": {
         "bold": true
@@ -176,7 +180,7 @@
         "color": "#777777"
       },
       "background": {
-        "background_color": "#373737"
+        "background_color": "#1d2021"
       }
     }
   },
