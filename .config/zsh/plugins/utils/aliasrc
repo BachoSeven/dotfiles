@@ -80,7 +80,7 @@
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
 	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
-	alias glow='glow -p'
+	alias glow='glow -p -w 120 -s ~/.config/glow/style.json'
 	alias udef='udict'
 	alias spot='st -c ncspot -e ncspot'
 	alias flp='flashplayer'
