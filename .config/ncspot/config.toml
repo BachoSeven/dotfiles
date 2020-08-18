@@ -1,5 +1,6 @@
 default_keybindings = false
 use_nerdfont=true
+notify=true
 
 [keybindings]
 ## unbinded: n, c, e, y
