@@ -3,12 +3,9 @@
 # Simple wrapper around st2dict by Ali Gholami Rudi.
 
 if [ -z "$1" ]; then
-	printf "Usage: \n\tsd2td TdqExecutableDirectory Dictionary(withouth extension)\n" >&2
+	printf "Usage: \n\tsd2td Dictionary(withouth extension)\n" >&2
 	return 1
 fi
-
-root=$2
-export PATH=$PATH:"$(readlink -f $root)"
 
 zcat -f $1.dict.dz |
 	sd2td $1.idx |
