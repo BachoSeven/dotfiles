@@ -2,7 +2,7 @@ default_keybindings = false
 use_nerdfont=true
 
 [keybindings]
-## unbinded: n, c
+## unbinded: n, c, e, y
 ######################################
 # Song controls
 ######################################
