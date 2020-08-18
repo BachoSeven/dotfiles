@@ -4,5 +4,4 @@ Name=ncmpcpp
 Exec=st -c ncmpcpp -e ncmpcpp
 Terminal=false
 Categories=Music
-Icon=/home/francesco/.config/icons/music-player.png
 StartupWMClass=ncmpcpp

@@ -5,6 +5,6 @@ GenericName=Terminal
 Exec=st -t "Simple Terminal"
 Terminal=false
 Type=Application
-Icon=/home/francesco/.config/icons/st.svg
+Icon=/home/fra/.config/icons/st.svg
 Categories=System;TerminalEmulator;
 Keywords=shell;prompt;command;commandline;cmd;
