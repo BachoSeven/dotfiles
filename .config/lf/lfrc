@@ -196,6 +196,15 @@ cmd dldrag %dldrag
 # Execute shell command on selection
 cmd embed $$@ $fx
 
+# Pager command
+cmd pager ${{
+	if [[ $f = *.md  ]]; then
+		glow -w 120 -ps ~/.config/glow/gruvbox.json $fx
+	else
+		less $fx
+	fi
+}}
+
 ##			Bindings
 
 #			Unmap some defaults
@@ -235,7 +244,7 @@ map <c-space> :toggle; up
 
 #			Personal utils
 map <c-a> embed neomutt -a
-map w embed less
+map w pager
 map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached
 map b &setsid setbg -i $f
