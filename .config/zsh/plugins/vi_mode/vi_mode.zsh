@@ -1,5 +1,3 @@
-bindkey -d
-bindkey -p
 # Reduce timeout
 	export KEYTIMEOUT=1
 
@@ -48,7 +46,7 @@ bindkey -p
 
 # Edit line in vim with ctrl-e:
 	autoload edit-command-line; zle -N edit-command-line
-	bindkey "^X^E" edit-command-line
+	bindkey "^x^e" edit-command-line
 
 # Move by physical lines, just like gj/gk in vim :)
 # Credits to http://leahneukirchen.org/dotfiles/.zshrc# .zshrc interactive configuration file for zsh
