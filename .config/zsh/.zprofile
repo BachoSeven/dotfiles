@@ -97,6 +97,9 @@
 	export LESSOPEN='| LESSQUIET=1 lesspipe.sh %s'
 	export LESSCOLORIZER='pygmentize'
 	export LESS='-iRX'
+	export MANROFFOPT="-c"
+	export MANPAGER="sh -c 'col -bx | bat -l man -p '"
+
 export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
