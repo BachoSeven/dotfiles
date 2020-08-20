@@ -116,6 +116,8 @@
 # don't complete things which aren't available (very annoying)
 	zstyle ':completion:*:*:-command-:*:*' tag-order 'functions:-non-comp *' functions
 	zstyle ':completion:*:functions-non-comp' ignored-patterns '_*'
+# complete sudo commands
+	zstyle ':completion::complete:*' gain-privileges 1
 
 # function to visualize dir stack
 	function di () {
