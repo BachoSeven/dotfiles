@@ -434,7 +434,7 @@ download_files_from_page() {
 
 	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$1")"
 	mkdir -pv "$outputdir_name"
-	cd "$outputdir_name" && wget -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2"
+	cd "$outputdir_name" && wget -c -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2"
 }
 
 escape() {
