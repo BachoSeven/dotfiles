@@ -160,6 +160,8 @@ ex=🎯:\
 *.nix=::\
 "
 
+# Bat
+	export BAT_THEME="gruvbox"
 # Stardict/sdcv dictionaries
 	export SDCV_PAGER="less -FX"
 # Barva
