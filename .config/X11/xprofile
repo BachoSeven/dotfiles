@@ -13,7 +13,7 @@
 	transmission-daemon &		# Bittorrent daemon
 	mconnect 2>/dev/null &		# Autoconnect to Android
 	copyq &				# Clipboard management
-	redshift &			# Color temperature
+	pgrep redshift &> /dev/null || redshift &> /dev/null & # Color temperature
 	picom &				# Compositor
 	dunst &				# Notifications
 	unclutter &			# Remove mouse when idle
