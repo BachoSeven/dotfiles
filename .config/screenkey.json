@@ -1,1 +1,23 @@
-{"no_systray": false, "timeout": 2, "recent_thr": 0.1, "compr_cnt": 3, "ignore": [], "position": "bottom", "persist": false, "font_desc": "DejaVu Sans Mono Bold", "font_size": "small", "font_color": "#d79921", "bg_color": "#3c3836", "opacity": 0.8, "key_mode": "translated", "bak_mode": "normal", "mods_mode": "tux", "mods_only": false, "multiline": false, "vis_shift": false, "vis_space": true, "geometry": null, "screen": 0}
+{
+	"no_systray": false,
+	"timeout": 1.5,
+	"recent_thr": 0.1,
+	"compr_cnt": 3,
+	"ignore": [],
+	"position": "bottom",
+	"persist": false,
+	"font_desc": "Font Awesome 5 Free",
+	"font_size": "small",
+	"font_color": "#689d6a",
+	"bg_color": "#1d2021",
+	"opacity": 0.8,
+	"key_mode": "composed",
+	"bak_mode": "baked",
+	"mods_mode": "tux",
+	"mods_only": false,
+	"multiline": false,
+	"vis_shift": false,
+	"vis_space": true,
+	"geometry": null,
+	"screen": 1
+}

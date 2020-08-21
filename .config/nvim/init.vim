@@ -88,6 +88,9 @@
 	nn <leader>o mao<Esc>`a
 	nn <leader>O maO<Esc>`a
 
+" Shift line downwards
+	nn <NL> maa<CR><ESC>`a
+
 " Turn off search highlight
 	nn <leader><space> :nohlsearch<CR>
 
