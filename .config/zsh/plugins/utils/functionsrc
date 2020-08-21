@@ -183,7 +183,11 @@ archive() {
 	esac
 }
 
-sfont() { fc-list | grep -i "$1"; }
+sfont() {
+	fc-list		|
+	cut -f2 -d:	|
+	grep -i "$1"
+}
 
 vinfo() {
 	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
