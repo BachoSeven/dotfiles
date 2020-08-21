@@ -93,7 +93,7 @@
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias mcl='java -jar ~/stuff/games/minecraft\ Jar/mcTE.jar'
 	alias smi="sudo make clean install"
-	alias mx='weechat -d "$XDG_CONFIG_HOME"/weechat'
+	alias mx='weechat'
 	alias pstree='pstree -C age -hlUG fra'
 # Soulseek
 	alias slsk='soulseekqt'
