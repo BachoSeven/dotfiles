@@ -69,6 +69,13 @@
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
+#  * `fs` command to show free space on physical drives
+	alias fs='df -h -x squashfs -x tmpfs -x devtmpfs'
+#  * `disks` command to List disks
+#    - It is a good habit to run this command before `dd`, to make 100% sure not to override system partition
+	alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
+#  * `partitions` command to list partitions
+	alias partitions='lsblk -o HOTPLUG,NAME,LABEL,MOUNTPOINT,SIZE,MODEL,PARTLABEL,TYPE,UUID | grep -v loop | cut -c1-$COLUMNS'
 	alias nf='neofetch'
 	alias pf='pfetch'
 	alias mc='mconnect'

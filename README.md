@@ -74,3 +74,5 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 ![](pics/screens/ricing/new_rice1.png)
 
 ![](pics/screens/ricing/new_rice-small.png)
+
+[![BachoSeven's github stats](https://github-readme-stats.vercel.app/api?username=bachoseven)](https://github.com/bachoseven/github-readme-stats)
