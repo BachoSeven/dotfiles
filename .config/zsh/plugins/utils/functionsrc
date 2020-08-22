@@ -238,6 +238,26 @@ ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \
 	 --header-lines=1 --layout=reverse
 }
 
+chromiumhist() {
+	# https://junegunn.kr/2015/04/browsing-chrome-history-with-fzf/
+	# https://github.com/junegunn/fzf/wiki/examples#browsing-history
+	local cols sep temp_hist
+
+	cols=$(( COLUMNS / 3 ))
+	sep='{::}'
+	temp_hist="$(mktemp -u)"
+
+	command cp -f "$HOME"/.config/chromium/Default/History "$temp_hist"
+
+	sqlite3 -separator "$sep" "$temp_hist" \
+		"select substr(title, 1, $cols), url from urls order by last_visit_time desc" |
+			awk -F "$sep" '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
+			fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs -r xdg-open
+
+	rm -f "$temp_hist"
+}
+
+
 most-used-commands() {
 	local -i top="${1:-10}"
 	local -i last="${2:-999999}"
