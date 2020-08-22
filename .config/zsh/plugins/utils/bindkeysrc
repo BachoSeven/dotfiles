@@ -19,15 +19,17 @@
 	bindkey -s '^s' ' up2date\n'
 	bindkey -s '^y' ' fzfpacinstall\n'
 	bindkey -s '^q' ' browsepac\n'
-	bindkey -s '^f' ' fzf\n'
 
-# Space does history expansion (e.g., !1<space> becomes the last command input in the history)
-	bindkey ' ' magic-space
+# vim user :)
+	alias :q='exit'
+	alias v="nvim"
+	alias vim="nvim"
+	alias vimdiff="nvim -d"
 
-# These need to be here because they are not compatible with bash, see aliasrc
+# Abbreviations
 	alias -g \
 		M='| more'	\
-		L='| less'	\
+		L='| ${PAGER:-less}'\
 		H='| head'	\
 		T='| tail'	\
 		G='| grep'	\
@@ -37,6 +39,42 @@
 		N='> /dev/null' \
 		X='|xclip'	\
 		A='|xargs -r '	# A suffixed space is needed to use aliases
+	# Some of the above are duplicated below for readability in longer commands
+	typeset -gA ZSH_ABBREVIATIONS
+	ZSH_ABBREVIATIONS+=(
+		":e"	"${EDITOR}"
+		":r"	"view"
+		":h"	"man"
+		"M"	"| more"
+		"L"	"| ${PAGER:-less}"
+		"H"	"| head"
+		"T"	"| tail"
+		"G"	"| grep"
+		"C"	"| wc -l"
+		"S"	"| sort"
+		"F"	"| fzf"
+		"N"	"> /dev/null"
+		"X"	"| xclip"
+		"A"	"| xargs -r "
+	)
+
+	magic-abbrev-expand() {
+		local MATCH
+		LBUFFER=${LBUFFER%%(#m)[|:_a-zA-Z0-9]#}
+		LBUFFER+=${ZSH_ABBREVIATIONS[$MATCH]:-$MATCH}
+		zle self-insert
+	}
+
+	no-magic-abbrev-expand() {
+		LBUFFER+=' '
+	}
+
+	zle -N magic-abbrev-expand
+	zle -N no-magic-abbrev-expand
+
+	bindkey " " magic-abbrev-expand
+	bindkey "^x " no-magic-abbrev-expand
+	bindkey -M isearch " " self-insert
 
 ## Also these aliases are here since they're too short to be parsed correctly by dmenu_aliases; and are useless for th scope of that script anyways.
 # Default to human readable figures and colorize
@@ -70,8 +108,3 @@
 	alias dlol="GIT_PAGER='fzf --ansi' \
 	d -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" ## Use fzf as a git pager for this.
 	alias dupdsub="d submodule foreach git pull origin master"
-# vim user :)
-	alias :q='exit'
-	alias v="nvim"
-	alias vim="nvim"
-	alias vimdiff="nvim -d"
