@@ -90,63 +90,66 @@ up2date() {
 
 
 extract() {
-	if [ ! -f "$1" ]; then
-		printf "extract: '%s' is not a file\n" "$1" >&2
-		return 1
-	fi
-
-	case "$1" in
-		*.tar)  tar -xf "$1"       ;;
-		*.tar.bz|*.tbz| \
-		*.tar.bz2|*.tbz2)
-				tar -xjf "$1"      ;;
-		*.tar.gz|*.tgz)
-				tar -xzf "$1"      ;;
-		*.tar.xz|*.txz)
-				tar -xJf "$1"      ;;
-		*.tar.[zZ]|*.t[zZ])
-				tar -xZf "$1"      ;;
-		*.tar.lz|*.tlz| \
-		*.tar.lzma|*.tlzma| \
-		*.tar.lzo|*.tzo| \
-		*.tar.zst|*.tzst)
-				tar -xaf "$1"      ;;
-		*.7z)   7za x -- "$1"      ;;
-		*.a|*.ar)
-				ar x -- "$1"       ;;
-		*.ace)  unace e -- "$1"    ;;
-		*.alz)  unalz -- "$1"      ;;
-		*.arc|*.ark|*.ARC|*.ARK)
-				nomarch -- "$1"    ;;
-		*.arj|*.ARJ)
-				arj e -r -- "$1"   ;;
-		*.bz|*.bz2)
-				bunzip2 -k -- "$1" ;;
-		*.cab|*.CAB|*.exe|*.EXE)
-				cabextract "$1"    ;;
-		*.cpio) cpio -id -F "$1"   ;;
-		*.deb)  dpkg -x -- "$1" .  ;;
-		*.gz)   gunzip -k "$1"     ;;
-		*.lha|*.lzh)
-				lha x "$1"         ;;
-		*.lrz|*.lrzip|*.rz)
-				lrunzip -- "$1"    ;;
-		*.lz)   lzip -d -k -- "$1" ;;
-		*.lz4)  unlz4 -- "$1"      ;;
-		*.lzma) xz -d -k "$1"      ;;
-		*.lzo)  lzop -x "$1"       ;;
-		*.rar)  unrar x -- "$1"    ;;
-		*.src.rpm|*.rpm|*.spm)
-				rpm2cpio "$1" | cpio -dium ;;
-		*.xz)   unxz -k -- "$1"    ;;
-		*.[zZ]) uncompress -- "$1" ;;
-		*.zip)  unzip -- "$1"      ;;
-		*.zst)  unzstd -- "$1"     ;;
-		*.AppImage) ./"$1" --appimage-extract ;;
-		*)
-			printf "extract: '%s' - unkwown archive format\n" "$1" >&2
+	for f in "$@"
+	do
+		if [ ! -f "$f" ]; then
+			printf "extract: '%s' is not a file\n" "$f" >&2
 			return 1
-	esac
+		fi
+
+		case "$f" in
+			*.tar)  tar -xf "$f"       ;;
+			*.tar.bz|*.tbz| \
+			*.tar.bz2|*.tbz2)
+					tar -xjf "$f"      ;;
+			*.tar.gz|*.tgz)
+					tar -xzf "$f"      ;;
+			*.tar.xz|*.txz)
+					tar -xJf "$f"      ;;
+			*.tar.[zZ]|*.t[zZ])
+					tar -xZf "$f"      ;;
+			*.tar.lz|*.tlz| \
+			*.tar.lzma|*.tlzma| \
+			*.tar.lzo|*.tzo| \
+			*.tar.zst|*.tzst)
+					tar -xaf "$f"      ;;
+			*.7z)   7za x -- "$f"      ;;
+			*.a|*.ar)
+					ar x -- "$f"       ;;
+			*.ace)  unace e -- "$f"    ;;
+			*.alz)  unalz -- "$f"      ;;
+			*.arc|*.ark|*.ARC|*.ARK)
+					nomarch -- "$f"    ;;
+			*.arj|*.ARJ)
+					arj e -r -- "$f"   ;;
+			*.bz|*.bz2)
+					bunzip2 -k -- "$f" ;;
+			*.cab|*.CAB|*.exe|*.EXE)
+					cabextract "$f"    ;;
+			*.cpio) cpio -id -F "$f"   ;;
+			*.deb)  dpkg -x -- "$f" .  ;;
+			*.gz)   gunzip -k "$f"     ;;
+			*.lha|*.lzh)
+					lha x "$f"         ;;
+			*.lrz|*.lrzip|*.rz)
+					lrunzip -- "$f"    ;;
+			*.lz)   lzip -d -k -- "$f" ;;
+			*.lz4)  unlz4 -- "$f"      ;;
+			*.lzma) xz -d -k "$f"      ;;
+			*.lzo)  lzop -x "$f"       ;;
+			*.rar)  unrar x -- "$f"    ;;
+			*.src.rpm|*.rpm|*.spm)
+					rpm2cpio "$f" | cpio -dium ;;
+			*.xz)   unxz -k -- "$f"    ;;
+			*.[zZ]) uncompress -- "$f" ;;
+			*.zip)  unzip -- "$f"      ;;
+			*.zst)  unzstd -- "$f"     ;;
+			*.AppImage) ./"$f" --appimage-extract ;;
+			*)
+				printf "extract: '%s' - unkwown archive format\n" "$f" >&2
+				return 1
+		esac
+	done
 }
 
 archive() {
