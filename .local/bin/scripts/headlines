@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#  Decription
+#  -----------
+#  Prints top headlines from Hacker News. See <http://developer.run/27>
+
+#  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/bin)
+
+#  Requirements
+#  ------------
+#	- jq
+
+SINCE=$(date --date="5 days ago" +%s)
+MAX=3
+THRESHOLD=1000
+echo " 📰 HEADLINES $(date '+%Y/%m/%d %H:%S')"
+curl -s "https://hn.algolia.com/api/v1/search_by_date?numericFilters=points>$THRESHOLD,created_at_i>$SINCE&hitsPerPage=$MAX" \
+ | jq -r "if .nbHits == 0 then \"No news is good news\" else .hits[].title end"
