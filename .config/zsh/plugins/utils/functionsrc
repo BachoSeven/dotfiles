@@ -80,7 +80,6 @@ dirs=(
 up2date() {
 	_run yay
 	_run nvim +PlugUpdate +quitall
-	_run pipx upgrade-all
 	_run zsh_update_plugins
 	_run src_update $dirs
 }
