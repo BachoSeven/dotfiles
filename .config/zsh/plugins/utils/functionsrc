@@ -10,11 +10,8 @@ rip() {
 removeTotPkgsAfterInput() {
 	expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -50 | grep -A $1 $2 | cut -d ' ' -f2 | awk '{print $2}' | xargs sudo pacman -Rsc --noconfirm
 }
-fp() {
-    echo -n "$(pacman --color always "${@:--Ss}" \
-        | sed 'N;s/\n//' \
-        | fzf -m --ansi --preview 'pacman -Si {1}' \
-        | sed 's/ .*//')"
+ownedbypkg() {
+	pacman -Qlq $1 | grep -v '/$' | xargs -r du -h | sort -h
 }
 fzfpacinstall() {
 	sudo pacman -S $(fp)
