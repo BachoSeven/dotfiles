@@ -163,6 +163,11 @@ ex=🎯:\
 *.nix=::\
 "
 
+# Wolfram Alpha
+	export WA_APPID="A2VXRU-PL5UVJ35KG"
+	export WA_VIEWER="display"
+	export WA_FG="#ebdbb2"
+
 # Bat
 	export BAT_THEME="gruvbox"
 # Stardict/sdcv dictionaries
