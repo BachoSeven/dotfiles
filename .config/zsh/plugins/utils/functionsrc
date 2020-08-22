@@ -254,6 +254,20 @@ chromiumhist() {
 	rm -f "$temp_hist"
 }
 
+wtr() {
+	# see curl wttr.in/:help
+	local loc="${1:=Pisa}"
+	local opts="${2:=pqtF&lang=it}"
+
+	curl wttr.in/${loc}\?${opts} 2>/dev/null | less -Re
+}
+wtrg() {
+	# see curl wttr.in/:help
+	local loc="${1:=}"
+	local opts="${2:=pqtF&lang=it}"
+
+	curl v2.wttr.in/${loc}\?${opts} 2>/dev/null | less -Re
+}
 
 most-used-commands() {
 	local -i top="${1:-10}"

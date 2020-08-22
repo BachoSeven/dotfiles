@@ -48,8 +48,7 @@
 	alias rm='rm -v'
 	alias cp='cp -v'
 	alias mv='mv -v'
-	alias wtr='curl "wttr.in/Pisa?pqtF&lang=it" '
-	alias wtrg='curl "v2.wttr.in/Pisa?pqtF&lang=it" '
+
 # Manuals
 	alias mman='macho -i'
 	alias info='vinfo'
