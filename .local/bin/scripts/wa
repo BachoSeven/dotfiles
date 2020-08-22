@@ -1,0 +1,53 @@
+#!/bin/bash
+
+#  Description
+#  -----------
+#  <img src="https://developer.run/pic/wa_full.png"/>
+#  <img src="https://developer.run/pic/wa.png"/>
+#  <img src="https://developer.run/pic/wa2.png"/>
+#
+#  Using Wolfram Alpha in command line. See <http://developer.run/37> for description and more ideas.
+
+#  Author: [Dmitry](http://dmi3.net) [Source](https://github.com/dmi3/bin)
+
+#  Requirements
+#  ------------
+#  You can use text only api and **optionaly** use [terminal that supports images](https://sw.kovidgoyal.net/kitty/)
+#  **or** `sudo apt-get install imagemagick` to view images
+
+#  Usage
+#  ------------
+#      ➤ wa helsinki to dublin plane
+#      2 hours 20 minutes
+#      ➤ wa time in dublin
+#      5:37:57 pm GMT; Friday, January 27, 2017
+#      ➤ wa 15.36 english money to eur
+#      14.35 euros
+#      ➤ wa days till nov 16
+#      293 days
+#      ➤ wa 154Mbit/s to MB/s
+#      19.2 megabytes per second
+#      ➤ wa brick red hex
+#      #AB0303
+#      ➤ wa weather in moscow
+#      9 degrees Celsius and cloudy, with light winds✖
+#      ➤ wa plot x=y^2
+#      [...draws plot if supported]
+#      ➤ # many many more usages... https://www.wolframalpha.com/examples/
+
+set -eo pipefail
+
+WA_APPID=${WA_APPID:?WA_APPID is not set. Get one at https://products.wolframalpha.com/api/}
+: "${WA_VIEWER:="kitty +kitten icat"}"  # Use `VIEWER="display"` from imagemagick if terminal does not support images
+: "${WA_BG:=transparent}"               # Transparent background
+: "${WA_FG:=white}"                     # Match color to your terminal
+
+RESPONSE=$(curl -s "https://api.wolframalpha.com/v1/result?appid=$WA_APPID&units=metric&" --data-urlencode "i=$*" | tee /dev/tty)
+
+# Remove next if you are fine with text only api, and don't want to see any images
+if [ "$RESPONSE" == "No short answer available" ]; then
+	echo ", downloading full answer..."
+	curl -s "https://api.wolframalpha.com/v1/simple?appid=$WA_APPID&units=metric&foreground=$WA_FG&background=$WA_BG" --data-urlencode "i=$*" | $WA_VIEWER || exit 1
+fi
+
+echo
