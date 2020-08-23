@@ -74,7 +74,7 @@ dirs=(
 	~/.local/src/dwmblocks
 	~/.local/src/st
 	~/slsk/programs/AP2_QMK/annepro-qmk
-	~/slsk/programs/AP2_QMK/AnnePro2-shine
+	~/slsk/programs/AP2_QMK/annepro2-shine
 	~/slsk/programs/AP2_QMK/AnnePro2-Tools
 )
 up2date() {
@@ -149,12 +149,12 @@ extract() {
 }
 
 archive() {
-	local archive="$1"; shift
-
-	if [ ! -e "$1" ]; then
-		printf "usage: compress <ARCHIVE> [FILE...]\n" >&2
+	if [ "$#" -lt 2 ]; then
+		printf "usage: $0 <ARCHIVE> [FILE...]\n" >&2
 		return 1
 	fi
+
+	local archive="$1"; shift
 
 	case "$archive" in
 		*.tar.bz|*.tbz| \
@@ -371,10 +371,10 @@ avekbps() {
 }
 
 ## ffmpeg utilities
-compress() {
+compressvid() {
 	ffmpeg -i $1 -vcodec h264 -acodec mp3 $2
 }
-compressbrate() {
+compressvidbrate() {
 	bitrate=${3:-1000k}
 	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
 }
