@@ -177,14 +177,14 @@ keymap ef       PEEK_LINK					#Show link under cursor.
 #Open current link with external browser = sensible browser
 keymap M-o      EXTERN
 #copy current url and remove newline at the end.
-keymap yy       EXTERN     copy_url.sh
+keymap yy       EXTERN     copy
 #keymap yy       EXTERN     "echo -n %s | xclip -i -selection clipboard"
 #keymap yy       EXTERN     "echo -n %s | xsel -b"
 #open link under cursor with external browser = sensible browser
 keymap M-p      EXTERN_LINK
 #Copy link under cursor, It does not copy images urls
 #keymap yf       EXTERN_LINK 'env printf %s "$0" | xsel -b'
-keymap yf       EXTERN_LINK  copy_url.sh
+keymap yf       EXTERN_LINK  copy
 #follow link in clipboard in the current tab.
 keymap p 	GOTO		/usr/lib/w3m/cgi-bin/goto_clipboard.cgi
 #follow link in clipboard in new foreground tab.
