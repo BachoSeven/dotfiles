@@ -56,7 +56,7 @@ dwm.tagselfg:		C0
 dwm.infonormbg:		C4
 dwm.infonormfg:		BG
 dwm.infoselbg:		C0
-dwm.infoselfg:		C13
+dwm.infoselfg:		C6
 
 !! Dmenu
 dmenu.background:	C0

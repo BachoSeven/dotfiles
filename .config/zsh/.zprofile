@@ -71,7 +71,7 @@
 
 # pfetch
 	# OFF: memory de uptime
-	export PF_INFO="ascii title os wm host kernel pkgs shell editor palette"
+	export PF_INFO="ascii title os wm host pkgs shell editor"
 	# name, data, title
 	export PF_COL1=4
 	export PF_COL2=7

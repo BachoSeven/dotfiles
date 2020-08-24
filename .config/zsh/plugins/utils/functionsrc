@@ -510,15 +510,13 @@ download_files_from_page() {
 
 	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$1")"
 	mkdir -pv "$outputdir_name"
-	cd "$outputdir_name" && wget -c -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2"
+	cd "$outputdir_name"
+	wget -c -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2" || ( cd.. && rm -ir "$outputdir_name" )
 }
 
-escape() {
-    # Uber useful when you need to translate weird as fuck path into single-argument string.
-    local escape_string_input
-    echo -n "String to escape: "
-    read escape_string_input
-    printf '%q\n' "$escape_string_input"
+# Efficient way to select a line to print to stdout: https://unix.stackexchange.com/questions/29878/can-i-access-nth-line-number-of-standard-output
+line() {
+	awk "NR==$1{print;exit}"
 }
 
 confirm() {

@@ -15,8 +15,11 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	" Neovim in the browser :)
 	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
-" Markdown Live Preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+"" Markdown
+" Live Preview
+	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" Markdown Table of Contents
+	Plug 'mzlogin/vim-markdown-toc'
 
 " " Vimtex
 	" Plug 'lervag/vimtex'

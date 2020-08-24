@@ -274,7 +274,7 @@ cmd embed $$@ $fx
 # Pager command
 cmd pager ${{
 	if [[ $f = *.md  ]]; then
-		glow -w 120 -ps ~/.config/glow/gruvbox.json $fx
+		glow -w 125 -ps ~/.config/glow/gruvbox.json $fx
 	else
 		less $fx
 	fi
