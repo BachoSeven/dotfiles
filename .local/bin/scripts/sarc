@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+# Credits: https://github.com/tom-on-the-internet/sarc/blob/master/sarc
+
+# Turns
+# That's a good idea, Tom.
+# Into
+# tHaT's A gOoD iDeA, tOm
+if [[ ! $@ =~ ^\-.+ ]]; then
+	printf "uSaGe:\\n\\nsarc [OPTIONS] [MESSAGE]\\n\\n\\t [ -c : copy message to clipboard ]\\n\\t [ -i \"message\" ]\\n\\t\\t [ -h : show this message and exit ]\\n\\n" && exit
+fi
+
+while getopts ":hci:" o; do
+	case "${o}" in
+		h)
+			printf "\"UsAgE\":\\nsarc\\n\\t [ -c: copy message to clipboard ]\\n\\t [ -i \"Message\" ]\\n\\t [ -h: Show this message ]\\n" && exit ;;
+
+		c)
+			copy=true ;;
+		i)
+			input="${*,,}"; input="${input#"-i "}" ;;
+		*)
+			printf "Invalid option: -%s\\n" "$OPTARG" && exit 1 ;;
+	esac
+done
+
+character_index=0
+should_uppercase="false"
+
+while [ "$character_index" -lt "${#input}" ]
+do
+  char="${input:$character_index:1}"
+
+  # only toggle (or not) the character if it's an alphabetical character
+  if [[ $char =~ [[:alpha:]] ]]
+  then
+    if $should_uppercase
+    then
+      char="$(echo "$char" | tr '[:lower:]' '[:upper:]')"
+      should_uppercase="false"
+    else
+      should_uppercase="true"
+    fi
+  fi
+
+  output="${output}$char"
+  character_index=$(( character_index + 1 ))
+done
+
+if [ "$copy" ]; then
+	echo "$output" | xclip -sel clip &> /dev/null && notify-send "${output} was copied to system clipboard."
+else
+	echo "$output"
+fi
