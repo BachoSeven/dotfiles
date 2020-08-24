@@ -128,6 +128,7 @@
 	alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
 # Rice
 	alias ew='nvim ~/.local/src/wiki/' # Edit wiki
+	alias ep='nvim ~/.local/src/AARGH/progs.csv' # Edit programs
 	alias mim='nvim $XDG_CONFIG_HOME/mimi/mimi.conf'
 	alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
 	alias bash='/bin/bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'

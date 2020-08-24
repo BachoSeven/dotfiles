@@ -8,8 +8,7 @@
 ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
-This are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)<br>
-
+This are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
 <!-- vim-markdown-toc GFM -->
 
 * [Current Setup](#current-setup)
@@ -20,7 +19,6 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
 		* [Gnome-Shell](#gnome-shell)
 
 <!-- vim-markdown-toc -->
-
 # Current Setup
 
 My setup is pretty minimal and fast: although many packages and systemd services are launched at boot, rebooting from dwm to dwm takes approximately 15 seconds(with grub).
