@@ -6,19 +6,21 @@
 # That's a good idea, Tom.
 # Into
 # tHaT's A gOoD iDeA, tOm
+
+# Exit if no arguments given
 if [[ ! $@ =~ ^\-.+ ]]; then
-	printf "uSaGe:\\n\\nsarc [OPTIONS] [MESSAGE]\\n\\n\\t [ -c : copy message to clipboard ]\\n\\t [ -i \"message\" ]\\n\\t\\t [ -h : show this message and exit ]\\n\\n" && exit
+	printf "uSaGe:\\n\\nsarc [MESSAGE] [OPTIONS]\\n\\n\\t[ -i \"message\" ]\\n\\t[ -c : copy message to clipboard ]\\n\\t[ -h : show this message and exit ]\\n\\n" && exit
 fi
 
-while getopts ":hci:" o; do
+# Parse options
+while getopts ":hi:c" o; do
 	case "${o}" in
 		h)
-			printf "\"UsAgE\":\\nsarc\\n\\t [ -c: copy message to clipboard ]\\n\\t [ -i \"Message\" ]\\n\\t [ -h: Show this message ]\\n" && exit ;;
-
+			printf "uSaGe:\\n\\nsarc [OPTIONS] [MESSAGE]\\n\\n\\t [ -c : copy message to clipboard ]\\n\\t [ -i \"message\" ]\\n\\t [ -h : show this message and exit ]\\n\\n" && exit;;
+		i)
+			input="${*,,}"; input=${input#"-i "}; input=${input%" -c"} ;;
 		c)
 			copy=true ;;
-		i)
-			input="${*,,}"; input="${input#"-i "}" ;;
 		*)
 			printf "Invalid option: -%s\\n" "$OPTARG" && exit 1 ;;
 	esac
@@ -31,7 +33,7 @@ while [ "$character_index" -lt "${#input}" ]
 do
   char="${input:$character_index:1}"
 
-  # only toggle (or not) the character if it's an alphabetical character
+# only toggle (or not) the character if it's an alphabetical character
   if [[ $char =~ [[:alpha:]] ]]
   then
     if $should_uppercase
@@ -47,6 +49,7 @@ do
   character_index=$(( character_index + 1 ))
 done
 
+[ ! "$output" ] && printf "No input given!\n" && exit
 if [ "$copy" ]; then
 	echo "$output" | xclip -sel clip &> /dev/null && notify-send "${output} was copied to system clipboard."
 else
