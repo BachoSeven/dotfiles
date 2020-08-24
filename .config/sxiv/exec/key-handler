@@ -38,5 +38,7 @@ do
 		gimp "$file" & ;;
 	"i")
 		sxiv-info "$file" & ;;
+	"I")
+		imgur.sh "$file" >/dev/null | head -n 1 | xclip -sel clip;;
         esac
 done
