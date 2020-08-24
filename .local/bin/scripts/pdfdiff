@@ -2,6 +2,8 @@
 
 # Dependencies: imagemagick, pdftk, ghostscript, md5sum, perl-rename
 
+ifinstalled pdtk && ifinstalled ghostscript && ifinstalled perl-rename && ifinstalled ghostscript && ifinstalled imagemagick || exit
+
 # Initial setup
 mkdir tmp1 tmp2 out
 
