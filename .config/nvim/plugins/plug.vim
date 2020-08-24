@@ -28,6 +28,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
 	Plug 'alx741/vinfo'
+	Plug 'chrisbra/csv.vim'
 
 " Autocompletion
 	Plug 'Shougo/deoplete.nvim'

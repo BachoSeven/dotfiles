@@ -9,5 +9,5 @@ case "$(printf "a selected area\\ncurrent window\\nfull screen\\na selected area
 	"full screen (copy)") maim | xclip -sel clip -t image/png ;;
 	"a selected area (imgur)") maim -s /tmp/screen.png; imgur.sh /tmp/screen.png | head -n 1 | xclip -sel clip ;;
 	"current window (imgur)") maim -i "$(xdotool getactivewindow)" /tmp/screen.png; imgur.sh /tmp/screen.png  | head -n 1| xclip -sel clip ;;
-	"full screen (imgur)") maim /tmp/screen.png; imgur.sh /tmp/screen.png | head -n 1 | xclip -sel clip ;;
+	"full screen (imgur)") maim /tmp/screen.png; imgur.sh /tmp/screen.png >/dev/null | head -n 1 | xclip -sel clip ;;
 esac
