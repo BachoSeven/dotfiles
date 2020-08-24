@@ -18,6 +18,8 @@ Xft.lcdfilter: lcddefault
 
 Xcursor.theme: ArchCursorComplete
 
+Sxiv.font: Hack Nerd Font:size=15:style=bold
+
 #include "Xresources.d/gruvbox"
 ! #include "Xresources.d/solarized"
 
