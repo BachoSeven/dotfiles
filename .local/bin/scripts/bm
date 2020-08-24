@@ -2,11 +2,12 @@
 # vim: set filetype=ruby:
 # bm - browse Chrome bookmarks with fzf
 # Credits: junegunn https://gist.github.com/junegunn/15859538658e449b886f
+# Adapted for Linux by BachoSeven
 
 # Make sure $BROWSER is set; I could have used xdg-open,
 # but for use as a popup it is more convenient this way.
 # For usage as a popup: `bm popup`
-# NOTE: You might want to install w3m for the preview window.
+# NOTE: You might want to install w3m for the preview window in fzf.
 
 [[ $1 = popup ]] && opts="--height 100%"
 
