@@ -1,4 +1,4 @@
-![](pics/screens/ricing/fripp_dwm-matrix.png)<br>
+![](pics/screens/ricing/fripp_dwm-matrix.png)
 
 ``` sh
 ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
