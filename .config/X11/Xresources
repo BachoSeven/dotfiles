@@ -15,13 +15,17 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
-
+! Cursor
 Xcursor.theme: ArchCursorComplete
 
-Sxiv.font: Hack Nerd Font:size=15:style=bold
 
 #include "Xresources.d/gruvbox"
 ! #include "Xresources.d/solarized"
+
+!! Sxiv
+Sxiv.font: Hack Nerd Font:size=14:style=bold
+Sxiv.background: C0
+Sxiv.foreground: C4
 
 #include "Xresources.d/xscreensaver"
 
