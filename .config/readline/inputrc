@@ -1,3 +1,23 @@
+set colored-stats                    on
+set visible-stats                    on
+set mark-symlinked-directories       on
+set colored-completion-prefix        on
+set blink-matching-paren             on
+set comment-begin                    #
+set completion-prefix-display-length 111
+set completion-query-items           200
+set convert-meta                     off
+set disable-completion               off
+set echo-control-characters          on
+set match-hidden-files               off
+set page-completions                 on
+set completion-ignore-case           on
+set print-completions-horizontally   on
+
+# Tab for printing completion; Shift+Tab for cycling through completions
+Tab: complete
+"\e[Z": menu-complete
+
 $include /etc/inputrc
 set editing-mode vi
 $if mode=vi
