@@ -68,6 +68,7 @@
 	alias nmdm='networkmanager_dmenu'
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
+	alias ytdl="youtube-dl -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic"
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
 #  * `fs` command to show free space on physical drives
 	alias fs='df -h -x squashfs -x tmpfs -x devtmpfs'
