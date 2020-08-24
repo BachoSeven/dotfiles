@@ -57,8 +57,10 @@
 	ino <c-J> <c-g>u<esc>u[s3z=gi<c-g>u
 
 " Save a few keypresses
-	map <C-h> <C-w>h
-	map <C-l> <C-w>l
+	nn <C-h> <C-w>h
+	nn <C-j> <C-w>j
+	nn <C-k> <C-w>k
+	nn <C-l> <C-w>l
 	map <leader>h <C-w>h:q<cr>
 	map <leader>j <C-w>j:q<cr>
 	map <leader>k <C-w>k:q<cr>
@@ -89,7 +91,7 @@
 	nn <leader>O maO<Esc>`a
 
 " Shift line downwards
-	nn <NL> maa<CR><ESC>`a
+	nn <leader>J maa<CR><ESC>`a
 
 " Turn off search highlight
 	nn <leader><space> :nohlsearch<CR>
