@@ -24,6 +24,9 @@ gc() {
 	git clone $@
 	cd $(basename "$1" .git)
 }
+pgc() {
+	git clone git@github.com:BachoSeven/$1.git
+}
 
 src_update() {
 	for dir in $dirs; do
