@@ -38,6 +38,6 @@
 	"cleanmenu": true,
 	"diffmenu": false,
 	"editmenu": false,
-	"combinedupgrade": true,
+	"combinedupgrade": false,
 	"useask": false
 }

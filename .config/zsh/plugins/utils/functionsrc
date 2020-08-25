@@ -86,8 +86,8 @@ dirs=(
 	~/slsk/programs/AP2_QMK/AnnePro2-Tools
 )
 up2date() {
-	_run informant read
 	_run yay
+	_run sudo pacnews
 	_run nvim +PlugUpdate +quitall
 	_run zsh_update_plugins
 	_run src_update $dirs
