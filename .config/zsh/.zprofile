@@ -5,6 +5,7 @@
 	export PAGER='less'
 	export EDITOR="nvim"
 	export VISUAL="nvim"
+	export DIFFTOOL="nvim -d"
 	export BROWSER="chromium"
 	export LOCATION="Pisa" # weather script
 	export SUDO_ASKPASS="$HOME/.local/bin/scripts/dmenupass"
