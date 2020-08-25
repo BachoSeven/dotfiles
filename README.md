@@ -44,7 +44,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ## Eye-candy
 
-- I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, copyq, all suckless config and anywhere else (although I tried to keep a commented solarized alternative where I could for nostalgia). I also set them in the **[tty](https://www.reddit.com/r/unixporn/comments/igdhic/etcissue_material_gruvbox_virtual_console_login/)**.
+- I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, copyq, all suckless config and anywhere else (although I tried to keep a commented solarized alternative where I could for nostalgia). I even set them in the **[tty](https://www.reddit.com/r/unixporn/comments/igdhic/etcissue_material_gruvbox_virtual_console_login/)**.
 - I also use `pywal` now and then, you will find various attempts at integrating it with other programs across this repo
 - The compositor is `picom` ([picom-ibhagwan-git](https://aur.archlinux.org/packages/picom-ibhagwan-git/) fork)
 - Icons are Joypixels ([ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/))
@@ -53,9 +53,9 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 
 ## Various
 
+- I like using vim bindings whenever possible.
 - I use ungoogled-chromium, you can find info about my config of it at `.config/brave_plugins`. To improve its aesthetics, I use a gruvbox chrome theme and duckduckgo with `gruvboxytheme` pass phrase; which make a decent start page together Vimium's Vomnibar. (I now use a custom start page with Brave, check it out [here](https://github.com/BachoSeven/startpage).
-- I use vim bindings, when possible.
-- [pacgraph](http://github.com/keenerd/pacgraph/) output:<br>
+- [Pacgraph](http://github.com/keenerd/pacgraph/) output:<br>
 ![](pics/screens/ricing/pacgraph-24_8_20.png)
 
 ## Screens
