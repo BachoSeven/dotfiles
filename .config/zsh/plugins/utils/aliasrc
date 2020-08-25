@@ -4,7 +4,6 @@
 ## Basics
 
 # Pacman
-	alias clean='sudo pacman -Rns $(pacman -Qttdq)'
 	alias browsepac="pacman -Qqe | fzf --preview 'pacman -Qi {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 # Enable aliases to be sudo’ed
 	alias sudo='sudo '
