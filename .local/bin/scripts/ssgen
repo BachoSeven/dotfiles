@@ -4,7 +4,7 @@
 script_path="$HOME/.local/bin/scripts"
 
 # the editor of your choice
-script_editor="st -c Scripting -e nvim"
+script_editor="st -c Scripting -e nvim -c 'set ft=sh'"
 
 # check for argument (script name)
 
