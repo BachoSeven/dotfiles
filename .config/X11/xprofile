@@ -8,14 +8,14 @@
 	xss-lock -- /usr/local/bin/slock &
 
 # Utils
+	mconnect 2>/dev/null &		# Autoconnect to Android; first so the directory will be deleted quickly by cronie
 	xrdb -load ~/.config/X11/Xresources
 	xsetroot -cursor_name left_ptr
 	[ -f ~/.cache/wal/active ] && wal -R || setbg & # Dirty trick to check if pywal was on at shutdown
-	transmission-daemon &		# Bittorrent daemon
-	mconnect 2>/dev/null &		# Autoconnect to Android
 	copyq &				# Clipboard management
 	pgrep redshift &> /dev/null || redshift &> /dev/null & # Color temperature
 	picom &				# Compositor
 	dunst &				# Notifications
 	unclutter &			# Remove mouse when idle
 	remaps				# Switch caps/super and one-tap_caps/esc
+	# transmission-daemon &		# Bittorrent daemon; last so mybe network will be working...
