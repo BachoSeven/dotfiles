@@ -42,7 +42,6 @@
 	alias bons="cbonsai -l -b 2 -M 7"
 	alias trem='transmission-remote'
 	alias brave='brave-nightly'
-	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep '
 	alias xclip="xclip -sel clip"
 	alias rm='rm -v'
 	alias cp='cp -v'
@@ -100,7 +99,10 @@
 	alias mcl='java -jar ~/stuff/games/minecraft\ Jar/mcTE.jar'
 	alias smi="sudo make clean install"
 	alias mx='weechat'
-	alias pstree='pstree -C age -hlUG fra'
+# Processes
+	alias pst='pstree -C age -hlUG fra' # pstree
+	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep ' # psgrep
+	alias psh='printf "\033[0;96mCPU\033[0;0m\n\n" && ps -eo cmd,fname,pid,pcpu,time --sort=-pcpu | head -n 11 && printf "\n\033[0;35mMEMORY\033[0;0m\n\n" && ps -eo cmd,fname,pid,pmem,rss --sort=-rss | head -n 9' # pshead
 # Soulseek
 	alias slsk='soulseekqt'
 	alias inc='lfcd ~/slsk/incoming'
