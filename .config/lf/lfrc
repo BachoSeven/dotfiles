@@ -260,6 +260,11 @@ cmd cleanlatexcompile ${{
 	notify-send "File(s) compiled."
 }}
 
+# Share files up to 256 Mib
+cmd share ${{
+	curl -F"file=@$fx" https://0x0.st | xclip -sel clip
+}}
+
 # Dragon cmds
 cmd dragon %dragon-drag-and-drop -a -x $fx
 cmd dragon-stay %dragon-drag-and-drop -a $fx
