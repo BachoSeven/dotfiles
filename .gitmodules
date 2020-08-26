@@ -1,9 +1,9 @@
 [submodule ".config/mpv/scripts/mpvSockets"]
 	path = .config/mpv/scripts/mpvSockets
 	url = https://github.com/wis/mpvSockets.git
-[submodule ".config/browser/startpage"]
-	path = .config/browser/startpage
-	url = git@github.com:BachoSeven/startpage.git
 [submodule ".config/zsh/plugins/fast-syntax-highlighting"]
 	path = .config/zsh/plugins/fast-syntax-highlighting
 	url = git@github.com:BachoSeven/fast-syntax-highlighting.git
+[submodule ".config/browser/startpage"]
+	path = .config/browser/startpage
+	url = git@github.com:BachoSeven/startpage.git
