@@ -1,8 +1,8 @@
 [submodule ".config/mpv/scripts/mpvSockets"]
 	path = .config/mpv/scripts/mpvSockets
 	url = https://github.com/wis/mpvSockets.git
-[submodule ".config/brave_plugins/startpage"]
-	path = .config/brave_plugins/startpage
+[submodule ".config/browser/startpage"]
+	path = .config/browser/startpage
 	url = git@github.com:BachoSeven/startpage.git
 [submodule ".config/zsh/plugins/fast-syntax-highlighting"]
 	path = .config/zsh/plugins/fast-syntax-highlighting

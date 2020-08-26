@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+
+  "name": "Gruvbox Dark Theme",
+  "description": "Gruvbox inspired theme for Chromium",
+  "version": "1.0",
+
+  "theme": {
+    "colors" : {
+      "frame" : [29, 32, 33],
+      "frame_inactive" : [29, 32, 33],
+      "frame_incognito" : [167, 152, 133],
+      "frame_incognito_inactive" : [212, 195, 163],
+
+      "background_tab": [40, 40, 40],
+      "background_tab_inactive": [40, 40, 40],
+      "background_tab_incognito": [40, 40, 40],
+      "background_tab_incognito_inactive": [40, 40, 40],
+      "bookmark_text" : [251, 241, 201],
+      "button_background": [40, 40, 40],
+      "control_background": [40 , 40, 40],
+      "tab_background_text" : [145, 131, 117],
+      "tab_background_text_inactive": [235, 219, 178],
+      "tab_background_text_incognito": [235, 219, 178],
+      "tab_background_text_incognito_inactive": [235, 219, 178],
+      "tab_text" : [251, 241, 201],
+      "toolbar" : [60, 56, 55],
+      "toolbar_button_icon": [235, 219, 178],
+      "ntp_background": [40, 40, 40],
+      "ntp_header": [235, 219, 178],
+      "ntp_link": [69, 133, 136],
+      "ntp_link_underline": [69, 133, 136],
+      "ntp_text": [235, 219, 178],
+      "ntp_section": [40, 40, 40],
+      "ntp_section_link": [69, 133, 136],
+      "ntp_section_link_underline": [69, 133, 136],
+      "ntp_section_text": [235, 219, 178]
+    },
+
+    "tints" : {
+        "buttons": [0.33, 0.5, 0.85]
+    }
+  }
+}
