@@ -1,2 +1,12 @@
 # Because who cares about case!?
 --smart-case
+--colors
+match:bg:green
+--colors
+match:fg:black
+--colors
+line:fg:cyan
+--colors
+path:fg:blue
+--colors
+path:bg:black
