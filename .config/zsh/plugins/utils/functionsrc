@@ -26,8 +26,7 @@ clean() {
 }
 
 gc() {
-	git clone $@
-	cd $(basename "$1" .git)
+	git clone $@ && cd $(basename "$1" .git)
 }
 pgc() {
 	git clone git@github.com:BachoSeven/$1.git
