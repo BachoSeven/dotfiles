@@ -8,6 +8,7 @@
 	unsetopt rm_star_silent 				# Always ask before rm folder/*
 	setopt prompt_subst 					# Command substitution, parameter and arithmetic expansion in prompt.
 	setopt INTERACTIVE_COMMENTS				# Allow comments even in interactive shell
+	setopt magicequalsubst					# ~ substitution and tab completion after a = (for --x=filename args)
 
 # Remember recent directories
 	autoload -Uz add-zsh-hook
