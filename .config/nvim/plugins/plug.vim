@@ -2,7 +2,6 @@ cal plug#begin('~/.local/share/nvim/plugged')
 
 "" Utilities
 	Plug 'ptzz/lf.vim'
-	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 	Plug 'rbgrouleff/bclose.vim'
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
