@@ -21,7 +21,7 @@
 	bindkey -s '^q' ' browsepac\n'
 
 # vim user :)
-	alias :q='exit'
+	for i in x q Q; eval alias :${i}=\' exit\'
 	alias v="nvim"
 	alias vim="nvim"
 	alias vimdiff="nvim -d"
