@@ -9,7 +9,7 @@
 "		 | Settings |
 "		 +----------+
 	se title
-	let mapleader =","
+	let mapleader =" "
 	se shell=/usr/bin/zsh
 	se clipboard+=unnamedplus
 	se number relativenumber
