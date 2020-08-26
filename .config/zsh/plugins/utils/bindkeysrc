@@ -74,7 +74,33 @@
 
 	bindkey " " magic-abbrev-expand
 	bindkey "^x " no-magic-abbrev-expand
-	bindkey -M isearch " " self-insert
+
+	zleiab() {
+    declare -A abk
+    abk=(
+        'G'    '|& rg -i '
+        'C'    '| wc -l'
+        'H'    '| head'
+        'T'    '| tail'
+        'N'    '&>/dev/null'
+        'S'    '| sort -h '
+        'V'    '|& nvim -'
+        "jk"   "!-2$"
+        "j2"   "!-3$"
+        "j3"   "!-4$"
+    )
+
+    emulate -L zsh
+    setopt extendedglob
+    local MATCH
+
+    matched_chars='[.-|_a-zA-Z0-9]#'
+    LBUFFER=${LBUFFER%%(#m)[.-|_a-zA-Z0-9]#}
+    LBUFFER+=${abk[$MATCH]:-$MATCH}
+}
+zle -N zleiab
+
+
 
 ## Also these aliases are here since they're too short to be parsed correctly by dmenu_aliases; and are useless for th scope of that script anyways.
 # Default to human readable figures and colorize

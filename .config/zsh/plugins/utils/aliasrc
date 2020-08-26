@@ -80,7 +80,7 @@
 	alias mc='mconnect'
 	alias mctl='mconnectctl'
 	alias sctl='systemctl'
-	alias jctl='journalctl --pager-end'
+	alias jctl='journalctl -f | ccze -A' #follow log
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
