@@ -299,6 +299,7 @@ map c push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extention
 map a push A<a-b> # after extention
+map R push A<c-w> # rename completely
 map B $vidir
 map o push :mkdir<space>
 map E extract

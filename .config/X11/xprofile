@@ -8,7 +8,7 @@
 	xss-lock -- /usr/local/bin/slock &
 
 # Utils
-	mconnect 2>/dev/null &		# Autoconnect to Android; first so the directory will be deleted quickly by cronie
+	mconnect 2>/dev/null & rmdir ~/mconnect	# Autoconnect to Android; first so the directory will be deleted quickly by cronie
 	xrdb -load ~/.config/X11/Xresources
 	xsetroot -cursor_name left_ptr
 	[ -f ~/.cache/wal/active ] && wal -R || setbg & # Dirty trick to check if pywal was on at shutdown
