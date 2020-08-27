@@ -142,7 +142,6 @@ Thumbs.db
 .config/discord
 .config/Microsoft
 .local/share/gem
-.local/share/nvim/plugged
 .local/share/TelegramDesktop
 .config/zsh/.zsh_history
 .local/lib
@@ -309,6 +308,13 @@ Thumbs.db
 # .config/google-chrome/Default/History Index *
 # .config/google-chrome/Default/Service Worker/CacheStorage
 
+# Mpd:
+.config/mpd/log
+.config/mpd/state
+
+# Lf
+.local/share/lf/history
+
 #Chromium:
 
 .config/chromium/Default/Local Storage
@@ -370,6 +376,11 @@ nohup.out
 # Vim
 .vim/bundle/*
 .viminfo
+
+# Neovim
+.local/share/nvim/plugged
+.local/share/nvim/shada
+.local/share/nvim/swap
 
 # VS Code
 # .vscode-oss/extensions/*
