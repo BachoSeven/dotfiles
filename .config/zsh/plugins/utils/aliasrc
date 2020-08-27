@@ -44,6 +44,7 @@
 	alias rm='rm -v'
 	alias cp='cp -v'
 	alias mv='mv -v'
+	alias open='xdg-open'
 
 # Manuals
 	alias mman='macho -i'
@@ -72,7 +73,7 @@
 	alias mc='mconnect'
 	alias mctl='mconnectctl'
 	alias sctl='systemctl'
-	alias jctl='journalctl -f | ccze -A' #follow log
+	alias jctl='journalctl -f -n 100 | ccze -A' #follow log
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
@@ -102,7 +103,7 @@
 # Processes
 	alias pst='pstree -C age -hlUG fra' # pstree
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep ' # psgrep
-	alias psh='printf "\033[0;96mCPU\033[0;0m\n\n" && ps -eo cmd,fname,pid,pcpu,time --sort=-pcpu | head -n 11 && printf "\n\033[0;35mMEMORY\033[0;0m\n\n" && ps -eo cmd,fname,pid,pmem,rss --sort=-rss | head -n 9' # pshead
+	alias psh='printf "\033[1;96mCPU\033[0;0m\n\n" && ps -eo cmd,fname,pid,pcpu,time --sort=-pcpu | head -n 11 && printf "\n\033[1;35mMEMORY\033[0;0m\n\n" && ps -eo cmd,fname,pid,pmem,rss --sort=-rss | head -n 9' # pshead
 # Soulseek
 	alias slsk='soulseekqt'
 	alias inc='lfcd ~/slsk/incoming'

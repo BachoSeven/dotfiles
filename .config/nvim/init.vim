@@ -67,8 +67,9 @@
 	map <leader>l <C-w>l:q<CR>
 	nn c "_c
 	nn x "_x
-" This is amazing, try it.
+" These are amazing.
 	nn <leader>w :w<CR>
+	nn <leader>q :q<CR>
 " Quick macros
 	nn <silent> Q @q
 	map <C-t>k :tabr<CR>
@@ -144,11 +145,11 @@
 "		 +------------+
 	hi Comment gui=italic
 " ColorScheme
-	se termguicolors
+	" notermgui
 	se background=dark
-	colo gruvbox | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
+	" colgruvbox | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
 
-	" colwal
+	colo wal
 	" colo NeoSolarized
 	" let g:airline_theme='base16_solarized'
 " Transparency

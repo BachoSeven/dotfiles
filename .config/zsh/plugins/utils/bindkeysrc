@@ -121,6 +121,7 @@ zle -N zleiab
 # Shorter commands
 	alias \
 	ka='killall' \
+		p='pacman' \
 		g='git' \
 		gd='g diff' \
 		gg='g pull' \
