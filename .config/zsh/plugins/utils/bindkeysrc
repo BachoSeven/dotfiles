@@ -104,10 +104,8 @@ zle -N zleiab
 
 ## Also these aliases are here since they're too short to be parsed correctly by dmenu_aliases; and are useless for th scope of that script anyways.
 # Default to human readable figures and colorize
-	alias df='df --si --print-type'
-	alias du='du --si'
-	alias ls='ls --si --classify --group-directories-first'
-	alias free='free --si'
+	alias df='df --print-type'
+	alias ls='ls --classify --group-directories-first'
 	alias l='ls --color -lA'
 	alias rd='rmdir'
 	alias mkdir='mkdir -p --verbose'

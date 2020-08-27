@@ -60,19 +60,13 @@
 	}
 	alias sloc='fd -t f --exec-batch wc -l'
 	alias verifygpg='gpg --auto-key-retrieve --verify'
-	alias ncdu="ncdu --si --color dark"
+	alias ncdu="ncdu --color dark"
+	alias sort='sort --parallel 8 -S 16M'
 	alias nmdm='networkmanager_dmenu'
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 	alias ytdl="youtube-dl -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic"
-	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
-#  * `fs` command to show free space on physical drives
-	alias fs='df -h -x squashfs -x tmpfs -x devtmpfs'
-#  * `disks` command to List disks
-#    - It is a good habit to run this command before `dd`, to make 100% sure not to override system partition
-	alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
-#  * `partitions` command to list partitions
-	alias partitions='lsblk -o HOTPLUG,NAME,LABEL,MOUNTPOINT,SIZE,MODEL,PARTLABEL,TYPE,UUID | grep -v loop | cut -c1-$COLUMNS'
+	alias P="patch -p1 <"
 	alias nf='neofetch'
 	alias pf='pfetch'
 	alias mc='mconnect'
@@ -82,12 +76,11 @@
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
-	alias rxs='killall xscreensaver; xscreensaver -no-splash & disown %1'
+	alias rxs='killall xscreensaver && setsid -f xscreensaver -no-splash'
 	alias glow='glow -p -w 125 -s ~/.config/glow/gruvbox.json'
 	alias udef='udict'
 	alias spot='st -c ncspot -e ncspot'
-	alias flp='flashplayer'
-	alias html2text='html2text -nobs -style pretty'
+	_exists html2text && alias html2text='html2text -nobs -style pretty'
 	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config -graph'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys -nomargins -notitle -prettysrc'
@@ -96,7 +89,16 @@
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias mcl='java -jar ~/stuff/games/minecraft\ Jar/mcTE.jar'
 	alias smi="sudo make clean install"
-	alias mx='weechat'
+		alias mx='weechat'
+## Disks
+	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
+#  * `fs` to show free space on physical drives
+	alias fs='df -h -x squashfs -x tmpfs -x devtmpfs'
+#  * `disks` command to List disks
+#    - It is a good habit to run this command before `dd`, to make 100% sure not to override system partition
+	alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
+#  * `partitions` command to list partitions
+	alias partitions='lsblk -o HOTPLUG,NAME,LABEL,MOUNTPOINT,SIZE,MODEL,PARTLABEL,TYPE,UUID | grep -v loop | cut -c1-$COLUMNS'
 # Processes
 	alias pst='pstree -C age -hlUG fra' # pstree
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|grep ' # psgrep
@@ -105,7 +107,7 @@
 	alias slsk='soulseekqt'
 	alias inc='lfcd ~/slsk/incoming'
 # Steam
-	alias tboi='steam steam://rungameid/250900'
+	_exists steam && alias tboi='steam steam://rungameid/250900'
 
 # cf... shortcuts
 	alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'

@@ -1,5 +1,6 @@
 # Because who cares about case!?
---smart-case
+--glob
+!.git/*
 --colors
 match:bg:green
 --colors
@@ -10,3 +11,5 @@ line:fg:cyan
 path:fg:blue
 --colors
 path:bg:black
+--smart-case
+--hidden

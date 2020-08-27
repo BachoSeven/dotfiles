@@ -2,6 +2,9 @@
 ## Functions
 # Some of this was stolen, amongst others, from https://github.com/SmartFinn/dotfiles. Thanks!
 
+## W efficieny
+_exists() { (( $+commands[$1] )) }
+
 # Pacman
 rip() {
 	[ -z "$1" ] && num="50" || num="$1"
@@ -539,7 +542,7 @@ download_files_from_page() {
 	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$1")"
 	mkdir -pv "$outputdir_name"
 	cd "$outputdir_name"
-	wget -c -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2" || ( cd.. && rm -ir "$outputdir_name" )
+	wget -c -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2" || ( cd .. && rm -ir "$outputdir_name" )
 }
 
 # Efficient way to select a line to print to stdout: https://unix.stackexchange.com/questions/29878/can-i-access-nth-line-number-of-standard-output
