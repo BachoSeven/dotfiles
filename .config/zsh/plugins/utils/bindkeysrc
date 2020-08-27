@@ -122,6 +122,9 @@ zle -N zleiab
 	alias \
 	ka='killall' \
 		g='git' \
+		gd='g diff' \
+		gg='g pull' \
+		gp='g push' \
 		gca='g commit -a && g push' \
 		glol="GIT_PAGER='fzf --ansi'; git -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" # GIT_PAGER='fzf --ansi --bind \'F1:cosa complicata per vedere la roba di quella commit con sed + less (?)\' '
 
