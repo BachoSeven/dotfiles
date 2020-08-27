@@ -9,7 +9,7 @@
 "		 | Settings |
 "		 +----------+
 	se title
-	let mapleader =" "
+	let mapleader =" " " This is so comfy
 	se shell=/usr/bin/zsh
 	se clipboard+=unnamedplus
 	se number relativenumber
@@ -41,7 +41,7 @@
 	ino jk <Esc>
 
 " Unlink system clipboard from vim's paste buffer
-	nno <leader>u :se clipboard=<CR>
+	nn <leader>u :se clipboard=<CR>
 
 " Edit vimrc/zshrc and load vimrc bindings
 	nn <leader>ev :vsp ~/.config/nvim/init.vim<CR>
@@ -61,18 +61,20 @@
 	nn <C-j> <C-w>j
 	nn <C-k> <C-w>k
 	nn <C-l> <C-w>l
-	map <leader>h <C-w>h:q<cr>
-	map <leader>j <C-w>j:q<cr>
-	map <leader>k <C-w>k:q<cr>
-	map <leader>l <C-w>l:q<cr>
+	map <leader>h <C-w>h:q<CR>
+	map <leader>j <C-w>j:q<CR>
+	map <leader>k <C-w>k:q<CR>
+	map <leader>l <C-w>l:q<CR>
 	nn c "_c
 	nn x "_x
+" This is amazing, try it.
+	nn <leader>w :w<CR>
 " Quick macros
 	nn <silent> Q @q
-	map <C-t>k :tabr<cr>
-	map <C-t>j :tabl<cr>
-	map <C-t>h :tabp<cr>
-	map <C-t>l :tabn<cr>
+	map <C-t>k :tabr<CR>
+	map <C-t>j :tabl<CR>
+	map <C-t>h :tabp<CR>
+	map <C-t>l :tabn<CR>
 
 " Replace all occurrences aliased to S
 	nn S :%s//g<Left><Left>
