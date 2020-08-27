@@ -139,7 +139,7 @@ Thumbs.db
 # ROBA
 .local/share/mail
 .config/Ferdi
-.config/discord-canary
+.config/discord
 .config/Microsoft
 .local/share/gem
 .local/share/nvim/plugged
@@ -313,6 +313,7 @@ Thumbs.db
 
 .config/chromium/Default/Local Storage
 .config/chromium/Default/Session Storage
+.config/chromium/Default/Service Worker
 .config/chromium/Default/Application Cache
 .config/chromium/Default/History Index *
 # /snap/chromium/common/.cache
