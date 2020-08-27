@@ -16,6 +16,12 @@ removeTotPkgsAfterInput() {
 ownedbypkg() {
 	pacman -Qlq $1 | grep -v '/$' | xargs -r du -h | sort -h
 }
+fp() {
+printf "$(pacman --color always "${@:--Ss}" \
+	| sed 'N;s/\n//' \
+	| fzf -m --ansi --preview 'pacman -Si {1}' \
+	| sed 's/ .*//')\n"
+}
 fzfpacinstall() {
 	sudo pacman -S $(fp)
 }
