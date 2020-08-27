@@ -164,7 +164,7 @@ Thumbs.db
 # /.virtualenvs
 
 # Session-specific
-# .Xauthority
+.local/share/xorg
 # .ICEauthority
 # .gksu.lock
 .config/pulse
