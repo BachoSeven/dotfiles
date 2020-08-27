@@ -494,6 +494,11 @@ scck() {
 	done
 }
 
+## Imagemagick
+75%() { mogrify -resize '75%X75%' "$@" ; }
+50%() { mogrify -resize '50%X50%' "$@" ; }
+25%() { mogrify -resize '25%X25%' "$@" ; }
+
 ## pdf utils
 img2pdf() {
 	while read file; do
