@@ -14,13 +14,13 @@
 
 ## Backup
 # Elements
-	alias ehdry='rsync -rltv -n --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
-	alias ehbkp='rsync -rltv --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
+	alias ehdry='rsync -rltvC -n --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
+	alias ehbkp='rsync -rltvC --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraEl/hyperversum'
 	alias eddry='rsync -rltv -n --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
 	alias edbkp='rsync -rltv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraEl/ascol'
 # Passport
-	alias phdry='rsync -rltv -n --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraPass/hyperversum'
-	alias phbkp='rsync -rltv --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraPass/hyperversum'
+	alias phdry='rsync -rltvC -n --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraPass/hyperversum'
+	alias phbkp='rsync -rltvC --delete --delete-excluded -i -s --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/fraPass/hyperversum'
 	alias pddry='rsync -rltv -n --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 	alias pdbkp='rsync -rltv --delete -i -s /mnt/01D5707D40B081F0/Users/ascol/ /mnt/fraPass/ascol'
 

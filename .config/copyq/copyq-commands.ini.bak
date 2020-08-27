@@ -67,7 +67,7 @@
 7\Input=application/x-copyq-tags
 7\Name=Clear all tags
 8\Command=copyq: toggle()
-8\GlobalShortcut=meta+shift+c
+8\GlobalShortcut=meta+c
 8\Icon=\xf022
 8\IsGlobalShortcut=true
 8\Name=Show/hide main window
