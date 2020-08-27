@@ -34,7 +34,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'chrisbra/csv.vim'
 
 " Autocompletion
-	Plug 'Shougo/deoplete.nvim'
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'Shougo/neco-vim'
 	Plug 'Shougo/neco-syntax'
 	Plug 'sirver/ultisnips'
