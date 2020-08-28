@@ -3,13 +3,13 @@ while read -r file
 do
         case "$1" in
 	"w")
-		setbg -i "$file" & ;;
+		setbg -i "$file" ;;
         "W")
-		setbg -w "$file" wal & ;;
+		setbg -w "$file" wal ;;
 	"Z")
-		setbg -w "$file" colorz & ;;
+		setbg -w "$file" colorz ;;
         "M")
-		setbg -i "$file" -m & ;;
+		setbg -i "$file" -m ;;
         "c")
 		[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
 		[ -z "$destdir" ] && exit

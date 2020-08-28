@@ -7,6 +7,9 @@ _exists() { (( $+commands[$1] )) }
 
 ## Arch
 # Pacman
+mirrors() {
+            grep -v '^$\|^#' /etc/pacman.d/mirrorlist | awk '{print $3}' | awk -F '/' '{print $3}';
+}
 rip() {
 	[ -z "$1" ] && num="50" || num="$1"
 	expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -n $num
@@ -50,7 +53,6 @@ aurupdate() {
 	git push
 }
 
-
 gc() {
 	git clone $@ && cd $(basename "$1" .git)
 }
@@ -81,7 +83,6 @@ _run() {
 	fi
 }
 
-
 # Updates
 dirs=(
 	~/.config/brave_plugins/startpage
@@ -101,7 +102,6 @@ up2date() {
 	_run zsh_update_plugins
 	_run src_update $dirs
 }
-
 
 extract() {
 	for f in "$@"
@@ -495,6 +495,16 @@ scck() {
 			shellcheck -x $dir/$script
 		done <<< $(\ls --format single-column $dir)
 	done
+}
+
+# amazing
+stopwatch(){
+    date1=`date +%s`;
+    while true; do
+        days=$(( $(($(date +%s) - date1)) / 86400 ))
+        printf "$days day(s) and $(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
+        sleep 0.1
+    done
 }
 
 ## Imagemagick

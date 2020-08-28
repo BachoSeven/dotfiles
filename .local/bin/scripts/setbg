@@ -35,7 +35,7 @@ done
 # Use gifview for gifs, or else xwallpaper
 	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
 	if [ "$mime" = "image/gif" ]; then
-		setsid gifbg "$bgloc" &
+		setsid -f gifbg "$bgloc" &
 	else
 		xwallpaper $format "$bgloc"
 	fi
