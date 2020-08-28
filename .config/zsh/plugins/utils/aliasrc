@@ -113,6 +113,7 @@
 	alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
 	alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
 	alias cfa='nvim $ZDOTDIR/plugins/utils/aliasrc'
+	alias cfb='nvim $ZDOTDIR/plugins/utils/bindkeysrc'
 	alias cff='nvim $ZDOTDIR/plugins/utils/functionsrc'
 	alias cfp='nvim $ZDOTDIR/.zprofile'
 	alias cfd='nvim $XDG_CONFIG_HOME/directories'

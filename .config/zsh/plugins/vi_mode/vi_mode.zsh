@@ -45,7 +45,7 @@
 
 # Edit line in vim with Ctrl+x+e:
 	autoload edit-command-line; zle -N edit-command-line
-	bindkey "^xe" edit-command-line
+	bindkey "^x^e" edit-command-line
 
 # Move by physical lines, just like gj/gk in vim :)
 # Credits to http://leahneukirchen.org/dotfiles/.zshrc# .zshrc interactive configuration file for zsh
