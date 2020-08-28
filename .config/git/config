@@ -8,16 +8,14 @@
 	helper = cache --timeout=7200
 [color]
 	ui = true
-# define command which will be used when "nvim" is set as a merge tool
-[mergetool "nvim"]
-	cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
-# set "nvim" as tool for merging
 [merge]
-	tool = nvim
 	conflictstyle = diff3
-# automatically launch merge tool without displaying a prompt
+	tool = vimdiff
 [mergetool]
 	prompt = false
+[mergetool "vimdiff"]
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+# automatically launch merge tool without displaying a prompt
 [clean]
 	requireForce = false
 [pull]
