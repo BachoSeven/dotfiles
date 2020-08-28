@@ -33,13 +33,14 @@
 	}
 	plugins=(
 		custom_completions
-		init # 0.13
+		init
+		completions
 		history
 		lf
 		utils
 		vi_mode
 		fzf
 		prompt
-		fast-syntax-highlighting # 0.12
+		fast-syntax-highlighting
 	)
 	zsh_load_plugins $plugins
