@@ -1,6 +1,12 @@
+# Basic options
 default_keybindings = false
-use_nerdfont=true
-notify=true
+use_nerdfont = true
+notify = true
+volnorm = true
+volnorm_pregain = 0.0
+
+[saved_state]
+shuffle = true
 
 [keybindings]
 ## unbinded: n, c, e, y
