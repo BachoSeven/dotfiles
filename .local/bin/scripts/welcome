@@ -1,0 +1,8 @@
+#!/bin/sh
+
+hnheadlines
+printf '\033[1;96 WEATHER:\n'
+curl wttr.in/$LOCATION\?pqtF&lang=it 2>/dev/null
+printf '/033[1;35 Arch News:\n'
+newsie fetch
+sleep 15

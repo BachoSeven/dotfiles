@@ -276,14 +276,14 @@ wtr() {
 	local loc="${1:=$LOCATION}"
 	local opts="${2:=pqtF&lang=it}"
 
-	curl wttr.in/${loc}\?${opts} 2>/dev/null | less -Re
+	curl wttr.in/${loc}\?${opts} 2>/dev/null | less -RE
 }
 wtrg() {
 	# see curl wttr.in/:help
 	local loc="${1:=$LOCATION}"
 	local opts="${2:=pqtF&lang=it}"
 
-	curl v2.wttr.in/${loc}\?${opts} 2>/dev/null | less -Re
+	curl v2.wttr.in/${loc}\?${opts} 2>/dev/null | less -RE
 }
 
 most-used-commands() {
