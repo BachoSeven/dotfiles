@@ -28,7 +28,7 @@
 # ci", ci', ci`, di", etc
 	autoload -U select-quoted
 	zle -N select-quoted
-	for m in visual viopp; do
+	for m in visual vicmd viopp; do
 	  for c in {a,i}{\',\",\`}; do
 	    bindkey -M $m $c select-quoted
 	  done
@@ -37,7 +37,7 @@
 # ci{, ci(, ci<, di{, etc
 	autoload -U select-bracketed
 	zle -N select-bracketed
-	for m in visual viopp; do
+	for m in visual vicmd viopp; do
 	  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
 	    bindkey -M $m $c select-bracketed
 	  done
@@ -72,3 +72,16 @@
 	bindkey -M viins '^u' kill-whole-line
 	bindkey -M viins '^b' backward-char
 	bindkey -M viins '^f' forward-char
+
+## Fix broken keys
+# Delete/Insert (replace mode)
+	bindkey '^[[P' delete-char
+	for m in visual viopp vicmd; do
+	    bindkey -M $m '^[.' vi-replace
+	done
+# Pgup(also `gg`)/Pgdown
+	bindkey '^[[5~' beginning-of-buffer-or-history
+	bindkey '^[[6~' end-of-buffer-or-history
+# Home/End
+	bindkey '^[[H' beginning-of-line
+	bindkey '^[[4~' end-of-line
