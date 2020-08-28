@@ -7,14 +7,14 @@
 !!
 
 !! Appearance
-*.scrollBar: false
-Xft.dpi: 96
+Xft.dpi: 102
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+*.scrollBar: false
 ! Cursor
 Xcursor.theme: ArchCursorComplete
 Xcursor.size: 24
