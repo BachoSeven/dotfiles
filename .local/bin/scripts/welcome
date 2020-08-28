@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/zsh
 
-hnheadlines
-printf '\033[1;96 WEATHER:\n'
+hnheadlines &&
+printf '\n\033[1;36mWEATHER:\033[1;32m'
 curl wttr.in/$LOCATION\?pqtF&lang=it 2>/dev/null
-printf '/033[1;35 Arch News:\n'
-newsie fetch
-sleep 15
+wait
+printf '\033[1;34mArch News:\n\033[1;37m'
+newsie fetch &&
+sleep 10
