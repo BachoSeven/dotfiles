@@ -45,6 +45,7 @@
 		":e"	"${EDITOR}"
 		":r"	"view"
 		":h"	"man"
+		":w"	" wiki-search"
 		"M"	"| more"
 		"L"	"| ${PAGER:-less}"
 		"H"	"| head"
