@@ -199,6 +199,9 @@ keymap C-j      GOTO_LINK					#Follow link (Enter = Ctrl+j)
 #pager-like scrolling.
 keymap k        DOWN
 keymap j        UP
+keymap C-e      DOWN
+keymap C-y      UP
+keymap j        UP
 keymap l        RIGHT
 keymap h        LEFT
 keymap gg       BEGIN						#Go to the top.
@@ -224,7 +227,7 @@ keymap UP       MOVE_UP1
 keymap 0        LINE_BEGIN					#Go to first column in current line
 keymap C-a      LINE_BEGIN
 keymap $        LINE_END					#Go to last column in current line
-keymap C-e      LINE_END
+# keymap C-e      LINE_END
 #Go to first letter of next word
 keymap w        NEXT_WORD
 #Go to fist letter of previous word
@@ -331,7 +334,7 @@ keymap C-u       VIEW						#See source of current page. FF key
 
 #-miscellany....................................................................
 keymap C-Y      DOWNLOAD_LIST					#Show download menu
-keymap C-y      DOWNLOAD_LIST					#Show download menu
+# keymap C-y      DOWNLOAD_LIST					#Show download menu
 keymap :E       EDIT_SCREEN					#Edit current rendered document with sensible-editor
 keymap :e       EDIT						#Edit current local file wtih sensible-editor
 
