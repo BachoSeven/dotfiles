@@ -322,16 +322,13 @@ function 256col {
 }
 
 xrescol() {
-read -r -d '' -A colors \
-    < <( xrdb -query | sed -n 's/.*color\([0-9]\)/\1/p' | sort -nu | cut -f2)
-printf '\e[1;37m
- Black      Red        Green      Yellow     Blue       Magenta    Cyan       White
-───────────────────────────────────────────────────────────────────────────────────────\e[0m\n'
-
-for color in {0..7}; do printf "\e[$((30+color))m █ %s \e[0m" "${colors[color+1]}"; done
-printf '\n'
-for color in {8..15}; do printf "\e[1;$((22+color))m █ %s \e[0m" "${colors[color+1]}"; done
-printf '\n'
+	read -r -d '' -A colors \
+	    < <( xrdb -query | sed -n 's/.*color\([0-9]\)/\1/p' | sort -nu | cut -f2)
+	printf '\e[1;37m\n Black      Red        Green      Yellow     Blue       Magenta    Cyan       White\n───────────────────────────────────────────────────────────────────────────────────────\e[0m\n'
+	for color in {0..7}; do printf "\e[$((30+color))m █ %s \e[0m" "${colors[color+1]}"; done
+	printf '\n'
+	for color in {8..15}; do printf "\e[1;$((22+color))m █ %s \e[0m" "${colors[color+1]}"; done
+	printf '\n'
 }
 
 truecolor() {
@@ -381,14 +378,13 @@ genpasswd() {
 	fi
 }
 
+## Audio
 # Calculate average bitrate of files in current folder
 avekbps() {
 	[ -z $"1" ] && printf "No format specified... (i.e. `avepbps mp3`)"
 	format=$1
 	mediainfo --Output=JSON *.$format | grep '"BitRate":' | cut -d: -f2 | sed "s/\"//g;s/,//g;s/ //g" | awk '{ total += $1 } END { print total/(1000*NR) }'
 }
-
-# Audio
 awkcompose() {
 [ "$#" -lt 1 ] && printf "Usage: awkcompose OUTPUT_NAME [SAMPLE_RATE:-48000]\n" && return 1
 output="awk_$1"
@@ -564,7 +560,7 @@ line() {
 
 confirm() {
     local answer
-    echo -ne "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
+    printf "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
     read -q answer
         echo
     if [[ "${answer}" =~ ^[Yy]$ ]]; then

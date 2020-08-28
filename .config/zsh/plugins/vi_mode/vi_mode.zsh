@@ -1,19 +1,18 @@
 # Reduce timeout
 	export KEYTIMEOUT=1
-
+# Change cursor shape for different vi modes + decent rprompt indicator
 	vim_ins_mode="%{$fg[blue]%}[INS]%{$reset_color%}"
 	vim_cmd_mode="%{$fg[green]%}[CMD]%{$reset_color%}"
-
-	function zle-keymap-select {	# Change cursor shape for different vi modes + decent rprompt indicator
+	zle-keymap-select() {
 	  if [[ ${KEYMAP} == vicmd ]] ||
 	     [[ $1 = 'block' ]]; then
-	    echo -ne '\e[1 q'
+	    printf '\e[1 q'
 	    vim_mode=${vim_cmd_mode}
 	  elif [[ ${KEYMAP} == main ]] ||
 	       [[ ${KEYMAP} == viins ]] ||
 	       [[ ${KEYMAP} = '' ]] ||
 	       [[ $1 = 'beam' ]]; then
-	    echo -ne '\e[5 q'
+	    printf '\e[5 q'
 	    vim_mode=${vim_ins_mode}
 	  fi
 	  zle reset-prompt
@@ -22,7 +21,7 @@
 	# init `vi insert` as keymap
 	zle-line-init() {
 	    zle -K viins
-	    echo -ne "\e[5 q"
+	    printf "\e[5 q"
 	}
 	zle -N zle-line-init
 
@@ -44,9 +43,9 @@
 	  done
 	done
 
-# Edit line in vim with ctrl-e:
+# Edit line in vim with Ctrl+x+e:
 	autoload edit-command-line; zle -N edit-command-line
-	bindkey "^x^e" edit-command-line
+	bindkey "^xe" edit-command-line
 
 # Move by physical lines, just like gj/gk in vim :)
 # Credits to http://leahneukirchen.org/dotfiles/.zshrc# .zshrc interactive configuration file for zsh
