@@ -32,10 +32,10 @@ fzfpacinstall() {
 getdeps() {
 	expac -l '\n' %E -S $@ | sort -u
 }
-clean() {
-	packages=("$(pacman -Qttdq)")
-	[ "$packages"] && sudo pacman -Rns $(echo $packages)
-	rmshit
+cleanup() {
+	packages=($(pacman -Qttdq))
+	[ -n "$packages" ] && _run sudo pacman -Rns $(echo $packages)
+	_run rmshit
 }
 # AUR [not amazing for non-standard packages...]
 aurpublish() {

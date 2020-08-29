@@ -11,7 +11,7 @@ map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
 
-set font "mono 14"
+set font "monospace normal 16"
 set window-height 1024
 set window-width 768
 set render-loading false

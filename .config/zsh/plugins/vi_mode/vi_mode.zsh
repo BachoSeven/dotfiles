@@ -77,7 +77,7 @@
 # Delete/Insert (replace mode)
 	bindkey '^[[P' delete-char
 	for m in visual viopp vicmd; do
-	    bindkey -M $m '^[.' vi-replace
+	    bindkey -M $m '^[[4h' vi-replace
 	done
 # Pgup(also `gg`)/Pgdown
 	bindkey '^[[5~' beginning-of-buffer-or-history
