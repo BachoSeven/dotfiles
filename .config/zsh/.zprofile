@@ -164,9 +164,8 @@ ex=🎯:\
 
 # Wolfram Alpha
 	export WA_APPID="A2VXRU-PL5UVJ35KG"
-	export WA_VIEWER="display"
-	export WA_FG="#282828"
-	export WA_FG="#ebdbb2"
+	export WA_FG="282828"
+	export WA_FG="ebdbb2"
 
 # Bat
 	export BAT_THEME="gruvbox"

@@ -38,7 +38,7 @@
 set -eo pipefail
 
 WA_APPID=${WA_APPID:?WA_APPID is not set. Get one at https://products.wolframalpha.com/api/}
-: "${WA_VIEWER:="kitty +kitten icat"}"  # Use `VIEWER="display"` from imagemagick if terminal does not support images
+: "${WA_VIEWER:="kitty +kitten icat --stdin yes"}"  # Use `VIEWER="display"` from imagemagick if terminal does not support images
 : "${WA_BG:=transparent}"               # Transparent background
 : "${WA_FG:=white}"                     # Match color to your terminal
 
@@ -47,7 +47,7 @@ RESPONSE=$(curl -s "https://api.wolframalpha.com/v1/result?appid=$WA_APPID&units
 # Remove next if you are fine with text only api, and don't want to see any images
 if [ "$RESPONSE" == "No short answer available" ]; then
 	echo ", downloading full answer..."
-	curl -s "https://api.wolframalpha.com/v1/simple?appid=$WA_APPID&units=metric&foreground=$WA_FG&background=$WA_BG" --data-urlencode "i=$*" | setsid -f $WA_VIEWER || exit 1
+	curl -s "https://api.wolframalpha.com/v1/simple?appid=$WA_APPID&units=metric&foreground=$WA_FG&background=$WA_BG" --data-urlencode "i=$*" | $WA_VIEWER || exit 1
 fi
 
 echo
