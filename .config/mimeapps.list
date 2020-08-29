@@ -1,8 +1,6 @@
 [Default Applications]
 image/png=img.desktop;
 image/jpeg=img.desktop;
-x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/mailto=mail.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 x-scheme-handler/tg=telegramdesktop.desktop
-x-scheme-handler/baiduyunguanjia=baidunetdisk.desktop
