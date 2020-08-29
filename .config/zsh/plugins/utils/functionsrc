@@ -209,6 +209,14 @@ vinfo() {
 	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
 }
 
+## DICTIONARY FUNCTIONS ##
+djargon () { curl dict://dict.org/d:${1}:jargon; }
+dfoldoc () { curl dict://dict.org/d:${1}:foldoc; }
+dthesaurus () { curl dict://dict.org/d:${1}:moby-thes; }
+# Dictionary | Usage define <foo>
+define() {
+    curl -s dict://dict.org/d:$1 | grep -v '^[0-9]'
+}
 ## Stardict
 ### Sdcv
 def() {
@@ -242,8 +250,6 @@ engturk() {
 	fold --width=$(tput cols) | \
 	less -FRX
 }
-### Tdq
-# TODO
 
 # ListProcesses - Update the list of processes by pressing CTRL-R
 lps() {
