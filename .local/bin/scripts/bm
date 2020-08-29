@@ -12,7 +12,7 @@
 [[ $1 = popup ]] && opts="--height=100%"
 
 /usr/bin/ruby -x "$0"                       |
-  fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin --preview " echo {-1}  | xargs w3m -dump " --preview-window=right:30% $opts |
+  fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin --preview " echo {-1} | readable -q | xargs w3m -T text/html" --preview-window=right:30% $opts |
   awk 'BEGIN { FS = "\t" } { print $2 }'    |
   setsid -f xargs -r $BROWSER >/dev/null 2>&1
 exit $?
