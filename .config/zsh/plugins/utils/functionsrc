@@ -251,31 +251,6 @@ engturk() {
 	less -FRX
 }
 
-# ListProcesses - Update the list of processes by pressing CTRL-R
-lps() {
-ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \
-	 --header-lines=1 --layout=reverse
-}
-
-chromiumhist() {
-	# https://junegunn.kr/2015/04/browsing-chrome-history-with-fzf/
-	# https://github.com/junegunn/fzf/wiki/examples#browsing-history
-	local cols sep temp_hist
-
-	cols=$(( COLUMNS / 3 ))
-	sep='{::}'
-	temp_hist="$(mktemp -u)"
-
-	command cp -f "$HOME"/.config/chromium/Default/History "$temp_hist"
-
-	sqlite3 -separator "$sep" "$temp_hist" \
-		"select substr(title, 1, $cols), url from urls order by last_visit_time desc" |
-			awk -F "$sep" '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
-			fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs -r $BROWSER
-
-	rm -f "$temp_hist"
-}
-
 wtr() {
 	# see curl wttr.in/:help
 	local loc="${1:=$LOCATION}"
@@ -633,6 +608,7 @@ compresspdf() {
 # URL Shortener  | Usage : short <url>
 short() {
   curl -F"shorten=$*" https://0x0.st
+
 }
 # Upload-file | Usage : share /path/to/file.foo (256 Mib limit)
 share() {
@@ -698,6 +674,12 @@ confirm_wrapper() {
         prefix="sudo"
     fi
     confirm ${prefix} "$@"
+}
+
+# ListProcesses - Update the list of processes by pressing CTRL-R
+lps() {
+ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \
+	 --header-lines=1 --layout=reverse
 }
 
 # stolen with the above from https://github.com/slashbeast/conf-mgmt/blob/master/roles/home_files/files/DOTzshrc

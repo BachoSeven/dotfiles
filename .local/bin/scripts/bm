@@ -9,7 +9,7 @@
 # For usage as a popup: `bm popup`
 # NOTE: You might want to install w3m for the preview window in fzf.
 
-[[ $1 = popup ]] && opts="--height 100%"
+[[ $1 = popup ]] && opts="--height=100%"
 
 /usr/bin/ruby -x "$0"                       |
   fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin --preview " echo {-1}  | xargs w3m -dump " --preview-window=right:30% $opts |
