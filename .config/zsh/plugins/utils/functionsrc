@@ -325,7 +325,7 @@ zsh_bench() {
 }
 
 ## Colors
-function 256col {
+256col() {
 	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
 xrescol() {
@@ -444,37 +444,6 @@ colours()
   done
 }
 
-# a simple password generator
-genpasswd() {
-	# usage: genpasswd [-adhps] [length [count]]
-	local -i human_readable=0
-	local chars=""
-
-	while getopts "adhps" opt; do
-		case "$opt" in
-			a) chars+="[:alnum:]" ;;
-			d) chars+="[:digit:]" ;;
-			p) chars+="[:punct:]" ;;
-			s) chars+="[:graph:]" ;;
-			h) human_readable=1   ;;
-		esac
-	done
-	shift $((OPTIND - 1))
-
-	local -i length="${1:-8}"
-	local -i count="${2:-1}"
-
-	if [ "$human_readable" -eq 1 ]; then
-		command -v apg >/dev/null || return 1
-		apg -c /dev/urandom -m "$length" -n "$count" -E oOlL10
-	else
-		< /dev/urandom \
-			| tr -dc "${chars:-[:alnum:]}" \
-			| fold -w "$length" \
-			| head -n "$count"
-	fi
-}
-
 ## Audio
 # Calculate average bitrate of files in current folder
 avekbps() {
@@ -574,10 +543,42 @@ fman() {
     man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
 }
 
+## Security
 # simple gpg encryption
 encrypt() {
 	gpg --output $1.gpg --symmetric --cipher-algo AES256 $1
 }
+## a simple password generator
+genpasswd() {
+	# usage: genpasswd [-adhps] [length [count]]
+	local -i human_readable=0
+	local chars=""
+
+	while getopts "adhps" opt; do
+		case "$opt" in
+			a) chars+="[:alnum:]" ;;
+			d) chars+="[:digit:]" ;;
+			p) chars+="[:punct:]" ;;
+			s) chars+="[:graph:]" ;;
+			h) human_readable=1   ;;
+		esac
+	done
+	shift $((OPTIND - 1))
+
+	local -i length="${1:-8}"
+	local -i count="${2:-1}"
+
+	if [ "$human_readable" -eq 1 ]; then
+		command -v apg >/dev/null || return 1
+		apg -c /dev/urandom -m "$length" -n "$count" -E oOlL10
+	else
+		< /dev/urandom \
+			| tr -dc "${chars:-[:alnum:]}" \
+			| fold -w "$length" \
+			| head -n "$count"
+	fi
+}
+
 
 # Shellcheck all of my scripts
 scck() {
@@ -633,7 +634,6 @@ compresspdf() {
 short() {
   curl -F"shorten=$*" https://0x0.st
 }
-
 # Upload-file | Usage : share /path/to/file.foo (256 Mib limit)
 share() {
   curl -F"file=@$*" https://0x0.st
