@@ -90,7 +90,8 @@
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias mcl='java -jar ~/stuff/games/minecraft\ Jar/mcTE.jar'
 	alias smi="sudo make clean install"
-		alias mx='weechat'
+	alias mx='weechat'
+	alias wa='kitty --hold wa'
 ## Disks
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
 #  * `fs` to show free space on physical drives
@@ -109,7 +110,6 @@
 	alias inc='lfcd ~/slsk/incoming'
 # Steam
 	_exists steam && alias tboi='steam steam://rungameid/250900'
-
 # cf... shortcuts
 	alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
 	alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
