@@ -4,6 +4,19 @@
 
 # noice
 _exists() { (( $+commands[$1] )) }
+_run() {
+	# run command if it exists
+	local -a saved_cmd=("$@")
+
+	case "$1" in
+		sudo) shift 1 ;;
+	esac
+
+	if command -v "$1" >/dev/null; then
+		echo "\e[1;32m =>\e[0m" "${saved_cmd[@]}" >&2
+		"${saved_cmd[@]}"
+	fi
+}
 
 ## Arch
 # Pacman
@@ -67,20 +80,6 @@ src_update() {
 		[ "$(($(git -C "$dir" remote | wc -l) > 1))" = "1" ] && { git -C "$dir" fetch --all || printf '%s: Could not fetch upstream...\n' "$dir:t" }
 		git -C "$dir" pull 2>/dev/null || echo "Unable to upgrade."
 	done
-}
-
-_run() {
-	# run command if it exists
-	local -a saved_cmd=("$@")
-
-	case "$1" in
-		sudo) shift 1 ;;
-	esac
-
-	if command -v "$1" >/dev/null; then
-		echo "\e[1;32m =>\e[0m" "${saved_cmd[@]}" >&2
-		"${saved_cmd[@]}"
-	fi
 }
 
 # Updates
