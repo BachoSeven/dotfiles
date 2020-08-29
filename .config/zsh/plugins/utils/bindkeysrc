@@ -8,7 +8,7 @@
 	    echo -nE "$BUFFER" | xclip -sel clip
 	}
 	zle -N clip_cmd
-	bindkey "^xx" clip_cmd
+	bindkey "^x^x" clip_cmd
 # Pick but stay in completion menu
 	bindkey -M menuselect "+" accept-and-menu-complete
 # Do not save these in history:

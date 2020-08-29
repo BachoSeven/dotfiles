@@ -95,7 +95,7 @@
 	export LESS_TERMCAP_se="$(printf '%b' '[0m')"        # end standout-mode
 	export LESSOPEN='| LESSQUIET=1 lesspipe.sh %s'
 	export LESSCOLORIZER='pygmentize'
-	export LESS='-iRX'
+	export LESS='-iRX --mouse --wheel-lines 2'
 	export MANROFFOPT="-c"
 	export MANPAGER="sh -c 'col -bx | bat -l man -p '"
 
@@ -165,6 +165,7 @@ ex=🎯:\
 # Wolfram Alpha
 	export WA_APPID="***REDACTED-WA-APPID***"
 	export WA_VIEWER="display"
+	export WA_FG="#282828"
 	export WA_FG="#ebdbb2"
 
 # Bat

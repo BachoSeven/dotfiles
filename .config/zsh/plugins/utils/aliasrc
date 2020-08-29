@@ -138,6 +138,7 @@
 	alias bash='/bin/bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'
 	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
 	alias za='zathura'
+	alias pipes='pipes -rR'
 # Zsh
 	alias zreload='source $ZDOTDIR/.zshrc'
 	alias printopt='printf '%s=%s\n' "${(@kv)options}"' # setopts
