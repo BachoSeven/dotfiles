@@ -110,8 +110,8 @@
 " so the line that is changed is highlighted but the actual
 " text that has changed stands out on the line and is readable.
 	if &diff
-	    hi! link DiffText MatchParen
-	endif
+		hi! link DiffText MatchParen
+	endi
 
 " Use xdg-open(mimi) to open files externally
 	let g:netrw_browsex_viewer="xdg-open"

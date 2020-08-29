@@ -1,7 +1,7 @@
 " Firenvim
 	if exists('g:started_by_firenvim')
 		au BufEnter github.com_*.txt se filetype=markdown
-		nnoremap <C-z> :call firenvim#hide_frame()<CR>
+		nn <C-z> :call firenvim#hide_frame()<CR>
 		let g:firenvim_config = {
 		    \ 'globalSettings': {
 			\ 'alt': 'all',
@@ -15,7 +15,7 @@
 			\ },
 		    \ }
 		\ }
-	endif
+	endi
 
 " Lf
 	let g:lf_command_override = 'lf -command "set hidden"'
@@ -92,14 +92,12 @@
 	" Color name (:help gui-colors) or RGB color
 	let g:limelight_conceal_guifg = '#928374'
 
-	" " Default: 0.5
-	let g:limelight_default_coefficient = 0.6
+	" Default: 0.5
+	let g:limelight_default_coefficient = 0.7
 
-	" " Beginning/end of paragraph
-	" "   When there's no empty line between the paragraphs
-	" "   and each paragraph starts with indentation
-	let g:limelight_bop = '^\s'
-	let g:limelight_eop = '\ze\n^\s'
+	" Number of preceding/following paragraphs to include (default: 0)
+	let g:limelight_paragraph_span = 1
+
 " Goyo
 	let g:goyo_width = 90
 	map <leader>g :Goyo \| se linebreak<CR>
@@ -107,11 +105,12 @@
 
 	" Limelight integration
 	au! User GoyoEnter Limelight
-	function! s:goyo_leave()
+	fu! s:goyo_leave()
 		hi LineNr ctermbg=NONE guibg=NONE
 		hi Normal guibg=NONE ctermbg=NONE
-	endfunction
-	autocmd! User GoyoLeave Limelight! \| nested call <SID>goyo_leave()
+		Limelight!
+	endf
+	au! User GoyoLeave nested cal <SID>goyo_leave()
 
 	au BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
 	au BufRead,BufNewFile /tmp/neomutt* :Goyo | se linebreak
