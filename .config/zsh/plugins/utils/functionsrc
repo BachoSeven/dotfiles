@@ -608,7 +608,6 @@ stopwatch(){
 75%() { mogrify -resize '75%X75%' "$@" ; }
 50%() { mogrify -resize '50%X50%' "$@" ; }
 25%() { mogrify -resize '25%X25%' "$@" ; }
-
 ## pdf utils
 img2pdf() {
 	while read file; do
@@ -629,6 +628,17 @@ compresspdf() {
 	# ps2pdf LARGE.pdf SMALL.pdf
 }
 
+## Web Stuff
+# URL Shortener  | Usage : short <url>
+short() {
+  curl -F"shorten=$*" https://0x0.st
+}
+
+# Upload-file | Usage : share /path/to/file.foo (256 Mib limit)
+share() {
+  curl -F"file=@$*" https://0x0.st
+}
+# Readable
 readw3m() {
 	readable -q $@ |
 	w3m -config $XDG_CONFIG_HOME/w3m/config -T text/html -graph
@@ -637,7 +647,6 @@ readlynx() {
 	readable -q $@ |
 	lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys -stdin -force_html -nomargins -notitle -prettysrc
 }
-
 # A wget wrapper
 download_files_from_page() {
 	if [ "$#" -lt 2 ]; then
