@@ -86,6 +86,7 @@
 	se noshowmode " Don't display mode in command line (airline already shows it)
 
 " Goyo
+	let g:goyo_width = 90
 	map <leader>g :Goyo \| se linebreak<CR>
 	map <leader>G :Goyo \| se nolinebreak<CR>
 
