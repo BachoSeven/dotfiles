@@ -82,7 +82,7 @@
 	alias udef='udict'
 	alias spot='st -c ncspot -e ncspot'
 	_exists html2text && alias html2text='html2text -nobs -style pretty'
-	alias w3m='w3m -bookmark $XDG_CONFIG_HOME/w3m/brave_bookmarks.html -config $XDG_CONFIG_HOME/w3m/config -graph'
+	alias w3m='w3m -bookmark $HOME/.w3m/brave_bookmarks.html -config $HOME/.w3m/config'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys -nomargins -notitle -prettysrc'
 	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
