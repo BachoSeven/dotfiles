@@ -11,6 +11,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 		let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } }	" Fix lfrc comments
 	Plug 'mbbill/undotree'
 	Plug 'junegunn/goyo.vim'
+	Plug 'junegunn/limelight.vim'
 	Plug 'jamessan/vim-gnupg'
 	" Neovim in the browser :)
 	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }

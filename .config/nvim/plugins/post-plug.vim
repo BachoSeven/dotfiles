@@ -85,10 +85,33 @@
 	let g:airline_powerline_fonts = 1
 	se noshowmode " Don't display mode in command line (airline already shows it)
 
+" Limelight
+	" Color name (:help cterm-colors) or ANSI code
+	let g:limelight_conceal_ctermfg = '#a89984'
+
+	" Color name (:help gui-colors) or RGB color
+	let g:limelight_conceal_guifg = '#928374'
+
+	" " Default: 0.5
+	let g:limelight_default_coefficient = 0.6
+
+	" " Beginning/end of paragraph
+	" "   When there's no empty line between the paragraphs
+	" "   and each paragraph starts with indentation
+	let g:limelight_bop = '^\s'
+	let g:limelight_eop = '\ze\n^\s'
 " Goyo
 	let g:goyo_width = 90
 	map <leader>g :Goyo \| se linebreak<CR>
 	map <leader>G :Goyo \| se nolinebreak<CR>
+
+	" Limelight integration
+	au! User GoyoEnter Limelight
+	function! s:goyo_leave()
+		hi LineNr ctermbg=NONE guibg=NONE
+		hi Normal guibg=NONE ctermbg=NONE
+	endfunction
+	autocmd! User GoyoLeave Limelight! \| nested call <SID>goyo_leave()
 
 	au BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
 	au BufRead,BufNewFile /tmp/neomutt* :Goyo | se linebreak
