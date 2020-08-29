@@ -70,8 +70,9 @@ gc() { # Clone and `cd`.
 	git clone $@ && cd $(basename "$1" .git)
 }
 ghc() { # Github clone, personal or otherwise
-	[ -n "$1" ] && GHUSER="$1"
-	git clone git@github.com:${GHUSER:-BachoSeven}/$1.git
+	[ -n "$1" ] && GHUSER="$1" || REPO="$1"
+	[ -z "$REPO" ] && REPO="$2"
+	git clone git@github.com:${GHUSER:-BachoSeven}/$REPO.git
 }
 
 src_update() {
