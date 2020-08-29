@@ -131,10 +131,10 @@ zle -N zleiab
 		glol="GIT_PAGER='fzf --ansi'; git -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" # GIT_PAGER='fzf --ansi --bind \'F1:cosa complicata per vedere la roba di quella commit con sed + less (?)\' '
 
 # Dotbare
-	alias d='dotbare'
+	alias d=' dotbare'
 	alias dfc='d commit -a'
 	alias dfp='d push'
-	alias dlol="GIT_PAGER='fzf --ansi' \
+	alias dlol=" GIT_PAGER='fzf --ansi' \
 	d -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" ## Use fzf as a git pager for this.
 	alias dupdsub="d submodule foreach git pull origin master"
 	local dot_cmds=(
@@ -150,4 +150,4 @@ zle -N zleiab
 		fstat
 		funtrack
 	)
-	for i in ${dot_cmds[@]}; alias "${i}=dotbare ${i}";
+	for i in ${dot_cmds[@]}; alias "${i}= dotbare ${i}";
