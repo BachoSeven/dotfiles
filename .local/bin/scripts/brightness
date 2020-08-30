@@ -1,10 +1,11 @@
 #!/bin/sh
 
+# Francesco Minnocci 2020
 # A little script to use with dwm; can be easily changed by finding your specific /sys/class/backlight/***/brightness location, or symlinking the right one.
 # See https://askubuntu.com/questions/715306/xbacklight-no-outputs-have-backlight-property-no-sys-class-backlight-folder
 #
 # The script changes the brightness by either prompting the user or using defaults;
-# alternatively, it can be used physical brightness increase/decrease keys by passing the options inc/dec $count
+# alternatively, it can be used with physical brightness increase/decrease buttons by passing the arguments `inc/dec $count` to the script, and assigning it to the keys through your DE/WM.
 
 current=$(cat /sys/class/backlight/intel_backlight/brightness)
 max=7500

@@ -1,4 +1,4 @@
-# vi: ft=zsh
+# vim: ft=zsh
 ## Bind keys
 	alias -- -='cd -'		# Cd into last dir with "-"
 	bindkey '^[[1;5C' forward-word   # move forward wordwise with ctrl-arrow

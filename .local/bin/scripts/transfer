@@ -1,0 +1,99 @@
+#!/usr/bin/env zsh
+
+# Defines transfer alias and provides easy command line file.
+#
+# Authors:
+#   Remco Verhoef <remco@dutchcoders.io>
+#   Prajjwal Singh <sin@prajjwal.com>
+#
+# Dependencies:
+# * curl
+# * zsh
+#
+# Optional Dependencies:
+# * tar
+# * xclip
+#
+
+MAX_DOWNLOADS=5
+MAX_DAYS=1
+BASE_URL="https://transfer.sh"
+
+usage() {
+cat <<EOF
+Usage: $0 [OPTIONS] [FILES]
+
+Options:
+
+-c      Specify maximum download count. Defaults to $MAX_DOWNLOADS
+-t      Specify TTL of file in days. Defaults to $MAX_DAYS
+-h      Display this help.
+
+Examples:
+
+$0 file1.txt
+
+$0 -c 1 -t 5 file.txt
+
+EOF
+
+exit 1
+}
+
+if ! hash curl 2> /dev/null
+then
+  echo "Could not find curl."
+  usage
+fi
+
+while getopts "c:t:h" opt; do
+  case $opt in
+    c)
+      MAX_DOWNLOADS=$OPTARG
+      ;;
+    t)
+      MAX_DAYS=$OPTARG
+      ;;
+    h)
+      usage
+      ;;
+  esac
+done
+
+# Get all files after options
+files=(${@:$OPTIND})
+file_count=${#files[@]}
+
+# Print usage & quit if no files were specified
+[ $file_count -eq 0 ] && usage
+
+links=""
+
+# Upload a file to file.io, and append resulting url to $urls
+function upload() {
+    link=$(curl --silent -H "Max-Downloads: $MAX_DOWNLOADS" -H "Max-Days: $MAX_DAYS"	--upload-file $1 "$BASE_URL/`basename $1`")
+
+    if [[ "$link" == "null" ]]; then
+        exit 1
+    else
+        if [ -z $links ]; then
+            links=$link
+        else
+            links="$links\n$link"
+        fi
+    fi
+}
+
+# Upload each input file
+for file in $files; do
+    upload $file
+done
+
+# Copy url to clipboard if xclip is installed.
+hash xclip 2> /dev/null && echo $links | xclip -sel clip
+
+
+# Simply write links to STDOUT otherwise.
+echo $links
+
+# vim: ft=zsh
