@@ -41,7 +41,7 @@
 	ino jk <Esc>
 
 " Unlink system clipboard from vim's paste buffer
-	nn <leader>u :se clipboard=<CR>
+	nn <leader>U :se clipboard=<CR>
 
 " Edit vimrc/zshrc and load vimrc bindings
 	nn <leader>ev :vsp ~/.config/nvim/init.vim<CR>

@@ -78,7 +78,7 @@
 
 " UndoTree
 	let g:undotree_WindowLayout = 3
-	nn <F5> :UndotreeToggle<cr>
+	nn <leader>u :UndotreeToggle<cr>
 	let g:undotree_SetFocusWhenToggle = 1
 
 " Airline
