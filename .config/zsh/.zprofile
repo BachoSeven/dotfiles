@@ -164,17 +164,13 @@ ex=🎯:\
 
 # Wolfram Alpha
 	export WA_APPID="A2VXRU-PL5UVJ35KG"
-	export WA_FG="282828"
+	export WA_FG="1d2021"
 	export WA_FG="ebdbb2"
 
 # Bat
 	export BAT_THEME="gruvbox"
 # Stardict/sdcv dictionaries
 	export SDCV_PAGER="less -FX"
-# Barva
-	export BARVA_BG="#000000"
-	export BARVA_TARGET="#f7999f"
-	export BARVA_FPS=60
 # Kunst
 	export KUNST_SIZE="240x240"
 	export KUNST_POSITION="+1656+816"
