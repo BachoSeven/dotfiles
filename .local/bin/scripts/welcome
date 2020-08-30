@@ -6,7 +6,7 @@ sleep 4
 	printf '\n\033[1;36mWEATHER:\033[1;32m'
 	curl wttr.in/$LOCATION\?pqtF&lang=it 2>/dev/null
 	wait
-	printf '\033[1;34mArch News:\033[1;37m\n'
+	printf '\033[1;34mARCH NEWS:\033[1;37m\n'
 	newsie fetch
 ) &&
 sleep 20 ||
