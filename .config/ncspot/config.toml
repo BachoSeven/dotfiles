@@ -72,7 +72,7 @@ shuffle = true
 # Navigation
 "Down" = "move down 1"
 "G" = "move bottom"
-"gg" = "move top"
+"g" = "move top"
 "Left" = "move left 1"
 "Right" = "move right 1"
 "Ctrl+d" = "move down 5"
