@@ -1,9 +1,8 @@
 #!/bin/sh
 
+# Francesco Minnocci 2020
 # extract main hex colors from image using imagemagick
-# Credits to https://github.com/BogdanTheGeek/dwm-primcol/blob/master/extprimcol
-
-dir="$(dirname $1)"
+# Thanks to https://github.com/BogdanTheGeek/dwm-primcol/blob/master/extprimcol
 
 convert "$1" +dither -colors 5 -	|
 identify -verbose -			|
