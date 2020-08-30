@@ -22,7 +22,7 @@
 	export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 	export LESSHISTFILE=-
 	export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-	export HISTFILE="$XDG_DATA_HOME/zsh/.zsh_history"
+	export HISTFILE="$XDG_DATA_HOME/zsh/history"
 	export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 	export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 	export RUSTUP_HOME="$XDG_DATA_HOME/rustup"

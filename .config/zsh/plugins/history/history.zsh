@@ -1,5 +1,5 @@
 ## History file configuration
-	HISTFILE="$XDG_CACHE_HOME/zsh/zsh_history"
+	HISTFILE="$XDG_DATA_HOME/zsh/history"
 # Save last 4096 commands
 	SAVEHIST=4096
 # Hold last 6144 commands in memory
