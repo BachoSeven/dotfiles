@@ -4,7 +4,9 @@
 # extract main hex colors from image using imagemagick
 # Thanks to https://github.com/BogdanTheGeek/dwm-primcol/blob/master/extprimcol
 
-convert "$1" +dither -colors 5 -	|
+# Adjust the argument to `-colors` in order to find more/less colors.
+# "5" works for most things and it's pretty fast, it only has problems with very small gifs, for which I would reccomend using "8".
+convert "$1" +dither -colors 6 -	|
 identify -verbose -			|
 grep ' [0-9]: '				|
 awk '{print substr($3, 1,7)}'		|
