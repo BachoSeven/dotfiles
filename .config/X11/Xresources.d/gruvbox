@@ -63,7 +63,7 @@ dmenu.background:	C0
 dmenu.foreground:	C7
 dmenu.selbackground:	BG
 dmenu.selforeground:	C15
-dmenu.hibackground:	#458488
+dmenu.hibackground:	C4
 dmenu.hiforeground:	#eee8d5
 dmenu.hiselbackground:	C5
 dmenu.hiselforeground:	#fdf6e3
