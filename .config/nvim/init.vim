@@ -145,10 +145,10 @@
 "		 +------------+
 	hi Comment gui=italic
 " ColorScheme
-	se termguicolors
+	" notermgui
 	se background=dark
-	colo gruvbox | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
-	" colwal
+	" colgruvbox | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
+	colo wal
 	" colo NeoSolarized
 	" let g:airline_theme='base16_solarized'
 " Transparency

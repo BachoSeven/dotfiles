@@ -4,4 +4,4 @@ file=$1
 
 info="$(mediainfo $file)"
 
-dmenu -c -p Info: -i -l 15 <<< $info
+dmenu -c -p Info: -i -l 16 <<< $info
