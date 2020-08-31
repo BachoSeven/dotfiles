@@ -25,6 +25,7 @@
 #.kde/share/apps/nepomuk
 #.local/share/notbit
 #.local/libvirt
+.local/state
 #.vagrant
 #.vagrant.d
 /programs_drivers/random_stuff/screenkey
