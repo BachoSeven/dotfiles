@@ -34,6 +34,9 @@ vimium(bkp)[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup]
 ### Privacy-focused
 - ublock Origin[ctrl+b block elements, ctrl+shift+u activate it]
 - I don't care about cookies
+- HTTPS Everywhere
+- Terms of Service; Didn’t Read
+- ClearURLs
 
 searchengs:
 {
