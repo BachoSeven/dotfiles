@@ -10,6 +10,7 @@ shittyfiles = [
     '~/.macromedia',         # Flash crap
     '~/.recently-used',
     '~/.local/share/recently-used.xbel',
+    '.local/state',
     '~/Desktop',             # Firefox creates this
     '~/.thumbnails',
     '~/.gconfd',

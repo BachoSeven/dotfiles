@@ -1,13 +1,39 @@
-UNGOOGLED-CHROMIUM
-opts: keep local cookies; gtk theme; font_size=large; add italian as spellchecking language
-flags: force-dark-mode; ext-mime-request-handling[always prompt]; ext-toolbar-menu; disable-search-engine-collection; native notifications
+# UNGOOGLED-CHROMIUM
 
-bookmarks: file
-passwords: manager->> [keepassxc+extension(backup)]
-theme: sol ref dark(favs)/gtk
+## Options
+- keep local cookies
+- gtk theme
+- font_size=large
+- add italian as spellchecking language
 
-Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
-plugins: vimium(bkp)[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup] stylus(beta)[backup;alt+shift+s] gtransl(<C-R>) the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s] Firenvim(ctrl+shift+f), ublock Origin[ctrl+b block elements, ctrl+shift+u activate it], I don't care about cookies
+## Flags
+- force-dark-mode
+- ext-mime-request-handling[always prompt]
+- ext-toolbar-menu
+- disable-search-engine-collection
+- native notifications
+
+## Bookmarks
+- Import from file.
+
+## Passwords manager
+- [keepassxc+extension(backup)]
+
+## theme
+- sol ref dark(favs)
+- gtk (gruvbox)
+
+## Plugins
+> Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
+
+### Utils
+vimium(bkp)[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup]
+-stylus(beta)[backup,alt+shift+s] gtransl(<C-R>)
+-the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s];Firenvim(ctrl+shift+f)
+
+### Privacy-focused
+- ublock Origin[ctrl+b block elements, ctrl+shift+u activate it]
+- I don't care about cookies
 
 searchengs:
 {
