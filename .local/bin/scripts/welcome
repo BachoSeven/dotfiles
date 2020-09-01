@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-sleep 4
+sleep 5
 (
 	hnheadlines
 	printf '\n\033[1;36mWEATHER:\033[1;32m'

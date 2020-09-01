@@ -13,6 +13,7 @@
 - ext-toolbar-menu
 - disable-search-engine-collection
 - native notifications
+- Compositor threaded scrollbar scrolling
 
 ## Bookmarks
 - Import from file.
@@ -29,8 +30,9 @@
 
 ### Utils
 vimium(bkp)[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup]
--stylus(beta)[backup,alt+shift+s] gtransl(<C-R>)
--the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s];Firenvim(ctrl+shift+f)
+- stylus(beta)[backup,alt+shift+s] gtransl(<C-R>)
+- the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s];Firenvim(ctrl+shift+f)
+- Minimal Scrollbar
 
 ### Privacy-focused
 - ublock Origin[ctrl+b block elements, ctrl+shift+u activate it]
