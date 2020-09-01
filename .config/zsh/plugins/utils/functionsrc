@@ -624,7 +624,7 @@ readw3m() {
 }
 readlynx() {
 	readable -q $@ |
-	lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys -stdin -force_html -nomargins -notitle -prettysrc
+	lynx -editor=nvim -stdin -force_html
 }
 # A wget wrapper
 download_files_from_page() {

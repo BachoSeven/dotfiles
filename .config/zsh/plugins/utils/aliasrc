@@ -85,7 +85,7 @@
 	_exists html2text && alias html2text='html2text -nobs -style pretty'
 	alias w3m='w3m -s'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
-	alias lynx='lynx -assume_charset="UTF-8" -display_charset=utf-8 -editor=nvim -vikeys -notitle -prettysrc -curses_pads -nopause -scrollbar -scrollbar_arrow -short_url -show_cursor -use_mouse -cfg=~/.config/lynx/lynx.cfg'
+	alias lynx='lynx -curses_pads'
 	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'

@@ -5,6 +5,7 @@
 - gtk theme
 - font_size=large
 - add italian as spellchecking language
+- block notifications globally from "Site settings"(!)
 
 ## Flags
 - force-dark-mode
