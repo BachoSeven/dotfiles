@@ -39,7 +39,13 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 - **[ytop](https://github.com/cjbassi/ytop)** system monitoring
 - **copyq** is the clipboard manager
 - **dunst** is the notification manager
+- **cava** is the music visualizer
+- **redshift** sets the color temperature
+- **newsboat** is my RSS reader
+- **yay** is the AUR helper
 - Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
+
+Find more information about the programs I use in my `AARGH` repository (Arch bootstrapping script).
 
 ## Eye-candy
 
