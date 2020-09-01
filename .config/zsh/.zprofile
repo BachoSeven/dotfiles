@@ -33,6 +33,7 @@
 	export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME/mathematica"
 	export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 	export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
+	export LYNX_CFG="$XDG_CONFIG_HOME/lynx"
 
 ## Various programs settings:
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
