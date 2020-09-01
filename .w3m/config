@@ -61,8 +61,8 @@ ignorecase_search 1
 use_migemo 1
 migemo_command migemo -t egrep /usr/share/migemo/migemo-dict
 use_mouse 1
-reverse_mouse 0
-relative_wheel_scroll 0
+reverse_mouse 1
+relative_wheel_scroll 2
 relative_wheel_scroll_ratio 30
 fixed_wheel_scroll_count 5
 clear_buffer 1
