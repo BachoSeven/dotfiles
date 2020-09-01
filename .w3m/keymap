@@ -199,8 +199,8 @@ keymap C-j      GOTO_LINK					#Follow link (Enter = Ctrl+j)
 #pager-like scrolling.
 keymap k        DOWN
 keymap j        UP
-keymap C-e      DOWN
-keymap C-y      UP
+keymap C-y      DOWN
+keymap C-e      UP
 keymap j        UP
 keymap l        RIGHT
 keymap h        LEFT
@@ -240,7 +240,7 @@ keymap b        PREV_WORD
 #keymap C-w      CLOSE_TAB					#Close current tab
 #Close current tab and save it to be able to restore it.
 #keymap d        COMMAND  "EXTERN 'env printf '\''%s\n'\'' >> ~/.w3m/RestoreTab.txt' ; CLOSE_TAB"
-keymap d        COMMAND  "EXTERN 'echo %s >> ~/.w3m/RestoreTab.txt' ; CLOSE_TAB"
+keymap x        COMMAND  "EXTERN 'echo %s >> ~/.w3m/RestoreTab.txt' ; CLOSE_TAB"
 keymap C-w        COMMAND  "EXTERN 'echo %s >> ~/.w3m/RestoreTab.txt' ; CLOSE_TAB"
 #keymap gh      GOTO http://www.google.com/en			#Home go to www.foobar.com
 #keymap t        TAB_GOTO http://www.google.com/en		#New tab in www.foobar.com
@@ -260,7 +260,7 @@ keymap gJ       TAB_RIGHT					#Move tab to the right
 keymap gt       TAB_MENU					#Tab menu
 keymap :t       TAB_MENU					#Tab menu
 #Restore last closed tab
-keymap u        TAB_GOTO          /usr/lib/w3m/cgi-bin/restore_tab.cgi
+keymap X        TAB_GOTO          /usr/lib/w3m/cgi-bin/restore_tab.cgi
 keymap C-T      TAB_GOTO          /usr/lib/w3m/cgi-bin/restore_tab.cgi
 #-navigation...................................................................
 #keymap f        MOVE_LIST_MENU					#Show links--> move cursor
@@ -333,8 +333,7 @@ keymap gf       VIEW						#See source of current page. dwb key
 keymap C-u       VIEW						#See source of current page. FF key
 
 #-miscellany....................................................................
-keymap C-Y      DOWNLOAD_LIST					#Show download menu
-# keymap C-y      DOWNLOAD_LIST					#Show download menu
+keymap M-s      DOWNLOAD_LIST					#Show download menu
 keymap :E       EDIT_SCREEN					#Edit current rendered document with sensible-editor
 keymap :e       EDIT						#Edit current local file wtih sensible-editor
 
