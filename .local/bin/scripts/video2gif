@@ -5,6 +5,7 @@
 vid=$1
 filebase=$(basename $1 | cut -d'.' -f1)
 start_time=00:00:01
+duration=60
 height=ih/2      # input height halved, can replace with pixels.
 width=-2         # keeps aspect ratio, can replace with pixels.
 fps=30           # frames per second.
