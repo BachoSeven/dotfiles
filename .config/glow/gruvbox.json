@@ -67,7 +67,7 @@
     "block_prefix": ". "
   },
   "task": {
-    "ticked": "[✓] ",
+    "ticked": "[] ",
     "unticked": "[ ] "
   },
   "link": {
