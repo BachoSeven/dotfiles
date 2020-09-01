@@ -93,7 +93,12 @@ def_key "ctrl-k"
 def_key "ctrl-j"
   select_item
   scroll_down
-#
+def_key "L"
+ next
+
+def_key "H"
+ previous
+
 #def_key "mouse"
 #  mouse_event
 #
@@ -241,12 +246,6 @@ def_key "ctrl-j"
 #
 #def_key "p"
 #  pause
-#
-#def_key ">"
-#  next
-#
-#def_key "<"
-#  previous
 #
 #def_key "ctrl-h"
 #  jump_to_parent_directory

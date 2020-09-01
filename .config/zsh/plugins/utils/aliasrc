@@ -144,6 +144,10 @@
 	alias printopt='printf '%s=%s\n' "${(@kv)options}"' # setopts
 	alias zt='zsh_bench'
 
+# Games
+	alias gtyp='typiskt -e'
+	alias sol='ttysolitaire --no-background-color'
+
 # Personal files
 	alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
 	alias doc='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents'
