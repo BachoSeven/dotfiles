@@ -145,8 +145,8 @@ zle -N zleiab
 		fgrep
 		finit
 		flog
-		fseret
-		fstatsh
+		freset
+		fstash
 		fstat
 		funtrack
 	)
