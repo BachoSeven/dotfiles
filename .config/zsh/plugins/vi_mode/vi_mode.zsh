@@ -1,8 +1,8 @@
 # Reduce timeout
 	export KEYTIMEOUT=1
 # Change cursor shape for different vi modes + decent rprompt indicator
-	vim_ins_mode="%{$fg[blue]%}[INS]%{$reset_color%}"
-	vim_cmd_mode="%{$fg[green]%}[CMD]%{$reset_color%}"
+	vim_ins_mode="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
+	vim_cmd_mode="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
 	zle-keymap-select() {
 	  if [[ ${KEYMAP} == vicmd ]] ||
 	     [[ $1 = 'block' ]]; then
