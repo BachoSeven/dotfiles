@@ -139,6 +139,7 @@ Thumbs.db
 
 # ROBA
 .local/share/mail
+.config/mutt/.mailsynclastrun
 .config/Ferdi
 .config/discord
 .config/Microsoft

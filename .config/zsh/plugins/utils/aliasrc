@@ -119,6 +119,7 @@
 	alias cfp='nvim $ZDOTDIR/.zprofile'
 	alias cfd='nvim $XDG_CONFIG_HOME/directories'
 	alias cfl='nvim $XDG_CONFIG_HOME/lf/lfrc'
+	alias cfi='nvim $XDG_CONFIG_HOME/ignorelist'
 	alias cfz='nvim $ZDOTDIR/.zshrc'
 	alias cfzp='nvim $ZDOTDIR/plugins'
 	alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
