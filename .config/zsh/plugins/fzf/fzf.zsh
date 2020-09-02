@@ -1,1 +1,1 @@
-source "$ZDOTDIR/plugins/fzf/key-bindings.zsh"
+source "/etc/profile.d/fzf.zsh"
