@@ -73,15 +73,18 @@
 	bindkey -M viins '^b' backward-char
 	bindkey -M viins '^f' forward-char
 
-## Fix broken keys
-# Delete/Insert (replace mode)
+# Fix broken keys
+## Backspace and ^h working even after returning from command mode
+	bindkey '^?' backward-delete-char
+	bindkey '^h' backward-delete-char
+## Delete/Insert (replace mode)
 	bindkey '^[[P' delete-char
 	for m in visual viopp vicmd; do
 	    bindkey -M $m '^[[4h' vi-replace
 	done
-# Pgup(also `gg`)/Pgdown
+## Pgup(also `gg`)/Pgdown
 	bindkey '^[[5~' beginning-of-buffer-or-history
 	bindkey '^[[6~' end-of-buffer-or-history
-# Home/End
+## Home/End
 	bindkey '^[[H' beginning-of-line
 	bindkey '^[[4~' end-of-line
