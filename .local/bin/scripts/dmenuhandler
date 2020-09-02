@@ -10,7 +10,7 @@ case "$(printf "copy url\\nmpv\\nmpv(loop)\\nqueue download\\n\\nqueue youtube-d
 	"queue download") tsp curl -LO "$1" >/dev/null 2>&1 ;;
 	"queue youtube-dl") tsp youtube-dl -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic "$1" >/dev/null 2>&1 ;;
 	"browser") setsid -f "$BROWSER" "$1" >/dev/null 2>&1 ;;
-	"feh") setsid -f feh "$1" >/dev/null 2>&1 ;;
-	"w3m") w3m "$1" >/dev/null 2>&1 ;;
+	"sxiv") setsid -f sxiv "$1" >/dev/null 2>&1 ;;
+	"w3m") setsid -f st w3m "$1" >/dev/null 2>&1 ;;
 	"mpv (float)") setsid -f mpv --geometry=+0-0 --autofit=30%  --title="mpvfloat" "$1" >/dev/null 2>&1 ;;
 esac

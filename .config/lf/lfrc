@@ -326,6 +326,7 @@ map <c-space> :toggle; up
 
 #			Personal utils
 map <c-a> embed neomutt -a
+map m embed w3m
 map w pager
 map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached
