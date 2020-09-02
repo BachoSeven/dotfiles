@@ -34,14 +34,17 @@
 	se timeout timeoutlen=1500 " Longer leader key timeout
 	se autoread " Automatically re-read file if a change was detected outside of vim
 
-"		 +-------------+
-"		 | Key Mapping |
-"		 +-------------+
+"		 +--------------+
+"		 | Key Mappings |
+"		 +--------------+
 " jk is Esc in insert mode
 	ino jk <Esc>
 
 " Unlink system clipboard from vim's paste buffer
 	nn <leader>U :se clipboard=<CR>
+
+" Fix syntax higlighting on the fly (https://vim.fandom.com/wiki/Fix_syntax_highlighting)
+	nn <leader>sy :syntax sync fromstart<CR>
 
 " Edit vimrc/zshrc and load vimrc bindings
 	nn <leader>ev :vsp ~/.config/nvim/init.vim<CR>
