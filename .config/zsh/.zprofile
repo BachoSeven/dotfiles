@@ -26,6 +26,8 @@
 	export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 	export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 	export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+	export CARGO_HOME="$XDG_DATA_HOME"/cargo
+	export GOPATH="$XDG_DATA_HOME"/go
 	export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 	export GEM_HOME="$XDG_DATA_HOME/gem"
 	export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
