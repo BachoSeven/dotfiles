@@ -645,8 +645,7 @@ download_files_from_page() {
 	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$1")"
 	mkdir -pv "$outputdir_name"
 	cd "$outputdir_name"
-	wget -c -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2" ||
-		rm -ir "$outputdir_name" && cd ..
+	wget -c -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2"
 }
 
 # Efficient way to select a line to print to stdout: https://unix.stackexchange.com/questions/29878/can-i-access-nth-line-number-of-standard-output
