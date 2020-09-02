@@ -87,6 +87,8 @@
 # anti aliasing in the two toolkits
 	export GDK_USE_XFT=1
 	export QT_XFT=true
+# Consistent theming for Qt5
+	export QT_QPA_PLATFORMTHEME=qt5ct
 # LESS (and man) colors
 	export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"     # begin blinking
 	export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"     # begin bold
@@ -101,7 +103,7 @@
 	export MANROFFOPT="-c"
 	export MANPAGER="sh -c 'col -bx | bat -l man -p '"
 
-export LF_ICONS="di=📁:\
+	export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
 ow=📂:\
