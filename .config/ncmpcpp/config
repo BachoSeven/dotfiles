@@ -225,7 +225,6 @@ store_lyrics_in_song_dir = no
 ## lyrics, last_fm.
 ##
 #screen_switcher_mode = playlist, browser
-#
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
 ##
