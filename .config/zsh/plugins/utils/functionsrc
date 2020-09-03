@@ -587,6 +587,11 @@ stopwatch(){
 75%() { mogrify -resize '75%X75%' "$@" ; }
 50%() { mogrify -resize '50%X50%' "$@" ; }
 25%() { mogrify -resize '25%X25%' "$@" ; }
+## Scan folder for images of a certain ratio
+fzfimg() {
+	fzf --preview 'geometry=$(identify -format '%wx%h' {}); ratio="$(printf %.3f "$((10**3 *${geometry%%x*}/${geometry##*x}))e-3")"; if [ $ratio = "1.777" ]; then printf "%s\n%s\n\033[1;34m█\n" "$geometry" "$ratio"; else printf "%s\n%s\n\033[1;31m█\n" "$geometry" "$ratio"; fi' --multi
+}
+
 ## pdf utils
 img2pdf() {
 	while read file; do
@@ -620,7 +625,7 @@ readlynx() {
 	lynx -editor=nvim -stdin -force_html
 }
 # A wget wrapper
-download_files_from_page() {
+extwget() {
 	if [ "$#" -lt 2 ]; then
 		cat <<- EOF
 		Download all files with specific extension on a webpage
