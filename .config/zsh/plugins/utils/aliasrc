@@ -78,14 +78,14 @@
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
-	alias rxs='killall xscreensaver && setsid -f xscreensaver -no-splash'
+	alias screendim="xrandr | grep '*' | awk '{print $1}'"
 	alias glow='glow -p -w 125 -s ~/.config/glow/gruvbox.json'
 	alias udef='udict'
 	alias spot='st -c ncspot -e ncspot'
 	_exists html2text && alias html2text='html2text -nobs -style pretty'
 	alias w3m='w3m -s'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
-	alias tl="tldr --list | fzf --preview 'tldr {}' |xargs tldr" # really nice
+	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
 	alias chill="mpv https://tinyurl.com/wbl4fya"
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias mcl='java -jar ~/stuff/games/minecraft\ Jar/mcTE.jar'
