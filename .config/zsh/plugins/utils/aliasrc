@@ -78,7 +78,7 @@
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
-	alias screendim="xrandr | grep '*' | awk '{print $1}'"
+	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias glow='glow -p -w 125 -s ~/.config/glow/gruvbox.json'
 	alias udef='udict'
 	alias spot='st -c ncspot -e ncspot'
