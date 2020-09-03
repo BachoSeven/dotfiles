@@ -11,7 +11,7 @@
 	se title
 	let mapleader =" " " This is so comfy
 	se shell=/usr/bin/zsh
-	se clipboard+=unnamedplus
+	set clipboard=unnamed,unnamedplus
 	se number relativenumber
 	se wildmenu
 		se wildignore+=.git,.hg,.svn

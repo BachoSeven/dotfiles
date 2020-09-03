@@ -624,7 +624,7 @@ download_files_from_page() {
 	if [ "$#" -lt 2 ]; then
 		cat <<- EOF
 		Download all files with specific extension on a webpage
-		Usage: $0 extension[,extension...] URL
+		Usage: $0 extension[,extension...] URL(s)
 		Example:
 		$0 mp4 http://example.com/files/
 		$0 mp3,ogg,wma http://samples.com/files/
@@ -635,10 +635,14 @@ download_files_from_page() {
 		return 1
 	fi
 
-	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$1")"
+	ext="$1";
+	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$l")"; shift
 	mkdir -pv "$outputdir_name"
 	cd "$outputdir_name"
-	wget -c -r -l1 -H -t1 -nd -N -np -A "$1" -erobots=off "$2"
+
+	for f in $@; do
+		wget -c -r -l1 -H -t1 -nd -N -np -A "$ext" -erobots=off "$f"
+	done
 }
 
 # Efficient way to select a line to print to stdout: https://unix.stackexchange.com/questions/29878/can-i-access-nth-line-number-of-standard-output
