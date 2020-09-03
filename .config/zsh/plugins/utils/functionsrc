@@ -594,13 +594,6 @@ img2pdf() {
 	convert -density 300 -quality 100 $file $filebase.pdf
 	done <<< $(ls)
 }
-pdfsearch() {
-	command -v pdftotext >/dev/null && mkdir -p tmpd; ls *.pdf |
-		while read file; do
-			pdftotext $file tmpd/$file.txt;
-		done
-		rg $1 tmpd && rm -rf tmpd || echo 'Error!'
-}
 compresspdf() {
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=$2.pdf $1
 	## screen << ebook << prepress
