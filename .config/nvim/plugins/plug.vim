@@ -18,9 +18,9 @@ cal plug#begin('~/.local/share/nvim/plugged')
 
 "" Markdown
 " Live Preview
-	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug'] }
 " Markdown Table of Contents
-	Plug 'mzlogin/vim-markdown-toc'
+	Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown', 'vim-plug'] }
 
 " " Vimtex
 	" Plug 'lervag/vimtex'
@@ -32,7 +32,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
 	Plug 'alx741/vinfo'
-	Plug 'chrisbra/csv.vim'
+	Plug 'chrisbra/csv.vim', { 'for': ['csv'] }
 
 " Autocompletion
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
