@@ -52,7 +52,7 @@ handle_mime() {
 		application/csv) xsv <"${FILE_PATH}" --csv --table --grid ;;
 		*/pdf) pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - ;;
 		*djvu*) djvutxt "${FILE_PATH}" ;;
-		image/*) chafa --fill=block --symbols=block -c 256 -s 80x"${HEIGHT}" "${FILE_PATH}" || exit 1;;
+		image/*) chafa --fill=block --symbols=block -c 240 -s 80x"${HEIGHT}" "${FILE_PATH}" || exit 1;;
 		video/* | audio/*|application/octet-stream) mediainfo "${FILE_PATH}" || exit 1;;
 		*opendocument*) odt2txt "${FILE_PATH}" ;;
 		*torrent*) { echo "$(eval 'transmission-show "${FILE_PATH}"')" | head -n 200; exit 5; } || exit 1;;
