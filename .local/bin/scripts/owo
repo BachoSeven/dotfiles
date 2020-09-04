@@ -15,25 +15,27 @@ while getopts ":hv" o; do
   esac
 done
 
+while read -r input; do
 i=0
-while read -r word;
-do
-  char="${input:$i:1}"
-  prev="${input:$((i-1)):1}"
+  while [ "$i" -lt "${#input}" ]; do
+    char="${input:$i:1}"
+    prev="${input:$((i-1)):1}"
 
-# first check if the character is alphabetical
-if [[ $char =~ [[:alpha:]] ]]; then
-  if [[ $char = "r" || $char = "l"  ]]; then
-    char="w"
-  elif [[ $char = "R" || $char = "L"  ]]; then
-    char="W"
-  elif [[ $prev = "n" && $char = "a" ]]; then
-    char="${char}y"
-  elif [[ $prev = "N" && $char = "A" ]]; then
-    char="${char}Y"
-  fi
-fi
+    # first check if the character is alphabetical
+    if [[ $char =~ [[:alpha:]] ]]; then
+      if [[ $char = "r" || $char = "l"  ]]; then
+        char="w"
+      elif [[ $char = "R" || $char = "L"  ]]; then
+        char="W"
+      elif [[ $prev = "n" && $char = "a" ]]; then
+        char="y${char}"
+      elif [[ $prev = "N" && $char = "A" ]]; then
+        char="Y${char}"
+      fi
+    fi
 
-  output="${output}$char"
-  i=$((i+1))
+    printf "$char"
+    i=$((i+1))
+  done
+printf "\n"
 done
