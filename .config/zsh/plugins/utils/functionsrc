@@ -88,10 +88,10 @@ ghc() { # Github clone, personal or otherwise
 
 # Updates
 dirs=(
-	~/.config/brave_plugins/startpage
 	~/.config/mpv/scripts/mpvSockets
 	~/.local/src/subs
 	~/.local/src/dwm
+	~/.local/src/dmenu
 	~/.local/src/dwmblocks
 	~/.local/src/st
 	~/slsk/programs/AP2_QMK/annepro-qmk
