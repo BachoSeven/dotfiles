@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# important! requires 'scg' script
+path="$HOME/.local/bin"
+
+# dmenu options
+lines="-l 15"
+font="-fn Hack-13"
+colors="-nf #93a1a1"
+prompt1="-p Dir:"
+prompt2="-p Script:"
+
+# list only executable non-binay files
+list="$(find $path -maxdepth 2 -type f -executable \
+       -exec grep -Iq . {} \; -print \
+       | sed 's|^'$path/'||' \
+       | sort \
+       )"
+
+# output list to dmenu
+select="$(dmenu $prompt $font $colors $lines <<< $list)"
+
+# run 'scg' with the selected file name
+if [[ -n "$select" ]]; then
+    eval scg "$select"
+fi
+
+exit 0;
