@@ -1,5 +1,9 @@
-#show-read-feeds no
+# Feed options
 auto-reload yes
+reload-time 180
+reload-threads 4
+download-retries 2
+download-timeout 10
 
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 
@@ -28,6 +32,8 @@ color listnormal_unread blue default
 color listfocus_unread yellow default bold
 color info red black bold
 color article white default bold
+
+text-width 80
 
 browser linkhandler
 macro , open-in-browser

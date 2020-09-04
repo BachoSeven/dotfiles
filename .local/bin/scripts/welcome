@@ -8,6 +8,4 @@ sleep 5
 	wait
 	printf '\033[1;34mARCH NEWS:\033[1;37m\n'
 	newsie fetch
-) &&
-sleep 20 ||
-exit
+) || exit

@@ -99,7 +99,7 @@
 	let g:limelight_paragraph_span = 1
 
 " Goyo
-	let g:goyo_width = 90
+	let g:goyo_width = 100
 	map <leader>g :Goyo \| se linebreak<CR>
 	map <leader>G :Goyo \| se nolinebreak<CR>
 
