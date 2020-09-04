@@ -3,6 +3,13 @@
 # Change cursor shape for different vi modes + decent rprompt indicator
 	vim_ins_mode="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
 	vim_cmd_mode="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
+## Document cursor types:
+#  1 -> blinking block
+#  2 -> solid block
+#  3 -> blinking underscore
+#  4 -> solid underscore
+#  5 -> blinking vertical bar
+#  6 -> solid vertical bar
 	zle-keymap-select() {
 	  if [[ ${KEYMAP} == vicmd ]] ||
 	     [[ $1 = 'block' ]]; then
