@@ -50,6 +50,8 @@
 # Manuals
 	alias mman='macho -i'
 	alias info='vinfo'
+	alias wiki='wikiman'
+	alias ew='nvim ~/.local/src/wiki/' # Edit wiki
 
 # Remove spaces, curly+squared brackets and commas [buggy; TODO: use `zmv` instead!]
 	alias rsf="autoload -U zmv && zmv '* *' '\$f:gs/ /_'"
@@ -133,7 +135,6 @@
 	alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
 	alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
 # Rice
-	alias ew='nvim ~/.local/src/wiki/' # Edit wiki
 	alias ep='nvim ~/.local/src/AARGH/progs.csv' # Edit programs
 	alias mim='nvim $XDG_CONFIG_HOME/mimi/mimi.conf'
 	alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
