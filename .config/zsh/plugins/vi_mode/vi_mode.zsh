@@ -73,6 +73,12 @@
 	bindkey -M viins '^b' backward-char
 	bindkey -M viins '^f' forward-char
 
+# Better, incremental searching using vi mode(!)
+	bindkey -M vicmd '?' history-incremental-search-backward
+	bindkey -M vicmd '/' history-incremental-search-forward
+	bindkey -M viins '^k' history-incremental-search-backward
+	bindkey -M viins '^j' history-incremental-search-forward
+
 # Fix broken keys
 ## Backspace and ^h working even after returning from command mode
 	bindkey '^?' backward-delete-char
