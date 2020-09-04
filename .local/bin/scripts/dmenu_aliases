@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 freq=$XDG_CACHE_HOME/dmenu_history
 aliases=~/.config/zsh/plugins/utils/aliasrc

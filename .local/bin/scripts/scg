@@ -1,0 +1,22 @@
+#!/bin/bash
+
+## Script generator
+
+path="$HOME/.local/bin"
+editor="st -c Scripting -e nvim -c 'set ft=sh'"
+
+fpath="$path/$1"
+
+if [[ -z "$*" ]]; then
+    echo -e "\n\nError!\nUsage: scgen script_name\n\n"
+    exit 0;
+fi
+
+if [[ ! -f $fpath ]]; then
+    touch $fpath
+    chmod +x $fpath
+fi
+
+eval $editor $fpath
+
+exit 0
