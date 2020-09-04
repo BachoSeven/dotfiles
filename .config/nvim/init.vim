@@ -131,18 +131,16 @@
 "		 +---------+
 " Definitions
 	so ~/.config/nvim/plugins/plug.vim
-" Configurations
-	so ~/.config/nvim/plugins/post-plug.vim
 
 "		 +----------+
 "		 | Autocmds |
 "		 +----------+
 	so ~/.config/nvim/autocmd.vim
 
-"		 +-----------------------+
-"		 | Live Markdown Preview |
-"		 +-----------------------+
-	so ~/.config/nvim/markdown.vim
+"		 +-----------+
+"		 | Filetypes |
+"		 +-----------+
+	so ~/.config/nvim/ft.vim
 
 "		 +------------+
 "		 | Appearance |
