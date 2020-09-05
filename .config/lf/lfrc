@@ -316,7 +316,9 @@ map <c-r> reload
 map . set hidden!
 map <enter> shell
 map t :set sortby time; set info time; set reverse!	#set by most recent
-map g top
+map gg top
+map gm cd /mnt
+map g/ cd /
 map <c-e> down	#enable mouse scroll
 map <c-y> up
 map <c-s> $lf -remote "send $id select $(printf '%q' $(all_files=(./*(ND)); printf '%s\n' ${all_files[@]} | fzf))"	# better asynchronious search

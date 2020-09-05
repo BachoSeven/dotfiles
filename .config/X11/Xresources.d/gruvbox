@@ -46,7 +46,7 @@ dwm.normfgcolor:	C15
 dwm.normbordercolor:	C0
 dwm.selbgcolor:		BG
 dwm.selfgcolor:		C15
-dwm.selbordercolor:	C6
+dwm.selbordercolor:	C9
 dwm.statusbg:		C0
 dwm.statusfg:		C15
 dwm.tagnormbg:		C4
