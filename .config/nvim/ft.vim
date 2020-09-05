@@ -1,19 +1,19 @@
 " Vimscript
 aug initvim-vim
-  au! BufNewFile,BufFilePre,BufRead *.vim se filetype=vim
+  au! BufNewFile,BufFilePre,BufRead *.vim
     \ expandtab shiftwidth=2 tabstop=2 softtabstop=2
     \ foldmethod=marker
 aug END
 
 " bash
 aug initvim-bash
-  au! BufNewFile,BufFilePre,BufRead *.sh,*.zsh se filetype=sh
+  au! BufNewFile,BufFilePre,BufRead *.sh,*.zsh
     \ expandtab shiftwidth=2 tabstop=2 softtabstop=2
 aug END
 
 " markdown
 aug initvim-md
-  au! BufNewFile,BufFilePre,BufRead *.md se filetype=markdown
+  au! BufNewFile,BufFilePre,BufRead *.md
     \ expandtab shiftwidth=4 tabstop=4 softtabstop=4
     \ formatoptions+=croq
 aug END

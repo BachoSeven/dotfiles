@@ -42,13 +42,13 @@
 	done
 
 # ci{, ci(, ci<, di{, etc
-	autoload -U select-bracketed
-	zle -N select-bracketed
-	for m in visual vicmd viopp; do
-	  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
-	    bindkey -M $m $c select-bracketed
-	  done
-	done
+  autoload -U select-bracketed
+  zle -N select-bracketed
+  for m in visual viopp; do
+    for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+      bindkey -M $m $c select-bracketed
+    done
+  done
 
 # Edit line in vim with Ctrl+x+e:
 	autoload edit-command-line; zle -N edit-command-line
