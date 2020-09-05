@@ -45,7 +45,7 @@ I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use
 - **[yay](.config/yay/config.json)** is the AUR helper
 - Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
-Find more information about the programs I use in my `[AARGH](https://github.com/BachoSeven/AARGH)` repository (Arch bootstrapping script).
+Read more about the programs I use in the **[AARGH](https://github.com/BachoSeven/AARGH)` repository (bootstrapping script).**
 
 ## Eye-candy
 
