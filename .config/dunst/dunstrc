@@ -12,10 +12,10 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "350x150-0-0"
+    geometry = "350x150-20-10"
     indicate_hidden = yes
     shrink = yes
-    transparency = 20
+    transparency = 30
     notification_height = 0
     separator_height = 2
     padding = 0
@@ -48,7 +48,7 @@
     # Markup is allowed
     format = "<b>%s</b>\n%b"
 
-    alignment = left
+    alignment = center
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
@@ -69,7 +69,7 @@
     class = Dunst
     startup_notification = false
     verbosity = mesg
-    corner_radius = 4
+    corner_radius = 8
     force_xinerama = false
 [experimental]
     per_monitor_dpi = false
