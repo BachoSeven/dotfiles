@@ -125,6 +125,7 @@
 	alias cfi='nvim $XDG_CONFIG_HOME/ignorelist'
 	alias cfz='nvim $ZDOTDIR/.zshrc'
 	alias cfzp='nvim $ZDOTDIR/plugins'
+	alias cfzv='nvim $ZDOTDIR/plugins/vi_mode/vi_mode.zsh'
 	alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
 	alias cfvp='nvim $XDG_CONFIG_HOME/nvim/plugins/plug.vim'
 	alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'

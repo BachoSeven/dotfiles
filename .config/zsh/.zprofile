@@ -179,7 +179,7 @@ ex=🎯:\
 	export SDCV_PAGER="less -FX"
 # Kunst
 	export KUNST_SIZE="240x240"
-	export KUNST_POSITION="+1662+832"
+	export KUNST_POSITION="+1658+828"
 	export KUNST_MUSIC_DIR="~/slsk/music"
 
 # Start graphical server on tty1 if not already running.

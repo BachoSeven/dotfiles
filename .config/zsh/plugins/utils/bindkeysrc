@@ -21,7 +21,7 @@
 	bindkey -s '^q' ' browsepac\r'
 
 # CTRL-Z as shortcut for `$ fg` (end result: toggles fg/bg).
-bindkey -s '^z' 'fg\r'
+	bindkey -s '^z' 'fg\r'
 
 # vim user :)
 	for i in x q Q; eval alias :${i}=\' exit\'
@@ -79,30 +79,30 @@ bindkey -s '^z' 'fg\r'
 	bindkey " " magic-abbrev-expand
 	bindkey "^x " no-magic-abbrev-expand
 
-	zleiab() {
-    declare -A abk
-    abk=(
-        'G'    '|& rg -i '
-        'C'    '| wc -l'
-        'H'    '| head'
-        'T'    '| tail'
-        'N'    '&>/dev/null'
-        'S'    '| sort -h '
-        'V'    '|& nvim -'
-        "jk"   "!-2$"
-        "j2"   "!-3$"
-        "j3"   "!-4$"
-    )
+	# zleiab() {
+	# declare -A abk
+	# abk=(
+	    # 'G'    '|& rg -i '
+	    # 'C'    '| wc -l'
+	    # 'H'    '| head'
+	    # 'T'    '| tail'
+	    # 'N'    '&>/dev/null'
+	    # 'S'    '| sort -h '
+	    # 'V'    '|& nvim -'
+	    # "jk"   "!-2$"
+	    # "j2"   "!-3$"
+	    # "j3"   "!-4$"
+	# )
 
-    emulate -L zsh
-    setopt extendedglob
-    local MATCH
+	# emulate -L zsh
+	# setopt extendedglob
+	# local MATCH
 
-    matched_chars='[.-|_a-zA-Z0-9]#'
-    LBUFFER=${LBUFFER%%(#m)[.-|_a-zA-Z0-9]#}
-    LBUFFER+=${abk[$MATCH]:-$MATCH}
-}
-zle -N zleiab
+	# matched_chars='[.-|_a-zA-Z0-9]#'
+	# LBUFFER=${LBUFFER%%(#m)[.-|_a-zA-Z0-9]#}
+	# LBUFFER+=${abk[$MATCH]:-$MATCH}
+	# }
+	# zle -N zleiab
 
 
 
