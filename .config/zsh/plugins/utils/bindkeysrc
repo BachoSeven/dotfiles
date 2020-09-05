@@ -118,7 +118,7 @@ zle -N zleiab
 	alias fgrep='fgrep --color=always'
 	alias egrep='egrep --color=always'
 	alias grep="grep --color=always"
-	alias diff="diff --color=always"
+	alias diff="diff --color=always --unified"
 	alias ip='ip -color=always'
 	alias ccat="highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force --"
 	alias path='echo $PATH | tr : "\n"'
