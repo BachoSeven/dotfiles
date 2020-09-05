@@ -57,7 +57,7 @@
     hide_duplicate_count = true
     show_indicators = yes
     icon_position = left
-    icon_path = /usr/share/icons/gruvbox-dark-icons-gtk/16x16/status:/usr/share/icons/gruvbox-dark-icons-gtk/16x16/devices:/usr/share/icons/gruvbox-dark-icons-gtk/16x16/actions
+    icon_path = /usr/share/icons/gruvbox-dark-icons-gtk/16x16/status:/usr/share/icons/gruvbox-dark-icons-gtk/16x16/devices
     max_icon_size = 64
     sticky_history = yes
     history_length = 20
@@ -68,7 +68,7 @@
     title = Dunst
     class = Dunst
     startup_notification = false
-    verbosity = mesg
+    verbosity = crit
     corner_radius = 8
     force_xinerama = false
 [experimental]
