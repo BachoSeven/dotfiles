@@ -107,7 +107,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 " Colorschemes
 	Plug 'dylanaraps/wal.vim'
 	Plug 'gruvbox-community/gruvbox'
-	Plug 'iCyMind/NeoSolarized' 	" NeoSolarized
+	" Plug 'iCyMind/NeoSolarized' 	" NeoSolarized
 
 " Airline
 	Plug 'vim-airline/vim-airline'
