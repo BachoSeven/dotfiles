@@ -15,7 +15,7 @@
     geometry = "350x150-20-10"
     indicate_hidden = yes
     shrink = yes
-    transparency = 30
+    transparency = 15
     notification_height = 0
     separator_height = 2
     padding = 0
@@ -85,8 +85,8 @@
     timeout = 5
 [urgency_normal]
     background = "#458588"
-    foreground = "#ebdbb2"
-    frame_color = "#d79921"
+    foreground = "#1d2021"
+    frame_color = "#689d6a"
     timeout = 10
 [urgency_critical]
     background = "#1d2021"
