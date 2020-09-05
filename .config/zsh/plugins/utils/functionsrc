@@ -589,6 +589,8 @@ stopwatch(){
 25%() { mogrify -resize '25%X25%' "$@" ; }
 ## Scan folder for images of a certain ratio
 fzfimg() {
+	ls									|
+	grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|ico\)\(_large\)*$"	|
 	# fzf --preview 'geometry=$(identify -format '%wx%h' {}); ratio="$(printf %.3f "$((10**3 *${geometry%%x*}/${geometry##*x}))e-3")"; if [ $ratio = "1.777" ]; then printf "%s\n%s\n\033[1;34m█\n" "$geometry" "$ratio"; else printf "%s\n%s\n\033[1;31m█\n" "$geometry" "$ratio"; fi; chafa --symbols=block -c 240 {}' --multi --height=80%
 	fzf --preview 'geometry=$(identify -format '%wx%h' {}); ratio="$(printf %.3f "$((10**3 *${geometry%%x*}/${geometry##*x}))e-3")"; if [ $ratio = "1.777" ]; then printf "%s\n%s\n\033[1;34m█\n" "$geometry" "$ratio"; else printf "%s\n%s\n\033[1;31m█\n" "$geometry" "$ratio"; fi' --multi --height=80%
 }
