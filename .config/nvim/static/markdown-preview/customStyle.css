@@ -14,7 +14,7 @@ body { background-color: var(--background); }
   margin-bottom: 0;
 }
 .markdown-body {
-  font-family: "Hack Nerd Font", freesans, sans-serif, "Noto Color Emoji";
+  font-family: "Hack Nerd Font", freesans, sans-serif, "Mutant Standard emoji";
   font-size: 16px;
   color: var(--foreground);
   line-height: 1.6;
