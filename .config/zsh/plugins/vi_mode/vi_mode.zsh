@@ -90,7 +90,7 @@
 ## ^w, backspace and ^h working even after returning from command mode (annoying)
 	bindkey '^?' backward-delete-char
 	bindkey '^h' backward-delete-char
-  bindkey '^w' vi-backward-delete-word
+  bindkey '^w' vi-backward-kill-word
 ## Delete/Insert (replace mode)
 	bindkey '^[[P' delete-char
 	for m in visual viopp vicmd; do
