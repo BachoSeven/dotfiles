@@ -11,8 +11,7 @@ prompt1="-p Dir:"
 prompt2="-p Script:"
 
 # list only executable non-binay files
-list="$(find $path -maxdepth 2 -type f -executable \
-       -exec grep -Iq . {} \; -print \
+list="$(fd . $path --type executable \
        | sed 's|^'$path/'||' \
        | sort \
        )"
