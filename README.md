@@ -12,37 +12,37 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
 <!-- vim-markdown-toc GFM -->
 
 * [Current Setup](#current-setup)
-	* [Eye-candy](#eye-candy)
-	* [Various](#various)
-	* [Screens](#screens)
-		* [Dwm](#dwm)
-		* [Gnome-Shell](#gnome-shell)
+    * [Eye-candy](#eye-candy)
+    * [Various](#various)
+    * [Screens](#screens)
+        * [Dwm](#dwm)
+        * [Gnome-Shell](#gnome-shell)
 
 <!-- vim-markdown-toc -->
 # Current Setup
-My setup is pretty minimal and fast: although many packages and systemd services are launched at boot, rebooting from dwm to dwm takes approximately 15 seconds(with grub).
+My setup is pretty minimal and fast: rebooting from dwm to dwm takes approximately 15 seconds(with grub).
 I run Arch Linux on an Asus UX310UQK laptop; here are some of the programs I use:
 
 - Suckless utilities (links are to my patched repos): **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), **[st](https://github.com/BachoSeven/st)** (terminal emulator) and **[xss](https://github.com/9wm/xss)+[slock](https://github.com/BachoSeven/slock)** (screensaver).
 - Minimally configured **zsh**  shell with custom plugins, completions and [prompt](https://imgur.com/a/KwMIxDg) (old p10k [themes](https://github.com/BachoSeven/dotfiles/tree/master/.config/zsh/plugins/p10k_theme)). For syntax highlighting, I use **[fsh](https://github.com/zdharma/fast-syntax-highlighting)**; startup time is `34 ms`.
 <img src="pics/screens/ricing/zsh.png" width=50%>
 
-- **neovim** text editor
+- **[neovim](.config/nvim)** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
-- **ncmpcpp** as a music player (with mpd)
+- **[ncmpcpp](.config/ncmpcpp)** as a music player (with mpd)
 - **[ncspot](https://github.com/hrkfdn/ncspot)** as a tui spotify client
 - **[lf](https://github.com/gokcehan/lf)** as my file manager
-- **neomutt** as an email client
+- **[neomutt](.config/mutt)** as an email client
 - **ungoogled-chromium** browser
 - **[sxiv](https://github.com/muennich/sxiv)** image viewer
-- **zathura** pdf & djvu reader
+- **[zathura](.config/zathura/zathurarc)** pdf & djvu reader
 - **[ytop](https://github.com/cjbassi/ytop)** system monitoring
 - **copyq** is the clipboard manager
-- **dunst** is the notification manager
-- **cava** is the music visualizer
-- **redshift** sets the color temperature
-- **newsboat** is my RSS reader
-- **yay** is the AUR helper
+- **[dunst](.config/dunst/dunstrc)** is the notification manager
+- **[cava](.config/cava/config)** is the music visualizer
+- **[redshift](.config/redshift/redshift.conf)** sets the color temperature
+- **[newsboat](.config/newsboat)** is my RSS reader
+- **[yay](.config/yay/config.json)** is the AUR helper
 - Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
 Find more information about the programs I use in my `[AARGH](https://github.com/BachoSeven/AARGH)` repository (Arch bootstrapping script).
@@ -59,7 +59,7 @@ Find more information about the programs I use in my `[AARGH](https://github.com
 ## Various
 
 - I like using vim bindings whenever possible.
-- I use ungoogled-chromium, you can find info about my config of it at `.config/brave_plugins`. To improve its aesthetics, I use a gruvbox chrome theme and duckduckgo with `gruvboxytheme` pass phrase; which make a decent start page together Vimium's Vomnibar. (I now use a custom start page with Brave, check it out [here](https://github.com/BachoSeven/startpage).
+- I use ungoogled-chromium, find my setup in [here](.config/browser). To improve its aesthetics, I use the Gtk  theme and duckduckgo with `gruvboxytheme` pass phrase. I use a custom startpage, check it out [here](https://github.com/BachoSeven/startpage)!
 - [Pacgraph](http://github.com/keenerd/pacgraph/) output:<br>
 ![](pics/screens/ricing/pacgraph-24_8_20.png)
 
