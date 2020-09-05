@@ -16,7 +16,11 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
     * [Various](#various)
     * [Screens](#screens)
         * [Dwm](#dwm)
-        * [Gnome-Shell](#gnome-shell)
+            * [Blue(s)](#blues)
+            * [Greenish](#greenish)
+            * [Pink :3](#pink-3)
+            * [Gruvboxy](#gruvboxy)
+        * [Gnome-Shell (Ubuntu)](#gnome-shell-ubuntu)
 
 <!-- vim-markdown-toc -->
 # Current Setup
@@ -60,33 +64,31 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 
 - I like using vim bindings whenever possible.
 - I use ungoogled-chromium, find my setup in [here](.config/browser). To improve its aesthetics, I use the Gtk  theme and duckduckgo with `gruvboxytheme` pass phrase. I use a custom startpage, check it out [here](https://github.com/BachoSeven/startpage)!
-- [Pacgraph](http://github.com/keenerd/pacgraph/) output:<br>
+- [Pacgraph](http://github.com/keenerd/pacgraph/) output:
 ![](pics/screens/ricing/pacgraph-24_8_20.png)
 
 ## Screens
 
 ### Dwm
 
+#### Blue(s)
 ![](pics/screens/ricing/dwm_gravitazione-2.png)
-
-![](pics/screens/ricing/dwm_gravitazione.png)
-
-![](pics/screens/ricing/green_dwm-1.png)
-
-![](pics/screens/ricing/pipes+matrices.png)
-
 ![](pics/screens/ricing/dwm_mountains.png)
 
-![](pics/screens/ricing/pink_dwm.png)
+#### Greenish
+![](pics/screens/ricing/green_dwm-1.png)
+![](pics/screens/ricing/dwm_gravitazione.png)
 
+#### Pink :3
+![](pics/screens/ricing/pink_dwm.png)
 ![](pics/screens/ricing/dwm_pinker.png)
 
+#### Gruvboxy
 ![](pics/screens/ricing/dwm.png)
-
 ![](pics/screens/ricing/dwm2.png)
+![](pics/screens/ricing/pipes+matrices.png)
 
-### Gnome-Shell
+### Gnome-Shell (Ubuntu)
 
 ![](pics/screens/ricing/new_rice1.png)
-
 ![](pics/screens/ricing/new_rice-small.png)
