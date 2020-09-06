@@ -1,5 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=File Manager
+Name=lf
 MimeType=inode/directory;application/x-gnome-saved-search;
-Exec=/usr/local/bin/st -e lf %U
+Terminal=true
+Exec=lf %U
