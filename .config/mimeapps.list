@@ -1,4 +1,5 @@
 [Default Applications]
+inode/directory=file.desktop;
 image/png=img.desktop;
 image/jpeg=img.desktop;
 x-scheme-handler/mailto=mail.desktop
