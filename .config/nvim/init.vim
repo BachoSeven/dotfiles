@@ -130,7 +130,7 @@
 "		 | Plugins |
 "		 +---------+
 " Definitions
-	so ~/.config/nvim/plugins/plug.vim
+	so ~/.config/nvim/plug.vim
 
 "		 +----------+
 "		 | Autocmds |
