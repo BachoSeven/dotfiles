@@ -2,4 +2,5 @@
 Type=Application
 Name=Text editor
 MimeType=text/x-tex;text/plain;text/markdown;application/x-sharedlib;application/json;application/x-abook-addressbook;
-Exec=/usr/local/bin/st -e nvim %u
+Terminal=true
+Exec=nvim %u

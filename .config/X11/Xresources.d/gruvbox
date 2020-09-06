@@ -1,5 +1,6 @@
 !# vim: ft=xdefaults
 
+!	gruvbox
 #define BG  #282828
 #define C0  #1d2021
 #define C1  #cc241d
@@ -18,7 +19,26 @@
 #define C14 #8ec07c
 #define C15 #ebdbb2
 
-!!	gruvbox
+!! gruvbox light:
+! #define C0  #fbf1c7
+! #define C1  #cc241d
+! #define C2  #98971a
+! #define C3  #d79921
+! #define C4  #458588
+! #define C5  #b16286
+! #define C6  #689d6a
+! #define C7  #7c6f64
+! #define C8  #928374
+! #define C9  #9d0006
+! #define C10 #79740e
+! #define C11 #b57614
+! #define C12 #076678
+! #define C13 #8f3f71
+! #define C14 #427b58
+! #define C15 #3c3836
+! #define BG  #fbf1c7
+! #define FG  #282828
+
 *.cursorColor: #add8e6
 *RcursorColor: #555555
 *.background: BG

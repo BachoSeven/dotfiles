@@ -121,6 +121,10 @@
 	let g:netrw_browsex_viewer="xdg-open"
 
 " Sessions
+	" let sessionpath = expand('~/.config/nvim/vim-sessions')
+	" if !filereadable(sessionpath)
+		" call system('curl -fLo ' . shellescape(plugpath) . ' --create-dirs ' . plugurl)
+	" endi
 	let g:session_dir = '~/.config/nvim/vim-sessions'
 	let g:session#default_opener = 'edit'
 	exec 'nn <Leader>ss :mks! ~/.config/nvim/vim-sessions/'
