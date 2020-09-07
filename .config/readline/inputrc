@@ -1,5 +1,4 @@
-$include /etc/inputrc
-
+set bell-style none
 set colored-stats                    on
 set visible-stats                    on
 set mark-symlinked-directories       on
@@ -8,7 +7,9 @@ set blink-matching-paren             on
 set comment-begin                    #
 set completion-prefix-display-length 111
 set completion-query-items           200
+set input-meta on
 set convert-meta                     off
+set output-meta on
 set disable-completion               off
 set echo-control-characters          on
 set match-hidden-files               off
