@@ -41,6 +41,7 @@
 		S='| sort'	\
 		N='> /dev/null' \
 		X='|xclip'	\
+		O='|owo'	\
 		A='|xargs -r '	# A suffixed space is needed to use aliases
 	# Some of the above are duplicated below for readability in longer commands
 	typeset -gA ZSH_ABBREVIATIONS

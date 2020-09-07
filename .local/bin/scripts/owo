@@ -34,7 +34,7 @@ i=0
       fi
     fi
 
-    printf "$char"
+    echo -ne "$char"
     i=$((i+1))
   done
 printf "\n"
