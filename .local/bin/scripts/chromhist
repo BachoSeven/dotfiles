@@ -15,9 +15,13 @@ temp_hist="$(mktemp -u)"
 
 command cp -f "$HOME"/.config/chromium/Default/History "$temp_hist"
 
-sqlite3 -separator "$sep" "$temp_hist" \
-	"select substr(title, 1, $cols), url from urls order by last_visit_time desc" |
-		awk -F "$sep" '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
-		fzf --ansi --multi --preview " echo {-1} | xargs  readable -q | w3m -T text/html" --preview-window=right:30% $opts | sed 's#.*\(https*://\)#\1#' | setsid -f xargs -r $BROWSER >/dev/null 2>&1
+sqlite3 -separator "$sep" "$temp_hist"							\
+	"select substr(title, 1, $cols), url from urls order by last_visit_time desc"	|
+	awk -F "$sep" '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}'		|
+	fzf --ansi --multi								\
+	--preview " echo {-1} | xargs  readable -q | w3m -T text/html"			\
+	--preview-window=right:30% $opts						|
+	sed 's#.*\(https*://\)#\1#'							|
+	setsid -f xargs -r $BROWSER &>/dev/null
 
 rm -f "$temp_hist"
