@@ -9,6 +9,7 @@
 
 # Utils
 	xrdb -load ~/.config/X11/Xresources
+	xmodmap ~/.config/X11/xmodmap
 	[ -f ~/.cache/wal/active ] && wal -R || setbg # Dirty trick to check if pywal was on at shutdown
 	copyq &				# Clipboard management
 	pgrep redshift &> /dev/null || redshift &> /dev/null & # Color temperature
