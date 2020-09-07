@@ -1,0 +1,19 @@
+#!/bin/sh
+
+## Connect to wireless network
+# Dependencies:
+#	- NetworkManager
+#	- fzf
+
+ifname="$(ip -c=always link | grep -vA 1 lo | grep -v brd | cut -f2 -d " " | cut -f1 -d: | fzf --ansi --header "Interface:")"
+ssid="$(nmcli -colors yes d w s ifname $ifname | grep SSID | uniq | fzf --header "SSID:" --ansi | cut -f2 -d " ")"
+
+if [ -n "$ssid" ]; then
+	if [ -n "$ifname" ]; then
+		nmcli d w c $ssid ifname $ifname -a
+	else
+		echo "No interface selected, exiting..."
+	fi
+else
+	echo "No network selected, exiting..."
+fi
