@@ -1,7 +1,9 @@
 #!/bin/zsh
 
-# https://junegunn.kr/2015/04/browsing-chrome-history-with-fzf/
-# https://github.com/junegunn/fzf/wiki/examples#browsing-history
+# Browse chrome history with fzf
+# Credits:
+	# https://junegunn.kr/2015/04/browsing-chrome-history-with-fzf/
+	# https://github.com/junegunn/fzf/wiki/examples#browsing-history
 
 local cols sep temp_hist
 

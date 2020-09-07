@@ -68,9 +68,9 @@
 	map <leader>j <C-w>j:q<CR>
 	map <leader>k <C-w>k:q<CR>
 	map <leader>l <C-w>l:q<CR>
-	nn c "_c
-	nn x "_x
-	nn s "_s
+	norema c "_c
+	norema x "_x
+	norema s "_s
 " These are amazing.
 	nn <leader>w :w<CR>
 	nn <leader>q :q<CR>
