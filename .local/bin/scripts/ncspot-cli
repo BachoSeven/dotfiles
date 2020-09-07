@@ -1,0 +1,41 @@
+#!/bin/env sh
+
+usage() {
+  printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n"
+  return 1
+}
+
+next(){
+	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+}
+
+prev(){
+	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+}
+
+toggle(){
+	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+}
+
+error() {
+  printf "$@\n\n" 1>&2
+  usage
+}
+
+
+if [ -z "$1" ] ; then
+	error "No arguments given, exiting..."
+else
+  case $1 in
+	-h|--help)
+		usage;;
+	-n|--next)
+		next;;
+	-p|--prev)
+		rrev;;
+	-t|--toggle)
+		toggle;;
+	*)
+		error "Invalid option: $1";;
+  esac
+fi
