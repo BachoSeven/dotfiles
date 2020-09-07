@@ -118,24 +118,24 @@ cmd paste &{{
 }}
 
 cmd Link %{{
-	lf -remote 'load' | while read file; do
-		if [ ! -n "${mode+1}" ]; then
-			mode="$file"
-			continue
-		fi
-		files+=("$file")
-	done
-	if [ "${#files[@]}" -le 1 ]; then
-		lf -remote "send $id echo no files to link"
-		exit 0
-	fi
-	# symbolically copy mode is indicating a soft link
-	if [[ "$mode" == copy ]]; then
-		ln -sr $files -t .
-	# while a move mode is indicating a hard link
-	elif [[ "$mode" == move ]]; then
-		ln $files -t .
-	fi
+    for file in $(lf -remote 'load'); do
+        if [ ! -n "${mode+1}" ]; then
+            mode="$file"
+            continue
+        fi
+        files+=("$file")
+    done
+    if [ "${#files[@]}" -lt 1 ]; then
+        lf -remote "send $id echo no files to link files: ${files}"
+        exit 0
+    fi
+    # symbolically  copy mode is indicating a soft link
+    if [[ "$mode" == copy ]]; then
+        ln -sr $files -t .
+    # while a move mode is indicating a hard link
+    elif [[ "$mode" == move ]]; then
+        ln $files -t .
+    fi
 }}
 
 cmd mount ${{
@@ -307,8 +307,8 @@ map <a-e> extract_sub
 map C copyto
 map M moveto
 map D delete
-map p paste ## TODO: should it be :paste??
-map S :Link
+map p paste
+map S Link
 
 #			Navigation
 map ~ cd ~
@@ -329,7 +329,6 @@ map <c-space> :toggle; up
 #			Personal utils
 map <c-a> embed neomutt -a
 map m embed w3m -s
-map L embed lynx
 map w pager
 map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached

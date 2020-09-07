@@ -628,7 +628,7 @@ readlynx() {
 	lynx -editor=nvim -stdin -force_html
 }
 # A wget wrapper
-extwget() {
+wgetext() {
 	if [ "$#" -lt 2 ]; then
 		cat <<- EOF
 		Download all files with specific extension on a webpage

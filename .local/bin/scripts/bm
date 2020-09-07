@@ -1,23 +1,19 @@
-#!/usr/bin/env bash
-# vim: set filetype=ruby:
+#!/bin/zsh
+
 # bm - browse Chrome bookmarks with fzf
-# Credits: junegunn https://gist.github.com/junegunn/15859538658e449b886f
-# Adapted for Linux by BachoSeven
+# vim: ft=zsh
+# Credits:
+    # Original version by junegunn: https://gist.github.com/junegunn/15859538658e449b886f
+    # Zsh version merged from fzf's wiki: https://github.com/junegunn/fzf/wiki/Browse-chrome-bookmarks
 
 # Make sure $BROWSER is set; I could have used xdg-open,
 # but for use as a popup it is more convenient this way.
 # For usage as a popup: `bm popup`
 # NOTE: You might want to install w3m for the preview window in fzf.
 
-[[ $1 = popup ]] && opts="--height=100%"
-
-/usr/bin/ruby -x "$0"                       |
-  fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin --preview " echo {-1} | xargs readable -q | w3m -T text/html" --preview-window=right:30% $opts |
-  awk 'BEGIN { FS = "\t" } { print $2 }'    |
-  setsid -f xargs -r $BROWSER >/dev/null 2>&1
-exit $?
-
-#!ruby
+local ruby output
+  ruby=$(which ruby)
+  output=$($ruby << EORUBY
 # encoding: utf-8
 
 require 'json'
@@ -46,7 +42,7 @@ def trim str, width
   str
 end
 
-width = `tput cols`.strip.to_i / 2
+width = `tput cols`.to_i / 2
 json  = JSON.load File.read File.expand_path FILE
 items = json['roots']
         .values_at(*%w(bookmark_bar synced other))
@@ -59,3 +55,12 @@ items.each do |item|
   puts [just(name, width),
         item[:url]].join("\t\x1b[36m") + "\x1b[m"
 end
+EORUBY
+)
+	[[ $1 = popup ]] && opts="--height=100%"
+	echo -e "$output"						|
+	fzf --ansi --multi --no-hscroll --tiebreak=begin		\
+	--preview "echo {-1} | xargs readable -q | w3m -T text/html"	\
+	--preview-window=right:30% $opts				|
+	awk 'BEGIN { FS = "\t" } { print $2 }'				|
+	xargs -r $BROWSER &>/dev/null

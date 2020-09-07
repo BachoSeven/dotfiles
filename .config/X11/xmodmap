@@ -1,1 +1,4 @@
-keycode 127 = XF86AudioRaiseVolume
+! Pause is an actual Pause :)
+keycode 127 = XF86AudioPause
+! Map the menu button to right super
+keycode 135 = Super_R
