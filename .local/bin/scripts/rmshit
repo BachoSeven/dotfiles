@@ -10,8 +10,9 @@ shittyfiles = [
     '~/.macromedia',         # Flash crap
     '~/.recently-used',
     '~/.local/share/recently-used.xbel',
-    '.local/state',
-    '~/Desktop',             # Firefox creates this
+    '~/.local/state',
+    '~/.local/share/cargo', # Build files
+    '~/Desktop',            # Firefox creates this
     '~/.thumbnails',
     '~/.gconfd',
     '~/.gconf',
@@ -46,7 +47,6 @@ shittyfiles = [
     '~/.qutebrowser/',      # created empty, only with webengine backend
     '~/.asy/',
     '~/.cmake/',
-    '~/.cargo/',
     '~/.gnome/',
     '~/unison.log',
     '~/.texlive/',
