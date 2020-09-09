@@ -20,7 +20,7 @@
     separator_height = 2
     padding = 0
     horizontal_padding = 8
-    frame_width = 3
+    frame_width = 2
     # Define a color for the separator.
     # possible values are:
     #  * auto: dunst tries to find a color fitting to the background;

@@ -4,6 +4,9 @@ tls	on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
 logfile	~/.config/msmtp/msmtp.log
 
+
+
+
 account gm_main
 host smtp.gmail.com
 port 587
@@ -19,3 +22,4 @@ from ad17fmin@uwcad.it
 user ad17fmin@uwcad.it
 passwordeval "pass mutt-wizard-gm_uwcad"
 tls_starttls off
+

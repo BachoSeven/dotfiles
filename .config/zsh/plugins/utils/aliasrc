@@ -85,7 +85,6 @@
 	alias glow='glow -p -w 125 -s ~/.config/glow/gruvbox.json'
 	alias udef='udict'
 	alias spot='st -c ncspot -e ncspot'
-	_exists html2text && alias html2text='html2text -nobs -style pretty'
 	alias w3m='w3m -s'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
@@ -111,8 +110,6 @@
 # Soulseek
 	alias slsk='soulseekqt'
 	alias inc='lfcd ~/slsk/incoming'
-# Steam
-	_exists steam && alias tboi='steam steam://rungameid/250900'
 # cf... shortcuts
 	alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
 	alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
