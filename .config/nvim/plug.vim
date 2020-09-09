@@ -93,7 +93,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
 	Plug 'alx741/vinfo'
-	Plug 'chrisbra/csv.vim', { 'for': ['csv'] }
+	Plug 'chrisbra/csv.vim', { 'for': ['csv', 'vim-plug'] }
 
 " Autocompletion
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
