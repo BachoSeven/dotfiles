@@ -1,3 +1,6 @@
+
+
+
 IMAPStore gm_main-remote
 Host imap.gmail.com
 Port 993
@@ -9,8 +12,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore gm_main-local
 Subfolders Verbatim
-Path ~/.local/share/mail/gm_main/
-Inbox ~/.local/share/mail/gm_main/INBOX
+Path /home/fra/.local/share/mail/gm_main/
+Inbox /home/fra/.local/share/mail/gm_main/INBOX
 Flatten .
 
 Channel gm_main
@@ -20,7 +23,7 @@ Slave :gm_main-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 5000
+MaxMessages 10000
 ExpireUnread no
 # End profile
 
@@ -35,8 +38,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore gm_uwcad-local
 Subfolders Verbatim
-Path ~/.local/share/mail/gm_uwcad/
-Inbox ~/.local/share/mail/gm_uwcad/INBOX
+Path /home/fra/.local/share/mail/gm_uwcad/
+Inbox /home/fra/.local/share/mail/gm_uwcad/INBOX
 Flatten .
 
 Channel gm_uwcad
@@ -46,6 +49,7 @@ Slave :gm_uwcad-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 5000
+MaxMessages 10000
 ExpireUnread no
 # End profile
+

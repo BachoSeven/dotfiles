@@ -9,17 +9,12 @@ set header_cache = /home/fra/.cache/mutt-wizard/gm_main/headers
 set message_cachedir = /home/fra/.cache/mutt-wizard/gm_main/bodies
 set mbox_type = Maildir
 
-set crypt_autosign = yes
-set crypt_opportunistic_encrypt = yes
-set pgp_self_encrypt = yes
-set pgp_default_key  = 92D4D9FA3965D8F8
-
 bind index,pager gg noop
 bind index,pager g noop
 bind index,pager M noop
 bind index,pager C noop
 bind index gg first-entry
-macro index o "<shell-escape>mailsync -V gm_main<enter>" "run mbsync to sync gm_main"
+macro index o "<shell-escape>mbsync -V gm_main<enter>" "run mbsync to sync gm_main"
 unmailboxes *
 
 set spoolfile = "+INBOX"

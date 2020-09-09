@@ -20,6 +20,7 @@
 	export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/settings.ini
 	export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 	export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
+	export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/mbsyncrc"
 	export LESSHISTFILE=-
 	export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 	export HISTFILE="$XDG_DATA_HOME/zsh/history"

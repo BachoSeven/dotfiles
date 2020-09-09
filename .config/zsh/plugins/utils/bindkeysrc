@@ -155,3 +155,7 @@
 		funtrack
 	)
 	for i in ${dot_cmds[@]}; alias "${i}= dotbare ${i}";
+## _exists stuff
+	_exists html2text && alias html2text='html2text -nobs -style pretty'
+# Steam
+	_exists steam && alias tboi='steam steam://rungameid/250900'

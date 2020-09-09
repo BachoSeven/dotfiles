@@ -19,12 +19,14 @@ while getopts ":hi:w:m" o; do
 		h)
 			printf "Usage :\\nsetbg\\n\\t [ -i, -input \"path/to/img\" ]\\n\\t [ -m, -maximize: maximize wallpaper ( default format is \"--zoom\" ) ]\\n\\t [ -w, -wal \"path/to/img\" \"backend\" : use pywal if installed ]\\n\\t [ -h, -help: Show this message ]\\n" && exit ;;
 		i)
+			vimwal -x && dunstreload
 			[ -n "$2" ] && cp "$2" $bgloc > /dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
-			xrdb -load $XDG_CONFIG_HOME/X11/Xresources && vimwal -x ;;
+			xrdb -load $XDG_CONFIG_HOME/X11/Xresources;;
 		w)
+			vimwal -w && dunstreload
 			[ -n "$2" ] && cp "$2" $bgloc > /dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			backend=$3
-			hash wal &>/dev/null && wal -c && wal --backend $backend -i $bgloc && vimwal -w ;;
+			hash wal &>/dev/null && wal -c && wal --backend $backend -i $bgloc;;
 		m)
 			format="--maximize" ;;
 		*)
