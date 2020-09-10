@@ -1,8 +1,8 @@
 #!/bin/env bash
 
 usage() {
-  printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n\t    --pause\tPause song\n\t    --play\tPlay song\n\t-u, --url\tOpen URL\n"
-  return 1
+	printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n\t    --pause\tPause song\n\t    --play\tPlay song\n\t-u, --url\tOpen URL\n"
+	return 1
 }
 
 send() {
@@ -20,15 +20,15 @@ url() { #__ We need some parsing logic for URLs __#
 }
 
 error() {
-  printf "$@\n\n" 1>&2
-  usage
+	printf "$@\n\n" 1>&2
+	usage
 }
 
 
 if [ -z "$1" ] ; then
 	error "No arguments given, exiting..."
 else
-  case $1 in
+	case $1 in
 	-h|--help)
 		usage;;
 	-n|--next)
@@ -47,5 +47,5 @@ else
 		url "$2";;
 	*)
 		error "Invalid option: $1";;
-  esac
+	esac
 fi
