@@ -1,21 +1,12 @@
 #!/bin/env sh
 
 usage() {
-  printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n"
+  printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n\t    --pause\tPause song\n\t    --play\tPlay song\n\t-u, --url\tOpen URL\n"
   return 1
 }
 
-next(){
-	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-}
-prev(){
-	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-}
-toggle(){
-	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-}
-stop(){
-	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+send() {
+	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1"
 }
 
 error() {
@@ -31,13 +22,21 @@ else
 	-h|--help)
 		usage;;
 	-n|--next)
-		next;;
+		send Next;;
 	-p|--prev)
-		prev;;
+		send Previous;;
 	-s|--stop)
-		stop;;
+		send Stop;;
 	-t|--toggle)
-		toggle;;
+		send PlayPause;;
+	--play)
+		send Play;;
+	--pause)
+		send Pause;;
+	-u|--url)
+		[ -n "$2" ] &&
+		send OpenUri "$2" ||
+		usage;;
 	*)
 		error "Invalid option: $1";;
   esac

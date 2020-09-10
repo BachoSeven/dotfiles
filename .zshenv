@@ -14,7 +14,7 @@
 	typeset -gU path cdpath fpath manpath
 	path=("$path[@]")
 # Adds `~/.local/bin` and all subdirs to $PATH
-	export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
+	export PATH="$PATH:$(find "$HOME/.local/bin" -type d | tr '\n' ':')"
 
 # Necessary to only call compinit from local zshrc
 	skip_global_compinit=1

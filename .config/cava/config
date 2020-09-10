@@ -118,7 +118,7 @@ mono_option = average
 # ncurses output method and a terminal that can change color definitions such as Gnome-terminal or rxvt.
 # default is to keep current terminal color
 background = default
-foreground = default
+foreground = cyan
 
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
 # background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
