@@ -5,3 +5,4 @@ image/jpeg=img.desktop;
 x-scheme-handler/mailto=mail.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 x-scheme-handler/tg=telegramdesktop.desktop
+text/html=chromium.desktop;

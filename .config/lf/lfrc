@@ -336,7 +336,7 @@ map b &setsid setbg -i $f
 map <a-L> cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
 map X !$f
-map O $mimeopen --ask "$f"
+map O $mimeopen "$f"
 map T push :$touch<space>
 map V push :!nvim<space>
 map <c-z> $ kill -STOP $PPID	# put lf in bg
