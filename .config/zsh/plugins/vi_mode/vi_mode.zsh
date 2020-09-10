@@ -1,8 +1,8 @@
 # Reduce timeout
 	export KEYTIMEOUT=1
 # Change cursor shape for different vi modes + decent rprompt indicator
-	vim_ins_mode="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
-	vim_cmd_mode="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
+	VimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
+	VimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
 ## Document cursor types:
 #  1 -> blinking block
 #  2 -> solid block
@@ -14,13 +14,13 @@
 	  if [[ ${KEYMAP} == vicmd ]] ||
 	     [[ $1 = 'block' ]]; then
 	    printf '\e[1 q'
-	    vim_mode=${vim_cmd_mode}
+	    vim_mode=${VimCmd}
 	  elif [[ ${KEYMAP} == main ]] ||
 	       [[ ${KEYMAP} == viins ]] ||
 	       [[ ${KEYMAP} = '' ]] ||
 	       [[ $1 = 'beam' ]]; then
 	    printf '\e[5 q'
-	    vim_mode=${vim_ins_mode}
+	    vim_mode=${VimIns}
 	  fi
 	  zle reset-prompt
 	}
