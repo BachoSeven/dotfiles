@@ -4,6 +4,7 @@ reload-time 180
 reload-threads 4
 download-retries 2
 download-timeout 10
+download-full-page yes
 
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 
