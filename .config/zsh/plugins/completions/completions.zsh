@@ -59,7 +59,7 @@
 	zstyle ':completion::complete:*' gain-privileges 1
 
 # function to visualize dir stack
-	function di () {
+	di () {
 	  if [[ -n $1 ]]; then
 	    dirs "$@"
 	  else
