@@ -10,16 +10,13 @@ send() {
 }
 
 url() { #__ We need some parsing logic for URLs __#
-	[ -z "$*" ] && usage |
-	type=track # default
-	if [[ $* == *"open.spotify.com/playlist/"* ]]; then
-		type=playlist
-	elif [[ $* == *"open.spotify.com/album/"* ]]; then
-		type=album
+	if [ -z "$*" ]; then
+		usage
+		exit 1
 	fi
-	key=$(echo $* | sed 's:.*/::' | cut -c 1-22)
-	printf "%s:%s\n\n" "$type" "$key"
-	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:ncspot:$type:$key
+	type="$(echo $* | cut -d "/" -f4)"
+	key="$(echo $* | sed 's:.*/::' | cut -c 1-22)"
+	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$type:$key
 }
 
 error() {
