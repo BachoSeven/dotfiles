@@ -618,8 +618,8 @@ short() {
 # Upload-file | Usage : share /path/to/file.foo (256 Mib limit)
 share() {
 	if [[ $# == 0 ]]; then
-		echo "Usage: share FILE(s)"
-		exit 1
+		printf "Usage: share FILE(s)\n"
+		return 1
 	fi
 	for f in "$@"; do
 		curl -sF"file=@${f}" https://0x0.st
@@ -669,7 +669,7 @@ confirm() {
     local answer
     printf "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
     read -q answer
-        echo
+    echo
     if [[ "${answer}" =~ ^[Yy]$ ]]; then
         command "${@}"
     else

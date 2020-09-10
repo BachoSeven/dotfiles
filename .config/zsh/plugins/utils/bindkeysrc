@@ -31,21 +31,27 @@
 
 # Abbreviations
 	alias -g \
-		M='| more'	\
-		L='| ${PAGER:-less}'\
-		H='| head'	\
-		T='| tail'	\
-		G='| grep'	\
-		C='| wc -l'	\
-		F='| fzf'	\
-		S='| sort'	\
-		N='> /dev/null' \
-		X='|xclip'	\
-		O='|owo'	\
+		...='../..'		\
+		....='../../..'		\
+		.....='../../../..'	\
+		M='| more'		\
+		L='| ${PAGER:-less}'	\
+		H='| head'		\
+		T='| tail'		\
+		G='| grep'		\
+		C='| wc -l'		\
+		F='| fzf'		\
+		S='| sort'		\
+		N='> /dev/null' 	\
+		X='|xclip'		\
+		O='|owo'		\
 		A='|xargs -r '	# A suffixed space is needed to use aliases
 	# Some of the above are duplicated below for readability in longer commands
 	typeset -gA ZSH_ABBREVIATIONS
 	ZSH_ABBREVIATIONS+=(
+		"..."	"../.."
+		"...."	"../../.."
+		"....."	"../../../.."
 		":e"	"${EDITOR}"
 		":r"	"view"
 		":h"	"man"
