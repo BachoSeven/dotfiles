@@ -8,7 +8,7 @@ editor="st -c Scripting -e nvim -c 'set ft=sh'"
 fpath="$path/$1"
 
 if [[ -z "$*" ]]; then
-    echo -e "\n\nError!\nUsage: scgen script_name\n\n"
+    printf "\n\nError!\nUsage: scgen script_name\n\n"
     exit 0;
 fi
 

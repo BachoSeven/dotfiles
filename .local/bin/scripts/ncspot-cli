@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/bin/env bash
 
 usage() {
   printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n\t    --pause\tPause song\n\t    --play\tPlay song\n\t-u, --url\tOpen URL\n"
@@ -7,6 +7,19 @@ usage() {
 
 send() {
 	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1"
+}
+
+url() { #__ We need some parsing logic for URLs __#
+	[ -z "$*" ] && usage |
+	type=track # default
+	if [[ $* == *"open.spotify.com/playlist/"* ]]; then
+		type=playlist
+	elif [[ $* == *"open.spotify.com/album/"* ]]; then
+		type=album
+	fi
+	key=$(echo $* | sed 's:.*/::' | cut -c 1-22)
+	printf "%s:%s\n\n" "$type" "$key"
+	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:ncspot:$type:$key
 }
 
 error() {
@@ -34,9 +47,7 @@ else
 	--pause)
 		send Pause;;
 	-u|--url)
-		[ -n "$2" ] &&
-		send OpenUri "$2" ||
-		usage;;
+		url "$2";;
 	*)
 		error "Invalid option: $1";;
   esac
