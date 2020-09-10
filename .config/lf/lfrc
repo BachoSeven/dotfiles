@@ -332,7 +332,7 @@ map m embed w3m -s
 map w pager
 map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached
-map b &setsid setbg -i $f
+map b &setsid -f setbg -i $f
 map <a-L> cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
 map X !$f

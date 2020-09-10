@@ -1,8 +1,8 @@
 ## Basic settings
 	export TERMINAL="st"
 	export READER="zathura"
-	export OPENER='xdg-open'
-	export PAGER='less'
+	export OPENER="xdg-open"
+	export PAGER="less"
 	export EDITOR="nvim"
 	export VISUAL="nvim"
 	export DIFFTOOL="nvim -d"
@@ -180,7 +180,7 @@ ex=🎯:\
 	export SDCV_PAGER="less -FX"
 # Kunst
 	export KUNST_SIZE="240x240"
-	export KUNST_POSITION="+1658+828"
+	export KUNST_POSITION="+1665+825"
 	export KUNST_MUSIC_DIR="~/slsk/music"
 
 # Start graphical server on tty1 if not already running.
