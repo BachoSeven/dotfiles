@@ -7,7 +7,7 @@
 	export VISUAL="nvim"
 	export DIFFTOOL="nvim -d"
 	export BROWSER="chromium"
-	export LOCATION="Pisa" # weather script
+	export LOCATION="Buti" # weather script
 	export SUDO_ASKPASS="$HOME/.local/bin/scripts/dmenupass"
 
 # XDG Base Directory locations

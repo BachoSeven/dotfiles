@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 freq=$XDG_CACHE_HOME/dmenu_history
-aliases=~/.config/zsh/plugins/utils/aliasrc
+aliases=$ZDOTDIR/plugins/utils/aliasrc
 # configuration is done in Xresources
-dmenucmd='dmenu -f -i -h 15'
+dmenucmd='dmenu -f -i -h 12 -x 8 -y 8 -w 1900'
 
 source "$aliases"
 
@@ -72,7 +72,7 @@ if ! [ "$cmd" == "" ]; then
 		cmdexec="st -e $cmdexec"
 	fi
 
-    # NotSoNice Workaround to run functions...
+    # Workaround to run functions...
     echo "$cmdexec" | compgen -F "$cmdexec" 2>/dev/null| bash -i
     # ...and aliases
     echo "$cmdexec" | bash -i

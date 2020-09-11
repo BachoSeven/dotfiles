@@ -59,7 +59,6 @@
 	sT() { # here for use with dmenu
 		tabbed -c -r 2 st -w id
 	}
-	alias sloc='fd -t f --exec-batch wc -l'
 	alias verifygpg='gpg --auto-key-retrieve --verify'
 	alias ncdu="ncdu --color dark"
 	alias sort='sort --parallel 8 -S 16M'

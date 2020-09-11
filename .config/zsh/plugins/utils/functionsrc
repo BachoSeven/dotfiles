@@ -209,8 +209,10 @@ sfont() {
 	grep -i "$1"
 }
 
-vinfo() {
-	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
+sloc() {
+	local del
+	[ -n "$1" ] && del="$1"
+	fd -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
 }
 
 ## DICTIONARY FUNCTIONS ##
@@ -512,13 +514,16 @@ md() {
 	mkdir -p $@ && cd ${@:$#}
 }
 
-# fuzzy-find manuals
+# Manuals
+vinfo() {
+	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
+}
+# fuzzy-find
 manfd() {
     export MANPATH="/usr/share/man"
     f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf --preview 'man {}'  ) && man $f
 }
-
-# find inside manuals
+# find inside
 fman() {
     man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
 }
