@@ -1,4 +1,5 @@
 ![](pics/screens/ricing/fripp_dwm-matrix.png)
+<a style="margin-left: 4px;" href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"/></a>
 
 ``` sh
 ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗

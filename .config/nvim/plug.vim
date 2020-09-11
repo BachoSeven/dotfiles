@@ -105,7 +105,6 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'ap/vim-css-color'
 
 " Colorschemes
-  Plug 'co1ncidence/mountaineer.vim'
 	Plug 'dylanaraps/wal.vim'
 	Plug 'gruvbox-community/gruvbox'
 	" Plug 'overcache/NeoSolarized' 	" NeoSolarized

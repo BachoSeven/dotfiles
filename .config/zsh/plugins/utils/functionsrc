@@ -492,9 +492,11 @@ flac2mp3(){
 
 ## ffmpeg utilities
 compressvid() {
+	# usage: compressvid VIDEO
 	ffmpeg -i $1 -vcodec h264 -acodec mp3 $2
 }
 compressvidbrate() {
+	# usage: compressvidbrate VIDEO [bitrate]
 	bitrate=${3:-1000k}
 	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
 }
@@ -581,12 +583,12 @@ scck() {
 
 # amazing
 stopwatch(){
-    date1=`date +%s`;
-    while true; do
-        days=$(( $(($(date +%s) - date1)) / 86400 ))
-        printf "$days day(s) and $(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
-        sleep 0.1
-    done
+	now=`date +%s`
+	while true; do
+		days=$(( $(($(date +%s) - now)) / 86400 ))
+		printf "\e[3 q$days day(s) and $(date -u --date @$((`date +%s` - $now)) +%H:%M:%S)\r"
+		sleep 0.1
+	done
 }
 
 ## Imagemagick
