@@ -26,8 +26,9 @@
 # vim user :)
 	for i in x q Q; eval alias :${i}=\' exit\'
 	alias v="nvim"
-	alias vim="nvim"
-	alias vimdiff="nvim -d"
+	alias vi="v"
+	alias vim="v"
+	alias vimdiff="v -d"
 
 # Abbreviations
 	alias -g \

@@ -3,7 +3,7 @@
 freq=$XDG_CACHE_HOME/dmenu_history
 aliases=$ZDOTDIR/plugins/utils/aliasrc
 # configuration is done in Xresources
-dmenucmd='dmenu -f -i -h 12 -x 8 -y 8 -w 1900'
+dmenucmd='dmenu -f -i -h 12 -x 8 -y 8 -w 1904'
 
 source "$aliases"
 
@@ -44,7 +44,7 @@ if [[ "$cmd" =~ $regex ]]; then
     sorted=$(sort <<< "$history" | uniq -c | sort -hr | colrm 1 8)
     # remove trailing whitespace and asterisks from arguments
     cmd=$(sed 's/[[:space:]*]*$//' <<< "$@")
-    dmenucmd='dmenu -i -l 15'
+    dmenucmd='dmenu -f -i -l 15 -x 8 -y 8 -w 1904'
     (sleep .1; xdotool key Tab) &
     cmd="$(echo "$sorted"$'\n'"$cache" | $dmenucmd)"
     if [[ $cmd == *";rm" ]]; then

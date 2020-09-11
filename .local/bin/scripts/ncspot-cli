@@ -34,14 +34,15 @@ set() { #__ Here we also need to specify objpath __#
 															# /3 is mpris:trackid from Metadata
 }
 
-url() { #__ We need some parsing logic for URLs __#
+url() { #__ Some parsing logic for URLs __#
 	if [ -z "$*" ]; then
 		usage
 		exit 1
 	fi
-	type="$(echo $* | cut -d "/" -f4)"
-	key="$(echo $* | sed 's:.*/::' | cut -c 1-22)"
-	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$type:$key
+	string="$(echo $* | rev | cut -d/ -f1-2 | rev)"
+	typ="${string%/*}"
+	key="${string#*/}"
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$typ:$key
 }
 
 error() {
