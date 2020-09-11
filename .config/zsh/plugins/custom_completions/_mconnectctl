@@ -34,6 +34,5 @@ function _mctl_cmds() {
 
 _arguments -A "-*" \
            "1:command:_mctl_cmds" \
-           "--help[help for command]:command:(${(k)cmds})"
 
 unfunction _mctl_cmds

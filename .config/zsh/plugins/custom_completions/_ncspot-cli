@@ -1,0 +1,17 @@
+#compdef ncspot-cli
+
+local arguments
+
+arguments=(
+	'-h, --help[Display usage instructions]'
+	'-n, --next[Next song]'
+	'-p, --prev[Previous song]'
+	'-t, --toggle[Play/Pause]'
+	'-s, --stop[Stop]'
+	'--pause[Pause song]'
+        '--play[Play song]'
+	'-u, --url [Open URL]'
+	'--seek [Seek/Rewind (seconds)]'
+)
+
+_arguments -s $arguments

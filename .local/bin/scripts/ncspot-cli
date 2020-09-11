@@ -1,12 +1,32 @@
 #!/bin/env bash
 
+## TODO: Metadata in bar:
+	# command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot	      \
+	# /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get		      \
+	# string:"org.mpris.MediaPlayer2.Player" string:'Metadata'		      \
+	# | grep -Ev "^method"                           `# Ignore the first line.`   \
+	# | grep -Eo '("(.*)")|(\b[0-9][a-zA-Z0-9.]*\b)' `# Filter interesting fiels.`\
+	# | sed -E '2~2 a|'                              `# Mark odd fields.`         \
+	# | tr -d '\n'                                   `# Remove all newlines.`     \
+	# | sed -E 's/\|/\n/g'                           `# Restore newlines.`        \
+	# | sed -E 's/(xesam:)|(mpris:)//'               `# Remove ns prefixes.`      \
+	# | sed -E 's/^"//'                              `# Strip leading...`         \
+	# | sed -E 's/"$//'                              `# ...and trailing quotes.`  \
+	# | sed -E 's/"+/|/'                             `# Regard "" as seperator.`  \
+	# | sed -E 's/ +/ /g'                            `# Merge consecutive spaces.`\
+	# [...] take what you need.
+
 usage() {
-	printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n\t    --pause\tPause song\n\t    --play\tPlay song\n\t-u, --url\tOpen URL\n"
+	printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n\t    --pause\tPause song\n\t    --play\tPlay song\n\t-u, --url\tOpen URL\n\t    --seek\tSeek/Rewind (seconds)\n"
 	return 1
 }
 
 send() {
 	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1"
+}
+
+seek() { #__ We need to convert to microseconds __#
+	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Seek int64:"$1"000000
 }
 
 url() { #__ We need some parsing logic for URLs __#
@@ -43,6 +63,10 @@ else
 		send Play;;
 	--pause)
 		send Pause;;
+	--seek)
+		seek "$2";;
+	--set)
+		send SetPosition "$2";;
 	-u|--url)
 		url "$2";;
 	*)
