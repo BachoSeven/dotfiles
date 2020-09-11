@@ -75,7 +75,6 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 
 #### Blue(s)
 ![](pics/screens/ricing/dwm_gravitazione-2.png)
-![](pics/screens/ricing/dwm_gravitazione-2.png)
 ![](pics/screens/ricing/dwm_city.png)
 
 #### Greenish
