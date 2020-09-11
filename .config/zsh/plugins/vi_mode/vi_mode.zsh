@@ -4,23 +4,23 @@
 	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
 	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
 ## Document cursor types:
-#  1 -> blinking block
-#  2 -> solid block
-#  3 -> blinking underscore
-#  4 -> solid underscore
-#  5 -> blinking vertical bar
-#  6 -> solid vertical bar
+# 1 -> Blinking block
+# 2 -> Steady block ("█")
+# 3 -> Blinking underline
+# 4 -> Steady underline ("_")
+# 5 -> Blinking beam
+# 6 -> Steady beam ("|")
+# 7 -> Blinking st cursor
+# 8 -> Steady st cursor (snowman)
   cmdCursor='[1 q'
   insCursor='[5 q'
 	zle-keymap-select() {
-	  if [[ ${KEYMAP} == vicmd ]] ||
-	     [[ $1 = 'block' ]]; then
+	  if [[ ${KEYMAP} == vicmd ]]; then
 	    printf "\e%s" "$cmdCursor"
 	    vim_mode=${vimCmd}
 	  elif [[ ${KEYMAP} == main ]] ||
 	       [[ ${KEYMAP} == viins ]] ||
-	       [[ ${KEYMAP} = '' ]] ||
-	       [[ $1 = 'beam' ]]; then
+	       [[ ${KEYMAP} = '' ]]; then
 	    printf "\e%s" "$insCursor"
 	    vim_mode=${vimIns}
 	  fi

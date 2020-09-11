@@ -38,7 +38,7 @@
 		history
 		lf
 		utils
-		vi_mode
+    vi_mode
 		fzf
 		prompt
 		fast-syntax-highlighting
