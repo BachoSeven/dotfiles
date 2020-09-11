@@ -153,8 +153,8 @@
 " ColorScheme
 	se termguicolors
 	se background=dark
-	colo gruvbox | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
 	" colwal
+	colo gruvbox | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
 	" colo NeoSolarized
 	" let g:airline_theme='base16_solarized'
 " Transparency
