@@ -58,7 +58,7 @@
     show_indicators = yes
     icon_position = left
     icon_path = /usr/share/icons/gruvbox-dark-icons-gtk/16x16/status:/usr/share/icons/gruvbox-dark-icons-gtk/16x16/devices
-    max_icon_size = 64
+    max_icon_size = 256
     sticky_history = yes
     history_length = 20
     dmenu = /usr/local/bin/dmenu -p dunst:
