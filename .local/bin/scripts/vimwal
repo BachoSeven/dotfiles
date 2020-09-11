@@ -10,7 +10,7 @@ scheme=gruvbox
 if [ "$1" = "-w" ]; then
 	touch ~/.cache/wal/active
         [ ! "$(grep -q '" col'"$scheme"'' $XDG_CONFIG_HOME/nvim/init.vim)" ] &&
-	sed -i 's/colo gruvbox/" col'"$scheme"'/g' $XDG_CONFIG_HOME/nvim/init.vim
+	sed -i 's/colo '"$scheme"'/" col'"$scheme"'/g' $XDG_CONFIG_HOME/nvim/init.vim
 	sed -i 's/" colwal/colo wal/g' $XDG_CONFIG_HOME/nvim/init.vim
         [ ! "$(grep -q '" notermgui' $XDG_CONFIG_HOME/nvim/init.vim)" ] &&
 	sed -i 's/se termguicolors/" notermgui/g' $XDG_CONFIG_HOME/nvim/init.vim
@@ -18,7 +18,7 @@ elif [ "$1" = "-x" ]; then
 	[ -f $active ] && rm -f $active
         [ ! "$(grep -q '" colwal' $XDG_CONFIG_HOME/nvim/init.vim)" ] &&
 	sed -i 's/colo wal/" colwal/g' $XDG_CONFIG_HOME/nvim/init.vim
-	sed -i 's/" col'"$scheme"'/colo gruvbox/g' $XDG_CONFIG_HOME/nvim/init.vim
+	sed -i 's/" col'"$scheme"'/colo '"$scheme"'/g' $XDG_CONFIG_HOME/nvim/init.vim
         [ ! "$(grep -q 'se termguicolors' $XDG_CONFIG_HOME/nvim/init.vim)" ] &&
 	sed -i 's/" notermgui/se termguicolors/g' $XDG_CONFIG_HOME/nvim/init.vim
 fi
