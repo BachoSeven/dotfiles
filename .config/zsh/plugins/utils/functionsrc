@@ -428,8 +428,8 @@ colours()
 ## Audio
 # Calculate average bitrate of files in current folder
 avekbps() {
-	[ -z $"1" ] && printf "No format specified... (i.e. `avepbps mp3`)"
-	format=$1
+	[ -z "$1" ] && printf "No format specified... (i.e. `avekbps mp3`)"
+	format="$1"
 	mediainfo --Output=JSON *.$format | grep '"BitRate":' | cut -d: -f2 | sed "s/\"//g;s/,//g;s/ //g" | awk '{ total += $1 } END { print total/(1000*NR) }'
 }
 awkcompose() {
