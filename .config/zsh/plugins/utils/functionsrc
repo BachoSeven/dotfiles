@@ -49,6 +49,7 @@ cleanup() {
 	packages=($(pacman -Qttdq))
 	[ -n "$packages" ] && _run sudo pacman -Rns $(echo $packages)
 	_run rmshit
+	_run browser-vacuum
 }
 # AUR [not amazing for non-standard packages...]
 aurpublish() {
