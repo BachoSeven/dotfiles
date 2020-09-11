@@ -30,4 +30,4 @@ Sxiv.foreground: C4
 #include "Xresources.d/xscreensaver"
 
 !! St Transparency (0-1):
-st.alpha: 0.75
+st.alpha: 0.65

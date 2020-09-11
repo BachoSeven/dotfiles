@@ -4,7 +4,7 @@
 path="$HOME/.local/bin"
 
 # dmenu options
-lines="-l 15"
+lines="-l 12"
 font="-fn Hack-13"
 colors="-nf #93a1a1"
 prompt1="-p Dir:"
