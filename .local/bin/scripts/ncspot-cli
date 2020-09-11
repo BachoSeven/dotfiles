@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 ## TODO: Metadata in bar:
-	# command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot	      \
+	# dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot	      \
 	# /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get		      \
 	# string:"org.mpris.MediaPlayer2.Player" string:'Metadata'		      \
 	# | grep -Ev "^method"                           `# Ignore the first line.`   \
@@ -17,16 +17,21 @@
 	# [...] take what you need.
 
 usage() {
-	printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n\t    --pause\tPause song\n\t    --play\tPlay song\n\t-u, --url\tOpen URL\n\t    --seek\tSeek/Rewind (seconds)\n"
+	printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n\t    --pause\tPause song\n\t    --play\tPlay song\n\t-u, --url\tOpen URL\n\t    --seek\tSeek/Rewind (seconds)\n\t    --set\tJump to (seconds)\n"
 	return 1
 }
 
 send() {
-	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1"
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1"
 }
 
 seek() { #__ We need to convert to microseconds __#
-	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Seek int64:"$1"000000
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Seek int64:"$1"000000
+}
+
+set() { #__ Here we also need to specify objpath __#
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.SetPosition objpath:'/3' int64:"$1"000000
+															# /3 is mpris:trackid from Metadata
 }
 
 url() { #__ We need some parsing logic for URLs __#
@@ -36,7 +41,7 @@ url() { #__ We need some parsing logic for URLs __#
 	fi
 	type="$(echo $* | cut -d "/" -f4)"
 	key="$(echo $* | sed 's:.*/::' | cut -c 1-22)"
-	command dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$type:$key
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$type:$key
 }
 
 error() {
@@ -66,7 +71,7 @@ else
 	--seek)
 		seek "$2";;
 	--set)
-		send SetPosition "$2";;
+		set "$2";;
 	-u|--url)
 		url "$2";;
 	*)

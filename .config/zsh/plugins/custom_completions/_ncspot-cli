@@ -12,6 +12,7 @@ arguments=(
         '--play[Play song]'
 	'-u, --url [Open URL]'
 	'--seek [Seek/Rewind (seconds)]'
+	'--set [Jump to (seconds)]'
 )
 
 _arguments -s $arguments
