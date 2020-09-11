@@ -1,5 +1,5 @@
-![](pics/screens/ricing/fripp_dwm-matrix.png)
-<a style="margin-left: 4px;" href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"/></a>
+![](pics/screens/ricing/dwm_def.png)
+<a href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"></a>
 
 ``` sh
 ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
@@ -75,7 +75,8 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 
 #### Blue(s)
 ![](pics/screens/ricing/dwm_gravitazione-2.png)
-![](pics/screens/ricing/dwm_mountains.png)
+![](pics/screens/ricing/dwm_gravitazione-2.png)
+![](pics/screens/ricing/dwm_city.png)
 
 #### Greenish
 ![](pics/screens/ricing/green_dwm-1.png)
