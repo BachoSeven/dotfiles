@@ -9,8 +9,8 @@
 		compinit -C -d $XDG_CACHE_HOME/zsh/zcompdump
 	  fi
 	} ${HOME}/zsh/zcompdump(N.mh+24)
-# Add .files to autocomplete
-	_comp_options+=(globdots)				# Include hidden files.
+# Include .files
+	_comp_options+=(globdots)
 # Basic autocomplete with: menu-listing, hyphen- and case-insensitivity, accepts abbreviations after . or _ or - (ie. f.b -> foo.bar), substring complete (ie. bar -> foobar), and colored with LS_COLORS.
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'

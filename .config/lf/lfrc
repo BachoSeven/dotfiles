@@ -11,7 +11,7 @@ set shell zsh
 set shellopts '-eu:--shwordsplit'	# https://github.com/gokcehan/lf/wiki/Tips#split-words-by-default-in-zsh
 set ifs "\n"
 set filesep "\n"  # default already
-set scrolloff 10
+set scrolloff 11
 set color256
 set icons
 set period 1
