@@ -15,7 +15,7 @@
     geometry = "350x150-10-10"
     indicate_hidden = yes
     shrink = yes
-    transparency = 15
+    transparency = 20
     notification_height = 0
     separator_height = 2
     padding = 0
