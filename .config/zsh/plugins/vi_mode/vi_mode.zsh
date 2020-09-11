@@ -1,8 +1,8 @@
 # Reduce timeout
 	export KEYTIMEOUT=1
 # Change cursor shape for different vi modes + decent rprompt indicator
-	VimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
-	VimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
+	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
+	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
 ## Document cursor types:
 #  1 -> blinking block
 #  2 -> solid block
@@ -10,17 +10,19 @@
 #  4 -> solid underscore
 #  5 -> blinking vertical bar
 #  6 -> solid vertical bar
+  cmdCursor='[1 q'
+  insCursor='[5 q'
 	zle-keymap-select() {
 	  if [[ ${KEYMAP} == vicmd ]] ||
 	     [[ $1 = 'block' ]]; then
-	    printf '\e[1 q'
-	    vim_mode=${VimCmd}
+	    printf "\e%s" "$cmdCursor"
+	    vim_mode=${vimCmd}
 	  elif [[ ${KEYMAP} == main ]] ||
 	       [[ ${KEYMAP} == viins ]] ||
 	       [[ ${KEYMAP} = '' ]] ||
 	       [[ $1 = 'beam' ]]; then
-	    printf '\e[5 q'
-	    vim_mode=${VimIns}
+	    printf "\e%s" "$insCursor"
+	    vim_mode=${vimIns}
 	  fi
 	  zle reset-prompt
 	}
@@ -28,7 +30,7 @@
 	# init `vi insert` as keymap
 	zle-line-init() {
 	    zle -K viins
-	    printf "\e[5 q"
+	    printf "\e%s" "$insCursor"
 	}
 	zle -N zle-line-init
 
@@ -55,7 +57,7 @@
 	bindkey "^x^e" edit-command-line
 
 # Move by physical lines, just like gj/gk in vim :)
-# Credits to http://leahneukirchen.org/dotfiles/.zshrc# .zshrc interactive configuration file for zsh
+# Credits to http://leahneukirchen.org/dotfiles/.zshrc
 	_physical_up_line()   { zle backward-char -n $COLUMNS }
 	_physical_down_line() { zle forward-char  -n $COLUMNS }
 	zle -N physical-up-line _physical_up_line

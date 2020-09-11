@@ -586,7 +586,7 @@ stopwatch(){
 	now=`date +%s`
 	while true; do
 		days=$(( $(($(date +%s) - now)) / 86400 ))
-		printf "\e[3 q$days day(s) and $(date -u --date @$((`date +%s` - $now)) +%H:%M:%S)\r"
+		printf "\e[4 q$days day(s) and $(date -u --date @$((`date +%s` - $now)) +%H:%M:%S)\r"
 		sleep 0.1
 	done
 }
