@@ -8,7 +8,7 @@
 
 #	Usage:
 #		` setbg [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -w, -wal "path/to/img" "backend" ] `
-# NOTE: -w and -i are mutually exclusive
+# NOTE: -w and -i are mutually exclusive (kinda)
 
 bgloc=$XDG_CONFIG_HOME/wp.png
 format="--zoom"
