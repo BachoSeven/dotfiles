@@ -57,7 +57,7 @@ aurpublish() {
 	_run git clone ssh://aur@aur.archlinux.org/"$PKG".git; cp PKGBUILD $PKG; cd $PKG
 	_run yay -S namcap && namcap PKGBUILD; yay -Rs namcap
 	_run makepkg -s && makepkg --printsrcinfo > .SRCINFO; echo "*" > .gitignore
-	_run git add -f PKGBUILD .SRCINFO && git commit -m "Initial AUR package commit" && git push
+	_run git add -f PKGBUILD .SRCINFO && git commit -a && git push
 }
 aurupdate() {
 	PKG="$1"
@@ -95,7 +95,6 @@ dirs=(
 	~/.local/src/dmenu
 	~/.local/src/dwmblocks
 	~/.local/src/st
-	~/.local/src/sxiv
 	~/slsk/programs/AP2_QMK/annepro-qmk
 	~/slsk/programs/AP2_QMK/annepro2-shine
 	~/slsk/programs/AP2_QMK/AnnePro2-Tools

@@ -72,13 +72,13 @@
 	alias mc='mconnect'
 	alias mctl='mconnectctl'
 	alias sctl='systemctl'
-	alias jctl='journalctl -p3'
+	alias jctl='journalctl -p3 --pager-end'
 	alias jctll='journalctl -f -n 100 | ccze -A' #follow log
 	alias bctl='bluetoothctl'
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
-	alias glow='glow -p -w 125 -s ~/.config/glow/gruvbox.json'
+	alias glow='glow -p -w 120 -s ~/.config/glow/gruvbox.json'
 	alias udef='udict'
 	alias spot='st -c ncspot -e ncspot'
 	alias w3m='w3m -s'
