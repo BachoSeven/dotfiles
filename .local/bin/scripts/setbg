@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# SLOC: 20
+# SLOC: 30
 # Set a background image or gif animation, using pywal to set a terminal colorscheme,or otherwise
 # using Xresources with xwallpaper, tested mostly on dwm; supports interactive usage.
 
