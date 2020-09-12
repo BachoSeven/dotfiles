@@ -14,7 +14,6 @@
 	copyq &				# Clipboard management
 	pgrep redshift &> /dev/null || redshift &> /dev/null & # Color temperature
 	picom &				# Compositor
-	dunst &				# Notifications
 	touchpadtoggle			# Disable touchpad by default
 	unclutter &			# Remove mouse when idle
 	remaps				# Switch caps/super and one-tap_caps/esc

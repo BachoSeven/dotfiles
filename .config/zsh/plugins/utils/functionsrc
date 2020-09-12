@@ -95,6 +95,7 @@ dirs=(
 	~/.local/src/dmenu
 	~/.local/src/dwmblocks
 	~/.local/src/st
+	~/.local/src/sxiv
 	~/slsk/programs/AP2_QMK/annepro-qmk
 	~/slsk/programs/AP2_QMK/annepro2-shine
 	~/slsk/programs/AP2_QMK/AnnePro2-Tools
