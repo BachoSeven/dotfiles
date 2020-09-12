@@ -89,6 +89,8 @@
 	alias smi="sudo make clean install"
 	alias mx='weechat'
 	alias wa='kitty --hold wa'
+	_exists pacgraph && alias pacgraph='pacgraph -b "#1e2021" -l "#848388" -t "#d93420" -d "#c78930" -p 8 98'
+
 ## Disks
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
 #  * `fs` to show free space on physical drives
