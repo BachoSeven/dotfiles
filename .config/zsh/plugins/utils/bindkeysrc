@@ -13,7 +13,7 @@
 	bindkey -M menuselect "+" accept-and-menu-complete
 # Do not save these in history:
 	bindkey -s '^o' ' lfcd\r'
-	bindkey -s '^g' ' gotop\r'
+	bindkey -s '^g' ' btm -b\r'
 	bindkey -s '^v' ' v\r'
 	bindkey -s '^[n' ' neomutt\r'
 	bindkey -s '^s' ' up2date\r'
