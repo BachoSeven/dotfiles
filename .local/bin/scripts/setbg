@@ -7,14 +7,14 @@
 # 2020 Francesco Minnocci <ascoli.minnocci@gmail.com>
 
 #	Usage:
-#		` setbg [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -w, -wal "path/to/img" "backend" ] `
+#		` setbg [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -t, -tile ] [ -w, -wal "path/to/img" "backend" ] `
 # NOTE: -w and -i are mutually exclusive (kinda)
 
 bgloc=$XDG_CONFIG_HOME/wp.png
 format="--zoom"
 killall -q xwinwrap 2>/dev/null
 
-while getopts ":hi:w:m" o; do
+while getopts ":hi:w:mt" o; do
 	case "${o}" in
 		h)
 			printf "Usage :\\nsetbg\\n\\t [ -i, -input \"path/to/img\" ]\\n\\t [ -m, -maximize: maximize wallpaper ( default format is \"--zoom\" ) ]\\n\\t [ -w, -wal \"path/to/img\" \"backend\" : use pywal if installed ]\\n\\t [ -h, -help: Show this message ]\\n" && exit ;;
@@ -29,6 +29,8 @@ while getopts ":hi:w:m" o; do
 			hash wal &>/dev/null && wal -c && wal --backend $backend -i $bgloc;;
 		m)
 			format="--maximize" ;;
+		t)
+			format="--tile" ;;
 		*)
 			printf "Invalid option: -%s\\n" "$OPTARG" && exit 1 ;;
 	esac

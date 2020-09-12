@@ -213,10 +213,10 @@ sfont() {
 sloc() {
 	if [ -z "$1" ]; then
 		fd -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
+	elif [ -d "$1" ]; then
+		fd --full-path "$1" -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
 	elif [ -f "$1" ]; then
 		sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' "$1" | wc -l
-	elif [ -d "$1" ]; then
-		fd --full-path '$1' -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
 	fi
 	unset del
 }
