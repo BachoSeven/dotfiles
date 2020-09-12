@@ -1,0 +1,69 @@
+method return time=1599839534.214802 sender=:1.147 -> destination=:1.171 serial=31 reply_serial=2
+   string "<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/org/mpris/MediaPlayer2">
+  <interface name="org.freedesktop.DBus.Introspectable">
+    <method name="Introspect">
+      <arg name="xml_data" type="s" direction="out"/>
+    </method>
+  </interface>
+  <interface name="org.freedesktop.DBus.Properties">
+    <method name="Get">
+      <arg name="interface_name" type="s" direction="in"/>
+      <arg name="property_name" type="s" direction="in"/>
+      <arg name="value" type="v" direction="out"/>
+    </method>
+    <method name="GetAll">
+      <arg name="interface_name" type="s" direction="in"/>
+      <arg name="props" type="a{sv}" direction="out"/>
+    </method>
+    <method name="Set">
+      <arg name="interface_name" type="s" direction="in"/>
+      <arg name="property_name" type="s" direction="in"/>
+      <arg name="value" type="v" direction="in"/>
+    </method>
+    <signal name="PropertiesChanged">
+      <arg name="interface_name" type="s"/>
+      <arg name="changed_properties" type="a{sv}"/>
+      <arg name="invalidated_properties" type="as"/>
+    </signal>
+  </interface>
+  <interface name="org.mpris.MediaPlayer2">
+    <property name="CanQuit" type="b" access="read"/>
+    <property name="CanRaise" type="b" access="read"/>
+    <property name="CanSetFullscreen" type="b" access="read"/>
+    <property name="HasTrackList" type="b" access="read"/>
+    <property name="Identity" type="s" access="read"/>
+    <property name="SupportedMimeTypes" type="as" access="read"/>
+    <property name="SupportedUriSchemes" type="as" access="read"/>
+  </interface>
+  <interface name="org.mpris.MediaPlayer2.Player">
+    <method name="Forward"/>
+    <method name="Next"/>
+    <method name="OpenUri"/>
+    <method name="Pause"/>
+    <method name="Play"/>
+    <method name="PlayPause"/>
+    <method name="Previous"/>
+    <method name="Rewind"/>
+    <method name="Seek"/>
+    <method name="SetPosition"/>
+    <method name="Stop"/>
+    <property name="CanControl" type="b" access="read"/>
+    <property name="CanGoForward" type="b" access="read"/>
+    <property name="CanGoNext" type="b" access="read"/>
+    <property name="CanGoPrevious" type="b" access="read"/>
+    <property name="CanPause" type="b" access="read"/>
+    <property name="CanPlay" type="b" access="read"/>
+    <property name="CanRewind" type="b" access="read"/>
+    <property name="CanSeek" type="b" access="read"/>
+    <property name="LoopStatus" type="s" access="read"/>
+    <property name="MaximumRate" type="d" access="read"/>
+    <property name="Metadata" type="a{sv}" access="read"/>
+    <property name="MinimumRate" type="d" access="read"/>
+    <property name="PlaybackStatus" type="s" access="read"/>
+    <property name="Position" type="x" access="read"/>
+    <property name="Rate" type="d" access="read"/>
+    <property name="Shuffle" type="b" access="read"/>
+    <property name="Volume" type="d" access="read"/>
+  </interface>
+</node>"
