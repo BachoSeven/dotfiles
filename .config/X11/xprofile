@@ -16,6 +16,7 @@
 	picom &				# Compositor
 	touchpadtoggle			# Disable touchpad by default
 	unclutter &			# Remove mouse when idle
+	dunst &				# Notification daemon
 	remaps				# Switch caps/super and one-tap_caps/esc
 	mconnect 2>/dev/null & rmdir ~/mconnect	# Autoconnect to Android
 	transmission-daemon &		# Bittorrent daemon

@@ -7,7 +7,7 @@
 # 2020 Francesco Minnocci <ascoli.minnocci@gmail.com>
 
 #	Usage:
-#		` setbg [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -t, -tile ] [ -w, -wal "path/to/img" "backend" ] `
+#		` setbg [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -t, -title ] [ -w, -wal "path/to/img" "backend" ] `
 # NOTE: -w and -i are mutually exclusive (kinda)
 
 bgloc=$XDG_CONFIG_HOME/wp
