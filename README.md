@@ -77,7 +77,6 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 ![](pics/screens/ricing/dwm_after-bach.png)
 ![](pics/screens/ricing/dwm.png)
 ![](pics/screens/ricing/dwm2.png)
-![](pics/screens/ricing/pipes+matrices.png)
 
 #### Blue(s)
 ![](pics/screens/ricing/dwm_city.png)
