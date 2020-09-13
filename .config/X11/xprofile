@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Useful misc
-	dbus-update-activation-environment --verbose --systemd DBUS_SESSION_BUS_ADDRESS 2>/dev/null
+	dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS 2>/dev/null
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
 # Screensaver
