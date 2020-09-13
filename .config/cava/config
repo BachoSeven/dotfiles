@@ -2,6 +2,8 @@
 framerate = 60
 
 [input]
+method = pulse
+source = auto
 
 [output]
 method = ncurses
