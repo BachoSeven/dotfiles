@@ -10,7 +10,7 @@
 #		` setbg [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -t, -tile ] [ -w, -wal "path/to/img" "backend" ] `
 # NOTE: -w and -i are mutually exclusive (kinda)
 
-bgloc=$XDG_CONFIG_HOME/wp.png
+bgloc=$XDG_CONFIG_HOME/wp
 format="--zoom"
 killall -q xwinwrap 2>/dev/null
 
