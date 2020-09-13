@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# SLOC: 30
+# Set a background image or gif animation, using pywal to set a terminal colorscheme,or otherwise
+# Supports giving a directory as input, in which case $0 will select a random file from it.
+# using Xresources with xwallpaper, tested mostly on dwm; supports interactive usage.
+
+# 2020 Francesco Minnocci <ascoli.minnocci@gmail.com>
+
+#	Usage:
+#		` $0 [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -t, -title ] [ -w, -wal "path/to/img" "backend" ] `
+# NOTE: -w and -i are mutually exclusive (kinda)
+
+bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}"/bg
+format="--zoom"
+killall -q xwinwrap 2>/dev/null
+
+while getopts ":hi:w:mt" o; do
+	case "${o}" in
+		h)
+			printf "Usage :\\n'$0'\\n\\t [ -i, -input \"path/to/img\" ]\\n\\t [ -m, -maximize: maximize wallpaper ( default format is \"--zoom\" ) ]\\n\\t [ -w, -wal \"path/to/img\" \"backend\" : use pywal if installed ]\\n\\t [ -h, -help: Show this message ]\\n" && exit ;;
+		i)
+			vimwal -x && dunstreload
+			[ -f "$2" ] && ln -sf "$(readlink -f "$2")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
+			[ -d "$2" ] && ln -sf "$( find "$(readlink -f "$2")" -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
+			xrdb -load "$XDG_CONFIG_HOME/X11/Xresources" ;;
+		w)
+			vimwal -w && dunstreload
+			[ -f "$2" ] && cp "$2" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
+			backend="$3"
+			hash wal &>/dev/null && wal -c && wal --backend "$backend" -i "$(readlink -f "$bgloc")" >/dev/null 2>&1 ;;
+		m)
+			format="--maximize" ;;
+		t)
+			format="--tile" ;;
+		*)
+			printf "Invalid option: -%s\\n" "$OPTARG" && exit 1 ;;
+	esac
+done
+
+# Use gifview for gifs, or else xwallpaper
+	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
+	if [ "$mime" = "image/gif" ]; then
+		setsid -f gifbg "$bgloc"
+	else
+		xwallpaper "$format" "$bgloc"
+	fi
