@@ -25,6 +25,7 @@ mountusb() { \
 	partitiontype="$(lsblk -no "fstype" "$chosen")"
 	case "$partitiontype" in
 		"vfat") sudo -A mount -t vfat "$chosen" "$mp" -o rw,umask=0000;;
+		"exfat") sudo -A mount "$chosen" "$mp" -o uid="$(id -u)",gid="$(id -g)";;
 		*) sudo -A mount "$chosen" "$mp"; user="$(whoami)"; ug="$(groups | awk '{print $1}')"; sudo -A chown "$user":"$ug" "$mp";;
 	esac
 	notify-send "💻 USB mounting" "$chosen mounted to $mp."
@@ -49,7 +50,7 @@ asktype() { \
 	}
 
 anddrives=$(simple-mtpfs -l 2>/dev/null)
-usbdrives="$(lsblk -rpo "name,type,size,mountpoint" | awk '$4==""{printf "%s (%s)\n",$1,$3}')"
+usbdrives="$(lsblk -rpo "name,type,size,mountpoint" | grep 'part\|rom' | awk '$4==""{printf "%s (%s)\n",$1,$3}')"
 
 if [ -z "$usbdrives" ]; then
 	[ -z "$anddrives" ] && echo "No USB drive or Android device detected" && exit
