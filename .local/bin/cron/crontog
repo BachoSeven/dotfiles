@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Toggles all cronjobs off/on.
+
+([ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/cronsaved ] && crontab - < "${XDG_CONFIG_HOME:-$HOME/.config}"/cronsaved  && rm "${XDG_CONFIG_HOME:-$HOME/.config}"/cronsaved && notify-send "🕓 Cronjobs re-enabled.") || ( crontab -l > "${XDG_CONFIG_HOME:-$HOME/.config}"/cronsaved && crontab -r && notify-send "🕓 Cronjobs saved and disabled.")
