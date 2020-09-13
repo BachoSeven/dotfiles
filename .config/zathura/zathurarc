@@ -18,6 +18,8 @@ set render-loading false
 set adjust-open "best-fit"
 set synctex true
 set synctex-editor-command "nvr --remote-silent %f -c %l"
+# Fix following links(!)
+set sandbox none
 
 # key bindings
 map <C-u> navigate previous
@@ -31,7 +33,7 @@ map p print
 map K zoom in
 map J zoom out
 
-#stop at page boundaries
+# stop at page boundaries
 set scroll-page-aware true
 set scroll-full-overlap 0.01
 set scroll-step 50
