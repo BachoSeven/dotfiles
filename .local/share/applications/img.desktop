@@ -4,5 +4,4 @@ Encoding=UTF-8
 MimeType=image/jpeg;image/bmp;image/gif;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-tga;image/tiff;image/x-xpixmap;image/jpg;image/x-bmp;image/png;
 Type=Application
 Name=Sxiv Image viewer
-NoDisplay=true
 Exec=sxiv-open %u
