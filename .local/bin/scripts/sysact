@@ -12,11 +12,11 @@ cmds="\
 🔒 lock		slock
 🚪 leave dwm	kill -TERM $(pidof -s dwm)
 ✨ renew dwm	kill -HUP $(pidof -s dwm)
-🐻 hibernate	${hib:-sudo -A systemctl suspend-then-hibernate}
 🔃 reboot	${reb:-sudo -A reboot}
 🖥 shutdown	${shut:-sudo -A shutdown -h now}"
+# 🐻 hibernate	${hib:-sudo -A systemctl suspend-then-hibernate}
 
-choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu)" || exit 1
+choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -x 8 -y 8 -w 1904)" || exit 1
 
 ## https://github.com/koalaman/shellcheck/wiki/SC2091
 readonly action="$(echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-)"

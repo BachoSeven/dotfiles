@@ -57,7 +57,7 @@
 	"
 
 # Yt
-	export SUBS_FILE=$XDG_CONFIG_HOME/subs
+	export SUBS_FILE="$XDG_CONFIG_HOME/yt/subs"
 	export SUBS_MENU_PROG="dmenu -bw 5 -nb #282828 -nf #83a598 -c -f -r -i -l 10 -p YT"
 
 # Mpd
