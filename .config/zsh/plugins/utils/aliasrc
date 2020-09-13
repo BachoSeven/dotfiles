@@ -127,7 +127,7 @@
 	alias cfr='nvim $XDG_CONFIG_HOME/X11/Xresources'
 	alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
 	alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
-	alias cfy='nvim $XDG_CONFIG_HOME/subs'
+	alias cfy='nvim $XDG_CONFIG_HOME/yt/subs'
 	alias cfk='nvim $XDG_CONFIG_HOME/kitty/kitty.conf'
 	alias cfu='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
 	alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
