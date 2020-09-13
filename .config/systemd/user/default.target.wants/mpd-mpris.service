@@ -1,10 +1,1 @@
-[Unit]
-Description=mpd-mpris: An implementation of the MPRIS protocol for MPD
-Requires=mpd.service
-After=mpd.service
-
-[Service]
-ExecStart=/usr/bin/mpd-mpris -no-instance -host 127.0.0.1 -port 6602
-
-[Install]
-WantedBy=default.target
+/home/fra/.config/systemd/user/mpd-mpris.service
