@@ -17,5 +17,6 @@
 	touchpadtoggle			# Disable touchpad by default
 	unclutter &			# Remove mouse when idle
 	remaps				# Switch caps/super and one-tap_caps/esc
+	mpDris2 &			# Start an mpd MPRIS interface
 	mconnect 2>/dev/null & 		# Autoconnect to Android
 	transmission-daemon &		# Bittorrent daemon
