@@ -73,9 +73,15 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 
 ### Dwm
 
+#### Gruvboxy
+![](pics/screens/ricing/dwm_after-bach.png)
+![](pics/screens/ricing/dwm.png)
+![](pics/screens/ricing/dwm2.png)
+![](pics/screens/ricing/pipes+matrices.png)
+
 #### Blue(s)
-![](pics/screens/ricing/dwm_gravitazione-2.png)
 ![](pics/screens/ricing/dwm_city.png)
+![](pics/screens/ricing/dwm_gravitazione-2.png)
 
 #### Greenish
 ![](pics/screens/ricing/green_dwm-1.png)
@@ -84,11 +90,6 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 #### Pink :3
 ![](pics/screens/ricing/pink_dwm.png)
 ![](pics/screens/ricing/dwm_pinker.png)
-
-#### Gruvboxy
-![](pics/screens/ricing/dwm.png)
-![](pics/screens/ricing/dwm2.png)
-![](pics/screens/ricing/pipes+matrices.png)
 
 ### Gnome-Shell (Ubuntu)
 
