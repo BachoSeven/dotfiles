@@ -18,4 +18,4 @@
 	unclutter &			# Remove mouse when idle
 	remaps				# Switch caps/super and one-tap_caps/esc
 	mconnect 2>/dev/null & rmdir ~/mconnect	# Autoconnect to Android
-	transmission-daemon &		# Bittorrent daemon; last so mybe network will be working...
+	transmission-daemon &		# Bittorrent daemon
