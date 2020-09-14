@@ -100,22 +100,22 @@ shuffle = true
 
 # Gruvbox dark [ based on base16 by Dawid Kurek (dawikur@gmail.com) ]
 [theme]
-background = "#282828"
+background = "#383838"
 primary = "#1d2021"
 secondary = "#458588"
 title = "#fbf1c7"
 playing = "#d79921"
-playing_bg = "#282828"
+playing_bg = "#383838"
 playing_selected = "#98971a"
 highlight = "#d5c4a1"
-highlight_bg = "#282828"
+highlight_bg = "#383838"
 error = "#d5c4a1"
 error_bg = "#fbf1c7"
 statusbar = "#555555"
 statusbar_progress = "#b16286"
 statusbar_bg = "#98971a"
 cmdline = "#d5c4a1"
-cmdline_bg = "#282828"
+cmdline_bg = "#383838"
 
 # # Base16_sol_dark, modified closer to spotify colors by BachoSeven, originally https://github.com/gidsi/base16-ncspot
 # [theme]
