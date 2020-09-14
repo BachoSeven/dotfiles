@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Notify me with notify-send if my battery is below 25%.
-# You can set this to run via cron.
-
 if [ ! "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ]; then
 	export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 	if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 40 ]; then
