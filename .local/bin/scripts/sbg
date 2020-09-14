@@ -41,7 +41,7 @@ while getopts ":hi:w:mt" o; do
 done
 
 # Use gifview for gifs, or else xwallpaper
-	if [ $pw ]; then
+	if [ ! $pw ]; then
 		mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
 		if [ "$mime" = "image/gif" ]; then
 			setsid -f gifbg "$bgloc"
