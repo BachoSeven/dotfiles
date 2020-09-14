@@ -4,9 +4,9 @@
 	autoload -Uz compinit
 	() {
 	  if [[ $# -gt 0 ]]; then
-		compinit -d $XDG_CACHE_HOME/zsh/zcompdump
+		compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 	  else
-		compinit -C -d $XDG_CACHE_HOME/zsh/zcompdump
+		compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
 	  fi
 	} ${HOME}/zsh/zcompdump(N.mh+24)
 # Include .files
