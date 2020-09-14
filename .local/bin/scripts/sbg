@@ -14,6 +14,7 @@
 bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}"/bg
 format="--zoom"
 killall -q xwinwrap 2>/dev/null
+pw=false
 
 while getopts ":hi:w:mt" o; do
 	case "${o}" in
@@ -28,6 +29,7 @@ while getopts ":hi:w:mt" o; do
 			vimwal -w && dunstreload
 			[ -f "$2" ] && cp "$2" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			backend="$3"
+			pw=true
 			hash wal &>/dev/null && wal -c && wal --backend "$backend" -i "$(readlink -f "$bgloc")" >/dev/null 2>&1 ;;
 		m)
 			format="--maximize" ;;
@@ -39,9 +41,11 @@ while getopts ":hi:w:mt" o; do
 done
 
 # Use gifview for gifs, or else xwallpaper
-	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
-	if [ "$mime" = "image/gif" ]; then
-		setsid -f gifbg "$bgloc"
-	else
-		xwallpaper "$format" "$bgloc"
+	if [ $pw ]; then
+		mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
+		if [ "$mime" = "image/gif" ]; then
+			setsid -f gifbg "$bgloc"
+		else
+			xwallpaper "$format" "$bgloc"
+		fi
 	fi
