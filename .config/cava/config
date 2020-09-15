@@ -1,3 +1,5 @@
+# vim: ft=cfg
+
 [general]
 framerate = 60
 
@@ -15,6 +17,8 @@ method = ncurses
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
 # background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
+#
+# GRUVBOX
 gradient = 1
 gradient_count = 8
 gradient_color_1 = '#b16286'
@@ -25,6 +29,10 @@ gradient_color_5 = '#84a696'
 gradient_color_6 = '#96ad71'
 gradient_color_7 = '#a7b44b'
 gradient_color_8 = '#b8bb26'
+# gradient_color_5 = '#b9b927'
+# gradient_color_6 = '#cf942b'
+# gradient_color_7 = '#e56e30'
+# gradient_color_8 = '#fb4934'
 
 [smoothing]
 
