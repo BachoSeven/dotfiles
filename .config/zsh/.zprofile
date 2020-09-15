@@ -14,7 +14,6 @@
 	export XDG_CONFIG_HOME="$HOME/.config"
 	export XDG_DATA_HOME="$HOME/.local/share"
 	export XDG_CACHE_HOME="$HOME/.cache"
-	export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 	export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 	export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 	export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"

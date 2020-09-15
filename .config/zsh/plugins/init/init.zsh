@@ -42,5 +42,3 @@
 ## Misc
 # Zsh's Builtin Ncurses Tetris game :)
 	autoload -Uz tetriscurses
-# Gnupg bs
-	export GPG_TTY=$(tty); gpg-connect-agent updatestartuptty /bye >/dev/null

@@ -1,6 +1,3 @@
-
-
-
 IMAPStore gm_main-remote
 Host imap.gmail.com
 Port 993
@@ -52,4 +49,3 @@ SyncState *
 MaxMessages 10000
 ExpireUnread no
 # End profile
-
