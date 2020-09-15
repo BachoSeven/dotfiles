@@ -27,7 +27,7 @@ while getopts ":hi:w:mt" o; do
 			xrdb -load "$XDG_CONFIG_HOME/X11/Xresources" ;;
 		w)
 			vimwal -w && dunstreload
-			[ -f "$2" ] && cp "$2" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
+			[ -f "$2" ] && ln -sf "$(readlink -f "$2")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			backend="$3"
 			npw=true
 			hash wal &>/dev/null && wal -c && wal --backend "$backend" -i "$(readlink -f "$bgloc")" >/dev/null 2>&1 ;;
