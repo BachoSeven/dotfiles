@@ -134,6 +134,7 @@
 	alias \
 	ka='killall' \
 		p='pacman' \
+		y='yay' \
 		g='git' \
 		gd='g diff' \
 		gg='g pull' \
