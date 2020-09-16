@@ -150,7 +150,8 @@
 	alias gtyp='typiskt -e'
 	alias sol='ttysolitaire --no-background-color'
 	alias mcl='java -jar ~/stuff/games/minecraft\ Jar/mcTE.jar'
-	alias tboi='cd ~/slsk/games/TBOI/The_Binding_of_Isaac_Afterbirth; ./run-x64.sh && cd'
+	alias tboi='cd ~/slsk/games/TBOI/The_Binding_of_Isaac_Afterbirth; ./run-x64.sh && cd -'
+	alias gog='local sel=$(fd -t f start.sh ~/slsk/games/GOG | cut -d/ -f7 | ccze -A | head -n -1| fzf --ansi  | head --bytes -2); ~/slsk/games/GOG/"$sel"/start.sh'
 
 # Personal files
 	alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
