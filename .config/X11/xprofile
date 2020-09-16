@@ -7,15 +7,23 @@
 # Screensaver
 	xss-lock -- /usr/local/bin/slock &
 
+# Daemons which may be started by systemd, when I use it.
+	_() {
+	    pgrep -x "$1" > /dev/null ||
+		{ "$@" & }
+	}
+	_ dunst
+	_ mpd
+
 # Utils
 	xrdb -load ~/.config/X11/Xresources
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
 	touchpadtoggle			# Disable touchpad by default
 	remaps				# Switch caps/super and one-tap_caps/esc
-	copyq &				# Clipboard management
-	pgrep redshift &> /dev/null || redshift &> /dev/null & # Color temperature
-	picom &				# Compositor
+	_ copyq				# Clipboard management
+	_ redshift			# Color temperature
+	_ picom				# Compositor
 	unclutter &			# Remove mouse when idle
 	mconnect 2>/dev/null & 		# Autoconnect to Android
 	mpDris2 &			# Start an mpd MPRIS interface
-	transmission-daemon &		# Bittorrent daemon
+	_ transmission-daemon		# Bittorrent daemon
