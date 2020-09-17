@@ -621,8 +621,16 @@ img2pdf() {
 	done <<< $(ls)
 }
 compresspdf() {
-	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=$2.pdf $1
-	## screen << ebook << prepress
+	gs			\
+	-sDEVICE=pdfwrite 	\
+	-dCompatibilityLevel=1.4\
+	-dPDFSETTINGS=/screen	\
+	-dNOPAUS		\
+	-dBATCH			\
+	-dQUIET			\
+	-sOutputFile=$2.pdf	\
+	"$1"
+	## PDFSETTINGS:		screen << ebook << prepress
 	# ps2pdf LARGE.pdf SMALL.pdf
 }
 
