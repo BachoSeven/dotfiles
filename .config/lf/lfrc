@@ -50,6 +50,7 @@ cmd open ${{
 		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
 		image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
+		# image/*) sxiv -ao $f 2>/dev/null | lf-select ;;
 		audio/*) mpv --audio-display=no $f ;;
 		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 & ;;
 		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1 & done;;
@@ -336,7 +337,7 @@ map b &setsid -f sbg -i $f
 map <a-L> cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
 map X !$f
-map O $mimeopen "$f"
+map O $setsid -f $OPENER "$f" >/dev/null 2>&1 &
 map T push :$touch<space>
 map V push :!nvim<space>
 map <c-z> $ kill -STOP $PPID	# put lf in bg

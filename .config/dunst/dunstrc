@@ -59,8 +59,8 @@
     icon_position = left
     icon_path = /usr/share/icons/gruvbox-dark-icons-gtk/16x16/status:/usr/share/icons/gruvbox-dark-icons-gtk/16x16/devices
     max_icon_size = 64
-    sticky_history = yes
-    history_length = 22
+    sticky_history = no
+    history_length = 20
     dmenu = /usr/local/bin/dmenu -p dunst:
     browser = /usr/bin/chromium
     # Always run rule-defined scripts, even if the notification is suppressed
