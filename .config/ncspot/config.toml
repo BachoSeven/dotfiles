@@ -9,7 +9,7 @@ volnorm_pregain = -3
 shuffle = true
 
 [keybindings]
-## unbinded: n, c, e, y
+## unbinded: nN, c, eE, xX
 ######################################
 # Song controls
 ######################################
@@ -19,8 +19,8 @@ shuffle = true
 ##################
 "b" = "seek -1000"
 "f" = "seek +1000"
-"Shift+b" = "seek -10000"
-"Shift+f" = "seek +10000"
+"B" = "seek -10000"
+"F" = "seek +10000"
 
 ##################
 # Play / pause
@@ -32,14 +32,14 @@ shuffle = true
 ##################
 # Track manipulation
 ##################
-"Shift+H" = "previous"
-"Shift+L" = "next"
+"H" = "previous"
+"L" = "next"
 "r" = "repeat"
 "z" = "shuffle"
-"Shift+d" = "delete"
-"Shift+s" = "save"
+"D" = "delete"
+"S" = "save"
 # Open context menu
-"Shift+o" = "open current"
+"O" = "open current"
 "o" = "open selected"
 "A" = "goto artist"
 "a" = "goto album"
@@ -49,10 +49,11 @@ shuffle = true
 ##################
 # Add to queue
 " " = "queue"
+"Ctrl+s" = "save queue"
 # Move selected song up/down in the queue
-"Shift+Down" = "shift down 1"
-"Shift+Up" = "shift up 1"
-"Shift+c" = "clear"
+"J" = "shift down 1"
+"K" = "shift up 1"
+"C" = "clear"
 
 ######################################
 # Sound
@@ -64,9 +65,11 @@ shuffle = true
 # Movements
 ######################################
 "F1" = "focus queue"
-"F2" = "focus search"
+"F2" = "focus library"
+"F3" = "focus search"
+"1" = "focus queue"
+"2" = "focus library"
 "/" = "focus search"
-"F3" = "focus library"
 # Go to the playing track
 "." = "move playing"
 # Navigation
@@ -87,15 +90,16 @@ shuffle = true
 ######################################
 # Sharing
 ######################################
-"Shift+x" = "share selected"
-"x" = "share current"
+"Y" = "share selected"
+"y" = "share current"
 
 ######################################
 # Other
 ######################################
-"Shift+q" = "quit"
+"Q" = "quit"
+"Z" = "quit"
 "?" = "help"
-"Shift+u" = "update"
+"U" = "update"
 
 
 # Gruvbox dark [ based on base16 by Dawid Kurek (dawikur@gmail.com) ]
