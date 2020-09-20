@@ -12,6 +12,7 @@
 	    pgrep -x "$1" > /dev/null ||
 		{ "$@" & }
 	}
+	_ gnome-keyring-daemon -d --start --components=secrets
 	_ dunst
 	_ mpd
 
