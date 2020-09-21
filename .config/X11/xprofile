@@ -16,6 +16,7 @@
 	}
 	_ dunst
 	_ mpd
+	_ mpDris2
 
 # Utils
 	xrdb -load ~/.config/X11/Xresources
@@ -25,6 +26,6 @@
 	_ copyq				# Clipboard management
 	_ redshift			# Color temperature
 	_ picom				# Compositor
-	unclutter &			# Remove mouse when idle
+	xbanish -m ne -i shift -i mod4 -i control & # Remove mouse when typing
 	mconnect 2>/dev/null & 		# Autoconnect to Android
 	_ transmission-daemon		# Bittorrent daemon
