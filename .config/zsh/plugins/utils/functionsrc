@@ -686,6 +686,11 @@ wgetext() {
 	done
 }
 
+gog() {
+	local sel=$(fd -t f start.sh ~/slsk/games/GOG | cut -d/ -f7 | ccze -A | head -n -1| fzf --ansi  | head --bytes -2)
+	[ -n "$sel" ] && ~/slsk/games/GOG/"$sel"/start.sh
+}
+
 # Efficient way to select a line to print to stdout: https://unix.stackexchange.com/questions/29878/can-i-access-nth-line-number-of-standard-output
 line() {
 	awk "NR==$1{print;exit}"
