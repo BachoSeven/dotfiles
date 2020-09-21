@@ -3,13 +3,21 @@
 # Francesco Minnocci 2020
 #
 # A smart script change your brightness
-# Deps: dunst[optional]
+# Dependencies: dunst [optional]
+
+
+# TODO: uncomment the following lines to automatically find the correct file,
+# 	but it's much faster to use the actual brightness file.
+# Dependencies: fd [but you can use find ofc]
+#
+# max_file="$(fd max_brightness /sys/class/backlight/*)"
+# max=$(cat $max_file)
+# brdir=$(dirname $max_file)
+# current=$(($(cat $brdir/brightness)/($max/100)))
+
 
 # Set variables
-max_file="$(fd max_brightness /sys/class/backlight/*)"
-max=$(cat $max_file)
-brdir=$(dirname $max_file)
-current=$(($(cat $brdir/brightness)/($max/100)))
+current=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
 def=60
 defu=80
 defd=20
@@ -35,6 +43,9 @@ esac
 val="$((valnorm*75))"
 echo $val | sudo tee /sys/class/backlight/intel_backlight/brightness
 
-# Send notification
-dunstify -a "changeBrightness" -u low -i display-brightness-symbolic -r "$msgId" \
-"Brightness: ${valnorm}%"
+# Notify
+if command -v dunst; then
+	new=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
+	dunstify -a "changeBrightness" -u low -i display-brightness-symbolic -r "$msgId" \
+	"Brightness: ${new}%"
+fi
