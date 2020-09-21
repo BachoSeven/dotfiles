@@ -7,28 +7,29 @@
 # The script changes the brightness by either prompting the user or using defaults;
 # alternatively, it can be used with physical brightness increase/decrease buttons by passing the arguments `inc/dec $count` to the script, and assigning it to the keys through your DE/WM.
 
-current=$(cat /sys/class/backlight/intel_backlight/brightness)
-max=7500
-default=5000
-defaultu=6500
-defaultd=1500
+current=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
+default=4125
+defaultu=6750
+defaultd=1875
 
-if [ -n "$1" ]; then
-	if [[ $1 = up ]]; then
-		value="$(dmenu -p 'Input level 0-7500 [default: 6500]' )"
-		[[ -n "$value" ]] || value=$defaultu
-	elif [[ $1 = down ]]; then
-		value="$(dmenu -p 'Input level 0-7500 [default: 1500]' )"
-		[[ -n "$value" ]] || value=$defaultd
-	elif [[ $1 = inc ]]; then
-		value="$((current+$2))"
-	elif [[ $1 = dec ]]; then
-		value="$((current-$2))"
+case "$1" in
+	u*)
+		valnorm="$(dmenu -p 'Input brightness [default: 90%]' )"
+		[ -n "$valnorm" ] || val=$defaultu
+	d*)
+		valnorm="$(dmenu -p 'Input brightness [default: 25%]' )"
+		[ -n "$valnorm" ] || val=$defaultd
+	elif [ "$1" = "inc" ]; then
+		valnorm="$((current+$2))"
+	elif [ "$1" = "dec" ]; then
+		valnorm="$((current-$2))"
 	fi
+	val="$((valnorm*75))"
 else
-	value="$default"
+	val="$default"
 fi
 
-echo $value | sudo tee /sys/class/backlight/intel_backlight/brightness
+echo $val | sudo tee /sys/class/backlight/intel_backlight/brightness
 
-exit 0;
+# Send notification
+msgId="981141"
