@@ -48,6 +48,7 @@ getdeps() {
 cleanup() {
 	packages=($(pacman -Qttdq))
 	[ -n "$packages" ] && _run sudo pacman -Rns $(echo $packages)
+	_run yay -Scc
 	_run rmshit
 	_run browser-vacuum
 }

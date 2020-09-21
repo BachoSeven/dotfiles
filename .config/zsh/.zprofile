@@ -190,7 +190,6 @@ ex=🎯:\
 "
 
 # Wolfram Alpha
-	WA_APPID="$(secret-tool lookup wa_api appid)"; export WA_APPID
 	export WA_FG="1d2021"
 	export WA_FG="ebdbb2"
 
