@@ -14,7 +14,7 @@
 - [ ] `v.typ`
 	- **Yet** Another QWERTY in English
 
-- [ ] `u.typ`
+- [ ] `u.typ` __Current__
 	- **QWERTY** Review in English
 
 - [ ] `d.typ`

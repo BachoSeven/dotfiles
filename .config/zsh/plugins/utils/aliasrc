@@ -90,7 +90,7 @@
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias smi="sudo make clean install"
 	alias mx='weechat'
-	alias wa='kitty --hold wa'
+	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
 	_exists pacgraph && alias pacgraph='pacgraph -b "#1e2021" -l "#848388" -t "#d93420" -d "#c78930" -p 8 98'
 
 ## Disks
