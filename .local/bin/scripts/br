@@ -1,35 +1,40 @@
 #!/bin/sh
 
 # Francesco Minnocci 2020
-# A little script to use with dwm; can be easily changed by finding your specific /sys/class/backlight/***/brightness location, or symlinking the right one.
-# See https://askubuntu.com/questions/715306/xbacklight-no-outputs-have-backlight-property-no-sys-class-backlight-folder
 #
-# The script changes the brightness by either prompting the user or using defaults;
-# alternatively, it can be used with physical brightness increase/decrease buttons by passing the arguments `inc/dec $count` to the script, and assigning it to the keys through your DE/WM.
+# A smart script change your brightness
+# Deps: dunst[optional]
 
-current=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
-default=4125
-defaultu=6750
-defaultd=1875
+# Set variables
+max_file="$(fd max_brightness /sys/class/backlight/*)"
+max=$(cat $max_file)
+brdir=$(dirname $max_file)
+current=$(($(cat $brdir/brightness)/($max/100)))
+def=60
+defu=80
+defd=20
+msgId="981141"
 
+# Handle arguments
 case "$1" in
+	inc*)
+		valnorm="$((current+$2))" ;;
+	dec*)
+		valnorm="$((current-$2))" ;;
 	u*)
-		valnorm="$(dmenu -p 'Input brightness [default: 90%]' )"
-		[ -n "$valnorm" ] || val=$defaultu
+		valnorm="$(dmenu -p 'Input brightness [default: 80%]' )"
+		[ -n "$valnorm" ] || valnorm="$defu" ;;
 	d*)
-		valnorm="$(dmenu -p 'Input brightness [default: 25%]' )"
-		[ -n "$valnorm" ] || val=$defaultd
-	elif [ "$1" = "inc" ]; then
-		valnorm="$((current+$2))"
-	elif [ "$1" = "dec" ]; then
-		valnorm="$((current-$2))"
-	fi
-	val="$((valnorm*75))"
-else
-	val="$default"
-fi
+		valnorm="$(dmenu -p 'Input brightness [default: 20%]' )"
+		[ -n "$valnorm" ] || valnorm="$defd" ;;
+	*)
+		valnorm="$def" ;;
+esac
 
+# Set brightness value
+val="$((valnorm*75))"
 echo $val | sudo tee /sys/class/backlight/intel_backlight/brightness
 
 # Send notification
-msgId="981141"
+dunstify -a "changeBrightness" -u low -i display-brightness-symbolic -r "$msgId" \
+"Brightness: ${valnorm}%"
