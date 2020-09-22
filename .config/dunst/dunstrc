@@ -82,7 +82,7 @@
     background = "#282828"
     foreground = "#928374"
     frame_color= "#83a598"
-    timeout = 5
+    timeout = 4
 [urgency_normal]
     background = "#458588"
     foreground = "#1d2021"
