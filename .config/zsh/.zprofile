@@ -38,6 +38,8 @@
 	export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
 	export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
 	export LYNX_LSS="$XDG_CONFIG_HOME/lynx/lynx.lss"
+	export OCTAVE_HISTFILE="$XDG_CACHE_HOME/octave-hsts"
+	export OCTAVE_SITE_INITFILE="$XDG_CONFIG_HOME/octave/octaverc"
 
 ## Various programs settings:
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
