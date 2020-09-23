@@ -504,12 +504,12 @@ flac2mp3(){
 ## ffmpeg utilities
 compressvid() {
 	# usage: compressvid VIDEO
-	ffmpeg -i $1 -vcodec h264 -acodec mp3 $2
+	ffmpeg -i $1 -vcodec libx265 -acodec mp3 $2
 }
 compressvidbrate() {
 	# usage: compressvidbrate VIDEO [bitrate]
 	bitrate=${3:-1000k}
-	ffmpeg -i $1 -vcodec h264 -b:v $bitrate -acodec mp3 $2
+	ffmpeg -i $1 -vcodec libx265 -b:v $bitrate -acodec mp3 $2
 }
 fixallmkv() {
 	for file in *.mkv; do ffmpeg -i $file -c copy "${file%.*}-fixed.${file##*.}"; done
