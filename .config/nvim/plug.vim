@@ -77,18 +77,18 @@ cal plug#begin('~/.local/share/nvim/plugged')
 " Markdown Table of Contents
 	Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown', 'vim-plug'] }
 
-" " Vimtex
-	" Plug 'lervag/vimtex'
-  " Plug 'KeitaNakamura/tex-conceal.vim'
-		" se conceallevel=1
-		" let g:tex_conceal='abdmg'
-		" hi Conceal ctermbg=none
-  " Plug 'sirver/ultisnips'
-		" let g:UltiSnipsExpandTrigger = '<tab>'
-		" let g:UltiSnipsJumpForwardTrigger = '<tab>'
-		" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-		" let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
-		" let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
+" Vimtex
+  Plug 'lervag/vimtex'
+  Plug 'KeitaNakamura/tex-conceal.vim'
+    se conceallevel=1
+    let g:tex_conceal='abdmg'
+    hi Conceal ctermbg=none
+  Plug 'sirver/ultisnips'
+    let g:UltiSnipsExpandTrigger = '<tab>'
+    let g:UltiSnipsJumpForwardTrigger = '<tab>'
+    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+    let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
+    let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
 
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
@@ -190,20 +190,20 @@ cal plug#end()
 	\   'down':    len(<sid>buflist()) + 2
 	\ })<CR>
 
-" " Vimtex Configuration
-	" let g:tex_flavor='latex'
-	" let g:vimtex_quickfix_latexlog = {'fix_paths':0}
-	" let g:vimtex_quickfix_mode=0
-	" let g:vimtex_compiler_progname = 'nvr'
-	" let g:vimtex_view_method='zathura'
+" Vimtex Configuration
+  let g:tex_flavor='latex'
+  let g:vimtex_quickfix_latexlog = {'fix_paths':0}
+  let g:vimtex_quickfix_mode=0
+  let g:vimtex_compiler_progname = 'nvr'
+  let g:vimtex_view_method='zathura'
 
-" " fzf integration for vimtex
-	" nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
+" fzf integration for vimtex
+  nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
 
-" " vimtex deoplete
-	" cal deoplete#custom#var('omni', 'input_patterns', {
-		" \ 'tex': g:vimtex#re#deoplete
-		" \})
+" vimtex deoplete
+  cal deoplete#custom#var('omni', 'input_patterns', {
+    \ 'tex': g:vimtex#re#deoplete
+    \})
 
 " UndoTree
 	let g:undotree_WindowLayout = 3
