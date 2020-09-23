@@ -46,6 +46,6 @@ echo $val | sudo tee /sys/class/backlight/intel_backlight/brightness
 # Notify
 if command -v dunst; then
 	new=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
-	dunstify -a "changeBrightness" -u low -i display-brightness-symbolic -r "$msgId" \
+	dunstify -a "changeBrightness" -u low -i display-brightness -r "$msgId" \
 	"Brightness: ${new}%"
 fi

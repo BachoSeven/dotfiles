@@ -57,7 +57,7 @@
     hide_duplicate_count = true
     show_indicators = yes
     icon_position = left
-    icon_path = /usr/share/icons/gruvbox-dark-icons-gtk/16x16/status:/usr/share/icons/gruvbox-dark-icons-gtk/16x16/devices:/usr/share/icons/gruvbox-dark-icons-gtk/symbolic/status:/usr/share/icons/gruvbox-dark-icons-gtk/symbolic/devices
+    icon_path = /usr/share/icons/gruvbox-dark-icons-gtk/16x16/status:/usr/share/icons/gruvbox-dark-icons-gtk/16x16/devices:/usr/share/icons/gruvbox-dark-icons-gtk/symbolic/status:/usr/share/icons/gruvbox-dark-icons-gtk/symbolic/devices:/usr/share/icons/gruvbox-dark-icons-gtk/16x16/apps:/usr/share/icons/gruvbox-dark-icons-gtk/16x16/panel
     max_icon_size = 64
     sticky_history = no
     history_length = 20
