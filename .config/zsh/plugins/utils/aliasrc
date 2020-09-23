@@ -132,6 +132,7 @@
 	alias cfk='nvim $XDG_CONFIG_HOME/kitty/kitty.conf'
 	alias cfu='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
 	alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
+	alias cfg='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/browser/cfg'
 	alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
 # Rice
 	alias ep='nvim ~/.local/src/AARGH/progs.csv' # Edit programs

@@ -1,11 +1,12 @@
 "---arch---"
 https://www.archlinux.org/feeds/news/
 https://aur.archlinux.org/rss/
+https://pretalx.com/arch-conf-online-2020/schedule/feed.xml
 " "
 "---mathematics---"
 https://golem.ph.utexas.edu/category/atom10.xml
-https://invidious.fdn.fr/feed/channel/UC6jM0RFkr4eSkzT5Gx0HOAw
-https://invidious.fdn.fr/feed/channel/UCYO_jab_esuFRV4b17AJtAw
+https://www.youtube.com/feeds/videos.xml?channel_id=UC6jM0RFkr4eSkzT5Gx0HOAw
+https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw
 " "
 
 "---tech---"
@@ -14,13 +15,13 @@ http://kmkeen.com/rss.xml
 https://github.com/BachoSeven.private.atom?token=ANHEHMM4RHSURWLOGRD3SWF5LLEQ2
 https://www.jvt.me/kind/articles/feed.xml
 https://co1ncidence.github.io/posts/index.xml
-https://invidious.fdn.fr/feed/channel/UCsnGwSIHyoYN0kiINAGUKxg
-https://invidious.fdn.fr/feed/channel/UC7YOGHUfC1Tb6E4pudI9STA
-https://invidious.fdn.fr/feed/channel/UCeHOkFGW-7uAZFvq3BXb8YA
-https://invidious.fdn.fr/feed/channel/UC2eYFnH61tmytImy1mTYvhA
-https://invidious.fdn.fr/feed/channel/UCi8XrDg1bK_MJ0goOnbpTMQ
-https://invidious.fdn.fr/feed/channel/UCFzGyNKXPAglNq28qWYTDFA
-https://invidious.fdn.fr/feed/channel/UCld68syR8Wi-GY_n4CaoJGA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCeHOkFGW-7uAZFvq3BXb8YA
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCi8XrDg1bK_MJ0goOnbpTMQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFzGyNKXPAglNq28qWYTDFA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA
 " "
 
 "---misc---"
@@ -29,23 +30,23 @@ https://xkcd.com/rss.xml
 
 "---music---"
 https://classicalguitarcomposers.libsyn.com/rss
-https://invidious.fdn.fr/feed/channel/UC120Njw4gouQwZMnUJae9RQ
-https://invidious.fdn.fr/feed/channel/UCcBlJq-SafDY6kPGbeBlVjQ
-https://invidious.fdn.fr/feed/channel/UCdkkQvJoB0kGgYHCYwSkdww
-https://invidious.fdn.fr/feed/channel/UCBxEf1UWDjbIEoh2MAQR7zQ
-https://invidious.fdn.fr/feed/channel/UCGVB1jTH3__fUh1Lfp53onA
-https://invidious.fdn.fr/feed/channel/UC2VzYhDponbU1QhBl_sOYWQ
-https://invidious.fdn.fr/feed/channel/UCnkp4xDOwqqJD7sSM3xdUiQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UC120Njw4gouQwZMnUJae9RQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcBlJq-SafDY6kPGbeBlVjQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCdkkQvJoB0kGgYHCYwSkdww
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBxEf1UWDjbIEoh2MAQR7zQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCGVB1jTH3__fUh1Lfp53onA
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2VzYhDponbU1QhBl_sOYWQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCnkp4xDOwqqJD7sSM3xdUiQ
 " "
 
 "---misc---"
-https://invidious.fdn.fr/feed/channel/UCFAiFyGs6oDiF1Nf-rRJpZA
-https://invidious.fdn.fr/feed/channel/UCrNiNV2v5GlY0bGHs1TenHg
-https://invidious.fdn.fr/feed/channel/UC6nSFpj9HTCZ5t-N3Rm3-HA
-https://invidious.fdn.fr/feed/channel/UCsXVk37bltHxD1rDPwtNM8Q
-https://invidious.fdn.fr/feed/channel/UCimiUgDLbi6P17BdaCZpVbg
-https://invidious.fdn.fr/feed/channel/UCcXhhVwCT6_WqjkEniejRJQ
-https://invidious.fdn.fr/feed/channel/UCKmKCcwzzFTL8HgsOhPu5mg
-https://invidious.fdn.fr/feed/channel/UCyWDmyZRjrGHeKF-ofFsT5Q
-https://invidious.fdn.fr/feed/channel/UCGSGPehp0RWfca-kENgBJ9Q
-https://invidious.fdn.fr/feed/channel/UCd0zIZlbgvEifm_hd3FwlBQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFAiFyGs6oDiF1Nf-rRJpZA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrNiNV2v5GlY0bGHs1TenHg
+https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q
+https://www.youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcXhhVwCT6_WqjkEniejRJQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCKmKCcwzzFTL8HgsOhPu5mg
+https://www.youtube.com/feeds/videos.xml?channel_id=UCyWDmyZRjrGHeKF-ofFsT5Q
+https://www.youtube.com/feeds/videos.xml?channel_id=UCGSGPehp0RWfca-kENgBJ9Q
+https://www.youtube.com/feeds/videos.xml?channel_id=UCd0zIZlbgvEifm_hd3FwlBQ

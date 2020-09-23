@@ -6,6 +6,7 @@
 - font_size=large
 - add italian as spellchecking language
 - block notifications globally from "Site settings"(!)
+- setup search engines: choose a valid Searx from `searx.space`, and then add ddg (and keep nosearch)
 
 ## Flags
 - force-dark-mode
@@ -89,7 +90,7 @@ r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
 sc:	https://libgen.bban.top/s/%s scihub
-se:	https://searx.gnu.style/search?q=%s Searx
+se:	https://searx.fmac.xyz/search?q=%s Searx
 tldr:	https://tldr.ostera.io/%s tldr
 tp:	https://torrentproject.cc/?t=%s
 ud:	https://www.urbandictionary.com/define.php?term=%s UrbanDictionary
