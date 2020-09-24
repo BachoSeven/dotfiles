@@ -17,7 +17,7 @@ esac
 
 echo "timer set for $1 ($seconds) ${2:+- $2}"
 {
-	sleep "$seconds"
+	sleep "$seconds" || exit 1
 
 	paplay "/usr/share/sounds/freedesktop/stereo/complete.oga" |: &
 	notify-send -u critical "Time's Up!" "$2"

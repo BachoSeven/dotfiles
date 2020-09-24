@@ -10,17 +10,17 @@
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
 This are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
-<!-- vim-markdown-toc GEM -->
+<!-- vim-markdown-toc GFM -->
 
 * [Current Setup](#current-setup)
     * [Eye-candy](#eye-candy)
     * [Various](#various)
     * [Screens](#screens)
         * [Dwm](#dwm)
+            * [Gruvboxy](#gruvboxy)
             * [Blue(s)](#blues)
             * [Greenish](#greenish)
             * [Pink :3](#pink-3)
-            * [Gruvboxy](#gruvboxy)
         * [Gnome-Shell (Ubuntu)](#gnome-shell-ubuntu)
         * [Lama](#lama)
 

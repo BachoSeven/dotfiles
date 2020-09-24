@@ -7,9 +7,6 @@ set selection-clipboard clipboard
 set window-title-home-tilde true
 set page-padding 1
 
-map u scroll half-up
-map d scroll half-down
-map D toggle_page_mode
 
 set font "monospace normal 16"
 set window-height 1024
@@ -21,7 +18,10 @@ set synctex-editor-command "nvr --remote-silent %f -c %l"
 # Fix following links(!)
 set sandbox none
 
-# key bindings
+# Navigation
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
 map <C-u> navigate previous
 map <C-d> navigate next
 
