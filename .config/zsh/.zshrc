@@ -44,3 +44,5 @@
 		fast-syntax-highlighting
 	)
 	zsh_load_plugins $plugins
+	## smt nice on startup
+	nyan
