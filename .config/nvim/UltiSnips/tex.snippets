@@ -17,7 +17,7 @@ def math():
 		return False
 endglobal
 
-snippet template "Basic template" b
+snippet oldtemplate "Basic template" b
 \documentclass[a4paper]{article}
 
 \usepackage[utf8]{inputenc}
@@ -44,6 +44,45 @@ snippet template "Basic template" b
 	$0
 \end{document}
 endsnippet
+
+snippet mnotes "Basic template" b
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\A}{\mathbb{A}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proof}{Proof}
+\newcounter{prf}
+\newtheorem{definition}{Definition}
+
+\newcounter{examplecounter}
+\newenvironment{example}{%
+\refstepcounter{examplecounter}%
+\textbf{Example \arabic{examplecounter}}%
+}
+
+% figure support
+\pdfminorversion=7
+\usepackage{pdfpages}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
+
 
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
