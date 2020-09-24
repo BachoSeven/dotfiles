@@ -7,7 +7,7 @@
 #
 # If given a directory as input, `sbg` will choose a random picture/gif for you.
 #
-# SLOC: 29
+# SLOC: 28
 #
 # Dependencies: `xwallpaper`
 # Optional: [`gifsicle` + `shantz-xwinwrap-bzr` + `hsetroot` + custom `gifbg` and `extcol` scripts] for GIFs;
@@ -27,8 +27,7 @@ killall -q xwinwrap 2>/dev/null
 # Parsing logic
 while getopts ":hi:w:mt" o; do
 	case "${o}" in
-		h)
-			printf "Usage :\\n'$0'\\n\\t [ -i, -input \"path/to/img\" ]\\n\\t [ -m, -maximize: maximize wallpaper ( default format is \"--zoom\" ) ]\\n\\t [ -t, -tile ]\\n\\t [ -w, -wal \"path/to/img\" \"backend\" : use pywal if installed ]\\n\\t [ -h, -help: Show this message ]\\n" && exit ;;
+		h) printf "Usage :\\n'$0'\\n\\t [ -i, -input \"path/to/img\" ]\\n\\t [ -m, -maximize: maximize wallpaper ( default format is \"--zoom\" ) ]\\n\\t [ -t, -tile ]\\n\\t [ -w, -wal \"path/to/img\" \"backend\" : use pywal if installed ]\\n\\t [ -h, -help: Show this message ]\\n" && exit ;;
 
 		i)
 			vimwal -x && dunstreload

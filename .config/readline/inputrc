@@ -1,4 +1,6 @@
 set bell-style none
+# Fixes some buttons when using St
+set enable-keypad		     on
 set colored-stats                    on
 set visible-stats                    on
 set mark-symlinked-directories       on
