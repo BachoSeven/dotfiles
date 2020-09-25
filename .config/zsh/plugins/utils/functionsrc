@@ -696,6 +696,33 @@ line() {
 	awk "NR==$1{print;exit}"
 }
 
+llocate() {
+	local -a dbs=( -d /var/lib/mlocate/mlocate.db )
+
+	# don't throw errors when file globs don't match anything
+	setopt NULL_GLOB
+
+	for db in "$HOME/.cache/updatedb"/*.db; do
+		[ -f "$db" ] || break
+		dbs+=( -d "$db" )
+	done
+
+	unsetopt NULL_GLOB
+
+	locate "${dbs[@]}" "$@"
+}
+
+addlocate() {
+	# usage: updatedb-mountpoint <mountpoint>
+	# http://askubuntu.com/questions/460535/how-do-i-tell-locate-to-keep-the-index-of-an-external-hdd
+	local db_file="${XDG_CACHE_HOME:=$HOME/.cache}/updatedb/$1:t.db"
+
+	[ -n "$1" ] || return 1
+
+	mkdir -p "$db_file:A:h"
+	updatedb -l 0 -o "$db_file" -U "$1"
+}
+
 confirm() {
     local answer
     printf "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
