@@ -19,7 +19,7 @@ set color256
 	fi
 }}
 set period 1
-set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml:Soulseek*:lost+found"
+set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml:Soulseek*"
 set incsearch
 set promptfmt "\033[33;1m%u\033[0m\033[32;1m@\033[0m\033[34;1m%h\033[0m:\033[35;1m%w\033[0m\033[36;1m%f\033[0m"
 
@@ -324,6 +324,7 @@ map t :set sortby time; set info time; set reverse!	#set by most recent
 map gg top
 map gm cd /mnt
 map gd cd /dati
+map gu cd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi
 map g/ cd /
 map <c-e> down	#enable mouse scroll
 map <c-y> up
