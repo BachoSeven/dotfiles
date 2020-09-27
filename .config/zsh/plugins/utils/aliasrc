@@ -66,7 +66,7 @@
 	}
 	alias verifygpg='gpg --auto-key-retrieve --verify'
 	_exists ncdu && alias ncdu="ncdu --color dark"
-	_exists duf && alias duf='duf --output filesystem,mountpoint,usage,avail'
+	_exists duf && alias duf='duf --output filesystem,mountpoint,usage,avail --sort usage'
 	_exists vizex && alias vizex="vizex -d green -t blue -g cyan -s underlined"
 	alias sort='sort --parallel 8 -S 16M'
 	alias nmdm='networkmanager_dmenu'
