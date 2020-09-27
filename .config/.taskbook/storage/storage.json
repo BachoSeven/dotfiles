@@ -89,7 +89,7 @@
         "_id": 46,
         "_date": "Thu Apr 30 2020",
         "_timestamp": 1588206086528,
-        "description": "Colorscheme switch: xres, zathura, ncspot, brave(+ddg), dircolors, dunst, nvim and copyq",
+        "description": "colorscheme switch: xres, zathura, ncspot, chromium(+ddg), dircolors, dunst, nvim and copyq",
         "isStarred": false,
         "boards": [
             "@Reminders"
@@ -170,17 +170,6 @@
         "_date": "Sat Aug 15 2020",
         "_timestamp": 1597488219805,
         "description": "make my own kunst; using musnotify's way of getting album arts through ffmpeg, which is way more reliable.",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
-    "104": {
-        "_id": 104,
-        "_date": "Wed Aug 26 2020",
-        "_timestamp": 1598398762804,
-        "description": "read bookmark article and wifi WPS article",
         "isStarred": false,
         "boards": [
             "@ToDo"
