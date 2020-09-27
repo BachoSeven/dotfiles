@@ -21,7 +21,7 @@
 		print -l -- "$PWD" "${(u)dirstack[@]}" > "$DIRSTACKFILE"
 	}
 	add-zsh-hook -Uz chpwd chpwd_dirstack
-	DIRSTACKSIZE='20'
+	DIRSTACKSIZE='333'
 	setopt auto_pushd
 	setopt pushd_silent
 	setopt pushd_to_home
