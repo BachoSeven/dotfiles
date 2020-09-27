@@ -1,5 +1,3 @@
-# vim: ft=cfg
-
 [general]
 framerate = 60
 
@@ -11,13 +9,6 @@ source = auto
 method = ncurses
 
 [color]
-# background = default
-# foreground = cyan
-
-# Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
-# background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
-# You can define as many as 8 different colors. They range from bottom to top of screen
-#
 # GRUVBOX
 gradient = 1
 gradient_count = 8
@@ -29,32 +20,30 @@ gradient_color_5 = '#84a696'
 gradient_color_6 = '#96ad71'
 gradient_color_7 = '#a7b44b'
 gradient_color_8 = '#b8bb26'
+## More/alternative colors
 # gradient_color_5 = '#b9b927'
 # gradient_color_6 = '#cf942b'
 # gradient_color_7 = '#e56e30'
 # gradient_color_8 = '#fb4934'
+## Blueish/light palette [https://github.com/Eloysheyin/Minimalist-Dots/blob/master/.config/cava/config]
+# gradient_color_1 = '#7575a3'
+# gradient_color_2 = '#66d9ff'
+# gradient_color_3 = '#99ffeb'
+# gradient_color_4 = '#b3ecff'
+# gradient_color_5 = '#ccfff5'
+# gradient_color_6 = '#ffb3b3'
 
 [smoothing]
-
-# Percentage value for integral smoothing. Takes values from 0 - 100.
-# Higher values means smoother, but less precise. 0 to disable.
 integral = 77
-
-# Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
-monstercat = 0
+monstercat = 1
 waves = 0
-
-# Set gravity percentage for "drop off". Higher values means bars will drop faster.
-# Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
-# gravity = 100
+gravity = 61
 
 [eq]
-
-# This one is tricky. You can have as much keys as you want.
-# Remember to uncomment more then one key! More keys = more precision.
-# Look at readme.md on github for further explanations and examples.
 1 = 1 # bass
 2 = 1
 3 = 1 # midtone
 4 = 1
 5 = 1 # treble
+
+# vim: ft=cfg
