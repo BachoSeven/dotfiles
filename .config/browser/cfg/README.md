@@ -3,7 +3,7 @@
 ## Options
 - keep local cookies
 - gtk theme
-- font_size=large
+- font_size=very-large, minimum size=8
 - add italian as spellchecking language
 - block notifications globally from "Site settings"(!)
 - setup search engines: choose a valid Searx from `searx.space`, and then add ddg (and keep nosearch)
