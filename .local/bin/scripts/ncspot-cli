@@ -29,7 +29,7 @@ seek() { #__ We need to convert to microseconds __#
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Seek int64:"$1"000000
 }
 
-set() { #__ Here we also need to specify objpath __#
+setPos() { #__ Here we also need to specify objpath __#
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.ncspot /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.SetPosition objpath:'/3' int64:"$1"000000
 															# /3 is mpris:trackid from Metadata
 }
@@ -72,7 +72,7 @@ else
 	--seek)
 		seek "$2";;
 	--set)
-		set "$2";;
+		setPos "$2";;
 	-u|--url)
 		url "$2";;
 	*)
