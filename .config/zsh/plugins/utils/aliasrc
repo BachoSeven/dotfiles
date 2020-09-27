@@ -47,6 +47,7 @@
 	alias rm='rm -v'
 	alias cp='cp -v'
 	alias mv='mv -v'
+	alias cal="cal | sed -e \"s/$(date +%e)/$(echo -en '\e[1;32m')$(date +%e)$(echo -en '\e[00m')/\""
 
 # Manuals
 	alias mman='macho -i'
@@ -64,7 +65,8 @@
 		tabbed -c -r 2 st -w id
 	}
 	alias verifygpg='gpg --auto-key-retrieve --verify'
-	alias ncdu="ncdu --color dark"
+	_exists ncdu && alias ncdu="ncdu --color dark"
+	_exists duf && alias duf='duf --output filesystem,mountpoint,usage,avail'
 	_exists vizex && alias vizex="vizex -d green -t blue -g cyan -s underlined"
 	alias sort='sort --parallel 8 -S 16M'
 	alias nmdm='networkmanager_dmenu'
@@ -168,4 +170,4 @@
 	alias ib='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/IB'
 	alias wsp='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/roba!/wsp'
 	alias mthstf='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/mathstuff'
-	alias movies='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/stuff/movies'
+	alias movies='lfcd /dati/movies'
