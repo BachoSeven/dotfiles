@@ -316,6 +316,7 @@ map p paste
 map S Link
 
 #			Navigation
+map ` mark-save
 map ~ cd ~
 map <c-r> reload
 map . set hidden!
