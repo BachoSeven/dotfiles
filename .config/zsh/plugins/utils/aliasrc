@@ -62,6 +62,7 @@
 	# alias rscf="autoload -U zmv && zmv '*,*' '\$f:gs/,/_'"
 
 ## Various
+	alias sx2='exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" :2 vt2 &> /dev/null' # pretty coolio
 	sT() { # here for use with dmenu
 		tabbed -c -r 2 st -w id
 	}
@@ -90,7 +91,7 @@
 	alias glow='glow -p -w 120 -s ~/.config/glow/gruvbox.json'
 	alias udef='udict'
 	alias spo='st -c ncspot -e ncspot'
-	alias spi'spotify'
+	alias spi='spotify'
 	alias w3m='w3m -s'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
