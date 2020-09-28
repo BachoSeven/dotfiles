@@ -1,5 +1,6 @@
 # Initialise
 	zmodload zsh/complist
+
 # Speed up completion loading at startup [ https://gist.github.com/ctechols/ca1035271ad134841284 ]
 	autoload -Uz compinit
 	() {
@@ -9,8 +10,10 @@
 		compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
 	  fi
 	} ${HOME}/zsh/zcompdump(N.mh+24)
+
 # Include .files
 	_comp_options+=(globdots)
+
 # Basic autocomplete with: menu-listing, hyphen- and case-insensitivity, accepts abbreviations after . or _ or - (ie. f.b -> foo.bar), substring complete (ie. bar -> foobar), and colored with LS_COLORS.
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -63,7 +66,7 @@
 	  if [[ -n $1 ]]; then
 	    dirs "$@"
 	  else
-	    dirs -v | head -10
+	    dirs -v | head -11
 	  fi
 	}
 	compdef _dirs di

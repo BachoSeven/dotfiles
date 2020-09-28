@@ -40,6 +40,7 @@
 	alias 7='cd -7'
 	alias 8='cd -8'
 	alias 9='cd -9'
+	alias 10='cd -10'
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias trem='transmission-remote'
