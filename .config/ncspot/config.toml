@@ -104,7 +104,7 @@ shuffle = true
 
 # Gruvbox dark [ based on base16 by Dawid Kurek (dawikur@gmail.com) ]
 [theme]
-background = "#383838"
+background = "default"
 primary = "#1d2021"
 secondary = "#458588"
 title = "#fbf1c7"
