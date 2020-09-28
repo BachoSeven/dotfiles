@@ -21,7 +21,7 @@
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
 	touchpadtoggle			# Disable touchpad by default
 	remaps				# Switch caps/super and one-tap_caps/esc
-	_ copyq				# Clipboard management
+	copyq &				# Clipboard management
 	_ redshift			# Color temperature
 	_ picom				# Compositor
 	xbanish -m ne -i shift -i mod4 -i control & # Remove mouse when typing
