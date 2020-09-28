@@ -104,7 +104,7 @@
 	export LESS_TERMCAP_se="$(printf '%b' '[0m')"        # end standout-mode
 	export LESSOPEN='| LESSQUIET=1 lesspipe.sh %s'
 	export LESSCOLORIZER='pygmentize'
-	export LESS='-iRX --mouse --wheel-lines 2 --quit-if-one-screen --jump-target=.5 --status-column --LONG-PROMPT --quit-on-intr --no-histdups'
+	export LESS='-iRX --mouse --wheel-lines 2 --jump-target=.5 --status-column --LONG-PROMPT --quit-on-intr --no-histdups'
 	export MANROFFOPT="-c"
 	export MANPAGER="sh -c 'col -bx | bat -l man -p '"
     # gruvbox in TTY ;)
