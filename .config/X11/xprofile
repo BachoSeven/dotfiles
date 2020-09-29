@@ -14,7 +14,6 @@
 	}
 	_ dunst
 	_ mpd
-	_ mpDris2
 
 # Utils
 	xrdb -load ~/.config/X11/Xresources
@@ -26,4 +25,5 @@
 	_ picom				# Compositor
 	xbanish -m ne -i shift -i mod4 -i control & # Remove mouse when typing
 	mconnect 2>/dev/null & 		# Autoconnect to Android
+	_ mpDris2
 	_ transmission-daemon		# Bittorrent daemon

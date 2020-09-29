@@ -61,7 +61,8 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 - The compositor is `picom` ([picom-ibhagwan-git](https://aur.archlinux.org/packages/picom-ibhagwan-git/) fork)
 - Icons are Joypixels ([ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/))
 - The default gtk 2/3 theme is [Gruvbox-Dark](https://github.com/jmattheis/gruvbox-dark-gtk)
-- My font is `Hack Nerd Font`
+- My main terminal fonts are [`scientifica`](https://github.com/NerdyPepper/scientifica) and [`cozette`](https://github.com/slavfox/Cozette), outside the terminal I use `Hack Nerd
+  Font`.
 
 ## Various
 
