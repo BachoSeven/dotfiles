@@ -61,7 +61,7 @@ if_running() {
             # waited long enough, ask if it should be killed
             read -p " kill it? [y|n]: " ans
             if [[ "$ans" = @(y|Y|yes) ]]; then
-                kill -TERM "$(pgrep -u "$user" "$1")"
+                kill -TERM "$(pgrep -u "$user" "$1" | head -1)"
                 sleep 4
                 # if still running, give monzy the microphone
                 [[ $(ps aux |grep -v 'grep' |grep "$1" |grep "$user") ]] &&
