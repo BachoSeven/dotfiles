@@ -84,6 +84,8 @@ shuffle = true
 "h" = "move left 1"
 "j" = "move down 1"
 "k" = "move up 1"
+"Ctrl+e" = "move down 1"
+"Ctrl+y" = "move up 1"
 "l" = "move right 1"
 "q" = "back"
 
