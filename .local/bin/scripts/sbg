@@ -42,7 +42,7 @@ while getopts ":hi:w:mt" o; do
 				backend="${wal}"
 			else
 				backend="$2"
-				[ -f "$3" ] && ln -sf "$(readlink -f "$3")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
+				[ -z "$3" ] && [ -f "$3" ] && ln -sf "$(readlink -f "$3")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 			fi
 			command -v wal >/dev/null 2>&1 && wal -c && wal --backend "$backend" -i "$(readlink -f "$bgloc")" >/dev/null 2>&1 ;;
 

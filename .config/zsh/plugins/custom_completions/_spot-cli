@@ -11,6 +11,7 @@ arguments=(
 	'--pause[Pause song]'
         '--play[Play song]'
 	'-u, --url [Open URL]'
+	'--uri [Open URI (spotify:* format)]'
 	'--seek [Seek/Rewind (seconds)]'
 	'--set [Jump to (seconds)]'
 )

@@ -18,28 +18,28 @@ showTopic=true
 show_status_bar=true
 style=default
 toolbar_icon_size=0
-useCustomFileEditor=true
+useCustomFileEditor=false
 useProxyServer=false
 use_native_file_dialogs=true
 use_system_icon_theme=true
 
 [DockWidgets]
-DocumentationDockWidget="@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfc\xc4\xff\xff\xfd;\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xfc\xc4\xff\xff\xfd;\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\a\x80\xff\xff\xfc\xc4\xff\xff\xfd;\xff\xff\xfe\v\xff\xff\xfe\v)"
+DocumentationDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfaO\xff\xff\xfa\x46\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xfaO\xff\xff\xfa\x46\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\a\x80\xff\xff\xfaO\xff\xff\xfa\x46\xff\xff\xfe\v\xff\xff\xfe\v)
 DocumentationDockWidgetFloating=false
 DocumentationDockWidgetVisible=true
 DocumentationDockWidget_floating_geometry=@Rect(16 32 639 719)
 DocumentationDockWidget_minimized=false
-FileEditor=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfc\x18\xff\xff\xfc|\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xfc\x18\xff\xff\xfc|\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\a\x80\xff\xff\xfc\x18\xff\xff\xfc|\xff\xff\xfe\v\xff\xff\xfe\v)
+FileEditor="@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x1\x84\0\0\0;\0\0\x3\xa8\0\0\x1\xcd\0\0\x1\x84\0\0\0;\0\0\x3\xa8\0\0\x1\xcd\0\0\0\0\0\0\0\0\a\x80\0\0\x1\x84\0\0\0;\0\0\x3\xa8\0\0\x1\xcd)"
 FileEditorFloating=false
 FileEditorVisible=true
 FileEditor_floating_geometry=@Rect(16 32 639 719)
 FileEditor_minimized=false
-FilesDockWidget="@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0;\0\0\x3\xbc\0\0\x1v\0\0\0\0\0\0\0;\0\0\x3\xbc\0\0\x1v\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\0;\0\0\x3\xbc\0\0\x1v)"
+FilesDockWidget="@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0;\0\0\x1}\0\0\0\xec\0\0\0\0\0\0\0;\0\0\x1}\0\0\0\xec\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\0;\0\0\x1}\0\0\0\xec)"
 FilesDockWidgetFloating=false
 FilesDockWidgetVisible=true
 FilesDockWidget_floating_geometry=@Rect(16 32 639 719)
 FilesDockWidget_minimized=false
-HistoryDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\x2\xf4\0\0\x3\xbc\0\0\x4\x1f\0\0\0\0\0\0\x2\xf4\0\0\x3\xbc\0\0\x4\x1f\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\x2\xf4\0\0\x3\xbc\0\0\x4\x1f)
+HistoryDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\x1s\0\0\x1}\0\0\x1\xec\0\0\0\0\0\0\x1s\0\0\x1}\0\0\x1\xec\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\x1s\0\0\x1}\0\0\x1\xec)
 HistoryDockWidgetFloating=false
 HistoryDockWidgetVisible=true
 HistoryDockWidget_floating_geometry=@Rect(16 32 639 719)
@@ -47,17 +47,17 @@ HistoryDockWidget_minimized=false
 NewsDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x1\0\0\0\0\x2\"\0\0\0@\0\0\x4\xb3\0\0\x1\x1a\0\0\x2\"\0\0\0@\0\0\x4\xb3\0\0\x1\x1a\0\0\0\0\0\0)
 NewsDockWidgetFloating=false
 NewsDockWidgetVisible=true
-TerminalDockWidget="@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x3\xc3\0\0\0;\0\0\a\x7f\0\0\x4\0\0\0\x3\xc3\0\0\0;\0\0\a\x7f\0\0\x4\0\0\0\0\0\0\0\0\0\a\x80\0\0\x3\xc3\0\0\0;\0\0\a\x7f\0\0\x4\0)"
+TerminalDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfb\xe7\xff\xff\xfcy\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xfb\xe7\xff\xff\xfcy\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\a\x80\xff\xff\xfb\xe7\xff\xff\xfcy\xff\xff\xfe\v\xff\xff\xfe\v)
 TerminalDockWidgetFloating=false
 TerminalDockWidgetVisible=true
 TerminalDockWidget_floating_geometry=@Rect(16 32 639 719)
 TerminalDockWidget_minimized=false
-VariableEditor=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfb\x7f\xff\xff\xfaj\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xfb\x7f\xff\xff\xfaj\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\a\x80\xff\xff\xfb\x7f\xff\xff\xfaj\xff\xff\xfe\v\xff\xff\xfe\v)
+VariableEditor=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfb\xd4\xff\xff\xfa\x86\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xfb\xd4\xff\xff\xfa\x86\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\a\x80\xff\xff\xfb\xd4\xff\xff\xfa\x86\xff\xff\xfe\v\xff\xff\xfe\v)
 VariableEditorFloating=false
 VariableEditorVisible=true
 VariableEditor_floating_geometry=@Rect(16 32 639 719)
 VariableEditor_minimized=false
-WorkspaceView=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\x1}\0\0\x3\xbc\0\0\x2\xed\0\0\0\0\0\0\x1}\0\0\x3\xbc\0\0\x2\xed\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\x1}\0\0\x3\xbc\0\0\x2\xed)
+WorkspaceView=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\xf3\0\0\x1}\0\0\x1l\0\0\0\0\0\0\0\xf3\0\0\x1}\0\0\x1l\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\0\xf3\0\0\x1}\0\0\x1l)
 WorkspaceViewFloating=false
 WorkspaceViewVisible=true
 WorkspaceView_floating_geometry=@Rect(16 32 639 719)
@@ -72,8 +72,8 @@ widget_title_custom_style=true
 
 [MainWindow]
 current_directory_list=/home/fra
-geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\a\x7f\0\0\x4\x37\0\0\0\x2\0\0\0\x2\0\0\x2\xaf\0\0\x4\x35\0\0\0\0\0\x4\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\a\x7f\0\0\x4\x37)
-windowState="@ByteArray(\0\0\0\xff\0\0\0\0\xfd\0\0\0\x2\0\0\0\0\0\0\x3\xbd\0\0\x3\xe5\xfc\x2\0\0\0\x3\xfb\0\0\0\x1e\0\x46\0i\0l\0\x65\0s\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0;\0\0\x1<\0\0\0h\0\xff\xff\xff\xfb\0\0\0\x1a\0W\0o\0r\0k\0s\0p\0\x61\0\x63\0\x65\0V\0i\0\x65\0w\x1\0\0\x1}\0\0\x1q\0\0\0G\0\xff\xff\xff\xfb\0\0\0\"\0H\0i\0s\0t\0o\0r\0y\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\x2\xf4\0\0\x1,\0\0\0G\0\xff\xff\xff\0\0\0\x1\0\0\x3\xbd\0\0\x3\xe5\xfc\x2\0\0\0\x1\xfc\0\0\0;\0\0\x3\xe5\0\0\0\xf0\x1\0\0\x1e\xfa\0\0\0\0\x2\0\0\0\x5\xfb\0\0\0$\0T\0\x65\0r\0m\0i\0n\0\x61\0l\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0M\0\xff\xff\xff\xfb\0\0\0.\0\x44\0o\0\x63\0u\0m\0\x65\0n\0t\0\x61\0t\0i\0o\0n\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\xd1\0\xff\xff\xff\xfb\0\0\0\x14\0\x46\0i\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\x62\0\xff\xff\xff\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x44\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0:\0\xff\xff\xff\0\0\0\0\0\0\x3\xe5\0\0\0\x4\0\0\0\x4\0\0\0\b\0\0\0\b\xfc\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x16\0M\0\x61\0i\0n\0T\0o\0o\0l\0\x42\0\x61\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0)"
+geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x3\xc9\0\0\0\n\0\0\au\0\0\x2\x12\0\0\x3\xcb\0\0\0\f\0\0\as\0\0\x2\x10\0\0\0\0\0\0\0\0\a\x80\0\0\x3\xcb\0\0\0\f\0\0\as\0\0\x2\x10)
+windowState="@ByteArray(\0\0\0\xff\0\0\0\0\xfd\0\0\0\x2\0\0\0\0\0\0\x1~\0\0\x1\xb2\xfc\x2\0\0\0\x3\xfb\0\0\0\x1e\0\x46\0i\0l\0\x65\0s\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0;\0\0\0\xb2\0\0\0h\0\xff\xff\xff\xfb\0\0\0\x1a\0W\0o\0r\0k\0s\0p\0\x61\0\x63\0\x65\0V\0i\0\x65\0w\x1\0\0\0\xf3\0\0\0z\0\0\0G\0\xff\xff\xff\xfb\0\0\0\"\0H\0i\0s\0t\0o\0r\0y\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\x1s\0\0\0z\0\0\0G\0\xff\xff\xff\0\0\0\x1\0\0\x2%\0\0\x1\xb2\xfc\x2\0\0\0\x1\xfc\0\0\0;\0\0\x1\xb2\0\0\0\xf0\x1\0\0\x1e\xfa\0\0\0\x2\x2\0\0\0\x5\xfb\0\0\0$\0T\0\x65\0r\0m\0i\0n\0\x61\0l\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0M\0\xff\xff\xff\xfb\0\0\0.\0\x44\0o\0\x63\0u\0m\0\x65\0n\0t\0\x61\0t\0i\0o\0n\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\xd1\0\xff\xff\xff\xfb\0\0\0\x14\0\x46\0i\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\x62\0\xff\xff\xff\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x44\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0:\0\xff\xff\xff\0\0\0\0\0\0\x1\xb2\0\0\0\x4\0\0\0\x4\0\0\0\b\0\0\0\b\xfc\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x16\0M\0\x61\0i\0n\0T\0o\0o\0l\0\x42\0\x61\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0)"
 
 [Scintilla]
 Bash\autoindentstyle=-1
@@ -870,18 +870,18 @@ long_line_column=80
 long_line_marker=true
 long_line_marker_background=false
 long_line_marker_line=true
-mru_file_encodings=@Invalid()
-mru_file_list=@Invalid()
+mru_file_encodings=UTF-8, UTF-8
+mru_file_list=/home/fra/quad.m, /home/fra/myexp.m
 notebook_tab_width_max=300
 notebook_tab_width_min=160
 oct_comment_str=1
 oct_uncomment_str=15
 octave_comment_string=1
 restoreSession=false
-savedSessionTabs=@Invalid()
-saved_session_encodings=@Invalid()
-saved_session_lines=@Invalid()
-saved_session_tab_index=@Invalid()
+savedSessionTabs=/home/fra/quad.m
+saved_session_encodings=UTF-8
+saved_session_lines=6
+saved_session_tab_index=0
 showLineNumbers=true
 show_dbg_file=true
 show_edit_status_bar=true
@@ -896,7 +896,7 @@ tab_width=2
 wrap_lines=false
 
 [filesdockwidget]
-column_state=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x4\xe\0\0\0\x3\0\0\0\x1\0\0\0\x64\0\0\0\x2\0\0\0\x64\0\0\0\x3\0\0\0\x64\0\0\x3\xbb\0\0\0\x4\x1\x1\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\x64\xff\xff\xff\xff\0\0\0\x81\0\0\0\0\0\0\0\x4\0\0\x3\xbb\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\x3\xe8\0\0\0\0\x64)
+column_state=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x4\xe\0\0\0\x3\0\0\0\x1\0\0\0\x64\0\0\0\x2\0\0\0\x64\0\0\0\x3\0\0\0\x64\0\0\x1n\0\0\0\x4\x1\x1\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\x64\xff\xff\xff\xff\0\0\0\x81\0\0\0\0\0\0\0\x4\0\0\x1n\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\x3\xe8\0\0\0\0\x64)
 mru_dir_list=/home/fra
 restore_last_dir=false
 sort_files_by_column=0
@@ -914,9 +914,9 @@ mru_list=@Invalid()
 allow_web_connection=false
 
 [settings]
-geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x1\xec\0\0\0\x96\0\0\x5\xd7\0\0\x2\xf1\0\0\x1\xee\0\0\0\x98\0\0\x5\xd5\0\0\x2\xef\0\0\0\0\0\0\0\0\a\x80\0\0\x1\xee\0\0\0\x98\0\0\x5\xd5\0\0\x2\xef)
+geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x1\xf0\0\0\0\x9a\0\0\x5\xdb\0\0\x2\xf5\0\0\x1\xf2\0\0\0\x9c\0\0\x5\xd9\0\0\x2\xf3\0\0\0\0\0\0\0\0\a\x80\0\0\x1\xf2\0\0\0\x9c\0\0\x5\xd9\0\0\x2\xf3)
 last_editor_styles_tab=1
-last_tab=7
+last_tab=2
 
 [shortcuts]
 doc_browser%3Ago_back=Alt+Left
@@ -1072,7 +1072,7 @@ color_g=@Variant(\0\0\0\x43\x1\xff\xff\xdc\xdc\xdc\xdc\xff\xff\0\0)
 color_h=@Variant(\0\0\0\x43\x1\xff\xff\xff\xff\xff\xff\xbe\xbe\0\0)
 color_i=@Variant(\0\0\0\x43\x1\xff\xff\xff\xff\xdc\xdc\xdc\xdc\0\0)
 color_p=@Variant(\0\0\0\x43\x1\xff\xff\xff\xff\xbe\xbe\xff\xff\0\0)
-column_state=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x3\xb9\0\0\0\x5\x1\x1\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\x64\xff\xff\xff\xff\0\0\0\x81\0\0\0\0\0\0\0\x5\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\x2)\0\0\0\x1\0\0\0\0\0\0\x3\xe8\0\xff\xff\xff\xff)
+column_state=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x1\xa4\0\0\0\x5\x1\x1\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\x64\xff\xff\xff\xff\0\0\0\x81\0\0\0\0\0\0\0\x5\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x14\0\0\0\x1\0\0\0\0\0\0\x3\xe8\0\xff\xff\xff\xff)
 enable_colors=true
 filter_active=false
 filter_shown=false
