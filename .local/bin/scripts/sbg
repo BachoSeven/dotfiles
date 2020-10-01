@@ -37,8 +37,8 @@ while getopts ":hi:w:mt" o; do
 
 		w)
 			vimwal -w && dunstreload
-			if [ -f "$2"]
-				&& ln -sf "$(readlink -f "$2")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
+			if [ -f "$2" ]; then
+				ln -sf "$(readlink -f "$2")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
 				backend="${wal}"
 			else
 				backend="$2"

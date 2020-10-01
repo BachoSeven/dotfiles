@@ -5,9 +5,9 @@ do
 	"w")
 		sbg -i "$file" ;;
         "W")
-		sbg -w "$file" wal ;;
+		sbg -w wal "$file" ;;
 	"Z")
-		sbg -w "$file" colorz ;;
+		sbg -w colorz "$file" ;;
         "M")
 		sbg -i "$file" -m ;;
         "T")
