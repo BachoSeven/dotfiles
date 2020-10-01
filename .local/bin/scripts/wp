@@ -5,4 +5,4 @@
 
 dir=$1
 [ -n "$2" ] && count="-n $2"
-find ~/pics/papes/$dir -type f | shuf $count | sxiv -b -
+find ~/pics/papes/$dir -type f | shuf $count | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|bmp\|ico\)\(_large\)*$" | sxiv -b -
