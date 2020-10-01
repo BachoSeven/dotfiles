@@ -3,6 +3,6 @@ Version=1.0
 Name=Spotify
 Type=Application
 Terminal=false
-Exec=st -c ncspot -e ncspot
+Exec=spot-cli
 Icon=spotify
 StartupWMClass=ncspot

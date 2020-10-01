@@ -67,9 +67,6 @@
 		tabbed -c -r 2 st -w id
 	}
 	alias verifygpg='gpg --auto-key-retrieve --verify'
-	_exists ncdu && alias ncdu="ncdu --color dark"
-	_exists duf && alias duf='duf --output filesystem,mountpoint,usage,avail --sort usage'
-	_exists vizex && alias vizex="vizex -d green -t blue -g cyan -s underlined"
 	alias sort='sort --parallel 8 -S 16M'
 	alias nmdm='networkmanager_dmenu'
 	alias tb='taskbook'
@@ -91,7 +88,7 @@
 	alias glow='glow -p -w 120 -s ~/.config/glow/gruvbox.json'
 	alias udef='udict'
 	alias spo='st -c ncspot -e ncspot'
-	alias spi='exec spotify'
+	alias spi='gtk-launch spotify'
 	alias w3m='w3m -s'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
@@ -100,7 +97,6 @@
 	alias smi="sudo make clean install"
 	alias mx='weechat'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
-	_exists pacgraph && alias pacgraph='pacgraph -b "#1e2021" -l "#848388" -t "#d93420" -d "#c78930" -p 8 98'
 
 ## Disks
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
@@ -162,7 +158,6 @@
 	alias sol='ttysolitaire --no-background-color'
 	alias mcl='java -jar ~/stuff/games/minecraft\ Jar/mcTE.jar'
 	alias tboi='cd ~/slsk/games/TBOI/The_Binding_of_Isaac_Afterbirth; ./run-x64.sh && cd -'
-	_exists nyancat || alias nyancat="telnet nyancat.acc.umu.se"
 
 # Personal files
 	alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
