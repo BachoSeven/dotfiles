@@ -13,11 +13,7 @@ set ifs "\n"
 set filesep "\n"  # default already
 set scrolloff 11
 set color256
-%{{
-	if [ "$TERM" != "linux" ]; then
-		lf -remote "send $id set icons"
-	fi
-}}
+set icons
 set period 1
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml:Soulseek*"
 set incsearch

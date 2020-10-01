@@ -19,7 +19,6 @@
 	xrdb -load ~/.config/X11/Xresources
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
 	touchpadtoggle			# Disable touchpad by default
-	remaps				# Switch caps/super and one-tap_caps/esc
 	copyq &				# Clipboard management
 	_ redshift			# Color temperature
 	_ picom				# Compositor
@@ -27,3 +26,4 @@
 	mconnect 2>/dev/null & 		# Autoconnect to Android
 	_ mpDris2
 	_ transmission-daemon		# Bittorrent daemon
+	remaps				# Switch caps/super and one-tap_caps/esc
