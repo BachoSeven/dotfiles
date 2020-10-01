@@ -1,14 +1,34 @@
 #!/bin/env bash
 
-# Determine currently active spotify player
+## This probably only works well with my setup, but feel free to steal any idea.
+## Franceso Minnocci 2020
+
+# Determine currently active spotify player;
+# and if there are none, only prompt for opening one if --uri or --url were passed.
 if $(pgrep ncspot >/dev/null); then
 	player="ncspot"
 elif $(pgrep spotify >/dev/null); then
 	player="spotify"
 else
-	printf "No supported spotify client found, exiting...\n"
-	exit 1
+	active="false"
 fi
+
+prompt() { #__ cool interactive stuff __#
+	if ! $active; then
+		player="$(printf "ncspot\nspotify\n" | dmenu -p "Would you like to open:" -f -i -h 12 -x 8 -y 8 -w 1904)"
+		if [ -n "$player" ]; then
+			if [ "$player" = "spotify" ]; then
+				gtk-launch spotify
+				sleep 2
+			elif [ "$player" = "ncspot" ]; then
+				setsid -f st -c ncspot -e ncspot &
+				sleep 2
+			fi
+		else
+			return 1
+		fi
+	fi
+}
 
 usage() {
 	printf "Usage: $0\n\n\t-h, --help\tDisplay usage instructions\n\t-n, --next\tNext song\n\t-p, --prev\tPrevious song\n\t-t, --toggle\tPlay/Pause\n\t-s, --stop\tStop\n\t    --pause\tPause song\n\t    --play\tPlay song\n\t-u, --url\tOpen URL\n\t    --uri\tOpen URI (spotify:* format)\n\t    --seek\tSeek/Rewind (seconds)\n\t    --set\tJump to (seconds)\n"
@@ -29,6 +49,7 @@ setPos() { #__ Here we also need to specify objpath __#
 }
 
 url() { #__ Some parsing logic for URLs __#
+	prompt
 	if [ -z "$*" ]; then
 		usage
 	fi
@@ -38,8 +59,11 @@ url() { #__ Some parsing logic for URLs __#
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$typ:$key
 }
 
-uri() {
-
+uri() { #__ This is a pain in the ass because spotify would like to include additional context after the item key, which ncspot does not support... __#
+	prompt
+	typ="$(echo "$*" | cut -d":" -f1,2)"
+	key="$(echo "$*" | cut -d":" -f3 | head --bytes=22)"
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:"$typ:$key"
 }
 
 error() {
