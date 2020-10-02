@@ -1,0 +1,137 @@
+#!/usr/bin/env bash
+
+# Supporta scaricamento di tutti i video, e opzionalmente pdf, di alcuni corsi di
+# Analisi Matematica del professor Massimo Gobbino, reperibili anche al seguente
+# indirizzo: http://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html
+
+usage() {
+cat <<EOF
+Utilizzo: $name [codiceCorso] [anno]
+
+Note:
+	- Per scaricare anche i pdf, digita 'pdf=true' prima di chiamare lo script.
+
+Esempi:
+
+	$name AM1 17
+
+	pdf=true $name Precorsi 09
+
+	$name AM2 18
+
+	$name IstAM 21
+
+Bug Noti:
+	- I precorsi del 2008 e 2009 hanno una numerazione diversa,
+	  che non è ancora stata implementata.  Se qualche altro
+	  corso non si scarica correttamente, fammelo sapere via
+	  f.minnocci@studenti.unipi.it e proverò a risolverlo.
+Credits:
+	- http://poisson.phc.dm.unipi.it/~dilillo/Vario/Gobbino.sh
+Fonte:
+	- http://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html
+Licenza:
+	Quest'opera di Massimo Gobbino è distribuita con Licenza Creative Commons
+	Attribuzione - Non commerciale - Condividi allo stesso modo 4.0 Internazionale.
+	https://creativecommons.org/licenses/by-nc-sa/4.0/
+EOF
+exit 1
+}
+
+extn() {
+	while IFS=, read -r code number; do
+		if [ "$code" = "$1" ]; then
+			count=$number
+		fi
+	done < $(catcsv)
+}
+
+catcsv() {
+cat <<EOF
+PCM07,10
+AM1_17,135
+AM1_15,133
+AM13,109
+AM12,111
+AM11,109
+AM10,111
+AM09,109
+AM2_20,60
+AM2_18,129
+AM2_16,138
+AM2_14,60
+C07,48
+T08,100
+T07,100
+AL_19,60
+AL_15,60
+AL_14,59
+SA13,30
+SA11,26
+SA10,26
+SA15,30
+SA14,30
+SA12,30
+IstAM_21,70
+IstAM_20,70
+IstAM_19,70
+CdV_18,48
+CdV_17,48
+CdV_16,48
+Freiberg_17,8
+EOF
+}
+
+main () {
+	c="$1"			# Codice Corso
+	[ -n "$2" ] && y="$2"
+
+	# Crea una cartella
+	mkdir "VideoGobbino$c$y"
+	cd "VideoGobbinoAM$c$y"
+
+	if [ "$c" = "Precorsi" ]; then
+		string="PCM$y"
+	else
+		p="L"		# Prefix
+		string="$c_$y"
+	fi
+
+	if [ $count > 99 ]; then
+		for i in $(seq -f "%03g" 1 $count); do
+		    curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.avi
+		done
+
+		if $pdf; then
+		for i in $(seq -f "%03g" 1 $count); do
+			curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.pdf
+		done
+		fi
+	elif [ $count > 9 ]; then
+		for i in $(seq -f "%02g" 1 $count); do
+		    curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.avi
+		done
+
+		if $pdf; then
+		for i in $(seq -f "%02g" 1 $count); do
+			curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.pdf
+		done
+		fi
+	else
+		for i in $(seq -f "%01g" 1 $count); do
+		    curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.avi
+		done
+
+		if $pdf; then
+		for i in $(seq -f "%01g" 1 $count); do
+			curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.pdf
+		done
+		fi
+	fi
+}
+
+# Esecuzione dello script
+
+name=$(basename $0)
+[ "$#" -lt 2 ] && usage
+main "$*"
