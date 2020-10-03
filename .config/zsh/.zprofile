@@ -34,7 +34,7 @@
 	export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 	export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/ripgreprc"
 	export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME/mathematica"
-	export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+	export _JAVA_OPTIONS="-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 	export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
 	export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
 	export LYNX_LSS="$XDG_CONFIG_HOME/lynx/lynx.lss"
