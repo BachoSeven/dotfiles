@@ -94,4 +94,10 @@
     frame_color= "#fb4934"
     timeout = 0
 
+## Scripting
+[Spotify]
+	appname = Spotify
+	frame_color = "#30AB70"
+	timeout = 5
+
 # vim: ft=cfg
