@@ -30,108 +30,65 @@ Credits:
 	- http://poisson.phc.dm.unipi.it/~dilillo/Vario/Gobbino.sh
 Fonte:
 	- http://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html
-Licenza:
-	Quest'opera di Massimo Gobbino è distribuita con Licenza Creative Commons
-	Attribuzione - Non commerciale - Condividi allo stesso modo 4.0 Internazionale.
-	https://creativecommons.org/licenses/by-nc-sa/4.0/
 EOF
 exit 1
 }
 
-extn() {
-	while IFS=, read -r code number; do
-		if [ "$code" = "$1" ]; then
-			count=$number
-		fi
-	done < $(catcsv)
-}
-
-catcsv() {
-cat <<EOF
-PCM07,10
-AM1_17,135
-AM1_15,133
-AM13,109
-AM12,111
-AM11,109
-AM10,111
-AM09,109
-AM2_20,60
-AM2_18,129
-AM2_16,138
-AM2_14,60
-C07,48
-T08,100
-T07,100
-AL_19,60
-AL_15,60
-AL_14,59
-SA13,30
-SA11,26
-SA10,26
-SA15,30
-SA14,30
-SA12,30
-IstAM_21,70
-IstAM_20,70
-IstAM_19,70
-CdV_18,48
-CdV_17,48
-CdV_16,48
-Freiberg_17,8
-EOF
-}
-
 main () {
 	c="$1"			# Codice Corso
-	[ -n "$2" ] && y="$2"
+	y="$2"			# Anno
 
 	# Crea una cartella
 	mkdir "VideoGobbino$c$y"
-	cd "VideoGobbinoAM$c$y"
+	cd "VideoGobbino$c$y"
 
 	if [ "$c" = "Precorsi" ]; then
 		string="PCM$y"
+		loc="Precorsi/$string"
 	else
-		p="L"		# Prefix
+		pre="L"		# Prefisso
 		string="$c_$y"
+		loc="$string"
 	fi
 
-	if [ $count > 99 ]; then
+	case "$string" in
+		PCM07) count=10;; AM1_17) count=135;; AM1_15) count=133;; AM13) count=109;; AM12) count=111;; AM11) count=109;; AM10) count=111;; AM09) count=109;; AM2_20) count=60;; AM2_18) count=129;; AM2_16) count=138;; AM2_14) count=60;; C07) count=48;; T08) count=100;; T07) count=100;; AL_19) count=60;; AL_15) count=60;; AL_14) count=59;; SA13) count=30;; SA11) count=26;; SA10) count=26;; SA15) count=30;; SA14) count=30;; SA12) count=30;; IstAM_21) count=70;; IstAM_20) count=70;; IstAM_19) count=70;; CdV_18) count=48;; CdV_17) count=48;; CdV_16) count=48;; Freiberg_17) count=8;;
+	esac
+	if [ "$count" -ge 100 ]; then
 		for i in $(seq -f "%03g" 1 $count); do
-		    curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.avi
+		    curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$loc/"$string"_$pre$i.avi
 		done
 
-		if $pdf; then
+		if $p; then
 		for i in $(seq -f "%03g" 1 $count); do
-			curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.pdf
+			curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$loc/"$string"_$pre$i.pdf
 		done
 		fi
-	elif [ $count > 9 ]; then
+	elif [ "$count" -ge 10 ]; then
 		for i in $(seq -f "%02g" 1 $count); do
-		    curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.avi
+		    curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$loc/"$string"_$pre$i.avi
 		done
 
-		if $pdf; then
+		if $p; then
 		for i in $(seq -f "%02g" 1 $count); do
-			curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.pdf
+			curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$loc/"$string"_$pre$i.pdf
 		done
 		fi
 	else
 		for i in $(seq -f "%01g" 1 $count); do
-		    curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.avi
+		    curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$loc/"$string"_$pre$i.avi
 		done
 
-		if $pdf; then
+		if $p; then
 		for i in $(seq -f "%01g" 1 $count); do
-			curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/$string_$p$i.pdf
+			curl -O http://pagine.dm.unipi.it/gobbino/Tablet/$string/"$string"_$pre$i.pdf
 		done
 		fi
 	fi
 }
 
 # Esecuzione dello script
-
 name=$(basename $0)
+p=${pdf:-false}
 [ "$#" -lt 2 ] && usage
-main "$*"
+main "$@"
