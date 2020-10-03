@@ -52,7 +52,7 @@ main () {
 	fi
 
 	case "$string" in
-		PCM07) count=10;; AM1_17) count=135;; AM1_15) count=133;; AM13) count=109;; AM12) count=111;; AM11) count=109;; AM10) count=111;; AM09) count=109;; AM2_20) count=60;; AM2_18) count=129;; AM2_16) count=138;; AM2_14) count=60;; C07) count=48;; T08) count=100;; T07) count=100;; AL_19) count=60;; AL_15) count=60;; AL_14) count=59;; SA13) count=30;; SA11) count=26;; SA10) count=26;; SA15) count=30;; SA14) count=30;; SA12) count=30;; IstAM_21) count=70;; IstAM_20) count=70;; IstAM_19) count=70;; CdV_18) count=48;; CdV_17) count=48;; CdV_16) count=48;; Freiberg_17) count=8;;
+		PCM07) count=10;; AM1_17) count=135;; AM1_15) count=133;; AM13) count=109;; AM12) count=111;; AM11) count=109;; AM10) count=111;; AM09) count=109;; AM2_20) count=60;; AM2_18) count=129;; AM2_16) count=138;; AM2_14) count=60;; C07) count=48;; T08) count=100;; T07) count=100;; AL_19) count=60;; AL_15) count=60;; AL_14) count=59;; SA13) count=30;; SA11) count=26;; SA10) count=26;; SA15) count=30;; SA14) count=30;; SA12) count=30;; IstAM_21) count=70;; IstAM_20) count=70;; IstAM_19) count=70;; CdV_18) count=48;; CdV_17) count=48;; CdV_16) count=48;; Freiberg_17) count=8;; *) printf "ERRORE:\n\tNon ho trovato il corso \"$string\".\n\n" && usage;;
 	esac
 	if [ "$count" -ge 100 ]; then
 		for i in $(seq -f "%03g" 1 $count); do
