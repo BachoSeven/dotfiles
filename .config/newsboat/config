@@ -44,7 +44,7 @@ macro a set browser "tsp youtube-dl --write-srt --sub-lang en --add-metadata -xi
 macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
 macro w set browser "lynx" ; open-in-browser ; set browser linkhandler
 macro p set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
-macro c set browser "xsel -b <" ; open-in-browser ; set browser linkhandler
+macro c set browser "xsel -b <<<" ; open-in-browser ; set browser linkhandler
 
 highlight all "---.*---" yellow
 highlight feedlist ".*(0/0))" black
