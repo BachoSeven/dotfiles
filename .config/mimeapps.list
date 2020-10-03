@@ -1,11 +1,11 @@
 [Default Applications]
+text/html=chromium.desktop;
 inode/directory=file.desktop;
 image/png=img.desktop;
 image/jpeg=img.desktop;
 x-scheme-handler/mailto=mail.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-YS2WR0.desktop
-text/html=chromium.desktop;
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-YS2WR0.desktop;
