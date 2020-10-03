@@ -11,7 +11,7 @@
 	"redownload": "no",
 	"rebuild": "no",
 	"batchinstall": false,
-	"answerclean": "",
+	"answerclean": "NotInstalled",
 	"answerdiff": "None",
 	"answeredit": "None",
 	"answerupgrade": "",
