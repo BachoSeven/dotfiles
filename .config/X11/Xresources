@@ -15,7 +15,7 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 *.scrollBar: false
 ! Cursor
-Xcursor.theme: ArchCursorComplete
+Xcursor.theme: Bibata_Spirit
 Xcursor.size: 24
 
 
