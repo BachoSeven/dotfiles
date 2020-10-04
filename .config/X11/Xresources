@@ -15,8 +15,8 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 *.scrollBar: false
 ! Cursor
-Xcursor.theme: Bibata_Spirit
-Xcursor.size: 24
+Xcursor.theme: ArchCursorTheme
+Xcursor.size: 25
 
 
 #include "Xresources.d/gruvbox"
