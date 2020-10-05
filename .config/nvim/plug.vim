@@ -68,6 +68,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/limelight.vim'
 	Plug 'jamessan/vim-gnupg'
+  Plug 'mhinz/vim-startify'
 	" Neovim in the browser :)
 	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
@@ -145,6 +146,16 @@ cal plug#end()
 		    \ }
 		\ }
 	endi
+
+" Startify
+  let g:startify_custom_header = [
+\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+\]
 
 " Lf
 	let g:lf_command_override = 'lf -command "set hidden"'
