@@ -13,15 +13,15 @@ method = ncurses
 gradient = 1
 
 ## GRUVBOX
-# gradient_count = 8
-# gradient_color_1 = '#b16286'
-# gradient_color_2 = '#a2788b'
-# gradient_color_3 = '#938e91'
-# gradient_color_4 = '#84a497'
-# gradient_color_5 = '#84a696'
-# gradient_color_6 = '#96ad71'
-# gradient_color_7 = '#a7b44b'
-# gradient_color_8 = '#b8bb26'
+gradient_count = 8
+gradient_color_1 = '#b16286'
+gradient_color_2 = '#a2788b'
+gradient_color_3 = '#938e91'
+gradient_color_4 = '#84a497'
+gradient_color_5 = '#84a696'
+gradient_color_6 = '#96ad71'
+gradient_color_7 = '#a7b44b'
+gradient_color_8 = '#b8bb26'
 
 ## Blueish/light palette [https://github.com/Eloysheyin/Minimalist-Dots/blob/master/.config/cava/config]
 # gradient_count = 6
@@ -33,15 +33,15 @@ gradient = 1
 # gradient_color_6 = '#ffb3b3'
 
 # Forester [https://github.com/loki7990/Forester/blob/main/.config/cava/config]
-gradient_count = 8
-gradient_color_1 = '#868d80'
-gradient_color_2 = '#e68183'
-gradient_color_3 = '#a7c080'
-gradient_color_4 = '#d9bb80'
-gradient_color_5 = '#89beba'
-gradient_color_6 = '#d3a0bc'
-gradient_color_7 = '#87c095'
-gradient_color_8 = '#d8caac'
+# gradient_count = 8
+# gradient_color_1 = '#868d80'
+# gradient_color_2 = '#e68183'
+# gradient_color_3 = '#a7c080'
+# gradient_color_4 = '#d9bb80'
+# gradient_color_5 = '#89beba'
+# gradient_color_6 = '#d3a0bc'
+# gradient_color_7 = '#87c095'
+# gradient_color_8 = '#d8caac'
 
 [smoothing]
 integral = 77
