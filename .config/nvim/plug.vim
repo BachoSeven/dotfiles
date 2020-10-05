@@ -157,6 +157,10 @@ cal plug#end()
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \]
 
+let g:startify_skiplist = [
+    \ 'COMMIT_EDITMSG',
+    \ ]
+
 " Lf
 	let g:lf_command_override = 'lf -command "set hidden"'
 	let g:lf_replace_netrw = 1 " open lf when vim open a directory
