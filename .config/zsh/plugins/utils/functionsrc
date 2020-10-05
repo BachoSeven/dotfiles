@@ -45,9 +45,12 @@ fzfpacinstall() {
 getdeps() {
 	expac -l '\n' %E -S $@ | sort -u
 }
-cleanup() {
+mkclean() {
 	packages=($(pacman -Qttdq))
 	[ -n "$packages" ] && _run sudo pacman -Rns $(echo $packages)
+}
+cleanup() {
+	_run mkclean
 	_run yay -Scc
 	_run yes | rmshit
 	_run browser-vacuum
