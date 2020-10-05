@@ -13,4 +13,4 @@
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	au BufWritePost *Xresources,*Xdefaults !xrdb %
-	au BufWritePost *.config/subs !subs -g
+	au BufWritePost *yt/subs !subs -g
