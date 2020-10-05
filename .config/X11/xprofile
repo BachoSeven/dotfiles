@@ -16,7 +16,9 @@
 	_ mpd
 
 # Utils
-	xrdb -load ~/.config/X11/Xresources
+
+	[[ -f ~/.config/X11/Xresources ]] && xrdb -load ~/.config/X11/Xresources
+	[[ -f ~/.config/X11/xmodmap ]] && xmodmap ~/.config/X11/xmodmap
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
 	touchpadtoggle			# Disable touchpad by default
 	copyq &				# Clipboard management
