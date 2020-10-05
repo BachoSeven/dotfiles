@@ -2,7 +2,6 @@
 
 [ -n "$1" ] && var="-variant $1"
 
-xmodmap ~/.config/X11/xmodmap
 # This script is called on startup to remap keys.
 # Map the caps lock key to super...
 setxkbmap -option caps:super -layout us $var
