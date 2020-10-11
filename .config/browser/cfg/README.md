@@ -11,7 +11,6 @@
 ## Flags
 - force-dark-mode
 - ext-mime-request-handling[always prompt]
-- ext-toolbar-menu
 - disable-search-engine-collection
 - native notifications
 - Compositor threaded scrollbar scrolling
