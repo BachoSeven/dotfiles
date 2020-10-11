@@ -28,10 +28,11 @@
 - gtk (gruvbox)
 
 ## Plugins
+PACKAGED: `chromium-keepassxc-browser chromium-thegreatsuspender stylus-git chromium-ublock-origin chromium-extension-https-everywhere`
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
 
 ### Utils
-vimium(bkp)[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup]
+vimium(bkp){allow file access}[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup]
 - stylus(beta)[backup,alt+shift+s] gtransl(<C-R>)
 - the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s];Firenvim(ctrl+shift+f)
 
