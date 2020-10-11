@@ -146,6 +146,7 @@
 	alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
 	alias bash='/bin/bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'
 	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
+	alias preload='source ~/.profile'
 	alias za='zathura'
 	alias pipes='pipes -rR'
 # Zsh
