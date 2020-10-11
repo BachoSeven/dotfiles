@@ -36,7 +36,7 @@ vimium(bkp){allow file access}[ctrl+shift+v] vimium_helper Change_new_tab(url) a
 - the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s];Firenvim(ctrl+shift+f)
 
 ### Privacy-focused
-- ublock Origin[ctrl+b block elements, ctrl+shift+u activate it]
+- ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it]
 - I don't care about cookies
 - HTTPS Everywhere
 - Terms of Service; Didn’t Read
