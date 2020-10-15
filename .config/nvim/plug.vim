@@ -113,6 +113,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 " Airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+  Plug 'lambdalisue/battery.vim'
 
 " Syntax highlighting
 	Plug 'VebbNix/lf-vim'
@@ -227,6 +228,8 @@ let g:startify_skiplist = [
 
 " Airline
 	let g:airline_powerline_fonts = 1
+  let g:airline#extensions#battery#enabled = 1
+  let g:battery#update_statusline = 1 " For statusline.
 	se noshowmode " Don't display mode in command line (airline already shows it)
 
 " Limelight
