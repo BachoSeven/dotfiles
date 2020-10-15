@@ -69,6 +69,7 @@
 	alias verifygpg='gpg --auto-key-retrieve --verify'
 	alias sort='sort --parallel 8 -S 16M'
 	alias nmdm='networkmanager_dmenu'
+	alias wps="sudo wpa_cli wps_pbc"
 	alias tb='taskbook'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 	alias ytdl="youtube-dl -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic"
