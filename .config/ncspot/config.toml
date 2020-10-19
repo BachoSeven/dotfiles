@@ -69,7 +69,6 @@ shuffle = true
 "F3" = "focus search"
 "1" = "focus queue"
 "2" = "focus library"
-"/" = "focus search"
 # Go to the playing track
 "." = "move playing"
 # Navigation
@@ -122,6 +121,7 @@ statusbar_progress = "#b16286"
 statusbar_bg = "#98971a"
 cmdline = "#d5c4a1"
 cmdline_bg = "#383838"
+search_match = "#fb4934"
 
 # # Base16_sol_dark, modified closer to spotify colors by BachoSeven, originally https://github.com/gidsi/base16-ncspot
 # [theme]
