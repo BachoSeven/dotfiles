@@ -3,18 +3,18 @@
 # Francesco Minnocci 2020
 #
 # A smart script change your brightness
-# Dependencies: dunst [optional]
+# Dependencies: dmenu, dunst [optional]
 
 
-# TODO: uncomment the following lines to automatically find the correct file,
-# 	but it's much faster to use the actual brightness file.
-# Dependencies: fd [but you can use find ofc]
+# NOTE: use the following lines instead of the ones below to automatically
+#	find the correct file, but it's much faster to use the specific
+#	brightness file and maximum value once you know them.
+# Dependencies: fd [you can use find, but if you want this to be fast on any machine without configuration use fd]
 #
 # max_file="$(fd max_brightness /sys/class/backlight/*)"
 # max=$(cat $max_file)
 # brdir=$(dirname $max_file)
 # current=$(($(cat $brdir/brightness)/($max/100)))
-
 
 # Set variables
 current=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
