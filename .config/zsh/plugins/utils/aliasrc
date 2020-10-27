@@ -86,7 +86,7 @@
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
-	alias glow='glow -p -w 120 -s ~/.config/glow/gruvbox.json'
+	alias glow='glow -p -w 120'
 	alias udef='udict'
 	alias spo='st -c ncspot -e ncspot'
 	alias spi='gtk-launch spotify'

@@ -1,0 +1,6 @@
+# style name or JSON path (default "auto")
+style: "~/.config/glow/gruvbox.json"
+# show local files only; no network (TUI-mode only)
+local: true
+# word-wrap at width
+# width:
