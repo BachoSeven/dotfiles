@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Spotify
+Name=spotifyURI
 Type=Application
 Terminal=false
 MimeType=x-scheme-handler/spotify;
