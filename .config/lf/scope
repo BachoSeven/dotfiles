@@ -59,9 +59,7 @@ handle_mime() {
     	    esac;;
     esac
 }
-if [ "$(readlink -f "${FILE_PATH}")" != "${FILE_PATH}" ]; then
-	readlink -f "${FILE_PATH}"
-fi
+
 MIMETYPE="$( file --dereference --brief --mime-type -- "${FILE_PATH}" )"
 handle_mime "${MIMETYPE}"
 exit 1
