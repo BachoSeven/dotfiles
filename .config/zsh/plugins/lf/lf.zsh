@@ -17,4 +17,5 @@ lfcd () {
         rm -f "$tmp" >/dev/null
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
+    return 0
 }
