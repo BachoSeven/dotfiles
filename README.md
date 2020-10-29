@@ -49,7 +49,7 @@ Here are some of the programs I use:
 - **[dunst](.config/dunst/dunstrc)** notification manager
 - **[redshift](.config/redshift/redshift.conf)** sets the color temperature
 - **[newsboat](.config/newsboat)** is my RSS reader
-- **[yay](.config/yay/config.json)** AUR helper
+- **[paru](.config/paru/paru.conf)** AUR helper
 - Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
 Read more about the programs I use in the **[AARGH](https://github.com/BachoSeven/AARGH) repository (bootstrapping script).**
