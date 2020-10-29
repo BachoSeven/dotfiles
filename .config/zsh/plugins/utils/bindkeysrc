@@ -132,7 +132,7 @@
 	alias \
 	ka='killall' \
 		p='pacman' \
-		y='yay' \
+		y='paru' \
 		g='git' \
 		gd='g diff' \
 		gg='g pull' \
