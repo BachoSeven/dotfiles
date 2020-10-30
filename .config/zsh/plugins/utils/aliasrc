@@ -78,6 +78,11 @@
 	alias pf='pfetch'
 	alias mc='mconnect'
 	alias mctl='mconnectctl'
+	alias g4status="mctl show-device /org/mconnect/device/1"
+	alias g4url="mctl share-url /org/mconnect/device/1"
+	alias g4txt="mctl share-text /org/mconnect/device/1"
+	alias g4file="mctl share-file /org/mconnect/device/1"
+	alias g4sms="mctl send-sms /org/mconnect/device/1"
 	alias sys='systemctl'
 	alias sysu='systemctl --user'
 	alias jctl='journalctl -p3 --pager-end'
