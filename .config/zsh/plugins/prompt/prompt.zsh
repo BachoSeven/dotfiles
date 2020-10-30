@@ -18,7 +18,7 @@
 	local rootorwhat="%(!.#.»)"
 	local return_status="%?"
 
-# Necessary for fadebar (stolen from zsh's bigfade prompt)
+# Necessary for fadebar (from zsh's bigfade prompt)
 	autoload -Uz prompt_special_chars
 	prompt_special_chars
   if [ "$TERM" = "linux" ]; then # TTY prompt

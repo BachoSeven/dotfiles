@@ -8,6 +8,7 @@
 	export DIFFTOOL="nvim -d"
 	export BROWSER="chromium"
 	export LOCATION="Buti" # weather script
+	export AURHELPER="paru"
 	export SUDO_ASKPASS="$HOME/.local/bin/scripts/dmenupass"
 
 # XDG Base Directory locations
