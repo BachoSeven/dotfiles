@@ -51,7 +51,7 @@ mkclean() {
 }
 cleanup() {
 	_run mkclean
-	_run paru -Scc
+	_run $AURHELPER -Scc
 	_run yes | rmshit
 	_run browser-vacuum
 }
@@ -59,13 +59,13 @@ cleanup() {
 aurpublish() {
 	PKG="$1"
 	_run git clone ssh://aur@aur.archlinux.org/"$PKG".git; cp PKGBUILD $PKG; cd $PKG
-	_run paru -S namcap && namcap PKGBUILD; paru -Rs namcap
+	_run $AURHELPER -S namcap && namcap PKGBUILD; $AURHELPER -Rs namcap
 	_run makepkg -s && makepkg --printsrcinfo > .SRCINFO; echo "*" > .gitignore
 	_run git add -f PKGBUILD .SRCINFO && git commit -a && git push
 }
 aurupdate() {
 	PKG="$1"
-	paru -S namcap && namcap PKGBUILD && paru -Rs namcap
+	$AURHELPER -S namcap && namcap PKGBUILD && $AURHELPER -Rs namcap
 	makepkg -fs && makepkg --printsrcinfo > .SRCINFO &&
 	git commit -a
 	git push
@@ -104,7 +104,7 @@ dirs=(
 	~/slsk/programs/AP2_QMK/AnnePro2-Tools
 )
 up2date() {
-	_run paru
+	_run $AURHELPER
 	_run sudo pacnews
 	_run nvim +PlugUpdate +quitall
 	_run zsh_update_plugins
