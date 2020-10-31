@@ -197,5 +197,16 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "107": {
+        "_id": 107,
+        "_date": "Sat Oct 31 2020",
+        "_timestamp": 1604141170506,
+        "description": "Add chaotic-aur to aargh so it can install ungoogled chromium directly.",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }
