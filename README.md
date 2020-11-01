@@ -68,9 +68,10 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 
 - I like using vim bindings whenever possible.
 - I use ungoogled-chromium, find my setup in [here](.config/browser). To improve its aesthetics, I use the Gtk  theme and duckduckgo with `gruvboxytheme` pass phrase. I use a custom startpage, check it out [here](https://github.com/BachoSeven/startpage)!
-- [Pacgraph](http://github.com/keenerd/pacgraph/) output:
 ![](pics/screens/ricing/pacgraph.png)
-- [here](https://github.com/BachoSeven/papes) is a repo with all the wallpapers I use.
+- [This](https://github.com/BachoSeven/sysdots) is a repository with my system-wide configuration files, specifically stuff from `/etc` and `/root`.
+- [here](https://github.com/BachoSeven/papes) is a repo with some of the wallpapers I use.
+- [Pacgraph](http://github.com/keenerd/pacgraph/) output:
 
 ## Screens
 
