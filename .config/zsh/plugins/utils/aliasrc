@@ -93,7 +93,7 @@
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias glow='glow -p -w 120'
 	alias udef='udict'
-	alias spo='st -c ncspot -e ncspot'
+	alias spo='kitty --class ncspot ncspot'
 	alias spi='gtk-launch spotify'
 	alias w3m='w3m -s'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'

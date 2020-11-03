@@ -20,6 +20,9 @@
 	export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 	export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/settings.ini
 	export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+	export NBRC_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/nb/nbrc"
+	export NB_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nb"
+	export NB_HIST="${XDG_CONFIG_HOME:-$HOME/.config}/nb_history"
 	export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 	export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/mbsyncrc"
 	export LESSHISTFILE=-
