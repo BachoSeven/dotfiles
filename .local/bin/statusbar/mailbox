@@ -6,10 +6,6 @@
 case $BLOCK_BUTTON in
 	1) setsid "$TERMINAL" -e neomutt ;;
 	2) setsid -f mw -Y >/dev/null ;;
-	3) notify-send "📬Mail module" "\- Shows unread mail
-- Shows 🔃 if syncing mail
-- Left click opens neomutt
-- Middle click syncs mail" ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
