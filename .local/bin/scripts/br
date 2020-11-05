@@ -35,6 +35,8 @@ case "$1" in
 	d*)
 		valnorm="$(dmenu -p 'Input brightness [default: 20%]' )"
 		[ -n "$valnorm" ] || valnorm="$defd" ;;
+	set)
+		valnorm="$2 ";;
 	*)
 		valnorm="$def" ;;
 esac
