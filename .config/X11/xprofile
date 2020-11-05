@@ -4,8 +4,9 @@
 	dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS 2>/dev/null
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
-# Screensaver
-	xss-lock -n "notify-send '💤 Dimming screen, locking in 2 minutes...' && br set 19" -- /usr/local/bin/slock &
+# Dim->LockScreen->Suspend
+	xss-lock -n "dim" -- /usr/local/bin/slock &
+	xidlehook --not-when-fullscreen --not-when-audio --timer 1200 "systemctl suspend" - &
 
 # Daemons which may be started by systemd, when I use it.
 	_() {
