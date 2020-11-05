@@ -13,15 +13,5 @@ transmission-remote -l | grep % |
 case $BLOCK_BUTTON in
 	1) setsid "$TERMINAL" -e stig & ;;
 	2) td-toggle ;;
-	3) notify-send "🌱 Torrent module" "\- Left click to open stig.
-- Middle click to toggle transmission.
-- Shift click to edit script.
-Module shows number of torrents:
-🛑: paused
-🕰: idle (seeds needed)
-⬆️: uploading (unfinished)
-⬇️: downloading
-✅: done
-🌱: done and seeding" ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac

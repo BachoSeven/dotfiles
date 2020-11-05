@@ -5,4 +5,4 @@ case $BLOCK_BUTTON in
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-date "+%d %b %R %a"
+date "+%a %d %b %R"
