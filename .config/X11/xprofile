@@ -5,7 +5,7 @@
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
 # Screensaver
-	xss-lock -n "notify-send -u critical" -- /usr/local/bin/slock &
+	xss-lock -n "notify-send '💤 Dimming screen, locking in 2 minutes...' && br set 19" -- /usr/local/bin/slock &
 
 # Daemons which may be started by systemd, when I use it.
 	_() {
