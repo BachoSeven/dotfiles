@@ -880,5 +880,16 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "79": {
+        "_id": 79,
+        "_date": "Wed Sep 30 2020",
+        "_timestamp": 1601498126377,
+        "description": "add spicetifycligit to packages with permission changing instructions in anarchy.md",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }
