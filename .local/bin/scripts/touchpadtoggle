@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 msgId="2298"
 TOUCHPAD_ID=`xinput list | grep "Touchpad" | sed -n -e 's/^.*id=//p'|cut -f1`

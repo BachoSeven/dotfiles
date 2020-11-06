@@ -14,7 +14,7 @@ cmds="\
 🚪 leave dwm	kill -TERM $(pidof -s dwm)
 🐻 sleep	${hib:-sudo -A systemctl suspend}
 🔃 reboot	${reb:-sudo -A reboot}
-🖥 shutdwn	 ${shut:-sudo -A shutdown -h now}"
+🖥 shutdown	 ${shut:-sudo -A shutdown -h now}"
 
 choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -x 8 -y 8 -w 1904)" || exit 1
 
