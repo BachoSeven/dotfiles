@@ -68,15 +68,23 @@ aurpublish() {
 	PKG="$1"
 	_run git clone ssh://aur@aur.archlinux.org/"$PKG".git; cp PKGBUILD $PKG; cd $PKG
 	_run $AURHELPER -S namcap && namcap PKGBUILD; $AURHELPER -Rs namcap
-	_run makepkg -s && makepkg --printsrcinfo > .SRCINFO; echo "*" > .gitignore
+	_run makepkg -fs && makepkg --printsrcinfo > .SRCINFO; echo "*" > .gitignore
 	_run git add -f PKGBUILD .SRCINFO && git commit -a && git push
 }
 aurupdate() {
-	PKG="$1"
-	$AURHELPER -S namcap && namcap PKGBUILD && $AURHELPER -Rs namcap
-	makepkg -fs && makepkg --printsrcinfo > .SRCINFO &&
-	git commit -a
-	git push
+	repodir="$1"; shift
+	cd $repodir
+	$AURHELPER -S --needed namcap
+	for repo in $@; do
+		cp ../"$repo"/PKGBUILD -t "$repo"
+		cd "$repo"
+		namcap PKGBUILD
+		makepkg -fs && makepkg --printsrcinfo > .SRCINFO &&
+		git commit -a
+		git push
+		cd ..
+	done
+	$AURHELPER -Rs namcap
 }
 
 # Git
@@ -97,6 +105,12 @@ ghc() { # Github clone, personal or otherwise
 	[ -n "$2" ] && ghuser="$1" || ghrepo="$1"
 	[ -z "$ghrepo" ] && ghrepo="$2"
 	git clone git@github.com:${ghuser:-BachoSeven}/$ghrepo.git
+}
+gac() { # Aur git clone
+	local PKG
+	for PKG in $@; do
+		git clone ssh://aur@aur.archlinux.org/"$PKG".git
+	done
 }
 
 # Updates
