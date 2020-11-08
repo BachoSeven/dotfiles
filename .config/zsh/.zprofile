@@ -22,7 +22,7 @@
 	export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 	export NBRC_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/nb/nbrc"
 	export NB_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nb"
-	export NB_HIST="${XDG_CONFIG_HOME:-$HOME/.config}/nb_history"
+	export NB_HIST="${XDG_DATA_HOME:-$HOME/.local/share}/nb_history"
 	export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 	export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/mbsyncrc"
 	export LESSHISTFILE=-
