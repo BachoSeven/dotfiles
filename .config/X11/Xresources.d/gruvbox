@@ -84,6 +84,6 @@ dmenu.foreground:	C7
 dmenu.selbackground:	BG
 dmenu.selforeground:	C15
 dmenu.hibackground:	C4
-dmenu.hiforeground:	#eee8d5
+dmenu.hiforeground:	C15
 dmenu.hiselbackground:	C5
-dmenu.hiselforeground:	#fdf6e3
+dmenu.hiselforeground:	C15
