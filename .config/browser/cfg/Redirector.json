@@ -1,0 +1,40 @@
+{
+    "createdBy": "Redirector v3.5.3",
+    "createdAt": "2020-11-09T23:46:04.685Z",
+    "redirects": [
+        {
+            "description": "Example redirect, try going to http://example.com/anywordhere",
+            "exampleUrl": "http://example.com/some-word-that-matches-wildcard",
+            "exampleResult": "https://google.com/search?q=some-word-that-matches-wildcard",
+            "error": null,
+            "includePattern": "http://example.com/*",
+            "excludePattern": "",
+            "patternDesc": "Any word after example.com leads to google search for that word.",
+            "redirectUrl": "https://google.com/search?q=$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "ytbleh",
+            "exampleUrl": "https://www.youtube.com/watch?v=2-us9oTs7Jw",
+            "exampleResult": "https://tube.cadence.moe/watch?v=2-us9oTs7Jw",
+            "error": null,
+            "includePattern": "^(?:https?://)(?:www.)youtube\\.(?:com|au|de|co\\.uk)/watch\\?v=(...........)",
+            "excludePattern": "",
+            "patternDesc": "this redirects youtube to tube.cadence.moe",
+            "redirectUrl": "https://tube.cadence.moe/watch?v=$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        }
+    ]
+}
