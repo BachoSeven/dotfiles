@@ -4,10 +4,10 @@
 
 # System configuration backup
 syscp() {
-	relpath="${$(readlink -f "$1")#/}"
+	relpath="${$(realpath -s "$1")#/}"
 	reldir="$(dirname ~/.local/src/sysdots/$relpath)"
 	[ ! -d "$reldir" ] && mkdir -vp "$reldir"
-	cp -vut "$reldir" "$1"
+	cp -Pvut "$reldir" "$1"
 }
 
 # noice
