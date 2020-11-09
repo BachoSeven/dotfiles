@@ -29,5 +29,5 @@
 	_ picom				# Compositor
 	xbanish -m ne -i shift -i mod4 -i control & # Remove mouse when typing
 	mconnect 2>/dev/null & 		# Autoconnect to Android
-	_ mpDris2
+	_ mpDris2 2>/dev/null
 	_ transmission-daemon		# Bittorrent daemon
