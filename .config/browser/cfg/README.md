@@ -33,7 +33,7 @@ PACKAGED: `chromium-keepassxc-browser chromium-thegreatsuspender stylus-git chro
 ### Utils
 vimium(bkp){allow file access}[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup]
 - stylus(beta)[backup,alt+shift+s] gtransl(<C-R>)
-- the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s];Firenvim(ctrl+shift+f)
+- the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s]
 
 ### Privacy-focused
 - ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it]
