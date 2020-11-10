@@ -188,9 +188,28 @@ let g:startify_skiplist = [
 " Vimtex Configuration
   let g:tex_flavor='latex'
   let g:vimtex_quickfix_latexlog = {'fix_paths':0}
-  let g:vimtex_quickfix_mode=0
+  let g:vimtex_quickfix_mode=2
   let g:vimtex_compiler_progname = 'nvr'
   let g:vimtex_view_method='zathura'
+  let g:vimtex_compiler_latexmk = {
+    \ 'background' : 1,
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'options' : [
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+  " Compile on initialization, cleanup on quit
+  augroup vimtex_event_1
+    au!
+    au User VimtexEventQuit     call vimtex#compiler#clean(0)
+    au User VimtexEventInitPost call vimtex#compiler#compile()
+  augroup END
 
 " fzf integration for vimtex
   nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
