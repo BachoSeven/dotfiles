@@ -1,0 +1,92 @@
+
+%%%%%
+% a simple latex mode for typesetting mathematica sessions
+%
+% template:
+%
+% \begin{mma}
+% \In |Command|[|arg|_1,1+1] \\
+% \Out x^2+9 \\
+% \In |quit| \\
+% \Warning{name} something in text mode  \\
+% \In |Print|["test"];\\
+% \Print test\\
+% \In |Quit| \\
+% \end{mma}
+%
+% remarks:
+% (1) for inside the mma environment, there are four commands: 
+%     \In ... \\    for input; in math mode
+%     \Out ... \\   for output; in math mode
+%     \Print ... \\ for printouts; in text mode
+%     \Warning{name} ... \\ for warning messages; in text mode
+% (2) the \\ at the end of each command is obligatory, also in
+%     the last line. To break a line, use \linebreak.
+% (3) In \In and \Out, things which are embraced by pipes (|) 
+%     are typeset in roman. This should be used for symbols that
+%     consist of more than a single character.
+% (4) Input and output lines are labeled with a counter. To reset
+%     the counter, use \resetmma.
+%%%%
+%
+% (c) 2005 by Manuel Kauers, distributed under the terms of GLP.
+%
+%%%%
+
+\newcounter{mmacnt}
+\def\restartmma{\setcounter{mmacnt}{0}}
+\restartmma
+\catcode`|=\active
+\def|#1|{\mathrm{#1}}
+\catcode`|=12
+\def\mma@slash{/}
+\catcode`/=\active
+\makeatother\def\mma{@}\makeatletter\let\mma@at\mma\let\mma\undefined
+\def/{\@ifnextchar/{\ifmmode\mathop{\;\mma@slash\!\mma@slash\;}\else\mma@slash\!\mma@slash\fi\mma@eat}{\mma@B}}
+\def\mma@B{\@ifnextchar.{\ifmmode\mathop{\;\mma@slash\!.\;}\else\mma@slash\!.\fi\mma@eat}{\mma@C}}
+\def\mma@C{\expandafter\@ifnextchar\mma@at{\ifmmode\mathop{\;\mma@slash\kern-.25ex @\;}\else\mma@slash\!@\fi\mma@eat}{\mma@D}}
+\def\mma@D{\@ifnextchar;{\ifmmode\mathop{\;\mma@slash\!;\;}\else\mma@slash\!;\fi\mma@eat}{\mma@slash}}
+\catcode`/=12
+\def\mma@eat#1{}
+\newenvironment{mma}{%
+ \par\smallskip
+ \catcode`|=\active\catcode`/=\active
+ \parskip=0pt\parindent=0pt % locally
+ \small
+ \def\In##1\\{%
+   \def\linebreak{\hfil\break\null\qquad}%
+   \refstepcounter{mmacnt}%
+   \hangindent=2.5em\hangafter=0
+   \leavevmode
+   \llap{\tiny\sffamily In[\arabic{mmacnt}]:=\kern.5em}%
+   \mathversion{bold}$\displaystyle##1$
+   \mathversion{normal}\par\kern-\lineskip
+ }%
+ \def\Print##1\\{%
+   \def\linebreak{\hfil\break}%
+   \hangindent=2.5em\hangafter=0
+   \leavevmode ##1\par}%
+ \def\Out{\@ifnextchar[{\mma@out}{\mma@out[@]}}%
+ \def\mma@out[##1]##2\\{%
+   \def\linebreak{\hfil\break\null}%
+   \kern\abovedisplayskip\par
+   \hangindent=2.5em\hangafter=0
+   {\kern\lineskip\advance\lineskip2pt\kern-\lineskip
+   \leavevmode
+   \llap{\tiny\sffamily Out[\arabic{mmacnt}]=\kern.5em}%
+   \ifx ##1@\else
+     \rlap{\kern\hsize\kern-2.5em\llap{(##1)}}%
+   \fi
+   $\displaystyle##2$\hfil\null
+   \par\kern-\lineskip}%
+   \kern\lineskip
+   \kern\belowdisplayskip
+ }%
+ \def\Warning##1##2\\{%
+   \def\linebreak{\hfil\break}%
+   \hangindent=2.5em\hangafter=0
+   \leavevmode
+   {\scriptsize##1 : ##2}\par}%
+}{%
+ \par\smallskip
+}
