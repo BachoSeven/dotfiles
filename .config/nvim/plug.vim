@@ -223,6 +223,7 @@ let g:startify_skiplist = [
 	let g:undotree_WindowLayout = 3
 	nn <leader>u :UndotreeToggle<cr>
 	let g:undotree_SetFocusWhenToggle = 1
+  let g:undotree_CursorLine = 0
 
 " Airline
 	let g:airline_powerline_fonts = 1

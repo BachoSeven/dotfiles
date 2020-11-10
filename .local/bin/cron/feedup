@@ -5,10 +5,10 @@
 
 ping -q -c 1 example.org >/dev/null || exit
 
-/usr/bin/notify-send "📰 Updating RSS feeds..."
+notify-send "📰 Updating RSS feeds..."
 
-pgrep -f newsboat$ && /usr/bin/xdotool key --window "$(/usr/bin/xdotool search --name newsboat)" R && exit
+pgrep -f newsboat$ && xdotool key --window "$(xdotool search --name newsboat)" R && exit
 
-/usr/bin/newsboat -x reload
-/usr/local/bin/subs -u >/dev/null
-/usr/bin/notify-send "📰 RSS feed update complete."
+newsboat -x reload
+subs -u >/dev/null
+notify-send "📰 RSS feed update complete."
