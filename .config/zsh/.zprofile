@@ -44,6 +44,7 @@
 	export LYNX_LSS="$XDG_CONFIG_HOME/lynx/lynx.lss"
 	export OCTAVE_HISTFILE="$XDG_CACHE_HOME/octave-hsts"
 	export OCTAVE_SITE_INITFILE="$XDG_CONFIG_HOME/octave/octaverc"
+	export TEXMFHOME=$XDG_DATA_HOME/texmf
 
 ## Various programs settings:
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
