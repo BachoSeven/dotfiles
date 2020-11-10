@@ -7,7 +7,7 @@
 
 case $BLOCK_BUTTON in
 	1) setsid -f "$TERMINAL" -e popupgrade ;;
-	2) notify-send "$(/usr/bin/pacman -Qu)" ;;
+	2) notify-send -u normal "$(pacman -Qu)" ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
