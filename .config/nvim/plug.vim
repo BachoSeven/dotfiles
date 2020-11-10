@@ -127,25 +127,6 @@ cal plug#end()
 "
 " {{{ Post-Plugin Settings
 
-" Firenvim
-	if exists('g:started_by_firenvim')
-		au BufEnter github.com_*.txt se filetype=markdown
-		nn <C-z> :call firenvim#hide_frame()<CR>
-		let g:firenvim_config = {
-		    \ 'globalSettings': {
-			\ 'alt': 'all',
-		    \  },
-		    \ 'localSettings': {
-			\ '.*': {
-			    \ 'cmdline': 'firenvim',
-			    \ 'priority': 0,
-			    \ 'selector': 'textarea',
-			    \ 'takeover': 'always',
-			\ },
-		    \ }
-		\ }
-	endi
-
 " Startify
   let g:startify_custom_header = [
 \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
