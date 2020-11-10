@@ -28,6 +28,7 @@ aug END
 	let g:mkdp_markdown_css = '/home/fra/.config/nvim/static/markdown-preview/customStyle.css'
 
 " Trick plugin into hosting colors.css so we get nice themes
+	let g:mkdp_highlight_css = '/home/fra/.config/nvim/colors-light'
 	let g:mkdp_port = '3456'
 
 " Markdown preview
