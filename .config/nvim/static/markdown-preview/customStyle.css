@@ -309,7 +309,6 @@ body { background-color: var(--background); }
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  /* color: #333; */
   color: var(--color7) !important;
   background: var(--background) !important;
 }

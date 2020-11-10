@@ -25,7 +25,7 @@ aug END
 	au FileType text,markdown,tex setl textwidth=180
 
 " Contains CSS for markdown + page + highlight
-	let g:mkdp_markdown_css = '~/.config/nvim/static/markdown-preview/customStyle.css'
+	let g:mkdp_markdown_css = '/home/fra/.config/nvim/static/markdown-preview/customStyle.css'
 
 " Trick plugin into hosting colors.css so we get nice themes
 	let g:mkdp_port = '3456'
