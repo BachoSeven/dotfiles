@@ -47,7 +47,7 @@ gradient_color_8 = '#b8bb26'
 integral = 77
 monstercat = 1
 waves = 0
-gravity = 61
+gravity = 66
 
 [eq]
 1 = 1 # bass
