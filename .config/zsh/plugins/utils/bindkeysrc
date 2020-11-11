@@ -132,6 +132,7 @@
 	alias \
 	ka='killall' \
 		p='pacman' \
+		# Here I don't use $AURHELPER because it breaks cli completion
 		y='paru' \
 		g='git' \
 		gd='g diff' \
