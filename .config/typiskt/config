@@ -15,7 +15,7 @@ status-color-active = 3
 # or environment variable TYPISKT_WIDTH
 # maximum width (in columns) of lines
 # if max-width > COLUMNS-2, max-width=COLUMNS-2
-maxwidth = 55
+maxwidth = 60
 
 # can also be set with environment variable TYPISKT_CACHE
 # path where to store chache files like highscores
@@ -24,7 +24,7 @@ cache-dir = ~/.cache/typiskt
 # can also be set with environment variable TYPISKT_TIME_FORMAT
 # Time format to use in highscore list, see date(1)
 # for more format options
-highscore-time-format = %y/%m/%d
+highscore-time-format = %d/%m/%y
 
 # in excercise mode minimum must be reached to
 # proceed to the next exercise. (0=no minimum)
