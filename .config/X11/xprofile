@@ -5,7 +5,7 @@
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
 # Dim->LockScreen->Suspend
-	xss-lock -n "dim" -- /usr/local/bin/slock &
+	xss-lock -n "/home/fra/.local/bin/scripts/dim" -- /usr/local/bin/slock &
 	xidlehook --not-when-fullscreen --not-when-audio --timer 1200 "systemctl suspend" - &
 
 # Daemons which may be started by systemd, when I use it.
@@ -20,7 +20,6 @@
 
 	[[ -f ~/.config/X11/Xresources ]] && xrdb -load ~/.config/X11/Xresources
 	[[ -f ~/.config/X11/xmodmap ]] && xmodmap ~/.config/X11/xmodmap
-	libinput-gestures-setup start &
 	remaps				# Switch caps/super and one-tap_caps/esc
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
 	touchpadtoggle			# Disable touchpad by default
