@@ -18,6 +18,9 @@ aug initvim-md
     \ formatoptions+=croq
 aug END
 
+" enable accessing GNU Octave documentation from vim
+  au FileType octave setl keywordprg=:te\ info\ octave\ --init-file ~/.config/texinfo/config \ --vi-keys\ --index-search
+
 " Enable spell-checking for certain files
 	au FileType markdown setl spell spelllang=en_us
 
