@@ -41,6 +41,8 @@ $if mode=vi
 		# switch to block cursor before executing a command
 		RETURN: "\e\n"
 		# these are for vi-insert mode
+		Control-p: previous-history
+		Control-n: next-history
 		Control-l: clear-screen
 		Control-a: beginning-of-line
 	$endif
