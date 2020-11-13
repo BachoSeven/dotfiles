@@ -5,7 +5,7 @@ brightness=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
 trap 'exit 0' TERM INT
 trap "br set $brightness; kill %%" EXIT
 
-notify-send '💤 Dimming screen, locking in 2 minutes...' && br set 25
+notify-send '💤 Dimming screen, locking in 30 seconds...' && br set 25
 
 sleep 2147483647 &
 wait
