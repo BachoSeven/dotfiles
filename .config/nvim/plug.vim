@@ -99,6 +99,9 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'Shougo/neco-vim'
 	Plug 'Shougo/neco-syntax'
 
+" Expand vim's `%` motion beyond just brackets and quotes
+  Plug 'andymass/vim-matchup'
+
 "" Appearance
 " Color highlighting
 	Plug 'ap/vim-css-color'
@@ -117,6 +120,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'VebbNix/lf-vim'
 	Plug 'cespare/vim-toml'
 	Plug 'bfrg/vim-cpp-modern'
+  Plug 'McSinyx/vim-octave', {'for': 'octave'}
 
 " Icons
 	Plug 'ryanoasis/vim-devicons'
