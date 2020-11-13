@@ -7,7 +7,7 @@
 # Dim->LockScreen->Suspend
 	xset s 60 30
 	xss-lock -n "/home/fra/.local/bin/scripts/dim" -- /usr/local/bin/slock &
-	xidlehook --not-when-fullscreen --not-when-audio --timer 1200 "systemctl suspend" - &
+	xidlehook --not-when-fullscreen --not-when-audio --timer 600 "systemctl suspend" - &
 
 # Daemons which may be started by systemd, when I use it.
 	_() {
