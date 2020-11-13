@@ -24,7 +24,7 @@
 	bindkey -s '^z' 'fg\r'
 
 # vim user :)
-	for i in x q qa wq qw X Q QA WQ QW; eval alias :${i}=\' exit\'
+	for i in x q qa wq qw X Q QA WQ QW quit; eval alias :${i}=\' exit\'
 	alias v="nvim"
 	alias vi="v"
 	alias vim="v"
