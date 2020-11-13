@@ -20,6 +20,9 @@ aug END
 
 " enable accessing GNU Octave documentation from vim using GNU TexInfo.
 " how autistic..
+  let s:conditionalEnd = '\(([^()]*\)\@!\<end\>\([^()]*)\)\@!'
+  au FileType octave let b:match_words = '\<if\>\|\<while\>\|\<for\>\|\<switch\>:' .
+       \ s:conditionalEnd . ',\<if\>:\<elseif\>:\<else\>:' . s:conditionalEnd
   au FileType octave au TermOpen * startinsert
   au FileType octave setl keywordprg=:te\ info\ octave\ --init-file\ ~/.config/texinfo/config\ --index-search
 
