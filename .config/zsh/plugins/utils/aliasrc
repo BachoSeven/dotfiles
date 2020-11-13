@@ -52,7 +52,7 @@
 
 # Manuals
 	alias mman='macho -i'
-	alias info='vinfo'
+	alias info='info --init-file ~/.config/texinfo/config'
 	alias wiki='wikiman'
 	alias ew='nvim ~/.local/src/wiki/' # Edit wiki
 
