@@ -1,11 +1,12 @@
 #!/bin/sh
 
 brightness=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
+msgId="192838"
 
 trap 'exit 0' TERM INT
-trap "br set $brightness; kill %%" EXIT
+trap "br set $brightness; kill %%; dunstify -C 192838" EXIT
 
-notify-send '💤 Dimming screen, locking in 30 seconds...' && br set 25
+dunstify -r "$msgId" '💤 Dimming screen, locking in 30 seconds...' && br set 25
 
 sleep 2147483647 &
 wait
