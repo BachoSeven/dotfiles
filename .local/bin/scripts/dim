@@ -1,12 +1,15 @@
 #!/bin/sh
 
-brightness=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
+# define values
+cbr=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
 msgId="192838"
+[ "$cbr" -gt 50 ] && dimbr=$((cbr-30)) || dimbr=20
 
+# trap script to "de-idle" upon keypress or mouse mouvement and restore previous brightness
 trap 'exit 0' TERM INT
-trap "br set $brightness; kill %%; dunstify -C 192838" EXIT
+trap "br set $cbr; kill %%; dunstify -C 192838" EXIT
 
-dunstify -r "$msgId" '💤 Dimming screen, locking in 30 seconds...' && br set 25
+dunstify -r "$msgId" '💤 Dimming screen, locking in 30 seconds...' && br set $dimbr
 
 sleep 2147483647 &
 wait
