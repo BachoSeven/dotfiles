@@ -13,6 +13,7 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+Xft.dpi: 96
 *.scrollBar: false
 ! Cursor
 Xcursor.theme: ArchCursorTheme
