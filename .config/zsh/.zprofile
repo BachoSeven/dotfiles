@@ -209,7 +209,7 @@ ex=🎯:\
 	export SDCV_PAGER="less -FX"
 # Kunst
 	export KUNST_SIZE="240x240"
-	export KUNST_POSITION="+1665+825"
+	export KUNST_POSITION="+1660+820" # This should be in sync with dwm gaps.
 	export KUNST_MUSIC_DIR="~/slsk/music"
 
 # Start graphical server on tty1 if not already running.
