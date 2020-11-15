@@ -13,7 +13,7 @@ aug END
 
 " markdown
 aug initvim-md
-  au! BufNewFile,BufFilePre,BufRead *.md se ft=markdown
+  au! BufNewFile,BufFilePre,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn,*.mdwn  set ft=markdown
     \ expandtab shiftwidth=4 tabstop=4 softtabstop=4
     \ formatoptions+=croq
 aug END
