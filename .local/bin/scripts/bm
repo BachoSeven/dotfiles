@@ -21,7 +21,7 @@ BM='/home/fra/.config/chromium/Default/Bookmarks'
     jq -r "$jq_script" < "$BM" \
         | sed -E $'s/(.*)\t(.*)/\\1\t\x1b[36m\\2\x1b[m/g'		\
         | fzf --bind "=:execute%echo {} | cut -d$'\t' -f2		\
-	| xclip -sel clip%" --ansi --multi --no-hscroll --tiebreak=begin\
+	| xsel -i -b%" --ansi --multi --no-hscroll --tiebreak=begin\
 	--preview "echo {-1} | xargs readable -q | w3m -T text/html"	\
 	--preview-window=right:30% $opts				\
         | cut -d$'\t' -f2						\
