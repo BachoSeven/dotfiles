@@ -13,6 +13,7 @@
 - ext-mime-request-handling[always prompt]
 - disable-search-engine-collection
 - native notifications
+- quieter notifications
 - Compositor threaded scrollbar scrolling
 - Web Platform Controls Dark Mode
 
