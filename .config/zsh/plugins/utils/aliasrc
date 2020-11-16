@@ -55,6 +55,7 @@
 	alias info='info --init-file ~/.config/texinfo/config'
 	alias wiki='wikiman'
 	alias ew='nvim ~/.local/src/wiki/' # Edit wiki
+	alias guides='cd ~/.local/src/guides && glow; cd - >/dev/null'
 
 # Remove spaces, curly+squared brackets and commas [buggy; TODO: use `zmv` instead!]
 	alias rsf="autoload -U zmv && zmv '* *' '\$f:gs/ /_'"
