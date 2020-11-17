@@ -33,6 +33,7 @@
 	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 	se timeout timeoutlen=1500 " Longer leader key timeout
 	se autoread " Automatically re-read file if a change was detected outside of vim
+  se updatetime=100 " useful for fast markdown previews; reduce if it slows things down
 
 "		 +--------------+
 "		 | Key Mappings |
