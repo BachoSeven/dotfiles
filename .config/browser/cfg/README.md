@@ -9,7 +9,6 @@
 - setup search engines: choose a valid Searx from `searx.space`, and then add ddg (and keep nosearch)
 
 ## Flags
-- force-dark-mode
 - ext-mime-request-handling[always prompt]
 - disable-search-engine-collection
 - native notifications
