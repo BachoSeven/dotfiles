@@ -88,7 +88,7 @@ nh:	https://nhentai.net/search/?q=%s nh
 oeis:	http://oeis.org/search?q=%s oeis
 om:	https://www.openstreetmap.org/search?query=%s openstreetmap
 os: https://www.opensubtitles.com/en/it/search-all/q-%s/hearing_impaired-include/machine_translated-/trusted_sources-
-pip:	https://www.openstreetmap.org/search?query=%s PyPI
+pip: http://pypi.oprg/search/?q=%s PyPI
 r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
