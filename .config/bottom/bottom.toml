@@ -9,54 +9,24 @@ regex = true
 default_time_value = 77777
 time_delta = 17777
 hide_table_gap = true
-
-##########################################################
-
+color = "gruvbox"
 [colors]
-## Based on gruvbox: https://github.com/morhetz/gruvbox
-table_header_color="#458588"
-widget_title_color="#cc241d"
-avg_cpu_color="#fb4934"
-cpu_core_colors=["#cc241d", "#98971a", "#d79921", "#458588", "#b16286", "#689d6a", "#fb4934", "#b8bb26", "#fabd2f", "#83a598"]
-ram_color="#fb4934"
-swap_color="#fabd2f"
-rx_color="#458588"
-tx_color="#689d6a"
-border_color="#ebdbb2"
-highlighted_border_color="#fe8019"
-text_color="#ebdbb2"
-selected_text_color="#282828"
-selected_bg_color="#458588"
-graph_color="#ebdbb2"
-battery_colors = ["#cc241d", "#d79921", "#d79921", "#98971a", "#98971a", "#98971a"]
-##########################################################
-# Layout - layouts follow a pattern like this:
-# [[row]] represents a row in the application.
-# [[row.child]] represents either a widget or a column.
-# [[row.child.child]] represents a widget.
-#
-# All widgets must have the type value set to one of ["cpu", "mem", "proc", "net", "temp", "disk", "empty"].
-# All layout components have a ratio value - if this is not set, then it defaults to 1.
-# The default widget layout:
-#[[row]]
-#  ratio=30
-#  [[row.child]]
-#  type="cpu"
-#[[row]]
-#    ratio=40
-#    [[row.child]]
-#      ratio=4
-#      type="mem"
-#    [[row.child]]
-#      ratio=3
-#      [[row.child.child]]
-#        type="temp"
-#      [[row.child.child]]
-#        type="disk"
-#[[row]]
-#  ratio=30
-#  [[row.child]]
-#    type="net"
-#  [[row.child]]
-#    type="proc"
-#    default=true
+## Gruvbox
+# table_header_color="#458588"
+# widget_title_color="#cc241d"
+# avg_cpu_color="#fb4934"
+# cpu_core_colors=["#cc241d", "#98971a", "#d79921", "#458588", "#b16286", "#689d6a", "#fb4934", "#b8bb26", "#fabd2f", "#83a598"]
+# ram_color="#fb4934"
+# swap_color="#fabd2f"
+# rx_color="#458588"
+# tx_color="#689d6a"
+# border_color="#ebdbb2"
+# highlighted_border_color="#fe8019"
+# text_color="#ebdbb2"
+# selected_text_color="#282828"
+# selected_bg_color="#458588"
+# graph_color="#ebdbb2"
+# battery_colors = ["#cc241d", "#d79921", "#d79921", "#98971a", "#98971a", "#98971a"]
+# high_battery_color="#98971a"
+# medium_battery_color="#d79921"
+# low_battery_color="#cc241d"
