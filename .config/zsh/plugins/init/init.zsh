@@ -22,7 +22,7 @@
 	}
 	add-zsh-hook -Uz chpwd chpwd_dirstack
 	DIRSTACKSIZE='333'
-	setopt auto_pushd
+	setopt autopushd
 	setopt pushd_silent
 	setopt pushd_to_home
 	setopt pushd_ignore_dups
