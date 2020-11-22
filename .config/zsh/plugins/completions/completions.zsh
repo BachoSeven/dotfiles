@@ -55,7 +55,7 @@
 	zstyle ':completion:*::*:(cd|pushd):*' tag-order local-directories directory-stack path-directories
 # never offer the parent directory (e.g.: cd ../<TAB>)
 	zstyle ':completion:*:cd:*' ignore-parents parent pwd
-# don't complete things which aren't available (very annoying)
+# don't complete things which aren't available, such as the many zsh functinos starting with an underscore.
 	zstyle ':completion:*:*:-command-:*:*' tag-order 'functions:-non-comp *' functions
 	zstyle ':completion:*:functions-non-comp' ignored-patterns '_*'
 # complete sudo commands
