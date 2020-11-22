@@ -10,7 +10,7 @@ default_time_value = 77777
 time_delta = 17777
 hide_table_gap = true
 color = "gruvbox"
-[colors]
+# [colors]
 ## Gruvbox
 # table_header_color="#458588"
 # widget_title_color="#cc241d"

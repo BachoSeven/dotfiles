@@ -146,8 +146,8 @@ let g:startify_skiplist = [
     \ ]
 
 " Lf
-	let g:lf_command_override = 'lf -command "set hidden"'
-	let g:lf_replace_netrw = 1 " open lf when vim open a directory
+  let g:lf_command_override = 'lf -command "set hidden"'
+  let g:lf_replace_netrw = 1 " open lf when a directory is opened with vim
 
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
