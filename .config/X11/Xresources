@@ -32,5 +32,5 @@ Sxiv.foreground: C4
 
 !! St
 st.alpha: 0.8
-st.bellvolume: 100
+st.bellvolume: 0
 st.blinktimeout: 666

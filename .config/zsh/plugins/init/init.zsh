@@ -2,7 +2,6 @@
 	setopt complete_in_word        				# Complete from both ends of a word.
 	setopt always_to_end           				# Move cursor to the end of a completed word.
 	setopt auto_cd          				# `dirname` is equivalent to `cd dirname`
-	setopt extended_glob					# Enable globbing
 	unsetopt flow_control					# Disable ctrl-s/ctrl-q to freeze/unfreeze terminal.
 	setopt short_loops             				# 'for i in *; echo $i;' instead of 'for i in *; do echo $i; done'
 	unsetopt rm_star_silent 				# Always ask before rm folder/*
