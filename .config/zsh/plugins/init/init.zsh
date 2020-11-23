@@ -10,6 +10,12 @@
 	setopt INTERACTIVE_COMMENTS				# Allow comments even in interactive shell
 	setopt magicequalsubst					# ~ substitution and tab completion after a = (for --x=filename args)
 
+# Do not consider "/" a word character.  One benefit of this is that
+# when hitting ctrl-w in insert mode (which deletes the word before the
+# cursor) just before a filesystem path, it only removes the last item
+# of the path and not the entire thing. Credits: https://github.com/paradigm
+	export WORDCHARS=${WORDCHARS//\/}
+
 # Remember recent directories
 	autoload -Uz add-zsh-hook
 	DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
