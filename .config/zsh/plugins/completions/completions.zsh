@@ -2,6 +2,7 @@
 	zmodload zsh/complist
 
 # Speed up completion loading at startup [ https://gist.github.com/ctechols/ca1035271ad134841284 ]
+	setopt extended_glob					# Enable globbing here
 	autoload -Uz compinit
 	() {
 	  if [[ $# -gt 0 ]]; then
