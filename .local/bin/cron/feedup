@@ -10,5 +10,6 @@ notify-send "📰 Updating RSS feeds..."
 pgrep -f newsboat$ && xdotool key --window "$(xdotool search --name newsboat)" R && exit
 
 newsboat -x reload
-subs -u >/dev/null
+subs -u
 notify-send "📰 RSS feed update complete."
+exit
