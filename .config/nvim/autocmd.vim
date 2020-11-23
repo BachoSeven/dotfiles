@@ -14,3 +14,8 @@
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	au BufWritePost *Xresources,*Xdefaults !xrdb %
 	au BufWritePost *yt/subs !subs -g
+
+" Automatically save created folds when exiting, and restore them next time
+" you open the file
+  au BufWrite * mkview
+  au BufRead * silent! loadview
