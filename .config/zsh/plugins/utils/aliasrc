@@ -31,6 +31,8 @@
 
 ## Utils
 	alias perms='stat -c "%A %a %n"'
+	alias mine="sudo chown -R $(whoami):$(whoami)" # Take ownership of file or directory
+	alias yours="sudo find . -perm -u+x -exec chmod a+x {} \; && sudo find . -perm -u+r -exec chmod a+r {} \;" # allow others to read/execute
 	alias 1='cd -'
 	alias 2='cd -2'
 	alias 3='cd -3'
@@ -71,6 +73,8 @@
 	alias sort='sort --parallel 8 -S 16M'
 	alias nmdm='networkmanager_dmenu'
 	alias tb='taskbook'
+	alias oct='octave -q'
+	alias octg='octave --gui -q'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
 	alias ytdl="youtube-dl -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic"
 	alias P='patch -p1 <'

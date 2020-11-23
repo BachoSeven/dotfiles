@@ -30,5 +30,7 @@ Sxiv.foreground: C4
 
 #include "Xresources.d/xscreensaver"
 
-!! St Transparency (0-1):
+!! St
 st.alpha: 0.8
+st.bellvolume: 100
+st.blinktimeout: 666
