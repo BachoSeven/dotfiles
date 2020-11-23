@@ -2,7 +2,6 @@
 	zmodload zsh/complist
 
 # Speed up completion loading at startup [ https://gist.github.com/ctechols/ca1035271ad134841284 ]
-	setopt extended_glob					# Enable globbing here
 	autoload -Uz compinit
 	() {
 	  if [[ $# -gt 0 ]]; then
@@ -10,7 +9,7 @@
 	  else
 		compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
 	  fi
-	} ${HOME}/zsh/zcompdump(N.mh+24)
+	} ${XDG_CACHE_HOME}/zsh/zcompdump(N.mh+24)
 
 # Include .files
 	_comp_options+=(globdots)
