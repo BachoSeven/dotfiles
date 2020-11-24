@@ -27,8 +27,9 @@
 - gtk (gruvbox)
 
 ## Plugins
-PACKAGED: `chromium-keepassxc-browser chromium-thegreatsuspender stylus-git chromium-ublock-origin chromium-extension-https-everywhere`
+PACKAGED(but they're messy, install them manually plz): `chromium-keepassxc-browser chromium-thegreatsuspender stylus-git chromium-ublock-origin chromium-extension-https-everywhere`
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
+> Install sci-hub plugin manually (it's in this repo)
 
 ### Utils
 vimium(bkp){allow file access}[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup]

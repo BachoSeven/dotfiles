@@ -741,7 +741,7 @@ llocate() {
 }
 
 addlocate() {
-	# usage: updatedb-mountpoint <mountpoint>
+	# usage: addlocate <mountpoint>
 	# http://askubuntu.com/questions/460535/how-do-i-tell-locate-to-keep-the-index-of-an-external-hdd
 	local db_file="${XDG_CACHE_HOME:=$HOME/.cache}/updatedb/$1:t.db"
 
