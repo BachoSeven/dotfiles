@@ -23,7 +23,6 @@
 	[[ -f ~/.config/X11/xmodmap ]] && xmodmap ~/.config/X11/xmodmap
 	remaps				# Switch caps/super and one-tap_caps/esc
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
-	touchpadtoggle			# Disable touchpad by default
 	copyq &				# Clipboard management
 	_ redshift			# Color temperature
 	_ picom				# Compositor
