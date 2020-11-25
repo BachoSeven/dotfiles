@@ -119,7 +119,7 @@
 	alias path='echo $PATH | tr : "\n"'
 # Shorter commands
 	alias \
-	ka='killall' \
+		ka='killall' \
 		p='pacman' \
 		y='paru' \
 		g='git' \
@@ -157,3 +157,6 @@
 	_exists nyancat || alias nyancat="telnet nyancat.acc.umu.se"
 	_exists duf && alias duf='duf --output filesystem,mountpoint,usage,avail --sort usage'
 	_exists vizex && alias vizex="vizex -d green -t blue -g cyan -s underlined"
+	_exists tty-clock && alias  \
+		ccl="tty-clock -bcs"\
+		cl="tty-clock -bBDr"
