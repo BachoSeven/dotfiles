@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# important! requires 'scg' script
+# NOTE: This requires 'scg' script
 path="$HOME/.local/bin"
 
 # dmenu options
