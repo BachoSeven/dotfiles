@@ -19,10 +19,10 @@ prompt() { #__ cool interactive stuff __#
 		if [ -n "$player" ]; then
 			if [ "$player" = "spotify" ]; then
 				gtk-launch spotify
-				sleep 2
+				sleep 3
 			elif [ "$player" = "ncspot" ]; then
 				setsid -f st -c ncspot -e ncspot &
-				sleep 2
+				sleep 3
 			fi
 		else
 			return 1

@@ -70,6 +70,7 @@
 	alias verifygpg='gpg --auto-key-retrieve --verify'
 	alias sort='sort --parallel 8 -S 16M'
 	alias nmdm='networkmanager_dmenu'
+	alias rnm="sudo NetworkManager restart"
 	alias tb='taskbook'
 	alias octave='octave -q'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
