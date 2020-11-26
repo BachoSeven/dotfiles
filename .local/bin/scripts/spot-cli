@@ -1,10 +1,10 @@
 #!/bin/env bash
 
-## This probably only works well with my setup, but feel free to steal any idea.
-## Franceso Minnocci 2020
+# Franceso Minnocci 2020
+# NOTE: This probably only works well with `ncspot` and/or the official client
 
 # Determine currently active spotify player;
-# and if there are none, only prompt for opening one if --uri or --url were passed.
+# and if there are none, only prompt for opening one (only when trying to open URL/URIs)
 if $(pgrep ncspot >/dev/null); then
 	player="ncspot"
 elif $(pgrep spotify >/dev/null); then
@@ -59,7 +59,7 @@ url() { #__ Some parsing logic for URLs __#
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$typ:$key
 }
 
-uri() { #__ This is a pain in the ass because spotify would like to include additional context after the item key, which ncspot does not support... __#
+uri() { #__ This is slightly more complex because spotify would like to include additional context after the item key, which ncspot does not support... __#
 	prompt
 	typ="$(echo "$*" | cut -d":" -f1,2)"
 	key="$(echo "$*" | cut -d":" -f3 | head --bytes=22)"
