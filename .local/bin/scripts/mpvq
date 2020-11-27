@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Queue media to an open mpv instance
+# Francesco Minnocci 2020
+
+MPV_SOCKET="$(ls /tmp/mpvSockets/* | head -1)"
+videoname="$1"
+echo "loadfile \"${videoname}\" append-play" | socat - $MPV_SOCKET
