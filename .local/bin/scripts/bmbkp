@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # export-chrome-bookmarks
-# 
+#
 # A script to convert Google Chrome's bookmarks file to the standard HTML-ish
 # format.
 #
@@ -39,8 +39,6 @@ output_file_template = """<!DOCTYPE NETSCAPE-Bookmark-file-1>
 <dl><p>
 
 <dl>{bookmark_bar}</dl>
-
-<dl>{other}</dl>
 """
 
 def html_escape(text):
@@ -99,7 +97,7 @@ else:
 	if system() == "Darwin":
 		input_filename = expanduser("~/Library/Application Support/Google/Chrome/Default/Bookmarks")
 	elif system() == "Linux":
-		input_filename = expanduser("~/.config/google-chrome/Default/Bookmarks")
+		input_filename = expanduser("~/.config/chromium/Default/Bookmarks")
 	elif system() == "Windows":
 		input_filename = environ["LOCALAPPDATA"] + r"\Google\Chrome\User Data\Default\Bookmarks"
 	else:
@@ -120,7 +118,6 @@ contents = loads(input_file.read())
 input_file.close()
 
 bookmark_bar = html_for_node(contents['roots']['bookmark_bar'])
-other = html_for_node(contents['roots']['other'])
 
-args.output_file.write(output_file_template.format(bookmark_bar=bookmark_bar, other=other))
+args.output_file.write(output_file_template.format(bookmark_bar=bookmark_bar))
 args.output_file.close()
