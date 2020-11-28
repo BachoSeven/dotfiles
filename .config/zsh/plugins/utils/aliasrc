@@ -70,8 +70,11 @@
 	alias sT='tabbed -c -r 2 st -w id'
 	alias verifygpg='gpg --auto-key-retrieve --verify'
 	alias sort='sort --parallel 8 -S 16M'
+	alias dr='drive'
 	alias nmdm='networkmanager_dmenu'
 	alias rnm='sudo NetworkManager restart'
+	alias w3m='w3m -s'
+	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tb='taskbook'
 	alias octave='octave -q'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
@@ -98,8 +101,6 @@
 	alias udef='udict'
 	alias spo='kitty --class ncspot ncspot'
 	alias spi='gtk-launch spotify'
-	alias w3m='w3m -s'
-	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
 	alias chill='mpv https://tinyurl.com/wbl4fya'
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
