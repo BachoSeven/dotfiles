@@ -12,9 +12,8 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "350x150-15-15" # this should be in sync with dwm gaps
+    geometry = "0x150-15-15" # this should be in sync with dwm gaps
     indicate_hidden = yes
-    shrink = yes
     transparency = 20
     notification_height = 0
     separator_height = 2
@@ -32,7 +31,7 @@
     sort = yes
     idle_threshold = 120
 
-    font = Monospace 12
+    font = Monospace 14
 
     line_height = 0
     markup = full

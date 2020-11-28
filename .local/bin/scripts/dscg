@@ -4,9 +4,8 @@
 path="$HOME/.local/bin"
 
 # dmenu options
-lines="-l 12"
+lines="-l 15"
 prompt="-p Script:"
-position="-x 8 -y 8 -w 1904"
 
 # list only executable non-binay files
 list="$(fd . $path --type executable \
@@ -15,7 +14,7 @@ list="$(fd . $path --type executable \
        )"
 
 # output list to dmenu
-select="$(dmenu $prompt $lines $position <<< $list)"
+select="$(dmenu $prompt $lines <<< $list)"
 
 # run 'scg' with the selected file name
 if [[ -n "$select" ]]; then

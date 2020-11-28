@@ -16,7 +16,7 @@ cmds="\
 🔃 reboot	${reb:-sudo -A reboot}
 🖥 shutdown	 ${shut:-sudo -A shutdown -h now}"
 
-choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -x 8 -y 8 -w 1904)" || exit 1
+choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu)" || exit 1
 
 ## https://github.com/koalaman/shellcheck/wiki/SC2091
 readonly action="$(echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-)"
