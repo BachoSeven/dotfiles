@@ -13,11 +13,10 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
-Xft.dpi: 96
 *.scrollBar: false
 ! Cursor
 Xcursor.theme: ArchCursorTheme
-Xcursor.size: 25
+Xcursor.size: 24
 
 
 #include "Xresources.d/gruvbox"

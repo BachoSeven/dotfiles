@@ -3,7 +3,7 @@
 freq=$XDG_CACHE_HOME/dmenu_history
 aliases=$ZDOTDIR/plugins/utils/aliasrc
 # configuration is done in Xresources
-dmenucmd='dmenu -f -i -h 12 -x 8 -y 8 -w 1904'
+dmenucmd='dmenu -f -i -h 15'
 
 source "$aliases"
 
