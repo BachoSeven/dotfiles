@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 while read -r file
 do
         case "$1" in
@@ -29,17 +29,19 @@ do
 	"f")
 		convert -flop "$file" "$file" ;;
 	"y")
-		echo -n "$file" | xclip -selection clipboard &&
+		echo -n "$file" | tr -d '\n' | xclip -selection clipboard &&
 		notify-send "$file copied to clipboard" & ;;
 	"Y")
-		readlink -f "$file" | xclip -selection clipboard &&
+		readlink -f "$file" | tr -d '\n' | xclip -selection clipboard &&
 			notify-send "$(readlink -f "$file") copied to clipboard" & ;;
 	"d")
 		[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
 	"g")
-		gimp "$file" & ;;
+		ifinstalled gimp && setsid -f gimp "$file" ;;
 	"i")
 		sxiv-info "$file" & ;;
+	"n")
+		notify-send "File information" "$(mediainfo "$file")" ;;
 	"I")
 		imgur.sh "$file" >/dev/null | head -n 1 | xclip -sel clip;;
         esac
