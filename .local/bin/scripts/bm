@@ -25,4 +25,4 @@ BM='/home/fra/.config/chromium/Default/Bookmarks'
 	--preview "echo {-1} | xargs readable -q | w3m -T text/html"	\
 	--preview-window=right:30% $opts				\
         | cut -d$'\t' -f2						\
-        | setsid -f xargs -r $BROWSER &>/dev/null
+        | setsid -f xargs -r $BROWSER >/dev/null
