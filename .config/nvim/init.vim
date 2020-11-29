@@ -86,6 +86,9 @@
 	map <C-t>h :tabp<CR>
 	map <C-t>l :tabn<CR>
 
+" Perform dot commands over visual blocks:
+	vnoremap . :normal .<CR>
+
 " Replace all occurrences aliased to S
 	nn S :%s//g<Left><Left>
 
