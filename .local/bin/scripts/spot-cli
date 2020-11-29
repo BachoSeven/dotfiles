@@ -21,7 +21,7 @@ prompt() { #__ cool interactive stuff __#
 				gtk-launch spotify
 				sleep 3
 			elif [ "$player" = "ncspot" ]; then
-				setsid -f st -c ncspot -e ncspot &
+				setsid -f st -c ncspot -e ncspot
 				sleep 3
 			fi
 		else

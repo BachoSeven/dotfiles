@@ -19,7 +19,7 @@ reload_dunst() {
 		-nf "${color7}" \
 		-cf "${color7}" &
 	else
-		dunst &
+		setsid -f dunst
 	fi
 }
 
