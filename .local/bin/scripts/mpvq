@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Queue media to an open mpv instance:
-# 	- uses https://github.com/wis/mpvSockets to automatically create a listening socket for IPC support for each mpv instance
-#	- NOTE: it queues to the earliest opened instance if there are multiple ones.
+# Simple script to queue media to an open mpv instance:
+# 	- this uses https://github.com/wis/mpvSockets to automatically create a listening socket for IPC support for each mpv instance
+#	- NOTE: this queues media to the earliest opened instance if there are multiple ones.
 # Francesco Minnocci 2020
 
 MPV_SOCKET="$(ls /tmp/mpvSockets/* | head -1)"
