@@ -247,6 +247,11 @@ sloc() {
 	unset del
 }
 
+ytw() {
+	local vid="$1"
+	mpv "https://youtube.com/watch?v=$vid" || {ifinstalled nordvpn && nordvpn connect Sweden && mpv "https://youtube.com/watch?v=$vid"}
+}
+
 ## DICTIONARY FUNCTIONS ##
 djargon () { curl dict://dict.org/d:${1}:jargon; }
 dfoldoc () { curl dict://dict.org/d:${1}:foldoc; }
