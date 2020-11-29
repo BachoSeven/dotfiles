@@ -4,7 +4,7 @@
 path="$HOME/.local/bin"
 
 # dmenu options
-lines="-l 15"
+lines="-l 14"
 prompt="-p Script:"
 
 # list only executable non-binay files

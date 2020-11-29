@@ -44,7 +44,7 @@ if [[ "$cmd" =~ $regex ]]; then
     sorted=$(sort <<< "$history" | uniq -c | sort -hr | colrm 1 8)
     # remove trailing whitespace and asterisks from arguments
     cmd=$(sed 's/[[:space:]*]*$//' <<< "$@")
-    dmenucmd='dmenu -f -i -l 15 -x 8 -y 8 -w 1904'
+    dmenucmd='dmenu -f -i -l 14'
     (sleep .1; xdotool key Tab) &
     cmd="$(echo "$sorted"$'\n'"$cache" | $dmenucmd)"
     if [[ $cmd == *";rm" ]]; then
