@@ -9,10 +9,11 @@
 	au BufWritepre * %s/\n\+\%$//e
 
 " Recompile and run dwmblocks automatically
-	au BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks;  sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+  au BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid -f dwmblocks }
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
-	au BufWritePost *Xresources,*Xdefaults !xrdb %
+  au BufRead,BufNewFile xresources,xdefaults set filetype=xdefaults
+	au BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
 	au BufWritePost *yt/subs !subs -g
 
 " Automatically save created folds when exiting, and restore them next time
