@@ -38,8 +38,7 @@ $lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"
 cmd open ${{
     case "$f" in
 	*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.gz|*.tgz|*.tar.xz|*.txz|*.xz|*.zip|*.rar|*.iso|*.7z)
-	    lf -remote "send $id mount $f"
-            ;;
+	    lf -remote "send $id mount $f" ;;
 	*.pdf|*.djvu|*.ps|*.epub) setsid -f zathura $fx >/dev/null 2>&1 ;;
 	*.vixl) vixl44 $f >/dev/null 2>&1 ;;
 	*)
@@ -52,7 +51,7 @@ cmd open ${{
 		image/*) sxiv -ao $f 2>/dev/null | lf-select ;;
 		audio/*) mpv --audio-display=no $f ;;
 		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
-		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1 done;;
+		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
 	    esac
     esac
 }}
@@ -335,11 +334,11 @@ map m embed w3m -s
 map w pager
 map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached
-map b $setsid -f sbg -i $f
+map b $ setsid -f sbg -i $f
 map <a-L> cleanlatexcompile
 map U !du -sh      # waiting shell command for Usage
 map X !$f
-map O $setsid -f $OPENER "$f" >/dev/null 2>&1
+map O $ setsid -f $OPENER "$f" >/dev/null 2>&1
 map T push :$touch<space>
 map V push :!nvim<space>
 map <c-z> $ kill -STOP $PPID	# put lf in bg
