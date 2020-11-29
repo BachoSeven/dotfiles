@@ -26,7 +26,7 @@ This are my dotfiles set up as a bare git repo and managed with [dotbare](https:
 
 <!-- vim-markdown-toc -->
 # Current Setup
-I run Arch Linux on an Asus UX310UQK laptop with 1TB of SSD and 16GB of RAM; typical memory usage for this setup is from 0.8GB up to 1.5GB when browsing.
+I run Arch Linux on an Asus UX310UQK laptop with 1TB of SSD and 16GB of RAM; typical memory usage for this setup is from ~1GB up to ~3GB when browsing the web.
 Here are some of the programs I use:
 
 - Suckless utilities (links are to my patched repositories): **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), **[st](https://github.com/BachoSeven/st)** (terminal emulator) and **[xss](https://github.com/9wm/xss)+[slock](https://github.com/BachoSeven/slock)** (screensaver).
