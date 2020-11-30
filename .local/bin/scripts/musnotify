@@ -1,8 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# Simple ncmpcpp notification script by Gerome Matilla;
-# gerome.matilla07@gmail.com
-#	Depends:
+# Simple ncmpcpp notification script by Gerome Matilla (gerome.matilla07@gmail.com)
+#	Depends on:
 #		- mpc, mpd, ncmpcpp, imagemagick, ffmpeg, [optionally] perl-image-exiftool
 
 MUSIC_DIR="${HOME}/slsk/music"
@@ -16,7 +15,7 @@ current_title="$(mpc -f %title% current | tr -d '"')"
 current_artist="$(mpc -f %artist% current | tr -d '"')"
 
 # Exit if $USER is in TTY
-	if [[ "$(ps -h -o comm -p "$PPID")" == *"login"* ]]; then
+	if [[ "$TERM" = "linux" ]]; then
 	  exit 1
 	fi
 
@@ -26,7 +25,7 @@ current_artist="$(mpc -f %artist% current | tr -d '"')"
 
 # Remove file extension name
 	function check_mpc_data() {
-		if [[ -z "$current_title" ]]; then
+		if [ -z "$current_title" ]; then
 			file_name="$(mpc -f %file% current | tr -d '"')"
 			file_name=${file_name::-4}
 			current_title="${file_name}"
@@ -37,12 +36,12 @@ current_artist="$(mpc -f %artist% current | tr -d '"')"
 check_mpc_data
 
 # Extract album cover
-	if [[ ! -z "$CHECK_EXIFTOOL" ]]; then
+	if [ -n "$CHECK_EXIFTOOL" ]; then
 
 		SONG="$MUSIC_DIR/$(mpc -p 6602 --format "%file%" current)"
 		PICTURE_TAG="-Picture"
 
-		if [[ "$SONG" == *".m4a" ]]; then
+		if [ "$SONG" = *".m4a" ]; then
 			PICTURE_TAG="-CoverArt"
 		fi
 
@@ -66,7 +65,7 @@ check_mpc_data
 # Check if image is valid
 	function check_album_data() {
 		img_data=$(identify "$TMP_COVER_PATH" 2>&1)
-		if [[ "$img_data" == *"insufficient"* ]]; then
+		if [ "$img_data" = *"insufficient"* ]; then
 			TMP_COVER_PATH="$XDG_CONFIG_HOME/ncmpcpp/vinyl.svg"
 		fi
 	}
@@ -75,7 +74,7 @@ check_mpc_data
 
 # Create a notification
 	function notify() {
-		if [[ ! -z "$CHECK_DUNST" ]]; then
+		if [ -n "$CHECK_DUNST" ]; then
 			dunstify --urgency 'normal' --appname "ncmpcpp" \
 			--replace 3 --icon "$TMP_COVER_PATH" "$current_title" "$current_artist"
 		else
