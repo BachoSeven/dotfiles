@@ -26,7 +26,7 @@
 	copyq &				# Clipboard management
 	_ redshift			# Color temperature
 	xrandr --output eDP-1 --auto --output HDMI-2 --auto --right-of eDP-1	 # Monitor selection
-	_ picom				# Compositor
+	togcomp				# Compositor
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	mconnect 2>/dev/null & 		# Autoconnect to Android
 	_ mpDris2 2>/dev/null
