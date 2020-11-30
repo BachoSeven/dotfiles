@@ -159,6 +159,6 @@
 	_exists vizex && alias vizex="vizex -d green -t blue -g cyan -s underlined"
 	_exists tty-clock && alias  		\
 		tty-clock="tty-clock -b -C 4"   \
-		ccl="tty-clock -cs"		\
-		cl="tty-clock -BDr"
+		cl="tty-clock -cs"		\
+		rcl="tty-clock -BDr"
 	_exists s && alias cs='. /usr/share/bash-completion/completions/s; cls'
