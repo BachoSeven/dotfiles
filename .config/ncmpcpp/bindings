@@ -3,10 +3,12 @@
 ## ~/.ncmpcpp/bindings or $XDG_CONFIG_HOME/ncmpcpp/bindings ##
 ## and set up your preferences                              ##
 ##############################################################
-def_key "+"
-    show_clock
 def_key "="
+    show_clock
+def_key "+"
     volume_up
+def_key "-"
+ volume_down
 
 def_key "j"
     scroll_down
