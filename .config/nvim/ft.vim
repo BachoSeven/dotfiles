@@ -1,22 +1,25 @@
 " Vimscript
-aug initvim-vim
+aug init-vim
   au! BufNewFile,BufFilePre,BufRead *.vim se ft=vim
     \ expandtab shiftwidth=2 tabstop=2 softtabstop=2
     \ foldmethod=marker
 aug END
 
-" bash
-aug initvim-zsh
+" zsh
+aug init-zsh
   au! BufNewFile,BufFilePre,BufRead *.zsh se ft=zsh
     \ expandtab shiftwidth=2 tabstop=2 softtabstop=2
 aug END
 
 " markdown
-aug initvim-md
+aug init-md
   au! BufNewFile,BufFilePre,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn,*.mdwn  set ft=markdown
     \ expandtab shiftwidth=4 tabstop=4 softtabstop=4
     \ formatoptions+=croq
 aug END
+
+" Set some options for script in general
+	au FileType sh se expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " enable accessing GNU Octave documentation from vim using GNU TexInfo.
 " how autistic..
