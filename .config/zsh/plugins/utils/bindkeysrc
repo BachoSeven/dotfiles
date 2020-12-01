@@ -17,6 +17,7 @@
 	bindkey -s '^v' ' v\r'
 	bindkey -s '^[n' ' neomutt\r'
 	bindkey -s '^s' ' up2date\r'
+	bindkey -s '\ef' ' fedit\r'
 	bindkey -s '^y' ' fzfpacinstall\r'
 	bindkey -s '^q' ' pacbrowse\r'
 
