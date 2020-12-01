@@ -8,7 +8,7 @@
 	"persist": false,
 	"font_desc": "Font Awesome 5 Free",
 	"font_size": "small",
-	"font_color": "#689d6a",
+	"font_color": "#83a598",
 	"bg_color": "#1d2021",
 	"opacity": 0.8,
 	"key_mode": "composed",
