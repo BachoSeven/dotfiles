@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Francesco Minnocci 2020
+# This takes care of my external monitor setup, mostly for non-interactive purposes.
+
+if $(xrandr -q | grep -q "HDMI-2 connected"); then
+	while getopts ":eml" o; do
+		case "${o}" in
+      e) # External
+        xrandr --output eDP-1 --off --output HDMI-2 --auto ;;
+      m) # Multi
+	      xrandr --output eDP-1 --auto --output HDMI-2 --primary --auto --right-of eDP-1 ;;
+      l) # Laptop
+	      xrandr --output eDP-1 --auto --output HDMI-2 --off ;;
+      *)
+        printf "Invalid option: -%s\n" "$OPTARG"
+        printf "usage: owo [-h|-v]\n" && exit 1 ;;
+		esac
+	done
+  sbg # redraw background
+fi
