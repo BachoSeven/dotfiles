@@ -25,7 +25,7 @@
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
 	copyq &				# Clipboard management
 	_ redshift			# Color temperature
-	xrandr --output eDP-1 --auto --output HDMI-2 --auto --right-of eDP-1	 # Monitor selection
+	mon -e				# Monitor selection
 	togcomp				# Compositor
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	mconnect 2>/dev/null & 		# Autoconnect to Android
