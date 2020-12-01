@@ -2,7 +2,7 @@
   "settingsVersion": "1.66",
   "exclusionRules": [],
   "filterLinkHints": true,
-  "waitForEnterForFilteredHints": true,
+  "waitForEnterForFilteredHints": false,
   "hideHud": true,
   "keyMappings": "map <a-h> LinkHints.activateMode action=hover\nmap s Vomnibar.activate keyword=g\nmap w Vomnibar.activate keyword=w\nmap <a-s> Vomnibar.activateInNewTab keyword=g\nmap <a-w> Vomnibar.activateInNewTab keyword=w\nmap <a-,> moveTabLeft count=99\nmap <a-.> moveTabRight count=99\nmap R reload hard",
   "linkHintCharacters": "sadfjklewcmpgh",
