@@ -18,4 +18,5 @@ if $(xrandr -q | grep -q "HDMI-2 connected"); then
 		esac
 	done
   sbg # redraw background
+  dunstreload # Reload dunst configuration
 fi
