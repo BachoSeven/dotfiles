@@ -2,9 +2,9 @@
 --glob
 !.git/*
 --colors
-match:bg:green
+match:bg:black
 --colors
-match:fg:black
+match:fg:green
 --colors
 line:fg:cyan
 --colors

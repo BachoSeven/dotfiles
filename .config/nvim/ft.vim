@@ -18,8 +18,8 @@ aug init-md
     \ formatoptions+=croq
 aug END
 
-" Set some options for script in general
-	au FileType sh se expandtab shiftwidth=2 tabstop=2 softtabstop=2
+" Set some options for scripts in general
+	au FileType octave se expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " enable accessing GNU Octave documentation from vim using GNU TexInfo.
 " how autistic..
