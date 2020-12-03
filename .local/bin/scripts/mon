@@ -4,16 +4,18 @@
 # This takes care of my external monitor setup, mostly for non-interactive purposes.
 
 name="$(basename $0)"
+int=eDP-1
+ext=HDMI-2
 
-if $(xrandr -q | grep -q "HDMI-2 connected"); then
-	while getopts ":eml" o; do
+if $(xrandr -q | grep -q "$ext connected"); then
+	while getopts ":elm" o; do
 		case "${o}" in
       e) # External
-        xrandr --output eDP-1 --off --output HDMI-2 --auto ;;
-      m) # Multi
-	      xrandr --output eDP-1 --auto --output HDMI-2 --primary --auto --right-of eDP-1 ;;
+        xrandr --output $int --off --output $ext --auto ;;
       l) # Laptop
-	      xrandr --output eDP-1 --auto --output HDMI-2 --off ;;
+	      xrandr --output $ext --off --output $int --auto ;;
+      m) # Multi
+	      xrandr --output $int --auto --output $ext --primary --auto --right-of eDP-1 ;;
       *)
         printf "Invalid option: -%s\n" "$OPTARG"
         printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;

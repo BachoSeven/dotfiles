@@ -99,7 +99,6 @@
 	alias tg='telegram-desktop'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias xr="xrandr"
-	alias bl="hsetroot -solid '#151515'"
 	alias glow='glow -p -w 120'
 	alias udef='udict'
 	alias spo='kitty --class ncspot ncspot'
