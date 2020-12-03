@@ -6,6 +6,8 @@ match:bg:black
 --colors
 match:fg:green
 --colors
+match:style:bold
+--colors
 line:fg:cyan
 --colors
 path:fg:blue
