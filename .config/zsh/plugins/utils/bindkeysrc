@@ -163,3 +163,4 @@
 		cl="tty-clock -cs"		\
 		rcl="tty-clock -BDr"
 	_exists s && alias cs='. /usr/share/bash-completion/completions/s; cls'
+	_exists kat && alias cat='kat'
