@@ -12,6 +12,8 @@ do
 		sbg -i "$file" -m ;;
         "T")
 		sbg -i "$file" -t ;;
+        "C")
+		sbg -i "$file" -C ;;
         "c")
 		[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
 		[ -z "$destdir" ] && exit
