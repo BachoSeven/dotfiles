@@ -5,7 +5,7 @@
 
 name="$(basename $0)"
 int=eDP-1
-ext=HDMI-2
+ext=DP-1
 
 if $(xrandr -q | grep -q "$ext connected"); then
 	while getopts ":elm" o; do
