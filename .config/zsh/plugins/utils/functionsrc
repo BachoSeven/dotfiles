@@ -249,7 +249,7 @@ sloc() {
 
 ytw() {
 	local vid="$1"
-	mpv "https://youtube.com/watch?v=$vid" || {ifinstalled nordvpn && nordvpn connect Sweden && mpv "https://youtube.com/watch?v=$vid"}
+	mpv "https://youtube.com/watch?v=$vid" || {ifinstalled nordvpn && nordvpn connect UK && mpv "https://youtube.com/watch?v=$vid"}
 }
 
 ## DICTIONARY FUNCTIONS ##
