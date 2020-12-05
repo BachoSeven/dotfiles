@@ -95,6 +95,7 @@
 	alias jctl='journalctl -p3 --pager-end'
 	alias jctll='journalctl -f -n 100 | ccze -A' #follow log
 	alias bctl='bluetoothctl'
+	alias rsb='sudo sys restart bluetooth'
 	alias cbh='connectHeadphones'
 	alias tg='telegram-desktop'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
