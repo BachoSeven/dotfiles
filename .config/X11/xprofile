@@ -31,3 +31,4 @@
 	mconnect 2>/dev/null & 		# Autoconnect to Android
 	_ mpDris2 2>/dev/null
 	_ transmission-daemon		# Bittorrent daemon
+	_ subs -d			# Start custom yt daemon
