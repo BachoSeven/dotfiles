@@ -5,10 +5,6 @@
 
 ping -q -c 1 example.org >/dev/null || exit
 
-notify-send "📰 Updating RSS feeds..."
-
 pgrep -f newsboat$ && xdotool key --window "$(xdotool search --name newsboat)" R && exit
 
 newsboat -x reload
-notify-send "📰 RSS feed update complete."
-exit
