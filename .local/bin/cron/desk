@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Simple script to control my Idasen desk through https://github.com/newAM/idasen
+
+notify-send "Stand up in 10 seconds!" && sleep 10s
+
+idasen stand && sleep 15m
+
+notify-send "Sitting down soon..." && sleep 5s
+
+idasen sit
