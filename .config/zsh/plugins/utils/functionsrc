@@ -732,6 +732,13 @@ gog() {
 line() {
 	awk "NR==$1{print;exit}"
 }
+## ccat: highlight with ca
+_exists highlight &&
+hcat() {
+	highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force "$1"
+}
+_exists kat &&
+ccat() { hcat "$1" | kat }
 
 llocate() {
 	local -a dbs=( -d /var/lib/mlocate/mlocate.db )

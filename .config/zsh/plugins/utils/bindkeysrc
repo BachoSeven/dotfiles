@@ -163,4 +163,3 @@
 		rcl="tty-clock -BDr"
 	_exists s && alias cs='. /usr/share/bash-completion/completions/s; cls'
 	_exists kat && alias cat='kat'
-	_exists highlight && alias ccat="highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force -- | cat"
