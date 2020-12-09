@@ -4,8 +4,8 @@
 
 notify-send "Stand up in 10 seconds!" && sleep 10s
 
-idasen stand && sleep 15m
+~/.local/bin/idasen stand && sleep 15m
 
 notify-send "Sitting down soon..." && sleep 5s
 
-idasen sit
+~/.local/bin/idasen sit
