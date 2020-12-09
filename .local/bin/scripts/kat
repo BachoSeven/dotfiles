@@ -1,7 +1,6 @@
 #!/bin/bash
-## CREDITS: https://github.com/GuidoFe/bashCatWithKitten
 if [ ! -t 1 ] ; then
-  cat $@
+  cat "$@"
   exit 0
 fi
 
@@ -58,7 +57,7 @@ fi
 echo ""
 for i in $(seq 0 $arrayLen); do
   if [[ $i = $OUTPUT_INDEX ]]; then
-    cat $@
+    cat "$@"
   else
     car=""
     if [[ $i = $UPPER_LINE_INDEX ]]; then
