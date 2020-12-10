@@ -24,22 +24,22 @@ use_native_file_dialogs=true
 use_system_icon_theme=true
 
 [DockWidgets]
-DocumentationDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfc\x2\xff\xff\xfa)\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xfc\x2\xff\xff\xfa)\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\a\x80\xff\xff\xfc\x2\xff\xff\xfa)\xff\xff\xfe\v\xff\xff\xfe\v)
+DocumentationDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xf6\x92\xff\xff\xfa)\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xf6\x92\xff\xff\xfa)\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\xf\0\xff\xff\xf6\x92\xff\xff\xfa)\xff\xff\xfe\v\xff\xff\xfe\v)
 DocumentationDockWidgetFloating=false
 DocumentationDockWidgetVisible=true
 DocumentationDockWidget_floating_geometry=@Rect(16 32 639 719)
 DocumentationDockWidget_minimized=false
 FileEditor=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xf9\xf2\xff\xff\xfa)\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xf9\xf2\xff\xff\xfa)\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\a\x80\xff\xff\xf9\xf2\xff\xff\xfa)\xff\xff\xfe\v\xff\xff\xfe\v)
 FileEditorFloating=true
-FileEditorVisible=true
-FileEditor_floating_geometry=@Rect(875 549 1024 510)
+FileEditorVisible=false
+FileEditor_floating_geometry=@Rect(0 0 1914 2154)
 FileEditor_minimized=false
-FilesDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0\x85\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0\x85\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0\x85)
+FilesDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0\x85\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0\x85\0\0\0\0\0\0\0\0\xf\0\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0\x85)
 FilesDockWidgetFloating=false
 FilesDockWidgetVisible=false
 FilesDockWidget_floating_geometry=@Rect(16 32 639 719)
 FilesDockWidget_minimized=false
-HistoryDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x1\f\0\0\0`\0\0\0\0\0\0\0\0\0\0\x1\f\0\0\0`\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\x1\f\0\0\0`)
+HistoryDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x1\f\0\0\0`\0\0\0\0\0\0\0\0\0\0\x1\f\0\0\0`\0\0\0\0\0\0\0\0\xf\0\0\0\0\0\0\0\0\0\0\0\x1\f\0\0\0`)
 HistoryDockWidgetFloating=false
 HistoryDockWidgetVisible=false
 HistoryDockWidget_floating_geometry=@Rect(16 32 639 719)
@@ -47,17 +47,17 @@ HistoryDockWidget_minimized=false
 NewsDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x1\0\0\0\0\x2\"\0\0\0@\0\0\x4\xb3\0\0\x1\x1a\0\0\x2\"\0\0\0@\0\0\x4\xb3\0\0\x1\x1a\0\0\0\0\0\0)
 NewsDockWidgetFloating=false
 NewsDockWidgetVisible=true
-TerminalDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\x18\0\0\x3\xff\0\0\x1\xc6\0\0\0\0\0\0\0\x18\0\0\x3\xff\0\0\x1\xc6\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\0\x18\0\0\x3\xff\0\0\x1\xc6)
+TerminalDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\x18\0\0\ay\0\0\b2\0\0\0\0\0\0\0\x18\0\0\ay\0\0\b2\0\0\0\0\0\0\0\0\xf\0\0\0\0\0\0\0\0\x18\0\0\ay\0\0\b2)
 TerminalDockWidgetFloating=false
 TerminalDockWidgetVisible=true
 TerminalDockWidget_floating_geometry=@Rect(16 32 639 719)
 TerminalDockWidget_minimized=false
-VariableEditor=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfd\xa8\xff\xff\xfd\xee\xff\xff\xfe\x97\xff\xff\xfe+\xff\xff\xfd\xa8\xff\xff\xfd\xee\xff\xff\xfe\x97\xff\xff\xfe+\xff\xff\xff\xff\0\0\0\0\a\x80\xff\xff\xfd\xa8\xff\xff\xfd\xee\xff\xff\xfe\x97\xff\xff\xfe+)
+VariableEditor=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfd\xa8\xff\xff\xfd\xee\xff\xff\xfe\x97\xff\xff\xfe+\xff\xff\xfd\xa8\xff\xff\xfd\xee\xff\xff\xfe\x97\xff\xff\xfe+\xff\xff\xff\xff\0\0\0\0\xf\0\xff\xff\xfd\xa8\xff\xff\xfd\xee\xff\xff\xfe\x97\xff\xff\xfe+)
 VariableEditorFloating=false
 VariableEditorVisible=false
 VariableEditor_floating_geometry=@Rect(16 32 639 719)
 VariableEditor_minimized=false
-WorkspaceView=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0`\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0`\0\0\0\0\0\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0`)
+WorkspaceView=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0`\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0`\0\0\0\0\0\0\0\0\xf\0\0\0\0\0\0\0\0\0\0\0\0\xd2\0\0\0`)
 WorkspaceViewFloating=false
 WorkspaceViewVisible=false
 WorkspaceView_floating_geometry=@Rect(16 32 639 719)
@@ -71,9 +71,9 @@ widget_title_3d=50
 widget_title_custom_style=true
 
 [MainWindow]
-current_directory_list=/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/AnNum/Laboratorio/script, /home/fra
-geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x3k\0\0\0\xf\0\0\ap\0\0\x2\x12\0\0\x3n\0\0\0\x12\0\0\am\0\0\x2\xf\0\0\0\0\0\0\0\0\a\x80\0\0\x3n\0\0\0\x12\0\0\am\0\0\x2\xf)
-windowState="@ByteArray(\0\0\0\xff\0\0\0\0\xfd\0\0\0\x2\0\0\0\0\0\0\x1Q\0\0\x3\xcd\xfc\x2\0\0\0\x3\xfb\0\0\0\x1e\0\x46\0i\0l\0\x65\0s\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\0\0\0\0;\0\0\x1\x95\0\0\0h\0\xff\xff\xff\xfb\0\0\0\x1a\0W\0o\0r\0k\0s\0p\0\x61\0\x63\0\x65\0V\0i\0\x65\0w\0\0\0\0;\0\0\x1\xe4\0\0\0G\0\xff\xff\xff\xfb\0\0\0\"\0H\0i\0s\0t\0o\0r\0y\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\0\0\0\0;\0\0\x3\xcd\0\0\0G\0\xff\xff\xff\0\0\0\x1\0\0\x4\0\0\0\x1\xce\xfc\x2\0\0\0\x1\xfc\0\0\0\x18\0\0\x1\xce\0\0\0\xf0\x1\0\0\x1e\xfa\0\0\0\0\x2\0\0\0\x5\xfb\0\0\0$\0T\0\x65\0r\0m\0i\0n\0\x61\0l\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0M\0\xff\xff\xff\xfb\0\0\0.\0\x44\0o\0\x63\0u\0m\0\x65\0n\0t\0\x61\0t\0i\0o\0n\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\xd1\0\xff\xff\xff\xfb\0\0\0\x14\0\x46\0i\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x44\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0:\0\xff\xff\xff\0\0\0\0\0\0\x1\xce\0\0\0\x4\0\0\0\x4\0\0\0\b\0\0\0\b\xfc\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x16\0M\0\x61\0i\0n\0T\0o\0o\0l\0\x42\0\x61\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0)"
+current_directory_list=/home/fra, /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/AnNum/Laboratorio/script
+geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\a\x7f\0\0\bo\0\0\0\x3\0\0\0\x3\0\0\a|\0\0\bl\0\0\0\0\0\0\0\0\xf\0\0\0\0\x3\0\0\0\x3\0\0\a|\0\0\bl)
+windowState="@ByteArray(\0\0\0\xff\0\0\0\0\xfd\0\0\0\x2\0\0\0\0\0\0\x1Q\0\0\x3\xcd\xfc\x2\0\0\0\x3\xfb\0\0\0\x1e\0\x46\0i\0l\0\x65\0s\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\0\0\0\0;\0\0\x1\x95\0\0\0h\0\xff\xff\xff\xfb\0\0\0\x1a\0W\0o\0r\0k\0s\0p\0\x61\0\x63\0\x65\0V\0i\0\x65\0w\0\0\0\0;\0\0\x1\xe4\0\0\0G\0\xff\xff\xff\xfb\0\0\0\"\0H\0i\0s\0t\0o\0r\0y\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\0\0\0\0;\0\0\x3\xcd\0\0\0G\0\xff\xff\xff\0\0\0\x1\0\0\az\0\0\b:\xfc\x2\0\0\0\x1\xfc\0\0\0\x18\0\0\b:\0\0\0\xf0\x1\0\0\x1e\xfa\0\0\0\0\x2\0\0\0\x5\xfb\0\0\0$\0T\0\x65\0r\0m\0i\0n\0\x61\0l\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0M\0\xff\xff\xff\xfb\0\0\0.\0\x44\0o\0\x63\0u\0m\0\x65\0n\0t\0\x61\0t\0i\0o\0n\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\xd1\0\xff\xff\xff\xfb\0\0\0\x14\0\x46\0i\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x44\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0:\0\xff\xff\xff\0\0\0\0\0\0\b:\0\0\0\x4\0\0\0\x4\0\0\0\b\0\0\0\b\xfc\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x16\0M\0\x61\0i\0n\0T\0o\0o\0l\0\x42\0\x61\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0)"
 
 [Scintilla]
 Bash\autoindentstyle=-1
@@ -878,10 +878,10 @@ oct_comment_str=1
 oct_uncomment_str=15
 octave_comment_string=1
 restoreSession=false
-savedSessionTabs=/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/AnNum/Laboratorio/script/newtonfractal.m
-saved_session_encodings=UTF-8
-saved_session_lines=5
-saved_session_tab_index=0
+savedSessionTabs=@Invalid()
+saved_session_encodings=@Invalid()
+saved_session_lines=@Invalid()
+saved_session_tab_index=@Invalid()
 showLineNumbers=true
 show_dbg_file=true
 show_edit_status_bar=false
@@ -897,7 +897,7 @@ wrap_lines=false
 
 [filesdockwidget]
 column_state=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x4\xe\0\0\0\x3\0\0\0\x2\0\0\0\x64\0\0\0\x3\0\0\0\x64\0\0\0\x1\0\0\0\x64\0\0\0\x64\0\0\0\x4\x1\x1\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\x64\xff\xff\xff\xff\0\0\0\x81\0\0\0\0\0\0\0\x4\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\x3\xe8\0\0\0\0\x64)
-mru_dir_list=/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/AnNum/Laboratorio/script, /home/fra
+mru_dir_list=/home/fra, /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/AnNum/Laboratorio/script
 restore_last_dir=false
 sort_files_by_column=0
 sort_files_by_order=0
