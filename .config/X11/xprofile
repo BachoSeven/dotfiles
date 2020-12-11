@@ -5,7 +5,7 @@
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
 
 # Dim->LockScreen->Suspend
-	xset s 120 60
+	xset s 180 60
 	xss-lock -n "/home/fra/.local/bin/scripts/dim" -- /usr/local/bin/slock &
 	xidlehook --not-when-fullscreen --not-when-audio --timer 600 "systemctl suspend" - &
 
