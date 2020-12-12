@@ -767,6 +767,18 @@ updatedbmnt() {
 	updatedb -l 0 -o "$db_file" -U "$1"
 }
 
+tt() {
+	export ESCDELAY=25
+	/usr/local/bin/tt $@
+	unset ESCDELAY
+}
+
+# simple wrapper to convert a text file tor `tt`
+ttconv() {
+	name="$(basename $1)"
+	iconv -f utf-8 -t ascii//translit $1 | sed 's/--/-/g' | sed '/^$/d' | sed 's/^[ \t]*//' | sed 's/\(^.\{1,80\}\).*/\1/' > $name.tt
+}
+
 confirm() {
     local answer
     printf "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
