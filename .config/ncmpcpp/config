@@ -5,18 +5,27 @@ mpd_port = 6602
 mpd_connection_timeout = 5
 mpd_music_dir = "~/slsk/music"
 mpd_crossfade_time = 4
+playlist_disable_highlight_delay = 1
+message_delay_time = 1
+## VISUALIZER
 visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = toggle_visualizer
 visualizer_in_stereo = yes
 visualizer_sync_interval = 30
-visualizer_type = spectrum
+## ELLIPSE
+# visualizer_type = ellipse
 # visualizer_look = "●▮" # ellipse
+# Standard 256 colors
+# visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
+## SPECTRUM
+visualizer_type = spectrum
 visualizer_look = "▌▌" # spectrum
-visualizer_color = cyan, green, yellow, magenta, red, blue
-# visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
-# visualizer_color = 46,45,44,43,42,41,40,39,38,37,36,35
-playlist_disable_highlight_delay = 1
-message_delay_time = 1
+visualizer_color = blue, cyan, green, yellow, magenta, red
+visualizer_spectrum_smooth_look = yes
+visualizer_spectrum_dft_size = 1
+visualizer_spectrum_hz_min = 27
+visualizer_spectrum_hz_max = 20000
+#
 ## For a song format you can use:
 ##
 ## %l - length
@@ -201,16 +210,14 @@ media_library_primary_tag = album_artist
 media_library_sort_by_mtime = yes
 ## Available values: wrapped, normal.
 default_find_mode = wrapped
-#default_tag_editor_pattern = %n - %t
+connected_message_on_startup = yes
 lines_scrolled = 2
 lyrics_fetchers = azlyrics, genius, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
 follow_now_playing_lyrics = yes
 fetch_lyrics_for_current_song_in_background = no
 store_lyrics_in_song_dir = no
-#generate_win32_compatible_filenames = yes
-#allow_for_physical_item_deletion = no
-## Note: Language has to be expressed as an ISO 639 alpha-2 code.
-#lastfm_preferred_language = en
+generate_win32_compatible_filenames = no
+allow_for_physical_item_deletion = no
 #
 #space_add_mode = add_remove
 #show_hidden_files_in_local_browser = no
