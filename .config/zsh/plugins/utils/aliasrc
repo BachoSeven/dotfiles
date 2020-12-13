@@ -74,7 +74,7 @@
 	alias nmdm='networkmanager_dmenu'
 	alias rnm='sudo NetworkManager restart'
 	alias nn='nordvpn'
-	alias w3m='w3m -sB'
+	alias w3m='w3m -s -B'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tb='taskbook'
 	alias octave='octave -q'
