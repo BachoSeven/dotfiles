@@ -1,5 +1,5 @@
 # Reduce timeout
-	export KEYTIMEOUT=14
+	export KEYTIMEOUT=10
 # Change cursor shape for different vi modes + decent rprompt indicator
 	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
 	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
