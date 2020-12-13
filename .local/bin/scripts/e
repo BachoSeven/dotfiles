@@ -2,7 +2,6 @@
 #
 # e [iters] [scale] - calculate e
 # (c) Kiëd Llaentenn <kiedtl@tilde.team>
-# See the COPYING file for copyright information.
 #
 # this uses the following infinite series formula:
 #
