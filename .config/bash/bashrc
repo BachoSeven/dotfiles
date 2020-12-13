@@ -26,6 +26,7 @@ NC='\[\e[m\]'                   # Color Reset
 
 # ViMode
 set -o vi
+bind '"jk":vi-movement-mode' # Just like in my vim config, `jk` enters normal mode.
 
 # Useful aliases
 alias c='clear'
