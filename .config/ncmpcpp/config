@@ -11,7 +11,8 @@ message_delay_time = 1
 visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = toggle_visualizer
 visualizer_in_stereo = yes
-visualizer_sync_interval = 30
+visualizer_sync_interval = 0
+visualizer_autoscale = yes
 ## ELLIPSE
 # visualizer_type = ellipse
 # visualizer_look = "●▮" # ellipse
@@ -22,7 +23,7 @@ visualizer_type = spectrum
 visualizer_look = "▌▌" # spectrum
 visualizer_color = blue, cyan, green, yellow, magenta, red
 visualizer_spectrum_smooth_look = yes
-visualizer_spectrum_dft_size = 1
+visualizer_spectrum_dft_size = 2
 visualizer_spectrum_hz_min = 27
 visualizer_spectrum_hz_max = 20000
 #
