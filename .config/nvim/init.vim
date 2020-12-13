@@ -42,8 +42,8 @@
 "	tab cycles through matching parentheses (and code blocks thanks to vim-matchup)
   nno <tab> %
 
-" jk is Esc in insert mode
-	ino jk <Esc>
+" kj is Esc in insert mode
+	ino kj <Esc>
 
 " Unlink system clipboard from vim's paste buffer
 	nn <leader>U :se clipboard=<CR>
