@@ -1,5 +1,5 @@
 # Reduce timeout
-	export KEYTIMEOUT=1
+	export KEYTIMEOUT=14
 # Change cursor shape for different vi modes + decent rprompt indicator
 	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
 	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
@@ -66,6 +66,8 @@
 		bindkey -M $m "gk" physical-up-line
 		bindkey -M $m "gj" physical-down-line
 	done
+  # Like in my vim config, `kj` enters normal mode
+  bindkey -M viins 'kj' vi-cmd-mode
 # Completion menu movements
 	bindkey -M menuselect 'h' vi-backward-char
 	bindkey -M menuselect 'k' vi-up-line-or-history
