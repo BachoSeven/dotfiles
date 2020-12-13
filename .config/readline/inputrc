@@ -28,6 +28,8 @@ set editing-mode vi
 $if mode=vi
 	$if Octave
 		set show-mode-in-prompt off
+		# NOTE: Temporary fix, which won't be necessary starting from Octave version 6.1.0.
+		set enable-bracketed-paste off
 	$else
 		set show-mode-in-prompt on
 		set vi-ins-mode-string \1\e[6 q\2

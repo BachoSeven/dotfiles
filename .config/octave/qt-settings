@@ -2,6 +2,7 @@
 autoIdentification=false
 connectOnStartup=true
 cursor_blinking=true
+customFileEditor=
 language=it_IT
 monospace_font=Hack Nerd Font Mono
 octave_startup_dir=
@@ -23,7 +24,7 @@ use_native_file_dialogs=true
 use_system_icon_theme=true
 
 [DockWidgets]
-DocumentationDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xfaL\xff\xff\xfb\x8b\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xfaL\xff\xff\xfb\x8b\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\xf\0\xff\xff\xfaL\xff\xff\xfb\x8b\xff\xff\xfe\v\xff\xff\xfe\v)
+DocumentationDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\xff\xff\xf8\xe3\xff\xff\xf6\xf\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xf8\xe3\xff\xff\xf6\xf\xff\xff\xfe\v\xff\xff\xfe\v\xff\xff\xff\xff\0\0\0\0\xf\0\xff\xff\xf8\xe3\xff\xff\xf6\xf\xff\xff\xfe\v\xff\xff\xfe\v)
 DocumentationDockWidgetFloating=false
 DocumentationDockWidgetVisible=true
 DocumentationDockWidget_floating_geometry=@Rect(16 32 639 719)
@@ -46,7 +47,7 @@ HistoryDockWidget_minimized=false
 NewsDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x1\0\0\0\0\x2\"\0\0\0@\0\0\x4\xb3\0\0\x1\x1a\0\0\x2\"\0\0\0@\0\0\x4\xb3\0\0\x1\x1a\0\0\0\0\0\0)
 NewsDockWidgetFloating=false
 NewsDockWidgetVisible=true
-TerminalDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\x18\0\0\xe\xff\0\0\b8\0\0\0\0\0\0\0\x18\0\0\xe\xff\0\0\b8\0\0\0\0\0\0\0\0\xf\0\0\0\0\0\0\0\0\x18\0\0\xe\xff\0\0\b8)
+TerminalDockWidget=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\x18\0\0\x5(\0\0\b\x14\0\0\0\0\0\0\0\x18\0\0\x5(\0\0\b\x14\0\0\0\0\0\0\0\0\xf\0\0\0\0\0\0\0\0\x18\0\0\x5(\0\0\b\x14)
 TerminalDockWidgetFloating=false
 TerminalDockWidgetVisible=true
 TerminalDockWidget_floating_geometry=@Rect(16 32 639 719)
@@ -71,8 +72,8 @@ widget_title_custom_style=true
 
 [MainWindow]
 current_directory_list=/home/fra, /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi/AnNum/Laboratorio/script
-geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\xe\xff\0\0\bo\0\0\0\x12\0\0\0\x12\0\0\x5\xf7\0\0\b]\0\0\0\0\0\x4\0\0\xf\0\0\0\0\0\0\0\0\0\0\0\xe\xff\0\0\bo)
-windowState="@ByteArray(\0\0\0\xff\0\0\0\0\xfd\0\0\0\x2\0\0\0\0\0\0\x1Q\0\0\x3\xcd\xfc\x2\0\0\0\x3\xfb\0\0\0\x1e\0\x46\0i\0l\0\x65\0s\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\0\0\0\0;\0\0\x1\x95\0\0\0h\0\xff\xff\xff\xfb\0\0\0\x1a\0W\0o\0r\0k\0s\0p\0\x61\0\x63\0\x65\0V\0i\0\x65\0w\0\0\0\0;\0\0\x1\xe4\0\0\0G\0\xff\xff\xff\xfb\0\0\0\"\0H\0i\0s\0t\0o\0r\0y\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\0\0\0\0;\0\0\x3\xcd\0\0\0G\0\xff\xff\xff\0\0\0\x1\0\0\xf\0\0\0\b@\xfc\x2\0\0\0\x1\xfc\0\0\0\x18\0\0\b@\0\0\0\xf0\x1\0\0\x1e\xfa\0\0\0\0\x2\0\0\0\x5\xfb\0\0\0$\0T\0\x65\0r\0m\0i\0n\0\x61\0l\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0P\0\xff\xff\xff\xfb\0\0\0.\0\x44\0o\0\x63\0u\0m\0\x65\0n\0t\0\x61\0t\0i\0o\0n\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\xd1\0\xff\xff\xff\xfb\0\0\0\x14\0\x46\0i\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x44\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0:\0\xff\xff\xff\0\0\0\0\0\0\b@\0\0\0\x4\0\0\0\x4\0\0\0\b\0\0\0\b\xfc\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x16\0M\0\x61\0i\0n\0T\0o\0o\0l\0\x42\0\x61\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0)"
+geometry="@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\xf\0\0\0\xf\0\0\x5=\0\0\b`\0\0\0\x12\0\0\0\x12\0\0\x5:\0\0\b]\0\0\0\0\0\0\0\0\xf\0\0\0\0\x12\0\0\0\x12\0\0\x5:\0\0\b])"
+windowState="@ByteArray(\0\0\0\xff\0\0\0\0\xfd\0\0\0\x2\0\0\0\0\0\0\x1Q\0\0\x3\xcd\xfc\x2\0\0\0\x3\xfb\0\0\0\x1e\0\x46\0i\0l\0\x65\0s\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\0\0\0\0;\0\0\x1\x95\0\0\0h\0\xff\xff\xff\xfb\0\0\0\x1a\0W\0o\0r\0k\0s\0p\0\x61\0\x63\0\x65\0V\0i\0\x65\0w\0\0\0\0;\0\0\x1\xe4\0\0\0G\0\xff\xff\xff\xfb\0\0\0\"\0H\0i\0s\0t\0o\0r\0y\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\0\0\0\0;\0\0\x3\xcd\0\0\0G\0\xff\xff\xff\0\0\0\x1\0\0\x5)\0\0\b\x1c\xfc\x2\0\0\0\x1\xfc\0\0\0\x18\0\0\b\x1c\0\0\0\xf0\x1\0\0\x1e\xfa\0\0\0\0\x2\0\0\0\x5\xfb\0\0\0$\0T\0\x65\0r\0m\0i\0n\0\x61\0l\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0V\0\xff\xff\xff\xfb\0\0\0.\0\x44\0o\0\x63\0u\0m\0\x65\0n\0t\0\x61\0t\0i\0o\0n\0\x44\0o\0\x63\0k\0W\0i\0\x64\0g\0\x65\0t\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\xd1\0\xff\xff\xff\xfb\0\0\0\x14\0\x46\0i\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x44\0i\0t\0o\0r\x1\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0\xfb\0\0\0\x1c\0V\0\x61\0r\0i\0\x61\0\x62\0l\0\x65\0\x45\0\x64\0i\0t\0o\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0:\0\xff\xff\xff\0\0\0\0\0\0\b\x1c\0\0\0\x4\0\0\0\x4\0\0\0\b\0\0\0\b\xfc\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x16\0M\0\x61\0i\0n\0T\0o\0o\0l\0\x42\0\x61\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0)"
 
 [Scintilla]
 Bash\autoindentstyle=-1
@@ -840,7 +841,7 @@ Text\style0\paper=16777215
 
 [editor]
 always_reload_changed_files=false
-auto_endif=1
+auto_endif=2
 auto_indent=true
 backspace_unindents_line=false
 break_lines=false
@@ -913,9 +914,9 @@ mru_list=@Invalid()
 allow_web_connection=false
 
 [settings]
-geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\a\xee\0\0\0.\0\0\xe\xc7\0\0\x6\xf4\0\0\a\xf1\0\0\0\x31\0\0\xe\xc4\0\0\x6\xf1\0\0\0\0\0\0\0\0\xf\0\0\0\a\xf1\0\0\0\x31\0\0\xe\xc4\0\0\x6\xf1)
-last_editor_styles_tab=1
-last_tab=2
+geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\a\xf7\0\0\0\x37\0\0\xe\xd0\0\0\x6\xfd\0\0\a\xfa\0\0\0:\0\0\xe\xcd\0\0\x6\xfa\0\0\0\0\0\0\0\0\xf\0\0\0\a\xfa\0\0\0:\0\0\xe\xcd\0\0\x6\xfa)
+last_editor_styles_tab=0
+last_tab=1
 
 [shortcuts]
 doc_browser%3Ago_back=Alt+Left
@@ -1044,7 +1045,7 @@ cursorType=ibeam
 cursorUseForegroundColor=true
 focus_after_command=false
 fontName=Hack Nerd Font
-fontSize=12
+fontSize=13
 history_buffer=1000
 print_debug_location=false
 
