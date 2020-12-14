@@ -29,6 +29,3 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 *.scrollBar: false
-! Cursor
-! Xcursor.theme: ArchCursorTheme
-! Xcursor.size: 24
