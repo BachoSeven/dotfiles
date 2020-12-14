@@ -19,13 +19,13 @@
 
 # Utils
 
-	[[ -f ~/.config/X11/Xresources ]] && xrdb -load ~/.config/X11/Xresources
-	remaps				# Switch caps/super and one-tap_caps/esc
-	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
-	copyq &				# Clipboard management
-	_ redshift			# Color temperature
 	mon -e				# Monitor selection
+	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
+	_ redshift			# Color temperature
+	[[ -f ~/.config/X11/Xresources ]] && xrdb -load ~/.config/X11/Xresources
 	togcomp				# Compositor
+	remaps				# Switch caps/super and one-tap_caps/esc
+	copyq &				# Clipboard management
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	mconnect 2>/dev/null & 		# Autoconnect to Android
 	_ mpDris2 2>/dev/null
