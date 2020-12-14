@@ -11,9 +11,9 @@ message_delay_time = 1
 visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = toggle_visualizer
 visualizer_in_stereo = yes
-visualizer_sync_interval = 20
+visualizer_sync_interval = 0
 visualizer_autoscale = yes
-visualizer_fps = 60
+visualizer_fps = 30
 ## ELLIPSE
 # visualizer_type = ellipse
 # visualizer_look = "●▮" # ellipse
