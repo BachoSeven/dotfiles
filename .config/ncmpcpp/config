@@ -13,6 +13,7 @@ visualizer_output_name = toggle_visualizer
 visualizer_in_stereo = yes
 visualizer_sync_interval = 20
 visualizer_autoscale = yes
+visualizer_fps = 60
 ## ELLIPSE
 # visualizer_type = ellipse
 # visualizer_look = "●▮" # ellipse
