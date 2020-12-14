@@ -39,9 +39,6 @@
 "		 | Key Mappings |
 "		 +--------------+
 "
-"	tab cycles through matching parentheses (and code blocks thanks to vim-matchup)
-  nno <tab> %
-
 " kj is Esc in insert mode
 	ino kj <Esc>
 
