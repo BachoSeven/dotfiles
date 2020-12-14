@@ -7,7 +7,7 @@ name="$(basename $0)"
 int=eDP-1
 ext=DP-1
 
-if $(xrandr -q | grep -qE "^$ext connected"); then
+if $(xrandr -q | grep -q "\b$ext connected"); then
 	while getopts ":elm" o; do
 		case "${o}" in
       e) # External
