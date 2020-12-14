@@ -12,7 +12,7 @@ main() {
     while getopts ":elm" o; do
       case "${o}" in
         e) # External
-          xrandr --output $int --off --output $ext --auto ;;
+          xrandr --output $int --off --output $ext --auto --dpi 144 ;;
         l) # Laptop
           xrandr --output $ext --off --output $int --auto ;;
         m) # Multi
