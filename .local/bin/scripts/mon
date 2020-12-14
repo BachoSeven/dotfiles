@@ -2,51 +2,17 @@
 
 # Francesco Minnocci 2020
 # This takes care of my external monitor setup, mostly for non-interactive purposes.
-# It also sets the "correct" DPI if external-only mode is selected.
-
-dpi() {
-  info="$1"
-  file="$XDG_CONFIG_HOME/X11/dpi"
-
-  grep 'Xft.dpi' "$file" && xrdb -merge "$file" && exit 0
-
-  width=$(echo "$info" | rev | cut -d ' ' -f 3 | rev)
-  width_in=$(echo "${width%mm}" | awk '{print $1 * 0.039370}')
-
-  height=$(echo "$info" | rev | cut -d ' ' -f 1 | rev)
-  height_in=$(echo "${height%mm}" | awk '{print $1 * 0.039370}')
-
-  px=$(echo "$info" | cut -d ' ' -f 4)
-
-  width_px=${px%x*}
-
-  height_px=${px#*x}
-  height_px=${height_px%%+*}
-
-  diagonal_px=$(awk -v w="$width_px" -v h="$height_px" \
-     'BEGIN{print sqrt(w*w+h*h)}')
-
-  diagonal_in=$(awk -v w="$width_in" -v h="$height_in" \
-     'BEGIN{print sqrt(w*w + h*h)}')
-
-  dpi=$(awk -v dp="$diagonal_px" -v di="$diagonal_in" \
-     'BEGIN{print dp / di}')
-
-  echo "Xft.dpi: $dpi" >> "$file"
-  xrdb -merge "$file"
-}
 
 main() {
   int=${int:-eDP-1}
   ext=${ext:-DP-1}
-  info=$(xrandr | grep "\b$ext connected")
+  info=$(xrandr -q | grep "\b$ext connected")
   echo $info
   if [ -n "$info" ]; then
     while getopts ":elm" o; do
       case "${o}" in
         e) # External
-          xrandr --output $int --off --output $ext --auto
-          dpi "$info" ;;
+          xrandr --output $int --off --output $ext --auto ;;
         l) # Laptop
           xrandr --output $ext --off --output $int --auto ;;
         m) # Multi
