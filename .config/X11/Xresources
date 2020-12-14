@@ -5,6 +5,21 @@
 !!              _ / /\ \| |  ( (/ /|___ | |_| | |_| | |  ( (__( (/ /|___ |
 !!             (_)_/  \_\_|   \____|___/ \___/ \____|_|   \____)____|___/
 !!
+!!
+
+#include "Xresources.d/gruvbox"
+! #include "Xresources.d/solarized"
+#include "Xresources.d/xscreensaver"
+
+!! Sxiv
+Sxiv.font: Hack Nerd Font:size=14:style=bold
+Sxiv.background: C0
+Sxiv.foreground: C4
+
+!! St
+st.alpha: 0.8
+st.bellvolume: 0
+st.blinktimeout: 666
 
 !! Appearance
 Xft.antialias: true
@@ -15,21 +30,5 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 *.scrollBar: false
 ! Cursor
-Xcursor.theme: ArchCursorTheme
-Xcursor.size: 24
-
-
-#include "Xresources.d/gruvbox"
-! #include "Xresources.d/solarized"
-
-!! Sxiv
-Sxiv.font: Hack Nerd Font:size=14:style=bold
-Sxiv.background: C0
-Sxiv.foreground: C4
-
-#include "Xresources.d/xscreensaver"
-
-!! St
-st.alpha: 0.8
-st.bellvolume: 0
-st.blinktimeout: 666
+! Xcursor.theme: ArchCursorTheme
+! Xcursor.size: 24

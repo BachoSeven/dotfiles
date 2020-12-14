@@ -19,10 +19,10 @@
 
 # Utils
 
+	[[ -f ~/.config/X11/Xresources ]] && xrdb -load ~/.config/X11/Xresources
 	mon -e				# Monitor selection
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
 	_ redshift			# Color temperature
-	[[ -f ~/.config/X11/Xresources ]] && xrdb -load ~/.config/X11/Xresources
 	togcomp				# Compositor
 	remaps				# Switch caps/super and one-tap_caps/esc
 	copyq &				# Clipboard management
