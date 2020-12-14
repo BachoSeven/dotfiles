@@ -54,6 +54,8 @@ shuffle = true
 "J" = "shift down 1"
 "K" = "shift up 1"
 "C" = "clear"
+# Open the context menu for a Spotify link in the clipboard
+"Ctrl+v" = "insert"
 
 ######################################
 # Sound
