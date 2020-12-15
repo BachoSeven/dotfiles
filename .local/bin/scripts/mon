@@ -16,7 +16,7 @@ main() {
         l) # Laptop
           xrandr --output $ext --off --output $int --auto ;;
         m) # Multi
-          xrandr --output $int --auto --output $ext --primary --auto --right-of eDP-1 ;;
+          xrandr --output $int --auto --output $ext --primary --auto --right-of eDP-1 --dpi 96 ;;
         *)
           printf "Invalid option: -%s\n" "$OPTARG"
           printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;
