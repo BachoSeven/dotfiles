@@ -111,7 +111,7 @@
 	alias mx='weechat'
 	alias ele='element-desktop'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
-	alias brb='kitty asciiquarium & kitty --hold figlet -f ~/tmp/figlet-fonts/3d brb'
+	alias brb='st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d brb'
 
 ## Disks
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
