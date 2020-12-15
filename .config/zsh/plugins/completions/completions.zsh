@@ -67,8 +67,18 @@
 # don't complete things which aren't available, such as the many zsh functions starting with an underscore.
 	zstyle ':completion:*:*:-command-:*:*' tag-order 'functions:-non-comp *' functions
 	zstyle ':completion:*:functions-non-comp' ignored-patterns '_*'
+  zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
 # complete sudo commands
 	zstyle ':completion::complete:*' gain-privileges 1
+# Don't complete uninteresting users...
+  zstyle ':completion:*:*:*:users' ignored-patterns \
+    adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
+    dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
+    hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
+    mailman mailnull mldonkey mysql nagios \
+    named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
+    operator pcap postfix postgres privoxy pulse pvm quagga radvd \
+    rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs '_*'
 
 # function to visualize dir stack
 	di () {
