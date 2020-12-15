@@ -4,7 +4,7 @@
 # some choice programs to use to open it.
 
 case "$(printf "copy url\\nmpv\\nmpv(queue)\\nmpv(loop)\\nqueue download\\n\\nqueue youtube-dl\\nbrowser\\nsxiv\\nw3m\\nmpv(float)" | dmenu -i -p "Open link with what program?")" in
-	"copy url") echo "$1" | xclip -selection clipboard ;;
+	"copy url") echo "$1" | xclip -sel c -r ;;
 	"mpv") setsid -f mpv -quiet "$1" >/dev/null 2>&1 ;;
 	"mpv(queue)") setsid -f mpvq "$1" >/dev/null 2>&1 ;;
 	"mpv (loop)") setsid -f mpv -quiet --loop "$1" >/dev/null 2>&1 ;;

@@ -8,4 +8,4 @@ if [ ! -f "$file" ]; then
   ssh-keygen -t rsa
 fi
 
-xclip -sel clip $file
+xclip -sel c -r $file

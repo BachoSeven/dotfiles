@@ -31,10 +31,10 @@ do
 	"f")
 		convert -flop "$file" "$file" ;;
 	"y")
-		echo -n "$file" | tr -d '\n' | xclip -selection clipboard &&
+		echo -n "$file" | tr -d '\n' | xclip -sel c -r &&
 		notify-send "$file copied to clipboard" & ;;
 	"Y")
-		readlink -f "$file" | tr -d '\n' | xclip -selection clipboard &&
+		readlink -f "$file" | tr -d '\n' | xclip -sel c -r &&
 			notify-send "$(readlink -f "$file") copied to clipboard" & ;;
 	"d")
 		[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
@@ -45,6 +45,6 @@ do
 	"n")
 		notify-send "File information" "$(mediainfo "$file")" ;;
 	"I")
-		imgur.sh "$file" >/dev/null | head -n 1 | xclip -sel clip;;
+		imgur.sh "$file" >/dev/null | head -n 1 | xclip -sel c -r;;
         esac
 done

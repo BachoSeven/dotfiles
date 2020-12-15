@@ -47,7 +47,7 @@
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias trem='transmission-remote'
-	alias xclip='xclip -sel clip'
+	alias xclip='xclip -sel c -r'
 	alias rm='rm -v'
 	alias cp='cp -v'
 	alias mv='mv -v'
