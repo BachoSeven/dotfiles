@@ -51,7 +51,7 @@ done
 
 [ ! "$output" ] && printf "No input given!\n" && exit
 if [ "$copy" ]; then
-	echo "$output" | xclip -sel clip &> /dev/null && notify-send "${output} was copied to system clipboard."
+	echo "$output" | xclip -sel c -r &> /dev/null && notify-send "${output} was copied to system clipboard."
 else
 	echo "$output"
 fi

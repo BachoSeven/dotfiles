@@ -178,8 +178,6 @@ keymap ef       PEEK_LINK					#Show link under cursor.
 keymap M-o      EXTERN
 #copy current url and remove newline at the end.
 keymap yy       EXTERN     copy
-#keymap yy       EXTERN     "echo -n %s | xclip -i -selection clipboard"
-#keymap yy       EXTERN     "echo -n %s | xsel -b"
 #open link under cursor with external browser = sensible browser
 keymap M-p      EXTERN_LINK
 #Copy link under cursor, It does not copy images urls
