@@ -38,8 +38,6 @@
 "		 | Key Mappings |
 "		 +--------------+
 "
-" kj is Esc in insert mode
-	ino kj <Esc>
 " Unlink system clipboard from vim's paste buffer
 	nn <leader>U :se clipboard=<CR>
 

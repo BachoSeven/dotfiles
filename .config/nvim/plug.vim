@@ -69,6 +69,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/limelight.vim'
 	Plug 'jamessan/vim-gnupg'
   Plug 'mhinz/vim-startify'
+	Plug 'jdhao/better-escape.vim'
 
 "" Markdown
 " Live Preview
@@ -151,7 +152,12 @@ let g:startify_skiplist = [
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
 
-" Fuzzy Finder
+
+" Better Escape
+    let g:better_escape_shortcut = 'kj'
+    let g:better_escape_interval = 150
+
+"" FZF
 	let g:fzf_layout = { 'window': '10new' }
 	nn <silent> <C-p> :FZF -m<cr>
 
