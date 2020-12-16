@@ -7,6 +7,7 @@
 - add italian as spellchecking language
 - block notifications globally from "Site settings"(!)
 - setup search engines: choose a valid Searx from `searx.space`, and then add ddg (and keep nosearch)
+- chrome://settings/content/pdfDocuments: download instead of horrible pdf viewer.
 
 ## Flags
 - ext-mime-request-handling[always prompt]
