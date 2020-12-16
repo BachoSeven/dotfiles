@@ -62,7 +62,7 @@
 
 !! Dwm
 dwm.normbgcolor:	BG
-dwm.normfgcolor:	C7
+dwm.normfgcolor:	C15
 dwm.normbordercolor:	BG
 dwm.selbgcolor:		BG
 dwm.selfgcolor:		C15
