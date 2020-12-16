@@ -9,13 +9,17 @@
 - setup search engines: choose a valid Searx from `searx.space`, and then add ddg (and keep nosearch)
 - chrome://settings/content/pdfDocuments: download instead of horrible pdf viewer.
 
-## Flags
-- ext-mime-request-handling[always prompt]
-- disable-search-engine-collection
-- native notifications
-- quieter notifications
-- Compositor threaded scrollbar scrolling
-- Web Platform Controls Dark Mode
+## Cli flags [now in chromium-flags.conf]
+``` sh
+--flag-switches-begin
+--force-dark-mode
+--process-per-site
+--disable-search-engine-collection
+--extension-mime-request-handling=always-prompt-for-install
+--pdf-plugin-name=chrome
+--enable-features=WebUIDarkMode,CSSColorSchemeUARendering,CompositorThreadedScrollbarScrolling,NativeNotifications,QuietNotificationPrompts
+--flag-switches-end
+```
 
 ## Bookmarks
 - Import from file.
