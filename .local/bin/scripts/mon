@@ -14,7 +14,7 @@ main() {
         e) # External
           xrandr --output $int --off --output $ext --auto --dpi 144 ;;
         l) # Laptop
-          xrandr --output $ext --off --output $int --auto ;;
+          xrandr --output $ext --off --output $int --auto --dpi 96 ;;
         m) # Multi
           xrandr --output $int --auto --output $ext --primary --auto --right-of eDP-1 --dpi 96 ;;
         *)
