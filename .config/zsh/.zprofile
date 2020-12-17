@@ -68,7 +68,7 @@
 
 # Yt
 	export SUBS_FILE="$XDG_CONFIG_HOME/yt/subs"
-	export SUBS_MENU_PROG="dmenu -bw 5 -nb #282828 -nf #83a598 -c -f -r -i -l 10 -p YT"
+	export SUBS_MENU_PROG="dmenu -bw 5 -nb #458588 -nf #83a598 -sb #fb4934 -sf #1d2021 -c -f -r -i -l 10 -p YT"
 
 # Mpd
 	export MPD_HOST="127.0.0.1"
@@ -220,4 +220,4 @@ ex=🎯:\
 
 # Start graphical server on tty1 if not already running.
 	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" &> /dev/null
-	sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null
+	[ -z "$(ls /dev/input/by-id | grep Anne)" ] && sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null
