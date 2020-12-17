@@ -1,6 +1,8 @@
 # Because who cares about case!?
 --glob
 !.git/*
+--glob
+!*/Microsoft/*
 --colors
 match:bg:black
 --colors
