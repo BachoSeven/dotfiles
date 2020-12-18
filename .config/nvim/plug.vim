@@ -155,7 +155,7 @@ let g:startify_skiplist = [
 
 " Better Escape
     let g:better_escape_shortcut = 'kj'
-    let g:better_escape_interval = 150
+    let g:better_escape_interval = 170
 
 "" FZF
 	let g:fzf_layout = { 'window': '10new' }
