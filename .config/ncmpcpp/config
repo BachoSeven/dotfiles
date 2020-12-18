@@ -11,7 +11,6 @@ message_delay_time = 1
 visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = toggle_visualizer
 visualizer_in_stereo = yes
-visualizer_sync_interval = 0
 visualizer_autoscale = yes
 visualizer_fps = 30
 ## ELLIPSE
@@ -217,7 +216,7 @@ connected_message_on_startup = yes
 lines_scrolled = 2
 lyrics_fetchers = azlyrics, genius, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
 follow_now_playing_lyrics = yes
-fetch_lyrics_for_current_song_in_background = no
+fetch_lyrics_for_current_song_in_background = yes
 store_lyrics_in_song_dir = no
 generate_win32_compatible_filenames = no
 allow_for_physical_item_deletion = no
