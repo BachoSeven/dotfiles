@@ -25,14 +25,14 @@ msgId="981141"
 
 # Handle arguments
 case "$1" in
-	inc*)
+	inc*) # increase
 		valnorm="$((current+$2))" ;;
-	dec*)
+	dec*) # decrease
 		valnorm="$((current-$2))" ;;
-	u*)
+	u*) # up
 		valnorm="$(dmenu -p 'Input brightness [default: 80%]' )"
 		[ -n "$valnorm" ] || valnorm="$defu" ;;
-	d*)
+	d*) # down
 		valnorm="$(dmenu -p 'Input brightness [default: 20%]' )"
 		[ -n "$valnorm" ] || valnorm="$defd" ;;
 	set)

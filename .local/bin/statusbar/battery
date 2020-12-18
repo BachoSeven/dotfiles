@@ -4,8 +4,8 @@
 # to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
 
 case $BLOCK_BUTTON in
-	4) xbacklight -inc 10 ;;
-	5) xbacklight -dec 10 ;;
+	4) br inc 10 ;;
+	5) br dec 10 ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 

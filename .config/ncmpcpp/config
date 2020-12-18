@@ -8,7 +8,7 @@ mpd_crossfade_time = 4
 playlist_disable_highlight_delay = 1
 message_delay_time = 1
 ## VISUALIZER
-visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = toggle_visualizer
 visualizer_in_stereo = yes
 visualizer_sync_interval = 0
