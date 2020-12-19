@@ -350,3 +350,7 @@ map di dragon-individual
 map dm mvdrag
 map dc cpdrag
 map dl dldrag
+
+#			Command line configuration
+cmap <tab> cmd-menu-complete
+cmap <backtab> cmd-menu-complete-back
