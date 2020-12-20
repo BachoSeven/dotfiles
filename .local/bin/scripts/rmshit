@@ -13,7 +13,8 @@ shittyfiles = [
     '~/.local/state',
     '~/.local/share/cargo', # Build files
     '~/Desktop',            # Firefox creates this
-    '~/.mozilla',            # Firefox creates this
+    '~/.mozilla',           # Firefox creates this
+    '~/Desktop',            # Spotify sometimes creates this
     '~/.thumbnails',
     '~/.gconfd',
     '~/.gconf',
