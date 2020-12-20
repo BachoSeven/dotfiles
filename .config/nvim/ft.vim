@@ -19,10 +19,9 @@ aug init-md
 aug END
 
 " Set some options for scripts in general
-	au FileType sh,octave se shiftwidth=2 tabstop=2 softtabstop=2
+	au FileType sh,zsh,octave se shiftwidth=2 tabstop=2 softtabstop=2
 
-" enable accessing GNU Octave documentation from vim using GNU TexInfo.
-" how autistic..
+" enable accessing GNU Octave documentation from vim using GNU TexInfo (lol)
   let s:conditionalEnd = '\(([^()]*\)\@!\<end\>\([^()]*)\)\@!'
   au FileType octave let b:match_words = '\<if\>\|\<while\>\|\<for\>\|\<switch\>:' .
        \ s:conditionalEnd . ',\<if\>:\<elseif\>:\<else\>:' . s:conditionalEnd
