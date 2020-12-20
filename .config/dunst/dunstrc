@@ -31,7 +31,7 @@
     sort = yes
     idle_threshold = 120
 
-    font = Monospace 14
+    font = Monospace 12
 
     line_height = 0
     markup = full
@@ -47,7 +47,7 @@
     # Markup is allowed
     format = "<b>%s</b>\n%b"
 
-    alignment = left
+    alignment = center
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
@@ -93,8 +93,8 @@
     frame_color= "#fb4934"
     timeout = 0
 
-	appname = Spotify
-	frame_color = "#30AB70"
-	timeout = 5
+appname = Spotify
+frame_color = "#30AB70"
+timeout = 5
 
 # vim: ft=cfg
