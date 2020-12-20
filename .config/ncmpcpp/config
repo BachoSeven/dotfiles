@@ -213,7 +213,6 @@ media_library_sort_by_mtime = yes
 ## Available values: wrapped, normal.
 default_find_mode = wrapped
 connected_message_on_startup = yes
-lines_scrolled = 2
 lyrics_fetchers = azlyrics, genius, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
 follow_now_playing_lyrics = yes
 # fetch_lyrics_for_current_song_in_background = yes
@@ -275,6 +274,7 @@ ignore_leading_the = yes
 #block_search_constraints_change_if_items_found = yes
 mouse_support = yes
 mouse_list_scroll_whole_page = no
+lines_scrolled = 5
 empty_tag_marker=" -- ‼ -- "
 enable_window_title = no
 search_engine_default_search_mode = 2
