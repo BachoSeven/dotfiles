@@ -902,5 +902,16 @@
             "@ToDo"
         ],
         "_isTask": false
+    },
+    "81": {
+        "_id": 81,
+        "_date": "Fri Jan 31 2020",
+        "_timestamp": 1580470148910,
+        "description": " nmcli: c[onnections], { d[evice] w[ifi] (l[ist] s[can]) } ",
+        "isStarred": false,
+        "boards": [
+            "@Shortcuts"
+        ],
+        "_isTask": false
     }
 }
