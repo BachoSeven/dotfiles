@@ -913,5 +913,27 @@
             "@Shortcuts"
         ],
         "_isTask": false
+    },
+    "82": {
+        "_id": 82,
+        "_date": "Fri Jul 03 2020",
+        "_timestamp": 1593731926887,
+        "description": "add creating mount folders to arch setup",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
+    },
+    "83": {
+        "_id": 83,
+        "_date": "Sun Jul 05 2020",
+        "_timestamp": 1593965745783,
+        "description": "fix mcl",
+        "isStarred": false,
+        "boards": [
+            "@ToDo"
+        ],
+        "_isTask": false
     }
 }

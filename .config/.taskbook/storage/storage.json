@@ -132,28 +132,6 @@
         ],
         "_isTask": false
     },
-    "66": {
-        "_id": 66,
-        "_date": "Fri Jul 03 2020",
-        "_timestamp": 1593731926887,
-        "description": "add creating mount folders to arch setup",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
-    "76": {
-        "_id": 76,
-        "_date": "Sun Jul 05 2020",
-        "_timestamp": 1593965745783,
-        "description": "fix mcl",
-        "isStarred": false,
-        "boards": [
-            "@ToDo"
-        ],
-        "_isTask": false
-    },
     "103": {
         "_id": 103,
         "_date": "Sat Aug 15 2020",

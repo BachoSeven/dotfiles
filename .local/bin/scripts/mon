@@ -6,9 +6,7 @@
 main() {
   int=${int:-eDP-1}
   ext=${ext:-DP-1}
-  info=$(xrandr -q | grep "\b$ext connected")
-  echo $info
-  if [ -n "$info" ]; then
+  if xrandr -q | grep "\b$ext connected"; then
     while getopts ":elm" o; do
       case "${o}" in
         e) # External

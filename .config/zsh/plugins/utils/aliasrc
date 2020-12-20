@@ -1,5 +1,5 @@
 # vim: ft=zsh
-## This file is kept bash-compatible for use with dmenu_aliases
+## This file is kept bash-compatible for use with the dmenu_aliases script.
 
 ## Basics
 
@@ -176,7 +176,8 @@
 	alias zt='zsh_bench'
 
 # Games
-	alias gtyp='typiskt -e'
+	alias typ='typiskt'
+	alias gt='typiskt -e'
 	alias sol='ttysolitaire --no-background-color'
 	alias tboi='cd ~/slsk/games/TBOI/The_Binding_of_Isaac_Afterbirth; ./run-x64.sh && cd -'
 
