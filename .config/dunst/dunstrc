@@ -47,7 +47,7 @@
     # Markup is allowed
     format = "<b>%s</b>\n%b"
 
-    alignment = center
+    alignment = left
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
