@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# This is only here because chromium has hardcoded `xdg-email` for handling the `mailto` protocol.
+
+xdg-open "$1"
