@@ -107,9 +107,8 @@ current_item_inactive_column_prefix = $(magenta)$r
 #
 current_item_inactive_column_suffix = $/r$(end)
 #
-#now_playing_prefix = $b
-#
-#now_playing_suffix = $/b
+now_playing_prefix = "$b"
+now_playing_suffix = $/b
 #
 #browser_playlist_prefix = "$2playlist$9 "
 #
