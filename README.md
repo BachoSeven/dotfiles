@@ -1,4 +1,4 @@
-![](pics/screens/ricing/dwm_def.png)
+![](pics/screens/ricing/dwm_top.png)
 <a href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"></a>
 
 ``` sh
@@ -78,8 +78,8 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 ### Dwm
 
 #### Gruvboxy
+![](pics/screens/ricing/dwm_def.png)
 ![](pics/screens/ricing/dwm_after-bach.png)
-![](pics/screens/ricing/dwm.png)
 ![](pics/screens/ricing/dwm2.png)
 ![](pics/screens/ricing/peace_radiohead.png)
 
