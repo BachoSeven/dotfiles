@@ -97,7 +97,6 @@
 	alias bctl='bluetoothctl'
 	alias rsb='sudo sys restart bluetooth'
 	alias cbh='connectHeadphones'
-	alias tg='telegram-desktop'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias xr="xrandr"
 	alias glow='glow -p -w 120'
@@ -108,9 +107,12 @@
 	alias chill='mpv https://tinyurl.com/wbl4fya'
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias smi='sudo make clean install'
-	alias mx='weechat'
-	alias ele='element-desktop'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
+# Chats
+	alias tg='telegram-desktop'
+	alias qx='QuickMedia matrix'
+	alias mx='weechat'
+	alias el='element-desktop'
 	alias brb='st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d brb'
 
 ## Disks
