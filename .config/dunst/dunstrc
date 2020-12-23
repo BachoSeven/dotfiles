@@ -70,8 +70,6 @@
     verbosity = crit
     # corner_radius = 7
     force_xinerama = false
-[experimental]
-    per_monitor_dpi = true
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
