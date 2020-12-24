@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # latexcompile
 # Keefer Rourke <mail@krourke.org>

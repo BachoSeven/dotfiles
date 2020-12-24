@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo Inserisci il nome del file da stampare senza estenzione
 read -r a
 cp $a.pdf Temporaneo.pdf

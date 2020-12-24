@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # Franceso Minnocci 2020
 # NOTE: This probably only works well with `ncspot` and/or the official client
