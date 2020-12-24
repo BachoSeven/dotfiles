@@ -5,7 +5,7 @@ image/png=img.desktop;
 image/jpeg=img.desktop;
 x-scheme-handler/mailto=mail.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-14UST0.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-DAI1V0.desktop
 
 [Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-14UST0.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-DAI1V0.desktop;

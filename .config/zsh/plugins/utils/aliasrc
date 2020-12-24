@@ -111,7 +111,7 @@
 # Chats
 	alias tg='telegram-desktop'
 	alias qx='QuickMedia matrix'
-	alias mx='weechat'
+	alias mx='kitty weechat'
 	alias el='element-desktop'
 	alias brb='st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d brb'
 
