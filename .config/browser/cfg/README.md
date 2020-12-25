@@ -100,7 +100,7 @@ r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
 sc:	https://libgen.bban.top/s/%s scihub
-se:	https://searx.fmac.xyz/search?q=%s Searx
+se:	https://searx.prvcy.eu/search?q=%s Searx
 tc: https://tube.cadence.moe/search?q=%s TubeCadence
 tldr:	https://tldr.ostera.io/%s tldr
 tp:	https://torrentproject.cc/?t=%s
