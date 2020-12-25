@@ -1,10 +1,11 @@
 ## History file configuration
 	HISTFILE="$XDG_DATA_HOME/zsh/history"
-# Save last 4096 commands
-	SAVEHIST=4096
 # Hold last 6144 commands in memory
 	HISTSIZE=6144
+# Save last 4096 commands
+	SAVEHIST=4096
 ## History command configuration
+	setopt append_history
 	setopt sharehistory
 	setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 	setopt hist_find_no_dups      # If duplicate lines have been saved, still show them only once.
