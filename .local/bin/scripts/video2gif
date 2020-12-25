@@ -13,11 +13,11 @@ filters="fps=$fps,scale=$width:$height:flags=lanczos"
 
 ffmpeg -ss $start_time                             \
        -i  "$vid"                                  \
-       -vf "$filters,palettegen"     		   \
+       -vf "$filters,palettegen"				    		   \
        -y  palette.png                             &&
 ffmpeg -ss $start_time                             \
        -i  "$vid"                                  \
-       -i  palette.png                                \
+       -i  palette.png                             \
        -lavfi "$filters [x]; [x][1:v] paletteuse"  \
-       -y  "$filebase".gif                              &&
+       -y  "$filebase".gif                         &&
 rm palette.png
