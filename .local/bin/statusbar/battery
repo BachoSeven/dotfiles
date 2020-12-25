@@ -29,4 +29,4 @@ do
 	[ "$status" = "🔋" ] && [ "$capacity" -le 25 ] && warn="❗"
 	# Prints the info
 	printf "%s%s%d%%\n" "$status" "$warn" "$capacity"; unset warn
-done && return 0
+done && exit 0
