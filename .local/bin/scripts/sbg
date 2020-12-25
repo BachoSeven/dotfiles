@@ -60,7 +60,7 @@ done
 	if [ ! -f ~/.cache/wal/active ]; then
 		mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
 		if [ "$mime" = "image/gif" ]; then
-			setsid -f gifbg "$bgloc" && exit 1
+			setsid -f gifbg "$bgloc" && exit 0
 		else
 			xwallpaper "${format:---zoom}" "$bgloc"
 		fi
