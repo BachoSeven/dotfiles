@@ -1,3 +1,0 @@
-#!/bin/sh
-
-sudo -u $USER xdotool key super+F8
