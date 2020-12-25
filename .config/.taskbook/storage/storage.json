@@ -125,7 +125,7 @@
         "_id": 65,
         "_date": "Thu Jul 02 2020",
         "_timestamp": 1593707983408,
-        "description": "add pywal support directly in Xresources and figure out how to use those variables and unset them automatically when not using pywal maybe uncommenting those definitions directly from setbg",
+        "description": "add pywal support to Xresources colours, so that things like dmenu and dwm can use them as well; alternatively have a look at https://github.com/mitchweaver/bin/blob/master/rice/rice for a more elegant solution (which requires rebuilding suckless tools; though)",
         "isStarred": false,
         "boards": [
             "@ToDo"
