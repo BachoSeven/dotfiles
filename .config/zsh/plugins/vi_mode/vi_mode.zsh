@@ -3,7 +3,7 @@
 # Change cursor shape for different vi modes + decent rprompt indicator
 	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
 	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
-## Document cursor types:
+## Cursor types:
 # 1 -> Blinking block
 # 2 -> Steady block ("█")
 # 3 -> Blinking underline
@@ -15,15 +15,14 @@
   cmdCursor='[1 q'
   insCursor='[5 q'
 	zle-keymap-select() {
-	  if [[ ${KEYMAP} == vicmd ]]; then
-	    printf "\e%s" "$cmdCursor"
-	    vim_mode=${vimCmd}
-	  elif [[ ${KEYMAP} == main ]] ||
-	       [[ ${KEYMAP} == viins ]] ||
-	       [[ ${KEYMAP} = '' ]]; then
-	    printf "\e%s" "$insCursor"
-	    vim_mode=${vimIns}
-	  fi
+		case $KEYMAP in
+			vicmd)
+				printf "\e%s" "$cmdCursor"
+				vim_mode=${vimCmd} ;;
+			main|viins)
+				printf "\e%s" "$insCursor"
+				vim_mode=${vimIns} ;;
+		esac
 	  zle reset-prompt
 	}
 	zle -N zle-keymap-select
