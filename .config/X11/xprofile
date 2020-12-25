@@ -3,6 +3,7 @@
 # Useful misc
 	dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS 2>/dev/null
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
+	eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh) &
 
 # Dim->LockScreen->Suspend
 	xset s 180 60
