@@ -13,15 +13,36 @@ else
 	active="false"
 fi
 
+terms=kitty:st:alacritty:$TERMINAL
+findterm() {
+	IFS=:
+	for t in $terms; do
+		if [ -z "$t" ]; then
+			continue
+		fi
+		check="$(command -v "$t")"
+		if [ -n "$check" ]; then
+			localt="$t"
+			return 0
+		fi
+		if [ $? -eq 0 ]; then
+				return 1
+		fi
+	done
+}
+
 prompt() { #__ cool interactive stuff __#
 	if ! $active; then
-		player="$(printf "ncspot\nspotify\n" | dmenu -p "Would you like to open:" -f -i -h 12 -x 8 -y 8 -w 1904)"
+		player="$(printf "ncspot\nspotify\n" | dmenu -p "Would you like to open:" -f -i -c -l 2 -bw 7 )"
 		if [ -n "$player" ]; then
 			if [ "$player" = "spotify" ]; then
 				gtk-launch spotify
 				sleep 3
 			elif [ "$player" = "ncspot" ]; then
-				setsid -f st -c ncspot -e ncspot
+				findterm &&
+				setsid -f $localt --class ncspot -e ncspot	|| # kitty
+				setsid -f $localt -c ncspot -e ncspot				|| # st (and others)
+				setsid -f $localt -e ncspot	# Fallback to not setting the terminal's class
 				sleep 3
 			fi
 		else
