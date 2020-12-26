@@ -82,7 +82,7 @@ dwm.smartgaps:		1
 !! Dmenu
 dmenu.background:	C0
 dmenu.foreground:	C7
-dmenu.selbackground:	BG
+dmenu.selbackground:	C8
 dmenu.selforeground:	C15
 dmenu.hibackground:	C4
 dmenu.hiforeground:	C15
