@@ -3,26 +3,32 @@
 # Francesco Minnocci 2020
 # This takes care of my external monitor setup, mostly for non-interactive purposes.
 
+connected() {
+	if xrandr -q | grep "\b$ext connected"; then
+		return 0
+	else
+		return 1
+	fi
+}
+
 main() {
   int=${int:-eDP-1}
   ext=${ext:-DP-1}
-  if xrandr -q | grep "\b$ext connected"; then
-    while getopts ":elm" o; do
-      case "${o}" in
-        e) # External
-          xrandr --output $int --off --output $ext --auto --dpi 144 ;;
-        l) # Laptop
-          xrandr --output $ext --off --output $int --auto --dpi 96 ;;
-        m) # Multi
-          xrandr --output $int --auto --output $ext --primary --auto --right-of eDP-1 --dpi 120 ;;
-        *)
-          printf "Invalid option: -%s\n" "$OPTARG"
-          printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;
-      esac
-    done
-    sbg # redraw background
-    dunstreload # Reload dunst configuration
-  fi
+	while getopts ":elm" o; do
+		case "${o}" in
+			e) # External
+				connected && xrandr --output $int --off --output $ext --auto --dpi 144 ;;
+			l) # Laptop
+				xrandr --output $ext --off --output $int --auto --dpi 96 ;;
+			m) # Multi
+				connected && xrandr --output $int --auto --output $ext --primary --auto --right-of eDP-1 --dpi 120 ;;
+			*)
+				printf "Invalid option: -%s\n" "$OPTARG"
+				printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;
+		esac
+	done
+	sbg # redraw background
+	dunstreload # Reload dunst configuration
 }
 
 # The actual script starts here
