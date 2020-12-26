@@ -102,7 +102,7 @@
 	bindkey "^x " no-magic-abbrev-expand
 	bindkey "^m" magic-abbrev-expand-and-accept
 
-## Also these aliases are here since they're too short to be parsed correctly by dmenu_aliases; and are useless for th scope of that script anyways.
+## These aliases are here since they're too short to be parsed correctly by the `menu` script; and are useless for th scope of that script anyways.
 # Default to human readable figures and colorize
 	alias df='df --print-type'
 	alias ls='ls --classify --group-directories-first'
