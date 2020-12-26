@@ -1,0 +1,9 @@
+provider: duckduckgo
+
+customProviders [
+  {
+    name: jackett
+    url: "http://localhost:9117/UI/Dashboard#search=%s"
+    tags: [torrents]
+  }
+]
