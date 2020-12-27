@@ -83,7 +83,7 @@ imslp:	https://www.google.com/search?q=site:imslp.org+%s imslp
 j:	http://localhost:9117/UI/Dashboard#search=%s Jackett
 ki:	https://kickass.cm/usearch/?q=%s kickass
 ka:	https://kissanime.ac/Search/?s=%s kissanime
-l:	http://93.174.95.27/search.php?req=%s&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def libgen
+l: http://93.174.95.27/search.php?req=%s libgen
 lk:	https://www.google.com/search?q=%s&btnI I'm feeling lucky...
 lp:	https://launchpad.net/+search?field.text=%s launchpad
 lt:	http://www.limetorrents.cc/search/all/%s/ limetorrents
