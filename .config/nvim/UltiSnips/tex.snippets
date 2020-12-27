@@ -1,6 +1,6 @@
 global !p
 def math():
-    return vim.eval("vimtex#syntax#in_mathzone()") != "0"
+    return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 endglobal
 
 snippet oldtemplate "Basic template" b
