@@ -70,6 +70,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'jamessan/vim-gnupg'
   Plug 'mhinz/vim-startify'
 	Plug 'jdhao/better-escape.vim'
+	Plug '907th/vim-auto-save' " toggle with :AutoSaveToggle
 
 "" Markdown
 " Live Preview
@@ -79,16 +80,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 
 " Vimtex
   Plug 'lervag/vimtex'
-  Plug 'KeitaNakamura/tex-conceal.vim'
-    se conceallevel=1
-    let g:tex_conceal='abdmg'
-    hi Conceal ctermbg=none
   Plug 'sirver/ultisnips'
-    let g:UltiSnipsExpandTrigger = '<tab>'
-    let g:UltiSnipsJumpForwardTrigger = '<tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
-    let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
 
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
@@ -152,10 +144,9 @@ let g:startify_skiplist = [
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
 
-
 " Better Escape
     let g:better_escape_shortcut = 'kj'
-    let g:better_escape_interval = 170
+    let g:better_escape_interval = 200
 
 "" FZF
 	let g:fzf_layout = { 'window': '10new' }
@@ -194,8 +185,24 @@ let g:startify_skiplist = [
 	\   'down':    len(<sid>buflist()) + 2
 	\ })<CR>
 
+" Autosave
+	let g:auto_save = 0 " off by default
+
 " Vimtex Configuration
-  let g:tex_flavor='latex'
+	se conceallevel=2
+	let g:vimtex_syntax_conceal_defaul = 0
+	let g:vimtex_syntax_conceal = {
+	\ 'accents' : 1,
+	\ 'fancy' : 1,
+	\ 'greek' : 1,
+	\ 'math_bounds' : 1,
+	\ 'math_delimiters' : 1,
+	\ 'math_fracs' : 1,
+	\ 'math_super_sub' : 1,
+	\ 'math_symbols' : 1,
+	\ 'styles' : 1,
+	\ }
+	hi Conceal ctermbg=none
   let g:vimtex_quickfix_mode=2
   let g:vimtex_compiler_progname = 'nvr'
   let g:vimtex_view_method='zathura'
@@ -217,10 +224,16 @@ let g:startify_skiplist = [
     au!
     au User VimtexEventQuit     call vimtex#compiler#clean(0)
     au User VimtexEventInitPost call vimtex#compiler#compile()
-  augroup END
-
+	augroup END
 " fzf integration for vimtex
   nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
+
+	" UltiSnips
+    let g:UltiSnipsExpandTrigger = '<tab>'
+    let g:UltiSnipsJumpForwardTrigger = '<tab>'
+    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+    let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
+    let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
 
 " vimtex deoplete
   cal deoplete#custom#var('omni', 'input_patterns', {
@@ -242,7 +255,6 @@ let g:startify_skiplist = [
 " Limelight
 	" Color name (:help cterm-colors) or ANSI code
 	let g:limelight_conceal_ctermfg = '#a89984'
-
 	" Color name (:help gui-colors) or RGB color
 	let g:limelight_conceal_guifg = '#928374'
 

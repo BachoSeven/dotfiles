@@ -11,11 +11,18 @@ aug init-zsh
     \ shiftwidth=2 tabstop=2 softtabstop=2
 aug END
 
+
 " markdown
 aug init-md
   au! BufNewFile,BufFilePre,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn,*.mdwn  set ft=markdown
     \ expandtab shiftwidth=4 tabstop=4 softtabstop=4
     \ formatoptions+=croq
+aug END
+
+" autosave
+aug ft-tex+md
+  au!
+	au FileType tex,md let b:auto_save = 1
 aug END
 
 " Set some general options
