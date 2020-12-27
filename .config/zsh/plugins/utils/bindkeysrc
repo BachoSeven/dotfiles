@@ -163,3 +163,11 @@
 		rcl="tty-clock -BDr"
 	_exists s && alias cs='. /usr/share/bash-completion/completions/s; cls'
 	_exists kat && alias cat='kat'
+	_exists mconnect && alias \
+			mc='mconnect'											\
+			mctl='mconnectctl'											\
+			g4status='mctl show-device /org/mconnect/device/1'											\
+			g4url='mctl share-url /org/mconnect/device/1'											\
+			g4txt='mctl share-text /org/mconnect/device/1'											\
+			g4file='mctl share-file /org/mconnect/device/1'											\
+			g4sms='mctl send-sms /org/mconnect/device/1'
