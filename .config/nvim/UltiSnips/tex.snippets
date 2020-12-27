@@ -1,20 +1,6 @@
 global !p
-texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC', 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES', 'AmsFS', 'AmsGS' ]]
-
-texIgnoreMathZones = ['texMathText']
-
-texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
-texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
-
-ignore = texIgnoreMathZoneIds[0]
-
 def math():
-	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
-	try:
-		first = next(i for i in reversed(synstackids) if i in texIgnoreMathZoneIds or i in texMathZoneIds)
-		return first != ignore
-	except StopIteration:
-		return False
+    return vim.eval("vimtex#syntax#in_mathzone()") != "0"
 endglobal
 
 snippet oldtemplate "Basic template" b
@@ -59,6 +45,7 @@ snippet temp "Basic template" b
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\A}{\mathbb{A}}
+\newcommand{\Z}{\mathbb{Z}}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -151,7 +138,7 @@ snippet iff "iff" Ai
 endsnippet
 
 snippet mk "Math" wA
-$${1}$`!p
+\(${1}\)`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
 	snip.rv = ' '
 else:
@@ -160,9 +147,7 @@ else:
 endsnippet
 
 snippet dm "Math" wA
-\[
-${1:${VISUAL}}
-.\] $0
+\[ ${1:${VISUAL}} .\] $0
 endsnippet
 
 snippet ali "Align" bA
