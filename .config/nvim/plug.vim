@@ -207,8 +207,8 @@ let g:startify_skiplist = [
 	hi Conceal ctermbg=none
   let g:vimtex_quickfix_mode = 2
   let g:vimtex_compiler_progname = 'nvr'
-  let g:vimtex_view_method='zathura'
 	let g:vimtex_view_use_temp_files = 1
+  let g:vimtex_view_method='zathura'
   let g:vimtex_compiler_latexmk = {
     \ 'background' : 1,
     \ 'build_dir' : '',
@@ -247,8 +247,7 @@ let g:startify_skiplist = [
     let g:UltiSnipsExpandTrigger = '<tab>'
     let g:UltiSnipsJumpForwardTrigger = '<tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    let g:UltiSnipsSnippetDirectories = ['UltiSnips',$HOME.'/.config/nvim/UltiSnips']
-    let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
+    let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips']
 
 " vimtex deoplete
   cal deoplete#custom#var('omni', 'input_patterns', {
