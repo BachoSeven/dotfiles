@@ -6,8 +6,8 @@
 ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
-![](pics/screens/ricing/dwm_def.png)
 ![](pics/screens/ricing/dwm_new.png)
+![](pics/screens/ricing/dwm_def.png)
 <a href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"></a><br><br>
 These are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
 <!-- vim-markdown-toc GFM -->
