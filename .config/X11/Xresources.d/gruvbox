@@ -63,10 +63,10 @@
 !! Dwm
 dwm.normbgcolor:	BG
 dwm.normfgcolor:	C15
-dwm.normbordercolor:	BG
+dwm.normbordercolor:	C0
 dwm.selbgcolor:		BG
 dwm.selfgcolor:		C15
-dwm.selbordercolor:	C5
+dwm.selbordercolor:	C7
 dwm.statusbg:		C0
 dwm.statusfg:		C15
 dwm.tagnormbg:		C4
@@ -78,6 +78,7 @@ dwm.infonormfg:		BG
 dwm.infoselbg:		C0
 dwm.infoselfg:		C6
 dwm.smartgaps:		1
+dwm.borderpx:		4
 
 !! Dmenu
 dmenu.background:	C0
