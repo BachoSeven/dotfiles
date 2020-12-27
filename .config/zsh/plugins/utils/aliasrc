@@ -109,6 +109,7 @@
 	alias smi='sudo make clean install'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
 # Misc
+	alias kd='killall desk'
 	alias uotz='kitty whatscli'
 	alias tg='telegram-desktop'
 	alias mx='kitty weechat'
