@@ -41,7 +41,7 @@ do
 	"g")
 		ifinstalled gimp && setsid -f gimp "$file" ;;
 	"i")
-		imginfo "$file" & ;;
+		dmenuimginfo "$file" & ;;
 	"n")
 		notify-send "File information" "$(mediainfo "$file")" ;;
 	"I")
