@@ -1,4 +1,4 @@
-!!# vim: ft=xdefaults
+!# vim: ft=xdefaults
 
 !	gruvbox
 #define BG  #282828
@@ -62,7 +62,8 @@
 
 !! Dwm
 dwm.normbgcolor:	BG
-dwm.normfgcolor:	C15
+! This is the colour of the statusbar
+dwm.normfgcolor:	C7
 dwm.normbordercolor:	C0
 dwm.selbgcolor:		BG
 dwm.selfgcolor:		C15
@@ -78,9 +79,9 @@ dwm.infonormfg:		BG
 dwm.infoselbg:		C0
 dwm.infoselfg:		C6
 dwm.borderbar:		C0
+dwm.borderpx:		5
 ! From vanitygaps: 1 means no gaps for a single client
 dwm.smartgaps:		0
-dwm.borderpx:		5
 
 !! Dmenu
 dmenu.background:	C0
