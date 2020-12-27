@@ -189,7 +189,9 @@ let g:startify_skiplist = [
 	let g:auto_save = 0 " off by default
 
 " Vimtex Configuration
-	se conceallevel=2
+	let g:matchup_override_vimtex = 1
+	let g:vimtex_matchparen_deferred = 1
+	se cole=2
 	let g:vimtex_syntax_conceal_defaul = 0
 	let g:vimtex_syntax_conceal = {
 	\ 'accents' : 1,
@@ -203,9 +205,10 @@ let g:startify_skiplist = [
 	\ 'styles' : 1,
 	\ }
 	hi Conceal ctermbg=none
-  let g:vimtex_quickfix_mode=2
+  let g:vimtex_quickfix_mode = 2
   let g:vimtex_compiler_progname = 'nvr'
   let g:vimtex_view_method='zathura'
+	let g:vimtex_view_use_temp_files = 1
   let g:vimtex_compiler_latexmk = {
     \ 'background' : 1,
     \ 'build_dir' : '',
