@@ -93,7 +93,6 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 #### Pink :3
 ![](pics/screens/ricing/pink/dwm_donttrythisathome.png)
 ![](pics/screens/ricing/pink/dwm_pinker.png)
-![](pics/screens/ricing/pink/pink_dwm.png)
 
 ### Gnome-Shell (Ubuntu)
 
