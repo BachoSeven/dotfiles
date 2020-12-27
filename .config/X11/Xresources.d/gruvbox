@@ -77,7 +77,7 @@ dwm.infonormbg:		C4
 dwm.infonormfg:		BG
 dwm.infoselbg:		C0
 dwm.infoselfg:		C6
-dwm.borderbar:		C8
+dwm.borderbar:		C0
 dwm.smartgaps:		1
 dwm.borderpx:		4
 
