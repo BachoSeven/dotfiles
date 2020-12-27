@@ -78,27 +78,27 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 ### Dwm
 
 #### Gruvboxy
-![](pics/screens/ricing/dwm.png)
-![](pics/screens/ricing/dwm_after-bach.png)
-![](pics/screens/ricing/dwm2.png)
-![](pics/screens/ricing/peace_radiohead.png)
+![](pics/screens/ricing/gruvboxy/dwm.png)
+![](pics/screens/ricing/gruvboxy/dwm_after-bach.png)
+![](pics/screens/ricing/gruvboxy/peace_radiohead.png)
 
 #### Blue(s)
-![](pics/screens/ricing/dwm_city.png)
-![](pics/screens/ricing/dwm_gravitazione-2.png)
+![](pics/screens/ricing/blue/dwm_city.png)
+![](pics/screens/ricing/blue/dwm_gravitazione-2.png)
 
 #### Greenish
-![](pics/screens/ricing/green_dwm-1.png)
-![](pics/screens/ricing/dwm_gravitazione.png)
+![](pics/screens/ricing/green/green_dwm-1.png)
+![](pics/screens/ricing/green/dwm_gravitazione.png)
 
 #### Pink :3
-![](pics/screens/ricing/pink_dwm.png)
-![](pics/screens/ricing/dwm_pinker.png)
+![](pics/screens/ricing/pink/dwm_donttrythisathome.png)
+![](pics/screens/ricing/pink/dwm_pinker.png)
+![](pics/screens/ricing/pink/pink_dwm.png)
 
 ### Gnome-Shell (Ubuntu)
 
-![](pics/screens/ricing/new_rice1.png)
-![](pics/screens/ricing/new_rice-small.png)
+![](pics/screens/ricing/old/new_rice1.png)
+![](pics/screens/ricing/old/new_rice-small.png)
 
 ### Lama
 here be lamas
