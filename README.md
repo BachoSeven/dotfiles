@@ -1,6 +1,3 @@
-![](pics/screens/ricing/dwm_def.png)
-<a href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"></a>
-
 ``` sh
 ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
 ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
@@ -9,7 +6,10 @@
 ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
-This are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
+![](pics/screens/ricing/dwm_def.png)
+![](pics/screens/ricing/dwm_new.png)
+<a href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"></a><br><br>
+These are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
 <!-- vim-markdown-toc GFM -->
 
 * [Current Setup](#current-setup)
@@ -50,7 +50,7 @@ Here are some of the programs I use:
 - **[redshift](.config/redshift/redshift.conf)** sets the color temperature
 - **[newsboat](.config/newsboat)** is my RSS reader
 - **[paru](.config/paru/paru.conf)** AUR helper
-- Last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
+- last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
 
 Read more about the programs I use in the **[AARGH](https://github.com/BachoSeven/AARGH) repository (bootstrapping script).**
 
