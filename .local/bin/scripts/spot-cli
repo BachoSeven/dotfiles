@@ -40,8 +40,8 @@ prompt() { #__ cool interactive stuff __#
 				sleep 3
 			elif [ "$player" = "ncspot" ]; then
 				findterm &&
-				setsid -f $localt --class ncspot -e ncspot	|| # kitty
-				setsid -f $localt -c ncspot -e ncspot				|| # st (and others)
+				setsid -f $localt --class ncspot -e ncspot	||	# kitty
+				setsid -f $localt -c ncspot -e ncspot				||	# st (and others)
 				setsid -f $localt -e ncspot	# Fallback to not setting the terminal's class
 				sleep 3
 			fi
