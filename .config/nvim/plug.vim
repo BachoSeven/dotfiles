@@ -20,7 +20,6 @@ if !exists('*SetupPlug')
 endi
 
 " check whether vim-plug is installed and install it if necessary
-"let plugpath = expand('<sfile>:p:h'). '/autoload/plug.vim'
 let plugpath = expand('~/.local/share/nvim/site/autoload/plug.vim')
 if !filereadable(plugpath)
     if executable('curl')
@@ -61,9 +60,6 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
-		let g:NERDSpaceDelims = 1
-		let g:NERDCompactSexyComs = 1
-		let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } }	" Fix lfrc comments
 	Plug 'mbbill/undotree'
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/limelight.vim'
@@ -125,7 +121,7 @@ cal plug#end()
 " {{{ Post-Plugin Settings
 
 " Startify
-  let g:startify_custom_header = [
+	let g:startify_custom_header = [
 \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
 \ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
@@ -135,18 +131,23 @@ cal plug#end()
 \]
 
 let g:startify_skiplist = [
-    \ 'COMMIT_EDITMSG',
-    \ ]
+	\ 'COMMIT_EDITMSG',
+	\ ]
 
 " Lf
-  let g:lf_replace_netrw = 1 " open lf when a directory is opened with vim
+	let g:lf_replace_netrw = 1 " open lf when a directory is opened with vim
+
+" NerdCommenter
+	let g:NERDSpaceDelims = 1
+	let g:NERDCompactSexyComs = 1
+	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } }	" Fix lfrc comments
 
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
 
 " Better Escape
-    let g:better_escape_shortcut = 'kj'
-    let g:better_escape_interval = 200
+	let g:better_escape_shortcut = 'kj'
+	let g:better_escape_interval = 200
 
 "" FZF
 	let g:fzf_layout = { 'window': '10new' }

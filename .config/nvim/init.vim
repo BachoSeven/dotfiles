@@ -121,12 +121,6 @@
 " Use xdg-open(mimi) to open files externally
 	let g:netrw_browsex_viewer="xdg-open"
 
-" Sessions
-	let g:session_dir = '~/.config/nvim/vim-sessions'
-	let g:session#default_opener = 'edit'
-	exec 'nn <Leader>ss :mks! ~/.config/nvim/vim-sessions/'
-	exec 'nn <Leader>sl :so ~/.config/nvim/vim-sessions/<C-D>'
-
 "		 +---------+
 "		 | Plugins |
 "		 +---------+
