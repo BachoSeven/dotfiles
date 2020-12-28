@@ -25,6 +25,10 @@ let g:startify_skiplist = [
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
 
+" Better Escape
+	let g:better_escape_shortcut = 'kj'
+	let g:better_escape_interval = 200
+
 "" FZF
 	let g:fzf_layout = { 'window': '10new' }
 	nn <silent> <C-p> :FZF -m<cr>
@@ -127,9 +131,9 @@ let g:startify_skiplist = [
     let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips']
 
 " vimtex deoplete
-	cal deoplete#custom#var('omni', 'input_patterns', {
-		\ 'tex': g:vimtex#re#deoplete
-		\})
+  cal deoplete#custom#var('omni', 'input_patterns', {
+    \ 'tex': g:vimtex#re#deoplete
+    \})
 
 " UndoTree
 	let g:undotree_WindowLayout = 3
