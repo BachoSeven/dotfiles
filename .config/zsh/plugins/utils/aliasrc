@@ -101,7 +101,7 @@
 	alias smi='sudo make clean install'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
 # Misc
-	alias txs='v ~/.config/nvim/UltiSnips/tex.snippets'
+	alias txs='nvim ~/.config/nvim/UltiSnips/tex.snippets'
 	alias kd='killall desk'
 	alias rcq='killall copyq; setsid -f copyq'
 	alias uotz='kitty whatscli'
