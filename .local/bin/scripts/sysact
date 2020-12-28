@@ -10,13 +10,13 @@ esac
 
 cmds="\
 🔒 lock		slock
-✨ renew dwm	kill -HUP $(pidof -s dwm)
-🚪 leave dwm	kill -TERM $(pidof -s dwm)
-🐻 sleep	${hib:-sudo -A systemctl suspend}
+✨ renew	kill -HUP $(pidof -s dwm)
+🚪 leave	kill -TERM $(pidof -s dwm)
+💤 sleep	${hib:-sudo -A systemctl suspend}
 🔃 reboot	${reb:-sudo -A reboot}
-🖥 shutdown	 ${shut:-sudo -A shutdown -h now}"
+🖥 shutdown	${shut:-sudo -A shutdown -h now}"
 
-choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu)" || exit 1
+choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -c -l 6)" || exit 1
 
 ## https://github.com/koalaman/shellcheck/wiki/SC2091
 readonly action="$(echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-)"
