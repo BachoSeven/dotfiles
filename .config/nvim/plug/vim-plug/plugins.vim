@@ -7,7 +7,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
-	Plug 'mbbill/undotree'
+	Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/limelight.vim'
 	Plug 'jamessan/vim-gnupg'
