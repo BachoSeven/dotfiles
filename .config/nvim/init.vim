@@ -32,7 +32,7 @@
 	se lazyredraw
 	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde
 	se autoread " Automatically re-read file if a change was detected outside of vim
-  se updatetime=100 " useful for fast markdown previews; reduce if it slows things down
+	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down
 
 "		 +--------------+
 "		 | Key Mappings |
@@ -74,10 +74,12 @@
 	nn <leader>q :q<CR>
 " Quick macros
 	nn <silent> Q @q
+" Tabs
 	map <C-t>k :tabr<CR>
 	map <C-t>j :tabl<CR>
 	map <C-t>h :tabp<CR>
 	map <C-t>l :tabn<CR>
+	map <C-t>n :tabnew<CR>
 
 " Perform dot commands over visual blocks:
 	vnoremap . :normal .<CR>
@@ -125,7 +127,7 @@
 "		 | Plugins |
 "		 +---------+
 " Definitions
-	so ~/.config/nvim/plug.vim
+	so ~/.config/nvim/plug/plug.vim
 
 "		 +----------+
 "		 | Autocmds |
