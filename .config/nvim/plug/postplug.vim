@@ -17,6 +17,10 @@ let g:startify_skiplist = [
 " Lf
 	let g:lf_replace_netrw = 1 " open lf when a directory is opened with vim
 
+" Better Escape
+	let g:better_escape_interval = 200
+	let g:better_escape_shortcut = 'jj'
+
 " NerdCommenter
 	let g:NERDSpaceDelims = 1
 	let g:NERDCompactSexyComs = 1
