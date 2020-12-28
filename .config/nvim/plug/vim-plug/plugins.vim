@@ -12,6 +12,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/limelight.vim'
 	Plug 'jamessan/vim-gnupg'
   Plug 'mhinz/vim-startify'
+	Plug 'jdhao/better-escape.vim'
 	Plug '907th/vim-auto-save' " toggle with :AutoSaveToggle
 
 "" Markdown

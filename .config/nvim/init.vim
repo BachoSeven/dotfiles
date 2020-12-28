@@ -49,23 +49,23 @@
 	nn <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
 	nn <leader>sv :so ~/.config/nvim/init.vim<CR>
 
-" vsplit file under cursor; C-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
-	nn <C-W><C-F> <C-W>vgf
+" vsplit file under cursor; c-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
+	nn <c-W><c-F> <c-W>vgf
 
 " Spell check bindings
-	ino <c-L> <c-g>u<Esc>[s1z=`]a<c-g>u
+	ino <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 	ino <c-K> <c-g>u<esc>u[s2z=gi<c-g>u
 	ino <c-J> <c-g>u<esc>u[s3z=gi<c-g>u
 
 " Save a few keypresses
-	nn <C-h> <C-w>h
-	nn <C-j> <C-w>j
-	nn <C-k> <C-w>k
-	nn <C-l> <C-w>l
-	map <leader>h <C-w>h:q<CR>
-	map <leader>j <C-w>j:q<CR>
-	map <leader>k <C-w>k:q<CR>
-	map <leader>l <C-w>l:q<CR>
+	nn <c-h> <c-w>h
+	nn <c-j> <c-w>j
+	nn <c-k> <c-w>k
+	nn <c-l> <c-w>l
+	map <leader>h <c-w>h:q<CR>
+	map <leader>j <c-w>j:q<CR>
+	map <leader>k <c-w>k:q<CR>
+	map <leader>l <c-w>l:q<CR>
 	norema c "_c
 	norema x "_x
 	norema s "_s
@@ -75,11 +75,11 @@
 " Quick macros
 	nn <silent> Q @q
 " Tabs
-	map <C-t>k :tabr<CR>
-	map <C-t>j :tabl<CR>
-	map <C-t>h :tabp<CR>
-	map <C-t>l :tabn<CR>
-	map <C-t>n :tabnew<CR>
+	map <c-t>k :tabr<CR>
+	map <c-t>j :tabl<CR>
+	map <c-t>h :tabp<CR>
+	map <c-t>l :tabn<CR>
+	map <c-t>n :tabnew<CR>
 
 " Perform dot commands over visual blocks:
 	vnoremap . :normal .<CR>
