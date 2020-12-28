@@ -103,7 +103,7 @@ let g:startify_skiplist = [
   augroup vimtex_event_1
     au!
     au User VimtexEventQuit     call vimtex#compiler#clean(0)
-    au User VimtexEventInitPost call vimtex#compiler#compile()
+    " au User VimtexEventInitPost call vimtex#compiler#compile()
 	augroup END
   " Close viewers when vimtex buffers are closed
   function! CloseViewers()
