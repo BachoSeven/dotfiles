@@ -179,7 +179,7 @@
         "italic": true
       },
       "generic_inserted": {
-        "color": "#00D787"
+        "color": "#b8bb26"
       },
       "generic_strong": {
         "bold": true
@@ -188,7 +188,7 @@
         "color": "#8ec07c"
       },
       "background": {
-        "background_color": "#373737"
+        "background_color": "#383838"
       }
     }
   },

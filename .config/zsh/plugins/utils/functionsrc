@@ -260,9 +260,6 @@ define() {
     curl -s dict://dict.org/d:$1 | grep -v '^[0-9]'
 }
 # Sdcv
-deffunc() {
-
-}
 def() {
 	sdcv -n --utf8-output --color "$@" 2>&1 | \
 	fold --width=$(tput cols) | \
