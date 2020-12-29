@@ -582,6 +582,12 @@ function vscp() {
 }
 compdef vscp=scp
 
+function ll(){
+	ls -AhlXF --color=auto --time-style="+[34m[[32m%g-%m-%d \033[35m%k:%M[33m][m" $@
+	[[ "$*" == "$1" ]] && echo "   \033[1;96m--[\033[1;34m  Dir:    \033[36m`ls -Al $@ | grep '^drw' | wc -l`\033[1;32m   |\033[1;33m \
+	 File: \033[32m`ls -Al $@ | grep -v '^drw' | grep -v total | wc -l` ]-- \033[1;37m"
+}
+
 # Manuals
 vinfo() {
 	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
