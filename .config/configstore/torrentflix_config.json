@@ -1,0 +1,63 @@
+{
+	"torrent_sources": {
+		"kickass": {
+			"name": "Kickass",
+			"url": "https://kat.cr"
+		},
+		"limetorrents": {
+			"name": "LimeTorrents",
+			"url": "http://limetorrents.cc"
+		},
+		"yts": {
+			"name": "YTS",
+			"url": "https://yts.ag"
+		},
+		"tpb": {
+			"name": "The Pirate Bay",
+			"url": "https://thepiratebay.org"
+		},
+		"sky": {
+			"name": "Sky Torrents",
+			"url": "https://skytorrents.lol"
+		},
+		"leetx": {
+			"name": "1337x",
+			"url": "https://1337x.to"
+		},
+		"nyaa": {
+			"name": "Nyaa",
+			"url": "http://www.nyaa.si"
+		},
+		"tokyotosho": {
+			"name": "Tokiotosho",
+			"url": "https://www.tokyotosho.info"
+		},
+		"eztv": {
+			"name": "Eztv",
+			"url": "https://www.eztv.ag"
+		},
+		"rarbg": {
+			"name": "Rarbg",
+			"url": "https://torrentapi.org"
+		},
+		"zooqle": {
+			"name": "Zooqle",
+			"url": "https://zooqle.com"
+		},
+		"xbit": {
+			"name": "x[BiT]",
+			"url": "https://xbit.pw"
+		}
+	},
+	"options": {
+		"peerflix_player": "--mpv",
+		"peerflix_player_args": "",
+		"peerflix_port": "--port=8888",
+		"peerflix_path": "",
+		"peerflix_command": "peerflix",
+		"use_subtitle": "true",
+		"subtitle_language": "eng",
+		"history": "false",
+		"date_added": "false"
+	}
+}

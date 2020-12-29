@@ -26,7 +26,6 @@ shittyfiles = [
     '~/.pulse',
     '~/.esd_auth',
     '~/.config/enchant',
-    '~/.config/configstore',
     '~/.spicec',            # contains only log file; unconfigurable
     '~/.dropbox-dist',
     '~/.parallel',
