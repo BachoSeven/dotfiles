@@ -566,6 +566,23 @@ md() {
 	mkdir -p $@ && cd ${@:$#}
 }
 
+# edit remote file
+function vscp() {
+	if [[ -z $1 ]]; then
+		echo "usage: vscp [[user@]host1:]file1 ... [[user@]host2:]file2"
+		return
+	fi
+	declare -a targs=()
+	echo "Editing Remote Files"
+	for iarg in $@; do
+		targ="scp://$(echo $iarg | sed -e 's@:/@//@' | sed -e 's@:@/@')"
+		targs=("${targs[@]}" $targ)
+	done
+	echo ${targs[@]}
+	nvim ${targs[@]}
+}
+compdef vscp=scp
+
 # Manuals
 vinfo() {
 	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
