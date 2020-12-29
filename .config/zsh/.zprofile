@@ -212,7 +212,7 @@ ex=🎯:\
 # Bat
 	export BAT_THEME="gruvbox"
 # Stardict/sdcv dictionaries
-	export SDCV_PAGER="less -FX"
+	export SDCV_PAGER="sed 's/\ \ \([1-9]\)/\n\n◆ \1/g' |less -FX"
 # Kunst
 	export KUNST_SIZE="240x240"
 	export KUNST_POSITION="-20-20" # This should be in sync with dwm gaps.

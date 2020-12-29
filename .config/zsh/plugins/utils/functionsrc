@@ -266,11 +266,6 @@ def() {
 	fold --width=$(tput cols) | \
 	less -FRX
 }
-ita() {
-	sdcv -n --data-dir "$XDG_DATA_HOME/stardict/ita" -u "vocabolario" --utf8-output --color "$@" 2>&1 | \
-	fold --width=$(tput cols) | \
-	less -FRX
-}
 the() {
 	sdcv -n -u "English Thesaurus" --utf8-output --color "$@" 2>&1 | \
 	fold --width=$(tput cols) | \
@@ -278,6 +273,11 @@ the() {
 }
 ety() {
 	sdcv -n -u "English Etymology" --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less -FRX
+}
+ita() {
+	sdcv -n --data-dir "$XDG_DATA_HOME/stardict/ita" -u "vocabolario" --utf8-output --color "$@" 2>&1 | \
 	fold --width=$(tput cols) | \
 	less -FRX
 }
