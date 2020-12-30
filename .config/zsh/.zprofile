@@ -210,7 +210,7 @@ ex=🎯:\
 	export WA_FG="ebdbb2"
 
 # Bat
-	export BAT_THEME="gruvbox"
+	export BAT_THEME="gruvbox-dark"
 # Stardict/sdcv dictionaries
 	export SDCV_PAGER="sed 's/\ \ \([1-9]\)/\n\n◆ \1/g' |less -FX"
 # Kunst
