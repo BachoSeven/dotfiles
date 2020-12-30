@@ -280,6 +280,16 @@ ita() {
 	fold --width=$(tput cols) | \
 	less -FRX
 }
+iteng() {
+	sdcv -n --data-dir "$XDG_DATA_HOME/stardict/ita" -u "Italian-English dictionary" --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less -FRX
+}
+engit() {
+	sdcv -n --data-dir "$XDG_DATA_HOME/stardict/ita" -u "English - Italian" --utf8-output --color "$@" 2>&1 | \
+	fold --width=$(tput cols) | \
+	less -FRX
+}
 turkeng() {
 	sdcv -n --data-dir "$XDG_DATA_HOME/stardict/turk" -u "Babylon Turkish-English" --utf8-output --color "$@" 2>&1 | \
 	fold --width=$(tput cols) | \
