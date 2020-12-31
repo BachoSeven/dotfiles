@@ -48,6 +48,8 @@
 	export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 	export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 	export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
+	export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android" # Deprecated(?)
+	export ADB_VENDOR_KEY="$XDG_CONFIG_HOME/android"   # Deprecated(?)
 
 
 ## Various programs settings:
