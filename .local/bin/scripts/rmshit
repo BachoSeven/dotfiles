@@ -39,6 +39,9 @@ shittyfiles = [
     '~/.nv/',
     '~/.viminfo',           # configured to be moved to ~/.cache/vim/viminfo, but it is still sometimes created...
     '~/.npm/',              # npm cache
+    '~/.config/configstore/trakt_config.json',
+    '~/.config/configstore/torrentflix_history.json',
+    '~/.config/configstore/update-notifier-npm.json',
     '~/.pki/',
     '~/.java/',
     '~/.oracle_jre_usage/',
