@@ -14,7 +14,7 @@ shittyfiles = [
     '~/.local/share/cargo', # Build files
     '~/Desktop',            # Firefox creates this
     '~/.mozilla',           # Firefox creates this
-    '~/Desktop',            # Spotify sometimes creates this
+    '~/Downloads',         # Spotify sometimes creates this
     '~/.thumbnails',
     '~/.gconfd',
     '~/.gconf',
@@ -27,6 +27,7 @@ shittyfiles = [
     '~/.esd_auth',
     '~/.config/enchant',
     '~/.spicec',            # contains only log file; unconfigurable
+    '~/mconnect',
     '~/.dropbox-dist',
     '~/.parallel',
     '~/.dbus',
