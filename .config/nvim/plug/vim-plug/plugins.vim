@@ -44,8 +44,9 @@ cal plug#begin('~/.local/share/nvim/plugged')
 
 " Colorschemes
 	Plug 'dylanaraps/wal.vim'
-	Plug 'gruvbox-community/gruvbox'
-	" Plug 'overcache/NeoSolarized' 	" NeoSolarized
+	Plug 'sainnhe/gruvbox-material'
+	" Plug 'gruvbox-community/gruvbox'
+	" Plug 'overcache/NeoSolarized'
 
 " Airline
 	Plug 'vim-airline/vim-airline'

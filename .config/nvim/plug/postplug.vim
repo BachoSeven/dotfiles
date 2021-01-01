@@ -141,7 +141,12 @@ let g:startify_skiplist = [
 	let g:undotree_SetFocusWhenToggle = 1
   let g:undotree_CursorLine = 0
 
+" Gruvbox Material
+	let g:gruvbox_material_transparent_background = 1
+
 " Airline
+	let g:airline_theme = 'gruvbox_material'
+	" let g:airline_theme='base16_solarized'
 	let g:airline_powerline_fonts = 1
   let g:airline#extensions#battery#enabled = 1
   let g:battery#update_statusline = 1 " For statusline.

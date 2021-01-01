@@ -1,0 +1,35 @@
+!# vim	ft=xdefaults
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Gruvbox Material Light
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! hard *background	#f9f5d7
+! medium
+#define BG	#fbf1c7
+! soft *background	#f2e5bc
+
+#define FG	#654735
+
+! Black + DarkGrey
+#define C0	#fbf1c7
+#define C8	#fbf1c7
+! DarkRed + Red
+#define C1	#c14a4a
+#define C9	#c14a4a
+! DarkGreen + Green
+#define C2	#6c782e
+#define C10	#6c782e
+! DarkYellow + Yellow
+#define C3	#c35e0a
+#define C11	#c35e0a
+! DarkBlue + Blue
+#define C4	#45707a
+#define C12	#45707a
+! DarkMagenta + Magenta
+#define C5	#945e80
+#define C13	#945e80
+! DarkCyan + Cyan
+#define C6	#4c7a5d
+#define C14	#4c7a5d
+! LightGrey + White
+#define C7	#654735
+#define C15	#654735

@@ -4,7 +4,8 @@
 
 active=~/.cache/wal/active
 
-scheme=gruvbox
+scheme=gruvbox-material
+# scheme=gruvbox
 # scheme=NeoSolarized
 
 if [ "$1" = "-w" ]; then

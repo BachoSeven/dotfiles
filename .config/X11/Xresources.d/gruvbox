@@ -1,43 +1,9 @@
 !# vim: ft=xdefaults
 
-!	gruvbox
-#define BG  #282828
-#define C0  #1d2021
-#define C1  #cc241d
-#define C2  #98971a
-#define C3  #d79921
-#define C4  #458588
-#define C5  #b16286
-#define C6  #689d6a
-#define C7  #a89984
-#define C8  #928374
-#define C9  #fb4934
-#define C10 #b8bb26
-#define C11 #fabd2f
-#define C12 #83a598
-#define C13 #d3869b
-#define C14 #8ec07c
-#define C15 #ebdbb2
-
-!! gruvbox light:
-! #define C0  #fbf1c7
-! #define C1  #cc241d
-! #define C2  #98971a
-! #define C3  #d79921
-! #define C4  #458588
-! #define C5  #b16286
-! #define C6  #689d6a
-! #define C7  #7c6f64
-! #define C8  #928374
-! #define C9  #9d0006
-! #define C10 #79740e
-! #define C11 #b57614
-! #define C12 #076678
-! #define C13 #8f3f71
-! #define C14 #427b58
-! #define C15 #3c3836
-! #define BG  #fbf1c7
-! #define FG  #282828
+#include "dark"
+! #include "light"
+! #include "material-dark"
+! #include "material-light"
 
 *.cursorColor: #add8e6
 *RcursorColor: #555555
@@ -66,10 +32,10 @@ dwm.normbgcolor:	BG
 dwm.normfgcolor:	C7
 dwm.normbordercolor:	C0
 dwm.selbgcolor:		BG
-dwm.selfgcolor:		C15
+dwm.selfgcolor:		FG
 dwm.selbordercolor:	C7
 dwm.statusbg:		C0
-dwm.statusfg:		C15
+dwm.statusfg:		FG
 dwm.tagnormbg:		C4
 dwm.tagnormfg:		C0
 dwm.tagselbg:		C12
@@ -87,8 +53,8 @@ dwm.smartgaps:		0
 dmenu.background:	C0
 dmenu.foreground:	C7
 dmenu.selbackground:	C8
-dmenu.selforeground:	C15
+dmenu.selforeground:	FG
 dmenu.hibackground:	C4
-dmenu.hiforeground:	C15
+dmenu.hiforeground:	FG
 dmenu.hiselbackground:	C5
-dmenu.hiselforeground:	C15
+dmenu.hiselforeground:	FG
