@@ -4,7 +4,7 @@
 refresh(){
     pidof -o %PPID -x $0 > /dev/null 2>&1 && exit 1 # exit if already running
     sleep $((60-$(date "+%S")))
-    kill -35 $(pidof dwmblocks)
+    kill -35 $(pidof dwmblocks) # Reminder: +34
 }
 case $BLOCK_BUTTON in
 	1) notify-send "Questo mese" "$(cal --color=always | sed "s/..7m/<b><span color=\"#cc241d\">/;s/..27m/<\/span><\/b>/")"  ;;
