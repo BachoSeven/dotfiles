@@ -147,9 +147,8 @@
 	se termguicolors
 	se background=dark
 	" colwal
-	colo gruvbox | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
+	colo gruvbox-material | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
 	" colo NeoSolarized
-	" let g:airline_theme='base16_solarized'
 " Transparency
 	hi LineNr ctermbg=NONE guibg=NONE
 	hi Normal ctermbg=NONE guibg=NONE

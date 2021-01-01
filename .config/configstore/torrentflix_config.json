@@ -1,5 +1,9 @@
 {
 	"torrent_sources": {
+		"rarbg": {
+			"name": "Rarbg",
+			"url": "https://torrentapi.org"
+		},
 		"kickass": {
 			"name": "Kickass",
 			"url": "https://kat.cr"
@@ -35,10 +39,6 @@
 		"eztv": {
 			"name": "Eztv",
 			"url": "https://www.eztv.ag"
-		},
-		"rarbg": {
-			"name": "Rarbg",
-			"url": "https://torrentapi.org"
 		},
 		"zooqle": {
 			"name": "Zooqle",
