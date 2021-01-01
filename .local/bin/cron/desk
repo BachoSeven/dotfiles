@@ -2,10 +2,9 @@
 
 # Simple script to control my Idasen desk through https://github.com/newAM/idasen
 
-if [ -n "${DISPLAY}" ]; then
+! pidof Xorg >/dev/null 2>&1 && exit 0
 
-	notify-send "Stand up in 10 seconds!"; sleep 10s
-	~/.local/bin/idasen stand && sleep 15m
+notify-send "Stand up in 10 seconds!"; sleep 10s
+~/.local/bin/idasen stand && sleep 15m
 
-	notify-send "Sitting down soon..."; sleep 5s; ~/.local/bin/idasen sit
-fi
+notify-send "Sitting down soon..."; sleep 5s; ~/.local/bin/idasen sit
