@@ -548,6 +548,9 @@ flac2mp3(){
 }
 
 ## ffmpeg utilities
+webcam() {
+	[ -z "$1" ] && ffmpeg -f video4linux2 -i /dev/video0 -vframes 1 out.jpg || ffmpeg -f video4linux2 -i /dev/video0 -vframes $1 out%3d.jpg
+}
 compressvid() {
 	# usage: compressvid VIDEO
 	ffmpeg -i $1 -vcodec libx265 -acodec mp3 $2
