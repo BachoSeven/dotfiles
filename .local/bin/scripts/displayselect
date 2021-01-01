@@ -59,6 +59,7 @@ onescreen() { # If only one output available or chosen.
 postrun() { # Stuff to run to clean up.
 	sbg		# Fix background if screen size/arangement has changed.
 	dunstreload # Reload dunst configuration
+	rcq # Reset copyq geometry
 	}
 
 # Get all possible displays
