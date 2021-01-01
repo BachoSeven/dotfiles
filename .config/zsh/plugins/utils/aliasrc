@@ -104,7 +104,6 @@
 # Misc
 	alias txs='nvim ~/.config/nvim/UltiSnips/tex.snippets'
 	alias kd='killall desk'
-	alias rcq='rm ~/.config/copyq/copyq_geometry.ini* >/dev/null; killall copyq; setsid -f copyq'
 	alias uotz='kitty whatscli'
 	alias tg='telegram-desktop'
 	alias mx='kitty weechat'

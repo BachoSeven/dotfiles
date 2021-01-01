@@ -24,7 +24,7 @@
 	export NB_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nb"
 	export NB_HIST="${XDG_DATA_HOME:-$HOME/.local/share}/nb_history"
 	export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
-	 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/mbsyncrc"
+	export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/mbsyncrc"
 	export LESSHISTFILE=-
 	export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 	export HISTFILE="$XDG_DATA_HOME/zsh/history"

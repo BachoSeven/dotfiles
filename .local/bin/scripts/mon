@@ -29,6 +29,7 @@ main() {
 	done
 	sbg # redraw background
 	dunstreload # Reload dunst configuration
+	rcq # Reset copyq geometry
 }
 
 # The actual script starts here
