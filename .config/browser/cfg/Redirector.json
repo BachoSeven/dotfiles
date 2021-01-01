@@ -1,24 +1,7 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2020-11-09T23:46:04.685Z",
+    "createdAt": "2021-01-01T16:39:46.904Z",
     "redirects": [
-        {
-            "description": "Example redirect, try going to http://example.com/anywordhere",
-            "exampleUrl": "http://example.com/some-word-that-matches-wildcard",
-            "exampleResult": "https://google.com/search?q=some-word-that-matches-wildcard",
-            "error": null,
-            "includePattern": "http://example.com/*",
-            "excludePattern": "",
-            "patternDesc": "Any word after example.com leads to google search for that word.",
-            "redirectUrl": "https://google.com/search?q=$1",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
         {
             "description": "ytbleh",
             "exampleUrl": "https://www.youtube.com/watch?v=2-us9oTs7Jw",
@@ -33,7 +16,42 @@
             "disabled": false,
             "grouped": false,
             "appliesTo": [
-                "main_frame"
+                "main_frame",
+                "sub_frame",
+                "stylesheet",
+                "script",
+                "image",
+                "imageset",
+                "object",
+                "xmlhttprequest",
+                "history",
+                "other"
+            ]
+        },
+        {
+            "description": "spot",
+            "exampleUrl": "https://open.spotify.com/album/5Efak5dDtW5RgVylqBBiPy",
+            "exampleResult": "https://open.spotify.com/go?uri=spotify%3Aalbum%3A5Efak5dDtW5RgVylqBBiPy&rtd=1",
+            "error": null,
+            "includePattern": "^(?:https?://)open.spotify.com/(.*)/(\\w{22})",
+            "excludePattern": "",
+            "patternDesc": "this redirects the https spotify website to the desktop spotify protocol",
+            "redirectUrl": "https://open.spotify.com/go?uri=spotify%3A$1%3A$2&rtd=1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame",
+                "stylesheet",
+                "script",
+                "image",
+                "imageset",
+                "object",
+                "xmlhttprequest",
+                "history",
+                "other"
             ]
         }
     ]
