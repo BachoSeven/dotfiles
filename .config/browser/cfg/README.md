@@ -111,3 +111,6 @@ y:	https://www.youtube.com/results?search_query=%s Youtube
 yr:	https://yandex.ru/search/?text=%s yandex.ru
 
 }
+
+## Cadence
+https://tube.cadence.moe/formapi/importsession/lvBtddNCiyjBY3qQ__HJ0A8q

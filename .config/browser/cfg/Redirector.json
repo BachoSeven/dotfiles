@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-01-01T16:39:46.904Z",
+    "createdAt": "2021-01-02T21:04:54.239Z",
     "redirects": [
         {
             "description": "ytbleh",
@@ -17,14 +17,6 @@
             "grouped": false,
             "appliesTo": [
                 "main_frame",
-                "sub_frame",
-                "stylesheet",
-                "script",
-                "image",
-                "imageset",
-                "object",
-                "xmlhttprequest",
-                "history",
                 "other"
             ]
         },
@@ -43,14 +35,6 @@
             "grouped": false,
             "appliesTo": [
                 "main_frame",
-                "sub_frame",
-                "stylesheet",
-                "script",
-                "image",
-                "imageset",
-                "object",
-                "xmlhttprequest",
-                "history",
                 "other"
             ]
         }
