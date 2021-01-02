@@ -17,7 +17,7 @@ IFS="$(printf '%b_' '\n')"; IFS="${IFS%_}"
 # 2    | plain text | Display the plain content of the file
 
 # Script arguments
-FILE_PATH="${1}"         # Full path of the highlighted file
+FILE_PATH="$(readlink -f "${1}")"         # Full path of the highlighted file
 HEIGHT="${2}"
 
 #FILE_EXTENSION="${FILE_PATH##*.}"
