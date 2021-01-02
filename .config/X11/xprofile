@@ -9,23 +9,19 @@
 	xss-lock -n "/home/fra/.local/bin/scripts/dim" -- /usr/local/bin/slock &
 	xidlehook --not-when-fullscreen --not-when-audio --timer 600 "systemctl suspend" - &
 
-# Daemons which may be started by systemd, when I use it.
-	_() {
+	_() {	# Used to start daemons which have not been started yet
 	    pgrep -x "$1" > /dev/null ||
 		{ "$@" & }
 	}
 	_ dunst
 	_ mpd
-
-# Utils
-
 	[[ -f ~/.config/X11/Xresources ]] && xrdb -load ~/.config/X11/Xresources
-	mon -e				# Monitor selection
+	mon -e					# Monitor selection
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
 	_ redshift			# Color temperature
-	togcomp				# Compositor
-	remaps				# Switch caps/super and one-tap_caps/esc
-	copyq &				# Clipboard management
+	togcomp					# Compositor
+	remaps					# Switch caps/super and one-tap_caps/esc
+	copyq &					# Clipboard management
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	_ transmission-daemon		# Bittorrent daemon
-	_ subs -d			# Start custom yt daemon
+	_ subs -d				# Start custom yt daemon
