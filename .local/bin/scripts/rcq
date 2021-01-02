@@ -1,5 +1,5 @@
 #!/bin/sh
 
 killall copyq &&
-rm ~/.config/copyq/copyq_geometry.ini* >/dev/null
+rm ~/.config/copyq/copyq_geometry.ini >/dev/null
 setsid -f copyq && exit 0
