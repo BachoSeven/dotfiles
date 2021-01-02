@@ -107,7 +107,7 @@
 	alias uotz='kitty whatscli'
 	alias tg='telegram-desktop'
 	alias mx='kitty weechat'
-	alias el='element-desktop'
+	alias el='element-desktop-nightly'
 	alias brb='st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d brb'
 
 ## Disks
