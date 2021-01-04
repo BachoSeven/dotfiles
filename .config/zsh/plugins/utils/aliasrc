@@ -95,7 +95,7 @@
 	alias glow='glow -p -w 120'
 	alias ud='udict'
 	alias spo='kitty --class ncspot ncspot'
-	alias spi='/usr/local/bin/spotify'
+	alias spi='spotify'
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
 	alias chill='mpv https://tinyurl.com/wbl4fya'
 	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'

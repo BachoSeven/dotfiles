@@ -6,7 +6,7 @@ volnorm = true
 volnorm_pregain = -3
 
 [saved_state]
-shuffle = true
+# shuffle = true
 
 [keybindings]
 ## unbinded: nN, c, eE, xX
