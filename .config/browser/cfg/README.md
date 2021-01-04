@@ -36,7 +36,14 @@ PACKAGED(but they're messy, install them manually plz): `chromium-keepassxc-brow
 > Install sci-hub plugin manually (it's in this repo)
 
 ### Utils
-vimium(bkp){allow file access}[ctrl+shift+v] vimium_helper Change_new_tab(url) autologin[backup]
+- vimium(Master) (bkp){allow file access}[ctrl+shift+v]
+  - Append
+    /* Temporary fix, suggested here: https://github.com/philc/vimium/issues/3732 */
+    .vimiumUIComponentVisible { color-scheme: none; }
+  to the `vimium.css` file
+- vimium_helper
+- Change_new_tab(url)
+- autologin[backup]
 - stylus(beta)[backup,alt+shift+s] gtransl(<C-R>)
 - the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s], Redirector
 
