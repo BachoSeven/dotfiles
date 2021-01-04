@@ -11,6 +11,12 @@
 
 ## Cli flags [now in chromium-flags.conf]
 ``` sh
+--ignore-gpu-blocklist
+--use-gl=desktop
+--enable-gpu-rasterization
+--disable-gpu-driver-workarounds
+--enable-accelerated-video-decode
+
 --force-device-scale-factor=1.1
 --force-dark-mode
 --process-per-site
@@ -39,7 +45,7 @@ PACKAGED(but they're messy, install them manually plz): `chromium-keepassxc-brow
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
   - Append
     /* Temporary fix, suggested here: https://github.com/philc/vimium/issues/3732 */
-    .vimiumUIComponentVisible { color-scheme: none; }
+    .vimiumUIComponentVisible { color-scheme: light; }
   to the `vimium.css` file
 - vimium_helper
 - Change_new_tab(url)
