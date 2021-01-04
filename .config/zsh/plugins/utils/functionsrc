@@ -7,7 +7,7 @@ syscp() {
 	relpath="${$(realpath -s "$1")#/}"
 	reldir="$(dirname ~/.local/src/sysdots/$relpath)"
 	[ ! -d "$reldir" ] && mkdir -vp "$reldir"
-	cp -Pvut "$reldir" "$1"
+	cp -Pvut "$reldir" "$@"
 }
 
 # noice
