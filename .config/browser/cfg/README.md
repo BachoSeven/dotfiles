@@ -14,8 +14,6 @@
 --ignore-gpu-blocklist
 --use-gl=desktop
 --enable-gpu-rasterization
---disable-gpu-driver-workarounds
---enable-accelerated-video-decode
 
 --force-device-scale-factor=1.1
 --force-dark-mode

@@ -109,7 +109,7 @@
 	alias l='ls --color -lA'
 	alias rd='rmdir'
 	alias mkdir='mkdir -p --verbose'
-	alias dmesg='dmesg --human'
+	alias dmesg='journalctl -ko short-monotonic --no-hostname' # See https://bbs.archlinux.org/viewtopic.php?pid=1947018#p1947018
 	alias h="history -i -29"
 	alias fgrep='fgrep --color=always'
 	alias egrep='egrep --color=always'
