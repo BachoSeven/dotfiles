@@ -3,7 +3,7 @@
 ## Options
 - keep local cookies
 - gtk theme
-- font_size=very-large, minimum size=8
+- font_size=large, minimum size=8
 - add italian as spellchecking language
 - block notifications globally from "Site settings"(!)
 - setup search engines: choose a valid Searx from `searx.space`, and then add ddg (and keep nosearch)
@@ -11,14 +11,13 @@
 
 ## Cli flags [now in chromium-flags.conf]
 ``` sh
---flag-switches-begin
+--force-device-scale-factor=1.1
 --force-dark-mode
 --process-per-site
 --disable-search-engine-collection
 --extension-mime-request-handling=always-prompt-for-install
 --pdf-plugin-name=chrome
 --enable-features=WebUIDarkMode,CSSColorSchemeUARendering,CompositorThreadedScrollbarScrolling,NativeNotifications,QuietNotificationPrompts
---flag-switches-end
 ```
 
 ## Bookmarks
