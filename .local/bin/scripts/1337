@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 function 1337() {
   echo $@ | tr '[:upper:]' '[:lower:]' | \
