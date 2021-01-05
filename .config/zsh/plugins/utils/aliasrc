@@ -73,6 +73,7 @@
 	alias dr='drive'
 	alias nmdm='networkmanager_dmenu'
 	alias rnm='sudo systemctl reload NetworkManager.service'
+	alias ipeth='nmcli d show enp0s20f0u2 |&grep 4.A'
 	alias nn='nordvpn'
 	alias w3m='w3m -s -B'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
