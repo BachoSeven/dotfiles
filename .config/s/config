@@ -6,4 +6,9 @@ customProviders [
     url: "http://localhost:9117/UI/Dashboard#search=%s"
     tags: [torrents]
   }
+  {
+    name: rutracker
+    url: "https://rutracker.net/forum/tracker.php?nm=%s"
+    tags: [torrents]
+  }
 ]

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+function 1337() {
+  echo $@ | tr '[:upper:]' '[:lower:]' | \
+  sed 's/l/1/g' | \
+  sed 's/e/3/g' | \
+  sed 's/t/7/g' | \
+  sed 's/a/4/g' | \
+  sed 's/o/0/g' | \
+  sed 's/s/5/g' | \
+  sed 's/and\ /\&\ /g'
+}
+
+inp="$@"
+[ -n "$inp" ] && 1337 "$inp" && exit
+
+while read stdin; do
+  1337 "$stdin"
+done
