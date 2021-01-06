@@ -11,4 +11,9 @@ customProviders [
     url: "https://rutracker.net/forum/tracker.php?nm=%s"
     tags: [torrents]
   }
+  {
+    name: libgen
+    url: "http://93.174.95.27/search.php?req=%s"
+    tags: [education]
+  }
 ]
