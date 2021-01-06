@@ -1,0 +1,16 @@
+- Button, background , #282828
+- Button, text  , #458588
+- Chat, usernames , #ea6962
+- Chat, times , #fabd2f
+- Chat, own messages , #7daea3
+- Chat, status , #a9b665
+- Window, background , #3c3836
+- Window, text , #928374
+- Entry, background , #181818
+- Entry, text , #ebdbb2
+- Transfers, queued , #d3869b
+- Transfers, other , #fe8019
+- Transfers, completed, #83a598
+- Transfers, failed , #fb4934
+- Transfers, ongoing , #89b482
+- Transfers, paused , #d79921
