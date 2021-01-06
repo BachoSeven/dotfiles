@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Exit if transmission is not running
+pgrep transmission-da > /dev/null 2>&1 && exit 1
+
 transmission-remote -l | grep % |
 	sed " # The letters are for sorting and will not appear.
 	s/.*Stopped.*/A 🛑/;
