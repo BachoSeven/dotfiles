@@ -39,7 +39,7 @@ $if mode=vi
 		Control-a: beginning-of-line
 
 		set keymap vi-insert
-		# Just like in my vim config, `kj` enters normal mode.
+		# `kj` enters normal mode.
 		"kj": vi-movement-mode
 		# switch to block cursor before executing a command
 		RETURN: "\e\n"

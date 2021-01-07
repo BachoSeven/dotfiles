@@ -65,7 +65,7 @@
 		bindkey -M $m "gk" physical-up-line
 		bindkey -M $m "gj" physical-down-line
 	done
-  # Like in my vim config, `kj` enters normal mode
+  # `kj` enters normal mode
   bindkey -M viins 'kj' vi-cmd-mode
 # Completion menu movements
 	bindkey -M menuselect 'h' vi-backward-char
