@@ -3,7 +3,7 @@
 # Tiny info script.
 
 title() {
-		title="${USER:-$(whoami)}@${HOSTNAME:-${HOST:-${$(hostname):-$(cat /etc/hostname)}}}"
+    title="${USER:-$(whoami)}@${HOSTNAME:-${HOST:-${$(hostname):-$(cat /etc/hostname)}}}"
 }
 
 distro() {
