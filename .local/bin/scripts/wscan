@@ -3,6 +3,7 @@
 ## Connect to wireless network
 # Dependencies:
 #	- NetworkManager
+# - iproute2
 #	- fzf
 
 ifname="$(ip -c=always link | grep -vA 1 lo | grep -v brd | cut -f2 -d " " | cut -f1 -d: | fzf --ansi --header "Interface:")"

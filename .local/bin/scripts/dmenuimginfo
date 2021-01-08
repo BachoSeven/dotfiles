@@ -2,6 +2,6 @@
 
 file=$1
 
-info="$(mediainfo $file)"
+info="$(mediainfo "$(readlink -f $file)")"
 
 dmenu -c -p Info: -i -l 16 <<< $info

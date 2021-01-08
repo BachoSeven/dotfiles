@@ -3,7 +3,7 @@
 # Tiny info script.
 
 title() {
-    title="${USER:-$(whoami)}@${HOSTNAME:-$(hostname)}"
+		title="${USER:-$(whoami)}@${HOSTNAME:-${HOST:-${$(hostname):-$(cat /etc/hostname)}}}"
 }
 
 distro() {
@@ -46,8 +46,7 @@ memory() {
 }
 
 model() {
-    model="$(< /sys/devices/virtual/dmi/id/product_version) "
-    model+="$(< /sys/devices/virtual/dmi/id/product_name)"
+    model="$(< /sys/devices/virtual/dmi/id/product_name)"
     model="${model//*O.E.M*}"
 }
 
@@ -61,9 +60,10 @@ memory
 kernel
 } 2>/dev/null
 
-echo -e "\u001b[31m\033[1m\033[0m\u001b[0m  $distro
-\u001b[37m\033[1m\033[0m\u001b[0m  $shell
-\u001b[35m\033[1m\033[0m\u001b[0m  $model
-\u001b[36m\033[1m\033[0m\u001b[0m  $uptime
-\u001b[32m\033[1m\033[0m\u001b[0m  $memory
-\u001b[33m\033[1m\033[0m\u001b[0m  $kernel"
+printf "\t\u001b[31m\033[1m\033[0m\u001b[0m  $distro
+\t\u001b[37m\033[1m\033[0m\u001b[0m  $shell
+\t\u001b[35m\033[1m\033[0m\u001b[0m  $model
+\t\u001b[36m\033[1m\033[0m\u001b[0m  $uptime
+\t\u001b[32m\033[1m\033[0m\u001b[0m  $memory
+\t\u001b[33m\033[1m\033[0m\u001b[0m  $kernel
+"
