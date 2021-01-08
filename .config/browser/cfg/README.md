@@ -112,7 +112,6 @@ repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
 sc:	https://libgen.bban.top/s/%s scihub
 se:	https://searx.prvcy.eu/search?q=%s Searx
-tc: https://tube.cadence.moe/search?q=%s TubeCadence
 tldr:	https://tldr.ostera.io/%s tldr
 tp:	https://torrentproject.cc/?t=%s
 ud:	https://www.urbandictionary.com/define.php?term=%s UrbanDictionary
