@@ -215,7 +215,8 @@ ex=🎯:\
 	export WA_FG="ebdbb2"
 
 # Bat
-	export BAT_THEME="gruvbox-dark"
+	export BAT_THEME="gruvbox" # Until a new bat version is released
+	# export BAT_THEME="gruvbox-dark"
 # Stardict/sdcv dictionaries
 	export SDCV_PAGER="sed 's/\ \ \([1-9]\)/\n\n◆ \1/g' |less -FX"
 # Kunst
