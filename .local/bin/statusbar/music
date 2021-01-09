@@ -4,9 +4,9 @@ filter() { mpc | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*//g;/\\[playi
 pidof -x mpdup >/dev/null 2>&1 || mpdup >/dev/null 2>&1 &
 
 case $BLOCK_BUTTON in
-	1) mpc status | filter ; setsid -f "$TERMINAL" -e ncmpcpp ;;  # right click, pause/unpause
-	2) mpc toggle | filter ;;  # right click, pause/unpause
-	3) notify-send "$(mpc playlist)" ;;
+	1) mpc status | filter ; setsid -f "$TERMINAL" -e ncmpcpp ;;  # left click, open ncmpcpp
+	2) mpc toggle | filter ;;  # middle click, pause/unpause
+	3) notify-send "$(mpc playlist)" ;; # right click, show queue
 	4) mpc prev   | filter ;;  # scroll up, previous
 	5) mpc next   | filter ;;  # scroll down, next
 	6) mpc status | filter ; "$TERMINAL" -e "$EDITOR" "$0" ;;
