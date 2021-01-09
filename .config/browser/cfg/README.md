@@ -56,7 +56,6 @@ PACKAGED(but they're messy, install them manually plz): `chromium-keepassxc-brow
 - ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it]
 - I don't care about cookies
 - HTTPS Everywhere
-- Terms of Service; Didn’t Read
 - ClearURLs
 
 searchengs:
