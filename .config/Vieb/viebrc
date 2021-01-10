@@ -2,7 +2,7 @@
 set cache=full
 set favicons=30day
 set redirecttohttp
-set search=https://searx.xyz/search?q=
+set search=https://duckduckduckgo.com/?q=%s
 set downloadpath=~/
 set ignorecase
 set mouse
@@ -16,8 +16,6 @@ set permissionmediadevices=allow
 set permissioncamera=ask
 set permissionmicrophone=ask
 set permissionnotifications=block
-" set permissionunknown=allow
-set permissionclosepage=allow
 
 " set redirects+=^https?://(www\.)?(reddit\.com.*)~https://old.$2
 
@@ -68,10 +66,11 @@ map <C-p> <:hardcopy>
 map <C-q> <:quit>
 map <C-s> <:write>
 map <C-t> <action.openNewTab><action.toExploreMode>
+map <C-w> <action.closeTab>
 map <C-Tab> <action.nextTab>
+map <C-S-Tab> <action.previousTab>
 map <C-S-PageUp> <action.moveTabBackward>
 map <C-S-PageDown> <action.moveTabForward>
-map <C-S-Tab> <action.previousTab>
 map <C-I> <:devtools>
 map <C-T> <action.reopenTab>
 map <A-Left> <action.backInHistory>
@@ -96,7 +95,6 @@ nmap o <action.toExploreMode>
 nmap u <action.scrollPageUp>
 nmap d <action.scrollPageDown>
 nmap x <action.closeTab>
-nmap <C-w> <action.closeTab>
 nmap X <action.reopenTab>
 
 " Explore mode mappings

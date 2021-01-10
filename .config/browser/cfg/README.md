@@ -110,7 +110,6 @@ r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
 sc:	https://libgen.bban.top/s/%s scihub
-se:	https://searx.xyz/search?q=%s Searx
 tldr:	https://tldr.ostera.io/%s tldr
 tp:	https://torrentproject.cc/?t=%s
 ud:	https://www.urbandictionary.com/define.php?term=%s UrbanDictionary
