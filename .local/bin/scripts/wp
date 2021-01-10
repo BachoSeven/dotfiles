@@ -3,6 +3,11 @@
 ## Little script to open a directory of images in sxiv in random order
 ## Usage: `wp [ wallpapers_subdir ] [ number of images ]`
 
-dir=$1
-[ -n "$2" ] && count="-n $2"
-find ~/pics/papes/$dir -type f | shuf $count | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|bmp\|ico\)\(_large\)*$" | sxiv -b -
+main() {
+	local subdir=$1
+	local rootdir=~/pics/papes
+	[ -n "$2" ] && count="-n $2"
+	fd --search-path $rootdir/$subdir -t f | shuf $count | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|bmp\|ico\)\(_large\)*$" | sxiv -ba -
+}
+
+main $@
