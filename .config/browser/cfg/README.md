@@ -72,12 +72,12 @@ aur:	https://aur.archlinux.org/packages.php?K=%s AUR
 aw:	https://wiki.archlinux.org/index.php/Special:Search/%s archwiki
 ax:	https://arxiv.org/search?query=%s&searchtype=all&source=header arxiv
 bg:	https://it.banggood.com/search/%s.html bangood
-bit: https://btcache.me/torrent/%s bittorcache
-btd: https://btdig.com/search?q=%s bitdig
+bit:    https://btcache.me/torrent/%s bittorcache
+btd:    https://btdig.com/search?q=%s bitdig
 ca: https://it.camelcamelcamel.com/search?sq=%s camelcamelcamel
 cd:	javascript:location='http://www.google.com/search?num=100&q=site:'%20+%20escape(location.hostname)%20+%20'%20%S'%20;%20void%200 cd
 ct: https://tube.cadence.moe/search?q=%s cloudtube
-d: 	https://duckduckgo.com/?q=%s DuckDuckGo
+d:  https://duckduckgo.com/?q=%s DuckDuckGo
 dw:	http://www.merriam-webster.com/dictionary/%s Merriam-Webster
 eb:	https://www.ebay.com/sch/i.html?_nkw=%s ebay
 fb:	https://www.facebook.com/search/top/?q=%s facebook
@@ -110,7 +110,7 @@ r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
 sc:	https://libgen.bban.top/s/%s scihub
-se:	https://searx.prvcy.eu/search?q=%s Searx
+se:	https://searx.xyz/search?q=%s Searx
 tldr:	https://tldr.ostera.io/%s tldr
 tp:	https://torrentproject.cc/?t=%s
 ud:	https://www.urbandictionary.com/define.php?term=%s UrbanDictionary
