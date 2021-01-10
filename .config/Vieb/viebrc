@@ -1,18 +1,27 @@
-" Options
+" Basic Options
 set adblocker=update
 set cache=full
 set favicons=30day
+set redirecttohttp
+set search=https://searx.xyz/search?q=
+set downloadpath=~/
 set ignorecase
 set mouse
+
+" Permissions
 set permissionmediadevices=allow
 set permissioncamera=ask
 set permissionmicrophone=ask
 set permissionnotifications=block
-set redirecttohttp
-set search=https://searx.xyz/search?q=
+
+
+" Appearance
 set mintabwidth=0
 set windowtitle=title
-set downloadpath=~/
+set devtoolsposition=vsplit
+set guihidetimeout=1000
+set guinavbar=oninput
+set guitabbar=onupdate
 
 " Fix google login by faking useragent on google sites
 set firefoxmode=google
@@ -20,7 +29,8 @@ set firefoxmode=google
 " insert mode edit
 set vimcommand="st -e nvim"
 
-" Startpage
+" Startup
+set norestoretabs
 set startuppages="file:///home/fra/.config/browser/startpage/index.html"
 set suggesttopsites=0
 set favoritepages=
