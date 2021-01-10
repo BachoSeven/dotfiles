@@ -90,6 +90,7 @@ nmap o <action.toExploreMode>
 nmap u <action.scrollPageUp>
 nmap d <action.scrollPageDown>
 nmap x <action.closeTab>
+nmap <C-w> <action.closeTab>
 nmap X <action.reopenTab>
 
 " Explore mode mappings
