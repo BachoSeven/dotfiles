@@ -19,8 +19,8 @@ set permissionnotifications=block
 set mintabwidth=0
 set windowtitle=title
 set devtoolsposition=vsplit
-set guihidetimeout=1000
-set guinavbar=oninput
+set guihidetimeout=1700
+set guinavbar=onupdate
 set guitabbar=onupdate
 
 " Fix google login by faking useragent on google sites
