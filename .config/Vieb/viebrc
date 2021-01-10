@@ -1,5 +1,4 @@
 " Basic Options
-set adblocker=update
 set cache=full
 set favicons=30day
 set redirecttohttp
@@ -8,12 +7,19 @@ set downloadpath=~/
 set ignorecase
 set mouse
 
+" Notifications
+set notificationduration=7000
+set notificationposition=topright
+
 " Permissions
 set permissionmediadevices=allow
 set permissioncamera=ask
 set permissionmicrophone=ask
 set permissionnotifications=block
+" set permissionunknown=allow
+set permissionclosepage=allow
 
+" set redirects+=^https?://(www\.)?(reddit\.com.*)~https://old.$2
 
 " Appearance
 set mintabwidth=0

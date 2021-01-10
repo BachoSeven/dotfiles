@@ -9,9 +9,7 @@
 iw=$2
 sw=$3
 sw4="$((sw/3))"
-notify-send "$iw $sw $sw4"
 [ $iw -lt $sw4 ] && NUM=10 || NUM=6
-notify-send $NUM
 convert "$1" +dither -colors $NUM -	|
 identify -verbose -			|
 grep ' [0-9]: '				|
