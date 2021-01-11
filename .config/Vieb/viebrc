@@ -98,10 +98,14 @@ vmap <F7> <action.toNormalMode>
 
 " Normal mode mappings
 nmap o <action.toExploreMode>
+nmap O <action.openNewTab>
 nmap u <action.scrollPageUp>
 nmap d <action.scrollPageDown>
 nmap x <action.closeTab>
 nmap X <action.reopenTab>
+"" Toggle tab&&nav-bars
+nmap <lt> <:set guitabbar=onupdate guinavbar=onupdate>
+nmap > <:set guitabbar=always guinavbar=always>
 
 " Explore mode mappings
 emap <F6> <action.toNormalMode>
