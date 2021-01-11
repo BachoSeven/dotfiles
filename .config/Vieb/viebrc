@@ -30,7 +30,7 @@ set fontsize=15
 set mintabwidth=0
 set windowtitle=title
 set devtoolsposition=vsplit
-set guihidetimeout=1700
+set guihidetimeout=2100
 set guinavbar=onupdate
 set guitabbar=onupdate
 
