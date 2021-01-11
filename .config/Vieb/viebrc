@@ -24,7 +24,6 @@ set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spo
 
 
 " Appearance
-set darkreader
 colorscheme flippedgruvbox
 set fontsize=15
 set mintabwidth=0
