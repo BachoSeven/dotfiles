@@ -2,7 +2,7 @@
 set cache=full
 set favicons=30day
 set redirecttohttp
-set search=https://duckduckduckgo.com/%s
+set search=https://duckduckduckgo.com/?q=%s
 set downloadpath=~/
 set ignorecase
 set mouse
@@ -24,8 +24,8 @@ set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spo
 
 
 " Appearance
+set darkreader
 colorscheme flippedgruvbox
-" colorscheme flipped
 set fontsize=15
 set mintabwidth=0
 set windowtitle=title
