@@ -8,7 +8,7 @@ set ignorecase
 set mouse
 
 " Notifications
-set notificationduration=7000
+set notificationduration=7777
 set notificationposition=topright
 
 " Permissions
@@ -30,7 +30,6 @@ set fontsize=15
 set mintabwidth=0
 set windowtitle=title
 set devtoolsposition=vsplit
-set guihidetimeout=2100
 set guinavbar=onupdate
 set guitabbar=onupdate
 
