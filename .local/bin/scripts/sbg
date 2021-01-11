@@ -17,12 +17,13 @@
 #
 #
 # Usage:
-#		` $0 [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -t, -tile ] [ -w, -wal "backaend" "path/to/img" ] `
+#		` $0 [ -i, -input "path/to/img" ] [ -m, -maximize ] [ -t, -tile ] [ -w, -wal "backend" "path/to/img" ] `
 #
 # NOTE: -w and -i are supposed to be mutually exclusive
 
 bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}"/bg
 killall -q xwinwrap xrootgif 2>/dev/null
+hsetroot -solid "#151515"
 
 # Parsing logic
 while getopts ":hi:w:mtc" o; do
