@@ -36,9 +36,6 @@ set guihidetimeout=3000
 set guinavbar=onupdate
 set guitabbar=onupdate
 
-" Fix google login by faking useragent on google sites
-" set firefoxmode=google
-
 " Insert mode edit
 set vimcommand="st -e nvim"
 
