@@ -2,7 +2,7 @@
 set cache=full
 set favicons=30day
 set redirecttohttp
-set search=https://duckduckduckgo.org/%s
+set search=https://duckduckduckgo.com/%s
 set downloadpath=~/
 set ignorecase
 set mouse
@@ -17,6 +17,7 @@ set permissioncamera=ask
 set permissionmicrophone=ask
 set permissionnotifications=block
 
+" Redirects
 set redirects+=^https?://(www\.)?(reddit\.com.*)~https://old.$2
 set redirects+=^https?://(www\.)?youtube\.com/watch\?v=(...........)~https://tube.cadence.moe/watch?v=$2
 set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spotify.com/go?uri=spotify%3A$2%3A$3&rtd=1
@@ -36,14 +37,14 @@ set guitabbar=onupdate
 " Fix google login by faking useragent on google sites
 set firefoxmode=google
 
-" insert mode edit
+" Insert mode edit
 set vimcommand="st -e nvim"
 
 " Startup
 set norestoretabs
 set startuppages="file:///home/fra/.config/browser/startpage/index.html"
 set suggesttopsites=0
-set favoritepages="file:///home/fra/.config/browser/startpage/index.html"
+" set favoritepages="file:///home/fra/.config/browser/startpage/index.html"
 
 " General Mappings
 map <Up> <action.scrollUp>
