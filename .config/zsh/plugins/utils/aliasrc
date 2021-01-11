@@ -157,6 +157,7 @@
 	alias cfu='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
 	alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
 	alias cfg='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/browser/cfg'
+	alias cvb='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/Vieb/viebrc'
 	alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
 	alias src='nvim $HOME/.local/src'
 
