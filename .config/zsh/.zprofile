@@ -6,8 +6,7 @@
 	export EDITOR="nvim"
 	export VISUAL="nvim"
 	export DIFFTOOL="nvim -d"
-	# export BROWSER="chromium"
-	export BROWSER="vieb"
+	export BROWSER="chromium"
 	export LOCATION="Buti" # weather script
 	export AURHELPER="paru"
 	export SUDO_ASKPASS="$HOME/.local/bin/scripts/dmenupass"
