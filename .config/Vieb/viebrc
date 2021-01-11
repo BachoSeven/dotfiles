@@ -3,6 +3,8 @@ set cache=full
 set favicons=30day
 set redirecttohttp
 set search="https://duckduckgo.com/?q=%s&ia=web"
+set searchwords=y~,youtube.com/results?search_query=%s,r~reddit.com/search?q=%s
+set searchwords+=w~wikipedia.org/w/index.php?title=Special:Search&search=%s,l~http://93.174.95.27/search.php?req=%s
 set downloadpath=~/
 set ignorecase
 set mouse
