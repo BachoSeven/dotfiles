@@ -2,7 +2,7 @@
 set cache=full
 set favicons=30day
 set redirecttohttp
-set search="https://duckduckduckgo.com/?q=%s"
+set search="https://duckduckgo.com/?q=%s&ia=web"
 set downloadpath=~/
 set ignorecase
 set mouse
