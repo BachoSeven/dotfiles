@@ -17,9 +17,14 @@ set permissioncamera=ask
 set permissionmicrophone=ask
 set permissionnotifications=block
 
-" set redirects+=^https?://(www\.)?(reddit\.com.*)~https://old.$2
+set redirects+=^https?://(www\.)?(reddit\.com.*)~https://old.$2
+set redirects+=^https?://(www\.)?youtube\.com/watch\?v=(...........)~https://tube.cadence.moe/watch?v=$2
+set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spotify.com/go?uri=spotify%3A$2%3A$3&rtd=1
+
 
 " Appearance
+colorscheme flipped
+set fontsize=15
 set mintabwidth=0
 set windowtitle=title
 set devtoolsposition=vsplit
@@ -37,7 +42,7 @@ set vimcommand="st -e nvim"
 set norestoretabs
 set startuppages="file:///home/fra/.config/browser/startpage/index.html"
 set suggesttopsites=0
-set favoritepages=
+set favoritepages="file:///home/fra/.config/browser/startpage/index.html"
 
 " General Mappings
 map <Up> <action.scrollUp>
