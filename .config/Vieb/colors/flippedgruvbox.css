@@ -79,7 +79,7 @@
 [current-mode=pointer] { --mode-fg: var(--mode-pointer-fg); }
 [current-mode=visual] { --mode-fg: var(--mode-visual-fg); }
 
-#url { background: #383838; border: solid .2em ; } /* important color for the navbar */
+#url { background: #383838; border: solid .2em ; } /* navbar */
 
 #navbar, #tabs { background: #383838; }
 #tabs > span { color: #ebdbb2; }
