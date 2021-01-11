@@ -22,7 +22,7 @@
 # NOTE: -w and -i are supposed to be mutually exclusive
 
 bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}"/bg
-killall -q xwinwrap 2>/dev/null
+killall -q xwinwrap xrootgif 2>/dev/null
 
 # Parsing logic
 while getopts ":hi:w:mtc" o; do
