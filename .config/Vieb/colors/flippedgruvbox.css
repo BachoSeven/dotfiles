@@ -23,7 +23,7 @@
     --suggestions-url: #add8e6;
     --suggestions-file: #fbf1b1;
     --notification-border: #585858;
-    --notification-date: #a89984;
+    --notification-date: #689d6a;
     --notification-permission: #a89984;
     --notification-error: #fb4934;
     --notification-warning: #f88808;
@@ -50,10 +50,10 @@
     --button-disabled: #777;
     --code-fg: #ebdbb2;
     --code-bg: #111;
-    --special-page-element-bg: #ebdbb2;
-    --special-page-element-border: #a89984;
-    --input-unfocused: #a89984;
-    --input-focused: #666;
+    --special-page-element-bg: #383838;
+    --special-page-element-border: #928374;
+    --input-unfocused: #383838;
+    --input-focused: #999;
     --download-progress-fg: #ebdbb2;
     --download-progress-bg: #282828;
     --helppage-h1: #cc241d;
@@ -92,7 +92,7 @@ body #mode { color: #111; }
 body[current-mode=normal] #mode { color: #ebdbb2; }
 [current-mode=normal] #url { background: #383838; color: #ebdbb2; }
 
-#mode { text-transform: none; font-size: 110%; }
+#mode { text-transform: none; font-size: 120%; }
 
 ::-webkit-scrollbar {width: 1em;}
 
