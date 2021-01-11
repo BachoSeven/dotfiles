@@ -123,5 +123,6 @@ nmap <lt> <:set guitabbar=onupdate guinavbar=onupdate>
 nmap > <:set guitabbar=always guinavbar=always>
 " Copy links
 nmap x <pointer.start><action.startFollowCurrentTab>
+fmap <Esc> <action.toNormalMode>
 
 " vim: ft=vim
