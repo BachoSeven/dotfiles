@@ -1,50 +1,53 @@
 #!/bin/sh
 while read -r file
 do
-        case "$1" in
-	"w")
-		sbg -i "$file" ;;
-        "W")
-		sbg -w wal "$file" ;;
-	"Z")
-		sbg -w colorz "$file" ;;
-        "M")
-		sbg -i "$file" -m ;;
-        "T")
-		sbg -i "$file" -t ;;
-        "C")
-		sbg -i "$file" -c ;;
-        "c")
-		[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
-		[ -z "$destdir" ] && exit
-		cp "$file" "$destdir" && notify-send -i "$(readlink -f "$file")" "$file copied to $destdir." &
-		;;
-        "m")
-		[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Move file(s) to where?" | sed "s|~|$HOME|g")"
-		[ -z "$destdir" ] && exit
-		mv "$file" "$destdir" && notify-send -i "$(readlink -f "$file")" "$file moved to $destdir." &
-		;;
-	"r")
-		convert -rotate 90 "$file" "$file" ;;
-	"R")
-		convert -rotate -90 "$file" "$file" ;;
-	"f")
-		convert -flop "$file" "$file" ;;
-	"y")
-		echo -n "$file" | tr -d '\n' | xclip -sel c -r &&
-		notify-send "$file copied to clipboard" & ;;
-	"Y")
-		readlink -f "$file" | tr -d '\n' | xclip -sel c -r &&
+	case "$1" in
+		"w")
+			sbg -i "$file" ;;
+		"W")
+			sbg -w wal "$file" ;;
+		"Z")
+			sbg -w colorz "$file" ;;
+		"M")
+			sbg -i "$file" -m ;;
+		"T")
+			sbg -i "$file" -t ;;
+		"C")
+			sbg -i "$file" -c ;;
+		"F")
+			killall -q xwinwrap xrootgif
+			ifinstalled xrootgif && xrootgif "$file" --daemon ;;
+		"c")
+			[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
+			[ -z "$destdir" ] && exit
+			cp "$file" "$destdir" && notify-send -i "$(readlink -f "$file")" "$file copied to $destdir." & ;;
+		"m")
+			[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Move file(s) to where?" | sed "s|~|$HOME|g")"
+			[ -z "$destdir" ] && exit
+			mv "$file" "$destdir" && notify-send -i "$(readlink -f "$file")" "$file moved to $destdir." & ;;
+		"r")
+			convert -rotate 90 "$file" "$file" ;;
+		"R")
+			convert -rotate -90 "$file" "$file" ;;
+		"f")
+			convert -flop "$file" "$file" ;;
+		"y")
+			echo -n "$file" | tr -d '\n' | xclip -sel c -r &&
+			notify-send "$file copied to clipboard" & ;;
+		"Y")
+			readlink -f "$file" | tr -d '\n' | xclip -sel c -r &&
 			notify-send "$(readlink -f "$file") copied to clipboard" & ;;
-	"d")
-		[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
-	"g")
-		ifinstalled gimp && setsid -f gimp "$file" ;;
-	"i")
-		dmenuimginfo "$file" & ;;
-	"n")
-		notify-send "File information" "$(mediainfo "$file")" ;;
-	"I")
-		imgur.sh "$file" >/dev/null | head -n 1 | xclip -sel c -r;;
-        esac
+		"d")
+			[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
+		"D")
+			dragon-drag-and-drop -x "$file" ;;
+		"g")
+			ifinstalled gimp && setsid -f gimp "$file" ;;
+		"i")
+			dmenuimginfo "$file" & ;;
+		"n")
+			notify-send "File information" "$(mediainfo "$file")" ;;
+		"I")
+			imgur.sh "$file" >/dev/null | head -n 1 | xclip -sel c -r ;;
+	esac
 done
