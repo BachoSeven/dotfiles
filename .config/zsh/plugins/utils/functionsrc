@@ -355,6 +355,7 @@ zsh_bench() {
 
 ## Colors
 bl(){
+	killall -q xrootgif xwinwrap
 	local c="${1:-151515}"
 	hsetroot -solid \#$c
 }
