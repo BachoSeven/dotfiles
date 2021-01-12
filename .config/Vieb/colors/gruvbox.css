@@ -7,14 +7,14 @@
     --tab-scrollbar: #7daea3;
 
     --mode-normal-fg: #383838;
-    --mode-command-fg: #fb4934;
+    --mode-command-fg: #cc241d;
     --mode-follow-fg: #b16286;
     --mode-insert-fg: #8ec07c;
     --mode-explore-fg: #859900;
     --mode-search-fg: #fabd2f;
-    --mode-pointer-fg: #ebdbb2;
+    --mode-pointer-fg: #076678;
     --mode-pointer-bg: none;
-    --mode-visual-fg: #458588;
+    --mode-visual-fg: #83a598;
     --mode-visual-bg: none;
 
     --suggestions-border: #787878;
@@ -83,15 +83,18 @@
 #url { background: #383838; border: solid .15em ;}
 
 #navbar, #tabs { background: #383838;}
-#tabs > span { color: #ebdbb2;}
+#tabs > span { color: var(--fg);}
 
 body { --mode-theme-bg: var(--mode-fg);}
 body[current-mode=normal] { --mode-theme-bg: #383838;}
 #navbar, #tabs { background: var(--mode-theme-bg);}
 
 body #mode { color: #1d2021;}
-body[current-mode=normal] #mode { color: #ebdbb2;}
-[current-mode=normal] #url { background: #383838; color: #ebdbb2;}
+body[current-mode=normal] #mode { color: var(--fg);}
+body[current-mode=pointer] #mode { color: var(--fg);}
+body[current-mode=follow] #mode { color: var(--fg);}
+body[current-mode=command] #mode { color: var(--fg);}
+[current-mode=normal] #url { background: #383838; color: var(--fg);}
 
 /* lower-case mode indicators */
 #mode { text-transform: none; font-size: 120%;}
