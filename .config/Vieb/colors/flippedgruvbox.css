@@ -8,13 +8,13 @@
 
     --mode-normal-fg: #383838;
     --mode-command-fg: #fb4934;
-    --mode-follow-fg: #d3869b;
+    --mode-follow-fg: #b16286;
     --mode-insert-fg: #8ec07c;
     --mode-explore-fg: #859900;
     --mode-search-fg: #fabd2f;
-    --mode-pointer-fg: #458588;
+    --mode-pointer-fg: #ebdbb2;
     --mode-pointer-bg: none;
-    --mode-visual-fg: #b16286;
+    --mode-visual-fg: #458588;
     --mode-visual-bg: none;
 
     --suggestions-border: #787878;
@@ -70,32 +70,32 @@
 #pointer, #cookiespage img, #downloadspage img, #historypage img {filter: invert(1);}
 #historypage img.favicon {filter: none;}
 
-[current-mode=normal] { --mode-fg: var(--mode-normal-fg); }
-[current-mode=command] { --mode-fg: var(--mode-command-fg); }
-[current-mode=insert] { --mode-fg: var(--mode-insert-fg); }
-[current-mode=follow] { --mode-fg: var(--mode-follow-fg); }
-[current-mode=explore] { --mode-fg: var(--mode-explore-fg); }
-[current-mode=search] { --mode-fg: var(--mode-search-fg); }
-[current-mode=pointer] { --mode-fg: var(--mode-pointer-fg); }
-[current-mode=visual] { --mode-fg: var(--mode-visual-fg); }
+[current-mode=normal] { --mode-fg: var(--mode-normal-fg);}
+[current-mode=command] { --mode-fg: var(--mode-command-fg);}
+[current-mode=insert] { --mode-fg: var(--mode-insert-fg);}
+[current-mode=follow] { --mode-fg: var(--mode-follow-fg);}
+[current-mode=explore] { --mode-fg: var(--mode-explore-fg);}
+[current-mode=search] { --mode-fg: var(--mode-search-fg);}
+[current-mode=pointer] { --mode-fg: var(--mode-pointer-fg);}
+[current-mode=visual] { --mode-fg: var(--mode-visual-fg);}
 
 /* navbar && tabbar */
-#url { background: #383838; border: solid .15em ; }
+#url { background: #383838; border: solid .15em ;}
 
-#navbar, #tabs { background: #383838; }
-#tabs > span { color: #ebdbb2; }
+#navbar, #tabs { background: #383838;}
+#tabs > span { color: #ebdbb2;}
 
-body { --mode-theme-bg: var(--mode-fg); }
-body[current-mode=normal] { --mode-theme-bg: #383838; }
-#navbar, #tabs { background: var(--mode-theme-bg); }
+body { --mode-theme-bg: var(--mode-fg);}
+body[current-mode=normal] { --mode-theme-bg: #383838;}
+#navbar, #tabs { background: var(--mode-theme-bg);}
 
-body #mode { color: #1d2021; }
-body[current-mode=normal] #mode { color: #ebdbb2; }
-[current-mode=normal] #url { background: #383838; color: #ebdbb2; }
+body #mode { color: #1d2021;}
+body[current-mode=normal] #mode { color: #ebdbb2;}
+[current-mode=normal] #url { background: #383838; color: #ebdbb2;}
 
 /* lower-case mode indicators */
-#mode { text-transform: none; font-size: 120%; }
-#mode-suggestions { text-transform: none; font-size: 100%; background: var(--fg) }
+#mode { text-transform: none; font-size: 120%;}
+#mode-suggestions { text-transform: none; font-size: 100%; background: var(--fg);}
 
 /* scrollbar size */
 ::-webkit-scrollbar {width: .7em;}
@@ -108,7 +108,6 @@ body[current-mode=normal] #mode { color: #ebdbb2; }
 #url-hover {bottom: 4em;}
 #suggest-dropdown {top: auto;bottom: 2.1em;flex-direction: column-reverse;}
 #mode-suggestions {top: auto;bottom: 2em;flex-direction: column-reverse;}
-#mode-suggestions:hover {max-height: 120vw;}
 .bottomright {right: .7em;bottom: 4em;;}
 .bottomleft {left: .7em;bottom: 4em;}
 .topright {right: .7em;top: .7em;}
