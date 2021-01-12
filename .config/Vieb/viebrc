@@ -39,7 +39,7 @@ set guitabbar=onupdate
 set vimcommand="st -e nvim"
 
 " Startup
-" set norestoretabs
+set norestoretabs
 set startuppages="file:///home/fra/.config/browser/startpage/index.html"
 set suggesttopsites=0
 
