@@ -2,8 +2,8 @@
     --bg: #32302f;
     --fg: #ebdbb2;
 
-    --tab-background: #4448;
-    --visible-tab: #6668;
+    --tab-background: #484848;
+    --visible-tab: #686868;
     --tab-scrollbar: #7daea3;
 
     --mode-normal-fg: #383838;
@@ -79,7 +79,8 @@
 [current-mode=pointer] { --mode-fg: var(--mode-pointer-fg); }
 [current-mode=visual] { --mode-fg: var(--mode-visual-fg); }
 
-#url { background: #383838; border: solid .2em ; } /* navbar */
+/* navbar && tabbar */
+#url { background: #383838; border: solid .15em ; }
 
 #navbar, #tabs { background: #383838; }
 #tabs > span { color: #ebdbb2; }
@@ -88,24 +89,26 @@ body { --mode-theme-bg: var(--mode-fg); }
 body[current-mode=normal] { --mode-theme-bg: #383838; }
 #navbar, #tabs { background: var(--mode-theme-bg); }
 
-body #mode { color: #111; }
+body #mode { color: #1d2021; }
 body[current-mode=normal] #mode { color: #ebdbb2; }
 [current-mode=normal] #url { background: #383838; color: #ebdbb2; }
 
+/* lower-case mode indicators */
 #mode { text-transform: none; font-size: 120%; }
+#mode-suggestions { text-transform: none; font-size: 100%; background: var(--fg) }
 
-::-webkit-scrollbar {width: 1em;}
-
-#pointer { animation: none; background: #7daea3; }
+/* scrollbar size */
+::-webkit-scrollbar {width: .7em;}
 
 /*
-      Flipped (from upstream)
+      Flipped
 		*/
 /* general */
 #app {flex-direction: column-reverse;}
 #url-hover {bottom: 4em;}
 #suggest-dropdown {top: auto;bottom: 2.1em;flex-direction: column-reverse;}
 #mode-suggestions {top: auto;bottom: 2em;flex-direction: column-reverse;}
+#mode-suggestions:hover {max-height: 120vw;}
 .bottomright {right: .7em;bottom: 4em;;}
 .bottomleft {left: .7em;bottom: 4em;}
 .topright {right: .7em;top: .7em;}
