@@ -7,7 +7,7 @@ main() {
 	local subdir=$1
 	local rootdir=~/pics/papes
 	[ -n "$2" ] && count="-n $2"
-	fd --search-path $rootdir/$subdir -t f | shuf $count | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|bmp\|ico\)\(_large\)*$" | sxiv -ba -
+	fd -e png -e jpg -e jpeg -e gifv -e gif -e webp -e tif -e bmp -e ico --search-path $rootdir/$subdir -t f | shuf $count | sxiv -ba -
 }
 
 main $@
