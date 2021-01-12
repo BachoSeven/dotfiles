@@ -17,11 +17,11 @@
     --mode-visual-fg: #b16286;
     --mode-visual-bg: none;
 
-    --suggestions-border: #b8b8b8;
-    --suggestions-bg: #282828;
-    --suggestions-selected: #484848;
-    --suggestions-url: #add8e6;
-    --suggestions-file: #fbf1b1;
+    --suggestions-border: #787878;
+    --suggestions-bg: #484848;
+    --suggestions-selected: #686868;
+    --suggestions-url: #bdf8e6;
+    --suggestions-file: #fbf1c7;
     --notification-border: #585858;
     --notification-date: #689d6a;
     --notification-permission: #a89984;
