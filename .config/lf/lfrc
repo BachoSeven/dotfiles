@@ -278,7 +278,7 @@ cmd embed $$@ $fx
 # Pager command
 cmd pager ${{
 	if [[ $f = *.md  ]]; then
-		glow -w 120 -p $fx
+		glow -p $fx
 	else
 		less $fx
 	fi
