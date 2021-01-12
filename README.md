@@ -21,7 +21,6 @@ These are my dotfiles set up as a bare git repo and managed with [dotbare](https
             * [Blue(s)](#blues)
             * [Greenish](#greenish)
             * [Pink :3](#pink-3)
-        * [Gnome-Shell (Ubuntu)](#gnome-shell-ubuntu)
         * [Lama](#lama)
 
 <!-- vim-markdown-toc -->
@@ -93,11 +92,6 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 #### Pink :3
 ![](pics/screens/ricing/pink/dwm_donttrythisathome.png)
 ![](pics/screens/ricing/pink/dwm_pinker.png)
-
-### Gnome-Shell (Ubuntu)
-
-![](pics/screens/ricing/old/new_rice1.png)
-![](pics/screens/ricing/old/new_rice-small.png)
 
 ### Lama
 here be lamas
