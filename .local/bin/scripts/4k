@@ -2,4 +2,4 @@
 
 [ -z "$1" ] && printf "Usage: $(basename "$0") [search path]\n\nRecursively find images with resolution >=4k inside the specified directory.\nDependencies: imagemagick." && exit 1
 
-fd --type f --exec identify -format '%w %h %i\n' {} | awk '$1>=3840 && $2>=2160'
+fd -e gif -e jpeg -e jpg -e png --exec identify -format '%w %h %i\n' {} | awk '$1>=3840 && $2>=2160'
