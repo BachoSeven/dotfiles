@@ -51,7 +51,6 @@
 	export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android" # Deprecated(?)
 	export ADB_VENDOR_KEY="$XDG_CONFIG_HOME/android"   # Deprecated(?)
 
-
 ## Various programs settings:
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 	# shellcheck opts to avoid having .shellcheckrc in ~ (https://github.com/koalaman/shellcheck/wiki)
