@@ -1,3 +1,11 @@
+"   _______ _______ _______ _______ _______ _______
+"  |\     /|\     /|\     /|\     /|\     /|\     /|
+"  | +---+ | +---+ | +---+ | +---+ | +---+ | +---+ |
+"  | |   | | |   | | |   | | |   | | |   | | |   | |
+"  | |V  | | |i  | | |e  | | |b  | | |r  | | |c  | |
+"  | +---+ | +---+ | +---+ | +---+ | +---+ | +---+ |
+"  |/_____\|/_____\|/_____\|/_____\|/_____\|/_____\|
+"
 " Basic Options
 set cache=full
 set favicons=30day
@@ -9,6 +17,7 @@ set searchwords+=aw~https://wiki.archlinux.org/index.php/Special:Search/%s,aur~h
 set downloadpath=~/
 set ignorecase
 set mouse
+set mousefocus
 
 " Notifications
 set notificationduration=7777

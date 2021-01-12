@@ -6,7 +6,7 @@
 - font_size=large, minimum size=8
 - add italian as spellchecking language
 - block notifications globally from "Site settings"(!)
-- setup search engines: choose a valid Searx from `searx.space`, and then add ddg (and keep nosearch)
+- setup search engines: choose a valid Searx from `searx.space`, and then add ddg("gruvboxytheme") (and keep nosearch)
 - chrome://settings/content/pdfDocuments: download instead of horrible pdf viewer.
 
 ## Cli flags [now in chromium-flags.conf]
