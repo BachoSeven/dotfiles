@@ -35,7 +35,7 @@ set redirects+=^https?://(www\.)?youtube\.com/watch\?v=(...........)~https://tub
 set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spotify.com/go?uri=spotify%3A$2%3A$3&rtd=1
 
 " Appearance
-colorscheme flippedgruvbox
+colorscheme gruvbox
 set fontsize=17
 set mintabwidth=0
 set windowtitle=title
