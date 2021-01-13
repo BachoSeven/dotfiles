@@ -15,6 +15,7 @@
 	}
 	_ dunst
 	_ mpd
+	xsetroot -cursor_name left_ptr # Needed because of hsetroot
 	[[ -f ~/.config/X11/Xresources ]] && xrdb -load ~/.config/X11/Xresources
 	mon -e					# Monitor selection
 	[ -f ~/.cache/wal/active ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
