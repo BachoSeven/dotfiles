@@ -23,3 +23,5 @@ elif [ "$1" = "-x" ]; then
 		sed -i 's/" notermgui/se termguicolors/g' $XDG_CONFIG_HOME/nvim/init.vim
 	[ -f $active ] && rm -f $active || exit 1
 fi
+
+dunstreload
