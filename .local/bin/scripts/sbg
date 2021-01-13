@@ -7,7 +7,7 @@
 #
 # If given a directory as input, `sbg` will choose a random picture/gif for you.
 #
-# SLOC: 39
+# SLOC: 34
 #
 # Dependencies:
 #	- `hsetroot`
@@ -40,8 +40,8 @@ while getopts ":hi:w:cmt" o; do
 			xrdb -load "$XDG_CONFIG_HOME/X11/Xresources" ;;
 
 		w)
-			ifinstalled wal && vimwal -w || exit 1
-			[ -f "$2" ] && linknotif "$2"
+			ifinstalled python-pywal && vimwal -w || exit 1
+			linknotif "$2"
 			if [ -n "$2" ]; then backend="$2"; [ -f "$3" ] && linknotif "$3"; fi
 			wal -c && wal --backend "${backend:-wal}" -i "$(readlink -f "$bgloc")" >/dev/null 2>&1 ;;
 
