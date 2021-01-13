@@ -61,7 +61,7 @@ PACKAGED(but they're messy, install them manually plz): `chromium-keepassxc-brow
 searchengs:
 {
 
-a:	https://www.amazon.com/s/?field-keywords=%s Amazon
+a:	https://www.amazon.it/s/?field-keywords=%s Amazon
 abs:	https://www.archlinux.org/packages/?q=%s,
 alib:	https://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&CatId=&SearchText=%s alibaba
 ali:	https://www.aliexpress.com/wholesale?&SearchText=%s aliexpress
@@ -113,7 +113,7 @@ sc:	https://libgen.bban.top/s/%s scihub
 tldr:	https://tldr.ostera.io/%s tldr
 tp:	https://torrentproject.cc/?t=%s
 ud:	https://www.urbandictionary.com/define.php?term=%s UrbanDictionary
-w:	https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia
+w:	https://wikipedia.org/w/index.php?search=%s Wikipedia
 wa:	https://www.wolframalpha.com/input/?i=%s Wolfram|Alpha
 y:	https://www.youtube.com/results?search_query=%s Youtube
 yr:	https://yandex.ru/search/?text=%s yandex.ru

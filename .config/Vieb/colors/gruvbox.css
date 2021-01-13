@@ -97,8 +97,8 @@ body[current-mode=command] #mode { color: var(--fg);}
 [current-mode=normal] #url { background: #383838; color: var(--fg);}
 
 /* lower-case mode indicators */
-#mode { text-transform: none; font-size: 120%;}
-#mode-suggestions { text-transform: none; font-size: 100%; background: var(--fg);}
+#mode { text-transform: none; font-size: 110%;}
+#mode-suggestions { text-transform: none; background: var(--fg);}
 
 /* scrollbar size */
 ::-webkit-scrollbar {width: .7em;}
