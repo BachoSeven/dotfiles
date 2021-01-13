@@ -1,4 +1,5 @@
 #!/bin/sh
 
 convert "$1" +dither -colors 5 -unique-colors txt: |
-tail -5 | awk '{print substr($3,1)}' | sort | head -1
+tail -5 | awk '{print substr($3,1)}' |
+sort | dmenu -p "Select a color"
