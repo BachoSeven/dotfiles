@@ -9,7 +9,7 @@
 #
 # SLOC: 28
 #
-# Dependencies: `xwallpaper`
+# Dependencies: `hsetroot`
 # Optional: [`gifsicle` + `shantz-xwinwrap-bzr` + `hsetroot` + custom `gifbg` and `extcol` scripts] for GIFs;
 #           [`pywal` + custom `vimwal` script] for integration with `wal` and with `wal.vim`
 #
@@ -22,8 +22,8 @@
 # NOTE: -w and -i are supposed to be mutually exclusive
 
 bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}"/bg
-killall -q xwinwrap xrootgif 2>/dev/null
-hsetroot -solid "#151515"
+pgrep xwinwrap &&	killall -q xwinwrap 2>/dev/null
+pgrep xrootgif &&	killall -q xrootgif 2>/dev/null && hsetroot -solid "#151515"
 
 # Parsing logic
 while getopts ":hi:w:mtc" o; do
@@ -47,22 +47,22 @@ while getopts ":hi:w:mtc" o; do
 			fi
 			command -v wal >/dev/null 2>&1 && wal -c && wal --backend "$backend" -i "$(readlink -f "$bgloc")" >/dev/null 2>&1 ;;
 
-		m) format="--maximize" ;;
+		m) format="-full" ;;
 
-		t) format="--tile" ;;
+		t) format="-tile" ;;
 
-		c) format="--center" ;;
+		c) format="-center" ;;
 
 		*) printf "Invalid option: -%s\\n" "$OPTARG" && exit 1 ;;
 	esac
 done
 
-# Use gifview for gifs, or else xwallpaper
+# Use gifview for gifs, or else hsetroot
 	if [ ! -f ~/.cache/wal/active ]; then
 		mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
 		if [ "$mime" = "image/gif" ]; then
 			setsid -f gifbg "$bgloc" && exit 0
 		else
-			xwallpaper "${format:---zoom}" "$bgloc"
+			hsetroot "${format:--cover}" "$bgloc" >/dev/null
 		fi
 	fi
