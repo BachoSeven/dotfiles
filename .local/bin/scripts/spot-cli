@@ -5,9 +5,9 @@
 
 # Determine currently active spotify player;
 # and if there are none, only prompt for opening one (only when trying to open URL/URIs)
-if $(pgrep ncspot >/dev/null); then
+if pgrep ncspot &>/dev/null; then
 	player="ncspot"
-elif $(pgrep spotify >/dev/null); then
+elif pgrep spotify &>/dev/null; then
 	player="spotify"
 else
 	active="false"
