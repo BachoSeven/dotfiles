@@ -23,12 +23,11 @@ Esempi:
 
 Bug Noti:
 	- I precorsi del 2008 e 2009 hanno una numerazione diversa,
-	  che non è ancora stata implementata.  Se qualche altro
-	  corso non si scarica correttamente, fammelo sapere via
-	  f.minnocci@studenti.unipi.it e proverò a risolverlo.
+	  che non è stata implementata.  Se qualche altro corso
+	  non si scarica correttamente, fammelo sapere via mail:
+	  f.minnocci@studenti.unipi.it.
 Credits:
 	- http://poisson.phc.dm.unipi.it/~dilillo/Vario/Gobbino.sh
-Fonte:
 	- http://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html
 EOF
 exit 1

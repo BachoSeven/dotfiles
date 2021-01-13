@@ -10,7 +10,7 @@ iw=$2
 sw=$3
 sw4="$((sw/3))"
 [ $iw -lt $sw4 ] && NUM=10 || NUM=6
-convert "$1" +dither -colors $NUM -	|
+convert "$1" +dither -unique-colors -colors $NUM -	|
 identify -verbose -			|
 grep ' [0-9]: '				|
 awk '{print substr($3, 1,7)}'		|

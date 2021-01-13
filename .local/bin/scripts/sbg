@@ -12,7 +12,7 @@
 # Dependencies:
 #	- `hsetroot`
 # Optional:
-#	- [`gifsicle` + `hsetroot` `shantz-xwinwrap-bzr` + custom `gifbg` and `extcol` scripts] for GIFs;
+#	- [`gifsicle` + `shantz-xwinwrap-bzr` + custom `gifbg` and `extcol` scripts] for GIFs;
 # -	[`pywal` + custom `vimwal` script] for integration with `wal` and with `wal.vim`
 #	NOTE:
 # - I also use a custom `ifinstalled` script to notify about missing programs
@@ -45,8 +45,9 @@ while getopts ":hi:w:cmt" o; do
 			if [ -n "$2" ]; then backend="$2"; [ -f "$3" ] && linknotif "$3"; fi
 			wal -c && wal --backend "${backend:-wal}" -i "$(readlink -f "$bgloc")" >/dev/null 2>&1 ;;
 
-		c) format="-center" ;;
-		m) format="-full" ;;
+		c) full=false; format="-center" ;;
+		m) full=false; format="-full" ;;
+
 		t) format="-tile" ;;
 
 		*) printf "Invalid option: -%s\\n" "$OPTARG" && exit 1 ;;
@@ -59,6 +60,7 @@ if [ ! -f ~/.cache/wal/active ]; then
 	if [ "$mime" = "image/gif" ]; then
 		setsid -f gifbg "$bgloc" && exit 0
 	else
-		hsetroot "${format:--cover}" "$bgloc" >/dev/null
+		$full || bgcol="$(imgextcol "$bgloc")"
+		hsetroot -solid "${bgcol:-#282828}" "${format:--cover}" "$bgloc" >/dev/null
 	fi
 fi
