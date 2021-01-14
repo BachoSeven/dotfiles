@@ -56,8 +56,13 @@ usage() {
 	exit 1
 }
 
+barupd() {
+	kill -47 "$(pidof "${STATUSBAR:-dwmblocks}")"
+}
+
 send() {
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1"
+	sleep 1 && barupd
 }
 
 seek() { #__ We need to convert to microseconds __#
@@ -78,6 +83,7 @@ url() { #__ Some parsing logic for URLs __#
 	typ="${string%/*}"
 	key="${string#*/}"
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$typ:$key
+	sleep 2 && barupd
 }
 
 uri() { #__ This is slightly more complex because spotify would like to include additional context after the item key, which ncspot does not support... __#
@@ -85,6 +91,7 @@ uri() { #__ This is slightly more complex because spotify would like to include 
 	typ="$(echo "$*" | cut -d":" -f1,2)"
 	key="$(echo "$*" | cut -d":" -f3 | head --bytes=22)"
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:"$typ:$key"
+	sleep 2 && barupd
 }
 
 error() {
@@ -92,13 +99,14 @@ error() {
 	usage
 }
 
-
 if [ -z "$1" ] ; then
 	error "No arguments given, exiting..."
 else
 	case $1 in
 	-h|--help)
 		usage;;
+	-b|--bar)
+		barupd;;
 	-n|--next)
 		send Next;;
 	-p|--prev)
