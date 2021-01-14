@@ -1,7 +1,12 @@
-#!/bin/zsh
+#!/bin/sh
+
+# Automatically removed on shutdown
+[ -f /tmp/welcome_done ] && exit 0
 
 (
 	hnheadlines
 	printf '\n\033[1;36mWEATHER:\033[1;32m'
 	curl wttr.in/$LOCATION\?pqtF&lang=it 2>/dev/null
-) || printf "Not connected, exiting..." && exit
+	wait
+	touch /tmp/welcome_done
+) && exit 0 || (printf "Not connected, exiting...\n" && exit 1)
