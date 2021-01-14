@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# Check if program is installed through pacman
+# Check if programs are installed through pacman,
+# and notify if they are not; very useful in scripts.
 
 for x in "$@";do
 	pacman -Qq "$x" 2>/dev/null ||

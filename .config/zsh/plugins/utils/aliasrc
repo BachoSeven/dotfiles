@@ -47,6 +47,7 @@
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias trem='transmission-remote'
+	alias drt='dragon-drag-and-drop -t -x'
 	alias xclip='xclip -sel c -r'
 	alias rm='rm -v'
 	alias cp='cp -v'
@@ -100,7 +101,6 @@
 	alias spi='spotify'
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
 	alias chill='mpv https://tinyurl.com/wbl4fya'
-	alias libgen='libgen search -o /mnt/01D5707D40B081F0/Users/ascol/Documents/libgen'
 	alias smi='sudo make clean install'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
 # Misc

@@ -58,7 +58,7 @@ done
 if [ ! -f ~/.cache/wal/active ]; then
 	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
 	if [ "$mime" = "image/gif" ]; then
-		setsid -f gifbg "$bgloc" && exit 0
+		setsid -f gifbg "$bgloc"
 	else
 		$full || bgcol="$(imgextcol "$bgloc")"
 		hsetroot -solid "${bgcol:-#282828}" "${format:--cover}" "$bgloc" >/dev/null
