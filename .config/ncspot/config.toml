@@ -4,6 +4,7 @@ use_nerdfont = true
 notify = true
 volnorm = true
 volnorm_pregain = -3
+gapless = true
 
 [saved_state]
 # shuffle = true
