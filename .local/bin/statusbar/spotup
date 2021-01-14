@@ -1,18 +1,3 @@
 #!/bin/sh
 
-if pgrep ncspot &>/dev/null; then
-	player="ncspot"
-elif pgrep spotify &>/dev/null; then
-	player="spotify"
-fi
-
-case $BLOCK_BUTTON in
-	2) spot-cli -t ;;  # middle click, pause/unpause
-	4) spot-cli -p ;;  # scroll up, previous
-	5) spot-cli -n ;;  # scroll down, next
-	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
-esac
-
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:"org.mpris.MediaPlayer2.Player" string:'Metadata' | grep -Ev "^method" | grep -Eo '("(.*)")|(\b[0-9][a-zA-Z0-9.]*\b)' | sed -E '2~2 a|' | tr -d '\n' | sed -E 's/\|/\n/g' | sed -E 's/(xesam:)|(mpris:)//' | sed -E 's/^"//' | sed -E 's/"$//' | sed -E 's/"+/|/' | sed -E 's/ +/ /g' | grep -Ew 'title|artist' | cut -f2 -d'|' | paste -s -d' ' | sed 's/ / - /'
-
-# dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player"	/org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:"org.mpris.MediaPlayer2.Player" string:'Metadata' | grep -Ev "^method" | grep -Eo '("(.*)")|(\b[0-9][a-zA-Z0-9.]*\b)' | sed -E '2~2 a|' | tr -d '\n' | sed -E 's/\|/\n/g' | sed -E 's/(xesam:)|(mpris:)//' | sed -E 's/^"//' | sed -E 's/"$//' | sed -E 's/"+/|/' | sed -E 's/ +/ /g' | grep -Ev "discNumber|length|trackid|url|trackNumber|albumArtist|artUrl|autoRating|album" | cut -f2 -d'|' | paste -s -d' ' | sed 's/ / - /'
+kill -47 "$(pidof "${STATUSBAR:-dwmblocks}")"
