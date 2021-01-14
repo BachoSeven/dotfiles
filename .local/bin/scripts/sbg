@@ -19,8 +19,8 @@
 #	-	`-w` and `-i` are supposed to be mutually exclusive
 
 linknotif() {
-	[ -f "$1" ] && ln -sf "$(readlink -f "$1")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
-	[ -d "$1" ] && ln -sf "$( find "$(readlink -f "$1")" -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
+	[ -f "$1" ] && ln -sf "$(realpath "$1")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
+	[ -d "$1" ] && ln -sf "$( find "$(realpath "$1")" -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
 }
 
 # Initialize target location
@@ -43,7 +43,7 @@ while getopts ":hi:w:cmt" o; do
 			ifinstalled python-pywal && vimwal -w || exit 1
 			linknotif "$2"
 			if [ -n "$2" ]; then backend="$2"; [ -f "$3" ] && linknotif "$3"; fi
-			wal -c && wal --backend "${backend:-wal}" -i "$(readlink -f "$bgloc")" >/dev/null 2>&1 ;;
+			wal -c && wal --backend "${backend:-wal}" -i "$(realpath "$bgloc")" >/dev/null 2>&1 ;;
 
 		c) full=false; format="-center" ;;
 		m) full=false; format="-full" ;;

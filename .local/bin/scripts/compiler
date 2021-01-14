@@ -9,7 +9,7 @@
 # Note that .tex files which you wish to compile with XeLaTeX should have the
 # string "xelatex" somewhere in a comment/command in the first 5 lines.
 
-file=$(readlink -f "$1")
+file=$(realpath "$1")
 dir=${file%/*}
 base="${file%.*}"
 ext="${file##*.}"

@@ -3,7 +3,7 @@
 # A dmenu wrapper script for system functions.
 
 # For non-systemd init systems.
-case "$(readlink -f /sbin/init)" in
+case "$(realpath /sbin/init)" in
 	*runit*) hib="sudo -A zzz" ;;
 	*openrc*) reb="sudo -A openrc-shutdown -r"; shut="sudo -A openrc-shutdown -p" ;;
 esac

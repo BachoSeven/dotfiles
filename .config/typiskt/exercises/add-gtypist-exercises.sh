@@ -2,7 +2,7 @@
 
 trap 'rm "$tmp"' EXIT
 
-_source="$(readlink -f "${BASH_SOURCE[0]}")"
+_source="$(realpath "${BASH_SOURCE[0]}")"
 d="${_source%/*}"
 
 url='https://github.com/inaimathi/gtypist-single-space/raw/master/gtypist.typ'
