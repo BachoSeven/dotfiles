@@ -181,6 +181,7 @@
 	alias gt='typiskt -e'
 	alias sol='ttysolitaire --no-background-color'
 	alias tboi='cd ~/slsk/games/TBOI/The_Binding_of_Isaac_Afterbirth; ./run-x64.sh && cd -'
+	alias cele='~/slsk/games/Celeste/Celeste/run.sh'
 
 # Personal files
 	alias people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People'
