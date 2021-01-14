@@ -5,7 +5,7 @@
 
 case "$1" in
 	*.tex)
-	file=$(readlink -f "$1")
+	file=$(realpath "$1")
 	dir=$(dirname "$file")
 	base="${file%.*}"
 	find "$dir"  -maxdepth 1 -type f -regextype gnu-awk -regex "^$base(\\.(4tc|xref|tmp|pyc|pyo|fls|vrb|fdb_latexmk|bak|swp|aux|log|synctex\\(busy\\)|lof|lot|maf|idx|mtc|mtc0|nav|out|snm|toc|run\\.xml|synctex\\.gz|blg|bbl|bcf)|_vimtex\\.(synctex\\.gz|pdf))" -delete ;;
