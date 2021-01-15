@@ -130,5 +130,7 @@ nmap > <:set guitabbar=always guinavbar=always>
 " Copy links
 nmap x <pointer.start><action.startFollowCurrentTab>
 fmap <Esc> <action.toNormalMode>
+" Copy mouse selection (vvy)
+nmap y <pointer.start><pointer.startVisualSelect><pointer.copyAndStop>
 
 " vim: ft=vim
