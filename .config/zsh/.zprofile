@@ -89,7 +89,7 @@
 
 # pfetch
 	# OFF: memory de uptime
-	export PF_INFO="ascii title os wm host pkgs shell editor"
+	export PF_INFO="ascii os wm host pkgs shell editor"
 	# name, data, title
 	export PF_COL1=4
 	export PF_COL2=7
@@ -225,4 +225,4 @@ ex=🎯:\
 
 # Start graphical server on tty1 if not already running.
 	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" &> /dev/null
-	[ -z "$(ls /dev/input/by-id | grep Anne)" ] && sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null
+	if [ -z "$(ls /dev/input/by-id | grep Anne)" ]; then sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null; fi
