@@ -27,7 +27,7 @@ k=
 kernel="$(uname -r | cut -d '-' -f1)"
 
 r=
-resolution="$(xrandr | grep '*' | awk '{print $1}')"
+resolution="$(xwininfo -root | grep geometry | awk '{print $2}' | cut -d + -f1)"
 
 sh=
 shell=$(basename $SHELL)
