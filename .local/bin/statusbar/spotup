@@ -1,3 +1,1 @@
-#!/bin/sh
-
-kill -47 "$(pidof "${STATUSBAR:-dwmblocks}")"
+/home/fra/.local/bin/statusbar/spotbar
