@@ -42,6 +42,7 @@ shittyfiles = [
     '~/.config/configstore/trakt_config.json',
     '~/.config/configstore/torrentflix_history.json',
     '~/.config/configstore/update-notifier-npm.json',
+    '~/.config/configstore/update-notifier-taskbook.json',
     '~/.pki/',
     '~/.java/',
     '~/.oracle_jre_usage/',
