@@ -7,7 +7,7 @@
 #
 # If given a directory as input, `sbg` will choose a random picture/gif for you.
 #
-# SLOC: 33
+# SLOC: 31
 #
 # Dependencies:
 #	- `hsetroot`
@@ -42,7 +42,7 @@ while getopts ":hi:w:cmt" o; do
 		w)
 			linknotif "$2"
 			if [ -n "$2" ]; then backend="$2"; [ -f "$3" ] && linknotif "$3"; fi
-			wal -c && wal --backend "${backend:-wal}" -i "$(realpath "$bgloc")" >/dev/null 2>&1 && ifinstalled python-pywal && vimwal -w || exit 1 ;;
+			wal --backend "${backend:-wal}" -i "$(realpath "$bgloc")" >/dev/null 2>&1 && ifinstalled python-pywal && vimwal -w || exit 1 ;;
 
 		c) full=false; format="-center" ;;
 		m) full=false; format="-full" ;;

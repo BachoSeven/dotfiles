@@ -61,6 +61,7 @@ cleanup() {
 	_run $AURHELPER -Scc
 	_run yes | rmshit
 	_run browser-vacuum
+	_run wal -c
 }
 # AUR [not amazing for non-standard packages...]
 aurpublish() {
