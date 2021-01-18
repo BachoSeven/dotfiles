@@ -18,6 +18,7 @@ set downloadpath=~/
 set ignorecase
 set mouse
 set mousefocus
+set containernewtab=s:usecurrent
 
 " Notifications
 set notificationduration=7777
