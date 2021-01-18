@@ -13,7 +13,7 @@ set redirecttohttp
 set search="https://duckduckgo.com/?q=%s&ia=web"
 set searchwords=y~youtube.com/results?search_query=%s,r~reddit.com/search?q=%s
 set searchwords+=w~https://wikipedia.org/w/index.php?search=%s,l~http://93.174.95.27/search.php?req=%s
-set searchwords+=aw~https://wiki.archlinux.org/index.php/Special:Search/%s,aur~https://aur.archlinux.org/packages.php?K=%s
+set searchwords+=aw~https://wiki.archlinux.org/index.php/Special:Search/%s,aur~https://aur.archlinux.org/packages.php?K=%s,gh~https://github.com/search?q=%s
 set downloadpath=~/
 set ignorecase
 set mouse
@@ -136,5 +136,8 @@ nmap y <pointer.start><pointer.startVisualSelect><pointer.copyAndStop>
 nmap yy <action.pageToClipboard>
 " :nohlsearch
 nmap <Space><Space> <action.emptySearch>
+" vimium-like duplicate tab and searching through opened tabs
+unmap T
+nmap yt <action.openNewTabWithCurrentUrl><CR>
 
 " vim: ft=vim
