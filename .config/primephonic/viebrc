@@ -39,7 +39,7 @@ set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spo
 colorscheme flipped
 set fontsize=24
 set mintabwidth=0
-set windowtitle=full
+set windowtitle=title
 set devtoolsposition=vsplit
 set guihidetimeout=3000
 set guitabbar=onupdate
