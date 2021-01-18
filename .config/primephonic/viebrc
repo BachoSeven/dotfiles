@@ -126,5 +126,9 @@ nmap x <pointer.start><action.startFollowCurrentTab>
 fmap <Esc> <action.toNormalMode>
 " Copy mouse selection (vvy)
 nmap y <pointer.start><pointer.startVisualSelect><pointer.copyAndStop>
+" Copy current url
+nmap yy <action.pageToClipboard>
+" :nohlsearch
+nmap <Space><Space> <action.emptySearch>
 
 " vim: ft=vim
