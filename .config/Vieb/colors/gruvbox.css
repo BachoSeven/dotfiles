@@ -100,9 +100,6 @@ body[current-mode=command] #mode { color: var(--fg);}
 #mode { text-transform: none; font-size: 110%;}
 #mode-suggestions { text-transform: none; background: var(--fg);}
 
-/* scrollbar size */
-::-webkit-scrollbar {width: .7em;}
-
 /*
       Flipped
 		*/
