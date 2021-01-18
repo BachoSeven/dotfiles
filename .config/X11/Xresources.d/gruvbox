@@ -46,6 +46,7 @@ dwm.infoselbg:		C0
 dwm.infoselfg:		C6
 dwm.borderbar:		C0
 dwm.borderpx:		5
+dwm.topbar:		0
 ! From vanitygaps: 1 means no gaps for a single client
 dwm.smartgaps:		0
 
