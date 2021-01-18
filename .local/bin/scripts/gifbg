@@ -4,15 +4,20 @@
 #	- gifsicle
 #	- xwinwrap
 
-if [ $# -ne 1 ]; then
+if [ $# -ne 1 ] || [ ! -f "$1" ]; then
     echo 1>&2 Usage: $0 image.gif
     exit 1
 fi
 
 # get screen resolution
-SCRW=$(xrandr | awk '/current/ { print $8 }')
-SCRH=$(xrandr | awk '/current/ { print $10 }')
-SCRH=${SCRH%\,}
+if type -p xwininfo >/dev/null; then
+	read -r SCRW SCRH \
+	<<< "$(xwininfo -root | awk -F':' '/Width|Height/ {printf $2}')"
+elif type -p xrandr >/dev/null; then
+	SCRW=$(xrandr | awk '/current/ { print $8 }')
+	SCRH=$(xrandr | awk '/current/ { print $10 }')
+	SCRH=${SCRH%\,}
+fi
 
 # get gif resolution
 IMGWH=$(gifsicle --info "$1" | awk '/logical/ { print $3 }')
