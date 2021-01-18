@@ -36,7 +36,7 @@ set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spo
 
 " Appearance
 colorscheme gruvbox
-set fontsize=17
+set fontsize=18
 set mintabwidth=0
 set windowtitle=full
 set devtoolsposition=vsplit
@@ -132,5 +132,9 @@ nmap x <pointer.start><action.startFollowCurrentTab>
 fmap <Esc> <action.toNormalMode>
 " Copy mouse selection (vvy)
 nmap y <pointer.start><pointer.startVisualSelect><pointer.copyAndStop>
+" Copy current url
+nmap yy <action.pageToClipboard>
+" :nohlsearch
+nmap <Space><Space> <action.emptySearch>
 
 " vim: ft=vim
