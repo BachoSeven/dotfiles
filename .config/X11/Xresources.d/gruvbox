@@ -26,27 +26,30 @@
 *.color14: C14
 *.color15: C15
 
-!! Dwm
-dwm.normbgcolor:	BG
-! This is the colour of the statusbar
-dwm.normfgcolor:	C7
-dwm.normbordercolor:	C0
+! Dwm
+dwm.normbgcolor:	C0
 dwm.selbgcolor:		BG
 dwm.selfgcolor:		FG
 dwm.selbordercolor:	C7
 dwm.statusbg:		C0
 dwm.statusfg:		FG
+!! Bar
+dwm.topbar:		0
 dwm.tagnormbg:		C4
 dwm.tagnormfg:		C0
 dwm.tagselbg:		C12
 dwm.tagselfg:		C0
+!!! dwmblocks colors
+dwm.normfgcolor:	C7
+dwm.normbordercolor:	C0
+! Window Title section
 dwm.infonormbg:		C4
 dwm.infonormfg:		BG
-dwm.infoselbg:		C4
+dwm.infoselbg:		BG
 dwm.infoselfg:		FG
+! Borders
 dwm.borderbar:		C0
 dwm.borderpx:		5
-dwm.topbar:		0
 ! From vanitygaps: 1 means no gaps for a single client
 dwm.smartgaps:		0
 
