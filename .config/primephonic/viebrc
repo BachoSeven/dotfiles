@@ -1,0 +1,131 @@
+"   _______ _______ _______ _______ _______ _______
+"  |\     /|\     /|\     /|\     /|\     /|\     /|
+"  | +---+ | +---+ | +---+ | +---+ | +---+ | +---+ |
+"  | |   | | |   | | |   | | |   | | |   | | |   | |
+"  | |V  | | |i  | | |e  | | |b  | | |r  | | |c  | |
+"  | +---+ | +---+ | +---+ | +---+ | +---+ | +---+ |
+"  |/_____\|/_____\|/_____\|/_____\|/_____\|/_____\|
+"
+" Basic Options
+set cache=full
+set favicons=30day
+set redirecttohttp
+set search="https://duckduckgo.com/?q=%s&ia=web"
+set searchwords=y~youtube.com/results?search_query=%s,r~reddit.com/search?q=%s
+set searchwords+=w~https://wikipedia.org/w/index.php?search=%s,l~http://93.174.95.27/search.php?req=%s
+set searchwords+=aw~https://wiki.archlinux.org/index.php/Special:Search/%s,aur~https://aur.archlinux.org/packages.php?K=%s
+set downloadpath=~/
+set ignorecase
+set mouse
+set mousefocus
+
+" Notifications
+set notificationduration=7777
+set notificationposition=topright
+
+" Permissions
+set permissionmediadevices=allow
+set permissioncamera=ask
+set permissionmicrophone=ask
+set permissionnotifications=block
+
+" Redirects
+set redirects+=^https?://(www\.)?(reddit\.com.*)~https://old.$2
+set redirects+=^https?://(www\.)?youtube\.com/watch\?v=(...........)~https://tube.cadence.moe/watch?v=$2
+set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spotify.com/go?uri=spotify%3A$2%3A$3&rtd=1
+
+" Appearance
+colorscheme verticaltabs
+set fontsize=17
+set mintabwidth=0
+set windowtitle=full
+set devtoolsposition=vsplit
+set guihidetimeout=3000
+set guinavbar=onupdate
+set guitabbar=onupdate
+
+" Insert mode edit
+set vimcommand="st -e nvim"
+
+" General Mappings
+map <Up> <action.scrollUp>
+map <Down> <action.scrollDown>
+map <Left> <action.scrollLeft>
+map <Right> <action.scrollRight>
+map <PageUp> <action.scrollPageUp>
+map <PageDown> <action.scrollPageDown>
+map <Home> <action.scrollTop>
+map <End> <action.scrollBottom>
+map <F3> <action.toSearchMode>
+map <F5> <action.reload>
+map <F6> <action.toExploreMode>
+map <F7> <pointer.start>
+map <F12> <:devtools>
+map <C-PageUp> <action.previousTab>
+map <C-PageDown> <action.nextTab>
+map <C-F4> <action.closeTab>
+map <C-F5> <action.reloadWithoutCache>
+map <C-f> <action.toSearchMode>
+map <C-h> <:history>
+map <C-j> <:downloads>
+map <C-k> :help<CR>
+map <C-l> <action.toExploreMode>
+map <C-p> <:hardcopy>
+map <C-q> <:quit>
+map <C-s> <:write>
+map <C-t> <action.openNewTab><action.toExploreMode>
+map <C-w> <action.closeTab>
+map <C-Tab> <action.nextTab>
+map <C-S-Tab> <action.previousTab>
+map <C-S-PageUp> <action.moveTabBackward>
+map <C-S-PageDown> <action.moveTabForward>
+map <C-I> <:devtools>
+map <C-T> <action.reopenTab>
+map <A-Left> <action.backInHistory>
+map <A-Right> <action.forwardInHistory>
+map <A-0> <:b 9999>
+map <A-1> <:b 0>
+map <A-2> <:b 1>
+map <A-3> <:b 2>
+map <A-4> <:b 3>
+map <A-5> <:b 4>
+map <A-6> <:b 5>
+map <A-7> <:b 6>
+map <A-8> <:b 7>
+map <A-9> <:b 8>
+map <A-F4> <:quit>
+map <M-Q> <:quit>
+pmap <F7> <action.toNormalMode>
+vmap <F7> <action.toNormalMode>
+
+" Explore mode mappings
+emap <F6> <action.toNormalMode>
+emap <Up> <action.prevSuggestion>
+emap <Down> <action.nextSuggestion>
+
+" Insert mode mappings
+imap <C-e> <action.scrollDown>
+imap <C-y> <action.scrollUp>
+
+" Command mode mappings
+cmap <Up> <action.commandHistoryPrevious>
+cmap <Down> <action.commandHistoryNext>
+cmap <C-p> <action.commandHistoryPrevious>
+cmap <C-n> <action.commandHistoryNext>
+cmap bd<CR> <action.closeTab>
+cmap bn<CR> <action.nextTab>
+cmap bp<CR> <action.previousTab>
+
+" Normal mode mappings
+nmap o <action.toExploreMode>
+nmap O <action.openNewTab><action.toExploreMode>
+"" Toggle tab/nav bars
+nmap <lt> <:set guitabbar=onupdate guinavbar=onupdate>
+nmap > <:set guitabbar=always guinavbar=always>
+" Copy links
+nmap x <pointer.start><action.startFollowCurrentTab>
+fmap <Esc> <action.toNormalMode>
+" Copy mouse selection (vvy)
+nmap y <pointer.start><pointer.startVisualSelect><pointer.copyAndStop>
+
+" vim: ft=vim

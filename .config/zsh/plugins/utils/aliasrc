@@ -112,6 +112,8 @@
 	alias mx='kitty weechat'
 	alias el='element-desktop-nightly'
 	alias brb='st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d brb'
+	alias phonic='vieb --erwic ~/.config/primephonic/primephonic.json --datafolder ~/.config/primephonic'
+	alias flix='chromium --app=https://netflix.com/browse'
 
 ## Disks
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'

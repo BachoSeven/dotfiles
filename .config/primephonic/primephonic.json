@@ -1,0 +1,10 @@
+{
+    "name": "Primephonic",
+    "icon": "~/.config/icons/primephonic.png",
+    "apps": [
+        {
+            "container": "primephonic",
+            "url": "https://play.primephonic.com/"
+        }
+    ]
+}
