@@ -6,7 +6,7 @@
 (
 	hnheadlines
 	printf '\n\033[1;36mWEATHER:\033[1;32m'
-	curl wttr.in/$LOCATION\?pqtF&lang=it 2>/dev/null
+	curl https://wttr.in/$LOCATION\?pqtF&lang=it 2>/dev/null
 	touch /tmp/welcome_done
 	read -r _
 ) && exit 0 || (printf "Not connected, exiting...\n" && exit 1)
