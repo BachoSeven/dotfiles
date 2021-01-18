@@ -7,7 +7,7 @@
 #
 # If given a directory as input, `sbg` will choose a random picture/gif for you.
 #
-# SLOC: 34
+# SLOC: 33
 #
 # Dependencies:
 #	- `hsetroot`
@@ -40,10 +40,9 @@ while getopts ":hi:w:cmt" o; do
 			xrdb -load "$XDG_CONFIG_HOME/X11/Xresources" ;;
 
 		w)
-			ifinstalled python-pywal && vimwal -w || exit 1
 			linknotif "$2"
 			if [ -n "$2" ]; then backend="$2"; [ -f "$3" ] && linknotif "$3"; fi
-			wal -c && wal --backend "${backend:-wal}" -i "$(realpath "$bgloc")" >/dev/null 2>&1 ;;
+			wal -c && wal --backend "${backend:-wal}" -i "$(realpath "$bgloc")" >/dev/null 2>&1 && ifinstalled python-pywal && vimwal -w || exit 1 ;;
 
 		c) full=false; format="-center" ;;
 		m) full=false; format="-full" ;;
@@ -55,12 +54,10 @@ while getopts ":hi:w:cmt" o; do
 done
 
 # Use gifview for gifs, or else use hsetroot
-if [ ! -f ~/.cache/wal/active ]; then
-	mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
-	if [ "$mime" = "image/gif" ]; then
-		setsid -f gifbg "$bgloc"
-	else
-		$full || bgcol="$(imgextcol "$bgloc")"
-		hsetroot -solid "${bgcol:-#282828}" "${format:--cover}" "$bgloc" >/dev/null
-	fi
+mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
+if [ "$mime" = "image/gif" ]; then
+	setsid -f gifbg "$bgloc"
+else
+	$full || bgcol="$(imgextcol "$bgloc")"
+	hsetroot -solid "${bgcol:-#282828}" "${format:--cover}" "$bgloc" >/dev/null
 fi
