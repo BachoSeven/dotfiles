@@ -8,7 +8,7 @@
 *.cursorColor: #add8e6
 *RcursorColor: #555555
 *.background: BG
-*.foreground: C15
+*.foreground: FG
 *.color0: C0
 *.color1: C1
 *.color2: C2
@@ -42,8 +42,8 @@ dwm.tagselbg:		C12
 dwm.tagselfg:		C0
 dwm.infonormbg:		C4
 dwm.infonormfg:		BG
-dwm.infoselbg:		C0
-dwm.infoselfg:		C6
+dwm.infoselbg:		C4
+dwm.infoselfg:		FG
 dwm.borderbar:		C0
 dwm.borderpx:		5
 dwm.topbar:		0
