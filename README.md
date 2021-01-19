@@ -59,14 +59,14 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 - I also use `pywal` now and then, you will find various attempts at integrating it with other programs across this repo
 - The compositor is `picom` ([picom-ibhagwan-git](https://aur.archlinux.org/packages/picom-ibhagwan-git/) fork)
 - Icons are Joypixels ([ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/))
-- The default gtk 2/3 theme is [Gruvbox-Dark](https://github.com/jmattheis/gruvbox-dark-gtk)
-- My main terminal fonts are [`scientifica`](https://github.com/NerdyPepper/scientifica) and [`cozette`](https://github.com/slavfox/Cozette), outside the terminal I use `Hack Nerd
-  Font`.
+- The GTK theme is [gruvbox-material-gtk](https://github.com/sainnhe/gruvbox-material-gtk)
+- My font is `Hack Nerd`, although I sometimes use [`scientifica`](https://github.com/NerdyPepper/scientifica) and [`cozette`](https://github.com/slavfox/Cozette) inside the terminal.
 
 ## Various
 
 - I like using vim bindings whenever possible.
-- I use ungoogled-chromium, find my setup in [here](.config/browser). To improve its aesthetics, I use the Gtk  theme and duckduckgo with `gruvboxytheme` pass phrase. I use a custom startpage, check it out [here](https://github.com/BachoSeven/startpage)!
+- For browsing I mainly use ungoogled-chromium, find my setup in [here](.config/browser). To improve its aesthetics, I use the Gtk  theme and duckduckgo with `gruvboxytheme` pass phrase. I also like using [`Vieb`](https://vieb.dev/), which is an Electron vim-based browser.
+- I use a custom startpage, check it out [here](https://github.com/BachoSeven/startpage)!
 - [This](https://github.com/BachoSeven/sysdots) is a repository with my system-wide configuration files, specifically stuff from `/etc` and `/root`.
 - [Here](https://drive.google.com/drive/folders/19O9qHXYdETtf-l67Gnrl_FZVswLn23ER?usp=sharing) are some of the wallpapers I use.
 - [Pacgraph](http://github.com/keenerd/pacgraph/) output:
