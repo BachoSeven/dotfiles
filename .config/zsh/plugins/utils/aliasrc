@@ -81,8 +81,7 @@
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tb='taskbook'
 	alias octave='octave -q'
-	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
-	alias ytdl="youtube-dl -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic"
+	alias chill='mpv https://tinyurl.com/wbl4fya'
 	alias P='patch -p1 <'
 	alias nf='neofetch'
 	alias pf='pfetch'
@@ -101,7 +100,6 @@
 	alias spo='kitty --class ncspot ncspot && spotup'
 	alias spi='spotify && spotup && rmdir ~/Downloads'
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
-	alias chill='mpv https://tinyurl.com/wbl4fya'
 	alias smi='sudo make clean install'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
 # Misc
