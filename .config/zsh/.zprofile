@@ -71,7 +71,7 @@
 	"
 
 # Mpv
-	export MPV_OPTS="--really-quiet --force-seekable=yes"
+	export MPV_OPTS="--really-quiet"
 # Yt
 	export YTDL_OPTS='-c -R 50 --geo-bypass --prefer-ffmpeg -o %(title)s.%(ext)s'
 	export SUBS_FILE="$XDG_CONFIG_HOME/yt/subs"

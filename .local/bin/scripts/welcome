@@ -4,6 +4,7 @@
 [ -f /tmp/welcome_done ] && exit 0
 
 (
+	sleep 2 # Give a little bit of time to networkmanager
 	hnheadlines
 	printf '\n\033[1;36mWEATHER:\033[1;32m'
 	curl https://wttr.in/$LOCATION\?pqtF&lang=it 2>/dev/null
