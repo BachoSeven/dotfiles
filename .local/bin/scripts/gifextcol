@@ -19,7 +19,8 @@ convert "$1" +dither -unique-colors -colors $NUM - \
 | grep ' [0-9]: ' \
 | awk '{print substr($3, 1,7)}' \
 | sort | uniq -w 2 \
-# | dmenu -p "Select a color" # Use this to remove the color preview functionality
-| sed "s/^/<span color='/;s/$/'>████████████████████████████████████████<\/span>/" \
+| sed "s/^/<span color='/;s/$/'>███████████████████████████████████████<\/span>/" \
 | rofi -dmenu -markup-rows -width 17 -lines 10 -p 'Color' -padding 3 -theme /usr/share/rofi/themes/Pop-Dark.rasi -font 'mono 20' -i \
 | cut -d"'" -f2
+
+# | dmenu -p "Select a color" # Use this instead of the sed+rofi command to remove the color preview functionality
