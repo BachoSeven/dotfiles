@@ -5,9 +5,10 @@
 
 main() {
 	local subdir=$1
+	[ "$subdir" = "4k" ] || opts="-t f"
 	local rootdir=~/pics/papes
 	[ -n "$2" ] && count="-n $2"
-	fd -e png -e jpg -e jpeg -e gifv -e gif -e webp -e tif -e bmp -e ico --search-path $rootdir/$subdir | shuf $count | sxiv -ba -
+	fd -e png -e jpg -e jpeg -e gifv -e gif -e tif --search-path $rootdir/$subdir $opts | shuf $count | sxiv -ba -
 }
 
 main $@
