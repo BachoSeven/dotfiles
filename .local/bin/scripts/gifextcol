@@ -1,8 +1,12 @@
 #!/bin/sh
 
 # Francesco Minnocci 2020
-# extract main hex colors from image using imagemagick
-# Thanks to https://github.com/BogdanTheGeek/dwm-primcol/blob/master/extprimcol
+# Extract the main colors from a gif using imagemagick, preview them
+# in rofi and choose one to set as the gif's background (for use with my `gifbg` script).
+#
+# Thanks to:
+#	- https://github.com/BogdanTheGeek/dwm-primcol/blob/master/extprimcol for the initial idea
+#	- https://github.com/windwp/rofi-color-picker for rofi's color markup format
 
 # Adjust the values of $NUM to find more/less colors.
 # 6 works for most things and is pretty fast, for very small gifs we use 10.
@@ -10,9 +14,12 @@ iw=$2
 sw=$3
 sw4="$((sw/3))"
 [ $iw -lt $sw4 ] && NUM=10 || NUM=6
-convert "$1" +dither -unique-colors -colors $NUM -	|
-identify -verbose -			|
-grep ' [0-9]: '				|
-awk '{print substr($3, 1,7)}'		|
-sort | uniq -w 2			|
-dmenu -p "Select a color"
+convert "$1" +dither -unique-colors -colors $NUM - \
+| identify -verbose - \
+| grep ' [0-9]: ' \
+| awk '{print substr($3, 1,7)}' \
+| sort | uniq -w 2 \
+# | dmenu -p "Select a color" # Use this to remove the color preview functionality
+| sed "s/^/<span color='/;s/$/'>████████████████████████████████████████<\/span>/" \
+| rofi -dmenu -markup-rows -width 17 -lines 10 -p 'Color' -padding 3 -theme /usr/share/rofi/themes/Pop-Dark.rasi -font 'mono 20' -i \
+| cut -d"'" -f2
