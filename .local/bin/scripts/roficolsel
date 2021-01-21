@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# The input file should contain lines like this:
+#		<span color='#COLCOD' weight='normal' fallback='true' >  whatever </span>
+pangomarkedup="$1"
+
+cat $pangomarkedup \
+	| rofi -dmenu -markup-rows -width 17 -lines 5 -p 'Color' -padding 2 -theme /usr/share/rofi/themes/Pop-Dark.rasi -font 'mono 20' -i -threads 5 \
+	| cut -d"'" -f2
