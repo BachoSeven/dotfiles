@@ -5,9 +5,9 @@
 	autoload -Uz compinit
 	() {
 	  if [[ $# -gt 0 ]]; then
-		compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
+			compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump" # Skip checking for insecure files/directories (compaudit), see http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Use-of-compinit.
 	  else
-		compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
+			compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
 	  fi
 	} ${XDG_CACHE_HOME}/zsh/zcompdump(N.mh+24)
 
