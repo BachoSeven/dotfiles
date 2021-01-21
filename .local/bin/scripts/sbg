@@ -20,7 +20,7 @@
 
 linknotif() {
 	[ -f "$1" ] && ln -sf "$(realpath "$1")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
-	[ -d "$1" ] && ln -sf "$( find "$(realpath "$1")" -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
+	[ -d "$1" ] && ln -sf "$( find "$(realpath "$1")" -iregex '.*.\(jpg\|jpeg\|png\|tif\|tiff\|gifv\|gif\)' -type f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
 }
 
 # Initialize target location
