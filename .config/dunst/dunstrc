@@ -96,13 +96,14 @@
     	format = "<b>Now Playing:</b>\n%s\n%b"
 	background = "#1d2021"
 	foreground = "#ebdbb2"
-	frame_color = "#30AB70"
+	frame_color = "#1db954"
 	timeout = 5
 	script = spotup
 
 [ncspot]
 	appname = *ncspot*
-	frame_color = "#30AB70"
+	foreground = "#1d2021"
+	frame_color = "#1db954"
 	timeout = 5
 	script = spotup
 
