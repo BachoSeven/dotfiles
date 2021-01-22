@@ -60,10 +60,10 @@ memory
 kernel
 } 2>/dev/null
 
-printf "\t\t\u001b[31m\033[1m\033[0m\u001b[0m  $distro
-\t\t\u001b[37m\033[1m\033[0m\u001b[0m  $shell
-\t\t\u001b[35m\033[1m\033[0m\u001b[0m  $model
-\t\t\u001b[36m\033[1m\033[0m\u001b[0m  $uptime
-\t\t\u001b[32m\033[1m\033[0m\u001b[0m  $memory
-\t\t\u001b[33m\033[1m\033[0m\u001b[0m  $kernel
+printf "\t\u001b[31m\033[1m\033[0m\u001b[0m  $distro
+\t\u001b[37m\033[1m\033[0m\u001b[0m  $shell
+\t\u001b[35m\033[1m\033[0m\u001b[0m  $model
+\t\u001b[36m\033[1m\033[0m\u001b[0m  $uptime
+\t\u001b[32m\033[1m\033[0m\u001b[0m  $memory
+\t\u001b[33m\033[1m\033[0m\u001b[0m  $kernel
 "
