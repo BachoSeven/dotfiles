@@ -325,8 +325,11 @@ map gm cd /mnt
 map gd cd /dati
 map gu cd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi
 map g/ cd /
-map <c-e> down	#enable mouse scroll
-map <c-y> up
+map <m-down> down # Mouse mappings
+map <m-up> up
+map <m-1> open
+map <m-2> updir
+map <m-3> :toggle
 map <c-s> $lf -remote "send $id select $(printf '%q' $(all_files=(./*(ND)); printf '%s\n' ${all_files[@]} | fzf))"	# better asynchronious search
 map <c-g> set globsearch!
 map <c-f> :fzf_jump

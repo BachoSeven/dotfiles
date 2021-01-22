@@ -6,9 +6,9 @@
 main() {
 	local subdir=$1
 	[ "$subdir" = "4k" ] || opts="-t f"
-	local rootdir=~/pics/papes
+	local topdir=~/pics/papes
 	[ -n "$2" ] && count="-n $2"
-	fd -e png -e jpg -e jpeg -e gifv -e gif -e tif -e tiff --search-path $rootdir/$subdir $opts | shuf $count | sxiv -ba -
+	fd -e png -e jpg -e jpeg -e gifv -e gif -e tif -e tiff --search-path $topdir/$subdir $opts | shuf $count | sxiv -ba -
 }
 
 main $@
