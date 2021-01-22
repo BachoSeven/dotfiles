@@ -103,7 +103,6 @@
 [ncspot]
 	appname = *ncspot*
 	frame_color = "#30AB70"
-	new_icon = spotify
 	timeout = 5
 	script = spotup
 
