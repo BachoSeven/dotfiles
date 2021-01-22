@@ -9,12 +9,12 @@
 	export XDG_CACHE_HOME="$HOME/.cache"
 	export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-## Path settings
-# eliminates duplicates in *paths
+# Path settings
+## Eliminates duplicates in *paths
 	typeset -gU path cdpath fpath manpath
 	path=("$path[@]")
-# Adds `~/.local/bin` and all subdirs to $PATH
+## Adds `~/.local/bin` and all subdirs to $PATH
 	export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
-# Necessary to only call compinit from local zshrc
+## Necessary to only call compinit from local zshrc
 	skip_global_compinit=1

@@ -1,1 +1,0 @@
-/home/fra/.config/zsh/.zprofile

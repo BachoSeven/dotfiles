@@ -102,6 +102,7 @@
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
 	alias smi='sudo make clean install'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
+	alias scr='ffmpeg -f x11grab -i :0.0 -frames:v 1 "$HOME/screen-$(date "+%y%m%d-%H%M-%S").png"'
 # Misc
 	alias txs='nvim ~/.config/nvim/UltiSnips/tex.snippets'
 	alias kd='killall desk'
