@@ -85,7 +85,6 @@
 	alias P='patch -p1 <'
 	alias nf='neofetch'
 	alias pf='pfetch'
-	alias fetch='bf; ff; pf; nf'
 	alias sys='systemctl'
 	alias sysu='systemctl --user'
 	alias jctl='journalctl -p3 --pager-end'

@@ -97,9 +97,13 @@ def_key "ctrl-j"
   scroll_down
 def_key "L"
  next
-
 def_key "H"
  previous
+# Slave screen
+def_key "right"
+  slave_screen
+def_key "left"
+  master_screen
 
 #def_key "mouse"
 #  mouse_event

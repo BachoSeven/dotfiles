@@ -40,7 +40,7 @@ shell=$(basename $SHELL)
 # ( . .)
 # c(")(")
 
-tput clear
+# tput clear
 cat << EOF
 
              $d$f1$h  $t$wmname
