@@ -12,6 +12,7 @@
 # Dependencies:
 #	- `hsetroot`
 # Optional:
+# - `fd` (can be easily replaced with `find`)
 #	- [`gifsicle` + `shantz-xwinwrap-bzr` + custom `gifbg` and `imgextcol`(optionally with `roficolsel`) scripts] for GIFs;
 # -	[`pywal` + custom `vimwal` script] for integration with `wal` and with `wal.vim`
 #	NOTE:
@@ -20,7 +21,7 @@
 
 linknotif() {
 	[ -f "$1" ] && ln -sf "$(realpath "$1")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
-	[ -d "$1" ] && ln -sf "$( find "$(realpath "$1")" -iregex '.*.\(jpg\|jpeg\|png\|tif\|tiff\|gifv\|gif\)' -type f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
+	[ -d "$1" ] && ln -sf "$( fd --search-path "$(realpath "$1")" -e png -e jpg -e jpeg -e gifv -e gif -e tif -e tiff -t f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
 }
 
 # Initialize target location
