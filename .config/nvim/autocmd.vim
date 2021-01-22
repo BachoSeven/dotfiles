@@ -7,6 +7,7 @@
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 	au BufWritePre * %s/\s\+$//e
 	au BufWritepre * %s/\n\+\%$//e
+	au BufWritepre *.[ch] %s/\%$/\r/e " Leave a single newline on C files.
 
 " Recompile and run dwmblocks automatically
   au BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid -f dwmblocks }

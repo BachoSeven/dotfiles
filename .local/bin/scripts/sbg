@@ -12,7 +12,7 @@
 # Dependencies:
 #	- `hsetroot`
 # Optional:
-#	- [`gifsicle` + `shantz-xwinwrap-bzr` + custom `gifbg` and `extcol` scripts] for GIFs;
+#	- [`gifsicle` + `shantz-xwinwrap-bzr` + custom `gifbg` and `imgextcol`(optionally with `roficolsel`) scripts] for GIFs;
 # -	[`pywal` + custom `vimwal` script] for integration with `wal` and with `wal.vim`
 #	NOTE:
 # - I also use a custom `ifinstalled` script to notify about missing programs
