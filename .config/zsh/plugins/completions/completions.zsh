@@ -81,11 +81,7 @@
     rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs '_*'
 
 # function to visualize dir stack
-	di () {
-	  if [[ -n $1 ]]; then
-	    dirs "$@"
-	  else
-	    dirs -v | head -11
-	  fi
+	di() {
+		dirs -v | head -${1:-11}
 	}
 	compdef _dirs di

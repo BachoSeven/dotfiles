@@ -17,7 +17,8 @@
 # of the path and not the entire thing. Credits: https://github.com/paradigm
 	export WORDCHARS=${WORDCHARS//\/}
 
-# Remember recent directories
+# Hooks
+## Remember recent directories
 	autoload -Uz add-zsh-hook
 	DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
 	if [[ -f "$DIRSTACKFILE" ]] && (( ${#dirstack} == 0 )); then
