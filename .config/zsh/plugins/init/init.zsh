@@ -18,8 +18,8 @@
 	export WORDCHARS=${WORDCHARS//\/}
 
 # Hooks
-## Remember recent directories
 	autoload -Uz add-zsh-hook
+## Remember recent directories
 	DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
 	if [[ -f "$DIRSTACKFILE" ]] && (( ${#dirstack} == 0 )); then
 		dirstack=("${(@f)"$(< "$DIRSTACKFILE")"}")
@@ -35,6 +35,29 @@
 	setopt pushd_to_home
 	setopt pushd_ignore_dups
 	setopt pushdminus
+# Change title to command name
+  function title {
+    emulate -L zsh -o promptsubst -o extendedglob
+    : ${2=$1}
+		zmodload -e zsh/terminfo || zmodload -i zsh/terminfo
+		if [[ -n ${terminfo[fsl]} && -n ${terminfo[tsl]} ]]; then
+			echoti tsl; print -Pn "$1"; echoti fsl
+		fi
+  }
+  function title-precmd {
+    emulate -L zsh
+    local TIDLE="%15<..<%~%<<"
+    local WIDLE="%n@%m: %~"
+    title $TIDLE $WIDLE
+  }
+  function title-preexec {
+    emulate -L zsh -o extendedglob
+    local CMD=${1[(wr)^(*=*|sudo|ssh|-*)]:gs/%/%%}
+    local LINE="${2:gs/%/%%}"
+    title '$CMD' '%100>...>$LINE%<<'
+  }
+  add-zsh-hook precmd  title-precmd
+  add-zsh-hook preexec title-preexec
 
 # This causes pasted URLs to be automatically escaped, without needing to disable globbing.
 	autoload -Uz bracketed-paste-magic

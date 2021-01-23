@@ -105,7 +105,7 @@
 ## These aliases are here because they're either too short for, or useless to, the `menu` script.
 # Default to human readable figures and colorize
 	alias df='df --print-type'
-	alias ls='ls --classify --group-directories-first'
+	alias ls='ls --classify --group-directories-first --hyperlink=auto'
 	alias l='ls --color -lA'
 	alias rd='rmdir'
 	alias mkdir='mkdir -p --verbose'
@@ -117,7 +117,7 @@
 	alias mpv='mpv $MPV_OPTS'
 	alias youtube-dl='youtube-dl $YTDL_OPTS'
 	alias ytmp3='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3 ' # works for playlists too
-	alias ytdl="youtube-dl -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic"
+	alias ytdl="youtube-dl -c -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic"
 # Shorter commands
 	alias \
 		ka='killall' \
