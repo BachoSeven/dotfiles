@@ -38,7 +38,6 @@
 # Change title to command name
   function title {
     emulate -L zsh -o promptsubst -o extendedglob
-    : ${2=$1}
 		zmodload -e zsh/terminfo || zmodload -i zsh/terminfo
 		if [[ -n ${terminfo[fsl]} && -n ${terminfo[tsl]} ]]; then
 			echoti tsl; print -Pn "$1"; echoti fsl
@@ -46,9 +45,8 @@
   }
   function title-precmd {
     emulate -L zsh
-    local TIDLE="%15<..<%~%<<"
-    local WIDLE="%n@%m: %~"
-    title $TIDLE $WIDLE
+    local TIDLE="%41<..<%~%<<"
+    title $TIDLE
   }
   function title-preexec {
     emulate -L zsh -o extendedglob
