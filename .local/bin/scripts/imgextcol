@@ -1,7 +1,7 @@
 #!/bin/sh
 
 convert "$1" +dither -colors 5 -unique-colors txt: \
-| tail -5 \
+| tail -n +2 \
 | awk '{print substr($3,1)}' \
 | sort \
 | sed "s/^/<span color='/;s/$/'>███████████████████████████████████████<\/span>/" \
