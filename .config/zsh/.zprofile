@@ -50,6 +50,8 @@
 	export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
 	export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android" # Deprecated(?)
 	export ADB_VENDOR_KEY="$XDG_CONFIG_HOME/android"   # Deprecated(?)
+	export GNUPGHOME="$XDG_DATA_HOME/"gnupg # Oof.
+	export GPG_TTY=$(tty)
 
 ## Various programs settings:
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
@@ -73,7 +75,6 @@
 # Mpv
 	export MPV_OPTS="--really-quiet"
 # Yt
-	export YTDL_OPTS='-c -R 50 --geo-bypass --prefer-ffmpeg -o %(title)s.%(ext)s'
 	export SUBS_FILE="$XDG_CONFIG_HOME/yt/subs"
 	export SUBS_MENU_PROG="dmenu -bw 7 -nb #458588 -nf #ebdbb2 -sb #cc241d -sf #fbf1c7 -nhb #282828 -shb #1d2021 -c -f -r -i -l 10 -p YT"
 

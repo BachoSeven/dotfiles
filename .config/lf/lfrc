@@ -343,7 +343,7 @@ map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached
 map b $ setsid -f sbg -i $f
 map <a-L> cleanlatexcompile
-map U !du -sh      # waiting shell command for Usage
+map U !du -sh      # shell-wait command for Disk Usage of current directory
 map X !$f
 map O $ setsid -f $OPENER "$f" >/dev/null 2>&1
 map T push :$touch<space>
