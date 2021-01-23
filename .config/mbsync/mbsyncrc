@@ -1,22 +1,24 @@
-IMAPStore gm_main-remote
+
+
+IMAPStore ascoli.minnocci@gmail.com-remote
 Host imap.gmail.com
 Port 993
 User ascoli.minnocci@gmail.com
-PassCmd "pass mutt-wizard-gm_main"
+PassCmd "pass mw-ascoli.minnocci@gmail.com"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore gm_main-local
+MaildirStore ascoli.minnocci@gmail.com-local
 Subfolders Verbatim
-Path /home/fra/.local/share/mail/gm_main/
-Inbox /home/fra/.local/share/mail/gm_main/INBOX
-Flatten .
+Path /home/fra/.local/share/mail/ascoli.minnocci@gmail.com/
+Inbox /home/fra/.local/share/mail/ascoli.minnocci@gmail.com/INBOX
+# Flatten .
 
-Channel gm_main
+Channel ascoli.minnocci@gmail.com
 Expunge Both
-Master :gm_main-remote:
-Slave :gm_main-local:
+Master :ascoli.minnocci@gmail.com-remote:
+Slave :ascoli.minnocci@gmail.com-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
@@ -24,25 +26,25 @@ MaxMessages 10000
 ExpireUnread no
 # End profile
 
-IMAPStore gm_uwcad-remote
+IMAPStore ad17fmin@uwcad.it-remote
 Host imap.gmail.com
 Port 993
 User ad17fmin@uwcad.it
-PassCmd "pass mutt-wizard-gm_uwcad"
+PassCmd "pass mw-ad17fmin@uwcad.it"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore gm_uwcad-local
+MaildirStore ad17fmin@uwcad.it-local
 Subfolders Verbatim
-Path /home/fra/.local/share/mail/gm_uwcad/
-Inbox /home/fra/.local/share/mail/gm_uwcad/INBOX
-Flatten .
+Path /home/fra/.local/share/mail/ad17fmin@uwcad.it/
+Inbox /home/fra/.local/share/mail/ad17fmin@uwcad.it/INBOX
+# Flatten .
 
-Channel gm_uwcad
+Channel ad17fmin@uwcad.it
 Expunge Both
-Master :gm_uwcad-remote:
-Slave :gm_uwcad-local:
+Master :ad17fmin@uwcad.it-remote:
+Slave :ad17fmin@uwcad.it-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
