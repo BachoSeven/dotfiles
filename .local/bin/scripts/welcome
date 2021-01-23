@@ -7,7 +7,7 @@
 	fetch
 	sleep 2
 	hnheadlines
-	sleep 2
+	sleep 3
 	printf '\n\033[1;36mWEATHER:\033[1;32m'
 	curl https://wttr.in/$LOCATION\?pqtF&lang=it 2>/dev/null
 	touch /tmp/welcome_done

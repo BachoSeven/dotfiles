@@ -8,4 +8,4 @@ else
 	ifinstalled transmission-cli || exit
 	[ "$(printf "No\\nYes" | dmenu -i -p "Turn on transmission daemon?")" = "Yes" ] && transmission-daemon && notify-send "tranmission-daemon enabled."
 fi
-sleep 3 && pkill -RTMIN+7 "${STATUSBAR:-dwmblocks}"
+sleep 3 && pkill -RTMIN+7 dwmblocks

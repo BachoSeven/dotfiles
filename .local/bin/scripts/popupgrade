@@ -3,7 +3,7 @@
 printf "Beginning upgrade.\\n"
 
 $AURHELPER
-pkill -RTMIN+8 "${STATUSBAR:-dwmblocks}"
+pkill -RTMIN+8 dwmblocks
 
 printf "\\nUpgrade complete.\\nPress <Enter> to exit window.\\n\\n"
 read -r _
