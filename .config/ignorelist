@@ -324,9 +324,18 @@ Thumbs.db
 .config/chromium/Default/Service Worker
 .config/chromium/Default/Application Cache
 .config/chromium/Default/History Index *
-# /snap/chromium/common/.cache
-# /snap/chromium/*/.config/chromium/Default/Service Worker/CacheStorage
-# /snap/chromium/*/.local/share/
+
+#Vieb:
+.config/Vieb/Local Storage
+.config/Vieb/Session Storage
+.config/Vieb/Partitions
+.config/Vieb/favicons
+.config/primephonic/Local Storage
+.config/primephonic/Session Storage
+.config/primephonic/Partitions
+.config/primephonic/favicons
+
+.config/Element-Nightly
 
 #Riot
 # /snap/riot-web/
@@ -369,6 +378,9 @@ nohup.out
 
 # Snap caches
 .config/*/Cache
+
+# w3m
+.w3m/w3m*.html
 
 # Atom
 # .config/Atom/*Cache
