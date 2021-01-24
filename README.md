@@ -6,11 +6,11 @@
 ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
-![](pics/screens/ricing/dwm_new.png)
-![](pics/screens/ricing/dwm_def.png)
+![](https://i.imgur.com/YdrqaJj.png)
+![](https://i.imgur.com/0gV1ofK.jpg)
 <a href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"></a><br><br>
 These are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
-l!-- vim-markdown-toc GFM -->
+<!-- vim-markdown-toc GFM -->
 
 * [Current Setup](#current-setup)
     * [Eye-candy](#eye-candy)
@@ -30,7 +30,7 @@ Here are some of the programs I use:
 
 - Suckless utilities (links are to my patched repositories): **[dmenu](https://github.com/BachoSeven/dmenu)**, **[dwm](https://github.com/BachoSeven/dwm)** (Window Manager), **[st](https://github.com/BachoSeven/st)** (terminal emulator) and **[xss](https://github.com/9wm/xss)+[slock](https://github.com/BachoSeven/slock)** (screensaver).
 - Minimally configured **zsh**  shell with custom plugins, completions and prompt (old p10k themes [here](https://github.com/BachoSeven/dotfiles/tree/master/.config/zsh/plugins/p10k_theme)). For syntax highlighting, I use **[fsh](https://github.com/zdharma/fast-syntax-highlighting)**; startup time is around 50 ms.
-<img src="pics/screens/ricing/zsh.png" width=50%>
+<img src="https://i.imgur.com/0h255fG.png" width=50%>
 
 - **[neovim](.config/nvim)** text editor
 - **[stig](https://github.com/rndusr/stig)** to interact with the transmission-daemon client
@@ -70,28 +70,28 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 - [This](https://github.com/BachoSeven/sysdots) is a repository with my system-wide configuration files, specifically stuff from `/etc` and `/root`.
 - [Here](https://drive.google.com/drive/folders/19O9qHXYdETtf-l67Gnrl_FZVswLn23ER?usp=sharing) are some of the wallpapers I use.
 - [Pacgraph](http://github.com/keenerd/pacgraph/) output:
-![](pics/screens/ricing/pacgraph.png)
+![](https://i.imgur.com/uIR9tHw.png)
 
 ## Screens
 
 ### Dwm
 
 #### Gruvboxy
-![](pics/screens/ricing/gruvboxy/dwm.png)
-![](pics/screens/ricing/gruvboxy/dwm_after-bach.png)
-![](pics/screens/ricing/gruvboxy/peace_radiohead.png)
+![](https://i.imgur.com/ogkueqS.jpg)
+![](https://i.imgur.com/PO04uQ5.png)
+![](https://i.imgur.com/djwXszG.jpg)
 
 #### Blue(s)
-![](pics/screens/ricing/blue/dwm_city.png)
-![](pics/screens/ricing/blue/dwm_gravitazione-2.png)
+![](https://i.imgur.com/UsjYLmZ.jpg)
+![](https://i.imgur.com/DpSvfuw.png)
 
 #### Greenish
-![](pics/screens/ricing/green/green_dwm-1.png)
-![](pics/screens/ricing/green/dwm_gravitazione.png)
+![](https://i.imgur.com/j8bcPCM.jpg)
+![](https://i.imgur.com/F8jxZqe.jpg)
 
 #### Pink :3
-![](pics/screens/ricing/pink/dwm_donttrythisathome.png)
-![](pics/screens/ricing/pink/dwm_pinker.png)
+![](https://i.imgur.com/h6j1n2K.jpg)
+![](https://i.imgur.com/IAu5mkU.jpg)
 
 ### Lama
 here be lamas
