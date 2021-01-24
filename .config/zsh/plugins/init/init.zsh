@@ -1,15 +1,17 @@
 ## Basic Options
-	setopt complete_in_word        				# Complete from both ends of a word.
-	setopt always_to_end           				# Move cursor to the end of a completed word.
-	setopt auto_cd          				# `dirname` is equivalent to `cd dirname`
-	unsetopt flow_control					# Disable ctrl-s/ctrl-q to freeze/unfreeze terminal.
-	setopt extended_glob					# Enable globbing
-	setopt short_loops             				# 'for i in *; echo $i;' instead of 'for i in *; do echo $i; done'
-	unsetopt rm_star_silent 				# Always ask before rm folder/*
-	setopt prompt_subst 					# Command substitution, parameter and arithmetic expansion in prompt.
-	setopt interactive_comments				# Allow comments even in interactive shell
-	setopt magicequalsubst					# ~ substitution and tab completion after a = (for --x=filename args)
+	setopt complete_in_word    	# Complete from both ends of a word.
+	setopt always_to_end       	# Move cursor to the end of a completed word.
+	setopt auto_cd          		# `dirname` is equivalent to `cd dirname`
+	unsetopt flow_control				# Disable ctrl-s/ctrl-q to freeze/unfreeze terminal.
+	setopt extended_glob				# Enable globbing
+	setopt short_loops         	# 'for i in *; echo $i;' instead of 'for i in *; do echo $i; done'
+	unsetopt rm_star_silent 		# Always ask before rm folder/*
+	setopt prompt_subst 				# Command substitution, parameter and arithmetic expansion in prompt.
+	setopt interactive_comments	# Allow comments even in interactive shell
+	setopt magicequalsubst			# ~ substitution and tab completion after a = (for --x=filename args)
   unsetopt prompt_sp
+	setopt correct							# typos
+	correct_ignore='_*'
 
 # Do not consider "/" a word character.  One benefit of this is that
 # when hitting ctrl-w in insert mode (which deletes the word before the
