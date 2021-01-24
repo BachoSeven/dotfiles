@@ -45,14 +45,12 @@
   }
   function title-precmd {
     emulate -L zsh
-    local TIDLE="%41<..<%~%<<"
-    title $TIDLE
+    title "%41<..<%~%<<"
   }
   function title-preexec {
     emulate -L zsh -o extendedglob
     local CMD=${1[(wr)^(*=*|sudo|ssh|-*)]:gs/%/%%}
-    local LINE="${2:gs/%/%%}"
-    title '$CMD' '%100>...>$LINE%<<'
+    title '$CMD'
   }
   add-zsh-hook precmd  title-precmd
   add-zsh-hook preexec title-preexec
