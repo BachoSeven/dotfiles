@@ -14,3 +14,5 @@
 ###############################################################################
 
 export NB_COLOR_THEME="${NB_COLOR_THEME:-gruvbox}" # Set by `nb` • sab 23 gen 2021, 23:38:02, CET
+
+export NB_SYNTAX_THEME="${NB_SYNTAX_THEME:-gruvbox}" # Set by `nb` • dom 24 gen 2021, 00:03:33, CET # Until a new bat version is released; then, rename to "gruvbox-dark".
