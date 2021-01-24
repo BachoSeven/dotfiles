@@ -15,11 +15,10 @@
 	export XDG_CONFIG_HOME="$HOME/.config"
 	export XDG_DATA_HOME="$HOME/.local/share"
 	export XDG_CACHE_HOME="$HOME/.cache"
-	export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-	export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
-	export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
-	export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/settings.ini
 	export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+	export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/readline/inputrc"
+	export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+	export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/settings.ini"
 	export NBRC_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/nb/nbrc"
 	export NB_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nb"
 	export NB_HIST="${XDG_DATA_HOME:-$HOME/.local/share}/nb_history"
@@ -33,25 +32,25 @@
 	export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 	export CARGO_HOME="$XDG_DATA_HOME"/cargo
 	export GOPATH="$XDG_DATA_HOME"/go
-	export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+	export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
 	export GEM_HOME="$XDG_DATA_HOME/gem"
 	export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
-	export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/ripgreprc"
-	export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME/mathematica"
-	export _JAVA_OPTIONS="-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
-	export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
-	export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
-	export LYNX_LSS="$XDG_CONFIG_HOME/lynx/lynx.lss"
+	export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/rg/ripgreprc"
+	export MATHEMATICA_USERBASE="${XDG_CONFIG_HOME:-$HOME/.config}/mathematica"
+	export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=\"${XDG_CONFIG_HOME:-$HOME/.config}\"/java -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+	export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
+	export LYNX_CFG="${XDG_CONFIG_HOME:-$HOME/.config}/lynx/lynx.cfg"
+	export LYNX_LSS="${XDG_CONFIG_HOME:-$HOME/.config}/lynx/lynx.lss"
 	export OCTAVE_HISTFILE="$XDG_CACHE_HOME/octave-hsts"
-	export OCTAVE_SITE_INITFILE="$XDG_CONFIG_HOME/octave/octaverc"
+	export OCTAVE_SITE_INITFILE="${XDG_CONFIG_HOME:-$HOME/.config}/octave/octaverc"
 	export TEXMFHOME=$XDG_DATA_HOME/texmf
 	export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
-	export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
-	export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
-	export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android" # Deprecated(?)
-	export ADB_VENDOR_KEY="$XDG_CONFIG_HOME/android"   # Deprecated(?)
-	export GNUPGHOME="$XDG_DATA_HOME/"gnupg # Oof.
-	# export GPG_TTY=$(tty)
+	export TEXMFCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/texlive/texmf-config"
+	export ANDROID_PREFS_ROOT="${XDG_CONFIG_HOME:-$HOME/.config}/android"
+	export ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android" # Deprecated(?)
+	export ADB_VENDOR_KEY="${XDG_CONFIG_HOME:-$HOME/.config}/android"   # Deprecated(?)
+	export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg" # Oof.
+	export GPG_TTY=$(tty)
 	export PYTHONHISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
 
 ## Various programs settings:
@@ -62,7 +61,7 @@
 	export MESA_GLSL_CACHE_DISABLE=true
 
 # Dotbare
-	export DOTBARE_DIR="$XDG_CONFIG_HOME/dots"
+	export DOTBARE_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/dots"
 	export DOTBARE_TREE="$HOME"
 	export DOTBARE_BACKUP="${XDG_DATA_HOME:-$HOME/.local/share}/dotbare"
 	export DOTBARE_KEY="
@@ -76,7 +75,7 @@
 # Mpv
 	export MPV_OPTS="--really-quiet"
 # Yt
-	export SUBS_FILE="$XDG_CONFIG_HOME/yt/subs"
+	export SUBS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/yt/subs"
 	export SUBS_MENU_PROG="dmenu -bw 7 -nb #458588 -nf #ebdbb2 -sb #cc241d -sf #fbf1c7 -nhb #282828 -shb #1d2021 -c -f -r -i -l 10 -p YT"
 
 # Mpd
@@ -103,8 +102,8 @@
 ## Appearance
 	export XCURSOR_PATH="~/.config/icons" # Needed for custom cursor
 	export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-	[ -f $XDG_CONFIG_HOME/dircolors/dircolor.dark ] && eval `dircolors -b $XDG_CONFIG_HOME/dircolors/dircolor.dark`
-	# export LF_ICONS="di=:fi=:tw=:ow=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*.coffee=:*.cpp=:*.css=:*.d=:*.dart=:*.erl=:*.exs=:*.fs=:*.go=:*.h=:*.hh=:*.hpp=:*.hs=:*.html=:*.java=:*.jl=:*.js=:*.json=:*.lua=:*.md=:*.php=:*.pl=:*.pro=:*.py=:*.rb=:*.rs=:*.scala=:*.ts=:*.vim=:*.cmd=:*.ps1=:*.sh=:*.bash=:*.zsh=:*.fish=:*.tar=:*.tgz=:*.arc=:*.arj=:*.taz=:*.lha=:*.lz4=:*.lzh=:*.lzma=:*.tlz=:*.txz=:*.tzo=:*.t7z=:*.zip=:*.z=:*.dz=:*.gz=:*.lrz=:*.lz=:*.lzo=:*.xz=:*.zst=:*.tzst=:*.bz2=:*.bz=:*.tbz=:*.tbz2=:*.tz=:*.deb=:*.rpm=:*.jar=:*.war=:*.ear=:*.sar=:*.rar=:*.alz=:*.ace=:*.zoo=:*.cpio=:*.7z=:*.rz=:*.cab=:*.wim=:*.swm=:*.dwm=:*.esd=:*.jpg=:*.jpeg=:*.mjpg=:*.mjpeg=:*.gif=:*.bmp=:*.pbm=:*.pgm=:*.ppm=:*.tga=:*.xbm=:*.xpm=:*.tif=:*.tiff=:*.png=:*.svg=:*.svgz=:*.mng=:*.pcx=:*.mov=:*.mpg=:*.mpeg=:*.m2v=:*.mkv=:*.webm=:*.ogm=:*.mp4=:*.m4v=:*.mp4v=:*.vob=:*.qt=:*.nuv=:*.wmv=:*.asf=:*.rm=:*.rmvb=:*.flc=:*.avi=:*.fli=:*.flv=:*.gl=:*.dl=:*.xcf=:*.xwd=:*.yuv=:*.cgm=:*.emf=:*.ogv=:*.ogx=:*.aac=:*.au=:*.flac=:*.m4a=:*.mid=:*.midi=:*.mka=:*.mp3=:*.mpc=:*.ogg=:*.ra=:*.wav=:*.oga=:*.opus=:*.spx=:*.xspf=:*.pdf=:*.nix="
+	[ -f ${XDG_CONFIG_HOME:-$HOME/.config}/dircolors/dircolor.dark ] && eval `dircolors -b ${XDG_CONFIG_HOME:-$HOME/.config}/dircolors/dircolor.dark`
+	# export LF_ICONS="tw=:st=:ow=:dt=:di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*.coffee=:*.cpp=:*.css=:*.d=:*.dart=:*.erl=:*.exs=:*.fs=:*.go=:*.h=:*.hh=:*.hpp=:*.hs=:*.html=:*.java=:*.jl=:*.js=:*.json=:*.lua=:*.md=:*.php=:*.pl=:*.pro=:*.py=:*.rb=:*.rs=:*.scala=:*.ts=:*.vim=:*.cmd=:*.ps1=:*.sh=:*.bash=:*.zsh=:*.fish=:*.tar=:*.tgz=:*.arc=:*.arj=:*.taz=:*.lha=:*.lz4=:*.lzh=:*.lzma=:*.tlz=:*.txz=:*.tzo=:*.t7z=:*.zip=:*.z=:*.dz=:*.gz=:*.lrz=:*.lz=:*.lzo=:*.xz=:*.zst=:*.tzst=:*.bz2=:*.bz=:*.tbz=:*.tbz2=:*.tz=:*.deb=:*.rpm=:*.jar=:*.war=:*.ear=:*.sar=:*.rar=:*.alz=:*.ace=:*.zoo=:*.cpio=:*.7z=:*.rz=:*.cab=:*.wim=:*.swm=:*.dwm=:*.esd=:*.jpg=:*.jpeg=:*.mjpg=:*.mjpeg=:*.gif=:*.bmp=:*.pbm=:*.pgm=:*.ppm=:*.tga=:*.xbm=:*.xpm=:*.tif=:*.tiff=:*.png=:*.svg=:*.svgz=:*.mng=:*.pcx=:*.mov=:*.mpg=:*.mpeg=:*.m2v=:*.mkv=:*.webm=:*.ogm=:*.mp4=:*.m4v=:*.mp4v=:*.vob=:*.qt=:*.nuv=:*.wmv=:*.asf=:*.rm=:*.rmvb=:*.flc=:*.avi=:*.fli=:*.flv=:*.gl=:*.dl=:*.xcf=:*.xwd=:*.yuv=:*.cgm=:*.emf=:*.ogv=:*.ogx=:*.aac=:*.au=:*.flac=:*.m4a=:*.mid=:*.midi=:*.mka=:*.mp3=:*.mpc=:*.ogg=:*.ra=:*.wav=:*.oga=:*.opus=:*.spx=:*.xspf=:*.pdf=:*.nix="
 	export GREP_COLOR='1;92;40'
 # anti aliasing in the two toolkits
 	export GDK_USE_XFT=1
@@ -229,5 +228,5 @@ ex=🎯:\
 	export KUNST_MUSIC_DIR="~/slsk/music"
 
 # Start graphical server on tty1 if not already running.
-	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" &> /dev/null
+	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xinitrc" -- "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xserverrc" &> /dev/null
 	if [ -z "$(ls /dev/input/by-id | grep Anne)" ]; then sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null; fi

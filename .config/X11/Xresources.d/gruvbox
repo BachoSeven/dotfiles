@@ -62,3 +62,11 @@ dmenu.hibackground:	C4
 dmenu.hiforeground:	FG
 dmenu.hiselbackground:	C5
 dmenu.hiselforeground:	FG
+
+!! Tabbed
+tabbed.normbgcolor:	C4
+tabbed.normfgcolor:	FG
+tabbed.selbgcolor :	BG
+tabbed.selfgcolor :	#fbf1c7
+tabbed.urgbgcolor :	C0
+tabbed.urgfgcolor :	C1
