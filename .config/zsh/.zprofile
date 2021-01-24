@@ -51,7 +51,8 @@
 	export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android" # Deprecated(?)
 	export ADB_VENDOR_KEY="$XDG_CONFIG_HOME/android"   # Deprecated(?)
 	export GNUPGHOME="$XDG_DATA_HOME/"gnupg # Oof.
-	export GPG_TTY=$(tty)
+	# export GPG_TTY=$(tty)
+	export PYTHONHISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
 
 ## Various programs settings:
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm

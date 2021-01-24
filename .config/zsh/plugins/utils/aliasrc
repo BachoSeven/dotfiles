@@ -92,6 +92,7 @@
 	alias bctl='bluetoothctl'
 	alias rsb='sudo systemctl restart bluetooth'
 	alias cbh='connectHeadphones'
+	alias uefi='sudo systemctl reboot --firmware-setup'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias xr="xrandr"
 	alias glow='glow -p -w 120'
