@@ -77,7 +77,7 @@
 	alias ipeth='nmcli d show enp0s20f0u2 |&grep 4.ADD'
 	alias ipwifi='nmcli d show wlp2s0 |&grep 4.ADD'
 	alias nn='nordvpn'
-	alias w3m='w3m -s -B'
+	alias w3m='w3mwrap -s -B'
 	alias sqm='w3m https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tb='taskbook'
 	alias octave='octave -q'
