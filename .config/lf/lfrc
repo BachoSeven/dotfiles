@@ -30,6 +30,11 @@ set promptfmt "\033[33;1m%u\033[0m\033[32;1m@\033[0m\033[34;1m%h\033[0m:\033[35;
     fi
 }}
 
+# set terminal title to current working directory
+cmd on-cd &{{
+	printf "\033]0; $PWD\007" > /dev/tty
+}}
+
 # set previewer with env vars
 $lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"
 
