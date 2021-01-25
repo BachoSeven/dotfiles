@@ -740,7 +740,7 @@ share() {
 # Readable
 readw3m() {
 	readable -q $@ |
-	w3m -config $XDG_CONFIG_HOME/w3m/config -T text/html
+	w3mwrap -T text/html
 }
 readlynx() {
 	readable -q $@ |
