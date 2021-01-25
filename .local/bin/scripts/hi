@@ -20,7 +20,7 @@ sqlite3 -separator "$sep" "$temp_hist"							\
 	awk -F "$sep" '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}'		|
 	fzf --bind "=:execute%echo {} | sed 's#.*\(https*://\)#\1#'			\
 	| xclip -sel c -r%" --ansi --multi						\
-	--preview " echo {-1} | xargs  readable -q | w3m -T text/html"			\
+	--preview " echo {-1} | xargs  readable -q | w3mwrap -T text/html"			\
 	--preview-window=right:30% $opts						|
 	sed 's#.*\(https*://\)#\1#'							|
 	setsid -f xargs -r $BROWSER >/dev/null
