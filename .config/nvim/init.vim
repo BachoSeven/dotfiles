@@ -33,6 +33,7 @@
 	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde characters
 	se autoread " Automatically re-read file if a change was detected outside of vim
 	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down
+	se scrolloff=7
 
 "		 +--------------+
 "		 | Key Mappings |
