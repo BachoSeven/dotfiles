@@ -95,7 +95,7 @@
 	alias uefi='sudo systemctl reboot --firmware-setup'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias xr="xrandr"
-	alias glow='glow -p -w 120'
+	alias glow='glow -p'
 	alias ud='udict'
 	alias spo='kitty --class ncspot ncspot && spotup'
 	alias spi='spotify && spotup && rmdir ~/Downloads'
