@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# Useful misc
-	dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS 2>/dev/null
-	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Start Polkit
-
 # Dim->LockScreen->Suspend
 	xset s 180 60
 	xss-lock -n "/home/fra/.local/bin/scripts/dim" -- /usr/local/bin/slock &
