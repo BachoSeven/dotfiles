@@ -122,6 +122,7 @@ cmap bn<CR> <action.nextTab>
 cmap bp<CR> <action.previousTab>
 
 " Normal mode mappings
+nmap ZZ <:quit>
 nmap o <action.toExploreMode>
 nmap O <action.openNewTab><action.toExploreMode>
 "" Toggle tab/nav bars
