@@ -6,7 +6,7 @@ reload-threads 4
 download-retries 2
 download-timeout 10
 download-full-page yes
-scrolloff 14
+scrolloff 11
 
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 
