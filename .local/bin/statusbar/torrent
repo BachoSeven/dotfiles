@@ -16,6 +16,6 @@ out="$(qbt torrent list --format csv:delimiter=\| --url http://localhost:9091 2>
 
 case $BLOCK_BUTTON in
 	1) torwrap ;;
-	2) td-toggle ;;
+	2) qbtoggle ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
