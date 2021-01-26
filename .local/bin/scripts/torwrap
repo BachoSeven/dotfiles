@@ -1,5 +1,5 @@
 #!/bin/sh
 
-! pidof qbittorrent >/dev/null && setsid -f qbittorrent; notify-send "Starting qBittorrent..."
+! pidof qbittorrent >/dev/null && setsid -f qbittorrent && notify-send "Starting qBittorrent..."
 
 kill -41 $(pidof dwmblocks)
