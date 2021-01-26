@@ -154,10 +154,9 @@
 ## _exists stuff
 	_exists html2text && alias html2text='html2text -nobs -style pretty'
 	_exists pacgraph && alias pacgraph='pacgraph -b "#1e2021" -l "#848388" -t "#d93420" -d "#c78930" -p 8 98'
-	_exists ncdu && alias ncdu="ncdu --color dark"
 	_exists nyancat || alias nyancat="telnet nyancat.acc.umu.se"
 	_exists duf && alias duf='duf --output filesystem,mountpoint,usage,avail --sort usage -hide special'
-	_exists vizex && alias vizex="vizex -d green -t blue -g cyan -s underlined"
+	_exists vizex && alias vizex='vizex -d green -t blue -g cyan -s underlined'
 	_exists tty-clock && alias  		\
 		tty-clock="tty-clock -C 4"   \
 		cl="tty-clock -cs"		\
@@ -172,3 +171,4 @@
 			g4txt='mctl share-text /org/mconnect/device/1'											\
 			g4file='mctl share-file /org/mconnect/device/1'											\
 			g4sms='mctl send-sms /org/mconnect/device/1'
+	_exists bookmenu && alias bookmenu='OUT=$HOME bookmenu'
