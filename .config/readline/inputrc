@@ -18,6 +18,7 @@ set match-hidden-files			off
 set page-completions			on
 set completion-ignore-case		on
 set show-all-if-ambiguous		on
+set show-all-if-unmodified		on
 set print-completions-horizontally	on
 
 # Tab for printing completion; Shift+Tab for cycling through completions
