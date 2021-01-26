@@ -4,9 +4,9 @@ out="$(qbt torrent list --format csv:delimiter=\| --url http://localhost:9091 2>
 	| cut -d\| -f15  \
 	| tail -n +2 \
 	| sed " # The letters are just for sorting
-	s/.*Paused.*/A 🛑/;
+	s/PausedDownload/A 🛑/;
 	s/StalledUpload/Z 🌱/;
-	s/Completed/N ☑/;
+	s/PausedUpload/N ☑/;
 	s/StalledDownload/B 💤/;
 	s/Uploading/L /;
 	s/Downloading/M /" \
