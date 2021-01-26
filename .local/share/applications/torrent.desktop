@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Torrent
-MimeType=application/x-bittorrent;
-Exec=/usr/bin/env transadd %U

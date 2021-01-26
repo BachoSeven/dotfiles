@@ -1,7 +1,5 @@
 #!/bin/sh
 
-ifinstalled stig transmission-cli || exit
+! pidof qbittorrent >/dev/null && setsid -f qbittorrent; notify-send "Starting qBittorrent..."
 
-! pidof transmission-daemon >/dev/null && transmission-daemon && notify-send "Starting torrent daemon..."
-
-$TERMINAL -e stig; pkill -RTMIN+7 dwmblocks
+kill -41 $(pidof dwmblocks)

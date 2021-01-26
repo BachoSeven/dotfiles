@@ -2,10 +2,9 @@
 
 # If transmission-daemon is running, will ask to kill, else will ask to start.
 
-if pidof transmission-daemon >/dev/null ; then
-	[ "$(printf "No\\nYes" | dmenu -i -p "Turn off transmission-daemon?")" = "Yes" ] && killall transmission-da && notify-send "transmission-daemon disabled."
+if pidof qbittorrent >/dev/null ; then
+	[ "$(printf "No\\nYes" | dmenu -i -p "Turn off qBittorrent?")" = "Yes" ] && kill -TERM $(pidof qbittorrent) && notify-send "qBittorrent disabled."
 else
-	ifinstalled transmission-cli || exit
-	[ "$(printf "No\\nYes" | dmenu -i -p "Turn on transmission daemon?")" = "Yes" ] && transmission-daemon && notify-send "tranmission-daemon enabled."
+	[ "$(printf "No\\nYes" | dmenu -i -p "Turn on qBittorent?")" = "Yes" ] && setsid -f qbittorrent && notify-send "Starting qBittorrent..."
 fi
-sleep 3 && pkill -RTMIN+7 dwmblocks
+pkill -RTMIN+7 dwmblocks

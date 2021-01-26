@@ -1,20 +1,21 @@
 #!/bin/sh
 
-# Exit if transmission is not running
-pgrep transmission-da > /dev/null 2>&1 || exit 1
+out="$(qbt torrent list --format csv:delimiter=\| --url http://localhost:9091 2>/dev/null \
+	| cut -d\| -f15  \
+	| tail -n +2 \
+	| sed " # The letters are just for sorting
+	s/.*Paused.*/A 🛑/;
+	s/StalledUpload/Z 🌱/;
+	s/Completed/N ☑/;
+	s/StalledDownload/B 💤/;
+	s/Uploading/L /;
+	s/Downloading/M /" \
+	| sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ')"
 
-transmission-remote -l | grep % |
-	sed " # The letters are for sorting and will not appear.
-	s/.*Stopped.*/A 🛑/;
-	s/.*Seeding.*/Z 🌱/;
-	s/.*100%.*/N ☑/;
-	s/.*Idle.*/B 💤/;
-	s/.*Uploading.*/L /;
-	s/.*%.*/M /" |
-		sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' '
+[ -n "$out" ] && echo "$out" || echo "🐉"
 
 case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e stig & ;;
+	1) torwrap ;;
 	2) td-toggle ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
