@@ -1,9 +1,11 @@
 ## Basic Options
+	unsetopt global_rcs					# Skip reading global configs for interactive shell usage
 	setopt complete_in_word    	# Complete from both ends of a word.
 	setopt always_to_end       	# Move cursor to the end of a completed word.
 	setopt auto_cd          		# `dirname` is equivalent to `cd dirname`
 	unsetopt flow_control				# Disable ctrl-s/ctrl-q to freeze/unfreeze terminal.
 	setopt extended_glob				# Enable globbing
+	unsetopt nomatch						# Allow [ or ] whereever you want
 	setopt short_loops         	# 'for i in *; echo $i;' instead of 'for i in *; do echo $i; done'
 	unsetopt rm_star_silent 		# Always ask before rm folder/*
 	setopt prompt_subst 				# Command substitution, parameter and arithmetic expansion in prompt.

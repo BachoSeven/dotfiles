@@ -9,6 +9,7 @@
 - setup search engines: choose a valid Searx from `searx.space`, and then add ddg("gruvboxytheme") (and keep nosearch)
 - chrome://settings/content/pdfDocuments: download instead of horrible pdf viewer.
 - set startpage
+- Send do-not-track request
 
 ## Cli flags [now in chromium-flags.conf]
 ``` sh
