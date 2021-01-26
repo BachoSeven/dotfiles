@@ -42,7 +42,6 @@
 		T='| tail'		\
 		G='|&rg'		\
 		C='| wc -l'		\
-		F='| fzf'		\
 		N='>&/dev/null' 	\
 		X='|xclip'		\
 		O='|owo'		\
@@ -64,7 +63,6 @@
 		"T"	"| tail"
 		"G"     "|&rg"
 		"C"	"| wc -l"
-		"F"	"| fzf"
 		"N"	"&>/dev/null"
 		"X"	"| xclip"
 		"A"	"| xargs "
