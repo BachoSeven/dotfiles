@@ -20,5 +20,4 @@
 	remaps					# Switch caps/super and one-tap_caps/esc
 	copyq &					# Clipboard management
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
-	_ transmission-daemon		# Bittorrent daemon
 	_ subs -d				# Start custom yt daemon

@@ -4,7 +4,7 @@
 # Show 🌐 if connected to ethernet or ❎ if none.
 
 case $BLOCK_BUTTON in
-	1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
+	1) "$TERMINAL" -e nmtui; kill -37 $(pidof dwmblocks) ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
