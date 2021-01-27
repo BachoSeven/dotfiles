@@ -19,7 +19,8 @@
     notification_height = 0
     separator_height = 2
     padding = 0
-    horizontal_padding = 8
+    texti_icon_padding=10
+    horizontal_padding = 0
     frame_width = 3
     frame_color = "#d79921"
     # Define a color for the separator.
