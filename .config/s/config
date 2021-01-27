@@ -16,4 +16,9 @@ customProviders [
     url: "http://93.174.95.27/search.php?req=%s"
     tags: [education]
   }
+  {
+    name: udict
+    url: "https://www.urbandictionary.com/define.php?term=%s "
+    tags: [search]
+  }
 ]
