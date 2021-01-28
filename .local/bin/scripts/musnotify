@@ -38,7 +38,7 @@ check_mpc_data
 # Extract album cover
 	if [ -n "$CHECK_EXIFTOOL" ]; then
 
-		SONG="$MUSIC_DIR/$(mpc -p 6602 --format "%file%" current)"
+		SONG="$MUSIC_DIR/$(mpc --format "%file%" current)"
 		PICTURE_TAG="-Picture"
 
 		if [ "$SONG" = *".m4a" ]; then

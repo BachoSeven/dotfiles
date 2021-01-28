@@ -169,3 +169,6 @@
 			g4file='mctl share-file /org/mconnect/device/1'											\
 			g4sms='mctl send-sms /org/mconnect/device/1'
 	_exists bookmenu && alias bookmenu='OUT=$HOME bookmenu'
+	# Soulseek
+	_exists soulseekqt && alias slsk='soulseekqt'
+	alias inc='lfcd ~/slsk/incoming'

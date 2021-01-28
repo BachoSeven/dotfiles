@@ -131,10 +131,6 @@
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|&rg' # psgrep
 	alias psh='printf "\033[1;96mCPU\033[0;0m\n\n" && ps -eo cmd,fname,pid,pcpu,time --sort=-pcpu | head -n 11 && printf "\n\033[1;35mMEMORY\033[0;0m\n\n" && ps -eo cmd,fname,pid,pmem,rss --sort=-rss | head -n 9' # pshead
 
-# Soulseek
-	alias slsk='soulseekqt'
-	alias inc='lfcd ~/slsk/incoming'
-
 # cf... shortcuts
 	alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
 	alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
