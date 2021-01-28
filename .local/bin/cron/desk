@@ -5,6 +5,6 @@
 ! pidof Xorg >/dev/null 2>&1 && exit 0
 
 notify-send "Stand up in 10 seconds!"; sleep 10s
-~/.local/bin/idasen stand && sleep 15m
+idasen stand && sleep 15m
 
-notify-send "Sitting down soon..."; sleep 5s; ~/.local/bin/idasen sit
+notify-send "Sitting down soon..."; sleep 5s; idasen sit
