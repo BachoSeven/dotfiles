@@ -22,6 +22,6 @@ convert "$1" +dither -unique-colors -colors $NUM - \
 	| uniq -w 2 \
 	| sed "s/^/<span color='/;s/$/'>███████████████████████████████████████<\/span>/" \
 	> /tmp/gifcols
-roficolsel /tmp/gifcols
+roficolsel /tmp/gifcols && rm /tmp/gifcols
 
 # | dmenu -p "Select a color" # Pipe into this instead of the sed+rofi commands to remove the color preview functionality

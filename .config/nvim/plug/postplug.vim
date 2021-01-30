@@ -152,6 +152,10 @@ let g:startify_skiplist = [
   let g:battery#update_statusline = 1 " For statusline.
 	se noshowmode " Don't display mode in command line (airline already shows it)
 
+" Minimap
+	nn <leader>M :MinimapToggle<cr>
+
+
 " Limelight
 	" Color name (:help cterm-colors) or ANSI code
 	let g:limelight_conceal_ctermfg = '#a89984'

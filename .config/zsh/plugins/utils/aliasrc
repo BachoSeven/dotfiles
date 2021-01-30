@@ -96,7 +96,7 @@
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias xr="xrandr"
 	alias glow='glow -p'
-	alias ud='udict'
+	alias ud='s -p udict'
 	alias spo='kitty --class ncspot ncspot && spotup'
 	alias spi='spotify && spotup && rmdir ~/Downloads'
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
