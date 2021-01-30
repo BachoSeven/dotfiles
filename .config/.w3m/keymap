@@ -205,8 +205,8 @@ keymap h        LEFT
 keymap gg       BEGIN						#Go to the top.
 #go to line number 5 "5G"
 keymap G        END						#Go to the end.
-#keymap C-d      NEXT_PAGE
-#keymap C-u      PREV_PAGE
+keymap C-d      NEXT_PAGE
+keymap C-u      PREV_PAGE
 #Av. Pag = M-[6~    Re. Pag = M-[5~
 keymap  M-[6~   NEXT_PAGE
 keymap  M-[5~   PREV_PAGE
@@ -230,8 +230,8 @@ keymap $        LINE_END					#Go to last column in current line
 keymap w        NEXT_WORD
 #Go to fist letter of previous word
 keymap b        PREV_WORD
-#keymap C-o      UNDO						#Undo cursor movement.
-#keymap C-i      REDO						#Undo undone cursor movement.
+keymap C-o      UNDO						#Undo cursor movement.
+keymap C-i      REDO						#Undo undone cursor movement.
 
 #-tab..........................................................................
 #keymap d        CLOSE_TAB					#Close current tab (nd close tab n)
@@ -248,7 +248,6 @@ keymap C-w        COMMAND  "EXTERN 'echo %s >> ~/.w3m/RestoreTab.txt' ; CLOSE_TA
 #other duckduckgo capabilities (calculator, unit conversion, etc)
 #https://github.com/duckduckgo/zeroclickinfo-goodies/tree/master/lib/DDG/Goodie
 keymap t        TAB_GOTO https://duckduckgo.com/lite/		#New tab in www.foobar.com
-#keymap C-t      TAB_GOTO http://www.google.com/en		#New tab in www.foobar.com
 keymap C-t      TAB_GOTO https://duckduckgo.com/lite/		#New tab in www.foobar.com
 keymap yt       NEW_TAB						#Duplicate current tab
 keymap J        NEXT_TAB					#Change focus to left tab
@@ -283,7 +282,7 @@ keymap C-h      HISTORY						#Show history
 #keymap C-H      HISTORY					#Show history
 
 #-bookmarks....................................................................
-keymap C-d      ADD_BOOKMARK					#Add current page to bookmarks
+keymap C-D ADD_BOOKMARK					#Add current page to bookmarks
 keymap gb       VIEW_BOOKMARK					#Show bookmarks
 keymap :b       VIEW_BOOKMARK					#Show bookmarks
 keymap C-b      VIEW_BOOKMARK					#Show bookmarks
@@ -321,14 +320,14 @@ keymap C-s      DOWNLOAD
 keymap :W       PRINT
 #keymap ESC-C-J SUBMIT						#e.g. execute search in google
 #Load local file.
-keymap C-o      LOAD
+# keymap C-o      LOAD
 
 #-info.........................................................................
 keymap gC-g     INFO						#current page info
 #keymap C-i     INFO						#current page info
 keymap C-g      LINE_INFO					#line under cursor info
 keymap gf       VIEW						#See source of current page. dwb key
-keymap C-u       VIEW						#See source of current page. FF key
+keymap gu       VIEW						#See source of current page. Vimium key
 
 #-miscellany....................................................................
 keymap M-s      DOWNLOAD_LIST					#Show download menu

@@ -37,7 +37,7 @@ handle_mime() {
 			--style="${HIGHLIGHT_STYLE}" --force -- "${FILE_PATH}" ;;
 		application/zip | application/x-bzip2 | application/x-bzip | applicatio/x-gzip | application/x-xz | rar | application/x-rar-compressed | application/x-tar | application/x-rar | application/x-7z-compressed) atool --list -- "${FILE_PATH}" ;;
 		application/msword) catdoc "${FILE_PATH}" ;;
-		application/csv) xsv <"${FILE_PATH}" --csv --table --grid ;;
+		application/csv) csview --style reinforced "${FILE_PATH}" ;;
 		*/pdf) pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - ;;
 		*djvu*) djvutxt "${FILE_PATH}" ;;
 		image/*) chafa --fill=space --symbols=block -c 240 -s "${WIDTH}"x"${HEIGHT}" "${FILE_PATH}" || exit 1;;

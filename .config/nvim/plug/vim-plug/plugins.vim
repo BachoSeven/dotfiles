@@ -62,6 +62,9 @@ cal plug#begin('~/.local/share/nvim/plugged')
 " Icons
 	Plug 'ryanoasis/vim-devicons'
 
+" Minimap
+	Plug 'wfxr/minimap.vim'
+
 cal plug#end()
 
 " }}}
