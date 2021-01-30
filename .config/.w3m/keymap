@@ -282,7 +282,8 @@ keymap C-h      HISTORY						#Show history
 #keymap C-H      HISTORY					#Show history
 
 #-bookmarks....................................................................
-keymap C-D ADD_BOOKMARK					#Add current page to bookmarks
+# keymap C-D	ADD_BOOKMARK					#Add current page to bookmarks
+keymap :ab      ADD_BOOKMARK					#Show bookmarks
 keymap gb       VIEW_BOOKMARK					#Show bookmarks
 keymap :b       VIEW_BOOKMARK					#Show bookmarks
 keymap C-b      VIEW_BOOKMARK					#Show bookmarks
