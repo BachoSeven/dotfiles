@@ -102,7 +102,6 @@
 
 [ncspot]
 	appname = *ncspot*
-	foreground = "#1d2021"
 	frame_color = "#1db954"
 	timeout = 5
 	script = spotup
