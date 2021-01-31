@@ -51,9 +51,11 @@
     done
   done
 
-# Edit line in vim with Ctrl+x+e:
+# Edit line in insert mode with Ctrl+x+e:
 	autoload edit-command-line; zle -N edit-command-line
 	bindkey "^x^e" edit-command-line
+# ... and in normal mode with a *magic* space
+	bindkey -M vicmd ' ' edit-command-line
 
 # Move by physical lines, just like gj/gk in vim :)
 # Credits to http://leahneukirchen.org/dotfiles/.zshrc
