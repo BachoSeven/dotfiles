@@ -31,24 +31,32 @@ $if mode=vi
 		set show-mode-in-prompt off
 	$else
 		set show-mode-in-prompt on
-		set vi-ins-mode-string \1\e[6 q\2
-		set vi-cmd-mode-string \1\e[2 q\2
+
+		$if term=linux
+			set vi-ins-mode-string \1\e[?0c\2
+			set vi-cmd-mode-string \1\e[?8c\2
+		$else
+			set vi-ins-mode-string \1\e[6 q\2
+			set vi-cmd-mode-string \1\e[2 q\2
+		$endif
 
 		set keymap vi-command
 		# these are for vi-command mode
 		Control-l: clear-screen
 		Control-a: beginning-of-line
+		j: history-search-forward
+		k: history-search-backward
 
 		set keymap vi-insert
-		# `kj` enters normal mode.
-		"kj": vi-movement-mode
-		# switch to block cursor before executing a command
-		RETURN: "\e\n"
 		# these are for vi-insert mode
 		Control-p: previous-history
 		Control-n: next-history
 		Control-l: clear-screen
 		Control-a: beginning-of-line
+		# `kj` enters normal mode.
+		"kj": vi-movement-mode
+		# switch to block cursor before executing a command
+		RETURN: "\e\n"
 	$endif
 
 $endif
