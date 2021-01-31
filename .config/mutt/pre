@@ -6,4 +6,3 @@ set crypt_autosign = yes
 set crypt_opportunistic_encrypt = yes
 set pgp_self_encrypt = yes
 set pgp_default_key  = 'ascoli.minnocci@gmail.com'
-set signature = :|

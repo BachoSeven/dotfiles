@@ -4,7 +4,7 @@ IMAPStore ascoli.minnocci@gmail.com-remote
 Host imap.gmail.com
 Port 993
 User ascoli.minnocci@gmail.com
-PassCmd "pass mw-ascoli.minnocci@gmail.com"
+PassCmd "pass ascoli.minnocci@gmail.com"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -13,7 +13,7 @@ MaildirStore ascoli.minnocci@gmail.com-local
 Subfolders Verbatim
 Path /home/fra/.local/share/mail/ascoli.minnocci@gmail.com/
 Inbox /home/fra/.local/share/mail/ascoli.minnocci@gmail.com/INBOX
-# Flatten .
+# Flatten _
 
 Channel ascoli.minnocci@gmail.com
 Expunge Both
@@ -22,7 +22,7 @@ Slave :ascoli.minnocci@gmail.com-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 10000
+MaxMessages 11000
 ExpireUnread no
 # End profile
 
@@ -30,7 +30,7 @@ IMAPStore ad17fmin@uwcad.it-remote
 Host imap.gmail.com
 Port 993
 User ad17fmin@uwcad.it
-PassCmd "pass mw-ad17fmin@uwcad.it"
+PassCmd "pass ad17fmin@uwcad.it"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -39,7 +39,7 @@ MaildirStore ad17fmin@uwcad.it-local
 Subfolders Verbatim
 Path /home/fra/.local/share/mail/ad17fmin@uwcad.it/
 Inbox /home/fra/.local/share/mail/ad17fmin@uwcad.it/INBOX
-# Flatten .
+# Flatten _
 
 Channel ad17fmin@uwcad.it
 Expunge Both
@@ -48,6 +48,6 @@ Slave :ad17fmin@uwcad.it-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 10000
+MaxMessages 11000
 ExpireUnread no
 # End profile

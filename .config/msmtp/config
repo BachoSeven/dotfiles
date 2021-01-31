@@ -9,7 +9,7 @@ host smtp.gmail.com
 port 587
 from ascoli.minnocci@gmail.com
 user ascoli.minnocci@gmail.com
-passwordeval "pass mw-ascoli.minnocci@gmail.com"
+passwordeval "pass ascoli.minnocci@gmail.com"
 
 
 account ad17fmin@uwcad.it
@@ -17,6 +17,6 @@ host smtp.gmail.com
 port 465
 from ad17fmin@uwcad.it
 user ad17fmin@uwcad.it
-passwordeval "pass mw-ad17fmin@uwcad.it"
+passwordeval "pass ad17fmin@uwcad.it"
 tls_starttls off
 
