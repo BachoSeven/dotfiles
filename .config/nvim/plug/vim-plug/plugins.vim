@@ -48,10 +48,8 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	" Plug 'gruvbox-community/gruvbox'
 	" Plug 'overcache/NeoSolarized'
 
-" Airline
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-  Plug 'lambdalisue/battery.vim'
+" Lightline
+	Plug 'itchyny/lightline.vim'
 
 " Syntax highlighting
 	Plug 'VebbNix/lf-vim'

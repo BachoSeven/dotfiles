@@ -144,17 +144,57 @@ let g:startify_skiplist = [
 " Gruvbox Material
 	let g:gruvbox_material_transparent_background = 1
 
-" Airline
-	let g:airline_theme = 'gruvbox_material'
-	" let g:airline_theme='base16_solarized'
-	let g:airline_powerline_fonts = 1
-  let g:airline#extensions#battery#enabled = 1
-  let g:battery#update_statusline = 1 " For statusline.
-	se noshowmode " Don't display mode in command line (airline already shows it)
+" Devicons
+	let g:webdevicons_enable = 1
+	let g:WebDevIconsUnicodeDecorateFileNodes = 1
+	let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+	let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+	let g:webdevicons_enable_startify = 1
+	let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+	let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+	let g:DevIconsDefaultFolderOpenSymbol = ''
+
+" Lightline
+	let g:lightline = {
+				\ 'colorscheme': 'gruvbox_material',
+	      \ 'active': {
+				\   'left': [ [ 'mode', 'paste' ],
+				\             [ 'readonly', 'filename' ] ],
+				\ },
+				\ 'component_function': {
+				\   'filename': 'LightlineFilename',
+	      \   'fileformat': 'LightlineFileformat',
+				\		'filetype': 'LightlineFiletype',
+				\	},
+				\	'mode_map': {
+				\		'n' : 'N',
+				\		'i' : 'I',
+				\		'R' : 'R',
+				\		'v' : 'V',
+				\		'V' : 'VL',
+				\		"\<C-v>": 'VB',
+				\		'c' : 'C',
+				\		's' : 'S',
+				\		'S' : 'SL',
+				\		"\<C-s>": 'SB',
+				\		't': 'T',
+				\ },
+				\ }
+	se noshowmode " Don't display mode in command line
+	fu! LightlineFilename() " Trim bar between filename and modified sign
+		let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+		let modified = &modified ? ' +' : ''
+		retu filename . modified
+	endfu
+	fu! LightlineFileformat()
+		retu winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+	endfu
+	fu! LightlineFiletype()
+		retu winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+	endfu
 
 " Minimap
 	nn <leader>M :MinimapToggle<cr>
-
 
 " Limelight
 	" Color name (:help cterm-colors) or ANSI code
@@ -186,15 +226,5 @@ let g:startify_skiplist = [
 	au BufRead,BufNewFile /tmp/neomutt* :Goyo | se linebreak
 	au BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	au BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
-
-" Devicons
-	let g:webdevicons_enable = 1
-	let g:WebDevIconsUnicodeDecorateFileNodes = 1
-	let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-	let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-	let g:webdevicons_enable_airline_statusline = 1
-	let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-	let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
-	let g:DevIconsDefaultFolderOpenSymbol = ''
 
 " }}}
