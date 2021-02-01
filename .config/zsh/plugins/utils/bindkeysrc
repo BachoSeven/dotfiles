@@ -12,7 +12,6 @@
 # Pick but stay in completion menu
 	bindkey -M menuselect "+" accept-and-menu-complete
 # Do not save these in history:
-	bindkey -s '^o' ' lfcd\r'
 	bindkey -s '^g' ' btm -b\r'
 	bindkey -s '^v' ' v\r'
 	bindkey -s '^[n' ' neomutt\r'
@@ -20,6 +19,18 @@
 	bindkey -s '\ef' ' fedit\r'
 	bindkey -s '^y' ' fzfpacinstall\r'
 	bindkey -s '^q' ' pacbrowse\r'
+	(( $+commands[lf] )) && bindkey -s '^o' ' lfcd\r' && alias \
+		inc='lfcd ~/slsk/incoming' \
+		people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People' \
+		doc='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents' \
+		dow='lfcd /mnt/01D5707D40B081F0/Users/ascol/Downloads' \
+		mus='lfcd /mnt/01D5707D40B081F0/Users/ascol/Music' \
+		pics='lfcd /mnt/01D5707D40B081F0/Users/ascol/Pictures' \
+		uni='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi' \
+		ib='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/IB' \
+		wsp='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/pc_acer/roba!/wsp' \
+		mthstf='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents/mathstuff' \
+		movies='lfcd /dati/movies'
 
 # CTRL-Z as shortcut for `$ fg` (end result: toggles fg/bg).
 	bindkey -s '^z' 'fg\r'
@@ -171,4 +182,3 @@
 	_exists bookmenu && alias bookmenu='OUT=$HOME bookmenu'
 	# Soulseek
 	_exists soulseekqt && alias slsk='soulseekqt'
-	alias inc='lfcd ~/slsk/incoming'
