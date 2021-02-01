@@ -143,16 +143,12 @@ let g:startify_skiplist = [
 
 " Gruvbox Material
 	let g:gruvbox_material_transparent_background = 1
+	let g:gruvbox_material_enable_italic = 1	" Italic Keywords
+	let g:gruvbox_material_disable_italic_comment = 1
 
 " Devicons
 	let g:webdevicons_enable = 1
-	let g:WebDevIconsUnicodeDecorateFileNodes = 1
-	let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-	let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 	let g:webdevicons_enable_startify = 1
-	let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-	let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
-	let g:DevIconsDefaultFolderOpenSymbol = ''
 
 " Lightline
 	let g:lightline = {
