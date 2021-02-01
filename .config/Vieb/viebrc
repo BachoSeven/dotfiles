@@ -77,6 +77,7 @@ map <C-k> :help<CR>
 map <C-l> <action.toExploreMode>
 map <C-p> <:hardcopy>
 map <C-q> <:quit>
+map <C-r> <action.reload>
 map <C-s> <:write>
 map <C-t> <action.openNewTab><action.toExploreMode>
 map <C-w> <action.closeTab>
