@@ -1,5 +1,5 @@
 " Plug Setup {{{
-" options relating to vim-plug automation, thanks " options relating to vim-plug automation, thanks https://github.com/kelp/nvim/blob/master/home/.config/nvim/init.vim
+" options relating to vim-plug automation, thanks https://github.com/kelp/nvim/blob/master/home/.config/nvim/init.vim
 
 
 " Utility to run PlugInstall and guard against loading color schemes

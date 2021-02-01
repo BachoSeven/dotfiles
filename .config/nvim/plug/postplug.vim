@@ -218,9 +218,4 @@ let g:startify_skiplist = [
 	endf
 	au! User GoyoLeave nested cal <SID>goyo_leave()
 
-	au BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	au BufRead,BufNewFile /tmp/neomutt* :Goyo | se linebreak
-	au BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
-	au BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
-
 " }}}

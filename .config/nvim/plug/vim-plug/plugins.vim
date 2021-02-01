@@ -7,8 +7,8 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
-	Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
-	Plug 'junegunn/goyo.vim'
+	Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+	Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'mail'] }
 	Plug 'junegunn/limelight.vim'
 	Plug 'jamessan/vim-gnupg'
   Plug 'mhinz/vim-startify'
@@ -22,8 +22,8 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown', 'vim-plug'] }
 
 " Vimtex
-	Plug 'lervag/vimtex'
-  Plug 'sirver/ultisnips'
+	Plug 'lervag/vimtex', { 'for': 'tex' }
+  Plug 'sirver/ultisnips', { 'for': ['tex', 'c'] }
 
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
@@ -52,10 +52,10 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 
 " Syntax highlighting
-	Plug 'VebbNix/lf-vim'
+	Plug 'BachoSeven/lf-vim', { 'as': 'lf-syntax' }
 	Plug 'cespare/vim-toml'
 	Plug 'bfrg/vim-cpp-modern'
-  Plug 'McSinyx/vim-octave', {'for': 'octave'}
+  Plug 'McSinyx/vim-octave'
 
 " Icons
 	Plug 'ryanoasis/vim-devicons'
