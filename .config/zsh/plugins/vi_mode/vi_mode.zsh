@@ -15,7 +15,8 @@
   repCursor='[3 q'
   visCursor='[2 q'
   vlnCursor='[2 q'
-## Available colors:
+## Available colors: black, red, green, yellow, blue, magenta, cyan, and white.
+## Available attributes:  bold,  faint,  standout, underline, blink, reverse, and conceal.
 	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
 	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
 	vimRep="%{$fg_bold[yellow]%}[REP]%{$reset_color%}"
