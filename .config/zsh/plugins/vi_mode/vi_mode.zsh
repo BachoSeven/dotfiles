@@ -1,5 +1,5 @@
 # Reduce timeout
-	export KEYTIMEOUT=10
+	export KEYTIMEOUT=5
 # Change cursor shape for different vi modes + decent rprompt indicator
 	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
 	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
@@ -36,7 +36,7 @@
 # ci", ci', ci`, di", etc
 	autoload -U select-quoted
 	zle -N select-quoted
-	for m in visual vicmd viopp; do
+	for m in visual viopp; do
 	  for c in {a,i}{\',\",\`}; do
 	    bindkey -M $m $c select-quoted
 	  done
