@@ -42,7 +42,6 @@
 	zle-line-init() { # initialise `vi insert` as keymap
 		printf "\e%s" "$insCursor"
 	}; zle -N zle-line-init
-	preexec() { vim_mode=${vimIns} ;} # Use vi insert for every new prompt
 	vim_mode=${vimIns} # Initialise mode for RPS1
 	zle-line-pre-redraw() {	# This takes care of visual and visual line modes
 		[[ $KEYMAP != vicmd ]] && return
@@ -61,12 +60,15 @@
 				vim_mode=${vimVln} ;;
 		esac
 		if [[ $vim_mode != $old ]]; then
-			zle .reset-prompt # The dot avoids "deleting" previous lines on redraw
+			zle reset-prompt
 		fi
 	}; zle -N zle-line-pre-redraw
+	zle-line-finish() { # This fixes mode not updating on Return
+		vim_mode=${vimIns}
+	}; zle -N zle-line-finish
 	# Fix a bug when you C-c in CMD mode and you'd be prompted with CMD mode indicator, while in fact you would be in INS mode
 	# Fixed by catching SIGINT (C-c), set vim_mode to INS and then repropagate the SIGINT, so if anything else depends on it, we will not break it
-	function TRAPINT() {
+	TRAPINT() {
 		vim_mode=${vimIns}
 		printf "\e%s" "$insCursor" # This is also needed, otherwise pressing Esc results in the deletion of one previous line.
 		return $(( 128 + $1 ))
