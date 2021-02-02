@@ -178,6 +178,12 @@ let g:startify_skiplist = [
 				\ },
 				\ }
 	se noshowmode " Don't display mode in command line
+	let g:lightline.separator = {
+      \   'left': '', 'right': ''
+      \}
+	let g:lightline.subseparator = {
+      \   'left': '', 'right': ''
+      \}
 	" Show total line number in square brackets
 	let g:lightline.component = {
 			\ 'lineinfo': '%3l[%L]:%-2v'}
