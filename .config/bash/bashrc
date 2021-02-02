@@ -30,7 +30,8 @@ NC='\[\e[m\]'                   # Color Reset
 set -o vi
 
 # Useful aliases
-alias c='clear'
+alias cls='clear'
+alias :q='exit'
 alias ..='cd ..'
 alias ls='ls -CF --color=auto'
 alias ll='ls -lisa --color=auto'
