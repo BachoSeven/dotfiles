@@ -1,11 +1,6 @@
 # Reduce timeout
 	export KEYTIMEOUT=7
-# Change cursor shape for different vi modes + decent rprompt indicator
-	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
-	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
-	vimRep="%{$fg_bold[yellow]%}[REP]%{$reset_color%}"
-	vimVis="%{$fg_bold[magenta]%}[VIS]%{$reset_color%}"
-	vimVln="%{$fg_bold[cyan]%}[VLN]%{$reset_color%}"
+# Two vi mode indicators: changing cursor shape + RPROMPT indicator
 ## Cursor types:
 # 1 -> Blinking block
 # 2 -> Steady block ("█")
@@ -20,6 +15,12 @@
   repCursor='[3 q'
   visCursor='[2 q'
   vlnCursor='[2 q'
+## Available colors:
+	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
+	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
+	vimRep="%{$fg_bold[yellow]%}[REP]%{$reset_color%}"
+	vimVis="%{$fg_bold[magenta]%}[VIS]%{$reset_color%}"
+	vimVln="%{$fg_bold[cyan]%}[VLN]%{$reset_color%}"
 	zle-keymap-select() { # This catches switching between insert, normal and replace modes
 		local km=$KEYMAP
 		[[ $km = main || $km = '' ]] && km=viins
