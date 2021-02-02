@@ -211,6 +211,7 @@
 
 " Minimap
 	nn <leader>M :MinimapToggle<cr>
+	let g:minimap_width = 20
 
 " Limelight
 	" Color name (:help cterm-colors) or ANSI code

@@ -11,6 +11,8 @@
 	bindkey "^x^x" clip_cmd
 # Pick but stay in completion menu
 	bindkey -M menuselect "+" accept-and-menu-complete
+# Select and confirm the selection with Return
+	bindkey -M menuselect "^m" .accept-line
 # Do not save these in history:
 	bindkey -s '^g' ' btm -b\r'
 	bindkey -s '^v' ' v\r'
@@ -19,7 +21,8 @@
 	bindkey -s '\ef' ' fedit\r'
 	bindkey -s '^y' ' fzfpacinstall\r'
 	bindkey -s '^q' ' pacbrowse\r'
-	(( $+commands[lf] )) && bindkey -s '^o' ' lfcd\r' && alias \
+	bindkey '\eq' push-input # Push current input on a stack and pop it on next newline
+	(( $+commands[lf] )) && bindkey -s '^o' '\eq lfcd\r' && alias \
 		inc='lfcd ~/slsk/incoming' \
 		people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People' \
 		doc='lfcd /mnt/01D5707D40B081F0/Users/ascol/Documents' \
