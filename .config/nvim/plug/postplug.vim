@@ -161,6 +161,7 @@ let g:startify_skiplist = [
 				\   'filename': 'LightlineFilename',
 	      \   'fileformat': 'LightlineFileformat',
 				\		'filetype': 'LightlineFiletype',
+				\		'fileencoding': 'LightlineFileencoding',
 				\	},
 				\	'mode_map': {
 				\		'n' : 'N',
@@ -177,6 +178,9 @@ let g:startify_skiplist = [
 				\ },
 				\ }
 	se noshowmode " Don't display mode in command line
+	" Show total line number in square brackets
+	let g:lightline.component = {
+			\ 'lineinfo': '%3l[%L]:%-2v'}
 	fu! LightlineFilename() " Trim bar between filename and modified sign
 		let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
 		let modified = &modified ? ' +' : ''
@@ -187,6 +191,9 @@ let g:startify_skiplist = [
 	endfu
 	fu! LightlineFiletype()
 		retu winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+	endfu
+	fu! LightlineFileencoding()
+		retu winwidth(0) > 60 ? (strlen(&fenc) ? &fenc : &enc) : ''
 	endfu
 
 " Minimap
