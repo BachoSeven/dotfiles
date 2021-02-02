@@ -1,16 +1,23 @@
 " {{{ Post-Plugin Settings
 
 " Startify
-	let g:startify_custom_header = [
-\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+	fu! s:center(lines) abort
+		let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
+		let centered_lines = map(copy(a:lines),
+					\ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
+		retu centered_lines
+	endfu
+	let s:header = [
+\ ' ________    _______  _____  ___  ___      ___  __     ___      ___ ',
+\ '("      "\  /"     "|(\"   \|"  \|"  \    /"  ||" \   |"  \    /"  |',
+\ ' \___/   :)(: ______)|.\\   \    |\   \  //  / ||  |   \   \  //   |',
+\ '   /  ___/  \/    |  |: \.   \\  | \\  \/. ./  |:  |   /\\  \/.    |',
+\ '  //  \__   // ___)_ |.  \    \. |  \.    //   |.  |  |: \.        |',
+\ ' (:   / "\ (:      "||    \    \ |   \\   /    /\  |\ |.  \    /:  |',
+\ '  \_______) \_______) \___|\____\)    \__/    (__\_|_)|___|\__/|___|',
 \]
-
-let g:startify_skiplist = [
+	let g:startify_custom_header = s:center(s:header)
+	let g:startify_skiplist = [
 	\ 'COMMIT_EDITMSG',
 	\ ]
 
