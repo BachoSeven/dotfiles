@@ -13,18 +13,28 @@
 
 ## Cli flags [now in chromium-flags.conf]
 ``` sh
+# Hardware acceleration
 --ignore-gpu-blocklist
 --use-gl=desktop
 --enable-gpu-rasterization
 --enable-accelerated-video-decode
+--disable-gpu-driver-bug-workarounds
 
+# Appearance
 --force-device-scale-factor=1.1
 --force-dark-mode
---process-per-site
+--enable-smooth-scrolling
+
+# Miscellaneous
+--no-default-browser-check
+--enable-features=WebUIDarkMode,CSSColorSchemeUARendering,CompositorThreadedScrollbarScrolling,NativeNotifications,QuietNotificationPrompts,ReaderMode
+
+# ungoogled-specific flags
 --disable-search-engine-collection
 --extension-mime-request-handling=always-prompt-for-install
 --pdf-plugin-name=chrome
---enable-features=WebUIDarkMode,CSSColorSchemeUARendering,CompositorThreadedScrollbarScrolling,NativeNotifications,QuietNotificationPrompts
+--enable-features=SetIpv6ProbeFalse
+--bookmark-bar-ntp=never # Bookmarks on about:new-tab-page (which I don't even use but whatevs)
 ```
 
 ## Bookmarks
@@ -49,7 +59,7 @@ PACKAGED(but they're messy, install them manually plz): `chromium-keepassxc-brow
     .vimiumUIComponentVisible { color-scheme: light; }
   to the `vimium.css` file
 - vimium_helper
-- Change_new_tab(url)
+- startup: continue where you left off
 - stylus(beta)[backup,alt+shift+s] gtransl(<C-R>)
 - the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s], Redirector
 
