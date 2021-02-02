@@ -8,8 +8,8 @@
 - block notifications globally from "Site settings"(!)
 - setup search engines: choose a valid Searx from `searx.space`, and then add ddg("gruvboxytheme") (and keep nosearch)
 - chrome://settings/content/pdfDocuments: download instead of horrible pdf viewer.
-- set startpage
 - Send do-not-track request
+- startup: continue where you left off
 
 ## Cli flags [now in chromium-flags.conf]
 ``` sh
@@ -48,18 +48,18 @@
 - gtk (gruvbox)
 
 ## Plugins
-PACKAGED(but they're messy, install them manually plz): `chromium-keepassxc-browser chromium-thegreatsuspender stylus-git chromium-ublock-origin chromium-extension-https-everywhere`
+~~PACKAGED: `chromium-keepassxc-browser chromium-thegreatsuspender stylus-git chromium-ublock-origin chromium-extension-https-everywhere`~~
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
 > Install sci-hub plugin manually (it's in this repo)
 
 ### Utils
+- custom ntp extension
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
   - Append
     /* Temporary fix, suggested here: https://github.com/philc/vimium/issues/3732 */
     .vimiumUIComponentVisible { color-scheme: light; }
   to the `vimium.css` file
 - vimium_helper
-- startup: continue where you left off
 - stylus(beta)[backup,alt+shift+s] gtransl(<C-R>)
 - the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s], Redirector
 

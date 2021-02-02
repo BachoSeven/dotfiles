@@ -124,6 +124,7 @@ gac() { # Aur git clone
 # Updates
 dirs=(
 	~/.config/mpv/scripts/mpvSockets
+	~/.config/browser/vimium
 	~/.local/src/subs
 	~/.local/src/dwm
 	~/.local/src/dmenu
