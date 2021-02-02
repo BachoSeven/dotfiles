@@ -1,8 +1,11 @@
 # Reduce timeout
-	export KEYTIMEOUT=5
+	export KEYTIMEOUT=7
 # Change cursor shape for different vi modes + decent rprompt indicator
 	vimIns="%{$fg_bold[blue]%}[INS]%{$reset_color%}"
 	vimCmd="%{$fg_bold[green]%}[CMD]%{$reset_color%}"
+	vimRep="%{$fg_bold[yellow]%}[REP]%{$reset_color%}"
+	vimVis="%{$fg_bold[magenta]%}[VIS]%{$reset_color%}"
+	vimVln="%{$fg_bold[cyan]%}[VLN]%{$reset_color%}"
 ## Cursor types:
 # 1 -> Blinking block
 # 2 -> Steady block ("█")
@@ -14,24 +17,60 @@
 # 8 -> Steady st cursor (snowman)
   cmdCursor='[1 q'
   insCursor='[5 q'
-	zle-keymap-select() {
-		case $KEYMAP in
-			vicmd)
+  repCursor='[3 q'
+  visCursor='[2 q'
+  vlnCursor='[2 q'
+	zle-keymap-select() { # This catches switching between insert, normal and replace modes
+		local km=$KEYMAP
+		[[ $km = main || $km = '' ]] && km=viins
+
+		if [[ $km = vicmd ]]; then
+			printf "\e%s" "$cmdCursor"
+			vim_mode=${vimCmd}
+		elif [[ $km = viins ]]; then
+			if [[ $ZLE_STATE = *overwrite* ]]; then
+				printf "\e%s" "$repCursor"
+				vim_mode=${vimRep}
+			else
+				printf "\e%s" "$insCursor"
+				vim_mode=${vimIns}
+			fi
+		fi
+
+	  zle reset-prompt
+	}; zle -N zle-keymap-select
+	zle-line-init() { # initialise `vi insert` as keymap
+		printf "\e%s" "$insCursor"
+	}; zle -N zle-line-init
+	preexec() { vim_mode=${vimIns} ;} # Use vi insert for every new prompt
+	vim_mode=${vimIns} # Initialise mode for RPS1
+	zle-line-pre-redraw() {	# This takes care of visual and visual line modes
+		[[ $KEYMAP != vicmd ]] && return
+		local active=${REGION_ACTIVE:-0}
+		local old="${vim_mode}"
+
+		case $active in
+			0)
 				printf "\e%s" "$cmdCursor"
 				vim_mode=${vimCmd} ;;
-			main|viins)
-				printf "\e%s" "$insCursor"
-				vim_mode=${vimIns} ;;
+			1)
+				printf "\e%s" "$visCursor"
+				vim_mode=${vimVis} ;;
+			2)
+				printf "\e%s" "$vlnCursor"
+				vim_mode=${vimVln} ;;
 		esac
-	  zle reset-prompt
+		if [[ $vim_mode != $old ]]; then
+			zle .reset-prompt # The dot avoids "deleting" previous lines on redraw
+		fi
+	}; zle -N zle-line-pre-redraw
+	# Fix a bug when you C-c in CMD mode and you'd be prompted with CMD mode indicator, while in fact you would be in INS mode
+	# Fixed by catching SIGINT (C-c), set vim_mode to INS and then repropagate the SIGINT, so if anything else depends on it, we will not break it
+	function TRAPINT() {
+		vim_mode=${vimIns}
+		printf "\e%s" "$insCursor" # This is also needed, otherwise pressing Esc results in the deletion of one previous line.
+		return $(( 128 + $1 ))
 	}
-	zle -N zle-keymap-select
-	# init `vi insert` as keymap
-	zle-line-init() {
-	    zle -K viins
-	    printf "\e%s" "$insCursor"
-	}
-	zle -N zle-line-init
 
 # ci", ci', ci`, di", etc
 	autoload -U select-quoted
