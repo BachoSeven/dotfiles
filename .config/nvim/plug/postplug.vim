@@ -20,6 +20,7 @@
 	let g:startify_skiplist = [
 	\ 'COMMIT_EDITMSG',
 	\ ]
+	let g:startify_use_env = 1
 
 " Lf
 	let g:lf_replace_netrw = 1 " open lf when a directory is opened with vim

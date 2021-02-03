@@ -23,6 +23,7 @@ shittyfiles = [
     '~/.FRD/links.txt',     # FRD
     '~/.objectdb',          # FRD
     '~/.gstreamer-0.10',
+    '~/.nuget',             # Mono
     '~/.pulse',
     '~/.esd_auth',
     '~/.config/enchant',
