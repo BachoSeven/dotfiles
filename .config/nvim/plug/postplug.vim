@@ -160,7 +160,7 @@
 
 " Lightline
 	let g:lightline = {
-				\ 'colorscheme': 'wal',
+				\ 'colorscheme': 'gruvbox_material',
 	      \ 'active': {
 				\   'left': [ [ 'mode', 'paste' ],
 				\             [ 'readonly', 'filename' ] ],
