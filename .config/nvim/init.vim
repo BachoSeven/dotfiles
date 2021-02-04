@@ -145,10 +145,10 @@
 "		 +------------+
 	hi Comment gui=italic
 " ColorScheme
-	se termguicolors
+	" notermgui
 	se background=dark
-	" colwal
-	colo gruvbox-material | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
+	colo wal
+	" colgruvbox-material | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
 	" colo NeoSolarized
 " Transparency
 	hi LineNr ctermbg=NONE guibg=NONE
