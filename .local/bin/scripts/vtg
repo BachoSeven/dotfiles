@@ -1,0 +1,32 @@
+#!/bin/sh
+
+[ -z $1 ] && printf "No arguments given, exiting...\n" && exit 1
+
+vid=$1
+start_time=0		 # 00:00:01
+width=-2         # keeps aspect ratio, can replace with pixels, i.e. 1200
+height=ih/2      # input height halved, can replace with pixels, or keep aspect ratio with -1
+fps=30           # frames per second.
+
+ffmpeg \
+	-ss $start_time \
+	-i "$vid" \
+	-vf "fps=$fps,scale=$width:$height: \
+	     flags=lanczos,split[s0][s1]; \
+	     [s0]palettegen[p]; \
+	     [s1][p]paletteuse" \
+	-loop 0 \
+	"${1%%.*}.gif"
+
+# filters="fps=$fps,scale=$width:$height:flags=lanczos"
+# ffmpeg -ss $start_time                             \
+       # -i  "$vid"                                  \
+       # -vf "$filters,palettegen"				    		   \
+       # -y  palette.png                             &&
+# ffmpeg -ss $start_time                             \
+       # -i  "$vid"                                  \
+       # -i  palette.png                             \
+       # -lavfi "$filters [x]; [x][1:v] paletteuse"  \
+			 # -loop 0																		 \
+       # "${1%%.*}.gif"			                         &&
+# rm palette.png
