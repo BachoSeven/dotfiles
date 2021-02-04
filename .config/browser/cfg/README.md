@@ -75,9 +75,9 @@ a:	https://www.amazon.it/s/?field-keywords=%s Amazon
 abs:	https://www.archlinux.org/packages/?q=%s,
 alib:	https://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&CatId=&SearchText=%s alibaba
 ali:	https://www.aliexpress.com/wholesale?&SearchText=%s aliexpress
-ab:	http://www.amazon.it/s/?url=search-alias%3Dstripbooks&field-keywords=%s amazonbooks
-ae:	http://www.amazon.it/s/?url=search-alias%3Delectronics&field-keywords=%s amazonelectronics
-au:	http://askubuntu.com/search?q=%s askubuntu
+ab:	https://www.amazon.it/s/?url=search-alias%3Dstripbooks&field-keywords=%s amazonbooks
+ae:	https://www.amazon.it/s/?url=search-alias%3Delectronics&field-keywords=%s amazonelectronics
+au:	https://askubuntu.com/search?q=%s askubuntu
 aur:	https://aur.archlinux.org/packages.php?K=%s AUR
 aw:	https://wiki.archlinux.org/index.php/Special:Search/%s archwiki
 ax:	https://arxiv.org/search?query=%s&searchtype=all&source=header arxiv
@@ -85,10 +85,10 @@ bg:	https://it.banggood.com/search/%s.html bangood
 bit:    https://btcache.me/torrent/%s bittorcache
 btd:    https://btdig.com/search?q=%s bitdig
 ca: https://it.camelcamelcamel.com/search?sq=%s camelcamelcamel
-cd:	javascript:location='http://www.google.com/search?num=100&q=site:'%20+%20escape(location.hostname)%20+%20'%20%S'%20;%20void%200 cd
+cd:	javascript:location='https://www.google.com/search?num=100&q=site:'%20+%20escape(location.hostname)%20+%20'%20%S'%20;%20void%200 cd
 ct: https://tube.cadence.moe/search?q=%s cloudtube
 d:  https://duckduckgo.com/?q=%s DuckDuckGo
-dw:	http://www.merriam-webster.com/dictionary/%s Merriam-Webster
+dw:	https://www.merriam-webster.com/dictionary/%s Merriam-Webster
 eb:	https://www.ebay.com/sch/i.html?_nkw=%s ebay
 fb:	https://www.facebook.com/search/top/?q=%s facebook
 g:	https://www.google.com/search?q=%s Google
@@ -106,22 +106,23 @@ ka:	https://kissanime.ac/Search/?s=%s kissanime
 l: http://93.174.95.27/search.php?req=%s libgen
 lk:	https://www.google.com/search?q=%s&btnI I'm feeling lucky...
 lp:	https://launchpad.net/+search?field.text=%s launchpad
-lt:	http://www.limetorrents.cc/search/all/%s/ limetorrents
+lt:	https://www.limetorrents.cc/search/all/%s/ limetorrents
 mal:	https://myanimelist.net/anime.php?q=%s myanimelist
-mo:	http://mathoverflow.net/search?q=%s mathoverflow
-ms:	http://math.stackexchange.com/search?q=%s mathstackexchange
-mw:	http://mathworld.wolfram.com/search/?query=%s mathworld
-nh:	https://nhentai.net/search/?q=%s nh
-oeis:	http://oeis.org/search?q=%s oeis
+mo:	https://mathoverflow.net/search?q=%s mathoverflow
+ms:	https://math.stackexchange.com/search?q=%s mathstackexchange
+mw:	https://mathworld.wolfram.com/search/?query=%s mathworld
+nh: https://nhentai.net/search/?q=%s nh
+oeis:	https://oeis.org/search?q=%s oeis
 om:	https://www.openstreetmap.org/search?query=%s openstreetmap
 os: https://www.opensubtitles.com/en/it/search-all/q-%s/hearing_impaired-include/machine_translated-/trusted_sources-
-pip: http://pypi.org/search/?q=%s PyPI
+pip: https://pypi.org/search/?q=%s PyPI
 r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
 sc:	https://libgen.bban.top/s/%s scihub
 tldr:	https://tldr.ostera.io/%s tldr
-tp:	https://torrentproject.cc/?t=%s
+tp:	https://torrentproject.cc/?t=%s torrentproject
+tt: javascript:location='https://translate.google.com/translate?sl=auto&tl=%s&u='%20+%20encodeURIComponent(document.URL); tt
 ud:	https://www.urbandictionary.com/define.php?term=%s UrbanDictionary
 w:	https://wikipedia.org/w/index.php?search=%s Wikipedia
 wa:	https://www.wolframalpha.com/input/?i=%s Wolfram|Alpha
