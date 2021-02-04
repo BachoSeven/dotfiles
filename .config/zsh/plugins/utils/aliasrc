@@ -98,7 +98,7 @@
 	alias xr="xrandr"
 	alias glow='glow -p'
 	alias ud='s -p udict'
-	alias spo='kitty --class ncspot ncspot && spotup'
+	alias spo='st -c ncspot ncspot && spotup'
 	alias spi='spotify && spotup && rmdir ~/Downloads'
 	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
 	alias smi='sudo make clean install'
