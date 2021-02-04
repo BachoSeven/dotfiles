@@ -14,7 +14,7 @@
 # Optional:
 # - `fd` (can be easily replaced with `find`)
 #	- [`gifsicle` + `shantz-xwinwrap-bzr` + custom `gifbg` and `imgextcol`(optionally with `roficolsel`) scripts] for GIFs;
-# -	[`pywal` + custom `vimwal` script] for integration with `wal` and with `wal.vim`
+# -	[`pywal` + custom `ww` script] for integration with `wal` and with `wal.vim`
 #	NOTE:
 # - I also use a custom `ifinstalled` script to notify about missing programs
 #	-	`-w` and `-i` are supposed to be mutually exclusive
@@ -36,14 +36,14 @@ while getopts ":hi:w:cmt" o; do
 		h) printf "Usage :\\n'$0'\\n\\t [ -h, -help: Show this message ]\\n\\t [ -i, -input \"path/to/img\" ]\\n\\t [ -w, -wal \"path/to/img\" \"backend\" : use pywal if installed ]\\n\\t [ -c, -center ]\\n\\t [ -m, -maximize: maximize wallpaper ( default format is \"--zoom\" ) ]\\n\\t [ -t, -tile ]\\n" && exit 0 ;;
 
 		i)
-			vimwal -x
+			ww -x
 			linknotif "$2"
 			xrdb -load "$XDG_CONFIG_HOME/X11/Xresources" ;;
 
 		w)
 			linknotif "$2"
 			if [ -n "$2" ]; then backend="$2"; [ -f "$3" ] && linknotif "$3"; fi
-			wal --backend "${backend:-wal}" -i "$(realpath "$bgloc")" >/dev/null 2>&1 && ifinstalled python-pywal && vimwal -w || exit 1 ;;
+			wal --backend "${backend:-wal}" -i "$(realpath "$bgloc")" >/dev/null 2>&1 && ifinstalled python-pywal && ww -w || exit 1 ;;
 
 		c) full=false; format="-center" ;;
 		m) full=false; format="-full" ;;
