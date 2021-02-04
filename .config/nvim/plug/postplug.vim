@@ -164,12 +164,15 @@
 	      \ 'active': {
 				\   'left': [ [ 'mode', 'paste' ],
 				\             [ 'readonly', 'filename' ] ],
+				\		'right': [ [ 'percent', 'lineinfo' ],
+		    \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
 				\ },
 				\ 'component_function': {
 				\   'filename': 'LightlineFilename',
 	      \   'fileformat': 'LightlineFileformat',
 				\		'filetype': 'LightlineFiletype',
 				\		'fileencoding': 'LightlineFileencoding',
+				\		'readonly': 'LightlineReadonly',
 				\	},
 				\	'mode_map': {
 				\		'n' : 'N',
@@ -184,30 +187,29 @@
 				\		"\<C-s>": 'SB',
 				\		't': 'T',
 				\ },
+				\ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
+				\ 'subseparator': { 'left': '▒', 'right': '░' }
 				\ }
 	se noshowmode " Don't display mode in command line
-	let g:lightline.separator = {
-      \   'left': '', 'right': ''
-      \}
-	let g:lightline.subseparator = {
-      \   'left': '', 'right': ''
-      \}
 	" Show total line number in square brackets
 	let g:lightline.component = {
 			\ 'lineinfo': '%3l[%L]:%-2v'}
+	fu! LightlineReadonly()
+		return &ft !~? 'help' && &readonly ? ' ' : ''
+	endfu
 	fu! LightlineFilename() " Trim bar between filename and modified sign
 		let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
-		let modified = &modified ? ' +' : ''
+		let modified = &modified ? ' ' : ''
 		retu filename . modified
 	endfu
 	fu! LightlineFileformat()
-		retu winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+		retu winwidth(0) > 70 ? WebDevIconsGetFileFormatSymbol() : ''
 	endfu
 	fu! LightlineFiletype()
 		retu winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 	endfu
 	fu! LightlineFileencoding()
-		retu winwidth(0) > 60 ? (strlen(&fenc) ? &fenc : &enc) : ''
+		retu winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
 	endfu
 
 " Minimap
