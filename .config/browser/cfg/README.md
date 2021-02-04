@@ -59,7 +59,7 @@
     .vimiumUIComponentVisible { color-scheme: light; }
   to the `vimium.css` file
 - vimium_helper
-- stylus(beta)[backup,alt+shift+s] gtransl(<C-R>)
+- stylus(beta)[backup,alt+shift+s]
 - the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s], Redirector
 
 ### Privacy-focused
