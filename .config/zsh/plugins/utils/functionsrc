@@ -126,9 +126,7 @@ dirs=(
 	~/.config/mpv/scripts/mpvSockets
 	~/.config/browser/vimium
 	~/.local/src/subs
-	~/.local/src/dwm
 	~/.local/src/dmenu
-	~/.local/src/dwmblocks
 	~/.local/src/st
 	/dati/AP2_QMK/annepro-qmk
 	/dati/AP2_QMK/annepro2-shine
