@@ -163,7 +163,7 @@
 				\ 'colorscheme': 'gruvbox_material',
 	      \ 'active': {
 				\   'left': [ [ 'mode', 'paste' ],
-				\             [ 'readonly', 'filename' ] ],
+				\             [ 'filename' ] ],
 				\		'right': [ [ 'percent', 'lineinfo' ],
 		    \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
 				\ },
@@ -172,7 +172,6 @@
 	      \   'fileformat': 'LightlineFileformat',
 				\		'filetype': 'LightlineFiletype',
 				\		'fileencoding': 'LightlineFileencoding',
-				\		'readonly': 'LightlineReadonly',
 				\	},
 				\	'mode_map': {
 				\		'n' : 'N',
@@ -195,18 +194,18 @@
 	let g:lightline.component = {
 			\ 'lineinfo': '%3l[%L]:%-2v'}
 	fu! LightlineReadonly()
-		return &ft !~? 'help' && &readonly ? ' ' : ''
+		return &ft !~? 'help' && &readonly ? ' ' : ''
 	endfu
 	fu! LightlineFilename() " Trim bar between filename and modified sign
-		let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+		let filename = expand('%:t') !=# '' ? expand('%:t') : '[none]'
 		let modified = &modified ? ' ' : ''
-		retu filename . modified
+		retu filename . ('' != LightlineReadonly() ? LightlineReadonly() : modified)
 	endfu
 	fu! LightlineFileformat()
 		retu winwidth(0) > 70 ? WebDevIconsGetFileFormatSymbol() : ''
 	endfu
 	fu! LightlineFiletype()
-		retu winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+		retu winwidth(0) > 70 ? (strlen(&filetype) ? ' ' . WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : '') : ''
 	endfu
 	fu! LightlineFileencoding()
 		retu winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
