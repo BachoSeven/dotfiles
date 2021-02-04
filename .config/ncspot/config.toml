@@ -115,7 +115,7 @@ gapless = true
 "U" = "update"
 
 
-# Gruvbox dark [ based on base16 by Dawid Kurek (dawikur@gmail.com) ]
+# Gruvbox dark [ originally based on base16 by Dawid Kurek (dawikur@gmail.com) ]
 [theme]
 background = "default"
 primary = "#32302f"
@@ -135,7 +135,7 @@ cmdline = "#d5c4a1"
 cmdline_bg = "#383838"
 search_match = "#fabd2f"
 
-# # Base16_sol_dark, modified closer to spotify colors by BachoSeven, originally https://github.com/gidsi/base16-ncspot
+## Base16 solarized dark, originally form https://github.com/gidsi/base16-ncspot
 # [theme]
 # background = "#002b36"
 # primary = "#eee8d5"
