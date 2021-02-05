@@ -47,7 +47,7 @@
 - gtk (gruvbox)
 
 ## Plugins
-~~PACKAGED: `chromium-keepassxc-browser chromium-thegreatsuspender stylus-git chromium-ublock-origin chromium-extension-https-everywhere`~~
+~~PACKAGED: `chromium-keepassxc-browser stylus-git chromium-ublock-origin chromium-extension-https-everywhere`~~
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
 > Install sci-hub plugin manually (it's in this repo)
 
@@ -60,7 +60,7 @@
   to the `vimium.css` file
 - vimium_helper
 - stylus(beta)[backup,alt+shift+s]
-- the_great_suspender(dark theme, capture top screen only, other:011)[ctrl+shift+s], Redirector
+- Redirector
 
 ### Privacy-focused
 - ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it]
