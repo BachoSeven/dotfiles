@@ -52,7 +52,7 @@ cmd open ${{
 	    	inode/symlink) setsid -f $OPENER $(realpath $f) >/dev/null 2>&1 ;;
 		text/*|application/json|application/csv|*opendocument.text) $EDITOR $fx;;
 		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
-		image/x-xcf|image/svg+xml) ifinstalled gimp && setsid -f gimp $f >/dev/null 2>&1 || display -- $f ;;
+		image/x-xcf|image/svg+xml) display -- $f ;;
 		# image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|tiff\|bmp\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;; ## This is slower but more accurate
 		image/*) sxiv -ao $f 2>/dev/null | lf-select ;;
 		audio/*) mpv --audio-display=no $f ;;

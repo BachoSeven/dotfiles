@@ -1,6 +1,6 @@
 {
     "name": "Primephonic",
-    "icon": "~/.config/icons/primephonic.png",
+    "icon": "~/.local/share/icons/primephonic.png",
     "apps": [
         {
             "container": "primephonic",
