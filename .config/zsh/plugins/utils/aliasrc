@@ -47,7 +47,6 @@
 	alias 10='cd -10'
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
-	alias trem='transmission-remote'
 	alias drt='dragon-drag-and-drop -t -x'
 	alias xclip='xclip -sel c -r'
 	alias rm='rm -v'
@@ -159,7 +158,6 @@
 	alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
 	alias cfg='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/browser/cfg'
 	alias cvb='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/Vieb/viebrc'
-	alias cft='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/stig/rc'
 	alias src='nvim $HOME/.local/src'
 
 # Rice

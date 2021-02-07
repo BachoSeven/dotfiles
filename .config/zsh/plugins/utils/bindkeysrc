@@ -132,6 +132,7 @@
 	alias ytdl="youtube-dl -c -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata -ic"
 # Shorter commands
 	alias \
+		g='git' \
 		ka='killall' \
 		p='pacman' \
 		y='paru' \
