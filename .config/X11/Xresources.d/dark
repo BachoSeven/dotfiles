@@ -2,7 +2,9 @@
 !	gruvbox dark
 #define BG  #282828
 #define FG  #ebdbb2
-#define C0  #1d2021
+! #define C0  #1d2021
+! #define C0  #282828
+#define C0  #32302f
 #define C1  #cc241d
 #define C2  #98971a
 #define C3  #d79921
