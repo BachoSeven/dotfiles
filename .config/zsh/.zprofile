@@ -71,6 +71,8 @@
 	  --bind=alt-s:toggle-sort
 	  --bind=alt-t:toggle-preview
 	"
+	export XDG_MENU_TERMINAL=st
+	export XDG_MENU_ICON_SIZE=25
 
 # Mpv
 	export MPV_OPTS="--really-quiet"
