@@ -2,6 +2,6 @@
 Type=Application
 Name=ncmpcpp
 Exec=st -c ncmpcpp -e ncmpcpp
+Icon=~/.local/share/icons/vinyl.svg
 Terminal=false
-Categories=Music
-StartupWMClass=ncmpcpp
+Categories=Audio;Music;Player;

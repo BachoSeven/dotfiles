@@ -66,7 +66,7 @@ check_mpc_data
 	function check_album_data() {
 		img_data=$(identify "$TMP_COVER_PATH" 2>&1)
 		if [ "$img_data" = *"insufficient"* ]; then
-			TMP_COVER_PATH="$XDG_CONFIG_HOME/ncmpcpp/vinyl.svg"
+			TMP_COVER_PATH="$XDG_DATA_HOME/icons/vinyl.svg"
 		fi
 	}
 
