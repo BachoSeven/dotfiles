@@ -24,6 +24,7 @@
 
 " Lf
 	let g:lf_replace_netrw = 1 " open lf when a directory is opened with vim
+	nn <leader>F :LfNewTab<CR>
 
 " Better Escape
 	let g:better_escape_interval = 200
