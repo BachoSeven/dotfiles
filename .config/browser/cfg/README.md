@@ -99,6 +99,7 @@ gi:	https://www.google.com/searchbyimage?image_url=%s Google Image Search
 gm:	https://www.google.com/maps?q=%s Google maps
 go:	https://www15.gogoanime.io//search.html?keyword=%s gogoanime
 gt:	https://translate.google.com/?source=osdd#auto|auto|%s gtranslate
+hn: https://hn.algolia.com/?dateRange=all&page=0&prefix=true&query=%s&sort=byPopularity&type=story
 imslp:	https://www.google.com/search?q=site:imslp.org+%s imslp
 j:	http://localhost:9117/UI/Dashboard#search=%s Jackett
 ki:	https://kickass.cm/usearch/?q=%s kickass

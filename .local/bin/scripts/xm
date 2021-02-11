@@ -1,0 +1,6 @@
+#!/bin/sh
+
+xdgm | xmenu | sh
+
+# Update cache
+xdgm -u &
