@@ -2,7 +2,7 @@
 
 # Should be faster than piping directly to `xmenu`.
 m="$(xdgm)"
-echo "$m" | xmenu | sh
+echo "$m" | xmenu | sh &
 
 # Update cache
 xdgm -u &
