@@ -2,6 +2,6 @@
 Type=Application
 Name=Primephonic
 Exec=vieb --erwic ~/.config/primephonic/primephonic.json --datafolder ~/.config/primephonic
-Icon=~/.local/share/icons/primephonic.png
+Icon=/home/fra/.local/share/icons/primephonic.png
 Terminal=false
 Categories=Audio;Music;Player;
