@@ -2,8 +2,8 @@
 cal plug#begin('~/.local/share/nvim/plugged')
 
 "" Utilities
+	Plug 'moll/vim-bbye'
 	Plug 'ptzz/lf.vim'
-	Plug 'rbgrouleff/bclose.vim'
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
