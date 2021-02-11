@@ -15,6 +15,7 @@
 	export XDG_CONFIG_HOME="$HOME/.config"
 	export XDG_DATA_HOME="$HOME/.local/share"
 	export XDG_CACHE_HOME="$HOME/.cache"
+	export XDG_DATA_DIRS="$XDG_DATA_HOME:/usr/share:/usr/local/share"
 	export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 	export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/readline/inputrc"
 	export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
@@ -72,7 +73,7 @@
 	  --bind=alt-t:toggle-preview
 	"
 	export XDG_MENU_TERMINAL=st
-	export XDG_MENU_ICON_SIZE=25
+	export XDG_MENU_ICON_SIZE=32
 
 # Mpv
 	export MPV_OPTS="--really-quiet"
