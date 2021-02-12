@@ -1,5 +1,6 @@
 
 
+
 IMAPStore ascoli.minnocci@gmail.com-remote
 Host imap.gmail.com
 Port 993
@@ -13,7 +14,6 @@ MaildirStore ascoli.minnocci@gmail.com-local
 Subfolders Verbatim
 Path /home/fra/.local/share/mail/ascoli.minnocci@gmail.com/
 Inbox /home/fra/.local/share/mail/ascoli.minnocci@gmail.com/INBOX
-# Flatten _
 
 Channel ascoli.minnocci@gmail.com
 Expunge Both
@@ -22,9 +22,10 @@ Slave :ascoli.minnocci@gmail.com-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 11000
+MaxMessages 0
 ExpireUnread no
 # End profile
+
 
 IMAPStore ad17fmin@uwcad.it-remote
 Host imap.gmail.com
@@ -39,7 +40,6 @@ MaildirStore ad17fmin@uwcad.it-local
 Subfolders Verbatim
 Path /home/fra/.local/share/mail/ad17fmin@uwcad.it/
 Inbox /home/fra/.local/share/mail/ad17fmin@uwcad.it/INBOX
-# Flatten _
 
 Channel ad17fmin@uwcad.it
 Expunge Both
@@ -48,6 +48,7 @@ Slave :ad17fmin@uwcad.it-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 11000
+MaxMessages 0
 ExpireUnread no
 # End profile
+

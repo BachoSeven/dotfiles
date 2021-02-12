@@ -10,7 +10,10 @@ port 587
 from ascoli.minnocci@gmail.com
 user ascoli.minnocci@gmail.com
 passwordeval "pass ascoli.minnocci@gmail.com"
-
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/fra/.config/msmtp/msmtp.log
 
 account ad17fmin@uwcad.it
 host smtp.gmail.com
@@ -18,5 +21,8 @@ port 465
 from ad17fmin@uwcad.it
 user ad17fmin@uwcad.it
 passwordeval "pass ad17fmin@uwcad.it"
+auth on
 tls_starttls off
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/fra/.config/msmtp/msmtp.log
 
