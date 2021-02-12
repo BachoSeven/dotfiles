@@ -121,8 +121,13 @@
 		hi! link DiffText MatchParen
 	endi
 
-" Use xdg-open(mimi) to open files externally
-	let g:netrw_browsex_viewer="xdg-open"
+" Netrw stuff
+	let g:netrw_banner=0        " disable annoying banner
+	let g:netrw_altv=1          " open splits to the right
+	let g:netrw_liststyle=3     " tree view
+	let g:netrw_list_hide=netrw_gitignore#Hide()
+	let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+	let g:netrw_browsex_viewer="xdg-open" " Use xdg-open(mimi) to open files externally
 
 "		 +---------+
 "		 | Plugins |

@@ -23,7 +23,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 
 " Vimtex
 	Plug 'lervag/vimtex', { 'for': 'tex' }
-  Plug 'sirver/ultisnips', { 'for': ['tex', 'c'] }
+  Plug 'sirver/ultisnips', { 'for': ['tex', 'c', 'snippets'] }
 
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
