@@ -212,10 +212,6 @@
 		retu winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
 	endfu
 
-" Minimap
-	nn <leader>M :MinimapToggle<cr>
-	let g:minimap_width = 20
-
 " Limelight
 	" Color name (:help cterm-colors) or ANSI code
 	let g:limelight_conceal_ctermfg = '#a89984'
