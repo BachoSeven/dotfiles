@@ -34,6 +34,7 @@
 	se autoread " Automatically re-read file if a change was detected outside of vim
 	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down
 	se scrolloff=11
+	se mouse=nv
 
 "		 +--------------+
 "		 | Key Mappings |
