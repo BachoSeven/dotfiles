@@ -5,4 +5,5 @@ Type=Application
 Terminal=false
 MimeType=x-scheme-handler/spotify;
 Exec=spot-cli --uri %u
+NoDisplay=true
 Icon=spotify

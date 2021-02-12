@@ -1,145 +1,186 @@
+###########################################################################
+#                            TextMate Snippets                            #
+###########################################################################
+# --------------
+# Functions
+# --------------
+global !p
+def printf_expand_args(snip):
+	"""
+	This will look how many placeholders printf has and adds the separated commas
+	at the end.
+	"""
+
+	# now add so many "," as much as the amount of placeholders
+	amount_placeholders = snip.tabstops[1].current_text.count("%")
+
+	output = ""
+
+	# Add the amount of tabstops
+	for placeholder_index in range(3, amount_placeholders + 3):
+		output += f", ${placeholder_index}"
+
+	# convert them into tabstops
+	snip.expand_anon(output)
+
+endglobal
+
+# ==============
+# Snippets
+# ==============
 priority -50
 
-snippet main "main()"
-int main(void){
-	${VISUAL}${0}
-	return 0;
-}
-
+snippet def "#define ..."
+#define $1
 endsnippet
 
-snippet Main "Main()"
-int main(int argc, char * argv[]){
-	${VISUAL}${0}
-	return 0;
-}
-
-endsnippet
-snippet winmain "WinMain()"
-int WINAPI WinMain(HINSTANCE instance, HINSTANCE prev_instance,
-		char * cmd_param, int cmd_show)
-{
-	${VISUAL}${0}
-	return 0;
-}
-
-endsnippet
-snippet dllmain "DllMain()"
-BOOL APIENTRY DllMain(HANDLE module, DWORD reason_for_call, LPVOID reserved)
-{
-	switch (reason_for_call)
-	{
-	case DLL_PROCESS_ATTACH:${0}
-		break;
-	case DLL_THREAD_ATTACH:
-		break;
-	case DLL_THREAD_DETACH:
-		break;
-	case DLL_PROCESS_DETACH:
-		break;
-	}
-	return TRUE;
-}
-
-endsnippet
-snippet Inc "#include <...>"
-#include <${1:stdio}.h>
-endsnippet
-snippet inc "#include"
-#include "${1:`!v Filename("$1")`}.h"
-endsnippet
-snippet Def "#ifndef ... #define ... #endif"
-#ifndef $1
+snippet #ifndef "#ifndef ... #define ... #endif"
+#ifndef ${1/([A-Za-z0-9_]+).*/$1/}
 #define ${1:SYMBOL} ${2:value}
+#endif /* ifndef $1 */
+endsnippet
+
+snippet #if "#if #endif" b
+#if ${1:0}
+${VISUAL}$0
 #endif
 endsnippet
-snippet def "#define"
-#define 
+
+snippet mark "#pragma mark (mark)"
+#if 0
+${1:#pragma mark -
+}#pragma mark $2
+#endif
+
+$0
 endsnippet
-snippet ifdef "#ifdef"
-#ifdef ${1}
-${VISUAL}${0}
-#endif /* $1 */
+
+snippet main "main() (main)"
+int main(int argc, char *argv[])
+{
+	${VISUAL}$0
+	return 0;
+}
 endsnippet
-snippet #if "#if"
-#if ${1}
-${VISUAL}${0}
-#endif /* $1 */
+
+snippet for "for loop (for)"
+for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+	${VISUAL}$0
+}
 endsnippet
+
+snippet fori "for int loop (fori)"
+for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fora "for-loop" b
+for (${1:var}; ${2:condition}; `!p
+if len(t[1]) > 0:
+	snip.rv = t[1].split('=')[0].split()[-1]
+`++) {
+
+	$0
+} /* for ($1; $2; `!p if len(t[1]) > 0: snip.rv = t[1].split('=')[0].split()[-1]`++) */
+endsnippet
+
 snippet once "Include header once only guard"
-#ifndef TAJGA_${1:`!p
+#ifndef ${1:`!p
 if not snip.c:
-	import string
-	snip.rv = re.sub(r'[^A-Za-z0-9]+','_', path).upper()
-	i = snip.rv.find("_SRC_")
-	if i != -1:
-		snip.rv = snip.rv[i+5:]
+	import random, string
+	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
+	rand = ''.join(random.sample(string.ascii_letters+string.digits, 8))
+	snip.rv = ('%s_%s' % (name,rand)).upper()
 else:
-	snip.rv = snip.c`}_
-#define TAJGA_$1_
+	snip.rv = snip.c`}
+#define $1
 
-${VISUAL}${0}
+${VISUAL}$0
 
-#endif /* TAJGA_$1_ */
+#endif /* end of include guard: $1 */
+endsnippet
 
-endsnippet
-snippet if "If Condition"
-if (${1}) {
-	${VISUAL}${0}
-}
-endsnippet
-snippet el "Else"
-else {
-	${VISUAL}${0}
-}
-endsnippet
-snippet t "Ternary conditional"
-${1} ? ${2:a} : ${3:b}
-endsnippet
-snippet do "Do While Loop"
-do {
-	${VISUAL}${0}
-} while (${1});
-endsnippet
-snippet wh "While Loop"
-while (${1}) {
-	${VISUAL}${0}
-}
-endsnippet
-snippet for "For Loop"
-for (int ${2:i} = 0; $2 < ${1:count}; ${3:++}$2) {
-	${VISUAL}${0}
-}
-endsnippet
-snippet forr "Custom For Loop"
-for (int ${1:i} = ${2:0}; ${3:$1 < 10}; ${4:++}$1) {
-	${VISUAL}${0}
-}
-endsnippet
-snippet fun "Function"
-${1:void} ${2:function_name}(${3}){
-	${VISUAL}${0}
-}
-endsnippet
-snippet fund "Function Declaration"
-${1:void} ${2:function_name}(${3});
-endsnippet
-snippet td "Typedef"
-typedef ${1:int} ${2:MyCustomType};
-endsnippet
-snippet st "Struct"
-struct ${1} {
-	${0:/* data */}
-}; /* struct $1 */
-endsnippet
-snippet en "Enum"
-enum ${1:name} {
-	${2:/* data */}
-}; /* enum $1 */
-endsnippet
-snippet pr "printf"
-printf("${1:%d}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
-endsnippet
-snippet fpr "fprintf"
+snippet fprintf "fprintf ..."
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
+
+snippet eli "else if .. (eli)"
+else if (${1:/* condition */}) {
+	${VISUAL}$0
+}
+endsnippet
+
+post_jump "printf_expand_args(snip)"
+snippet "printf" "printf with auto-expand args" wr
+printf("$1\n"$2);
+endsnippet
+
+snippet st "struct"
+struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
+	${0:/* data */}
+};
+endsnippet
+
+snippet fun "function" b
+${1:void} ${2:function_name}($3)
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fund "function declaration" b
+${1:void} ${2:function_name}($3);
+endsnippet
+
+global !p
+def split_line(text):
+	import textwrap
+	lines = textwrap.wrap(text, 78 - 19)
+	output = list()
+	for line in lines:
+		output.append('*' + ' '*19 + line)
+	snip_line = snip.tabstops[4].end[0]
+	snip.buffer.append(output, snip_line + 1)
+	del snip.buffer[snip_line]
+
+def get_args(arglist):
+	args = [arg.strip() for arg in arglist.split(',') if arg]
+	return args
+endglobal
+
+post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
+snippet head "File Header" b
+/******************************************************************************
+* File:             `!p snip.rv = fn`
+*
+* Author:           ${2}
+* Created:          `date +%m/%d/%y`
+* Description:      ${4:${VISUAL}}
+*****************************************************************************/
+${0}
+endsnippet
+
+post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
+snippet func "Function Header"
+/******************************************************************************
+* Function:         $1
+* Description:      ${4:${VISUAL}}
+* Where:`!p
+snip.rv = ""
+snip >> 2
+
+args = get_args(t[2])
+if args:
+	for arg in args:
+		snip.rv += '\n' + '*' + ' '*19 + arg + ' - TODO'
+snip << 2
+`
+* Return:           $5
+* Error:            $6
+*****************************************************************************/
+${1}($2){
+	${0}
+}
+endsnippet
+# vim:ft=snippets:

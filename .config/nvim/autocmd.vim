@@ -18,5 +18,5 @@
 
 " Automatically save created folds when exiting, and restore them next time
 " you open the file
-  au BufWrite * mkview
-  au BufRead * silent! loadview
+  " au BufWrite * mkview
+  " au BufRead * silent! loadview
