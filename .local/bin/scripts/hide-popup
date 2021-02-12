@@ -1,0 +1,9 @@
+#!/bin/sh
+
+xdotool search --name "is sharing your screen" \
+	| while read win_id; do
+	if xwininfo -id "$win_id" &>/dev/null; then
+		echo ":: closing window $win_id"
+		xdotool windowclose "$win_id"
+	fi
+done
