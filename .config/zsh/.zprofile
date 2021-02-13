@@ -232,6 +232,8 @@ ex=🎯:\
 	export KUNST_COVER_NAMES='folder|cover|front|thumbnail'
 	export KUNST_COVER_EXT='jpg|png|jpeg'
 
-# Start graphical server on tty1 if not already running.
-	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xinitrc" -- "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xserverrc" &> /dev/null
+# Remap Caps Lock
 	if [ -z "$(ls /dev/input/by-id | grep Anne)" ]; then sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null; fi
+
+# Start graphical server on tty1 if not already running.
+	[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xinitrc" -- "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xserverrc" &>/dev/null

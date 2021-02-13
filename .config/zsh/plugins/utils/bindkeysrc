@@ -19,7 +19,6 @@
 	bindkey -s '^[n' ' neomutt\r'
 	bindkey -s '^s' ' up2date\r'
 	bindkey -s '\ef' ' fedit\r'
-	bindkey -s '^y' ' fzfpacinstall\r'
 	bindkey -s '^q' ' pacbrowse\r'
 	bindkey '\eq' push-input # Push current input on a stack and pop it on next newline
 	(( $+commands[lf] )) && bindkey -s '^o' '\eq lfcd\r' && alias \
@@ -135,7 +134,7 @@
 		g='git' \
 		ka='killall' \
 		p='pacman' \
-		y='paru' \
+		y='$AURHELPER' \
 		gd='g diff' \
 		gg='g pull' \
 		gp='g push' \

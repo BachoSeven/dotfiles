@@ -46,8 +46,16 @@ printf "$(pacman --color always "${@:--Ss}" \
 	| fzf -m --ansi --preview 'pacman -Si {1}' \
 	| sed 's/ .*//')\n"
 }
-fzfpacinstall() {
+fpacin() {
 	sudo pacman -S $(fp)
+}
+# Install packages with fzf
+in() {
+    $AURHELPER -Slq | fzf -q "$1" -m --preview '$AURHELPER -Si {1}'| xargs -ro $AURHELPER -S
+}
+# Remove installed packages with fzf
+re() {
+    $AURHELPER -Qq | fzf -q "$1" -m --preview '$AURHELPER -Qi {1}' | xargs -ro $AURHELPER -Rns
 }
 getdeps() {
 	expac -l '\n' %E -S $@ | sort -u
@@ -621,16 +629,10 @@ function ll(){ # A superb ls
 vinfo() {
 	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
 }
-# fuzzy-find
-manfd() {
-    export MANPATH="/usr/share/man"
-    f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf --preview 'man {}'  ) && man $f
-}
-# find inside
-fman() {
-    man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
-}
-
+# Find inside (with previews)
+ function fman() {
+     man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+     }
 ## Security
 # simple gpg encryption
 encrypt() {
