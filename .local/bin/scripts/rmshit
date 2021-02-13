@@ -4,7 +4,6 @@ import os
 import sys
 import shutil
 
-
 shittyfiles = [
     '~/.adobe',              # Flash crap
     '~/.macromedia',         # Flash crap
@@ -65,7 +64,6 @@ shittyfiles = [
     '~/.vnc/',
 ]
 
-
 def yesno(question, default="n"):
     """ Asks the user for YES or NO, always case insensitive.
         Returns True for YES and False for NO.
@@ -80,7 +78,6 @@ def yesno(question, default="n"):
     if ans == "y":
         return True
     return False
-
 
 def rmshit():
     print("Found shittyfiles:")
@@ -104,7 +101,6 @@ def rmshit():
         print("All cleaned")
     else:
         print("No file removed")
-
 
 if __name__ == '__main__':
     rmshit()
