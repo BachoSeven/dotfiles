@@ -14,7 +14,7 @@ shittyfiles = [
     '~/.local/share/cargo', # Build files
     '~/Desktop',            # Firefox creates this
     '~/.mozilla',           # Firefox creates this
-    '~/Downloads',         # Spotify sometimes creates this
+    '~/Downloads',          # Spotify creates this
     '~/.thumbnails',
     '~/.gconfd',
     '~/.gconf',
