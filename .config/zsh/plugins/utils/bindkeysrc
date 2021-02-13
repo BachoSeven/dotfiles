@@ -134,7 +134,7 @@
 		g='git' \
 		ka='killall' \
 		p='pacman' \
-		y='$AURHELPER' \
+		y='paru' \
 		gd='g diff' \
 		gg='g pull' \
 		gp='g push' \
