@@ -1,20 +1,16 @@
 #!/bin/sh
 
 msgId="2298"
-TOUCHPAD_ID=`xinput list | grep "Touchpad" | sed -n -e 's/^.*id=//p'|cut -f1`
+deviceId="$(xinput list | grep "Touchpad" | sed -n -e 's/^.*id=//p'|cut -f1)"
 
 on() {
 	dunstify -u normal -t 3000 -r $msgId "🖲️ Touchpad enabled"
-	xinput enable $TOUCHPAD_ID
+	xinput enable $deviceId
 }
 
 off() {
-	xinput disable $TOUCHPAD_ID
+	xinput disable $deviceId
 	dunstify -u normal -t 3000 -r $msgId "🖲️ Touchpad disabled"
 }
 
-if xinput list $TOUCHPAD_ID | grep -q 'This device is disabled'; then
-	on
-else
-	off
-fi
+xinput list $deviceId | grep -q 'This device is disabled' && on || off
