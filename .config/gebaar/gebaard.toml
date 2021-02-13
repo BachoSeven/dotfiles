@@ -1,0 +1,24 @@
+[swipe.commands.three]
+up = "xdotool key Super_L+k"
+down = "xdotool key Super_L+j"
+right = "xdotool key Alt_L+Left"
+left = "xdotool key Alt_L+Right"
+
+[swipe.commands.four]
+right = "xdotool key Super_L+g"
+left = "xdotool key Super_L+;"
+up = "vol up 10"
+down = "vol down 10"
+
+[pinch.commands.two]
+out = "xdotool key Control_L+equal"
+in = "xdotool key Control_L+minus"
+
+[pinch.settings]
+threshold = 0.2
+one_shot = false
+
+[swipe.settings]
+threshold = 0.1
+one_shot = true
+trigger_on_release = false
