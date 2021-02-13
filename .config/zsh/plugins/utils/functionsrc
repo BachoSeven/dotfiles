@@ -625,14 +625,15 @@ function ll(){ # A superb ls
 	 File: \033[32m`ls -Al $@ | grep -v '^drw' | grep -v total | wc -l` ]-- \033[1;37m"
 }
 
-# Manuals
+## Manuals
 vinfo() {
 	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
 }
 # Find inside (with previews)
- function fman() {
-     man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
-     }
+fman() {
+  man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+}
+
 ## Security
 # simple gpg encryption
 encrypt() {
