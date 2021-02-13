@@ -1,0 +1,4 @@
+[Unit]
+Description=Hide screen sharing popups
+[Service]
+ExecStart=/home/fra/.local/bin/cron/hide-popup
