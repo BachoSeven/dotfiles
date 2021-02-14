@@ -30,10 +30,17 @@
 	se autoindent
 	se incsearch
 	se inccommand=split
-	se hidden " hide buffers, not close them
+	se hidden " hide buffers, don't close them
 	se splitbelow splitright
 	se lazyredraw
-	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde characters
+	set list " show invisibles
+	set listchars=
+	set listchars+=tab:·\
+	set listchars+=trail:·
+	set listchars+=extends:»
+	set listchars+=precedes:«
+	set listchars+=nbsp:░
+	se fcs=vert:▒,eob:\ " " Remove annoying tilde characters and set split style
 	se autoread " Automatically re-read file if a change was detected outside of vim
 	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down
 	se scrolloff=11
@@ -184,13 +191,3 @@
 	set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 	\,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 	\,sm:block-blinkwait175-blinkoff150-blinkon175
-" show invisibles
-	set list
-	set listchars=
-	set listchars+=tab:·\
-	set listchars+=trail:·
-	set listchars+=extends:»
-	set listchars+=precedes:«
-	set listchars+=nbsp:░
-" split style
-	set fillchars=vert:▒
