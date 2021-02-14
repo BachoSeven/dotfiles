@@ -13,6 +13,7 @@
 	se shell=/usr/bin/zsh
 	set clipboard=unnamed,unnamedplus
 	se number relativenumber
+	se path+=** " fuzzy find
 	se wildmenu
 		se wildignore+=.git,.hg,.svn
 		se wildignore+=*.aux,*.out,*.toc
@@ -25,9 +26,11 @@
 		se wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 		se wildignore+=*.swp,.lock,.DS_Store,._*
 	se wildmode=longest:full,list,full
+	se wildignorecase
 	se autoindent
 	se incsearch
-	se hidden
+	se inccommand=split
+	se hidden " hide buffers, not close them
 	se splitbelow splitright
 	se lazyredraw
 	se fcs=eob:\ " Protecting trailing whitespace " Remove annoying tilde characters
@@ -35,6 +38,11 @@
 	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down
 	se scrolloff=11
 	se mouse=nv
+	se diffopt+=vertical " vertical diffs
+" case insensitive search
+	 set ignorecase
+	 set smartcase
+	 set infercase
 
 "		 +--------------+
 "		 | Key Mappings |
@@ -106,7 +114,7 @@
 	nn <leader>J maa<CR><ESC>`a
 
 " Turn off search highlight
-	nn <leader><space> :nohlsearch<CR>
+	nn <silent> <esc><esc> <esc>:nohlsearch<cr><esc>
 
 " C compiling
 	nn <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
@@ -115,18 +123,27 @@
 " Open Terminal
 	nn <leader>t :te<CR>a
 
-" Turns off highlighting on the bits of code that are changed,
-" so the line that is changed is highlighted but the actual
-" text that has changed stands out on the line and is readable.
-	if &diff
-		hi! link DiffText MatchParen
-	endi
-
+"		 +------+
+"		 | Misc |
+"		 +------+
 " Netrw stuff
 	let g:netrw_banner=0        " disable annoying banner
 	let g:netrw_altv=1          " open splits to the right
+	let g:netrw_browse_split=4
 	let g:netrw_liststyle=3     " tree view
 	let g:netrw_browsex_viewer="xdg-open" " Use xdg-open(mimi) to open files externally
+
+" make inline more readable
+	fu! UnMinify( )
+			%s/{\ze[^\r\n]/{\r/g
+			%s/){/) {/g
+			%s/};\?\ze[^\r\n]/\0\r/g
+			%s/;\ze[^\r\n]/;\r/g
+			%s/[^\s]\zs[=&|]\+\ze[^\s]/ \0 /g
+			normal ggVG=
+	endfu
+	com UnMinify :call UnMinify()
+	nn <silent> <leader>y <esc>:cal UnMinify()<cr><esc>
 
 "		 +---------+
 "		 | Plugins |
@@ -147,6 +164,12 @@
 "		 +------------+
 "		 | Appearance |
 "		 +------------+
+" Turns off highlighting on the bits of code that are changed,
+" so the line that is changed is highlighted but the actual
+" text that has changed stands out on the line and is readable.
+	if &diff
+		hi! link DiffText MatchParen
+	endi
 	hi Comment gui=italic
 " ColorScheme
 	se termguicolors
@@ -161,3 +184,13 @@
 	set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 	\,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 	\,sm:block-blinkwait175-blinkoff150-blinkon175
+" show invisibles
+	set list
+	set listchars=
+	set listchars+=tab:·\
+	set listchars+=trail:·
+	set listchars+=extends:»
+	set listchars+=precedes:«
+	set listchars+=nbsp:░
+" split style
+	set fillchars=vert:▒
