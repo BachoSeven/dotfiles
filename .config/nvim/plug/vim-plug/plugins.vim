@@ -8,8 +8,8 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-	Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'mail', 'vim', 'sh'] }
-	Plug 'junegunn/limelight.vim'
+	Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+	Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
 	Plug 'jamessan/vim-gnupg'
   Plug 'mhinz/vim-startify'
 	Plug 'jdhao/better-escape.vim'

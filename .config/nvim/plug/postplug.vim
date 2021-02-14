@@ -37,13 +37,14 @@
 
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
+	let g:deoplete#enable_ignore_case = 1
 
 "" FZF
 	let g:fzf_layout = { 'window': '10new' }
 	nn <silent> <C-p> :FZF -m<cr>
 
 " Better command history with q:
-	command! CmdHist cal fzf#vim#command_history({'right': '40'})
+	com! CmdHist cal fzf#vim#command_history({'right': '40'})
 	nn q: :CmdHist<CR>
 
 " Change Colorscheme using fzf
@@ -169,10 +170,10 @@
 		    \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
 				\ },
 				\ 'component_function': {
-				\   'filename': 'LightlineFilename',
-	      \   'fileformat': 'LightlineFileformat',
-				\		'filetype': 'LightlineFiletype',
-				\		'fileencoding': 'LightlineFileencoding',
+				\   'filename': 'LlName',
+	      \   'fileformat': 'LlFormat',
+				\		'filetype': 'LlType',
+				\		'fileencoding': 'LlEncoding',
 				\	},
 				\	'mode_map': {
 				\		'n' : 'N',
@@ -194,22 +195,26 @@
 	" Show total line number in square brackets
 	let g:lightline.component = {
 			\ 'lineinfo': '%3l[%L]:%-2v'}
-	fu! LightlineReadonly()
+	fu! LlRO()
 		return &ft !~? 'help' && &readonly ? ' ' : ''
 	endfu
-	fu! LightlineFilename() " Trim bar between filename and modified sign
+	fu! LlName() " Trim bar between filename and modified sign
 		let filename = expand('%:t') !=# '' ? expand('%:t') : '[none]'
 		let modified = &modified ? ' ' : ''
-		retu filename . ('' != LightlineReadonly() ? LightlineReadonly() : modified)
+		retu filename . ('' != LlRO() ? LlRO() : modified)
 	endfu
-	fu! LightlineFileformat()
+	fu! LlFormat()
 		retu winwidth(0) > 70 ? WebDevIconsGetFileFormatSymbol() : ''
 	endfu
-	fu! LightlineFiletype()
+	fu! LlType()
 		retu winwidth(0) > 70 ? (strlen(&filetype) ? ' ' . WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : '') : ''
 	endfu
-	fu! LightlineFileencoding()
+	fu! LlEncoding()
 		retu winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
+	endfu
+	fu! IsTree()
+		let l:name = expand('%:t')
+		return l:name =~ 'NetrwTreeListing\|undotree\|NERD' ? 1 : 0
 	endfu
 
 " Limelight

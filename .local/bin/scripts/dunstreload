@@ -9,6 +9,7 @@ reload_dunst() {
 	pkill dunst
 	if [ -f ~/.cache/wal/active ]; then
 		dunst		\
+		-frame_color "${color4}" \
 		-lb "${color0}" \
 		-nb "${color0}" \
 		-cb "${color0}" \

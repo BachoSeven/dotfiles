@@ -13,6 +13,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 " Shortcut to upgrade all plugins, including Plug
-command! PU PlugUpdate | PlugUpgrade
+com! PU PlugUpdate | PlugUpgrade
 
 " }}}
