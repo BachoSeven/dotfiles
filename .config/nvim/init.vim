@@ -47,9 +47,9 @@
 	se mouse=nv
 	se diffopt+=vertical " vertical diffs
 " case insensitive search
-	 set ignorecase
-	 set smartcase
-	 set infercase
+	se ignorecase
+	se smartcase
+	se infercase
 
 "		 +--------------+
 "		 | Key Mappings |

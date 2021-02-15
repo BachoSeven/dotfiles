@@ -1,7 +1,5 @@
 !# vim	ft=xdefaults
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Gruvbox Material Dark
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Gruvbox Material Dark
 ! medium
 #define BG	#282828
 ! hard
