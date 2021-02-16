@@ -111,7 +111,6 @@
 	alias tuwu='kitty toot tui'
 	alias tg='telegram-desktop'
 	alias el='element-desktop-nightly'
-	alias brb='st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d brb'
 	alias phonic='vieb --erwic ~/.config/primephonic/primephonic.json --datafolder ~/.config/primephonic'
 	alias flix='chromium --app=https://netflix.com/browse'
 	alias findbg='open http://imgops.com/"$(imgur.sh "$(realpath ~/.local/share/bg)")"'

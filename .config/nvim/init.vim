@@ -149,7 +149,6 @@
 			%s/[^\s]\zs[=&|]\+\ze[^\s]/ \0 /g
 			normal ggVG=
 	endfu
-	com UnMinify :call UnMinify()
 	nn <silent> <leader>y <esc>:cal UnMinify()<cr><esc>
 
 "		 +---------+

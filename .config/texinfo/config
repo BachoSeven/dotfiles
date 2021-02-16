@@ -1,0 +1,63 @@
+# Vim keybindings for ``info``.
+
+#info
+0 add-digit-to-numeric-arg
+1 add-digit-to-numeric-arg
+2 add-digit-to-numeric-arg
+3 add-digit-to-numeric-arg
+4 add-digit-to-numeric-arg
+5 add-digit-to-numeric-arg
+6 add-digit-to-numeric-arg
+7 add-digit-to-numeric-arg
+8 add-digit-to-numeric-arg
+9 add-digit-to-numeric-arg
+
+j next-line
+k prev-line
+\^ beginning-of-line
+$ end-of-line
+l forward-char
+h backward-char
+w forward-word
+W forward-word
+b backward-word
+B backward-word
+gg beginning-of-node
+G end-of-node
+# Without numeric argument, moves cursor to middle line of window
+M move-to-window-line
+
+^f scroll-forward-page-only
+^b scroll-backward-page-only
+^e down-line
+^y up-line
+^d scroll-half-screen-down
+^u scroll-half-screen-up
+# '0zt' scrolls until the cursor line is at the top of the screen
+zt redraw-display
+
+^o history-node
+^h list-visited-nodes
+# This is actually ^/, but for some reason it is expressed as ^_
+^_ clear-search
+
+i virtual-index
+I index-apropos
+
+# \kx is the Backspace key on my keyboard
+\kx move-to-prev-xref
+
+^w^w next-window
+^ww next-window
+^wj next-window
+^wk prev-window
+^ws split-window
+^wX delete-window # Inspired by `screen'
+^wq delete-window
+^wQ keep-one-window # Inspired by `screen'
+^w+ grow-window
+^w= tile-windows
+
+#var
+highlight-searches=On
+scroll-behavior=Page Only
