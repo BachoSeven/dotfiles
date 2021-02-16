@@ -96,6 +96,7 @@ gd:	https://drive.google.com/drive/search?q=%s gdrive
 ge:	https://genius.com/search?q=%s Genius
 gh:	https://github.com/search?q=%s GitHub
 gi:	https://www.google.com/searchbyimage?image_url=%s Google Image Search
+gl:	https://gitlab.com/search?search=%s GitLab
 gm:	https://www.google.com/maps?q=%s Google maps
 go:	https://www15.gogoanime.io//search.html?keyword=%s gogoanime
 gt:	https://translate.google.com/?source=osdd#auto|auto|%s gtranslate

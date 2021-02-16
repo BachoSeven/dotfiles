@@ -631,7 +631,7 @@ function ll(){ # A superb ls
 
 ## Manuals
 vinfo() {
-	nvim -c "Vinfo $@" -c 'silent only' # See https://github.com/alx741/vinfo
+  nvim -R -M -c "Info $1 $2" -c 'silent only'
 }
 # Find inside (with previews)
 fman() {
