@@ -27,7 +27,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
-	Plug 'alx741/vinfo'
+	Plug 'HiPhish/info.vim'
 	Plug 'chrisbra/csv.vim', { 'for': ['csv', 'vim-plug'] }
 
 " Autocompletion

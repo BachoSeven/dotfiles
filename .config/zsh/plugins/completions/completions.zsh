@@ -1,18 +1,43 @@
 # Initialise
 	zmodload zsh/complist
 
-# Speed up completion loading at startup [ https://gist.github.com/ctechols/ca1035271ad134841284 ]
-	autoload -Uz compinit
-	() {
-	  if [[ $# -gt 0 ]]; then
-			compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump" # Skip checking for insecure files/directories (compaudit), see http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Use-of-compinit.
-	  else
-			compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
-	  fi
-	} ${XDG_CACHE_HOME}/zsh/zcompdump(N.mh+24)
+# Speed up completion loading at startup [ see: https://gist.github.com/ctechols/ca1035271ad134841284, https://github.com/bzoop/dotconfigs/blob/master/dotfiles/zshrc.d/04_completion.zsh ]
+	zcachedir="$XDG_CACHE_HOME/zsh"
+	[[ -d "$zcachedir" ]] || mkdir -p "$zcachedir"
 
-# Include .files
-	_comp_options+=(globdots)
+	() {
+		setopt local_options extendedglob
+		autoload -Uz compinit
+		local zcompf="$1/zcompdump"
+		# Use a separate file to determine whether to regenerate compdump,
+		# compinit doesn't always need to modify the compdump.
+		local zcompf_a="${zcompf}.augur"
+
+		# use glob qualifier (#q), to use globs inside [[
+		# http://zsh.sourceforge.net/Doc/Release/Expansion.html#Glob-Qualifiers
+		# N => NULL_GLOB
+		# . => plain files
+		# m[Mwhms][-|+]n => modification time qualifiers
+		if [[ -e "$zcompf_a" && -f "$zcompf_a"(#qN.mh-24) ]]; then
+			compinit -C -u -d "$XDG_CACHE_HOME/zsh/zcompdump" # Skip checking for insecure files/directories (compaudit), see http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Use-of-compinit.
+		else
+			compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump"
+			touch "$zcompf_a"
+		fi
+
+		# Complete .files
+		_comp_options+=(globdots)
+
+	# If zcompdump exists, is non-zero and is older than the .zwc, then regenerate.
+	if [[ -s "$zcompf" && (! -s "${zcompf}.zwc" || "$zcompf" -nt "${zcompf}.zwc") ]]; then
+		# since file is mapped, it might be mapped right now in current shells, so
+		# rename it then make a new one
+		[[ -e "$zcompf.zwc" ]] && mv -f "$zcompf.zwc" "$zcompf.zwc.old"
+		# Compile with -M so that it's shared between multiple shells
+		{ zcompile -M "$zcompf" } &! # Run in background
+	fi
+	} "$zcachedir"
+
 
 # Basic autocomplete with: menu-listing, hyphen- and case-insensitivity, accepts abbreviations after . or _ or - (ie. f.b -> foo.bar), substring complete (ie. bar -> foobar), and colored with LS_COLORS.
 	zstyle ':completion:*:*:*:*:*' menu select
