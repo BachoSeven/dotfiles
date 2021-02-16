@@ -1,0 +1,202 @@
+#!/bin/bash
+# Source: https://github.com/jzbor/dotfiles/blob/master/.scripts/de/xdg-xmenu
+
+# XDG directories
+XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+XDG_DATA_DIRS=${XDG_DATA_DIRS:-/usr/share:/usr/local/share}
+
+# Apply default configuration values
+SHOW_ALL=${XDG_MENU_SHOW_ALL:-}
+TERMINAL=${XDG_MENU_TERMINAL:-xterm}
+SIZE=${XDG_MENU_ICON_SIZE:-24}
+ICON_THEME=${XDG_MENU_ICON_THEME:-$(awk -F= '/gtk-icon-theme-name/{ print $2 }' \
+                                    "$XDG_CONFIG_HOME/gtk-3.0/settings.ini")}
+UPDATE_CACHE=${XDG_MENU_UPDATE_CACHE:-}
+SHOW_UNCACHED=${XDG_MENU_SHOW_UNCACHED:-}
+FALLBACK_ICON=${XDG_MENU_FALLBACK_ICON:-application-x-executable}
+
+# Read CLI arguments
+while getopts "ab:i:rs:t:u" arg; do
+    case "$arg" in
+        a) SHOW_ALL=1;;
+        b) FALLBACK_ICON=$OPTARG;;
+        i) ICON_THEME=$OPTARG;;
+        r) SHOW_UNCACHED=1;;
+        s) SIZE=$OPTARG;;
+        t) TERMINAL=$OPTARG;;
+        u) UPDATE_CACHE=1;;
+        *) ;;
+    esac
+done
+
+# Directories
+DATA_DIRS=$XDG_DATA_HOME:$XDG_DATA_DIRS
+CACHE_DIR="$XDG_CACHE_HOME/xdg-xmenu"
+CACHE_ICON_DIR="$CACHE_DIR/icons"
+CACHE_MENU_FILE="$CACHE_DIR/menu.txt"
+mkdir -p "$CACHE_ICON_DIR"
+
+# Quickly output cache if existent and then update cache
+if [ -z "$UPDATE_CACHE" ] && [ -z "$SHOW_UNCACHED" ] && [ -f "$CACHE_MENU_FILE" ]; then
+    cat $CACHE_MENU_FILE
+    exit
+fi
+
+# Find directories in an icon theme matching the target size
+valid_dirs() { # arg: theme folder
+    [ -f "$1/index.theme" ] || return
+    while IFS='=' read -r key value; do
+        case "$key" in
+        \[*\]) unset MaxSize MinSize Scale Size Type dir flag
+            dir=${key#[}; dir=${dir%]} ;;
+        *) [ -n "$value" ] && eval "$key=\"$value\""
+        esac
+        [ -n "$flag" ] || [ "${Scale-1}" = 2 ] && continue
+        { [ "${Type-}" = Fixed ] && [ "${Size-0}" = "$SIZE" ]; } ||
+        { [ "${Type-}" = Threshold ] && [ "${Size-0}" -gt "$SIZE" ]; } ||
+        { [ "${Type-}" = Scalable ] && [ "$SIZE" -gt "${MinSize-65535}" ] &&
+            [ "$SIZE" -lt "${MaxSize-0}" ]; } && { flag=1; echo "$1/$dir"; }
+    done < "$1/index.theme"
+}
+
+# Find all directories matching the size and containing icons directly
+find_all_dirs() { # no args
+    IFS=':'
+    for datadir in $DATA_DIRS; do unset IFS
+        for theme in "$ICON_THEME" "hicolor"; do
+            valid_dirs "$datadir/icons/$theme"
+        done
+    done
+    echo "/usr/share/pixmaps"
+}
+
+all_dirs=$(find_all_dirs)
+
+# Search for an icon based on its name
+find_icon() { # args: icon name
+    [ -f "$1" ] && echo "$1" && return
+    for dir in $all_dirs; do
+        for ext in png svg xpm; do
+            [ -f "$dir/$1.$ext" ] && echo "$dir/$1.$ext" && return
+        done
+    done
+    echo "$FALLBACK_ICON"
+}
+
+cache_icon() {
+    icon_name=${1##*/}; icon_name=${icon_name%.*}
+    cache_path="$CACHE_ICON_DIR/$icon_name.png"
+    [ -f "$cache_path" ] && echo "$cache_path" && return
+    icon_path=$(find_icon "$1")
+    [ ! -f "$icon_path" ] && return
+    if [ "${icon_path##*.}" = "svg" ]; then
+        if command -v rsvg-convert > /dev/null; then
+            rsvg-convert -w "$SIZE" -h "$SIZE" "$icon_path" -o "$cache_path"
+        elif command -v convert > /dev/null 2>&1; then
+            convert -background none -size "${SIZE}x${SIZE}" \
+                    "$icon_path" "$cache_path"
+        elif command -v inkscape > /dev/null 2>&1; then
+            inkscape -w "$SIZE" -h "$SIZE" "$icon_path" -o "$cache_path"
+        else
+            echo >&2 "[Error]: Convert svg icons failed."
+            echo >&2 "Please install one of the following programs:"
+            echo >&2 "rsvg-convert(librsvg), convert(imagemagick), inkscape"
+            exit 1
+        fi
+    else
+        [ "${icon_path##*.}" = "xpm" ] && cache_path="${cache_path%.*}.xpm"
+        cp "$icon_path" "$cache_path"
+    fi
+    [ -f "$cache_path" ] && echo "$cache_path"
+}
+
+FALLBACK_ICON=$(cache_icon "$FALLBACK_ICON") || exit
+
+menu() {
+    IFS=:
+    for datadir in $DATA_DIRS; do unset IFS
+        appdir="$datadir/applications"
+        [ ! -d "$appdir" ] && continue
+        for app in "$appdir"/*.desktop; do
+            unset icon name genname cmd category nodisplay useterm added
+            while IFS="=" read -r key value; do
+                case "$key" in
+                Categories) [ -z "$category" ] && category=$value ;;
+                Icon) [ -z "$icon" ] && { icon=$(cache_icon "$value") || exit; } ;;
+                Name) [ -z "$name" ] && name="$value" ;;
+                GenericName) [ -z "$genname" ] && genname=$value ;;
+                Exec) [ -z "$cmd" ] && cmd=$value && [ "${cmd#*%}" != "$cmd" ] &&
+                    cmd=$(echo "$cmd" | sed 's/ %[fFuUick]//g' | sed 's/%%/$/g') ;;
+                NoDisplay) [ "$value" != "false" ] && nodisplay=1 ;;
+                Terminal) [ "$value" != "false" ] && useterm=1 ;;
+                OnlyShowIn) [ -z "$SHOW_ALL" ] && nodisplay=1 ;;
+                esac
+            done < "$app"
+
+            [ -n "$nodisplay" ] && continue
+            [ -n "$useterm" ]   && cmd="$TERMINAL -e $cmd"
+            [ -n "$genname" ]   && name="$name ($genname)"
+            icon="${icon-$FALLBACK_ICON}"
+            icon="${icon:+\tIMG:$icon}"
+            item="$icon\t$name\t$cmd"
+
+            IFS=\;
+            for c in $category; do unset IFS
+                case "$c" in
+                Audio*|*Video) added=1; Multimedia="$Multimedia$item\n"   ;;
+                Development)   added=1; Development="$Development$item\n" ;;
+                Education)     added=1; Education="$Education$item\n"     ;;
+                Game)          added=1; Games="$Games$item\n"             ;;
+                Graphics)      added=1; Graphics="$Graphics$item\n"       ;;
+                Network)       added=1; Internet="$Internet$item\n"       ;;
+                Office)        added=1; Office="$Office$item\n"           ;;
+                Science)       added=1; Science="$Science$item\n"         ;;
+                Settings)      added=1; Settings="$Settings$item\n"       ;;
+                System)        added=1; System="$System$item\n"           ;;
+                Utility)       added=1; Accessories="$Accessories$item\n" ;;
+                esac
+            done
+            [ -z "$added" ] && Others="$Others$item\n"
+        done
+    done
+
+category_sort() { # $1: icon name, $2: category name, $3: items
+		icon=$(cache_icon "$1") || exit
+		printf "${icon:+IMG:$icon\t}%s\n" "$2"
+		printf "$3%s" | sort -f -k 2 | uniq
+}
+
+    category_sort applications-accessories Accessories "$Accessories"
+    category_sort applications-development Development "$Development"
+    category_sort applications-education   Education   "$Education"
+    category_sort applications-games       Games       "$Games"
+    category_sort applications-graphics    Graphics    "$Graphics"
+    category_sort applications-internet    Internet    "$Internet"
+    category_sort applications-multimedia  Multimedia  "$Multimedia"
+    category_sort applications-office      Office      "$Office"
+    category_sort applications-science     Science     "$Science"
+    category_sort preferences-desktop      Settings    "$Settings"
+    category_sort applications-system      System      "$System"
+    category_sort applications-other       Others      "$Others"
+}
+
+generate_cache() {
+    if ! [ -f "$CACHE_MENU_FILE.part" ]; then
+        if [ -n "$1" ]; then
+            echo $1 > "$CACHE_MENU_FILE.part"
+        else
+            menu > "$CACHE_MENU_FILE.part"
+        fi
+        mv "$CACHE_MENU_FILE.part" "$CACHE_MENU_FILE"
+    fi
+}
+
+if [ -n "$UPDATE_CACHE" ]; then
+    generate_cache
+else
+    cache="$(menu)"
+    echo "$cache"
+    generate_cache "$cache"
+fi
