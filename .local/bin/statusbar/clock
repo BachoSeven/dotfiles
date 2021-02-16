@@ -7,7 +7,7 @@ refresh(){
     kill -35 $(pidof dwmblocks) # Reminder: +34
 }
 case $BLOCK_BUTTON in
-	1) notify-send "Questo mese" "$(cal --color=always | sed "s/..7m/<b><span color=\"#cc241d\">/;s/..27m/<\/span><\/b>/")"  ;;
+	1) notify-send -i /usr/share/icons/Gruvbox-Material-Dark/64x64/categories/calendar.svg "Questo mese:" "$(cal --color=always | sed "s/..7m/<b><span color=\"#cc241d\">/;s/..27m/<\/span><\/b>/")"  ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 

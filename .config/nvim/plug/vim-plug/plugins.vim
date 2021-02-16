@@ -52,7 +52,7 @@ cal plug#begin('~/.local/share/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 
 " Syntax highlighting
-	Plug 'BachoSeven/lf-vim', { 'as': 'lf-syntax' }
+	Plug 'VebbNix/lf-vim', { 'as': 'lf-syntax' }
 	Plug 'cespare/vim-toml'
 	Plug 'bfrg/vim-cpp-modern'
   Plug 'McSinyx/vim-octave'

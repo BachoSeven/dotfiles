@@ -372,6 +372,10 @@ zsh_bench() {
 	for _ ({1..10}); time zsh -i -c exit
 }
 
+brb() {
+  st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d "${1:-brb}"
+}
+
 ## Colors
 bl(){
 	killall -q xrootgif xwinwrap
