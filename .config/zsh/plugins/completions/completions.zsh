@@ -47,8 +47,12 @@
   # If you end up using a directory as argument, this will remove the trailing slash (usefull in ln)
   zstyle ':completion:*' squeeze-slashes true
 # Use caching to improve completion for commands related to packages or kernel modules
+	zcompcdir="$zcachedir/zcompcache"
+	[[ -d "$zcompcdir" ]] || mkdir -p "$zcompcdir"
 	zstyle ':completion::complete:*' use-cache on
-	zstyle ':completion::complete:*' cache-path "$XDG_CACHE_HOME/zsh"
+	zstyle ':completion::complete:*' cache-path "$zcompcdir"
+	unset zcompcdir
+	unset zcachedir
 # Fuzzy match mistyped completions.
 	zstyle ':completion:*' _expand completer _complete _match _approximate
 	zstyle ':completion:*' extra-verbose yes
