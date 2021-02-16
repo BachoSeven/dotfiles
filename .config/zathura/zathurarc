@@ -42,6 +42,9 @@ set incremental-search true
 set guioptions ""
 map <M-s> toggle_statusbar
 
+map [normal] ZZ quit
+map [normal] ZQ quit
+
 set recolor			true
 set recolor-keephue		true
 
