@@ -147,6 +147,7 @@
 "		 | Misc |
 "		 +------+
 " Netrw stuff
+	let g:netrw_home=$XDG_CACHE_HOME.'/nvim' " Xdg base directory specifications compliant location for .netrwhist
 	let g:netrw_banner=0        " disable annoying banner
 	let g:netrw_altv=1          " open splits to the right
 	let g:netrw_browse_split=4
