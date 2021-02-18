@@ -45,9 +45,7 @@
 	let g:deoplete#enable_ignore_case = 1
 
 "" FZF
-	let g:fzf_layout = { 'window': '10new' }
 	nn <silent> <C-p> :FZF -m<CR>
-
 " Better command history with q:
 	com! CmdHist cal fzf#vim#command_history({'right': '40'})
 	nn q: :CmdHist<CR>
@@ -61,7 +59,6 @@
 	\   'options': '+m',
 	\   'left':    30
 	\ })<CR>
-
 	" Change buffers with fzf
 	nn <leader><Enter> :Buffers<CR>
 
