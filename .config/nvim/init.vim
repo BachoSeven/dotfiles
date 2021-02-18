@@ -11,8 +11,8 @@
 	se title
 	let mapleader =" " " This is so comfy
 	se shell=/usr/bin/zsh
-	set clipboard=unnamed,unnamedplus
-	se number relativenumber
+	se clipboard=unnamed,unnamedplus
+	se nu rnu
 	se path+=** " fuzzy find
 	se wildmenu
 		se wildignore+=.git,.hg,.svn
@@ -33,13 +33,13 @@
 	se hidden " hide buffers, don't close them
 	se splitbelow splitright
 	se lazyredraw
-	set list " show invisibles
-	set listchars=
-	set listchars+=tab:·\
-	set listchars+=trail:·
-	set listchars+=extends:»
-	set listchars+=precedes:«
-	set listchars+=nbsp:░
+	se list " show invisibles
+	se listchars=
+	se listchars+=tab:·\
+	se listchars+=trail:•
+	se listchars+=extends:»
+	se listchars+=precedes:«
+	se listchars+=nbsp:░
 	se fcs=vert:▒,eob:\ " " Remove annoying tilde characters and set split style
 	se autoread " Automatically re-read file if a change was detected outside of vim
 	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down
@@ -49,7 +49,7 @@
 " case insensitive search
 	se ignorecase
 	se smartcase
-	se infercase
+	se infercase " For insert mode
 
 "		 +--------------+
 "		 | Key Mappings |
@@ -187,6 +187,6 @@
 	hi LineNr ctermbg=NONE guibg=NONE
 	hi Normal ctermbg=NONE guibg=NONE
 " Enable blinking together with different cursor shapes and cursor highlighting:
-	set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+	se guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 	\,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 	\,sm:block-blinkwait175-blinkoff150-blinkon175
