@@ -79,6 +79,8 @@
 	nn <c-j> <c-w>j
 	nn <c-k> <c-w>k
 	nn <c-l> <c-w>l
+	nn <leader>[ :bprev<CR>
+	nn <leader>] :bnext<CR>
 	map <leader>h <c-w>h:q<CR>
 	map <leader>j <c-w>j:q<CR>
 	map <leader>k <c-w>k:q<CR>

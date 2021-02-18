@@ -57,24 +57,8 @@
 	\   'left':    30
 	\ })<CR>
 
-" Change buffers with fzf
-	fu! s:buflist()
-	  redir => ls
-	  silent ls
-	  redir END
-	  return split(ls, '\n')
-	endf
-
-	fu! s:bufopen(e)
-	  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-	endf
-
-	nn <silent> <Leader><Enter> :cal fzf#run({
-	\   'source':  reverse(<sid>buflist()),
-	\   'sink':    function('<sid>bufopen'),
-	\   'options': '+m',
-	\   'down':    len(<sid>buflist()) + 2
-	\ })<CR>
+	" Change buffers with fzf
+	nn <leader><Enter> :Buffers<CR>
 
 " Autosave
 	let g:auto_save = 0 " off by default
@@ -199,7 +183,7 @@
 		return &ft !~? 'help' && &readonly ? ' ' : ''
 	endfu
 	fu! LlName() " Trim bar between filename and modified sign
-		let filename = expand('%:t') !=# '' ? expand('%:t') : '[none]'
+		let filename = expand('%:t') !=# '' ? expand('%:t') : '<0x0>'
 		let modified = &modified ? ' ' : ''
 		retu filename . ('' != LlRO() ? LlRO() : modified)
 	endfu
@@ -237,8 +221,6 @@
 	" Limelight integration
 	au! User GoyoEnter Limelight
 	fu! s:goyo_leave()
-		hi LineNr ctermbg=NONE guibg=NONE
-		hi Normal guibg=NONE ctermbg=NONE
 		Limelight!
 	endf
 	au! User GoyoLeave nested cal <SID>goyo_leave()
