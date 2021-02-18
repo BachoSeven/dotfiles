@@ -9,6 +9,7 @@
 "		 | Settings |
 "		 +----------+
 	se title
+	nn <Space> <Nop>
 	let mapleader =" " " This is so comfy
 	se shell=/usr/bin/zsh
 	se clipboard=unnamed,unnamedplus
