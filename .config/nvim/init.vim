@@ -79,16 +79,25 @@
 	nn <c-j> <c-w>j
 	nn <c-k> <c-w>k
 	nn <c-l> <c-w>l
-	nn <leader>[ :bprev<CR>
-	nn <leader>] :bnext<CR>
-	nn <leader>d :bdelete<CR>
 	map <leader>h <c-w>h:q<CR>
 	map <leader>j <c-w>j:q<CR>
 	map <leader>k <c-w>k:q<CR>
 	map <leader>l <c-w>l:q<CR>
-	norema c "_c
-	norema x "_x
-	norema s "_s
+" Buffer commands
+	nn <leader>[ :bprev<CR>
+	nn <leader>] :bnext<CR>
+	nn <leader>d :bdelete<CR>
+" Don't copy in my system clipboard when I use these
+	no c "_c
+	no x "_x
+	no s "_s
+" Move lines with Alt
+	nn <A-j> :m .+1<CR>==
+	nn <A-k> :m .-2<CR>==
+	ino <A-j> <Esc>:m .+1<CR>==gi
+	ino <A-k> <Esc>:m .-2<CR>==gi
+	vn <A-j> :m '>+1<CR>gv=gv
+	vn <A-k> :m '<-2<CR>gv=gv
 " These are amazing.
 	nn <leader>w :w<CR>
 	nn <leader>q :q<CR>
@@ -102,7 +111,7 @@
 	map <c-t>n :tabnew<CR>
 
 " Perform dot commands over visual blocks:
-	vnoremap . :normal .<CR>
+	vn . :normal .<CR>
 
 " Replace all occurrences aliased to S
 	nn S :%s//g<Left><Left>
