@@ -1,5 +1,7 @@
 #!/bin/sh
 
+! pidof Xorg >/dev/null 2>&1 && exit 0
+
 xdotool search --name "is sharing your screen" \
 	| while read wid; do
 	if xwininfo -id "$wid" &>/dev/null; then
