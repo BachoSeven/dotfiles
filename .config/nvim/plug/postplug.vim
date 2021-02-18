@@ -86,24 +86,32 @@
   let g:vimtex_compiler_progname = 'nvr'
 	let g:vimtex_view_use_temp_files = 1
   let g:vimtex_view_method='zathura'
-  let g:vimtex_compiler_latexmk = {
-    \ 'background' : 1,
-    \ 'build_dir' : '',
-    \ 'callback' : 1,
-    \ 'continuous' : 1,
-    \ 'executable' : 'latexmk',
-    \ 'options' : [
-    \   '-verbose',
-    \   '-file-line-error',
-    \   '-synctex=1',
-    \   '-interaction=nonstopmode',
-    \ ],
-    \}
+  let g:vimtex_compiler_method='tectonic'
+	let g:vimtex_compiler_tectonic = {
+		\ 'build_dir' : '',
+		\ 'options' : [
+		\   '--keep-logs',
+		\   '--synctex'
+		\ ],
+		\}
+	let g:vimtex_compiler_latexmk = {
+		\ 'background' : 1,
+		\ 'build_dir' : '',
+		\ 'callback' : 1,
+		\ 'continuous' : 1,
+		\ 'executable' : 'latexmk',
+		\ 'options' : [
+		\   '-verbose',
+		\   '-file-line-error',
+		\   '-synctex=1',
+		\   '-interaction=nonstopmode',
+		\ ],
+		\}
   " Compile on initialization, cleanup on quit
   augroup vimtex_event_1
     au!
     au User VimtexEventQuit     call vimtex#compiler#clean(0)
-    " au User VimtexEventInitPost call vimtex#compiler#compile()
+		au User VimtexEventInitPost call vimtex#compiler#compile() " Automatically compiles
 	augroup END
   " Close viewers when vimtex buffers are closed
   function! CloseViewers()

@@ -16,10 +16,10 @@
 # Do not save these in history:
 	bindkey -s '^g' ' btm -b\r'
 	bindkey -s '^v' ' v\r'
-	bindkey -s '^[n' ' neomutt\r'
 	bindkey -s '^s' ' up2date\r'
-	bindkey -s '\ef' ' fedit\r'
 	bindkey -s '^q' ' pacbrowse\r'
+	bindkey -s '\en' ' neomutt\r'
+	bindkey -s '\ef' ' fedit\r'
 	bindkey '\eq' push-input # Push current input on a stack and pop it on next newline
 	(( $+commands[lf] )) && bindkey -s '^o' '\eq lfcd\r' && alias \
 		inc='lfcd ~/slsk/incoming' \
