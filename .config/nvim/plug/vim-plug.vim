@@ -63,11 +63,6 @@ cal plug#begin(g:plugin_location)
 	Plug 'HiPhish/info.vim'
 	Plug 'chrisbra/csv.vim', { 'for': ['csv', 'vim-plug'] }
 
-" Autocompletion
-	" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	Plug 'Shougo/neco-vim'
-	Plug 'Shougo/neco-syntax'
-
 " Expand vim's `%` motion beyond just brackets and quotes
   Plug 'andymass/vim-matchup'
 
