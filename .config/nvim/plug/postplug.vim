@@ -147,15 +147,15 @@
 " Lightline
 	let g:lightline = {
 				\ 'colorscheme': 'gruvbox_material',
-	      \ 'active': {
+				\ 'active': {
 				\   'left': [ [ 'mode', 'paste' ],
 				\             [ 'filename' ] ],
 				\		'right': [ [ 'percent', 'lineinfo' ],
-		    \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+				\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
 				\ },
 				\ 'component_function': {
 				\   'filename': 'LlName',
-	      \   'fileformat': 'LlFormat',
+				\   'fileformat': 'LlFormat',
 				\		'filetype': 'LlType',
 				\		'fileencoding': 'LlEncoding',
 				\	},
