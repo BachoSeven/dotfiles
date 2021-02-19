@@ -63,9 +63,9 @@
 	nn <leader>sy :syntax sync fromstart<CR>
 
 " Edit vimrc/zshrc and load vimrc bindings
-	nn <leader>ev :vsp ~/.config/nvim/init.vim<CR>
+	nn <leader>ev :vsp $XDG_CONFIG_HOME/nvim/init.vim<CR>
 	nn <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
-	nn <leader>sv :so ~/.config/nvim/init.vim<CR>
+	nn <leader>sv :so $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
 " vsplit file under cursor; c-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
 	nn <c-W><c-F> <c-W>vgf
@@ -168,17 +168,18 @@
 "		 | Plugins |
 "		 +---------+
 " Definitions
-	so ~/.config/nvim/plug/plug.vim
+	so $XDG_CONFIG_HOME/nvim/plug/vim-plug.vim
+	so $XDG_CONFIG_HOME/nvim/plug/postplug.vim
 
 "		 +----------+
 "		 | Autocmds |
 "		 +----------+
-	so ~/.config/nvim/autocmd.vim
+	so $XDG_CONFIG_HOME/nvim/autocmd.vim
 
 "		 +-----------+
 "		 | Filetypes |
 "		 +-----------+
-	so ~/.config/nvim/ft.vim
+	so $XDG_CONFIG_HOME/nvim/ft.vim
 
 "		 +------------+
 "		 | Appearance |
