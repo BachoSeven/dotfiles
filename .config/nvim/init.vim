@@ -153,6 +153,8 @@
 	let g:netrw_browse_split=4
 	let g:netrw_liststyle=3     " tree view
 	let g:netrw_browsex_viewer="xdg-open" " Use xdg-open(mimi) to open files externally
+	" Temporary fix for https://github.com/vim/vim/issues/4738
+	nm gx yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>
 
 " make inline more readable
 	fu! UnMinify( )
