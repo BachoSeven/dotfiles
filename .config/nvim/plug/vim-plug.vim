@@ -37,13 +37,12 @@ cal plug#begin(g:plugin_location)
 "" Utilities
 	Plug 'ptzz/lf.vim'
 	Plug 'voldikss/vim-floaterm'
-	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 	Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 	Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
-	Plug 'jamessan/vim-gnupg'
+	Plug 'jamessan/vim-gnupg' " Automatically decrypt on buffer enter
   Plug 'mhinz/vim-startify'
 	Plug 'jdhao/better-escape.vim'
 	Plug '907th/vim-auto-save' " toggle with :AutoSaveToggle
