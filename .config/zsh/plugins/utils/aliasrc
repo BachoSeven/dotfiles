@@ -5,6 +5,7 @@
 
 # Arch
 	alias pacbrowse="pacman -Qqe | fzf --preview 'pacman -Qi {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+	alias np="pacman -Qq | wc -l"
 
 # Enable aliases to be sudo’ed
 	alias sudo='sudo '
