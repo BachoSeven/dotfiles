@@ -21,6 +21,9 @@
 	\ 'COMMIT_EDITMSG',
 	\ ]
 	let g:startify_use_env = 1
+	fu! StartifyEntryFormat() " Use custom icons plugin
+		retu 'mpi#get(absolute_path) ." ". entry_path'
+	endfu
 
 " Lf
 	let g:lf_replace_netrw = 1 " open lf when a directory is opened with vim
@@ -78,13 +81,13 @@
 	\ 'styles' : 1,
 	\ }
 	hi Conceal ctermbg=none
-  let g:vimtex_quickfix_mode = 2
-  let g:vimtex_compiler_progname = 'nvr'
+	let g:vimtex_quickfix_mode = 2
+	let g:vimtex_compiler_progname = 'nvr'
 	let g:vimtex_fold_enabled = 1
 	let g:vimtex_view_use_temp_files = 1
-  let g:vimtex_view_method='zathura'
-  let g:vimtex_compiler_method='tectonic'
-  " let g:vimtex_compiler_method='generic'
+	let g:vimtex_view_method='zathura'
+	let g:vimtex_compiler_method='tectonic'
+	" let g:vimtex_compiler_method='generic'
 	let g:vimtex_compiler_generic = {
 		\	'cmd': 'watchexec --exts tex "tectonic --synctex --keep-logs"',
 		\ 'build_dir' : '',
@@ -102,47 +105,43 @@
 		\   '-interaction=nonstopmode',
 		\ ],
 		\}
-  " Compile on initialization, cleanup on quit
-  augroup vimtex_event_1
-    au!
-    au User VimtexEventQuit     call vimtex#compiler#clean(0)
+	" Compile on initialization, cleanup on quit
+	aug vimtex_event_1
+		au!
+		au User VimtexEventQuit     call vimtex#compiler#clean(0)
 		au User VimtexEventInitPost call vimtex#compiler#compile()
-	augroup END
-  " Close viewers when vimtex buffers are closed
-  function! CloseViewers()
-    " Close viewers on quit
-    if executable('xdotool') && exists('b:vimtex')
-        \ && exists('b:vimtex.viewer') && b:vimtex.viewer.xwin_id > 0
-      call system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
-    endif
-  endfunction
-  augroup vimtex_event_2
-    au!
-    au User VimtexEventQuit call CloseViewers()
-  augroup END
+	aug END
+	" Close viewers when vimtex buffers are closed
+	fu! CloseViewers()
+	" Close viewers on quit
+	if executable('xdotool') && exists('b:vimtex')
+		\ && exists('b:vimtex.viewer') && b:vimtex.viewer.xwin_id > 0
+		call system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
+	endif
+	endfu
+	aug vimtex_event_2
+		au!
+		au User VimtexEventQuit call CloseViewers()
+	aug END
 " fzf integration for vimtex
-  nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
+	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
 
 	" UltiSnips
-    let g:UltiSnipsExpandTrigger = '<tab>'
-    let g:UltiSnipsJumpForwardTrigger = '<tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips']
+	let g:UltiSnipsExpandTrigger = '<tab>'
+	let g:UltiSnipsJumpForwardTrigger = '<tab>'
+	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+	let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips']
 
 " UndoTree
 	let g:undotree_WindowLayout = 3
 	nn <leader>u :UndotreeToggle<cr>
 	let g:undotree_SetFocusWhenToggle = 1
-  let g:undotree_CursorLine = 0
+	let g:undotree_CursorLine = 0
 
 " Gruvbox Material
 	let g:gruvbox_material_transparent_background = 1
 	let g:gruvbox_material_enable_italic = 1	" Italic Keywords
 	let g:gruvbox_material_disable_italic_comment = 1
-
-" Devicons
-	let g:webdevicons_enable = 1
-	let g:DevIconsEnableDistro = 0
 
 " Lightline
 	let g:lightline = {
@@ -188,10 +187,18 @@
 		retu filename . ('' != LlRO() ? LlRO() : modified)
 	endfu
 	fu! LlFormat()
-		retu winwidth(0) > 70 ? WebDevIconsGetFileFormatSymbol() : ''
+		if &fileformat ==? 'dos'
+			let fileformat = ''
+		elseif &fileformat ==? 'unix'
+			let fileformat = ''
+		elseif &fileformat ==? 'mac'
+			let fileformat = ''
+		endif
+		retu winwidth(0) > 70 ? fileformat : ''
 	endfu
 	fu! LlType()
-		retu winwidth(0) > 70 ? (strlen(&filetype) ? ' ' . WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : '') : ''
+		let symbol = mpi#get(expand('%:t'))
+		retu winwidth(0) > 70 ? (strlen(&filetype) ? ' ' . symbol . ' ' . &filetype : '') : ''
 	endfu
 	fu! LlEncoding()
 		retu winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
