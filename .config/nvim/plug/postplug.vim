@@ -88,12 +88,10 @@
 	let g:vimtex_view_use_temp_files = 1
   let g:vimtex_view_method='zathura'
   let g:vimtex_compiler_method='tectonic'
-	let g:vimtex_compiler_tectonic = {
+  " let g:vimtex_compiler_method='generic'
+	let g:vimtex_compiler_generic = {
+		\	'cmd': 'watchexec --exts tex "tectonic --synctex --keep-logs"',
 		\ 'build_dir' : '',
-		\ 'options' : [
-		\   '--keep-logs',
-		\   '--synctex'
-		\ ],
 		\}
 	let g:vimtex_compiler_latexmk = {
 		\ 'background' : 1,
@@ -112,7 +110,7 @@
   augroup vimtex_event_1
     au!
     au User VimtexEventQuit     call vimtex#compiler#clean(0)
-		au User VimtexEventInitPost call vimtex#compiler#compile() " Automatically compiles
+		au User VimtexEventInitPost call vimtex#compiler#compile()
 	augroup END
   " Close viewers when vimtex buffers are closed
   function! CloseViewers()
