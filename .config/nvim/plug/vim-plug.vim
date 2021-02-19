@@ -86,4 +86,7 @@ cal plug#begin(g:plugin_location)
 
 cal plug#end()
 
+" Icons
+	so $XDG_CONFIG_HOME/nvim/plug/mpi.vim
+
 " }}}

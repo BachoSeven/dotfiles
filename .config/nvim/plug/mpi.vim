@@ -1,5 +1,5 @@
-" let g:mpi#default = ''
 let g:mpi#default = ''
+" let g:mpi#default = ''
 let g:mpi#filetypes = {
     \ 'awk'     : '',
     \ 'clojure' : '',
