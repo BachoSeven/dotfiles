@@ -40,9 +40,9 @@
 	let g:NERDCompactSexyComs = 1
 	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } }	" Fix lfrc comments
 
-" Deoplete
-	let g:deoplete#enable_at_startup = 1
-	let g:deoplete#enable_ignore_case = 1
+" " Deoplete
+	" let g:deoplete#enable_at_startup = 1
+	" let g:deoplete#enable_ignore_case = 1
 
 "" FZF
 	nn <silent> <C-p> :FZF -m<CR>
@@ -133,10 +133,10 @@
     let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
     let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips']
 
-" vimtex deoplete
-	cal deoplete#custom#var('omni', 'input_patterns', {
-		\ 'tex': g:vimtex#re#deoplete
-		\})
+" " vimtex deoplete
+	" cal deoplete#custom#var('omni', 'input_patterns', {
+		" \ 'tex': g:vimtex#re#deoplete
+		" \})
 
 " UndoTree
 	let g:undotree_WindowLayout = 3
