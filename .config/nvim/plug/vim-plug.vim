@@ -10,21 +10,21 @@ let g:autoload_plug = '/autoload/plug.vim'
 
 " Find correct locations
 if len(g:xdg_data_home) == 0
-		let g:plug_location = $HOME . '/.local/share/nvim/site'
-		let g:plugin_location = $HOME . '/.local/shared/nvim/plugged'
+	let g:plug_location = $HOME . '/.local/share/nvim/site'
+	let g:plugin_location = $HOME . '/.local/shared/nvim/plugged'
 else
-		let g:plug_location= g:xdg_data_home . '/nvim/site'
-		let g:plugin_location = g:xdg_data_home . '/nvim/plugged'
+	let g:plug_location= g:xdg_data_home . '/nvim/site'
+	let g:plugin_location = g:xdg_data_home . '/nvim/plugged'
 endi
 
 " Install vim-plug if not found
 if empty(glob(g:plug_location . g:autoload_plug))
-    silent '!curl -fLo ' . g:plug_location . g:autoload_plug . ' --create-dirs ' . g:plug_github_url
+	silent '!curl -fLo ' . g:plug_location . g:autoload_plug . ' --create-dirs ' . g:plug_github_url
 endif
 
 " Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
+au VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+	\| PlugInstall --sync | source $MYVIMRC
 \| endif
 
 " Shortcut to upgrade all plugins, including Plug
@@ -43,7 +43,7 @@ cal plug#begin(g:plugin_location)
 	Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 	Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
 	Plug 'jamessan/vim-gnupg' " Automatically decrypt on buffer enter
-  Plug 'mhinz/vim-startify'
+	Plug 'mhinz/vim-startify'
 	Plug 'jdhao/better-escape.vim'
 	Plug '907th/vim-auto-save' " toggle with :AutoSaveToggle
 
@@ -55,7 +55,7 @@ cal plug#begin(g:plugin_location)
 
 " Vimtex
 	Plug 'lervag/vimtex', { 'for': 'tex' }
-  Plug 'sirver/ultisnips', { 'for': ['tex', 'c', 'snippets'] }
+	Plug 'sirver/ultisnips', { 'for': ['tex', 'c', 'snippets'] }
 
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
@@ -63,7 +63,7 @@ cal plug#begin(g:plugin_location)
 	Plug 'chrisbra/csv.vim', { 'for': ['csv', 'vim-plug'] }
 
 " Expand vim's `%` motion beyond just brackets and quotes
-  Plug 'andymass/vim-matchup'
+	Plug 'andymass/vim-matchup'
 
 "" Appearance
 " Color highlighting
@@ -82,10 +82,7 @@ cal plug#begin(g:plugin_location)
 	Plug 'VebbNix/lf-vim', { 'as': 'lf-syntax' }
 	Plug 'cespare/vim-toml'
 	Plug 'bfrg/vim-cpp-modern'
-  Plug 'McSinyx/vim-octave'
-
-" Icons
-	Plug 'ryanoasis/vim-devicons'
+	Plug 'McSinyx/vim-octave'
 
 cal plug#end()
 
