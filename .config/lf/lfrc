@@ -107,8 +107,6 @@ cmd fzf_jump ${{
 lf -remote "send $id $cmd \"$res\""
 }}
 
-cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
-
 cmd paste &{{
     load=$(lf -remote 'load')
     mode=$(echo "$load" | sed -n '1p')
@@ -274,6 +272,10 @@ cmd share ${{
 	curl -F"file=@$fx" https://0x0.st | xclip -sel c -r
 }}
 
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+cmd touch $touch "$(echo $* | tr ' ' '\ ')"
+
 # Dragon cmds
 cmd dragon %dragon-drag-and-drop -a -x $fx
 cmd dragon-stay %dragon-drag-and-drop -a $fx
@@ -311,6 +313,7 @@ map a push A<a-b> # after extention
 map R push A<c-u> # rename completely
 map B $vidir
 map o push :mkdir<space>
+map T push :touch<space>
 map E extract
 map <a-e> extract_sub
 map C copyto
@@ -352,7 +355,6 @@ map <a-L> cleanlatexcompile
 map U !du -sh      # shell-wait command for Disk Usage of current directory
 map X !$f
 map O $ setsid -f $OPENER "$f" >/dev/null 2>&1
-map T push :$touch<space>
 map V push :!nvim<space>
 map <c-z> $ kill -STOP $PPID	# put lf in bg
 
