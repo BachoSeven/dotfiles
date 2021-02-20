@@ -25,9 +25,6 @@ findterm() {
 			localt="$t"
 			return 0
 		fi
-		if [ $? -eq 0 ]; then
-				return 1
-		fi
 	done
 }
 
@@ -39,14 +36,13 @@ prompt() { #__ cool interactive stuff __#
 				gtk-launch spotify
 				sleep 3
 			elif [ "$player" = "ncspot" ]; then
-				findterm &&
-				setsid -f $localt --class ncspot -e ncspot	||	# kitty
-				setsid -f $localt -c ncspot -e ncspot				||	# st (and others)
-				setsid -f $localt -e ncspot	# Fallback to not setting the terminal's class
-				sleep 3
+				if findterm; then
+					setsid -f $localt --class ncspot -e ncspot	||	# kitty
+					setsid -f $localt -c ncspot -e ncspot				||	# st (and others)
+					setsid -f $localt -e ncspot	# Fallback to not setting the terminal's class
+					sleep 3
+				fi
 			fi
-		else
-			return 1
 		fi
 	fi
 }
@@ -75,7 +71,7 @@ url() { #__ Some parsing logic for URLs __#
 	if [ -z "$*" ]; then
 		usage
 	fi
-	string="$(echo $* | rev | cut -d/ -f1-2 | rev)"
+	string="$(echo "$*" | rev | cut -d/ -f1-2 | rev)"
 	typ="${string%/*}"
 	key="${string#*/}"
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$typ:$key
