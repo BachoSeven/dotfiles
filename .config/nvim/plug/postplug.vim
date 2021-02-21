@@ -135,6 +135,7 @@
 " completion-nvim
 	let g:completion_enable_snippet = 'UltiSnips'
 	let g:completion_enable_auto_hover = 0
+	let g:completion_matching_smart_case = 1
 "" Use <Tab> and <S-Tab> to navigate through popup menu
 	ino <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 	ino <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -142,9 +143,6 @@
 	se completeopt=menuone,noinsert,noselect
 "" Avoid showing message extra message when using completion
 	se shortmess+=c
-
-" LSP
-	nn <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 
 " UndoTree
 	let g:undotree_WindowLayout = 3
