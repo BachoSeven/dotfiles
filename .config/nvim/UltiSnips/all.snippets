@@ -2,7 +2,7 @@ snippet today "Date" i
 `date +"%B %d, %Y"`
 endsnippet
 
-snippet box "Box"
+snippet bbox "Box"
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
 │ $1 │
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
@@ -58,7 +58,7 @@ snip += box[3]`
 $0
 endsnippet
 
-snippet bbox "A nice box over the full width" b
+snippet cbox "A nice box over the full width" b
 `!p
 if not snip.c:
 	width = int(vim.eval("&textwidth - (virtcol('.') == 1 ? 0 : virtcol('.'))")) or 71
