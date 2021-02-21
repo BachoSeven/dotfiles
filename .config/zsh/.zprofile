@@ -34,6 +34,7 @@
 	export CARGO_HOME="$XDG_DATA_HOME"/cargo
 	export GOPATH="$XDG_DATA_HOME"/go
 	export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+	export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 	export GEM_HOME="$XDG_DATA_HOME/gem"
 	export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 	export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/rg/ripgreprc"
