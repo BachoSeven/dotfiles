@@ -1,22 +1,42 @@
 lua << EOF
-	-- LSP
-	-- Aliases
-	local lsp = require 'lspconfig'
+-- Easier mappings
+local map = function(type, key, value)
+	vim.api.nvim_buf_set_keymap(0, mode, key, "<cmd>lua " .. result .. "<CR>", {noremap = true, silent = true})
+end
 
-	-- Custom attach function
-	local custom_lsp_attach = function(client)
-		-- keybindings
-		vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
-		-- completion-nvim callback
-		require('completion').on_attach()
-	end
+-- LSP
+-- Aliases
+local lsp = require 'lspconfig'
 
-	-- Enable servers with autcompletion via completion-nvim
-	lsp.bashls.setup{
-		cmd={"bash-language-server", "start"},
-		cmd_env={GLOB_PATTERN="*@(.sh|.inc|.bash|.command)"},
-		filetypes = {"sh"},
+-- Custom attach function
+local custom_lsp_attach = function(client)
+	-- keybindings
+	map('n','K','vim.lsp.buf.hover()')
+	map('n','<c-]>','vim.lsp.buf.definition()')
+	map('n','gD','vim.lsp.buf.declaration()')
+	map('n','gr','vim.lsp.buf.references()')
+	map('n','gs','vim.lsp.buf.signature_help()')
+	map('n','gi','vim.lsp.buf.implementation()')
+	map('n','gt','vim.lsp.buf.type_definition()')
+	map('n','<leader>gw','vim.lsp.buf.document_symbol()')
+	map('n','<leader>gW','vim.lsp.buf.workspace_symbol()')
 
-		on_attach = custom_lsp_attach
-	}
+	-- Fuzzy integration
+	require('lspfuzzy').setup {}
+
+	-- completion-nvim callback
+	require('completion').on_attach()
+end
+
+-- Servers
+lsp.bashls.setup{
+	cmd={"bash-language-server", "start"},
+	cmd_env={GLOB_PATTERN="*@(.sh|.inc|.bash|.command)"},
+	filetypes = {"sh"},
+
+	on_attach = custom_lsp_attach
+}
+lsp.vimls.setup{
+	on_attach = custom_lsp_attach
+}
 EOF
