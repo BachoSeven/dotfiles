@@ -122,13 +122,15 @@
 		au User VimtexEventQuit call CloseViewers()
 	aug END
 " fzf integration for vimtex
-	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
+	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<CR>
 
 	" UltiSnips
 	let g:UltiSnipsExpandTrigger = '<tab>'
 	let g:UltiSnipsJumpForwardTrigger = '<tab>'
 	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 	let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips']
+	nn <leader>se :UltiSnipsEdit<CR>
+	let g:UltiSnipsEditSplit="vertical"
 
 " completion-nvim
 	let g:completion_enable_snippet = 'UltiSnips'
@@ -144,7 +146,7 @@
 
 " UndoTree
 	let g:undotree_WindowLayout = 3
-	nn <leader>u :UndotreeToggle<cr>
+	nn <leader>u :UndotreeToggle<CR>
 	let g:undotree_SetFocusWhenToggle = 1
 	let g:undotree_CursorLine = 0
 
