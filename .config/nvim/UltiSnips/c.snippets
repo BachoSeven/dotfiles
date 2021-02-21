@@ -30,6 +30,11 @@ endglobal
 # ==============
 priority -50
 
+snippet init "standard includes" b
+#include <stdio.h>
+#include <stdlib.h>
+endsnippet
+
 snippet def "#define ..."
 #define $1
 endsnippet
@@ -56,7 +61,7 @@ $0
 endsnippet
 
 snippet main "main() (main)"
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	${VISUAL}$0
 	return 0;
