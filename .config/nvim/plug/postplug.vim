@@ -108,20 +108,20 @@
 	" Compile on initialization, cleanup on quit
 	aug vimtex_event_1
 		au!
-		au User VimtexEventQuit     call vimtex#compiler#clean(0)
-		au User VimtexEventInitPost call vimtex#compiler#compile()
+		au User VimtexEventQuit     cal vimtex#compiler#clean(0)
+		au User VimtexEventInitPost cal vimtex#compiler#compile()
 	aug END
 	" Close viewers when vimtex buffers are closed
 	fu! CloseViewers()
 	" Close viewers on quit
 	if executable('xdotool') && exists('b:vimtex')
 		\ && exists('b:vimtex.viewer') && b:vimtex.viewer.xwin_id > 0
-		call system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
+		cal system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
 	endif
 	endfu
 	aug vimtex_event_2
 		au!
-		au User VimtexEventQuit call CloseViewers()
+		au User VimtexEventQuit cal CloseViewers()
 	aug END
 " fzf integration for vimtex
 	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
@@ -131,6 +131,20 @@
 	let g:UltiSnipsJumpForwardTrigger = '<tab>'
 	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 	let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips']
+
+" completion-nvim
+	let g:completion_enable_snippet = 'UltiSnips'
+	let g:completion_enable_auto_hover = 0
+"" Use <Tab> and <S-Tab> to navigate through popup menu
+	ino <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+	ino <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"" Set completeopt to have a better completion experience
+	se completeopt=menuone,noinsert,noselect
+"" Avoid showing message extra message when using completion
+	se shortmess+=c
+
+" LSP
+	nn <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 
 " UndoTree
 	let g:undotree_WindowLayout = 3
