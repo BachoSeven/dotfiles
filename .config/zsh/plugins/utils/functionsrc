@@ -372,6 +372,9 @@ zsh_bench() {
 	for _ ({1..10}); time zsh -i -c exit
 }
 
+# ...
+.{1..9} (){ local d=.; repeat ${0:1} d+=/..; cd $d;}
+
 brb() {
   st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d "${1:-brb}"
 }
@@ -713,7 +716,6 @@ fzfimg() {
 		echo $images |	fzf --preview 'geometry=$(identify -format '%wx%h' {}); ratio="$(printf %.3f "$((10**3 *${geometry%%x*}/${geometry##*x}))e-3")"; if [ $ratio = "1.777" ]; then printf "%s\n%s\n\033[1;34m█\n" "$geometry" "$ratio"; else printf "%s\n%s\n\033[1;31m█\n" "$geometry" "$ratio"; fi;  chafa --symbols=block -c 240 {}' --multi --height=80%
 	fi
 }
-
 
 ## pdf utils
 img2pdf() {

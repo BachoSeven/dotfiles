@@ -75,8 +75,6 @@
 	alias dr='drive'
 	alias nmdm='networkmanager_dmenu'
 	alias rnm='sudo systemctl reload NetworkManager.service'
-	alias ipeth='nmcli d show enp0s20f0u1 |&grep 4.ADD'
-	alias ipwifi='nmcli d show wlp2s0 |&grep 4.ADD'
 	alias nn='nordvpn'
 	alias w3m='w3mwrap -s -B'
 	alias sqm='w3mwrap https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
@@ -106,6 +104,7 @@
 	alias scr='ffmpeg -f x11grab -i :0.0 -frames:v 1 "$HOME/screen-$(date "+%y%m%d-%H%M-%S").png"'
 # Misc
 	alias txs='nvim ~/.config/nvim/UltiSnips/tex.snippets'
+	alias tnt='nvim ~/tmp/web'
 	alias kd='killall desk'
 	alias uotz='kitty whatscli'
 	alias mx='kitty weechat'

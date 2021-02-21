@@ -34,7 +34,7 @@ com! PU PlugUpdate | PlugUpgrade
 " {{{ Plugins
 cal plug#begin(g:plugin_location)
 
-"" Utilities
+" Utilities
 	Plug 'ptzz/lf.vim'
 	Plug 'voldikss/vim-floaterm'
 	Plug 'junegunn/fzf.vim'
@@ -47,11 +47,16 @@ cal plug#begin(g:plugin_location)
 	Plug 'jdhao/better-escape.vim'
 	Plug '907th/vim-auto-save' " toggle with :AutoSaveToggle
 
-"" Markdown
-" Live Preview
+" Markdown
+"" Live Preview
 	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug'] }
-" Markdown Table of Contents
+"" Markdown Table of Contents
 	Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown', 'vim-plug'] }
+
+" Lsp
+	Plug 'neovim/nvim-lspconfig'
+" completion-nvim
+	Plug 'nvim-lua/completion-nvim'
 
 " Vimtex
 	Plug 'lervag/vimtex', { 'for': 'tex' }
@@ -65,28 +70,19 @@ cal plug#begin(g:plugin_location)
 " Expand vim's `%` motion beyond just brackets and quotes
 	Plug 'andymass/vim-matchup'
 
-"" Appearance
-" Color highlighting
+" Appearance
+"" Color highlighting
 	Plug 'ap/vim-css-color'
-
-" Colorschemes
+"" Colorschemes
 	Plug 'dylanaraps/wal.vim'
 	Plug 'sainnhe/gruvbox-material'
 	" Plug 'gruvbox-community/gruvbox'
 	" Plug 'overcache/NeoSolarized'
-
-" Lightline
+"" Lightline
 	Plug 'itchyny/lightline.vim'
-
-" Syntax highlighting
+"" Syntax highlighting
 	Plug 'VebbNix/lf-vim', { 'as': 'lf-syntax' }
-	Plug 'cespare/vim-toml'
-	Plug 'bfrg/vim-cpp-modern'
 	Plug 'McSinyx/vim-octave'
 
 cal plug#end()
-
-" Icons
-	so $XDG_CONFIG_HOME/nvim/plug/mpi.vim
-
 " }}}

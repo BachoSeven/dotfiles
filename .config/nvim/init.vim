@@ -50,7 +50,7 @@
 " case insensitive search
 	se ignorecase
 	se smartcase
-	se infercase " For insert mode
+	se infercase " For insert mode completion
 
 "		 +--------------+
 "		 | Key Mappings |
@@ -134,7 +134,7 @@
 	nn <leader>J maa<CR><ESC>`a
 
 " Turn off search highlight
-	nn <silent> <esc><esc> <esc>:nohlsearch<cr><esc>
+	nn <silent> <esc><esc> <esc>:nohlsearch<CR><esc>
 
 " C compiling
 	nn <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
@@ -162,14 +162,29 @@
 			%s/[^\s]\zs[=&|]\+\ze[^\s]/ \0 /g
 			normal ggVG=
 	endfu
-	nn <silent> <leader>y <esc>:cal UnMinify()<cr><esc>
+	nn <silent> <leader>y <esc>:cal UnMinify()<CR><esc>
+" This is needed because of a bug in netrw, see https://github.com/vim/vim/issues/4738
+  fu! OpenURLUnderCursor()
+    let s:uri = expand('<cWORD>')
+    let s:uri = substitute(s:uri, '?', '\\?', '')
+    let s:uri = shellescape(s:uri, 1)
+    if s:uri != ''
+      silent exec "!xdg-open '".s:uri."'"
+      :redraw!
+    endif
+  endfu
+  nn gx :cal OpenURLUnderCursor()<CR>
 
 "		 +---------+
 "		 | Plugins |
 "		 +---------+
 " Definitions
 	so $XDG_CONFIG_HOME/nvim/plug/vim-plug.vim
+" Icons
+	so $XDG_CONFIG_HOME/nvim/plug/mpi.vim
+" Lua configurations
 	so $XDG_CONFIG_HOME/nvim/plug/postplug.vim
+	so $XDG_CONFIG_HOME/nvim/plug/postplug.lua
 
 "		 +----------+
 "		 | Autocmds |
