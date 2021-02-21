@@ -40,25 +40,25 @@ lsp.vimls.setup{
 	on_attach = custom_lsp_attach
 }
 lsp.texlab.setup {
-  filetypes = { "tex", "bib" },
-  settings = {
-    bibtex = {
-      formatting = {
-        lineLength = 120
-      }
-    },
-    latex = {
-      forwardSearch = {
-	executable = "zathura",
-	args = { "%p" },
-	onSave = false
-      },
-      lint = {
-	onChange = true,
-	onSave = true
-      }
-    }
-  },
-  on_attach = custom_lsp_attach
+	filetypes = { "tex", "bib" },
+	settings = {
+		bibtex = {
+			formatting = {
+			lineLength = 120
+			}
+		},
+		latex = {
+			forwardSearch = {
+				executable = "zathura",
+				args = { "%p" },
+				onSave = false
+			},
+			lint = {
+				onChange = true,
+				onSave = true
+			}
+		}
+	},
+	on_attach = custom_lsp_attach
 }
 EOF
