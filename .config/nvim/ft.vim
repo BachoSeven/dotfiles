@@ -19,7 +19,7 @@ aug ft-tex+md
 aug END
 
 " Enable completion-nvim (for snippets)
-aug ft-tex+c+md+text+sh+zsh+snippets
+aug ft-snipcomp
 	au!
 	au FileType tex,c,markdown,text,sh,zsh,snippets,octave lua require'completion'.on_attach()
 aug END

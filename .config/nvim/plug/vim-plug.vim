@@ -62,7 +62,7 @@ cal plug#begin(g:plugin_location)
 
 " Vimtex
 	Plug 'lervag/vimtex', { 'for': 'tex' }
-	Plug 'sirver/ultisnips', { 'for': ['tex', 'c', 'snippets'] }
+	Plug 'sirver/ultisnips', { 'for': ['tex', 'c', 'snippets', 'sh', 'zsh', 'octave', 'markdown'] }
 
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
