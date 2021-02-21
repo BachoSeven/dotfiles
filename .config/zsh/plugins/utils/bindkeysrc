@@ -46,9 +46,6 @@
 
 # Abbreviations
 	alias -g \
-		...='../..'		\
-		....='../../..'		\
-		.....='../../../..'	\
 		M='| more'		\
 		L='| ${PAGER:-less}'	\
 		H='| head'		\
@@ -64,9 +61,6 @@
 	# Some of the above are duplicated below for readability in longer commands
 	typeset -gA ZSH_ABBREVIATIONS
 	ZSH_ABBREVIATIONS+=(
-		"..."	"../.."
-		"...."	"../../.."
-		"....."	"../../../.."
 		":e"	"${EDITOR}"
 		":h"	"man"
 		":w"	"wiki"

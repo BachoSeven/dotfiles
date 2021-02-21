@@ -197,7 +197,7 @@
 		retu winwidth(0) > 70 ? fileformat : ''
 	endfu
 	fu! LlType()
-		let symbol = mpi#get(expand('%:t'))
+		let symbol = mpi#get('%:t')
 		retu winwidth(0) > 70 ? (strlen(&filetype) ? ' ' . symbol . ' ' . &filetype : '') : ''
 	endfu
 	fu! LlEncoding()
