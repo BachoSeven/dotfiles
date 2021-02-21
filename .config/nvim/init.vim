@@ -146,7 +146,7 @@
 "" Open Terminal
 	nn <leader>t :te<CR>a
 "" Leave terminal easily
-	tno <Esc><Esc> <C-\><C-n>
+	tno <leader><Esc> <C-\><C-n>
 
 	" sHrUg
 	ino ,shrug ¯\_(ツ)_/¯
