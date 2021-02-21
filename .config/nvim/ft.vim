@@ -5,12 +5,6 @@ aug init-vim
     \ foldmethod=marker
 aug END
 
-" zsh
-aug init-zsh
-  au! BufNewFile,BufFilePre,BufRead *.zsh se ft=zsh
-    \ shiftwidth=2 tabstop=2 softtabstop=2
-aug END
-
 " markdown
 aug init-md
   au! BufNewFile,BufFilePre,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn,*.mdwn  set ft=markdown
