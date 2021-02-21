@@ -57,6 +57,8 @@ cal plug#begin(g:plugin_location)
 	Plug 'neovim/nvim-lspconfig'
 " completion-nvim
 	Plug 'nvim-lua/completion-nvim'
+" Fuzzy lsp integration
+	Plug 'ojroques/nvim-lspfuzzy'
 
 " Vimtex
 	Plug 'lervag/vimtex', { 'for': 'tex' }

@@ -30,7 +30,7 @@
 	se wildignorecase
 	se autoindent
 	se incsearch
-	se inccommand=split
+	se inccommand=split " this is amazing for :%substitute
 	se hidden " hide buffers, don't close them
 	se splitbelow splitright
 	se lazyredraw
@@ -130,7 +130,7 @@
 	nn <leader>o mao<Esc>`a
 	nn <leader>O maO<Esc>`a
 
-" Shift line downwards
+" Shift the section of the line after the cursor downwards
 	nn <leader>J maa<CR><ESC>`a
 
 " Turn off search highlight
@@ -140,8 +140,12 @@
 	nn <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
 	nn <leader>cp :vsp<CR>:te<CR>a ./
 
-" Open Terminal
+
+" Terminal mappings
+"" Open Terminal
 	nn <leader>t :te<CR>a
+"" Leave terminal easily
+	tno <Esc><Esc> <C-\><C-n>
 
 "		 +------+
 "		 | Misc |

@@ -18,7 +18,7 @@ aug ft-tex+md
 	au FileType tex,md let b:auto_save = 1
 aug END
 
-" completion-nvim
+" Enable completion-nvim (for snippets)
 aug ft-tex+c
 	au!
 	au FileType tex,c lua require'completion'.on_attach()
