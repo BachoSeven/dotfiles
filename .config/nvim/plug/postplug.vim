@@ -108,20 +108,19 @@
 	" Compile on initialization, cleanup on quit
 	aug vimtex_event_1
 		au!
-		au User VimtexEventQuit     cal vimtex#compiler#clean(0)
-		au User VimtexEventInitPost cal vimtex#compiler#compile()
+		au User VimtexEventInitPost call vimtex#compiler#compile()
 	aug END
-	" Close viewers when vimtex buffers are closed
-	fu! CloseViewers()
-	" Close viewers on quit
-	if executable('xdotool') && exists('b:vimtex')
-		\ && exists('b:vimtex.viewer') && b:vimtex.viewer.xwin_id > 0
-		cal system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
-	endif
+  " Close viewers when VimTeX buffers are closed
+  fu! CloseViewers()
+    " Close viewers on quit
+    if executable('xdotool') && exists('b:vimtex')
+        \ && exists('b:vimtex.viewer') && b:vimtex.viewer.xwin_id > 0
+      call system('xdotool windowquit '. b:vimtex.viewer.xwin_id)
+    endif
 	endfu
 	aug vimtex_event_2
 		au!
-		au User VimtexEventQuit cal CloseViewers()
+		au User VimtexEventQuit call CloseViewers()
 	aug END
 " fzf integration for vimtex
 	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<cr>
