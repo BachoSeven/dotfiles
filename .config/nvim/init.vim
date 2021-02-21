@@ -142,12 +142,14 @@
 	nn <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
 	nn <leader>cp :vsp<CR>:te<CR>a ./
 
-
 " Terminal mappings
 "" Open Terminal
 	nn <leader>t :te<CR>a
 "" Leave terminal easily
 	tno <Esc><Esc> <C-\><C-n>
+
+	" sHrUg
+	ino ,shrug ¯\_(ツ)_/¯
 
 "		 +------+
 "		 | Misc |
