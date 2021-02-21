@@ -130,11 +130,13 @@
 	nn <leader>o mao<Esc>`a
 	nn <leader>O maO<Esc>`a
 
-" Shift the section of the line after the cursor downwards
+" Shift the section of the line after the cursor downwards.
 	nn <leader>J maa<CR><ESC>`a
 
-" Turn off search highlight
-	nn <silent> <esc><esc> <esc>:nohlsearch<CR><esc>
+" <CR> clears hlsearch, but only after doing a search.
+	nn <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
+" Toggle search highlight
+	nn <silent> <esc><esc> :let v:hlsearch=!v:hlsearch<CR>
 
 " C compiling
 	nn <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
