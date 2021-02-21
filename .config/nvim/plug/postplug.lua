@@ -1,6 +1,6 @@
 lua << EOF
 -- Easier mappings
-local map = function(type, key, value)
+local map = function(mode, key, result)
 	vim.api.nvim_buf_set_keymap(0, mode, key, "<cmd>lua " .. result .. "<CR>", {noremap = true, silent = true})
 end
 

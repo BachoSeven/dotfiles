@@ -158,13 +158,13 @@
 	let g:netrw_browsex_viewer="xdg-open" " Use xdg-open(mimi) to open files externally
 
 " make inline more readable
-	fu! UnMinify( )
-			%s/{\ze[^\r\n]/{\r/g
-			%s/){/) {/g
-			%s/};\?\ze[^\r\n]/\0\r/g
-			%s/;\ze[^\r\n]/;\r/g
-			%s/[^\s]\zs[=&|]\+\ze[^\s]/ \0 /g
-			normal ggVG=
+	fu! UnMinify()
+		%s/{\ze[^\r\n]/{\r/e
+		%s/){/) {/e
+		%s/};\?\ze[^\r\n]/\0\r/e
+		%s/;\ze[^\r\n]/;\r/e
+		%s/[^\s]\zs[=&|]\+\ze[^\s]/ \0 /e
+		normal ggVG=
 	endfu
 	nn <silent> <leader>y <esc>:cal UnMinify()<CR><esc>
 " This is needed because of a bug in netrw, see https://github.com/vim/vim/issues/4738
