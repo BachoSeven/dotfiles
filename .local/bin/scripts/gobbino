@@ -42,7 +42,7 @@ main () {
 		loc="Precorsi/$string"
 	else
 		pre="L"		# Prefisso
-		string="$c_$y"
+		string="${c}_${y}"
 		loc="$string"
 	fi
 
@@ -52,7 +52,7 @@ main () {
 
 	# Crea una cartella dopo aver controllato che il codice sia valido
 	mkdir "VideoGobbino$c$y"
-	cd "VideoGobbino$c$y"
+	cd "VideoGobbino$c$y" || (printf "ERRORE:\n\tNon è stato possibile creare una cartella per il corso \"$string\".\nControlla di avere i permessi necessari." && return 1)
 
 	if [ "$count" -ge 100 ]; then
 		for i in $(seq -f "%03g" 1 $count); do

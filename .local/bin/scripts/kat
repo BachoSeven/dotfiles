@@ -4,7 +4,7 @@ if [ ! -t 1 ] ; then
   exit 0
 fi
 
-ncol=`tput cols`
+ncol=$(tput cols)
 
 # If you modify the cat, be sure to mantain the same length in every line (newline excluded).
 # Leave an empty array index where you want the cat output, and specify it in OUTPUT_INDEX.
@@ -58,19 +58,19 @@ DRAWING_POSITION=7
 #################################
 
 arrayLen=${#t[@]}
-halfDrawingLen=$(($DRAWING_WIDTH / 2))
-leadingSpaces=$(($ncol * $DRAWING_POSITION / 100 - $halfDrawingLen))
+halfDrawingLen=$((DRAWING_WIDTH / 2))
+leadingSpaces=$((ncol * DRAWING_POSITION / 100 - halfDrawingLen))
 if [[ $leadingSpaces -lt 0 ]]; then
   leadingSpaces=0
 fi
-trailingSpaces=$(($ncol - $leadingSpaces - $DRAWING_WIDTH))
-if [[ $leadingSpaces -gt $(($ncol - $DRAWING_WIDTH)) ]]; then
-    leadingSpaces=$(($ncol - $DRAWING_WIDTH))
+trailingSpaces=$((ncol - leadingSpaces - DRAWING_WIDTH))
+if [[ $leadingSpaces -gt $((ncol - DRAWING_WIDTH)) ]]; then
+    leadingSpaces=$((ncol - DRAWING_WIDTH))
     trailingSpaces=0
 fi
 echo ""
 for i in $(seq 0 $arrayLen); do
-  if [[ $i = $OUTPUT_INDEX ]]; then
+  if [[ $i = "$OUTPUT_INDEX" ]]; then
     for n in $(seq 1 $PADDING); do
       echo ""
     done
@@ -80,9 +80,9 @@ for i in $(seq 0 $arrayLen); do
     done
   else
     car=""
-    if [[ $i = $UPPER_LINE_INDEX ]]; then
+    if [[ $i = "$UPPER_LINE_INDEX" ]]; then
       car=$UPPER_LINE_CHAR
-    elif [[ $i = $LOWER_LINE_INDEX ]]; then
+    elif [[ $i = "$LOWER_LINE_INDEX" ]]; then
       car=$LOWER_LINE_CHAR
     else
       car=" "

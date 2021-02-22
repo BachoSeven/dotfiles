@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Simple ncmpcpp notification script by Gerome Matilla (gerome.matilla07@gmail.com)
 #	Depends on:
@@ -15,16 +15,16 @@ current_title="$(mpc -f %title% current | tr -d '"')"
 current_artist="$(mpc -f %artist% current | tr -d '"')"
 
 # Exit if $USER is in TTY
-	if [[ "$TERM" = "linux" ]]; then
+	if [ "$TERM" = "linux" ]; then
 	  exit 1
 	fi
 
-	if [[ ! -d "$TMP_DIR" ]]; then
+	if [ ! -d "$TMP_DIR" ]; then
 		mkdir -p "$TMP_DIR"
 	fi
 
 # Remove file extension name
-	function check_mpc_data() {
+	check_mpc_data() {
 		if [ -z "$current_title" ]; then
 			file_name="$(mpc -f %file% current | tr -d '"')"
 			file_name=${file_name::-4}
@@ -41,7 +41,7 @@ check_mpc_data
 		SONG="$MUSIC_DIR/$(mpc --format "%file%" current)"
 		PICTURE_TAG="-Picture"
 
-		if [ "$SONG" = *".m4a" ]; then
+		if [[ "$SONG" = *".m4a" ]]; then
 			PICTURE_TAG="-CoverArt"
 		fi
 
@@ -65,7 +65,7 @@ check_mpc_data
 # Check if image is valid
 	function check_album_data() {
 		img_data=$(identify "$TMP_COVER_PATH" 2>&1)
-		if [ "$img_data" = *"insufficient"* ]; then
+		if [[ "$img_data" = *"insufficient"* ]]; then
 			TMP_COVER_PATH="$XDG_DATA_HOME/icons/vinyl.svg"
 		fi
 	}

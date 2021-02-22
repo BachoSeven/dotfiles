@@ -1,5 +1,6 @@
 #!/bin/sh
 
-for i in $(ls /tmp/mpvSockets/*); do
-	echo '{ "command": ["set_property", "pause", true] }' | socat - $i;
+find /tmp/mpvSockets -type s |
+while read -r sock; do
+	echo '{ "command": ["set_property", "pause", true] }' | socat - "$sock";
 done

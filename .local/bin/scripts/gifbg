@@ -10,10 +10,10 @@ if [ $# -ne 1 ] || [ ! -f "$1" ]; then
 fi
 
 # get screen resolution
-if type -p xwininfo >/dev/null; then
-	read -r SCRW SCRH \
-	<<< "$(xwininfo -root | awk -F':' '/Width|Height/ {printf $2}')"
-elif type -p xrandr >/dev/null; then
+if command -v xwininfo >/dev/null; then
+	xwininfo -root | awk -F':' '/Width|Height/ {printf $2}' \
+	| read -r SCRW SCRH
+elif command -v xrandr >/dev/null; then
 	SCRW=$(xrandr | awk '/current/ { print $8 }')
 	SCRH=$(xrandr | awk '/current/ { print $10 }')
 	SCRH=${SCRH%\,}

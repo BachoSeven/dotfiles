@@ -51,20 +51,21 @@ run_cleaner() {
     echo
 }
 
+# shellcheck disable=SC2009
 if_running() {
     i=6 # after this timeout, we stop waiting (i*2 seconds seems good)
-    [[ $(ps aux |grep -v 'grep' |grep "$1" |grep "$user") ]] &&
+    ps aux |grep -v 'grep' |grep "$1" |grep "$user" &&
         echo -n "Waiting for $1 to exit"
     # wait for <browser> to terminate
-    while [[ $(ps aux |grep "$1" |grep -v 'grep') ]];do
+    while ps aux |grep "$1" |grep -v 'grep';do
         if (( i == 0 )); then
             # waited long enough, ask if it should be killed
-            read -p " kill it? [y|n]: " ans
+            read -r -p " kill it? [y|n]: " ans
             if [[ "$ans" = @(y|Y|yes) ]]; then
                 kill -TERM "$(pgrep -u "$user" "$1" | head -1)"
                 sleep 4
                 # if still running, give monzy the microphone
-                [[ $(ps aux |grep -v 'grep' |grep "$1" |grep "$user") ]] &&
+                ps aux |grep -v 'grep' |grep "$1" |grep "$user" &&
                     kill -KILL "$(pgrep -u "$user" "$1")"
                 break
             fi
@@ -84,6 +85,7 @@ priv="$USER"
     # assumes user names are same as the user's home directory
     priv=$(find /home -maxdepth 1 -type d |tail -n+2 |cut -c7-)
 
+# shellcheck disable=SC2164
 for user in $priv; do
 #[ FIREFOX ICECAT SEAMONKEY ]#
     # check for a <browser config> folder in each users home directory

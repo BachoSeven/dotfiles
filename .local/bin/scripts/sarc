@@ -8,7 +8,7 @@
 # tHaT's A gOoD iDeA, tOm
 
 # Exit if no arguments given
-if [[ ! $@ =~ ^\-.+ ]]; then
+if [[ ! $* =~ ^\-.+ ]]; then
 	printf "uSaGe:\\n\\nsarc [MESSAGE] [OPTIONS]\\n\\n\\t[ -i \"message\" ]\\n\\t[ -c : copy message to clipboard ]\\n\\t[ -h : show this message and exit ]\\n\\n" && exit
 fi
 

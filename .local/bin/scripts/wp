@@ -4,9 +4,9 @@
 ## Usage: `wp [ wallpapers_subdir ] [ number of images ]`
 
 main() {
-	local subdir=$1
-	[ "$subdir" = "4k" ] || opts="-t f"
-	local topdir=~/pics/papes
+	subdir=$1
+	[ "$subdir" = "4k" ] || opts="-t f" # symlinks are only needed for 4k folder
+	topdir=~/pics/papes
 	[ -n "$2" ] && count="-n $2"
 	fd -e png -e jpg -e jpeg -e gifv -e gif -e tif -e tiff --search-path $topdir/$subdir $opts | shuf $count | sxiv -ba -
 }

@@ -3,7 +3,7 @@
 # If transmission-daemon is running, will ask to kill, else will ask to start.
 
 if pidof qbittorrent >/dev/null ; then
-	[ "$(printf "No\\nYes" | dmenu -i -p "Turn off qBittorrent?")" = "Yes" ] && kill -TERM $(pidof qbittorrent) && notify-send "qBittorrent disabled."
+	[ "$(printf "No\\nYes" | dmenu -i -p "Turn off qBittorrent?")" = "Yes" ] && kill -TERM "$(pidof qbittorrent)" && notify-send "qBittorrent disabled."
 else
 	[ "$(printf "No\\nYes" | dmenu -i -p "Turn on qBittorent?")" = "Yes" ] && setsid -f qbittorrent && notify-send "Starting qBittorrent..."
 fi
