@@ -58,7 +58,7 @@
 ## Various programs settings:
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 	# shellcheck opts to avoid having .shellcheckrc in ~ (https://github.com/koalaman/shellcheck/wiki)
-	export SHELLCHECK_OPTS='--exclude=SC1003,SC1087,SC1090,SC1091,SC2001,SC2015,SC2034,SC2038,SC2059,SC2068,SC2086,SC2115,SC2128,SC2139,SC2145,SC2153,SC2155'
+	export SHELLCHECK_OPTS='--exclude=SC1003,SC1071,SC1087,SC1090,SC1091,SC2001,SC2015,SC2034,SC2038,SC2059,SC2068,SC2086,SC2115,SC2128,SC2139,SC2145,SC2153,SC2155'
 	# Temporary fix for [this](https://chromium.googlesource.com/chromium/src.git/+/671511b00e2d6c374a3079c1c379d2d0dfad32fe) chromium error, found [here](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=918433#10)
 	export MESA_GLSL_CACHE_DISABLE=true
 
