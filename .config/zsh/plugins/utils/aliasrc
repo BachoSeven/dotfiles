@@ -53,7 +53,6 @@
 	alias rm='rm -v'
 	alias cp='cp -v'
 	alias mv='mv -v'
-	alias cal="cal | sed -e \"s/$(date +%e)/$(echo -en '\e[1;32m')$(date +%e)$(echo -en '\e[00m')/\""
 
 # Manuals
 	alias mman='macho -i'
