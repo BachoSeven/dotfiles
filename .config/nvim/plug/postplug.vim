@@ -1,5 +1,3 @@
-" {{{ Post-Plugin Settings
-
 " Startify
 	fu! s:center(lines) abort
 		let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
@@ -243,5 +241,3 @@
 		Limelight!
 	endf
 	au! User GoyoLeave nested cal <SID>goyo_leave()
-
-" }}}
