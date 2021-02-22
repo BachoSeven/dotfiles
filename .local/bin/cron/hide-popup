@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if ! pidof Xorg || ! pidof chromium; then
+if ! pidof Xorg >/dev/null 2>&1 || ! pidof chromium >/dev/null 2>&1; then
 	exit 0
 fi
 
