@@ -3,9 +3,9 @@
 if [ "$(basename $0)" = "spotup" ]; then
 	kill -47 "$(pidof dwmblocks)"
 else
-	if pgrep ncspot &>/dev/null; then
+	if pgrep ncspot >/dev/null 2>&1; then
 		player="ncspot"
-	elif pgrep spotify &>/dev/null; then
+	elif pgrep spotify >/dev/null 2>&1; then
 		player="spotify"
 	else
 		active="false"

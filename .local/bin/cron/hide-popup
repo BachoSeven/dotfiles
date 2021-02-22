@@ -1,10 +1,12 @@
 #!/bin/sh
 
-! pidof Xorg >/dev/null 2>&1 && exit 0
+if ! pidof Xorg || ! pidof chromium; then
+	exit 0
+fi
 
 xdotool search --name "is sharing your screen" \
-	| while read wid; do
-	if xwininfo -id "$wid" &>/dev/null; then
+	| while read -r wid; do
+	if xwininfo -id "$wid" >/dev/null 2>&1; then
 		xdotool windowclose "$wid"
 	fi
 done

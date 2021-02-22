@@ -11,9 +11,9 @@ function 1337() {
   sed 's/and\ /\&\ /g'
 }
 
-inp="$@"
+inp="$*"
 [ -n "$inp" ] && 1337 "$inp" && exit
 
-while read stdin; do
+while read -r stdin; do
   1337 "$stdin"
 done

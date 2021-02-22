@@ -19,9 +19,9 @@
 		# . => plain files
 		# m[Mwhms][-|+]n => modification time qualifiers
 		if [[ -e "$zcompf_a" && -f "$zcompf_a"(#qN.mh-24) ]]; then
-			compinit -C -u -d "$XDG_CACHE_HOME/zsh/zcompdump" # Skip checking for insecure files/directories (compaudit), see http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Use-of-compinit.
+			compinit -C -u -d "$zcompf" # Skip checking for insecure files/directories (compaudit), see http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Use-of-compinit.
 		else
-			compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump"
+			compinit -u -d "$zcompf"
 			touch "$zcompf_a"
 		fi
 
