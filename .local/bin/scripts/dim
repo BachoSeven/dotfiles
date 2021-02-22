@@ -7,7 +7,7 @@ msgId="192838"
 
 # trap script to "de-idle" upon keypress or mouse mouvement and restore previous brightness
 trap 'exit 0' TERM INT
-trap "br set $cbr; kill %%; dunstify -C 192838" EXIT
+trap 'br set $cbr; kill %%; dunstify -C 192838' EXIT
 
 dunstify -r "$msgId" '💤 Dimming screen, locking in 60 seconds...' && br set $dimbr
 

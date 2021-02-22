@@ -18,16 +18,14 @@ fi
 
 BASE="${1%.*}"
 
-pdflatex $1 2>/dev/null 1>&2
-
-if [ $? -ne 0 ]; then
+if ! pdflatex $1 2>/dev/null 1>&2; then
     echo "Compilation error. Check log."
     exit 1
 fi
 
 rm "$BASE.log" "$BASE.aux" "$BASE.out"
 
-if [ [ $2 == "--open" ] || [ $2 == "-o" ] ]; then
+if [ $2 == "--open" ] || [ $2 == "-o" ]; then
     xdg-open "$BASE.pdf"
 fi
 exit 0

@@ -5,6 +5,6 @@
 #	- NOTE: this queues media to the earliest opened instance if there are multiple ones.
 # Francesco Minnocci 2020
 
-MPV_SOCKET="$(ls /tmp/mpvSockets/* | head -1)"
+MPV_SOCKET="$(find /tmp/mpvSockets/ -type s | head -1)"
 videoname="$1"
 echo "loadfile \"${videoname}\" append-play" | socat - $MPV_SOCKET

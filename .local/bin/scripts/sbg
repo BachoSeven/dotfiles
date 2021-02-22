@@ -28,8 +28,8 @@ linknotif() {
 bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}"/bg
 
 # Cleanup the root window
-pgrep xwinwrap &>/dev/null &&	killall -q xwinwrap
-pgrep xrootgif &>/dev/null &&	killall -q xrootgif
+pgrep xwinwrap >/dev/null 2>&1 &&	killall -q xwinwrap
+pgrep xrootgif >/dev/null 2>&1 &&	killall -q xrootgif
 
 while getopts ":hi:w:cmt" o; do
 	case "${o}" in

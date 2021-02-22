@@ -47,8 +47,7 @@ BG_COLOR=49
 
 function save_image() {
 	printf "\e[2J" > $IMAGE_FILE
-	for i in ${!IMAGE[@]}
-	do
+	for i in ${!IMAGE[@]}; do
 		printf "\e[${i}f\e[${IMAGE[$i]}\e[0m"
 	done >> $IMAGE_FILE
 	# set cursor under the image
@@ -88,15 +87,15 @@ function process_click() {
 	# set foreground color
 	if [ $Y -eq 1 ] || [ $Y -eq 2 ] ; then
 		if [ $X -gt 2 ] && [ $X -lt 28 ] ; then
-			FG_COLOR="$[Y-1];${FG[$[(X-4)/3]]}"
+			FG_COLOR="$((Y-1));${FG[$(((X-4)/3))]}"
 			ERASE=0
 		fi
 	fi
 
 	# set background color
 	if [ $Y -eq 1 ] && [ $X -gt 34 ] ; then
-		if [ $X -gt 34 ] && [ $X -lt 59 ] ; then
-			BG_COLOR="${BG[$[X-35]/3]}"
+		if (( X > 34 && X < 59 )); then
+			BG_COLOR="${BG[$((X-35))/3]}"
 			ERASE=0
 		else
 			BG_COLOR="49"
@@ -106,7 +105,7 @@ function process_click() {
 
 	# set brush
 	if [ $Y -eq 2 ] && [ $X -gt 36 ] && [ $X -le 51 ] ; then
-		BRUSH=${BRUSHES[$[(X-37)/2]]}
+		BRUSH=${BRUSHES[$(((X-37)/2))]}
 		ERASE=0
 	fi
 
@@ -124,18 +123,16 @@ function process_click() {
 
 function draw_menu() {
 	set_pos 1 1; echo "FG: "
-	for i in ${FG[*]}
-	do
-		set_pos $[(i-30)*3+4] 1
+	for i in ${FG[*]}; do
+		set_pos $(((i-30)*3+4)) 1
 		echo -en "\e[${i}m███\e[0m"
-		set_pos $[(i-30)*3+4] 2
+		set_pos $(((i-30)*3+4)) 2
 		echo -en "\e[1;${i}m███\e[0m"
 	done
 
 	set_pos 30 1; echo "BG: "
-	for i in ${BG[*]}
-	do
-		set_pos $[(i-40)*3+35] 1
+	for i in ${BG[*]}; do
+		set_pos "$(((i-40)*3+35))" 1
 		echo -en "\e[${i}m   \e[0m"
 	done
 	echo "   |" # default background (49)
@@ -147,7 +144,7 @@ function draw_menu() {
 
 function load_image() {
 	if [ -f $IMAGE_FILE ] ; then
-		data=$(sed -e 's/\x1b/E/g;s/E\[0m/\n/g;s/E\[2J//' $IMAGE_FILE | \
+		data=$(sed -e 's/\x1b/E/g;s/E\[0m/\n/g;s/E\[2J//' $IMAGE_FILE |
 			sed -n -e 's/E\[\(.*\)fE\[\(.*m.\)/IMAGE["\1"]="\2"/ p')
 		eval $data
 		cat < $IMAGE_FILE
@@ -160,17 +157,16 @@ function load_image() {
 trap at_exit ERR EXIT
 load_image
 draw_menu
-while :
-do
-	read -N 6 click
-	mouse=( `echo -en ${click#???} | hexdump -v  -e'1/1 " %u"'` )
-	X=$[ ${mouse[0]} - 32]	Y=$[ ${mouse[1]} - 32]
+while true; do
+	read -r -N 6 click
+	mouse=($(echo -en ${click#???} | hexdump -v  -e'1/1 " %u"'))
+	X=$(( mouse[0] - 32))	Y=$(( mouse[1] - 32))
 	process_click
 	show_pos
 	show_brush
-	if [ $Y -gt 2 ] ; then
+	if (( Y > 2 )); then
 		echo -en  "\e[${Y};${X}f\e[${FG_COLOR};${BG_COLOR}m$BRUSH\e[0m"
-		if [ $ERASE -eq 0 ] ; then
+		if (( ERASE == 0 )); then
 			IMAGE["${Y};${X}"]="${FG_COLOR};${BG_COLOR}m$BRUSH"
 		else
 			unset IMAGE["${Y};${X}"]
