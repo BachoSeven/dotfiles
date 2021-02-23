@@ -21,7 +21,7 @@ aug END
 " Enable completion-nvim (for snippets)
 aug ft-snipcomp
 	au!
-	au FileType tex,c,markdown,text,sh,zsh,snippets,octave lua require'completion'.on_attach()
+	au FileType tex,c,markdown,text,sh,zsh,snippets,octave,conf lua require'completion'.on_attach()
 aug END
 
 " Set some general options
