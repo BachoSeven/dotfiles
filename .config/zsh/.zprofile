@@ -1,5 +1,6 @@
 ## Basic settings
 	export TERMINAL="st"
+	export WM="dwm"
 	export READER="zathura"
 	export OPENER="xdg-open"
 	export PAGER="less"

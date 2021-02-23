@@ -9,4 +9,4 @@ fi
 
 [ -f "$XDG_CONFIG_HOME/X11/xprofile" ] && . "$XDG_CONFIG_HOME/X11/xprofile"
 
-ssh-agent dwm
+ssh-agent "${WM:-dwm}"
