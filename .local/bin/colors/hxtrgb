@@ -1,0 +1,30 @@
+#!/bin/sh
+
+usage() {
+cat << EOF
+Converts HEX to RGB
+Usage:
+
+	$name rrggbb
+	$name "#rrggbb"
+
+For example:
+
+	$name 282828
+	$name "#282828"
+
+EOF
+exit 1
+}
+
+main() {
+	c="$(echo "$1" | sed 's/#//g')"
+	printf '%d %d %d\n' 0x${c:0:2} 0x${c:2:2} 0x${c:4:2}
+}
+
+# Actual script
+name=$(basename $0)
+if [ "$#" -ne 1 ]; then
+	usage
+fi
+main "$@"

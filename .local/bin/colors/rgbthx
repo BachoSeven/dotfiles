@@ -1,0 +1,32 @@
+#!/bin/sh
+
+usage() {
+cat << EOF
+Converts RGB to HEX
+Usage:
+
+	$name R G B
+	$name "R G B"
+	$name "(R G B)"
+	$name "(R,G,B)"
+
+For example:
+
+	$name "(40,40,40)"
+	$name "40 40 40"
+
+EOF
+exit 1
+}
+
+main() {
+	c="$(echo "$@" | sed 's/(//;s/)//;s/,/ /g')"
+	printf '#%02x%02x%02x\n' $c
+}
+
+# Actual script
+name=$(basename $0)
+if [ "$#" -ne 1 ] && [ "$#" -ne 3 ]; then
+	usage
+fi
+main "$@"

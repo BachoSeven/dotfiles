@@ -5,7 +5,7 @@
 # indirizzo: http://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html
 
 usage() {
-cat <<EOF
+cat << EOF
 Utilizzo: $name [codiceCorso] [anno]
 
 Note:
