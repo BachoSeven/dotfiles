@@ -1,5 +1,5 @@
 # https://idasen.readthedocs.io/en/latest/index.html#configuration
-mac_address: F1:FE:BD:A0:C5:E5
+mac_address: FA:45:03:B3:16:8D
 positions:
   sit: 0.78
-  stand: 1.08
+  stand: 1.07
