@@ -80,10 +80,10 @@ if_running() {
 priv="$USER"
 [[ "$EUID" = 0 ]] &&
     # sometimes more accurate depending on distro
-    #priv=$(grep 'home' /etc/passwd |cut -d':' -f6 |cut -c7-)
+		priv=$(grep 'home' /etc/passwd |cut -d':' -f6 |cut -c7-)
 
     # assumes user names are same as the user's home directory
-    priv=$(find /home -maxdepth 1 -type d |tail -n+2 |cut -c7-)
+    # priv=$(find /home -maxdepth 1 -type d |tail -n+2 |cut -c7-)
 
 # shellcheck disable=SC2164
 for user in $priv; do
