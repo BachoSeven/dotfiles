@@ -28,7 +28,7 @@
 	export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/mbsyncrc"
 	export LESSHISTFILE=-
 	export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-	export HISTFILE="$XDG_DATA_HOME/zsh/history"
+	export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
 	export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 	export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 	export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
@@ -108,7 +108,6 @@
 	export XCURSOR_PATH="~/.local/share/icons" # Needed for custom cursor
 	export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 	[ -f ${XDG_CONFIG_HOME:-$HOME/.config}/dircolors/dircolors.dark ] && eval `dircolors -b ${XDG_CONFIG_HOME:-$HOME/.config}/dircolors/dircolors.dark`
-	# export LF_ICONS="tw=:st=:ow=:dt=:di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*.coffee=:*.cpp=:*.css=:*.d=:*.dart=:*.erl=:*.exs=:*.fs=:*.go=:*.h=:*.hh=:*.hpp=:*.hs=:*.html=:*.java=:*.jl=:*.js=:*.json=:*.lua=:*.md=:*.php=:*.pl=:*.pro=:*.py=:*.rb=:*.rs=:*.scala=:*.ts=:*.vim=:*.cmd=:*.ps1=:*.sh=:*.bash=:*.zsh=:*.fish=:*.tar=:*.tgz=:*.arc=:*.arj=:*.taz=:*.lha=:*.lz4=:*.lzh=:*.lzma=:*.tlz=:*.txz=:*.tzo=:*.t7z=:*.zip=:*.z=:*.dz=:*.gz=:*.lrz=:*.lz=:*.lzo=:*.xz=:*.zst=:*.tzst=:*.bz2=:*.bz=:*.tbz=:*.tbz2=:*.tz=:*.deb=:*.rpm=:*.jar=:*.war=:*.ear=:*.sar=:*.rar=:*.alz=:*.ace=:*.zoo=:*.cpio=:*.7z=:*.rz=:*.cab=:*.wim=:*.swm=:*.dwm=:*.esd=:*.jpg=:*.jpeg=:*.mjpg=:*.mjpeg=:*.gif=:*.bmp=:*.pbm=:*.pgm=:*.ppm=:*.tga=:*.xbm=:*.xpm=:*.tif=:*.tiff=:*.png=:*.svg=:*.svgz=:*.mng=:*.pcx=:*.mov=:*.mpg=:*.mpeg=:*.m2v=:*.mkv=:*.webm=:*.ogm=:*.mp4=:*.m4v=:*.mp4v=:*.vob=:*.qt=:*.nuv=:*.wmv=:*.asf=:*.rm=:*.rmvb=:*.flc=:*.avi=:*.fli=:*.flv=:*.gl=:*.dl=:*.xcf=:*.xwd=:*.yuv=:*.cgm=:*.emf=:*.ogv=:*.ogx=:*.aac=:*.au=:*.flac=:*.m4a=:*.mid=:*.midi=:*.mka=:*.mp3=:*.mpc=:*.ogg=:*.ra=:*.wav=:*.oga=:*.opus=:*.spx=:*.xspf=:*.pdf=:*.nix="
 	export GREP_COLOR='1;92;40'
 # anti aliasing in the two toolkits
 	export GDK_USE_XFT=1
@@ -127,95 +126,97 @@
 	export LESSCOLORIZER='pygmentize'
 	export LESS='-iRX --mouse --wheel-lines 2 --jump-target=.5 --status-column --LONG-PROMPT --quit-on-intr --no-histdups'
 	export MANPAGER="sh -c 'col -bx | bat -l man -p '"
-    # gruvbox in TTY ;)
-	if [ "$TERM" = "linux" ]; then
-	    echo -en "\e]P0282828"
-	    echo -en "\e]P8928374"
-	    echo -en "\e]P1CC241D"
-	    echo -en "\e]P9FB4934"
-	    echo -en "\e]P298971A"
-	    echo -en "\e]PAB8BB26"
-	    echo -en "\e]P3D79921"
-	    echo -en "\e]PBFABD2F"
-	    echo -en "\e]P4458588"
-	    echo -en "\e]PC83A598"
-	    echo -en "\e]P5B16286"
-	    echo -en "\e]PDD3869B"
-	    echo -en "\e]P6689D6A"
-	    echo -en "\e]PE8EC07C"
-	    echo -en "\e]P7A89984"
-	    echo -en "\e]PFEBDBB2"
-	    clear # fix some weird artifacting
-	fi
 # Lf icons
-	export LF_ICONS="di=📁:\
-fi=📃:\
-tw=🤝:\
-ow=📂:\
-ln=⛓:\
-or=❌:\
-ex=🎯:\
-*.txt=✍:\
-*.mom=✍:\
-*.me=✍:\
-*.ms=✍:\
-*.png=🖼:\
-*.ico=🖼:\
-*.jpg=📸:\
-*.jpeg=📸:\
-*.gif=🖼:\
-*.svg=🗺:\
-*.xcf=🖌:\
-*.html=🌎:\
-*.xml=📰:\
-*.gpg=🔒:\
-*.css=🎨:\
-*.pdf=📚:\
-*.djvu=📚:\
-*.epub=📚:\
-*.csv=📓:\
-*.xlsx=📓:\
-*.tex=📜:\
-*.md=📘:\
-*.r=📊:\
-*.R=📊:\
-*.rmd=📊:\
-*.Rmd=📊:\
-*.mp3=🎵:\
-*.opus=🎵:\
-*.ogg=🎵:\
-*.m4a=🎵:\
-*.flac=🎼:\
-*.wav=🎼:\
-*.mkv=🎥:\
-*.mp4=🎥:\
-*.webm=🎥:\
-*.mpeg=🎥:\
-*.avi=🎥:\
-*.mov=🎥:\
-*.mpg=🎥:\
-*.wmv=🎥:\
-*.m4b=🎥:\
-*.flv=🎥:\
-*.zip=📦:\
-*.rar=📦:\
-*.7z=📦:\
-*.tar.gz=📦:\
-*.z64=🎮:\
-*.v64=🎮:\
-*.n64=🎮:\
-*.1=ℹ:\
-*.nfo=ℹ:\
-*.info=ℹ:\
-*.log=📙:\
-*.iso=📀:\
-*.img=📀:\
-*.bib=🎓:\
-*.ged=👪:\
-*.part=💔:\
-*.torrent=🔽:\
-*.nix=::\
-"
+	export LF_ICONS="tw=:st=:ow=:dt=:di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*.coffee=:*.cpp=:*.css=:*.d=:*.dart=:*.erl=:*.exs=:*.fs=:*.go=:*.h=:*.hh=:*.hpp=:*.hs=:*.html=:*.java=:*.jl=:*.js=:*.json=:*.lua=:*.md=:*.php=:*.pl=:*.pro=:*.py=:*.rb=:*.rs=:*.scala=:*.ts=:*.vim=:*.cmd=:*.ps1=:*.sh=:*.bash=:*.zsh=:*.fish=:*.tar=:*.tgz=:*.arc=:*.arj=:*.taz=:*.lha=:*.lz4=:*.lzh=:*.lzma=:*.tlz=:*.txz=:*.tzo=:*.t7z=:*.zip=:*.z=:*.dz=:*.gz=:*.lrz=:*.lz=:*.lzo=:*.xz=:*.zst=:*.tzst=:*.bz2=:*.bz=:*.tbz=:*.tbz2=:*.tz=:*.deb=:*.rpm=:*.jar=:*.war=:*.ear=:*.sar=:*.rar=:*.alz=:*.ace=:*.zoo=:*.cpio=:*.7z=:*.rz=:*.cab=:*.wim=:*.swm=:*.dwm=:*.esd=:*.jpg=:*.jpeg=:*.mjpg=:*.mjpeg=:*.gif=:*.bmp=:*.pbm=:*.pgm=:*.ppm=:*.tga=:*.xbm=:*.xpm=:*.tif=:*.tiff=:*.png=:*.svg=:*.svgz=:*.mng=:*.pcx=:*.mov=:*.mpg=:*.mpeg=:*.m2v=:*.mkv=:*.webm=:*.ogm=:*.mp4=:*.m4v=:*.mp4v=:*.vob=:*.qt=:*.nuv=:*.wmv=:*.asf=:*.rm=:*.rmvb=:*.flc=:*.avi=:*.fli=:*.flv=:*.gl=:*.dl=:*.xcf=:*.xwd=:*.yuv=:*.cgm=:*.emf=:*.ogv=:*.ogx=:*.aac=:*.au=:*.flac=:*.m4a=:*.mid=:*.midi=:*.mka=:*.mp3=:*.mpc=:*.ogg=:*.ra=:*.wav=:*.oga=:*.opus=:*.spx=:*.xspf=:*.pdf=:*.nix="
+	# export LF_ICONS="di=📁:\
+# fi=📃:\
+# tw=🤝:\
+# ow=📂:\
+# ln=⛓:\
+# or=❌:\
+# ex=🎯:\
+# *.txt=✍:\
+# *.mom=✍:\
+# *.me=✍:\
+# *.ms=✍:\
+# *.png=🖼:\
+# *.ico=🖼:\
+# *.jpg=📸:\
+# *.jpeg=📸:\
+# *.gif=🖼:\
+# *.svg=🗺:\
+# *.xcf=🖌:\
+# *.html=🌎:\
+# *.xml=📰:\
+# *.gpg=🔒:\
+# *.css=🎨:\
+# *.pdf=📚:\
+# *.djvu=📚:\
+# *.epub=📚:\
+# *.csv=📓:\
+# *.xlsx=📓:\
+# *.tex=📜:\
+# *.md=📘:\
+# *.r=📊:\
+# *.R=📊:\
+# *.rmd=📊:\
+# *.Rmd=📊:\
+# *.mp3=🎵:\
+# *.opus=🎵:\
+# *.ogg=🎵:\
+# *.m4a=🎵:\
+# *.flac=🎼:\
+# *.wav=🎼:\
+# *.mkv=🎥:\
+# *.mp4=🎥:\
+# *.webm=🎥:\
+# *.mpeg=🎥:\
+# *.avi=🎥:\
+# *.mov=🎥:\
+# *.mpg=🎥:\
+# *.wmv=🎥:\
+# *.m4b=🎥:\
+# *.flv=🎥:\
+# *.zip=📦:\
+# *.rar=📦:\
+# *.7z=📦:\
+# *.tar.gz=📦:\
+# *.z64=🎮:\
+# *.v64=🎮:\
+# *.n64=🎮:\
+# *.1=ℹ:\
+# *.nfo=ℹ:\
+# *.info=ℹ:\
+# *.log=📙:\
+# *.iso=📀:\
+# *.img=📀:\
+# *.bib=🎓:\
+# *.ged=👪:\
+# *.part=💔:\
+# *.torrent=🔽:\
+# *.nix=::\
+# "
+
+if [ "$TERM" = "linux" ]; then
+	# gruvbox in TTY ;)
+	echo -en "\e]P0282828"
+	echo -en "\e]P1CC241D"
+	echo -en "\e]P298971A"
+	echo -en "\e]P3D79921"
+	echo -en "\e]P4458588"
+	echo -en "\e]P5B16286"
+	echo -en "\e]P6689D6A"
+	echo -en "\e]P7A89984"
+	echo -en "\e]P8928374"
+	echo -en "\e]P9FB4934"
+	echo -en "\e]PAB8BB26"
+	echo -en "\e]PBFABD2F"
+	echo -en "\e]PC83A598"
+	echo -en "\e]PDD3869B"
+	echo -en "\e]PE8EC07C"
+	echo -en "\e]PFEBDBB2"
+	clear # fix some weird artifacting
+fi
 
 # Wolfram Alpha
 	export WA_FG="1d2021"

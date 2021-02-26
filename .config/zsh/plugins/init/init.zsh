@@ -15,6 +15,14 @@
 	setopt correct							# typos
 	correct_ignore='_*'
 
+## History file folder
+(
+	local DATADIR="$(dirname "$HISTFILE")"
+	if [ ! -d "$DATADIR" ]; then
+			mkdir -p -- "$DATADIR"
+	fi
+) &!
+
 # Do not consider "/" a word character.  One benefit of this is that
 # when hitting ctrl-w in insert mode (which deletes the word before the
 # cursor) just before a filesystem path, it only removes the last item
