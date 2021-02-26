@@ -16,6 +16,7 @@ shittyfiles = [
     '~/Downloads',          # Spotify creates this
     '~/.thumbnails',
     '~/.gconfd',
+    '~/.keras',
     '~/.gconf',
     '~/.local/share/gegl-0.2',
     '~/.FRD/log/app.log',   # FRD
