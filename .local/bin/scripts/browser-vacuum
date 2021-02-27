@@ -52,6 +52,7 @@ run_cleaner() {
 }
 
 # shellcheck disable=SC2009
+# shellcheck disable=SC2143
 if_running() {
     i=6 # after this timeout, we stop waiting (i*2 seconds seems good)
     [[ $(ps aux |grep -v 'grep' |grep "$1" |grep "$user") ]] &&

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-freq=$XDG_CACHE_HOME/dmenu_history
+freq=$XDG_CACHE_HOME/menu-history
 aliases=$ZDOTDIR/plugins/utils/aliasrc
+
 # Additional configuration for dmenu is done in Xresources
 dmenucmd='dmenu -f -i -h 14 -c -l 14 -bw 5'
 
@@ -55,7 +56,7 @@ if [[ "$cmd" =~ $regex ]]; then
     fi
 fi
 
-if ! [ "$cmd" == "" ]; then
+if [ -n "$cmd" ]; then
     # remember which commands have been run
     echo "$cmd" >> $freq
     cmdexec=$(alias | grep "${cmd/;/}=" | cut -f2 -d "'" | tr -d "'")
@@ -65,7 +66,6 @@ if ! [ "$cmd" == "" ]; then
 
     # open a command up in a terminal
     # a second semicolon uses sudo -A
-
 	if [[ $cmd == *';;' ]]; then
 		cmdexec="xdotool mousemove - 1 mousemove restore; sudo -Ai '$cmdexec'"
 	elif [[ $cmd == *";" ]]; then

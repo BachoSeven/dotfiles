@@ -159,6 +159,7 @@ load_image
 draw_menu
 while true; do
 	read -r -N 6 click
+	# shellcheck disable=SC2207
 	mouse=($(echo -en ${click#???} | hexdump -v  -e'1/1 " %u"'))
 	X=$(( mouse[0] - 32))	Y=$(( mouse[1] - 32))
 	process_click

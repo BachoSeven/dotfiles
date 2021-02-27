@@ -10,7 +10,7 @@ d=$'\e[1m'
 t=$'\e[0m'
 v=$'\e[7m'
 
-
+# shellcheck disable=SC2154
 cat << EOF
 
  $f1███$d$g1▄$t  $f2███$d$g2▄$t  $f3███$d$g3▄$t  $f4███$d$g4▄$t  $f5███$d$g5▄$t  $f6███$d$g6▄$t  $f7███$d$g7▄$t

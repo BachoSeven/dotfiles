@@ -3,7 +3,7 @@
 ! pidof Xorg >/dev/null 2>&1 && exit 0
 
 if [ ! "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ]; then
-	if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 40 ]; then
+	if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 35 ]; then
 		if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 15 ]; then
 			notify-send -u critical "❗ Battery critically low."
 		else
@@ -14,7 +14,7 @@ if [ ! "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ]; then
 		notify-send -u normal "🔋 Unplug cable"
 	fi
 else
-	if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -gt 80 ]; then
+	if [ "$(cat /sys/class/power_supply/BAT0/capacity)" -gt 85 ]; then
 		notify-send -u normal "🔋 Unplug cable"
 	fi
 fi

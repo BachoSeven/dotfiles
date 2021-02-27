@@ -19,17 +19,16 @@
 # - I also use a custom `ifinstalled` script to notify about missing programs
 #	-	`-w` and `-i` are supposed to be mutually exclusive
 
-linknotif() {
-	[ -f "$1" ] && ln -sf "$(realpath "$1")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
-	[ -d "$1" ] && ln -sf "$( fd --search-path "$(realpath "$1")" -e png -e jpg -e jpeg -e gifv -e gif -e tif -e tiff -t f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
-}
-
-# Initialize target location
 bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}"/bg
 
 # Cleanup the root window
 pgrep xwinwrap >/dev/null 2>&1 &&	killall -q xwinwrap
 pgrep xrootgif >/dev/null 2>&1 &&	killall -q xrootgif
+
+linknotif() {
+	[ -f "$1" ] && ln -sf "$(realpath "$1")" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "Wallpaper changed."
+	[ -d "$1" ] && ln -sf "$( fd --search-path "$(realpath "$1")" -e png -e jpg -e jpeg -e gifv -e gif -e tif -e tiff -t f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
+}
 
 while getopts ":hi:w:cmt" o; do
 	case "${o}" in

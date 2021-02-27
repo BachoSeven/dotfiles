@@ -21,7 +21,8 @@ exit 1
 
 main() {
 	c="$(echo "$@" | sed 's/(//;s/)//;s/,/ /g')"
-	printf '#%02x%02x%02x\n' $c
+	# shellcheck disable=SC2183
+	printf '#%02x%02x%02x\n' "$c"
 }
 
 # Actual script
