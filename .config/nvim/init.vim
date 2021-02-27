@@ -136,7 +136,7 @@
 	nn <leader>J maa<CR><ESC>`a
 
 " <CR> clears hlsearch, but only after doing a search.
-	nn <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
+	nn <silent> <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 " Toggle search highlight
 	nn <silent> <esc><esc> :let v:hlsearch=!v:hlsearch<CR>
 
