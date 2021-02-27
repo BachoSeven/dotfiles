@@ -24,7 +24,7 @@ IMGWH=$(gifsicle --info "$1" | awk '/logical/ { print $3 }')
 IMGW=${IMGWH%x*}
 IMGH=${IMGWH#*x}
 
-#calculate position
+# calculate position
 POSW=$(((SCRW/2)-(IMGW/2)))
 POSH=$(((SCRH/2)-(IMGH/2)))
 
