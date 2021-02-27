@@ -187,10 +187,10 @@ keymap yf       EXTERN_LINK  copy
 keymap p 	GOTO		/usr/lib/w3m/cgi-bin/goto_clipboard.cgi
 #follow link in clipboard in new foreground tab.
 keymap P        TAB_GOTO	/usr/lib/w3m/cgi-bin/goto_clipboard.cgi
-keymap F        TAB_LINK					#Follow link in a new foreground tab
+# keymap F        TAB_LINK					#Follow link in a new foreground tab
 #follow link under cursor in new background tab
-#keymap    COMMAND   "TAB_LINK ; PREV_TAB"
-keymap f        GOTO_LINK					#Follow link in current tab
+keymap F   COMMAND   "TAB_LINK ; PREV_TAB"
+# keymap f        GOTO_LINK					#Follow link in current tab
 keymap C-j      GOTO_LINK					#Follow link (Enter = Ctrl+j)
 
 #scrolling....................................................................
@@ -199,9 +199,8 @@ keymap k        DOWN
 keymap j        UP
 keymap C-y      DOWN
 keymap C-e      UP
-keymap j        UP
-keymap l        RIGHT
-keymap h        LEFT
+keymap l        MOVE_RIGHT1
+keymap h        MOVE_LEFT1
 keymap gg       BEGIN						#Go to the top.
 #go to line number 5 "5G"
 keymap G        END						#Go to the end.
@@ -260,8 +259,8 @@ keymap :t       TAB_MENU					#Tab menu
 keymap X        TAB_GOTO          /usr/lib/w3m/cgi-bin/restore_tab.cgi
 keymap C-T      TAB_GOTO          /usr/lib/w3m/cgi-bin/restore_tab.cgi
 #-navigation...................................................................
-#keymap f        MOVE_LIST_MENU					#Show links--> move cursor
-#keymap F        LIST_MENU					#Show links--> follow link
+keymap f        MOVE_LIST_MENU					#Show links--> move cursor
+keymap F        LIST_MENU					#Show links--> follow link
 keymap s        LINK_BEGIN					#Move cursor to first link/ns Move cursor to link n
 keymap [        LINK_BEGIN					#nf Move cursor to link n
 keymap ]        LINK_END					#Move cursor to last link/nf Move cursor to link [n]
