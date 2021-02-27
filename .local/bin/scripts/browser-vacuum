@@ -90,7 +90,7 @@ priv="$USER"
 for user in $priv; do
 #[ FIREFOX ICECAT SEAMONKEY ]#
     # check for a <browser config> folder in each users home directory
-    for b in {firefox,icecat,seamonkey,aurora,waterfox}; do
+    for b in {firefox,icecat,seamonkey,aurora}; do
         echo -en "[${YLW}$user${RST}] ${GRN}Scanning for $b${RST}"
         if [[ -f "/home/$user/.mozilla/$b/profiles.ini" ]]; then
             echo -e "$format [${GRN}found${RST}]"
