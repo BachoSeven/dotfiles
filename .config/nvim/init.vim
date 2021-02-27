@@ -32,7 +32,8 @@
 	se incsearch
 	se inccommand=split " this is amazing for :%substitute
 	se hidden " hide buffers, don't close them
-	se splitbelow splitright
+	se sb spr " better split defaults
+	se acd " automatically cd into active vim buffer
 	se lazyredraw
 	se list " show invisibles
 	se listchars=
@@ -102,6 +103,7 @@
 " These are amazing.
 	nn <leader>w :w<CR>
 	nn <leader>q :q<CR>
+	nn <leader>n :vne<CR>
 " Quick macros
 	nn <silent> Q @q
 " Tabs
