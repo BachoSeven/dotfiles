@@ -1,0 +1,7 @@
+snippet <l "leader"
+<leader>${1}
+endsnippet
+
+snippet plug "insert a vim-plug plugin from URL" b
+Plug '${1:`!v substitute(@+, '\([^\/]*\/\/[^\/]*\/\)\([^/]*\/[^/]*\)\(.*\)', '\2', '' )`}'
+endsnippet
