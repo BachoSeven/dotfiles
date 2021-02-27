@@ -32,7 +32,7 @@ do
 		"f")
 			convert -flop "$file" "$file" ;;
 		"y")
-			echo -n "$file" | tr -d '\n' | xclip -sel c -r &&
+			printf "$file" | tr -d '\n' | xclip -sel c -r &&
 			notify-send "$file copied to clipboard" & ;;
 		"Y")
 			realpath "$file" | tr -d '\n' | xclip -sel c -r &&

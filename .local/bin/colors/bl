@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Wrapper to set a solid color as background
+
+# Cleanup
+killall -q xrootgif xwinwrap
+
+hsetroot -solid \#${1:-151515}

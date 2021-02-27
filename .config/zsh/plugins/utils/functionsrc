@@ -380,11 +380,6 @@ brb() {
 }
 
 ## Colors
-bl(){
-	killall -q xrootgif xwinwrap
-	local c="${1:-151515}"
-	hsetroot -solid \#$c
-}
 blocks() {
 	echo; echo; for i in 0 1 2 3 4 5 6 7; do
 		printf '\033[10%bm   \033[s\033[1A\033[3D\033[4%bm   \033[u' "$i" "$i"
