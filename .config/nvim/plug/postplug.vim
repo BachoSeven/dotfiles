@@ -26,9 +26,9 @@
 		\ { 'o': ['Fuzzy Finder', 'FZF']},
 		\ ]
 	let g:startify_lists = [
-		\ { 'type': 'commands',  'header': ['   Commands']       },
 		\ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
 		\ { 'type': 'files',     'header': ['   MRU']            },
+		\ { 'type': 'commands',  'header': ['   Commands']       },
 		\ ]
 
 " Lf
