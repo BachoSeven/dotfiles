@@ -5,14 +5,14 @@
 #	- xwinwrap
 
 if [ $# -ne 1 ] || [ ! -f "$1" ]; then
-    echo 1>&2 Usage: $0 image.gif
+		printf "\n\tUsage: \n\n\t%s image.gif\n\n" "$(basename "$0")" 1>&2
     exit 1
 fi
 
 # get screen resolution
 if command -v xwininfo >/dev/null; then
-	xwininfo -root | awk -F':' '/Width|Height/ {printf $2}' \
-	| read -r SCRW SCRH
+	# shellcheck disable=SC2039
+	read -r SCRW SCRH <<< "$(xwininfo -root | awk -F':' '/Width|Height/ {printf $2}')"
 elif command -v xrandr >/dev/null; then
 	SCRW=$(xrandr | awk '/current/ { print $8 }')
 	SCRH=$(xrandr | awk '/current/ { print $10 }')

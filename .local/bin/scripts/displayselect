@@ -55,7 +55,7 @@ multimon() { # Multi-monitor handler.
 # shellcheck disable=SC2046
 onescreen() { # If only one output available or chosen.
 	xrandr --output "$1" --auto --scale 1.0x1.0 $(echo "$allposs" | grep -v "\b$1" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -)
-	echo $(echo "$allposs" | grep -v "\b$1" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -)
+	echo "$allposs" | grep -v "\b$1" | awk '{print "--output", $1, "--off"}' | paste -sd ' ' -
 	}
 
 postrun() { # Stuff to run to clean up.
