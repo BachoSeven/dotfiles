@@ -22,6 +22,14 @@
 	fu! StartifyEntryFormat() " Use custom icons plugin
 		retu 'mpi#get(absolute_path) ." ". entry_path'
 	endfu
+	let g:startify_commands = [
+		\ { 'o': ['Fuzzy Finder', 'FZF']},
+		\ ]
+	let g:startify_lists = [
+		\ { 'type': 'commands',  'header': ['   Commands']       },
+		\ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+		\ { 'type': 'files',     'header': ['   MRU']            },
+		\ ]
 
 " Lf
 	let g:lf_replace_netrw = 1 " open lf when a directory is opened with vim
@@ -155,35 +163,35 @@
 
 " Lightline
 	let g:lightline = {
-				\ 'colorscheme': 'gruvbox_material',
-				\ 'active': {
-				\   'left': [ [ 'mode', 'paste' ],
-				\             [ 'filename' ] ],
-				\		'right': [ [ 'percent', 'lineinfo' ],
-				\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
-				\ },
-				\ 'component_function': {
-				\   'filename': 'LlName',
-				\   'fileformat': 'LlFormat',
-				\		'filetype': 'LlType',
-				\		'fileencoding': 'LlEncoding',
-				\	},
-				\	'mode_map': {
-				\		'n' : 'N',
-				\		'i' : 'I',
-				\		'R' : 'R',
-				\		'v' : 'V',
-				\		'V' : 'VL',
-				\		"\<C-v>": 'VB',
-				\		'c' : 'C',
-				\		's' : 'S',
-				\		'S' : 'SL',
-				\		"\<C-s>": 'SB',
-				\		't': 'T',
-				\ },
-				\ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
-				\ 'subseparator': { 'left': '▒', 'right': '░' }
-				\ }
+		\ 'colorscheme': 'gruvbox_material',
+		\ 'active': {
+		\   'left': [ [ 'mode', 'paste' ],
+		\             [ 'filename' ] ],
+		\		'right': [ [ 'percent', 'lineinfo' ],
+		\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+		\ },
+		\ 'component_function': {
+		\   'filename': 'LlName',
+		\   'fileformat': 'LlFormat',
+		\		'filetype': 'LlType',
+		\		'fileencoding': 'LlEncoding',
+		\	},
+		\	'mode_map': {
+		\		'n' : 'N',
+		\		'i' : 'I',
+		\		'R' : 'R',
+		\		'v' : 'V',
+		\		'V' : 'VL',
+		\		"\<C-v>": 'VB',
+		\		'c' : 'C',
+		\		's' : 'S',
+		\		'S' : 'SL',
+		\		"\<C-s>": 'SB',
+		\		't': 'T',
+		\ },
+		\ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
+		\ 'subseparator': { 'left': '▒', 'right': '░' }
+		\ }
 	se noshowmode " Don't display mode in command line
 	" Show total line number in square brackets
 	let g:lightline.component = {
