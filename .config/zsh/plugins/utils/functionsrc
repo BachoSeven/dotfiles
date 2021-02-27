@@ -1,4 +1,3 @@
-# vim: set ft=zsh ts=2 sw=2 et:
 ## Functions
 # Some of this was stolen, amongst others, from https://github.com/SmartFinn/dotfiles. Thanks!
 
@@ -28,7 +27,7 @@ _run() { # run command if it exists
 ## Arch
 # Pacman
 mirrors() {
-            grep -v '^$\|^#' /etc/pacman.d/mirrorlist | awk '{print $3}' | awk -F '/' '{print $3}';
+						grep -v '^$\|^#' /etc/pacman.d/mirrorlist | awk '{print $3}' | awk -F '/' '{print $3}';
 }
 rip() {
 	[ -z "$1" ] && num="50" || num="$1"
@@ -51,11 +50,11 @@ fpacin() {
 }
 # Install packages with fzf
 in() {
-    $AURHELPER -Slq | fzf -q "$1" -m --preview '$AURHELPER -Si {1}'| xargs -ro $AURHELPER -S
+		$AURHELPER -Slq | fzf -q "$1" -m --preview '$AURHELPER -Si {1}'| xargs -ro $AURHELPER -S
 }
 # Remove installed packages with fzf
 re() {
-    $AURHELPER -Qq | fzf -q "$1" -m --preview '$AURHELPER -Qi {1}' | xargs -ro $AURHELPER -Rns
+		$AURHELPER -Qq | fzf -q "$1" -m --preview '$AURHELPER -Qi {1}' | xargs -ro $AURHELPER -Rns
 }
 getdeps() {
 	expac -l '\n' %E -S $@ | sort -u
@@ -150,53 +149,54 @@ extract() {
 		fi
 
 		case "$f" in
-			*.tar)  tar -xf "$f"       ;;
+			*.tar)	tar -xf "$f"			;;
 			*.tar.bz|*.tbz| \
 			*.tar.bz2|*.tbz2)
-					tar -xjf "$f"      ;;
+					tar -xjf "$f"					;;
 			*.tar.gz|*.tgz)
-					tar -xzf "$f"      ;;
+					tar -xzf "$f"					;;
 			*.tar.xz|*.txz)
-					tar -xJf "$f"      ;;
+					tar -xJf "$f"					;;
 			*.tar.[zZ]|*.t[zZ])
-					tar -xZf "$f"      ;;
+					tar -xZf "$f"					;;
 			*.tar.lz|*.tlz| \
 			*.tar.lzma|*.tlzma| \
 			*.tar.lzo|*.tzo| \
 			*.tar.zst|*.tzst)
-					tar -xaf "$f"      ;;
-			*.7z)   7za x -- "$f"      ;;
+					tar -xaf "$f"					;;
+			*.7z)		7za x -- "$f"			;;
 			*.a|*.ar)
-					ar x -- "$f"       ;;
-			*.ace)  unace e -- "$f"    ;;
-			*.alz)  unalz -- "$f"      ;;
+					ar x -- "$f"					;;
+			*.ace)	unace e -- "$f"		;;
+			*.alz)	unalz -- "$f"			;;
 			*.arc|*.ark|*.ARC|*.ARK)
-					nomarch -- "$f"    ;;
+					nomarch -- "$f"				;;
 			*.arj|*.ARJ)
-					arj e -r -- "$f"   ;;
+					arj e -r -- "$f"			;;
 			*.bz|*.bz2)
-					bunzip2 -k -- "$f" ;;
+					bunzip2 -k -- "$f"		;;
 			*.cab|*.CAB|*.exe|*.EXE)
-					cabextract "$f"    ;;
-			*.cpio) cpio -id -F "$f"   ;;
-			*.deb)  dpkg -x -- "$f" .  ;;
-			*.gz)   gunzip -k "$f"     ;;
+					cabextract "$f"				;;
+			*.cpio) cpio -id -F "$f"	;;
+			*.deb)	dpkg -x -- "$f" .	;;
+			*.gz)		gunzip -k "$f"		;;
 			*.lha|*.lzh)
-					lha x "$f"         ;;
+					lha x "$f"						;;
 			*.lrz|*.lrzip|*.rz)
-					lrunzip -- "$f"    ;;
-			*.lz)   lzip -d -k -- "$f" ;;
-			*.lz4)  unlz4 -- "$f"      ;;
-			*.lzma) xz -d -k "$f"      ;;
-			*.lzo)  lzop -x "$f"       ;;
-			*.rar)  unrar x -- "$f"    ;;
+					lrunzip -- "$f"				;;
+			*.lz)		lzip -d -k -- "$f";;
+			*.lz4)	unlz4 -- "$f"			;;
+			*.lzma) xz -d -k "$f"			;;
+			*.lzo)	lzop -x "$f"			;;
+			*.rar)	unrar x -- "$f"		;;
 			*.src.rpm|*.rpm|*.spm)
-					rpm2cpio "$f" | cpio -dium ;;
-			*.xz)   unxz -k -- "$f"    ;;
-			*.[zZ]) uncompress -- "$f" ;;
-			*.zip)  unzip -- "$f"      ;;
-			*.zst)  unzstd -- "$f"     ;;
-			*.AppImage) ./"$f" --appimage-extract ;;
+					rpm2cpio "$f" | cpio -dium;;
+			*.xz)		unxz -k -- "$f"		;;
+			*.[zZ]) uncompress -- "$f";;
+			*.zip)	unzip -- "$f"			;;
+			*.zst)	unzstd -- "$f"		;;
+			*.AppImage)
+					./"$f" --appimage-extract;;
 			*)
 				printf "extract: '%s' - unkwown archive format\n" "$f" >&2
 				return 1
@@ -229,9 +229,9 @@ archive() {
 		*.tar)
 			tar -cf  "$archive" "$@" ;;
 		*.7z)
-			7za a    "$archive" "$@" ;;
+			7za a		 "$archive" "$@" ;;
 		*.zip)
-			zip -r   "$archive" "$@" ;;
+			zip -r	 "$archive" "$@" ;;
 		*)
 			printf "'%s' is unknown archive format\n" "$archive" >&2
 			return 1
@@ -245,6 +245,7 @@ sfont() {
 }
 
 sloc() {
+	[ -z "$1" ] && printf "\nUsage: $0 [directory|file] " >&2 && return 1
 	if [ -z "$1" ]; then
 		fd -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
 	elif [ -d "$1" ]; then
@@ -253,11 +254,6 @@ sloc() {
 		sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' "$1" | wc -l
 	fi
 	unset del
-}
-
-ytw() {
-	local vid="$1"
-	mpv "https://youtube.com/watch?v=$vid" || {ifinstalled nordvpn && nordvpn connect UK && mpv "https://youtube.com/watch?v=$vid"}
 }
 
 ## MPV stuff
@@ -273,6 +269,10 @@ mpvDisk-alt() {
 resumempv() {
 	echo '{ "command": ["set_property", "pause", false] }' | socat - "/tmp/mpvSockets/$(\ls /tmp/mpvSockets/ | head -1)";
 }
+ytw() {
+	local vid="$1"
+	mpv "https://youtube.com/watch?v=$vid" || { ifinstalled nordvpn && nordvpn connect UK && mpv "https://youtube.com/watch?v=$vid" }
+}
 
 ## DICTIONARY FUNCTIONS ##
 djargon () { curl dict://dict.org/d:${1}:jargon; }
@@ -280,7 +280,7 @@ dfoldoc () { curl dict://dict.org/d:${1}:foldoc; }
 dthesaurus () { curl dict://dict.org/d:${1}:moby-thes; }
 # Dictionary | Usage define <foo>
 define() {
-    curl -s dict://dict.org/d:$1 | grep -v '^[0-9]'
+		curl -s dict://dict.org/d:$1 | grep -v '^[0-9]'
 }
 # Sdcv
 def() {
@@ -324,6 +324,19 @@ engturk() {
 	less -FRX
 }
 
+# simple wrapper to format files for use with `tt`
+ttconv() {
+	for f in $@; do
+		name="$(basename $f)"
+		iconv -f utf-8 -t ascii//translit $f | sed 's/--/-/g' | sed '/^$/d' | sed 's/^[ \t]*//' | sed 's/\(^.\{1,80\}\).*/\1/' > $name.tt
+	done
+}
+tt() {
+	export ESCDELAY=25
+	/usr/local/bin/tt $@
+	unset ESCDELAY
+}
+
 wtr() {
 	# see curl wttr.in/:help
 	local loc="${1:=$LOCATION}"
@@ -343,7 +356,7 @@ most-used-commands() {
 	local -i top="${1:-10}"
 	local -i last="${2:-999999}"
 
-	tail -n "$last" "${HISTFILE:-${ZDOTDIR:-$HOME}/.zsh_history}" \
+	tail -n "$last" "$HISTFILE" \
 		| awk '
 			{ $1 == "sudo" ? CMD[$2]++ : CMD[$1]++; count++; }
 			END {
@@ -376,13 +389,13 @@ zsh_bench() {
 .{1..9} (){ local d=.; repeat ${0:1} d+=/..; cd $d;}
 
 brb() {
-  st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d "${1:-brb}"
+	st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d "${1:-brb}"
 }
 
-## Colors
+# Colors
 blocks() {
 	echo; echo; for i in 0 1 2 3 4 5 6 7; do
-		printf '\033[10%bm   \033[s\033[1A\033[3D\033[4%bm   \033[u' "$i" "$i"
+		printf '\033[10%bm	 \033[s\033[1A\033[3D\033[4%bm	 \033[u' "$i" "$i"
 	done; printf '\n\033[0m'
 }
 256col() {
@@ -390,8 +403,8 @@ blocks() {
 }
 xrescol() {
 	read -r -d '' -A colors \
-	    < <( xrdb -query | sed -n 's/.*color\([0-9]\)/\1/p' | sort -nu | cut -f2)
-	printf '\e[1;37m\n Black      Red        Green      Yellow     Blue       Magenta    Cyan       White\n───────────────────────────────────────────────────────────────────────────────────────\e[0m\n'
+			< <( xrdb -query | sed -n 's/.*color\([0-9]\)/\1/p' | sort -nu | cut -f2)
+	printf '\e[1;37m\n Black			Red				 Green			Yellow		 Blue				Magenta		 Cyan				White\n───────────────────────────────────────────────────────────────────────────────────────\e[0m\n'
 	for color in {0..7}; do printf "\e[$((30+color))m █ %s \e[0m" "${colors[color+1]}"; done
 	printf '\n'
 	for color in {8..15}; do printf "\e[1;$((22+color))m █ %s \e[0m" "${colors[color+1]}"; done
@@ -399,8 +412,8 @@ xrescol() {
 }
 truecolor() {
 	awk 'BEGIN{
-	    s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
-	    for (colnum = 0; colnum<77; colnum++) {
+			s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
+			for (colnum = 0; colnum<77; colnum++) {
 		r = 255-(colnum*255/76);
 		g = (colnum*510/76);
 		b = (colnum*255/76);
@@ -408,100 +421,99 @@ truecolor() {
 		printf "\033[48;2;%d;%d;%dm", r,g,b;
 		printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
 		printf "%s\033[0m", substr(s,colnum+1,1);
-	    }
-	    printf "\n";
+			}
+			printf "\n";
 	}'
 }
 ## Fill screen with colours | Usage: colours
-colours()
-{
-  _I=1
-  _J=0
-  _K=0
-  _WIDTH=$COLUMNS
-  _MARGIN=0
-  while true; do
-  _A=$(($RANDOM % 3))
-  _B=$(($RANDOM % 2))
-  _C=$(($RANDOM % 3))
-  case $_A in
-  0)
-    case $_B in
-    0)
-      [ $_I -gt 1 ] && _I=$(($_I - 1))
-    ;;
-    1)
-      [ $_I -lt 6 ] && _I=$(($_I + 1))
-    ;;
-    esac
-  ;;
-  1)
-    case $_B in
-    0)
-      [ $_J -gt 0 ] && _J=$(($_J - 1))
-    ;;
-    1)
-      [ $_J -lt 5 ] && _J=$(($_J + 1))
-    ;;
-    esac
-  ;;
-  2)
-    case $_B in
-    0)
-      [ $_K -gt 0 ] && _K=$(($_K - 1))
-    ;;
-    1)
-      [ $_K -lt 5 ] && _K=$(($_K + 1))
-    ;;
-    esac
-  ;;
-  esac
-  case $1 in
-    1)
-      _DELTA=$2
-      case $_C in
-        0)
-          [ $_WIDTH -lt $(($COLUMNS - 2*$_DELTA)) ] && _WIDTH=$(($_WIDTH + 2*$_DELTA))
-        ;;
-        1)
-          [ $_WIDTH -gt $((1 + 2*$_DELTA)) ] && _WIDTH=$(($_WIDTH - 2*$_DELTA))
-        ;;
-      esac
-      _MARGIN=$((($COLUMNS-$_WIDTH)/2))
-    ;;
-    2)
-      _WIDTH=$2
-      _DELTA=$3
-      case $_C in
-        0)
-          [ $_MARGIN -le $(($COLUMNS - $_WIDTH - $_DELTA)) ] && _MARGIN=$(($_MARGIN + $_DELTA))
-        ;;
-        1)
-          [ $_MARGIN -ge $_DELTA ] && _MARGIN=$(($_MARGIN - $_DELTA))
-        ;;
-      esac
-    ;;
-    *)
-      _WIDTH=$COLUMNS
-      _MARGIN=0
-    ;;
-  esac
-  _NUMBER=$((15 + $_I + 6*$_J + 36*$_K))
+colours() {
+	_I=1
+	_J=0
+	_K=0
+	_WIDTH=$COLUMNS
+	_MARGIN=0
+	while true; do
+	_A=$(($RANDOM % 3))
+	_B=$(($RANDOM % 2))
+	_C=$(($RANDOM % 3))
+	case $_A in
+	0)
+		case $_B in
+		0)
+			[ $_I -gt 1 ] && _I=$(($_I - 1))
+		;;
+		1)
+			[ $_I -lt 6 ] && _I=$(($_I + 1))
+		;;
+		esac
+	;;
+	1)
+		case $_B in
+		0)
+			[ $_J -gt 0 ] && _J=$(($_J - 1))
+		;;
+		1)
+			[ $_J -lt 5 ] && _J=$(($_J + 1))
+		;;
+		esac
+	;;
+	2)
+		case $_B in
+		0)
+			[ $_K -gt 0 ] && _K=$(($_K - 1))
+		;;
+		1)
+			[ $_K -lt 5 ] && _K=$(($_K + 1))
+		;;
+		esac
+	;;
+	esac
+	case $1 in
+		1)
+			_DELTA=$2
+			case $_C in
+				0)
+					[ $_WIDTH -lt $(($COLUMNS - 2*$_DELTA)) ] && _WIDTH=$(($_WIDTH + 2*$_DELTA))
+				;;
+				1)
+					[ $_WIDTH -gt $((1 + 2*$_DELTA)) ] && _WIDTH=$(($_WIDTH - 2*$_DELTA))
+				;;
+			esac
+			_MARGIN=$((($COLUMNS-$_WIDTH)/2))
+		;;
+		2)
+			_WIDTH=$2
+			_DELTA=$3
+			case $_C in
+				0)
+					[ $_MARGIN -le $(($COLUMNS - $_WIDTH - $_DELTA)) ] && _MARGIN=$(($_MARGIN + $_DELTA))
+				;;
+				1)
+					[ $_MARGIN -ge $_DELTA ] && _MARGIN=$(($_MARGIN - $_DELTA))
+				;;
+			esac
+		;;
+		*)
+			_WIDTH=$COLUMNS
+			_MARGIN=0
+		;;
+	esac
+	_NUMBER=$((15 + $_I + 6*$_J + 36*$_K))
 
-  printf "\e[0;49m"
-  if [ $_MARGIN -gt 0 ]; then
-    for _FOO in $(seq $_MARGIN); do
-      printf " "
-    done
-  fi
+	printf "\e[0;49m"
+	if [ $_MARGIN -gt 0 ]; then
+		for _FOO in $(seq $_MARGIN); do
+			printf " "
+		done
+	fi
 
-  printf "\e[0;48;5;${_NUMBER}m"
-  for _FOO in $(seq $_WIDTH); do
-    printf " "
-  done
+	printf "\e[0;48;5;${_NUMBER}m"
+	for _FOO in $(seq $_WIDTH); do
+		printf " "
+	done
 
-  printf "\e[0;49m\n"
-  done
+	printf "\e[0;49m\n"
+	done
 }
 
 ## Audio
@@ -516,32 +528,32 @@ awkcompose() {
 output="awk_$1"
 rate=${2:-48000}
 awk -v rate="$rate" 'function wl() {
-        return (rate/160)*(0.87055^(int(rand()*10)))};
-    BEGIN {
-        srand();
-        wla=wl();
-        while(1) {
-            wlb=wla;
-            wla=wl();
-            if (wla==wlb)
-                {wla*=2;};
-            d=(rand()*10+5)*rate/4;
-            a=b=0; c=128;
-            ca=40/wla; cb=20/wlb;
-            de=rate/10; di=0;
-            for (i=0;i<d;i++) {
-                a++; b++; di++; c+=ca+cb;
-                if (a>wla)
-                    {a=0; ca*=-1};
-                if (b>wlb)
-                    {b=0; cb*=-1};
-                if (di>de)
-                    {di=0; ca*=0.9; cb*=0.9};
-                printf("%c",c)};
-            c=int(c);
-            while(c!=128) {
-                c<128?c++:c--;
-                printf("%c",c)};};}' > $output.raw
+				return (rate/160)*(0.87055^(int(rand()*10)))};
+		BEGIN {
+				srand();
+				wla=wl();
+				while(1) {
+						wlb=wla;
+						wla=wl();
+						if (wla==wlb)
+								{wla*=2;};
+						d=(rand()*10+5)*rate/4;
+						a=b=0; c=128;
+						ca=40/wla; cb=20/wlb;
+						de=rate/10; di=0;
+						for (i=0;i<d;i++) {
+								a++; b++; di++; c+=ca+cb;
+								if (a>wla)
+										{a=0; ca*=-1};
+								if (b>wlb)
+										{b=0; cb*=-1};
+								if (di>de)
+										{di=0; ca*=0.9; cb*=0.9};
+								printf("%c",c)};
+						c=int(c);
+						while(c!=128) {
+								c<128?c++:c--;
+								printf("%c",c)};};}' > $output.raw
 }
 8bit_raw2flac(){
 	[ "$#" -lt 2 ] && printf "Usage: 8bit_raw2flac INPUT.raw OUTPUT.flac [SAMPLE_RATE:-384000]\n" && return 1
@@ -549,27 +561,39 @@ awk -v rate="$rate" 'function wl() {
 	sox -r $rate -e unsigned -b 8 -c 1 $input $output
 }
 flac2mp3(){
-    for infile in "$@"; do
-        [[ "${infile}" != *.flac ]] && continue
-        album="$(metaflac --show-tag=album "${infile}" | sed 's/[^=]*=//')"
-        artist="$(metaflac --show-tag=artist "${infile}" | sed 's/[^=]*=//')"
-        date="$(metaflac --show-tag=date "${infile}" | sed 's/[^=]*=//')"
-        title="$(metaflac --show-tag=title "${infile}" | sed 's/[^=]*=//')"
-        year="$(metaflac --show-tag=date "${infile}" | sed 's/[^=]*=//')"
-        genre="$(metaflac --show-tag=genre "${infile}" | sed 's/[^=]*=//')"
-        tracknumber="$(metaflac --show-tag=tracknumber "${infile}" | sed 's/[^=]*=//')"
+		for f in "$@"; do
+				[[ "${f}" != *.flac ]] && continue
+				album="$(metaflac --show-tag=album "${f}" | sed 's/[^=]*=//')"
+				artist="$(metaflac --show-tag=artist "${f}" | sed 's/[^=]*=//')"
+				date="$(metaflac --show-tag=date "${f}" | sed 's/[^=]*=//')"
+				title="$(metaflac --show-tag=title "${f}" | sed 's/[^=]*=//')"
+				year="$(metaflac --show-tag=date "${f}" | sed 's/[^=]*=//')"
+				genre="$(metaflac --show-tag=genre "${f}" | sed 's/[^=]*=//')"
+				tracknumber="$(metaflac --show-tag=tracknumber "${f}" | sed 's/[^=]*=//')"
 
-        flac --decode --stdout "${infile}" | lame -b 320 --add-id3v2 \
-            --tt "${title}" \
-            --ta "${artist}" \
-            --tl "${album}" \
-            --ty "${year}" \
-            --tn "${tracknumber}" \
-            --tg "${genre}" - "${infile%.flac}.mp3"
-    done
+				flac --decode --stdout "${f}" | lame -b 320 --add-id3v2 \
+						--tt "${title}" \
+						--ta "${artist}" \
+						--tl "${album}" \
+						--ty "${year}" \
+						--tn "${tracknumber}" \
+						--tg "${genre}" - "${f%.flac}.mp3"
+		done
+}
+genplaylist() {
+	# usage: genplaylist [name] [extension]
+	[ -z $1 ] && name="playlist" || name=$1
+	[ -z $2 ] && ext="mp3" || ext=$2
+	playlist="${name}.m3u"
+	if [ -f $playlist ]; then
+		rm -i $playlist
+	fi
+	for f in *.$ext; do
+		echo "$(pwd)/$f" >> "$playlist"
+	done
 }
 
-## ffmpeg utilities
+# ffmpeg utilities
 webcam() {
 	[ -z "$1" ] && ffmpeg -f video4linux2 -i /dev/video0 -vframes 1 out.jpg || ffmpeg -f video4linux2 -i /dev/video0 -vframes $1 out%3d.jpg
 }
@@ -585,26 +609,36 @@ compressvidbrate() {
 fixallmkv() {
 	for f in *.mkv; do ffmpeg -i $f -c copy "${f%.*}-fixed.${f##*.}"; done
 }
+vidvolume() {
+	[ "$#" -lt 2 ] && printf "\nUsage: $0 inputVid [targetPercentage] [outputVid]\nExample\n\t$0 rec.mp4 -50 (halves volume)" >&2 && return 1
 
-genplaylist() {
-	# usage: genplaylist [name] [extension]
-	[ -z $1 ] && name="playlist" || name=$1
-	[ -z $2 ] && ext="mp3" || ext=$2
-	playlist="${name}.m3u"
-	if [ -f $playlist ]; then
-		rm -i $playlist
-	fi
-	for f in *.$ext; do
-		echo "$(pwd)/$f" >> "$playlist"
-	done
+	out=${3:-_$(basename $1)}
+
+	ffmpeg -i $1 -vol $(echo "256 * ($2 / 100)" | bc) -vcodec copy $out
 }
 
-# create a new directory and enter it
+# Useful general-purpose shell utilities
+## List processes - update the list by pressing CTRL-R
+lps() {
+	ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \
+		--header-lines=1 --layout=reverse
+}
+## Efficient way to select a line to print to stdout: https://unix.stackexchange.com/questions/29878/can-i-access-nth-line-number-of-standard-output
+line() {
+	awk "NR==$1{print;exit}"
+}
+## ccat: highlight with kat
+_exists highlight &&
+hcat() {
+	highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force "$1"
+}
+_exists kat &&
+ccat() { hcat "$1" | kat }
+## create a new directory and enter it
 md() {
 	mkdir -p $@ && cd ${@:$#}
 }
-
-# edit remote file
+## edit remote file
 vscp() {
 	if [[ -z $1 ]]; then
 		echo "usage: vscp [[user@]host1:]file1 ... [[user@]host2:]file2"
@@ -620,32 +654,66 @@ vscp() {
 	nvim ${targs[@]}
 }
 compdef vscp=scp
-
 ll(){ # A superb ls
 	ls -AhlXF --color=auto --time-style="+[34m[[32m%g-%m-%d [35m%k:%M[33m][m" $@
-	[[ "$*" == "$1" ]] && echo "   \033[1;96m--[\033[1;34m Dir:    \033[36m`ls -Al $@ | grep '^drw' | wc -l`\033[1;32m   |\033[1;33m \
+	[[ "$*" == "$1" ]] && echo "	 \033[1;96m--[\033[1;34m Dir:		 \033[36m`ls -Al $@ | grep '^drw' | wc -l`\033[1;32m	 |\033[1;33m \
 	 File: \033[32m`ls -Al $@ | grep -v '^drw' | grep -v total | wc -l` ]-- \033[1;37m"
 }
-
 ca(){
-  if [ "$#" -gt 0 ]; then
-    cal "$@"
-  else
-    cal | sed -e "s/$(date +%e)/$(printf '\e[1;32m')$(date +%e)$(printf '\e[00m')/"
-  fi
+	if [ "$#" -gt 0 ]; then
+		cal "$@"
+	else
+		cal | sed -e "s/$(date +%e)/$(printf '\e[1;32m')$(date +%e)$(printf '\e[00m')/"
+	fi
 }
+stopwatch(){
+	now=`date +%s`
+	while true; do
+		days=$(( $(($(date +%s) - now)) / 86400 ))
+		printf "\e[4 q$days day(s) and $(date -u --date @$((`date +%s` - $now)) +%H:%M:%S)\r"
+		sleep 0.1
+	done
+}
+## Credits: https://github.com/slashbeast/conf-mgmt/blob/master/roles/home_files/files/DOTzshrc
+confirm() {
+		local answer
+		printf "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
+		read -q answer
+		echo
+		if [[ "${answer}" =~ ^[Yy]$ ]]; then
+				command "${@}"
+		else
+				return 1
+		fi
+}
+confirm_wrapper() {
+		local prefix=''
 
-## Manuals
+		if [ "$1" = '--root' ]; then
+				local as_root='true'
+				shift
+		fi
+		if [ "${as_root}" = 'true' ] && [ "${USER}" != 'root' ]; then
+				prefix="sudo"
+		fi
+		confirm ${prefix} "$@"
+}
+poweroff() { confirm_wrapper --root $0 "$@"; }
+reboot() { confirm_wrapper --root $0 "$@"; }
+hibernate() { confirm_wrapper --root $0 "$@"; }
+
+# Manuals
+## Use neovim instead of texinfo (thanks to https://github.com/HiPhish/info.vim)
 vinfo() {
-  nvim -R -M -c "Info $1 $2" -c 'silent only'
+	nvim -R -M -c "Info $1 $2" -c 'silent only'
 }
 # Find inside (with previews)
 fman() {
-  man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+	man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
 }
 
-## Security
-# simple gpg encryption
+# Security
+## simple gpg encryption
 encrypt() {
 	gpg --output $1.gpg --symmetric --cipher-algo AES256 $1
 }
@@ -661,7 +729,7 @@ genpasswd() {
 			d) chars+="[:digit:]" ;;
 			p) chars+="[:punct:]" ;;
 			s) chars+="[:graph:]" ;;
-			h) human_readable=1   ;;
+			h) human_readable=1		;;
 		esac
 	done
 	shift $((OPTIND - 1))
@@ -695,16 +763,6 @@ scck() {
 	done
 }
 
-# amazing
-stopwatch(){
-	now=`date +%s`
-	while true; do
-		days=$(( $(($(date +%s) - now)) / 86400 ))
-		printf "\e[4 q$days day(s) and $(date -u --date @$((`date +%s` - $now)) +%H:%M:%S)\r"
-		sleep 0.1
-	done
-}
-
 # Imagemagick
 ## Resize images
 75%() { mogrify -resize '75%X75%' "$@" ; }
@@ -714,13 +772,13 @@ stopwatch(){
 fzfimg() {
 	images="$(\ls | \grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|tiff\|ico\)\(_large\)*$")"
 	if [ -z "$1" ]; then
-		echo $images |	fzf --preview 'geometry=$(identify -format '%wx%h' {}); ratio="$(printf %.3f "$((10**3 *${geometry%%x*}/${geometry##*x}))e-3")"; if [ $ratio = "1.777" ]; then printf "%s\n%s\n\033[1;34m█\n" "$geometry" "$ratio"; else printf "%s\n%s\n\033[1;31m█\n" "$geometry" "$ratio"; fi  ' --multi --height=80%
+		echo $images |	fzf --preview 'geometry=$(identify -format '%wx%h' {}); ratio="$(printf %.3f "$((10**3 *${geometry%%x*}/${geometry##*x}))e-3")"; if [ $ratio = "1.777" ]; then printf "%s\n%s\n\033[1;34m█\n" "$geometry" "$ratio"; else printf "%s\n%s\n\033[1;31m█\n" "$geometry" "$ratio"; fi	' --multi --height=80%
 	else
 		echo $images |	fzf --preview 'geometry=$(identify -format '%wx%h' {}); ratio="$(printf %.3f "$((10**3 *${geometry%%x*}/${geometry##*x}))e-3")"; if [ $ratio = "1.777" ]; then printf "%s\n%s\n\033[1;34m█\n" "$geometry" "$ratio"; else printf "%s\n%s\n\033[1;31m█\n" "$geometry" "$ratio"; fi;  chafa --symbols=block -c 240 {}' --multi --height=80%
 	fi
 }
 
-## pdf utils
+# pdf utils
 img2pdf() {
 	while read file; do
 	filebase=$(basename $file | cut -d'.' -f1)
@@ -729,7 +787,7 @@ img2pdf() {
 }
 compresspdf() {
 	gs			\
-	-sDEVICE=pdfwrite 	\
+	-sDEVICE=pdfwrite		\
 	-dCompatibilityLevel=1.4\
 	-dPDFSETTINGS=/screen	\
 	-dNOPAUS		\
@@ -743,13 +801,12 @@ compresspdf() {
 	#	 ps2pdf LARGE.pdf SMALL.pdf
 }
 
-## Web Stuff
-# URL Shortener  | Usage : short <url>
+# Web Stuff
+## URL Shortener	| Usage : short <url>
 short() {
-  curl -F"shorten=$*" https://0x0.st
-
+	curl -F"shorten=$*" https://0x0.st
 }
-# Upload-file | Usage : share /path/to/file.foo (256 Mib limit)
+## Upload-file | Usage : share /path/to/file.foo (256 Mib limit)
 share() {
 	if [[ $# == 0 ]]; then
 		printf "Usage: share FILE(s)\n"
@@ -759,7 +816,7 @@ share() {
 		curl -sF"file=@${f}" https://0x0.st
 	done
 }
-# Readable
+## Readable
 readw3m() {
 	readable -q $@ |
 	w3mwrap -T text/html
@@ -768,7 +825,7 @@ readlynx() {
 	readable -q $@ |
 	lynx -editor=nvim -stdin -force_html
 }
-# A wget wrapper
+## A wget wrapper
 wgetext() {
 	if [ "$#" -lt 2 ]; then
 		cat <<- EOF
@@ -794,24 +851,13 @@ wgetext() {
 	done
 }
 
-## Games
+# Games
 gog() {
-	local sel=$(fd -t f start.sh ~/slsk/games/GOG | cut -d/ -f7 | ccze -A | head -n -1| fzf --ansi  | head --bytes -2)
+	local sel=$(fd -t f start.sh ~/slsk/games/GOG | cut -d/ -f7 | ccze -A | head -n -1| fzf --ansi	| head --bytes -2)
 	[ -n "$sel" ] && ~/slsk/games/GOG/"$sel"/start.sh
 }
 
-# Efficient way to select a line to print to stdout: https://unix.stackexchange.com/questions/29878/can-i-access-nth-line-number-of-standard-output
-line() {
-	awk "NR==$1{print;exit}"
-}
-## ccat: highlight with ca
-_exists highlight &&
-hcat() {
-	highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force "$1"
-}
-_exists kat &&
-ccat() { hcat "$1" | kat }
-
+# Locate wrappers
 llocate() {
 	local -a dbs=( -d /var/lib/mlocate/mlocate.db )
 
@@ -827,7 +873,6 @@ llocate() {
 
 	locate "${dbs[@]}" "$@"
 }
-
 updatedbmnt() {
 	# usage: updatedbmnt <mountpoint>
 	# http://askubuntu.com/questions/460535/how-do-i-tell-locate-to-keep-the-index-of-an-external-hdd
@@ -838,53 +883,4 @@ updatedbmnt() {
 	mkdir -p "$db_file:A:h"
 	updatedb -l 0 -o "$db_file" -U "$1"
 }
-
-# simple wrapper to format files for use with `tt`
-ttconv() {
-	for f in $@; do
-		name="$(basename $f)"
-		iconv -f utf-8 -t ascii//translit $f | sed 's/--/-/g' | sed '/^$/d' | sed 's/^[ \t]*//' | sed 's/\(^.\{1,80\}\).*/\1/' > $name.tt
-	done
-}
-tt() {
-	export ESCDELAY=25
-	/usr/local/bin/tt $@
-	unset ESCDELAY
-}
-
-confirm() {
-    local answer
-    printf "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
-    read -q answer
-    echo
-    if [[ "${answer}" =~ ^[Yy]$ ]]; then
-        command "${@}"
-    else
-        return 1
-    fi
-}
-
-confirm_wrapper() {
-    if [ "$1" = '--root' ]; then
-        local as_root='true'
-        shift
-    fi
-
-    local prefix=''
-
-    if [ "${as_root}" = 'true' ] && [ "${USER}" != 'root' ]; then
-        prefix="sudo"
-    fi
-    confirm ${prefix} "$@"
-}
-
-# ListProcesses - Update the list of processes by pressing CTRL-R
-lps() {
-	ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \
-		--header-lines=1 --layout=reverse
-}
-
-# stolen with the above from https://github.com/slashbeast/conf-mgmt/blob/master/roles/home_files/files/DOTzshrc
-poweroff() { confirm_wrapper --root $0 "$@"; }
-reboot() { confirm_wrapper --root $0 "$@"; }
-hibernate() { confirm_wrapper --root $0 "$@"; }
+# vim: ft=zsh
