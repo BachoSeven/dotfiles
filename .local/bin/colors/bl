@@ -3,6 +3,8 @@
 # Wrapper to set a solid color as background
 
 # Cleanup
-killall -q xrootgif xwinwrap
+killall -q xrootgif xwinwrap &
 
-hsetroot -solid \#${1:-151515}
+# Set background
+c=${1:-252525}
+hsetroot -solid \#$c &
