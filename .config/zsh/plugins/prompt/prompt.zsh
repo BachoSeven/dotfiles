@@ -28,8 +28,9 @@
   fi
 	PS2='%B%F{magenta}•%b%f '
 	setopt transientrprompt	# self-explanatory
-	if [[ -n $SSH_CONNECTION ]]; then
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 		RPS1=' %B%F{red}[%M]%f%b' # Show hostname
 	fi
+	RPS1+='%(?..%B%F{red}[%F{gray}%?%F{red}]%b )'
 	RPS1+='${vim_mode}'
 	RPS2=$RPS1
