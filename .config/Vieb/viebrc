@@ -138,7 +138,7 @@ nmap y <pointer.start><pointer.startVisualSelect><pointer.copyAndStop>
 nmap yy <action.pageToClipboard>
 " :nohlsearch
 nmap <Space><Space> <action.emptySearch>
-" vimium-like duplicate tab and searching through opened tabs
+" vimium-like duplicate tab and searching through opened tabs (TODO)
 unmap T
 nmap yt <action.openNewTabWithCurrentUrl><CR>
 
