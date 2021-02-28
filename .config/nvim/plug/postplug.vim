@@ -1,6 +1,6 @@
 " Startify
 	fu! s:center(lines) abort
-		let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
+		let longest_line	 = max(map(copy(a:lines), 'strwidth(v:val)'))
 		let centered_lines = map(copy(a:lines),
 					\ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
 		retu centered_lines
@@ -26,9 +26,9 @@
 		\ { 'o': ['Fuzzy Finder', 'FZF']},
 		\ ]
 	let g:startify_lists = [
-		\ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-		\ { 'type': 'files',     'header': ['   MRU']            },
-		\ { 'type': 'commands',  'header': ['   Commands']       },
+		\ { 'type': 'dir',			 'header': ['		MRU '. getcwd()] },
+		\ { 'type': 'files',		 'header': ['		MRU']						 },
+		\ { 'type': 'commands',  'header': ['		Commands']			 },
 		\ ]
 
 " Lf
@@ -57,12 +57,12 @@
 
 " Change Colorscheme using fzf
 	nn <silent> <leader>sc :cal fzf#run({
-	\   'source':
-	\     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
-	\         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
-	\   'sink':    'colo',
-	\   'options': '+m',
-	\   'left':    30
+	\		'source':
+	\			map(split(globpath(&rtp, "colors/*.vim"), "\n"),
+	\					"substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
+	\		'sink':		 'colo',
+	\		'options': '+m',
+	\		'left':		 30
 	\ })<CR>
 	" Change buffers with fzf
 	nn <leader><Enter> :Buffers<CR>
@@ -104,10 +104,10 @@
 		\ 'continuous' : 1,
 		\ 'executable' : 'latexmk',
 		\ 'options' : [
-		\   '-verbose',
-		\   '-file-line-error',
-		\   '-synctex=1',
-		\   '-interaction=nonstopmode',
+		\		'-verbose',
+		\		'-file-line-error',
+		\		'-synctex=1',
+		\		'-interaction=nonstopmode',
 		\ ],
 		\}
 	" Compile on initialization, cleanup on quit
@@ -115,13 +115,13 @@
 		au!
 		au User VimtexEventInitPost call vimtex#compiler#compile()
 	aug END
-  " Close viewers when VimTeX buffers are closed
-  fu! CloseViewers()
-    " Close viewers on quit
-    if executable('xdotool') && exists('b:vimtex')
-        \ && exists('b:vimtex.viewer') && b:vimtex.viewer.xwin_id > 0
-      call system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
-    endif
+	" Close viewers when VimTeX buffers are closed
+	fu! CloseViewers()
+		" Close viewers on quit
+		if executable('xdotool') && exists('b:vimtex')
+				\ && exists('b:vimtex.viewer') && b:vimtex.viewer.xwin_id > 0
+			call system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
+		endif
 	endfu
 	aug vimtex_event_2
 		au!
@@ -143,7 +143,7 @@
 	let g:completion_enable_auto_hover = 0
 	let g:completion_matching_smart_case = 1
 "" Use <Tab> and <S-Tab> to navigate through popup menu
-	ino <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+	ino <expr> <Tab>	 pumvisible() ? "\<C-n>" : "\<Tab>"
 	ino <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "" Set completeopt to have a better completion experience
 	se completeopt=menuone,noinsert,noselect
@@ -165,14 +165,14 @@
 	let g:lightline = {
 		\ 'colorscheme': 'gruvbox_material',
 		\ 'active': {
-		\   'left': [ [ 'mode', 'paste' ],
-		\             [ 'filename' ] ],
+		\		'left': [ [ 'mode', 'paste' ],
+		\							[ 'filename' ] ],
 		\		'right': [ [ 'percent', 'lineinfo' ],
-		\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+		\						 [ 'fileformat', 'fileencoding', 'filetype' ] ]
 		\ },
 		\ 'component_function': {
-		\   'filename': 'LlName',
-		\   'fileformat': 'LlFormat',
+		\		'filename': 'LlName',
+		\		'fileformat': 'LlFormat',
 		\		'filetype': 'LlType',
 		\		'fileencoding': 'LlEncoding',
 		\	},

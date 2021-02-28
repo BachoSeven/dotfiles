@@ -33,7 +33,7 @@ prompt() { #__ cool interactive stuff __#
 		player="$(printf "ncspot\nspotify\n" | dmenu -p "Would you like to open:" -f -i -c -l 2 -bw 7 )"
 		if [ -n "$player" ]; then
 			if [ "$player" = "spotify" ]; then
-				gtk-launch spotify
+				spotify
 				sleep 3
 			elif [ "$player" = "ncspot" ]; then
 				if findterm; then
@@ -124,19 +124,19 @@ fi
 
 ## TODO: Metadata to display in bar:
 	#  dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player"	      \
-	 # /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get		      \
-	 # string:"org.mpris.MediaPlayer2.Player" string:'Metadata'		      \
-	 # | grep -Ev "^method"                           `# Ignore the first line.`   \
-	 # | grep -Eo '("(.*)")|(\b[0-9][a-zA-Z0-9.]*\b)' `# Filter interesting fiels.`\
-	 # | sed -E '2~2 a|'                              `# Mark odd fields.`         \
-	 # | tr -d '\n'                                   `# Remove all newlines.`     \
-	 # | sed -E 's/\|/\n/g'                           `# Restore newlines.`        \
-	 # | sed -E 's/(xesam:)|(mpris:)//'               `# Remove ns prefixes.`      \
-	 # | sed -E 's/^"//'                              `# Strip leading...`         \
-	 # | sed -E 's/"$//'                              `# ...and trailing quotes.`  \
-	 # | sed -E 's/"+/|/'                             `# Regard "" as seperator.`  \
-	 # | sed -E 's/ +/ /g'                            `# Merge consecutive spaces.`\
-	 # [...] take what you need.
+	# /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get		      \
+	# string:"org.mpris.MediaPlayer2.Player" string:'Metadata'		      \
+	# | grep -Ev "^method"                           `# Ignore the first line.`   \
+	# | grep -Eo '("(.*)")|(\b[0-9][a-zA-Z0-9.]*\b)' `# Filter interesting fiels.`\
+	# | sed -E '2~2 a|'                              `# Mark odd fields.`         \
+	# | tr -d '\n'                                   `# Remove all newlines.`     \
+	# | sed -E 's/\|/\n/g'                           `# Restore newlines.`        \
+	# | sed -E 's/(xesam:)|(mpris:)//'               `# Remove ns prefixes.`      \
+	# | sed -E 's/^"//'                              `# Strip leading...`         \
+	# | sed -E 's/"$//'                              `# ...and trailing quotes.`  \
+	# | sed -E 's/"+/|/'                             `# Regard "" as seperator.`  \
+	# | sed -E 's/ +/ /g'                            `# Merge consecutive spaces.`\
+	# [...] take what you need.
 
 	# Also:
 	# dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player"	/org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:"org.mpris.MediaPlayer2.Player" string:'Metadata' |
