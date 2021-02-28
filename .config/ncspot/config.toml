@@ -1,3 +1,4 @@
+# vim: ft=cfg
 # Basic options
 default_keybindings = false
 use_nerdfont = true
@@ -119,7 +120,7 @@ gapless = true
 [theme]
 background = "default"
 primary = "#32302f"
-secondary = "#458588"
+secondary = "light black"
 title = "#8ec07c"
 playing = "#689d6a"
 playing_bg = "#383838"
@@ -128,29 +129,12 @@ highlight = "#d5c4a1"
 highlight_bg = "#383838"
 error = "#d5c4a1"
 error_bg = "#fbf1c7"
-statusbar_progress = "#b16286"
+statusbar_progress = "#458588"
 statusbar_bg = "#282828"
 statusbar = "#98971a"
 cmdline = "#d5c4a1"
 cmdline_bg = "#383838"
 search_match = "#fabd2f"
-
-# [theme]
-# background = "#282828"
-# primary = "light white"
-# secondary = "light black"
-# title = "cyan"
-# playing = "cyan"
-# playing_bg = "black"
-# highlight = "light white"
-# highlight_bg = "#484848"
-# error = "light white"
-# error_bg = "red"
-# statusbar = "cyan"
-# statusbar_progress = "black"
-# statusbar_bg = "#484848"
-# cmdline = "light white"
-# cmdline_bg = "black"
 
 ## Base16 solarized dark, originally form https://github.com/gidsi/base16-ncspot
 # [theme]
@@ -171,7 +155,7 @@ search_match = "#fabd2f"
 # cmdline = "#93a1a1"
 # cmdline_bg = "#002b36"
 
-# # Spotify
+## Spotify
 # [theme]
 # background = "black"
 # primary = "light white"
@@ -187,5 +171,22 @@ search_match = "#fabd2f"
 # statusbar = "black"
 # statusbar_progress = "green"
 # statusbar_bg = "green"
+# cmdline = "light white"
+# cmdline_bg = "black"
+
+# [theme]
+# background = "#282828"
+# primary = "light white"
+# secondary = "light black"
+# title = "cyan"
+# playing = "cyan"
+# playing_bg = "black"
+# highlight = "light white"
+# highlight_bg = "#484848"
+# error = "light white"
+# error_bg = "red"
+# statusbar = "cyan"
+# statusbar_progress = "black"
+# statusbar_bg = "#484848"
 # cmdline = "light white"
 # cmdline_bg = "black"
