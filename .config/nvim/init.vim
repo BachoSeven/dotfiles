@@ -44,7 +44,7 @@
 	se listchars+=nbsp:░
 	se fcs=vert:▒,eob:\ " " Remove annoying tilde characters and set split style
 	se autoread " Automatically re-read file if a change was detected outside of vim
-	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down
+	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down.
 	se scrolloff=11
 	se mouse=nv
 	se diffopt+=vertical " vertical diffs

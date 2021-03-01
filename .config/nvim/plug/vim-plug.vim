@@ -45,7 +45,6 @@ cal plug#begin(g:plugin_location)
 	Plug 'jamessan/vim-gnupg' " Automatically decrypt on buffer enter
 	Plug 'mhinz/vim-startify'
 	Plug 'jdhao/better-escape.vim'
-	Plug '907th/vim-auto-save' " toggle with :AutoSaveToggle
 
 " Markdown
 "" Live Preview
