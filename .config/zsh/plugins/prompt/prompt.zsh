@@ -24,13 +24,13 @@
   if [ "$TERM" = "linux" ]; then # TTY prompt
     PS1="%B$colorbg{blue}$mytime$uncolorbg %F{green}[$username]%f %b%F{magenta}$curdir%f $rootorwhat "
   else
-    PS1=$'%B%F{blue} %F{blue}$schars[333]$schars[262]$schars[261]$schars[260]%(!.%F{red}.%K{black}%F{yellow})%n%F{green}@%F{blue}%m$schars[260]$schars[261]$schars[262]$schars[333]%k %F{magenta}%~\n%(?.%F{cyan}.%F{red}) %b%f'
+    PS1=$'%B%F{blue} %F{blue}$schars[333]$schars[262]$schars[261]$schars[260]%(!.%F{red}.%F{yellow})%n%F{green}@%F{blue}%m$schars[260]$schars[261]$schars[262]$schars[333] %F{magenta}%~\n%(?.%F{cyan}.%F{red}) %b%f'
   fi
 	PS2='%B%F{magenta}•%b%f '
 	setopt transientrprompt	# self-explanatory
+	RPS1='%(?..%B%F{red}[%F{gray}%?%F{red}]%b )'
 	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-		RPS1=' %B%F{red}[%M]%f%b' # Show hostname
+		RPS1+='%B%F{9}[%F{green}%M%F{9}]%f%b ' # Show hostname
 	fi
-	RPS1+='%(?..%B%F{red}[%F{gray}%?%F{red}]%b )'
 	RPS1+='${vim_mode}'
 	RPS2=$RPS1
