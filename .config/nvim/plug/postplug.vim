@@ -67,9 +67,6 @@
 	" Change buffers with fzf
 	nn <leader><Enter> :Buffers<CR>
 
-" Autosave
-	let g:auto_save = 0 " off by default
-
 " Vimtex Configuration
 	let g:matchup_override_vimtex = 1
 	let g:vimtex_matchparen_deferred = 1

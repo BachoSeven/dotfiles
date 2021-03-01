@@ -63,7 +63,7 @@ now_playing_suffix = $/b
 ## format to specify a custom sorting format.  Available values for
 ## browser_sort_mode are "type", "name", "mtime", "format" and "none".
 ##
-browser_sort_mode = type
+browser_sort_mode = mtime
 browser_sort_format = {%l} {%a - }{%t}|{%f}
 ##### columns settings #####
 ##

@@ -12,12 +12,6 @@ aug init-md
     \ formatoptions+=croq
 aug END
 
-" autosave
-aug ft-tex+md
-  au!
-	au FileType tex,md let b:auto_save = 1
-aug END
-
 " Enable completion-nvim (for snippets)
 aug ft-snipcomp
 	au!
