@@ -6,7 +6,6 @@ endglobal
 snippet oldtemplate "Basic template" b
 \documentclass[a4paper]{article}
 
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[dutch]{babel}
@@ -46,6 +45,8 @@ snippet temp "Basic template" b
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\Z}{\mathbb{Z}}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
