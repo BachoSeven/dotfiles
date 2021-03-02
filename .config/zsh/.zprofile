@@ -45,7 +45,6 @@
 	export LYNX_CFG="${XDG_CONFIG_HOME:-$HOME/.config}/lynx/lynx.cfg"
 	export LYNX_LSS="${XDG_CONFIG_HOME:-$HOME/.config}/lynx/lynx.lss"
 	export OCTAVE_HISTFILE="$XDG_CACHE_HOME/octave-hsts"
-	export OCTAVE_SITE_INITFILE="${XDG_CONFIG_HOME:-$HOME/.config}/octave/octaverc"
 	export TEXMFHOME=$XDG_DATA_HOME/texmf # Texlive stuff
 	export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 	export TEXMFCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/texlive/texmf-config"
