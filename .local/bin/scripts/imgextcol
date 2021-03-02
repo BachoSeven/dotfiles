@@ -1,17 +1,15 @@
 #!/bin/sh
 
 if [ "$(file --extension -b "$1")" = "png" ]; then
-	colors -p < "$1" \
-	| sed "s/^/<span color='/;s/$/'>███████████████████████████████████████<\/span>/" \
-	> /tmp/gifcols
+	colors -p < "$1"
 else
 	convert "$1" +dither -colors 5 -unique-colors txt: \
 	| tail -n +2 \
-	| awk '{print substr($3,1)}' \
+	| awk '{print substr($3,1)}'
+fi \
 	| sort \
 	| sed "s/^/<span color='/;s/$/'>███████████████████████████████████████<\/span>/" \
 	> /tmp/gifcols
-fi
 
 roficolsel /tmp/gifcols
 
