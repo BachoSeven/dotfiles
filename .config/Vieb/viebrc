@@ -43,6 +43,7 @@ set devtoolsposition=vsplit
 set guihidetimeout=3000
 set guinavbar=onupdate
 set guitabbar=onupdate
+set tabclosefocusright
 
 " Insert mode edit
 set vimcommand="st -e nvim"
