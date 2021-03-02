@@ -1,6 +1,8 @@
 source /usr/share/octave/site/m/startup/octaverc;
 pkg prefix ~/.local/share/octave/packages ~/.local/share/octave/packages;
 pkg local_list ~/.local/share/octave/octave_packages;
+# Prevent octave-workspace from being created on "crash"
+crash_dumps_octave_core(false);
 
 edit mode sync
 edit home .
