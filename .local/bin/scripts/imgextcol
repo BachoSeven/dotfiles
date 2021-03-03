@@ -9,8 +9,8 @@ else
 fi \
 	| sort \
 	| sed "s/^/<span color='/;s/$/'>███████████████████████████████████████<\/span>/" \
-	> /tmp/gifcols
+	> /tmp/imgcols
 
-roficolsel /tmp/gifcols
+roficolsel /tmp/imgcols
 
 # | dmenu -p "Select a color" # Pipe into this instead of the sed+rofi commands to remove the color preview functionality
