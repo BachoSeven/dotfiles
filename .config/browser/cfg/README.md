@@ -49,7 +49,7 @@
 ## Plugins
 ~~PACKAGED: `chromium-keepassxc-browser stylus-git chromium-ublock-origin chromium-extension-https-everywhere`~~
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
-> Install sci-hub plugin manually (it's in this repo)
+> Install sci-hub plugin manually (crx is in this repo)
 
 ### Utils
 - custom ntp extension
@@ -122,7 +122,7 @@ pip: https://pypi.org/search/?q=%s PyPI
 r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
-sc:	https://libgen.bban.top/s/%s scihub
+sc:	https://sci-hub.se/s/%s scihub
 tldr:	https://tldr.ostera.io/%s tldr
 tp:	https://torrentproject.cc/?t=%s torrentproject
 tt: javascript:location='https://translate.google.com/translate?sl=auto&tl=%s&u='%20+%20encodeURIComponent(document.URL); tt
