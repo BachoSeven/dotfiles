@@ -8,7 +8,7 @@ aug END
 " markdown
 aug init-md
   au! BufNewFile,BufFilePre,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn,*.mdwn  set ft=markdown
-    \ expandtab shiftwidth=4 tabstop=4 softtabstop=4
+    \ expandtab shiftwidth=2 tabstop=2 softtabstop=2
     \ formatoptions+=croq
 aug END
 
