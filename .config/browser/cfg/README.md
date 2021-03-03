@@ -54,10 +54,10 @@
 ### Utils
 - custom ntp extension
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
-  - Append
-    /* Temporary fix, suggested here: https://github.com/philc/vimium/issues/3732 */
-    .vimiumUIComponentVisible { color-scheme: light; }
-  to the `vimium.css` file
+	- Append
+		/* Temporary fix, suggested here: https://github.com/philc/vimium/issues/3732 */
+		.vimiumUIComponentVisible { color-scheme: light; }
+	to the `vimium.css` file
 - vimium_helper
 - stylus(beta)[backup,alt+shift+s]
 - Redirector
@@ -82,12 +82,12 @@ aur:	https://aur.archlinux.org/packages.php?K=%s AUR
 aw:	https://wiki.archlinux.org/index.php/Special:Search/%s archwiki
 ax:	https://arxiv.org/search?query=%s&searchtype=all&source=header arxiv
 bg:	https://it.banggood.com/search/%s.html bangood
-bit:    https://btcache.me/torrent/%s bittorcache
-btd:    https://btdig.com/search?q=%s bitdig
-ca: https://it.camelcamelcamel.com/search?sq=%s camelcamelcamel
+bit:		https://btcache.me/torrent/%s bittorcache
+btd:		https://btdig.com/search?q=%s bitdig
+ca:	https://it.camelcamelcamel.com/search?sq=%s camelcamelcamel
 cd:	javascript:location='https://www.google.com/search?num=100&q=site:'%20+%20escape(location.hostname)%20+%20'%20%S'%20;%20void%200 cd
-ct: https://tube.cadence.moe/search?q=%s cloudtube
-d:  https://duckduckgo.com/?q=%s DuckDuckGo
+ct:	https://tube.cadence.moe/search?q=%s cloudtube
+d:	https://duckduckgo.com/?q=%s DuckDuckGo
 dw:	https://www.merriam-webster.com/dictionary/%s Merriam-Webster
 eb:	https://www.ebay.com/sch/i.html?_nkw=%s ebay
 fb:	https://www.facebook.com/search/top/?q=%s facebook
@@ -100,12 +100,12 @@ gl:	https://gitlab.com/search?search=%s GitLab
 gm:	https://www.google.com/maps?q=%s Google maps
 go:	https://www15.gogoanime.io//search.html?keyword=%s gogoanime
 gt:	https://translate.google.com/?source=osdd#auto|auto|%s gtranslate
-hn: https://hn.algolia.com/?dateRange=all&page=0&prefix=true&query=%s&sort=byPopularity&type=story
+hn:	https://hn.algolia.com/?dateRange=all&page=0&prefix=true&query=%s&sort=byPopularity&type=story
 imslp:	https://www.google.com/search?q=site:imslp.org+%s imslp
 j:	http://localhost:9117/UI/Dashboard#search=%s Jackett
 ki:	https://kickass.cm/usearch/?q=%s kickass
 ka:	https://kissanime.ac/Search/?s=%s kissanime
-l: http://93.174.95.27/search.php?req=%s libgen
+l:	http://93.174.95.27/search.php?req=%s libgen
 lk:	https://www.google.com/search?q=%s&btnI I'm feeling lucky...
 lp:	https://launchpad.net/+search?field.text=%s launchpad
 lt:	https://www.limetorrents.cc/search/all/%s/ limetorrents
@@ -113,19 +113,19 @@ mal:	https://myanimelist.net/anime.php?q=%s myanimelist
 mo:	https://mathoverflow.net/search?q=%s mathoverflow
 ms:	https://math.stackexchange.com/search?q=%s mathstackexchange
 mw:	https://mathworld.wolfram.com/search/?query=%s mathworld
-nc: https://ncatlab.org/nlab/search?query=%s ncatlab
-nh: https://nhentai.net/search/?q=%s nh
+nc:	https://ncatlab.org/nlab/search?query=%s ncatlab
+nh:	https://nhentai.net/search/?q=%s nh
 oeis:	https://oeis.org/search?q=%s oeis
 om:	https://www.openstreetmap.org/search?query=%s openstreetmap
-os: https://www.opensubtitles.com/en/it/search-all/q-%s/hearing_impaired-include/machine_translated-/trusted_sources-
-pip: https://pypi.org/search/?q=%s PyPI
+os:	https://www.opensubtitles.com/en/it/search-all/q-%s/hearing_impaired-include/machine_translated-/trusted_sources-
+pip:	https://pypi.org/search/?q=%s PyPI
 r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
 rt:	https://rutracker.net/forum/tracker.php?nm=%s rutracker
-sc:	https://sci-hub.se/s/%s scihub
+sc:	https://scholar.google.com/scholar?q=%s scihub
 tldr:	https://tldr.ostera.io/%s tldr
 tp:	https://torrentproject.cc/?t=%s torrentproject
-tt: javascript:location='https://translate.google.com/translate?sl=auto&tl=%s&u='%20+%20encodeURIComponent(document.URL); tt
+tt:	javascript:location='https://translate.google.com/translate?sl=auto&tl=%s&u='%20+%20encodeURIComponent(document.URL); tt
 ud:	https://www.urbandictionary.com/define.php?term=%s UrbanDictionary
 w:	https://wikipedia.org/w/index.php?search=%s Wikipedia
 wa:	https://www.wolframalpha.com/input/?i=%s Wolfram|Alpha
