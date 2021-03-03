@@ -113,6 +113,8 @@
 	export QT_XFT=true
 # Consistent theming for Qt5
 	export QT_QPA_PLATFORMTHEME=qt5ct
+# Vieb
+	export VIEB_WINDOW_FRAME=true
 # LESS (and man) colors
 	export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"     # begin blinking
 	export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"     # begin bold
@@ -221,8 +223,6 @@ fi
 	export WA_FG="1d2021"
 	export WA_FG="ebdbb2"
 
-# Bat
-	export BAT_THEME="gruvbox-dark"
 # Stardict/sdcv dictionaries
 	export SDCV_PAGER="sed 's/\ \ \([1-9]\)/\n\n◆ \1/g' |less -FX"
 # Kunst
