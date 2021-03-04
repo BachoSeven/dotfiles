@@ -26,82 +26,6 @@ visualizer_spectrum_hz_max = 20000
 # visualizer_look = "▌▌"
 # visualizer_look = "▒░"
 
-song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3%l$9}
-song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
-
-song_library_format = {%n - }{%t}|{%f}
-
-alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
-
-alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
-
-current_item_prefix = $(cyan)$r$b
-
-current_item_suffix = $/r$(end)$/b
-
-current_item_inactive_column_prefix = $(magenta)$r
-
-current_item_inactive_column_suffix = $/r$(end)
-
-now_playing_prefix = "$b"
-now_playing_suffix = $/b
-
-#browser_playlist_prefix = "$2playlist$9 "
-
-#selected_item_prefix = $6
-
-#selected_item_suffix = $9
-
-#modified_item_prefix = $3> $9
-##
-## Note: attributes are not supported for the following variables.
-##
-#song_window_title_format = {%a - }{%t}|{%f}
-##
-## Note: Below variables are used for sorting songs in browser.  The sort mode
-## determines how songs are sorted, and can be used in combination with a sort
-## format to specify a custom sorting format.  Available values for
-## browser_sort_mode are "type", "name", "mtime", "format" and "none".
-##
-browser_sort_mode = mtime
-browser_sort_format = {%l} {%a - }{%t}|{%f}
-##### columns settings #####
-##
-## syntax of song columns list format is "column column etc."
-##
-## - syntax for each column is:
-##
-## (width of the column)[color of the column]{displayed tag}
-##
-## Note: Width is by default in %, if you want a column to have fixed size, add
-## 'f' after the value, e.g. (10)[white]{a} will be the column that take 10% of
-## screen (so the real width will depend on actual screen size), whereas
-## (10f)[white]{a} will take 10 terminal cells, no matter how wide the screen
-## is.
-##
-## - color is optional (if you want the default one, leave the field empty).
-##
-## Note: You can give a column additional attributes by putting appropriate
-## character after displayed tag character. Available attributes are:
-##
-## - r - column will be right aligned
-## - E - if tag is empty, empty tag marker won't be displayed
-##
-## You can also:
-##
-## - give a column custom name by putting it after attributes, separated with
-##   character ':', e.g. {lr:Length} gives you right aligned column of lengths
-##   named "Length".
-##
-## - define sequence of tags, that have to be displayed in case predecessor is
-##   empty in a way similar to the one in classic song format, i.e. using '|'
-##   character, e.g. {a|c|p:Owner} creates column named "Owner" that tries to
-##   display artist tag and then composer and performer if previous ones are not
-##   available.
-##
-
-song_columns_list_format = (7f)[magenta]{l} (25)[cyan]{a} (50)[white]{t|f:Title} (20)[red]{b}
-
 ##### various settings #####
 
 ##
@@ -143,6 +67,7 @@ centered_cursor = yes
 # progressbar_look = "─- "
 # progressbar_look = "▒▒░"
 progressbar_look = "▒▓░"
+# progressbar_look = "▃▃▃" # Very minimalistic
 # progressbar_look = "┅┅┄"
 # progressbar_look = "─⊙┄"
 # progressbar_look = "─➞─"
@@ -157,14 +82,12 @@ progressbar_look = "▒▓░"
 # progressbar_look = "→→"
 ## Available values: database, playlist.
 #default_place_to_search_in = database
-user_interface = alternative
 #data_fetching_delay = yes
 ## Available values: artist, album_artist, date, genre, composer, performer.
 media_library_primary_tag = album_artist
 media_library_sort_by_mtime = yes
 ## Available values: wrapped, normal.
 default_find_mode = wrapped
-connected_message_on_startup = yes
 lyrics_fetchers = azlyrics, genius, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
 follow_now_playing_lyrics = yes
 # fetch_lyrics_for_current_song_in_background = yes
@@ -198,13 +121,13 @@ startup_slave_screen_focus = no
 ## Default width of locked screen (in %).  Acceptable values are from 20 to 80.
 ##
 
-locked_screen_width_part = 40
+locked_screen_width_part = 44
 
-#ask_for_locked_screen_width_part = yes
+ask_for_locked_screen_width_part = no
 
 #jump_to_now_playing_song_at_start = yes
 
-#ask_before_clearing_playlists = yes
+ask_before_clearing_playlists = no
 clock_display_seconds = no
 display_volume_level = yes
 display_bitrate = no
@@ -212,7 +135,7 @@ display_remaining_time = no
 
 ## Available values: none, basic, extended, perl.
 ##
-#regular_expressions = perl
+regular_expressions = basic
 
 ## Note: if below is enabled, ncmpcpp will ignore leading "The" word while
 ## sorting items in browser, tags in media library, etc.
@@ -226,9 +149,8 @@ ignore_leading_the = yes
 #block_search_constraints_change_if_items_found = yes
 mouse_support = yes
 mouse_list_scroll_whole_page = no
-lines_scrolled = 5
+lines_scrolled = 1
 empty_tag_marker=" -- ‼ -- "
-enable_window_title = no
 search_engine_default_search_mode = 2
 external_editor = nvim
 use_console_editor = yes
@@ -258,18 +180,96 @@ use_console_editor = yes
 ## progressbar_elapsed_color, player_state_color, statusbar_time_color,
 ## alternative_ui_separator_color.
 colors_enabled = yes
-empty_tag_color = magenta
-header_window_color = cyan
-volume_color = "red:b"
-state_line_color = "yellow"
+empty_tag_color = 8_1
+header_window_color = magenta
+volume_color = red:b
+state_line_color = yellow
 state_flags_color = default:b
 main_window_color = white
-progressbar_color = "black"
+progressbar_color = black
 progressbar_elapsed_color = blue:b
-statusbar_color = "cyan"
+statusbar_color = magenta
 statusbar_time_color = cyan:b
 player_state_color = default
-alternative_ui_separator_color = green:b
+alternative_ui_separator_color = blue
+
+# Ui elements
+header_visibility = "no" # For classic interface
+user_interface = classic
+enable_window_title = no
+connected_message_on_startup = no
+song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3%l$9}
+song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
+song_library_format = {%n - }{%t}|{%f}
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
+current_item_inactive_column_prefix = $(magenta)$r
+current_item_inactive_column_suffix = $/r$(end)
+
+# now_playing_prefix = "$b"
+# now_playing_suffix = $/b
+# current_item_prefix = $(cyan)$r$b
+# current_item_suffix = $/r$(end)$/b
+now_playing_prefix = "$b$8      "
+now_playing_suffix = "$/b$8 $b $3$8 $/b"
+current_item_prefix = "$/b$b $7 $8 $/b "
+current_item_suffix = "      $8"
+##### columns settings #####
+##
+## syntax of song columns list format is "column column etc."
+##
+## - syntax for each column is:
+##
+## (width of the column)[color of the column]{displayed tag}
+##
+## Note: Width is by default in %, if you want a column to have fixed size, add
+## 'f' after the value, e.g. (10)[white]{a} will be the column that take 10% of
+## screen (so the real width will depend on actual screen size), whereas
+## (10f)[white]{a} will take 10 terminal cells, no matter how wide the screen
+## is.
+##
+## - color is optional (if you want the default one, leave the field empty).
+##
+## Note: You can give a column additional attributes by putting appropriate
+## character after displayed tag character. Available attributes are:
+##
+## - r - column will be right aligned
+## - E - if tag is empty, empty tag marker won't be displayed
+##
+## You can also:
+##
+## - give a column custom name by putting it after attributes, separated with
+##   character ':', e.g. {lr:Length} gives you right aligned column of lengths
+##   named "Length".
+##
+## - define sequence of tags, that have to be displayed in case predecessor is
+##   empty in a way similar to the one in classic song format, i.e. using '|'
+##   character, e.g. {a|c|p:Owner} creates column named "Owner" that tries to
+##   display artist tag and then composer and performer if previous ones are not
+##   available.
+##
+song_columns_list_format = (7f)[magenta]{l} (25)[cyan]{a} (50)[white]{t|f:Title} (20)[red]{b}
+# song_columns_list_format = "(50)[]{t|fr:Title} (45)[blue]{a}"
+
+#browser_playlist_prefix = "$2playlist$9 "
+
+#selected_item_prefix = $6
+
+#selected_item_suffix = $9
+
+#modified_item_prefix = $3> $9
+##
+## Note: attributes are not supported for the following variables.
+##
+#song_window_title_format = {%a - }{%t}|{%f}
+##
+## Note: Below variables are used for sorting songs in browser.  The sort mode
+## determines how songs are sorted, and can be used in combination with a sort
+## format to specify a custom sorting format.  Available values for
+## browser_sort_mode are "type", "name", "mtime", "format" and "none".
+##
+browser_sort_mode = mtime
+browser_sort_format = {%l} {%a - }{%t}|{%f}
 
 # █▓▒░ cheat sheet
 # %l - length

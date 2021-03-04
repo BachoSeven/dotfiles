@@ -3,7 +3,7 @@ class General:
     # of quitting the application.
     # A click on the tray icon reveals the window, middle click fully quits it
     # and right click opens a menu with these options.
-    close_to_tray: bool = True
+    close_to_tray: bool = False
 
     # Show rooms, members and messages in way that takes less vertical space.
     compact: bool = True
@@ -119,7 +119,7 @@ class RoomList:
         # value is a list of room ID to always keep on top.
         # A room's ID can be copied by right clicking on it in the room list.
 
-        "@account:example.org": List[str] = ["!roomID:a.org", "!other:b.org"]
+        "@moltylollipop:matrix.org": List[str] = ["!roomID:a.org", "!other:b.org"]
 
 class Chat:
     # Center the chat header (room avatar, name and topic) even when sidepanes
