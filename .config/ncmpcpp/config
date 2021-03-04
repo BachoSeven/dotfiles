@@ -41,7 +41,7 @@ seek_time = 2
 volume_change_step = 5
 autocenter_mode = yes
 centered_cursor = yes
-data_fetching_delay = no # useful for remote servers
+data_fetching_delay = "no" # useful for remote servers
 
 # Display mode
 playlist_display_mode = columns
@@ -93,8 +93,8 @@ store_lyrics_in_song_dir = no
 generate_win32_compatible_filenames = no
 allow_for_physical_item_deletion = no
 
-#space_add_mode = add_remove
-#show_hidden_files_in_local_browser = no
+space_add_mode = add_remove
+show_hidden_files_in_local_browser = no
 
 ## How shall screen switcher work?
 ##
@@ -115,15 +115,11 @@ startup_screen = playlist
 startup_slave_screen =
 startup_slave_screen_focus = no
 
-##
 ## Default width of locked screen (in %).  Acceptable values are from 20 to 80.
-##
-
 locked_screen_width_part = 44
-
 ask_for_locked_screen_width_part = no
 
-#jump_to_now_playing_song_at_start = yes
+jump_to_now_playing_song_at_start = yes
 
 ask_before_clearing_playlists = no
 clock_display_seconds = no
@@ -132,19 +128,15 @@ display_bitrate = no
 display_remaining_time = no
 
 ## Available values: none, basic, extended, perl.
-##
 regular_expressions = basic
 
-## Note: if below is enabled, ncmpcpp will ignore leading "The" word while
-## sorting items in browser, tags in media library, etc.
+## Note: if below is enabled, ncmpcpp will ignore leading "The" word while sorting items in browser, tags in media library, etc.
 ignore_leading_the = yes
-##
 ## Note: if below is enabled, ncmpcpp will ignore diacritics while searching and
 ## filtering lists. This takes an effect only if boost was compiled with ICU
 ## support.
-##
-#ignore_diacritics = no
-#block_search_constraints_change_if_items_found = yes
+ignore_diacritics = yes
+block_search_constraints_change_if_items_found = yes
 mouse_support = yes
 mouse_list_scroll_whole_page = no
 lines_scrolled = 1
