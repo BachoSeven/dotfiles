@@ -1,3 +1,4 @@
+# mpd settings
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.local/share/lyrics
 mpd_host = 127.0.0.1
@@ -7,13 +8,15 @@ mpd_music_dir = "~/slsk/music"
 mpd_crossfade_time = 3
 playlist_disable_highlight_delay = 1
 message_delay_time = 1
-## VISUALIZER
+
+## visualizer
 visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = toggle_visualizer
 visualizer_in_stereo = yes
 visualizer_autoscale = yes
 visualizer_fps = 60
-## SPECTRUM
+
+## spectrum
 visualizer_type = spectrum
 visualizer_look = "●▮"
 visualizer_color = blue, cyan, green, yellow, magenta, red
@@ -26,30 +29,28 @@ visualizer_spectrum_hz_max = 20000
 # visualizer_look = "▌▌"
 # visualizer_look = "▒░"
 
-##### various settings #####
-
-##
-## Note: Custom command that will be executed each time song changes. Useful for
-## notifications etc.
-##
-# execute_on_song_change = notify-send -i ~/.config/icons/music-player_black.png "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+## Custom command that will be executed each time song changes
 execute_on_song_change = musnotify
-# classic or columns
-playlist_display_mode = columns
+# execute_on_song_change = notify-send -i ~/.local/share/icons/vinyl.svg "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
 
-browser_display_mode = columns
-
-search_engine_display_mode = columns
-
-playlist_editor_display_mode = columns
+# Misc
 discard_colors_if_item_is_selected = yes
-#show_duplicate_tags = true
+show_duplicate_tags = no
 incremental_seeking = yes
-#seek_time = 1
-#volume_change_step = 2
+seek_time = 2
+volume_change_step = 5
 autocenter_mode = yes
 centered_cursor = yes
-# Yes I have gathered all of the best-looking progressbar looks for ncmpcpp from all over the internet, yw.
+data_fetching_delay = no # useful for remote servers
+
+# Display mode
+playlist_display_mode = columns
+browser_display_mode = columns
+search_engine_display_mode = columns
+playlist_editor_display_mode = columns
+
+## Progressbars
+## Yes, I have gathered all of the best-looking progressbar for ncmpcpp from all over the internet.
 # progressbar_look = "•••"
 # progressbar_look = "---"
 # progressbar_look = "─>─"
@@ -80,17 +81,14 @@ progressbar_look = "▒▓░"
 # progressbar_look = "■◣ "
 # progressbar_look = "◈◆◇"
 # progressbar_look = "→→"
-## Available values: database, playlist.
-#default_place_to_search_in = database
-#data_fetching_delay = yes
+
 ## Available values: artist, album_artist, date, genre, composer, performer.
 media_library_primary_tag = album_artist
 media_library_sort_by_mtime = yes
-## Available values: wrapped, normal.
 default_find_mode = wrapped
 lyrics_fetchers = azlyrics, genius, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
 follow_now_playing_lyrics = yes
-# fetch_lyrics_for_current_song_in_background = yes
+fetch_lyrics_for_current_song_in_background = yes
 store_lyrics_in_song_dir = no
 generate_win32_compatible_filenames = no
 allow_for_physical_item_deletion = no
@@ -198,8 +196,6 @@ header_visibility = "no" # For classic interface
 user_interface = classic
 enable_window_title = no
 connected_message_on_startup = no
-# song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3%l$9}
-song_list_format = " {%t $R   $8%a$8}|{%f $R   $8%l$8} $8"
 song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
 song_library_format = {%n - }{%t}|{%f}
 alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
@@ -207,14 +203,19 @@ alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%
 current_item_inactive_column_prefix = $(magenta)$r
 current_item_inactive_column_suffix = $/r$(end)
 
+# Normal
 now_playing_prefix = "$b"
 now_playing_suffix = $/b
 current_item_prefix = $(cyan)$r$b
 current_item_suffix = $/r$(end)$/b
+song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3%l$9}
+# Customized
 # now_playing_prefix = "$b$8      "
 # now_playing_suffix = "$/b$8 $b $3$8 $/b"
 # current_item_prefix = "$/b$b $7 $8 $/b "
 # current_item_suffix = "      $8"
+# song_list_format = " {%t $R   $8%a$8}|{%f $R   $8%l$8} $8" # This does nothing(?)
+
 ##### columns settings #####
 ##
 ## syntax of song columns list format is "column column etc."
