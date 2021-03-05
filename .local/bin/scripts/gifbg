@@ -31,4 +31,6 @@ POSH=$(((SCRH/2)-(IMGH/2)))
 # Set background for small gifs with extcol script:
 [ ! "$IMGWH" = "${SCRW}x${SCRH}" ] && bg="$(gifextcol "$1" "$IMGW" "$SCRW")" && hsetroot -solid "$bg"
 # Display gif
-xwinwrap -d -g ${IMGWH}+${POSW}+${POSH} -un -ov -ni -s -nf -- gifview --memory-limit 200 -w WID $1 -a --no-interactive
+xwinwrap -g ${IMGWH}+${POSW}+${POSH} -ov -ni -s -nf -- gifview --memory-limit 200 -w WID $1 -a --no-interactive
+
+exit 0
