@@ -4,9 +4,9 @@
 #	Depends on:
 #		- mpc, mpd, ncmpcpp, imagemagick, ffmpeg, [optionally] perl-image-exiftool
 
+msgId="93435"
 MUSIC_DIR="${HOME}/slsk/music"
-TMP_DIR="/tmp/ncmpcpp_${USER}"
-TMP_COVER_PATH="${TMP_DIR}/ncmpcpp_cover.jpg"
+TMP_COVER_PATH="/tmp/ncmpcpp_cover-${USER}.jpg"
 TMP_SONG="/tmp/current-song"
 CHECK_EXIFTOOL=$(command -v exiftool)
 CHECK_DUNST=$(command -v dunst)
@@ -17,10 +17,6 @@ current_artist="$(mpc -f %artist% current | tr -d '"')"
 # Exit if $USER is in TTY
 	if [ "$TERM" = "linux" ]; then
 	  exit 1
-	fi
-
-	if [ ! -d "$TMP_DIR" ]; then
-		mkdir -p "$TMP_DIR"
 	fi
 
 # Remove file extension name
@@ -76,7 +72,7 @@ check_mpc_data
 	function notify() {
 		if [ -n "$CHECK_DUNST" ]; then
 			dunstify --urgency "normal" --appname "ncmpcpp" \
-			--replace 3 --icon "$TMP_COVER_PATH" "$current_title" "$current_artist"
+			--replace "$msgId" --icon "$TMP_COVER_PATH" "$current_title" "$current_artist"
 		else
 			notify-send --urgency "normal" --app-name "ncmpcpp" \
 			--icon "$TMP_COVER_PATH" "$current_title" "$current_artist"
