@@ -1,17 +1,17 @@
 ## Basic Options
 	unsetopt global_rcs					# Skip reading global configs for interactive shell usage
-	setopt complete_in_word    	# Complete from both ends of a word.
-	setopt always_to_end       	# Move cursor to the end of a completed word.
-	setopt auto_cd          		# `dirname` is equivalent to `cd dirname`
+	setopt complete_in_word			# Complete from both ends of a word.
+	setopt always_to_end				# Move cursor to the end of a completed word.
+	setopt auto_cd							# `dirname` is equivalent to `cd dirname`
 	unsetopt flow_control				# Disable ctrl-s/ctrl-q to freeze/unfreeze terminal.
 	setopt extended_glob				# Enable globbing
 	unsetopt nomatch						# Allow [ or ] whereever you want
-	setopt short_loops         	# 'for i in *; echo $i;' instead of 'for i in *; do echo $i; done'
-	unsetopt rm_star_silent 		# Always ask before rm folder/*
-	setopt prompt_subst 				# Command substitution, parameter and arithmetic expansion in prompt.
+	setopt short_loops					# 'for i in *; echo $i;' instead of 'for i in *; do echo $i; done'
+	unsetopt rm_star_silent			# Always ask before rm folder/*
+	setopt prompt_subst					# Command substitution, parameter and arithmetic expansion in prompt.
 	setopt interactive_comments	# Allow comments even in interactive shell
 	setopt magicequalsubst			# ~ substitution and tab completion after a = (for --x=filename args)
-  unsetopt prompt_sp
+	unsetopt prompt_sp
 	setopt correct							# typos
 	correct_ignore='_*'
 
@@ -48,24 +48,20 @@
 	setopt pushd_ignore_dups
 	setopt pushdminus
 # Change title to command name
-  function title {
-    emulate -L zsh -o promptsubst -o extendedglob
-		zmodload -e zsh/terminfo || zmodload -i zsh/terminfo
+	function title {
 		if [[ -n ${terminfo[fsl]} && -n ${terminfo[tsl]} ]]; then
 			echoti tsl; print -Pn "$1"; echoti fsl
 		fi
-  }
-  function title-precmd {
-    emulate -L zsh
-    title "%41<..<%~%<<"
-  }
-  function title-preexec {
-    emulate -L zsh -o extendedglob
-    local CMD=${1[(wr)^(*=*|sudo|ssh|-*)]:gs/%/%%}
-    title '$CMD'
-  }
-  add-zsh-hook precmd  title-precmd
-  add-zsh-hook preexec title-preexec
+	}
+	function title-precmd {
+		title "%41<..<%~%<<"
+	}
+	function title-preexec {
+		local CMD=${1[(wr)^(*=*|sudo|ssh|-*)]:gs/%/%%}
+		title '$CMD'
+	}
+	add-zsh-hook precmd  title-precmd
+	add-zsh-hook preexec title-preexec
 
 # This causes pasted URLs to be automatically escaped, without needing to disable globbing.
 	autoload -Uz bracketed-paste-magic
