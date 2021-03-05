@@ -244,8 +244,9 @@ sfont() {
 	grep -i "$1"
 }
 
+# Source Lines Of Code
 sloc() {
-	[ -z "$1" ] && printf "\nUsage: $0 [directory|file] " >&2 && return 1
+	[ "$#" -lt 1 ] && print "\nUsage: $0 [directory|file]\n" >&2 && return 1
 	if [ -z "$1" ]; then
 		fd -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
 	elif [ -d "$1" ]; then
@@ -610,7 +611,7 @@ fixallmkv() {
 	for f in *.mkv; do ffmpeg -i $f -c copy "${f%.*}-fixed.${f##*.}"; done
 }
 vidvolume() {
-	[ "$#" -lt 2 ] && printf "\nUsage: $0 inputVid [targetPercentage] [outputVid]\nExample\n\t$0 rec.mp4 -50 (halves volume)" >&2 && return 1
+	[ "$#" -lt 2 ] && print "\nUsage: $0 inputVid [targetPercentage] [outputVid]\n\nExample\n\t$0 rec.mp4 -50 (halves volume)\n" >&2 && return 1
 
 	out=${3:-_$(basename $1)}
 
