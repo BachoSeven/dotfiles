@@ -30,7 +30,7 @@
 	sort = yes
 	idle_threshold = 120
 
-	font = Monospace 12
+	font = Monospace 14
 
 	line_height = 0
 	markup = full
