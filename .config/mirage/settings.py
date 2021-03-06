@@ -22,7 +22,7 @@ class General:
     # the name (including extension) of a file in the user theme folder, which
     # is "$XDG_DATA_HOME/mirage/themes" if that environment variable is set,
     # else "~/.local/share/mirage/themes".
-    theme: str = "Midnight.qpl"
+    theme: str = "theme.qpl"
 
     # Interface scale multiplier, e.g. 0.5 makes everything half-size.
     zoom: float = 1.0
