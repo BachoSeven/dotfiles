@@ -294,15 +294,15 @@ ui:
     point gradientStart: Qt.point(0, 0)
     point gradientEnd:   Qt.point(window.width, window.height)
 
-    color gradientStartColor:
-        hsluv(colors.hue, 100, colors.intensity * 8)
-    color gradientEndColor:
-        hsluv(colors.hue + 50, 30, colors.intensity * 22)
+    // color gradientStartColor:
+    //     hsluv(colors.hue, 90, colors.intensity * 8)
+    // color gradientEndColor:
+    //     hsluv(colors.hue + 60, 20, colors.intensity * 22)
 
     // To have a solid color instead,
     // set gradientStartColor and gradientEndColor to the same value, e.g.:
-    // color gradientStartColor: hsluv(0, 0, 0, 0.5)
-    // color gradientEndColor: hsluv(0, 0, 0, 0.5)
+    color gradientStartColor: hsluv(0, 0, 0, 0.5)
+    color gradientEndColor: hsluv(0, 0, 0, 0.5)
 
 
 mainPane:
