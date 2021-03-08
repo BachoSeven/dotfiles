@@ -86,7 +86,7 @@
 	alias sys='systemctl'
 	alias sysu='systemctl --user'
 	alias jctl='journalctl -p3 --pager-end'
-	alias jctll='journalctl -f -n 100 | ccze -A' #follow log
+	alias jctll='journalctl -f -n 100'
 	alias bctl='bluetoothctl'
 	alias rsb='sudo systemctl restart bluetooth'
 	alias cbh='connectHeadphones'
