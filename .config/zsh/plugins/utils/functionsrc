@@ -394,6 +394,23 @@ brb() {
 }
 
 # Colors
+bonsai() {
+	printf "              \e[32m&&\n"
+	printf "             \e[32m&&&&&\n"
+	printf "           \e[32m&&&\/& &&&\n"
+	printf "          \e[32m&&\e[33m|,/  |/\e[32m& &&\n"
+	printf "           \e[32m&&\e[33m/   /  /_\e[32m&  &&\n"
+	printf "             \e[33m\  {  |_____/_\e[32m&\n"
+	printf "             \e[33m{  / /          \e[32m&&&\n"
+	printf "             \e[33m.\`. \\{___\________\/_\}\n"
+	printf "              \e[33m\} \}\{       \\ \n"
+	printf "              \e[33m}\{\{         \\____\e[32m&\n"
+	printf "             \e[33m\{\}\{           \`\e[32m&\e[33m\\e[32m&&\n"
+	printf "             \e[33m{{}             \e[32m&&\n"
+	printf "       \e[33m, -=-~{ .-^- _\n"
+	printf "             \`}\n"
+	printf "              {\n"
+}
 blocks() {
 	echo; echo; for i in 0 1 2 3 4 5 6 7; do
 		printf '\033[10%bm	 \033[s\033[1A\033[3D\033[4%bm	 \033[u' "$i" "$i"
