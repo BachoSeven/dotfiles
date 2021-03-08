@@ -63,7 +63,7 @@
 - Redirector
 
 ### Privacy-focused
-- ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it]
+- ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it, import List(s)]
 - I don't care about cookies
 - HTTPS Everywhere
 - ClearURLs
