@@ -6,8 +6,8 @@ notify = true
 volnorm = true
 volnorm_pregain = -3
 gapless = true
-# shuffle = true # Uncomment after next release
-# repeat = off
+shuffle = true
+repeat = 'off'
 
 [keybindings]
 ## unbinded: nN, c, eE, xX
