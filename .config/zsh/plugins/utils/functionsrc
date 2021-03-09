@@ -246,19 +246,19 @@ sfont() {
 
 # Source Lines Of Code
 sloc() {
-	[ "$#" -lt 1 ] && print "\nUsage: $0 [directory/file] [other directory/file]\n\nIf launched without arguments, it will return the total line count of all the files in the current directory(i.e. to count sloc of a project).\n" >&2 && return 1
+	[ "$1" = "-h" ] && print "\nUsage: $0 [directory/file] [other directory/file]\n\nIf launched without arguments, returns total source lines of code for all files in the current directory.\n" >&2 && return 0
 	if [ -z "$1" ]; then
 		fd -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
 	else
-	for i in $@; do
-		if [ -d "$i" ]; then
-			echo "Sloc for \"$i\":"
-			fd --full-path "$i" -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
-		elif [ -f "$i" ]; then
-			sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' "$i" | wc -l
-		else
-			echo "Unsupported file type."
-		fi
+		for i in $@; do
+			if [ -d "$i" ]; then
+				printf "%s : " "$i"
+				fd --full-path "$i" -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
+			elif [ -f "$i" ]; then
+				printf "%s : " "$i"
+				sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' "$i" | wc -l
+			fi
+		done
 	fi
 	unset del
 }
