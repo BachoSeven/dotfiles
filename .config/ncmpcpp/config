@@ -171,10 +171,10 @@ use_console_editor = yes
 ## alternative_ui_separator_color.
 colors_enabled = yes
 empty_tag_color = 8_1
-header_window_color = magenta
-volume_color = red:b
+header_window_color = 13_1
+volume_color = green:b
 state_line_color = yellow
-state_flags_color = default:b
+state_flags_color = blue:b
 main_window_color = white
 progressbar_color = black
 progressbar_elapsed_color = blue:b
