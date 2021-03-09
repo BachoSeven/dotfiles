@@ -27,7 +27,7 @@ _run() { # run command if it exists
 ## Arch
 # Pacman
 mirrors() {
-						grep -v '^$\|^#' /etc/pacman.d/mirrorlist | awk '{print $3}' | awk -F '/' '{print $3}';
+	grep -v '^$\|^#' /etc/pacman.d/mirrorlist | awk '{print $3}' | awk -F '/' '{print $3}';
 }
 rip() {
 	[ -z "$1" ] && num="50" || num="$1"
@@ -50,11 +50,11 @@ fpacin() {
 }
 # Install packages with fzf
 in() {
-		$AURHELPER -Slq | fzf -q "$1" -m --preview '$AURHELPER -Si {1}'| xargs -ro $AURHELPER -S
+	$AURHELPER -Slq | fzf -q "$1" -m --preview '$AURHELPER -Si {1}'| xargs -ro $AURHELPER -S
 }
 # Remove installed packages with fzf
 re() {
-		$AURHELPER -Qq | fzf -q "$1" -m --preview '$AURHELPER -Qi {1}' | xargs -ro $AURHELPER -Rns
+	$AURHELPER -Qq | fzf -q "$1" -m --preview '$AURHELPER -Qi {1}' | xargs -ro $AURHELPER -Rns
 }
 getdeps() {
 	expac -l '\n' %E -S $@ | sort -u
@@ -246,13 +246,19 @@ sfont() {
 
 # Source Lines Of Code
 sloc() {
-	[ "$#" -lt 1 ] && print "\nUsage: $0 [directory|file]\n" >&2 && return 1
+	[ "$#" -lt 1 ] && print "\nUsage: $0 [directory/file] [other directory/file]\n\nIf launched without arguments, it will return the total line count of all the files in the current directory(i.e. to count sloc of a project).\n" >&2 && return 1
 	if [ -z "$1" ]; then
 		fd -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
-	elif [ -d "$1" ]; then
-		fd --full-path "$1" -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
-	elif [ -f "$1" ]; then
-		sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' "$1" | wc -l
+	else
+	for i in $@; do
+		if [ -d "$i" ]; then
+			echo "Sloc for \"$i\":"
+			fd --full-path "$i" -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
+		elif [ -f "$i" ]; then
+			sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' "$i" | wc -l
+		else
+			echo "Unsupported file type."
+		fi
 	fi
 	unset del
 }
@@ -281,7 +287,7 @@ dfoldoc () { curl dict://dict.org/d:${1}:foldoc; }
 dthesaurus () { curl dict://dict.org/d:${1}:moby-thes; }
 # Dictionary | Usage define <foo>
 define() {
-		curl -s dict://dict.org/d:$1 | grep -v '^[0-9]'
+	curl -s dict://dict.org/d:$1 | grep -v '^[0-9]'
 }
 # Sdcv
 def() {
@@ -579,24 +585,24 @@ awk -v rate="$rate" 'function wl() {
 	sox -r $rate -e unsigned -b 8 -c 1 $input $output
 }
 flac2mp3(){
-		for f in "$@"; do
-				[[ "${f}" != *.flac ]] && continue
-				album="$(metaflac --show-tag=album "${f}" | sed 's/[^=]*=//')"
-				artist="$(metaflac --show-tag=artist "${f}" | sed 's/[^=]*=//')"
-				date="$(metaflac --show-tag=date "${f}" | sed 's/[^=]*=//')"
-				title="$(metaflac --show-tag=title "${f}" | sed 's/[^=]*=//')"
-				year="$(metaflac --show-tag=date "${f}" | sed 's/[^=]*=//')"
-				genre="$(metaflac --show-tag=genre "${f}" | sed 's/[^=]*=//')"
-				tracknumber="$(metaflac --show-tag=tracknumber "${f}" | sed 's/[^=]*=//')"
+	for f in "$@"; do
+			[[ "${f}" != *.flac ]] && continue
+			album="$(metaflac --show-tag=album "${f}" | sed 's/[^=]*=//')"
+			artist="$(metaflac --show-tag=artist "${f}" | sed 's/[^=]*=//')"
+			date="$(metaflac --show-tag=date "${f}" | sed 's/[^=]*=//')"
+			title="$(metaflac --show-tag=title "${f}" | sed 's/[^=]*=//')"
+			year="$(metaflac --show-tag=date "${f}" | sed 's/[^=]*=//')"
+			genre="$(metaflac --show-tag=genre "${f}" | sed 's/[^=]*=//')"
+			tracknumber="$(metaflac --show-tag=tracknumber "${f}" | sed 's/[^=]*=//')"
 
-				flac --decode --stdout "${f}" | lame -b 320 --add-id3v2 \
-						--tt "${title}" \
-						--ta "${artist}" \
-						--tl "${album}" \
-						--ty "${year}" \
-						--tn "${tracknumber}" \
-						--tg "${genre}" - "${f%.flac}.mp3"
-		done
+			flac --decode --stdout "${f}" | lame -b 320 --add-id3v2 \
+					--tt "${title}" \
+					--ta "${artist}" \
+					--tl "${album}" \
+					--ty "${year}" \
+					--tn "${tracknumber}" \
+					--tg "${genre}" - "${f%.flac}.mp3"
+	done
 }
 genplaylist() {
 	# usage: genplaylist [name] [extension]
@@ -694,27 +700,27 @@ stopwatch(){
 }
 ## Credits: https://github.com/slashbeast/conf-mgmt/blob/master/roles/home_files/files/DOTzshrc
 confirm() {
-		local answer
-		printf "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
-		read -q answer
-		echo
-		if [[ "${answer}" =~ ^[Yy]$ ]]; then
-				command "${@}"
-		else
-				return 1
-		fi
+	local answer
+	printf "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
+	read -q answer
+	echo
+	if [[ "${answer}" =~ ^[Yy]$ ]]; then
+			command "${@}"
+	else
+			return 1
+	fi
 }
 confirm_wrapper() {
-		local prefix=''
+	local prefix=''
 
-		if [ "$1" = '--root' ]; then
-				local as_root='true'
-				shift
-		fi
-		if [ "${as_root}" = 'true' ] && [ "${USER}" != 'root' ]; then
-				prefix="sudo"
-		fi
-		confirm ${prefix} "$@"
+	if [ "$1" = '--root' ]; then
+			local as_root='true'
+			shift
+	fi
+	if [ "${as_root}" = 'true' ] && [ "${USER}" != 'root' ]; then
+			prefix="sudo"
+	fi
+	confirm ${prefix} "$@"
 }
 poweroff() { confirm_wrapper --root $0 "$@"; }
 reboot() { confirm_wrapper --root $0 "$@"; }

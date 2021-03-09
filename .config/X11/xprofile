@@ -14,7 +14,11 @@
 	xsetroot -cursor_name left_ptr # Needed because of hsetroot
 	mon -e					# Monitor selection
 	[ -f "$XDG_CONFIG_HOME/X11/Xresources" ] && xrdb -load ~/.config/X11/Xresources
-	[ -f "$XDG_CACHE_HOME/wal/active" ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
+	if [ -f "$XDG_DATA_HOME/bg" ]; then # Check if there is an active wallpaper
+		[ -f "$XDG_CACHE_HOME/wal/active" ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
+	else
+		hsetroot -solid "$(cat $XDG_CACHE_HOME/bgcol)"
+	fi
 	_ redshift			# Color temperature
 	togcomp -y			# Compositor
 	remaps					# Switch caps/super and one-tap_caps/esc

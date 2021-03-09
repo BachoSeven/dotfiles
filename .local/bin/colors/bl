@@ -3,8 +3,14 @@
 # Wrapper to set a solid color as background
 
 # Cleanup
-killall -q xrootgif xwinwrap &
+	killall -q xrootgif xwinwrap &
 
 # Set background
-c=${1:-252525}
-hsetroot -solid \#$c &
+	c=${1:-252525}
+	hsetroot -solid \#$c &
+
+# Unset background to enable restoring solid color on reboot
+	rm -f $XDG_DATA_HOME/bg
+
+# Save color for the aforementioned purpose
+	echo "#$c" > $XDG_CACHE_HOME/bgcol
