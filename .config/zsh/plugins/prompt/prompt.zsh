@@ -102,3 +102,16 @@
 	# setopt prompt_subst
 	# autoload -U colors && colors
 	# PS1='$(_my_prompt)'
+
+## Other random git (r)prompt
+	# # git prompt
+	# setopt prompt_subst
+	# autoload -Uz vcs_info
+	# zstyle ':vcs_info:*' enable git
+	# zstyle ':vcs_info:*' check-for-changes true
+	# zstyle ':vcs_info:*' unstagedstr '*'
+	# zstyle ':vcs_info:*' stagedstr '+'
+	# zstyle ':vcs_info:git*' formats '%B%F{15}%F{9}%u%F{15}%b%F{10}%c%f%a'
+	# precmd() { vcs_info }
+
+	# RPROMPT='${vcs_info_msg_0_}'
