@@ -19,7 +19,7 @@ aug ft-snipcomp
 aug END
 
 " Set some general options
-	au FileType sh,zsh,octave se shiftwidth=2 tabstop=2 softtabstop=2
+	au FileType sh,zsh,octave,c se shiftwidth=2 tabstop=2 softtabstop=2
 
 " enable accessing GNU Octave documentation from vim using GNU TexInfo (lol)
   let s:conditionalEnd = '\(([^()]*\)\@!\<end\>\([^()]*)\)\@!'
