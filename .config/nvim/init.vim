@@ -93,6 +93,8 @@
 	no c "_c
 	no x "_x
 	no s "_s
+" Make Y work the way you'd expect
+	nn Y y$
 " Move lines with Alt
 	nn <A-j> :m .+1<CR>==
 	nn <A-k> :m .-2<CR>==
@@ -101,7 +103,7 @@
 	vn <A-j> :m '>+1<CR>gv=gv
 	vn <A-k> :m '<-2<CR>gv=gv
 " These are amazing.
-	nn <leader>w :w<CR>
+	nn <leader>w :up<CR>
 	nn <leader>q :q<CR>
 	nn <leader>n :vne<CR>
 " Quick macros

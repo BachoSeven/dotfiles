@@ -16,7 +16,5 @@
 	au BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
 	au BufWritePost *yt/subs !subs -g
 
-" Automatically save created folds when exiting, and restore them next time
-" you open the file
-  " au BufWrite * mkview
-  " au BufRead * silent! loadview
+" Updates file when changed externally (if autoread is set)
+	au FocusGained * :checktime
