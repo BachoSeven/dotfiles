@@ -13,7 +13,7 @@
 	let mapleader =" " " This is so comfy
 	se shell=/usr/bin/zsh
 	se clipboard=unnamed,unnamedplus
-	se nu rnu
+	se nu
 	se path+=** " fuzzy find
 	se wildmenu
 		se wildignore+=.git,.hg,.svn
