@@ -1,8 +1,11 @@
 [Unit]
 Description=Check if there are screen sharing popups every 10 seconds
+
 [Timer]
-OnBootSec=60
+OnBootSec=180
 OnUnitActiveSec=10
+RandomizedDelaySec=1s
 AccuracySec=1
+
 [Install]
 WantedBy=timers.target
