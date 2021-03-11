@@ -68,7 +68,7 @@ cal plug#begin(g:plugin_location)
 	Plug 'HiPhish/info.vim'
 	Plug 'chrisbra/csv.vim', { 'for': ['csv', 'vim-plug'] }
 
-" Expand vim's `%` motion beyond just brackets and quotes
+" Expand vim's % motion beyond just brackets and quotes
 	Plug 'andymass/vim-matchup'
 
 " Appearance
