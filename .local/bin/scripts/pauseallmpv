@@ -2,5 +2,5 @@
 
 find /tmp/mpvSockets -type s |
 while read -r sock; do
-	echo '{ "command": ["set_property", "pause", true] }' | socat - "$sock";
+	echo '{ "command": ["set_property", "pause", true] }' | socat - "$sock"
 done
