@@ -1,0 +1,8 @@
+[Unit]
+Description=Stand up every hour for 10 minutes
+[Timer]
+OnBootSec=60
+OnUnitActiveSec=3600
+AccuracySec=1
+[Install]
+WantedBy=timers.target
