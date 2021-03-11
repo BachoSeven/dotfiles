@@ -53,6 +53,7 @@
 
 ### Utils
 - custom ntp extension
+- linux speed scroll fix: (set to 1.7)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
 	- Append
 		/* Temporary fix, suggested here: https://github.com/philc/vimium/issues/3732 */
