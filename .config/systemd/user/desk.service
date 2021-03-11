@@ -1,0 +1,4 @@
+[Unit]
+Description=Manage my Idasen desk
+[Service]
+ExecStart=/home/fra/.local/bin/cron/desk
