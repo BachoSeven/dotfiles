@@ -2,7 +2,6 @@
 Description=Stand up every hour for 10 minutes
 
 [Timer]
-OnBootSec=120
 OnCalendar=hourly
 RandomizedDelaySec=1m
 AccuracySec=1

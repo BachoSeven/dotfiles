@@ -21,14 +21,14 @@ set mouse
 
 # adjust coloumn width to terminal
 %{{
-    w=$(tput cols)
-    if [ $w -le 80 ]; then
-        lf -remote "send $id set ratios 1:2"
-    elif [ $w -le 160 ]; then
-        lf -remote "send $id set ratios 1:2:3"
-    else
-        lf -remote "send $id set ratios 1:2:3:5"
-    fi
+	w=$(tput cols)
+	if [ $w -le 80 ]; then
+		lf -remote "send $id set ratios 1:2"
+	elif [ $w -le 160 ]; then
+		lf -remote "send $id set ratios 1:2:3"
+	else
+		lf -remote "send $id set ratios 1:2:3:5"
+	fi
 }}
 
 # set terminal title to current working directory
@@ -49,7 +49,7 @@ cmd open ${{
 	*.vixl) vixl44 $f >/dev/null 2>&1 ;;
 	*)
 	    case $(file --mime-type $f -b) in
-	    	inode/symlink) setsid -f $OPENER $(realpath $f) >/dev/null 2>&1 ;;
+		inode/symlink) setsid -f $OPENER $(realpath $f) >/dev/null 2>&1 ;;
 		text/*|application/json|application/csv|*opendocument.text) $EDITOR $fx;;
 		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
 		image/x-xcf|image/svg+xml) display -- $f ;;
@@ -98,12 +98,12 @@ cmd copyto ${{
 }}
 
 cmd fzf_jump ${{
-   res="$(find . -maxdepth 3 | fzf --header='Jump to:')"
-   if [ -f "$res" ]; then
-     cmd="select"
-   elif [ -d "$res" ]; then
-     cmd="cd"
-   fi
+	res="$(find . -maxdepth 3 | fzf --header='Jump to:')"
+	if [ -f "$res" ]; then
+		cmd="select"
+	elif [ -d "$res" ]; then
+		cmd="cd"
+	fi
 lf -remote "send $id $cmd \"$res\""
 }}
 
@@ -112,13 +112,13 @@ cmd paste &{{
     mode=$(echo "$load" | sed -n '1p')
     list=$(echo "$load" | sed '1d')
     if [ $mode = 'copy' ]; then
-        rsync -av --ignore-existing --progress $list . \
-        | stdbuf -i0 -o0 -e0 tr '\r' '\n' \
-        | while read line; do
-            lf -remote "send $id echo $line"
-        done
+	rsync -av --ignore-existing --progress $list . \
+	| stdbuf -i0 -o0 -e0 tr '\r' '\n' \
+	| while read line; do
+	    lf -remote "send $id echo $line"
+	done
     elif [ $mode = 'move' ]; then
-        mv -n $list .
+	mv -n $list .
     fi
     lf -remote 'send load'
     lf -remote 'send clear'
@@ -126,22 +126,22 @@ cmd paste &{{
 
 cmd Link %{{
     for file in $(lf -remote 'load'); do
-        if [ ! -n "${mode+1}" ]; then
-            mode="$file"
-            continue
-        fi
-        files+=("$file")
+	if [ ! -n "${mode+1}" ]; then
+	    mode="$file"
+	    continue
+	fi
+	files+=("$file")
     done
     if [ "${#files[@]}" -lt 1 ]; then
-        lf -remote "send $id echo no files to link files: ${files}"
-        exit 0
+	lf -remote "send $id echo no files to link files: ${files}"
+	exit 0
     fi
     # symbolically  copy mode is indicating a soft link
     if [[ "$mode" == copy ]]; then
-        ln -sr $files -t .
+	ln -sr $files -t .
     # while a move mode is indicating a hard link
     elif [[ "$mode" == move ]]; then
-        ln $files -t .
+	ln $files -t .
     fi
 }}
 
@@ -162,17 +162,17 @@ cmd extract &{{
     out_dir="$*"
 
     if [ -n "$out_dir" ]; then
-        mkdir -p "$out_dir"
-        cd "$out_dir" || {
-            lf -remote "send $id echoerr unable to create dir"
-            exit 1
-        }
+	mkdir -p "$out_dir"
+	cd "$out_dir" || {
+	    lf -remote "send $id echoerr unable to create dir"
+	    exit 1
+	}
     fi
 
     [ -w . ] || {
-        lf -remote "send $id echoerr unable to extract to \
-            \'${out_dir:-.}\'. No write permissions"
-        exit 1
+	lf -remote "send $id echoerr unable to extract to \
+	    \'${out_dir:-.}\'. No write permissions"
+	exit 1
     }
 
     lf -remote "send $id echomsg ${f##*/} extracting ..."
@@ -181,57 +181,57 @@ cmd extract &{{
     *.tar)  tar -xf "$f"       ;;
     *.tar.bz|*.tbz| \
     *.tar.bz2|*.tbz2)
-            tar -xjf "$f"      ;;
+	    tar -xjf "$f"      ;;
     *.tar.gz|*.tgz)
-            tar -xzf "$f"      ;;
+	    tar -xzf "$f"      ;;
     *.tar.xz|*.txz)
-            tar -xJf "$f"      ;;
+	    tar -xJf "$f"      ;;
     *.tar.[zZ]|*.t[zZ])
-            tar -xZf "$f"      ;;
+	    tar -xZf "$f"      ;;
     *.tar.lz|*.tlz| \
     *.tar.lzma|*.tlzma| \
     *.tar.lzo|*.tzo| \
     *.tar.zst|*.tzst)
-            tar -xaf "$f"      ;;
+	    tar -xaf "$f"      ;;
     *.7z)   7za x -- "$f"      ;;
     *.a|*.ar)
-            ar x -- "$f"       ;;
+	    ar x -- "$f"       ;;
     *.ace)  unace e -- "$f"    ;;
     *.alz)  unalz -- "$f"      ;;
     *.arc|*.ark|*.ARC|*.ARK)
-            nomarch -- "$f"    ;;
+	    nomarch -- "$f"    ;;
     *.arj|*.ARJ)
-            arj e -r -- "$f"   ;;
+	    arj e -r -- "$f"   ;;
     *.bz|*.bz2)
-            bunzip2 -k -- "$f" ;;
+	    bunzip2 -k -- "$f" ;;
     *.cab|*.CAB|*.exe|*.EXE)
-            cabextract "$f"    ;;
+	    cabextract "$f"    ;;
     *.cpio) cpio -id -F "$f"   ;;
     *.deb)  dpkg -x -- "$f" .  ;;
     *.gz)   gunzip -k "$f"     ;;
     *.lha|*.lzh)
-            lha x "$f"         ;;
+	    lha x "$f"	       ;;
     *.lrz|*.lrzip|*.rz)
-            lrunzip -- "$f"    ;;
+	    lrunzip -- "$f"    ;;
     *.lz)   lzip -d -k -- "$f" ;;
     *.lz4)  unlz4 -- "$f"      ;;
     *.lzma) xz -d -k "$f"      ;;
     *.lzo)  lzop -x "$f"       ;;
     *.rar)  unrar x -- "$f"    ;;
     *.src.rpm|*.rpm|*.spm)
-            rpm2cpio "$f" | cpio -dium ;;
+	    rpm2cpio "$f" | cpio -dium ;;
     *.xz)   unxz -k -- "$f"    ;;
     *.[zZ]) uncompress -- "$f" ;;
     *.zip)  unzip -- "$f"      ;;
     *.zst)  unzstd -- "$f"     ;;
     *.AppImage) ./"$f" --appimage-extract ;;
     *)
-        lf -remote "send $id echoerr ${f##*/} unknown archive format"
-        exit 0
+	lf -remote "send $id echoerr ${f##*/} unknown archive format"
+	exit 0
     esac
 
     if [ -n "$out_dir" ]; then
-        lf -remote "send $id select '$out_dir'"
+	lf -remote "send $id select '$out_dir'"
     fi
 
     lf -remote "send $id reload"
@@ -353,7 +353,7 @@ map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached
 map b $ setsid -f sbg -i $f
 map <a-L> cleanlatexcompile
-map U !du -sh      # shell-wait command for Disk Usage of current directory
+map U !du -sh	   # shell-wait command for Disk Usage of current directory
 map X !$f
 map O $ setsid -f $OPENER "$f" >/dev/null 2>&1
 map V push :!nvim<space>
