@@ -105,7 +105,7 @@
 	alias mictog='pactl set-source-mute @DEFAULT_SOURCE@ toggle'
 # Misc
 	alias txs='nvim ~/.config/nvim/UltiSnips/tex.snippets'
-	alias tnt='nvim ~/tmp/web'
+	alias tnt='nvim ~/stuff/web-stuff/various_dumps/dump_release_tntvillage_2019-08-30/dump_release_tntvillage_2019-08-30.csv'
 	alias kd='killall desk'
 	alias vent='nbfc status'
 	alias uotz='kitty whatscli'

@@ -11,7 +11,7 @@ message_delay_time = 1
 
 ## visualizer
 visualizer_data_source = /tmp/mpd.fifo
-visualizer_output_name = toggle_visualizer
+visualizer_output_name = Visualizer
 visualizer_in_stereo = yes
 visualizer_autoscale = yes
 visualizer_fps = 60
@@ -30,9 +30,8 @@ visualizer_spectrum_hz_max = 20000
 # visualizer_look = "▒░"
 
 ## Custom command that will be executed each time song changes
-# execute_on_song_change = musnotify
+execute_on_song_change = musnotify
 # execute_on_song_change = notify-send -i ~/.local/share/icons/vinyl.svg "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
-execute_on_song_change = "~/ncmpcpp/art.sh"
 
 # Misc
 discard_colors_if_item_is_selected = yes
