@@ -47,9 +47,11 @@ def_key "J"
 
 def_key "f"
   seek_forward
-#
 def_key "b"
   seek_backward
+
+def_key "'"
+  jump_to_playing_song
 
 
 def_key "h"

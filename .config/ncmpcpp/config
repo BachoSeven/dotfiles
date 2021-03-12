@@ -30,8 +30,9 @@ visualizer_spectrum_hz_max = 20000
 # visualizer_look = "▒░"
 
 ## Custom command that will be executed each time song changes
-execute_on_song_change = musnotify
+# execute_on_song_change = musnotify
 # execute_on_song_change = notify-send -i ~/.local/share/icons/vinyl.svg "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+execute_on_song_change = "~/ncmpcpp/art.sh"
 
 # Misc
 discard_colors_if_item_is_selected = yes
@@ -122,9 +123,9 @@ ask_for_locked_screen_width_part = no
 jump_to_now_playing_song_at_start = yes
 
 ask_before_clearing_playlists = no
-clock_display_seconds = no
+clock_display_seconds = yes
 display_volume_level = yes
-display_bitrate = no
+display_bitrate = yes
 display_remaining_time = no
 
 ## Available values: none, basic, extended, perl.
@@ -172,9 +173,9 @@ use_console_editor = yes
 colors_enabled = yes
 empty_tag_color = 8_1
 header_window_color = 13_1
-volume_color = green:b
-state_line_color = yellow
-state_flags_color = blue:b
+volume_color = yellow
+state_line_color = blue
+state_flags_color = green:b
 main_window_color = white
 progressbar_color = black
 progressbar_elapsed_color = blue:b
@@ -185,7 +186,7 @@ alternative_ui_separator_color = blue
 
 # Ui elements
 header_visibility = "no" # For classic interface
-user_interface = classic
+user_interface = alternative
 enable_window_title = no
 connected_message_on_startup = no
 song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
