@@ -1,0 +1,49 @@
+
+// This file was automatically generated from current settings
+// It's better to edit it with app closed, so there will be no rewrites
+// You should restart app to see changes
+
+{
+    "adaptive_bubbles": true,
+    "always_show_scheduled": true,
+    "always_show_top_userpic": false,
+    "big_emoji_outline": true,
+    "chat_list_lines": 2,
+    "confirm_before_calls": false,
+    "custom_app_icon": 0,
+    "disable_tray_counter": true,
+    "disable_up_edit": false,
+    "folders": {
+        "count_unmuted_only": true,
+        "default": {
+        },
+        "hide_all_chats": true,
+        "hide_edit_button": false,
+        "hide_names": true,
+        "local": {
+        }
+    },
+    "fonts": {
+        "semibold_is_bold": true,
+        "use_original_metrics": false,
+        "use_system_font": true
+    },
+    "forward_on_click": false,
+    "forward_retain_selection": false,
+    "hover_emoji_panel": true,
+    "monospace_large_bubbles": false,
+    "native_decorations": false,
+    "net_speed_boost": 0,
+    "profile_top_mute": true,
+    "recent_stickers_limit": 25,
+    "replaces": [
+    ],
+    "scales": [
+    ],
+    "show_chat_id": 0,
+    "show_phone_in_drawer": false,
+    "sticker_height": 150,
+    "sticker_scale_both": true,
+    "use_telegram_panel_icon": false,
+    "userpic_corner_type": 2
+}

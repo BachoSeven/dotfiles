@@ -17,6 +17,6 @@
     },
     {
         "command": "jump_to_date",
-        "keys": "ctrl+j"
+        "keys": "ctrl+shift+j"
     }
 ]
