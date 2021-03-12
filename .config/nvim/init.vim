@@ -95,13 +95,18 @@
 	no s "_s
 " Make Y work the way you'd expect
 	nn Y y$
-" Move lines with Alt
+" Move lines with Alt+{j,k} in normal mode
 	nn <A-j> :m .+1<CR>==
 	nn <A-k> :m .-2<CR>==
 	ino <A-j> <Esc>:m .+1<CR>==gi
 	ino <A-k> <Esc>:m .-2<CR>==gi
 	vn <A-j> :m '>+1<CR>gv=gv
 	vn <A-k> :m '<-2<CR>gv=gv
+" Move visually selected lines with {J,K} in visual mode.
+	vno J :m .+1<CR>==
+	vno K :m .-2<CR>==
+	vno J :m '>+1<CR>gv=gv
+	vno K :m '<-2<CR>gv=gv
 " These are amazing.
 	nn <leader>w :up<CR>
 	nn <leader>q :q<CR>
