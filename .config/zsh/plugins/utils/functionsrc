@@ -396,7 +396,7 @@ zsh_bench() {
 .{1..9} (){ local d=.; repeat ${0:1} d+=/..; cd $d;}
 
 brb() {
-	st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/tmp/figlet-fonts/3d "${1:-brb}"
+	st asciiquarium & kitty --override font_size=35 --hold figlet -f ~/stuff/figlet-fonts/3d "${1:-brb}"
 }
 
 # Colors

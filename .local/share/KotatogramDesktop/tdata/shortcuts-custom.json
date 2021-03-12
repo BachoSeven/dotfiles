@@ -14,5 +14,9 @@
     {
          "command": "previous_chat",
          "keys": "ctrl+k"
+    },
+    {
+        "command": "jump_to_date",
+        "keys": "ctrl+j"
     }
 ]

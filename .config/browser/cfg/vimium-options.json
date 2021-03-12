@@ -1,6 +1,11 @@
 {
   "settingsVersion": "1.66",
-  "exclusionRules": [],
+  "exclusionRules": [
+    {
+      "pattern": "https?://replit.com/*",
+      "passKeys": ""
+    }
+  ],
   "filterLinkHints": true,
   "waitForEnterForFilteredHints": false,
   "hideHud": true,
