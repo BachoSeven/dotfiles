@@ -18,7 +18,7 @@
         "default": {
         },
         "hide_all_chats": true,
-        "hide_edit_button": false,
+        "hide_edit_button": true,
         "hide_names": true,
         "local": {
         }

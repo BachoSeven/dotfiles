@@ -262,7 +262,7 @@ song_columns_list_format = (7f)[magenta]{l} (25)[cyan]{a} (50)[white]{t|f:Title}
 ## format to specify a custom sorting format.  Available values for
 ## browser_sort_mode are "type", "name", "mtime", "format" and "none".
 ##
-browser_sort_mode = mtime
+browser_sort_mode = name
 browser_sort_format = {%l} {%a - }{%t}|{%f}
 
 # █▓▒░ cheat sheet

@@ -181,16 +181,15 @@
 	endfu
 	nn <silent> <leader>y <esc>:cal UnMinify()<CR><esc>
 " This is needed because of a bug in netrw, see https://github.com/vim/vim/issues/4738
-  fu! OpenURLUnderCursor()
-    let s:uri = expand('<cWORD>')
-    let s:uri = substitute(s:uri, '?', '\\?', '')
-    let s:uri = shellescape(s:uri, 1)
-    if s:uri != ''
-      silent exec "!xdg-open '".s:uri."'"
-      :redraw!
-    endif
-  endfu
-  nn gx :cal OpenURLUnderCursor()<CR>
+	fu! OpenURLUnderCursor()
+		let s:uri = expand('<cWORD>')
+		let s:uri = matchstr(s:uri, "[a-z]*:\/\/[^ >,;)'\"]*")
+		if s:uri != ''
+			silent exec "!xdg-open '".s:uri."' > /dev/null"
+			:redraw!
+		endif
+	endfu
+	nn gx :cal OpenURLUnderCursor()<CR>
 
 "		 +---------+
 "		 | Plugins |
