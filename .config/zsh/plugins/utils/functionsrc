@@ -840,6 +840,9 @@ share() {
 		curl -sF"file=@${f}" https://0x0.st
 	done
 }
+cheat() {
+	curl -m 7 "https://cheat.sh/${1}"
+}
 ## Readable
 readw3m() {
 	readable -q $@ |
