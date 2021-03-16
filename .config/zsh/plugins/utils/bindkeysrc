@@ -109,6 +109,7 @@
 
 ## These aliases are here because they're either too short for, or useless to, the `menu` script.
 # Default to human readable figures and colorize
+	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
 	alias df='df --print-type'
 	alias ls='ls --classify --group-directories-first --hyperlink=auto'
 	alias l='ls --color -lA'
