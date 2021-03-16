@@ -114,7 +114,8 @@
 	alias tg='kotatogram-desktop'
 	alias phonic='vieb --erwic ~/.config/primephonic/primephonic.json --datafolder ~/.config/primephonic'
 	alias flix='chromium --app=https://netflix.com/browse'
-	alias findbg='open http://imgops.com/"$(imgur.sh "$(realpath ~/.local/share/bg)")"'
+	alias mimi='xdg-open'
+	alias findbg='xdg-open http://imgops.com/"$(imgur.sh "$(realpath ~/.local/share/bg)")"'
 
 ## Disks
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
