@@ -349,6 +349,7 @@ map <c-a> embed neomutt -a
 map Q embed mpvq
 map m embed w3mwrap -s
 map w pager
+map <c-q> quit
 map W embed dotbare add
 map <c-w> embed dotbare rm -rf --cached
 map b $ setsid -f sbg -i $f
