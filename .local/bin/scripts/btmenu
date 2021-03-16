@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+
+# Credits: https://github.com/cdown/btmenu
+
+_bluetoothctl() {
+    LC_ALL=C timeout 30 bluetoothctl
+}
+
+mode=connect
+
+# Name -> MAC
+declare -A DEVICES
+while read -r _ mac name; do
+    DEVICES["$name"]=$mac
+done < <(echo "devices" | _bluetoothctl | awk '$1 == "Device"')
+
+notify() {
+    local msg
+    local is_error
+
+    msg=${1?BUG: no message}
+    is_error=${2:-0}
+
+    if command -v notify-send >/dev/null 2>&1; then
+        notify-send "btmenu" "$msg"  # TODO: escaping
+    fi
+
+    if (( is_error )); then
+        printf 'ERROR: %s\n' "$msg" >&2
+    else
+        printf '%s\n' "$msg"
+    fi
+}
+
+execute_mode() {
+    local mode
+    local name
+    local mac
+    local preposition
+    local expected_to_connect
+    local retries
+
+    mode=${1?BUG: missing mode}
+    retries=15
+
+    case $mode in
+        connect)
+            preposition=to
+            expected_to_connect=yes
+        ;;
+        disconnect)
+            preposition=from
+            expected_to_connect=no
+        ;;
+    esac
+
+    if ! (( ${#DEVICES[@]} )); then
+        notify "No devices found. Are they registered with D-Bus?" 1
+        return 2
+    fi
+
+    name=$(printf '%s\n' "${!DEVICES[@]}" | dmenu -p "btmenu" "${dmenu_args[@]}")
+    [[ $name ]] || return
+    mac=${DEVICES["$name"]}
+
+    notify "Attempting to $mode $preposition $name"
+
+    while (( retries-- )); do
+        printf 'power on\n%s %s\n' "$mode" "$mac" | _bluetoothctl
+        if printf 'info %s\n' "$mac" |
+            _bluetoothctl |
+            grep -Pq '^[\t ]+Connected: '"$expected_to_connect"; then
+            notify "${mode^}ed $preposition $name"
+            return 0
+        fi
+        sleep 1
+    done
+
+    ret="$?"
+    notify "Failed to $mode $preposition $name" 1
+    return "$ret"
+}
+
+i=2
+
+for arg do
+    if [[ $arg == :: ]]; then
+        dmenu_args=( "${@:$i}" )
+        break
+    fi
+
+    case "$arg" in
+        -d) mode=disconnect ;;
+    esac
+
+    (( i++ ))
+done
+
+execute_mode "$mode"
