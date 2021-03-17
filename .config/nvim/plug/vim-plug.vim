@@ -19,7 +19,7 @@ endi
 
 " Install vim-plug if not found
 if empty(glob(g:plug_location . g:autoload_plug))
-	silent '!curl -fLo ' . g:plug_location . g:autoload_plug . ' --create-dirs ' . g:plug_github_url
+	execute '!curl -fLo ' . g:plug_location . g:autoload_plug . ' --create-dirs ' . g:plug_github_url
 endif
 
 " Run PlugInstall if there are missing plugins
