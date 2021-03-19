@@ -17,8 +17,8 @@ Inbox /home/fra/.local/share/mail/ascoli.minnocci@gmail.com/INBOX
 
 Channel ascoli.minnocci@gmail.com
 Expunge Both
-Master :ascoli.minnocci@gmail.com-remote:
-Slave :ascoli.minnocci@gmail.com-local:
+Far :ascoli.minnocci@gmail.com-remote:
+Near :ascoli.minnocci@gmail.com-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
@@ -43,12 +43,11 @@ Inbox /home/fra/.local/share/mail/ad17fmin@uwcad.it/INBOX
 
 Channel ad17fmin@uwcad.it
 Expunge Both
-Master :ad17fmin@uwcad.it-remote:
-Slave :ad17fmin@uwcad.it-local:
+Far :ad17fmin@uwcad.it-remote:
+Near :ad17fmin@uwcad.it-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
 MaxMessages 0
 ExpireUnread no
 # End profile
-
