@@ -8,7 +8,10 @@
 	sleep 2
 	hnheadlines
 	sleep 4
-	printf '\n\033[1;36mWEATHER:\033[1;32m'
+	printf '\n\033[1;31m		💰 CRYPTO:\033[1;34m'
+	curl eur.rate.sx/BAT@2021
+	sleep 3
+	printf '\n\033[1;36m		🌅 WEATHER:\033[1;32m'
 	curl https://wttr.in/$LOCATION\?pqtF\&lang=it 2>/dev/null
 	touch /tmp/welcome_done
 	read -r _
