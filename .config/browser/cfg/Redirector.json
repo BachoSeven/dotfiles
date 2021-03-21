@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-01-02T21:04:54.239Z",
+    "createdAt": "2021-03-19T17:19:30.159Z",
     "redirects": [
         {
             "description": "ytbleh",
@@ -36,6 +36,40 @@
             "appliesTo": [
                 "main_frame",
                 "other"
+            ]
+        },
+        {
+            "description": "De-Mobilizer",
+            "exampleUrl": "https://en.m.wikipedia.org/",
+            "exampleResult": "^(https?://)([a-z0-9-]*\\.)m(?:obile)?\\.(.*)",
+            "error": null,
+            "includePattern": "^(https?://)([a-z0-9-]*\\.)m(?:obile)?\\.(.*)",
+            "excludePattern": "",
+            "patternDesc": "always show desktop site version",
+            "redirectUrl": "^(https?://)([a-z0-9-]*\\.)m(?:obile)?\\.(.*)",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Old Reddit",
+            "exampleUrl": "https://www.reddit.com/u/test",
+            "exampleResult": "https://old.reddit.com/u/test",
+            "error": null,
+            "includePattern": "^(?:https?://)(?:www)?\\.reddit\\.com(?!/gallery/)(/.*)",
+            "excludePattern": "",
+            "patternDesc": "Always Redirect to old reddit",
+            "redirectUrl": "https://old.reddit.com$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
             ]
         }
     ]
