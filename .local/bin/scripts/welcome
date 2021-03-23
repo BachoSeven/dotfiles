@@ -7,7 +7,7 @@
 	fetch
 	sleep 2
 	hnheadlines
-	sleep 4
+	sleep 5
 	printf '\n\033[1;31m		💰 CRYPTO:\033[1;34m'
 	curl eur.rate.sx/BAT@2021
 	sleep 3

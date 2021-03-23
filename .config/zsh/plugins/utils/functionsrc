@@ -383,11 +383,11 @@ open() {
 	done
 }
 
+# Meta
 logzsh() { # Fix
 	zsh -xv 2>&1 | ts -i "%.s" > zshstartup.log
 	sort --field-separator=' ' -r -k1 zshstartup.log > sorted.log
 }
-
 zsh_bench() {
 	for _ ({1..10}); time zsh -i -c exit
 }
