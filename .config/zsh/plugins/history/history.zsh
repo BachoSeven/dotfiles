@@ -1,9 +1,7 @@
 ## History file configuration
 	HISTFILE="$XDG_DATA_HOME/zsh/history"
-# Hold last 6144 commands in memory
-	HISTSIZE=6144
-# Save last 4096 commands
-	SAVEHIST=4096
+	HISTSIZE=128000
+	SAVEHIST=128000
 ## History command configuration
 	setopt append_history
 	setopt sharehistory
