@@ -252,10 +252,10 @@ sloc() {
 	else
 		for i in $@; do
 			if [ -d "$i" ]; then
-				printf "%s : " "$i"
+				printf "%s: " "$i"
 				fd --full-path "$i" -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
 			elif [ -f "$i" ]; then
-				printf "%s : " "$i"
+				printf "%s: " "$i"
 				sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' "$i" | wc -l
 			fi
 		done

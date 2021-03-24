@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Uses xwinwrap to display animated .gif on the root window
 # Dependencies:
 #	- gifsicle
@@ -11,7 +11,6 @@ fi
 
 # get screen resolution
 if command -v xwininfo >/dev/null; then
-	# shellcheck disable=SC2039
 	read -r SCRW SCRH <<< "$(xwininfo -root | awk -F':' '/Width|Height/ {printf $2}')"
 elif command -v xrandr >/dev/null; then
 	SCRW=$(xrandr | awk '/current/ { print $8 }')
