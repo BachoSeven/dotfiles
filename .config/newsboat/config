@@ -1,4 +1,5 @@
 # vim: ft=apachestyle cms=#\ %s :
+
 # Feed options
 auto-reload yes
 reload-time 180
@@ -46,7 +47,7 @@ macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
 macro q set browser "setsid -f mpvq" ; open-in-browser ; set browser linkhandler
 macro w set browser "lynx" ; open-in-browser ; set browser linkhandler
 macro p set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
-macro c set browser "xsel -b <<<" ; open-in-browser ; set browser linkhandler
+macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser linkhandler
 
 highlight all "⚜️.*─+$" yellow
 highlight feedlist ".*(0/0))" black
