@@ -1,15 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# Refresh clock at exactly 0 seconds
-refresh(){
-    pidof -o %PPID -x $0 > /dev/null 2>&1 && exit 1 # exit if already running
-    sleep $(( 60 - 10#$(date "+%S") )) # Date gives zero-padded seconds, so we explicitly set base 10 to avoid bash thinking we are in octal or something: https://stackoverflow.com/questions/24777597/value-too-great-for-base-error-token-is-08
-    kill -35 "$(pidof -s dwmblocks)" # Reminder: +34
-}
 case $BLOCK_BUTTON in
 	1) notify-send -i /usr/share/icons/Gruvbox-Material-Dark/64x64/categories/calendar.svg "Questo mese:" "$(cal --color=always | sed "s/..7m/<b><span color=\"#cc241d\">/;s/..27m/<\/span><\/b>/")"  ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
 date "+%a %d %b %R"
-refresh &
