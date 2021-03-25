@@ -4,4 +4,4 @@
 # https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/tree/master/scripts_in_path
 
 # copy to clipboard
-printf "%s" "$1" | xsel -b
+printf "%s" "$1" | xclip -sel c

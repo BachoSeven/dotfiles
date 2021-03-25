@@ -84,7 +84,7 @@ extbrowser $BROWSER
 extbrowser2 lynx
 extbrowser3 curl -L -O -C - %s &
 extbrowser4 wget -c
-extbrowser5 url=%s && printf %s "$url" | xsel && printf %s "$url" | xsel -b &
+extbrowser5 url=%s && printf %s "$url" | xclip && printf %s "$url" | xclip -sel c &
 extbrowser6 mpv %s &
 bgextviewer 1
 use_lessopen 0
