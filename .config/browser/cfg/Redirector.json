@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-03-19T17:19:30.159Z",
+    "createdAt": "2021-03-26T15:48:45.854Z",
     "redirects": [
         {
             "description": "ytbleh",
@@ -35,6 +35,7 @@
             "grouped": false,
             "appliesTo": [
                 "main_frame",
+                "xmlhttprequest",
                 "other"
             ]
         },
