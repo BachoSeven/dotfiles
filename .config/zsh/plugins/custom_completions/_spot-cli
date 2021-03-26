@@ -1,4 +1,4 @@
-#compdef ncspot-cli
+#compdef spot-cli
 
 local arguments
 
