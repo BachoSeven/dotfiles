@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 usage() {
 cat << EOF
@@ -18,8 +18,11 @@ exit 1
 }
 
 main() {
-	c="$(echo "$1" | sed 's/#//g')"
-	printf '%d %d %d\n' 0x${c:0:2} 0x${c:2:2} 0x${c:4:2}
+	i="$(echo "$1" | sed 's/#//g')"
+	a=$(echo $i | cut -c-2)
+	b=$(echo $i | cut -c3-4)
+	c=$(echo $i | cut -c5-6)
+	printf '%d %d %d\n' 0x$a 0x$b 0x$c
 }
 
 # Actual script
