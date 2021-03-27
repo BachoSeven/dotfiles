@@ -1,7 +1,6 @@
 # Vim keybindings for ``info``.
 
 #info
-0 add-digit-to-numeric-arg
 1 add-digit-to-numeric-arg
 2 add-digit-to-numeric-arg
 3 add-digit-to-numeric-arg
@@ -15,6 +14,7 @@
 j next-line
 k prev-line
 \^ beginning-of-line
+0 beginning-of-line
 $ end-of-line
 l forward-char
 h backward-char
@@ -27,6 +27,7 @@ G end-of-node
 # Without numeric argument, moves cursor to middle line of window
 M move-to-window-line
 
+# Scrolling
 ^f scroll-forward-page-only
 ^b scroll-backward-page-only
 ^e down-line
@@ -37,24 +38,29 @@ d scroll-half-screen-down
 u scroll-half-screen-up
 # '0zt' scrolls until the cursor line is at the top of the screen
 zt redraw-display
-^c abort-key
 
+# Navigation
 ^o history-node
 ^h list-visited-nodes
-# This is actually ^/, but for some reason it is expressed as ^_
-^_ clear-search
+o goto-node
+^n next-node
+^p prev-node
+
+# Search
 n search-next
 N search-previous
+# This is actually ^/, but for some reason it is expressed as ^_
+^_ clear-search
 
+# Indexes
 i virtual-index
 I index-apropos
 
+# Exiting
 :q quit
 ZZ quit
 
-# \kx is the Backspace key on my keyboard
-\kx move-to-prev-xref
-
+# Window mappings
 ^w^w next-window
 ^ww next-window
 ^wj next-window
@@ -65,6 +71,14 @@ ZZ quit
 ^wQ keep-one-window # Inspired by `screen'
 ^w+ grow-window
 ^w= tile-windows
+
+# Misc
+^c abort-key
+# \kx is the Backspace
+\kx move-to-prev-xref
+
+#echo-area
+^c echo-area-abort
 
 #var
 highlight-searches=On
