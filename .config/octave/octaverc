@@ -16,7 +16,6 @@ endfunction
 
 # Appearance
 PS1( "\\[\\033[01;32m\\][\\W] \\[\\033[01;34m\\] \\[\\033[0m\\]" )
-clc
 
 # Neovim as editor
 edit mode sync

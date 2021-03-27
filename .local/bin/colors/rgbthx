@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 usage() {
 cat << EOF
@@ -20,9 +20,8 @@ exit 1
 }
 
 main() {
-	c="$(echo "$@" | sed 's/(//;s/)//;s/,/ /g')"
-	# shellcheck disable=SC2183
-	printf '#%02x%02x%02x\n' "$c"
+	c="$(echo "$@" | sed 's/(//;s/)//;s/, */ /g')"
+	printf '#%02x%02x%02x\n' "${c:0:2}" "${c:0:2}" "${c:4:4}"
 }
 
 # Actual script
