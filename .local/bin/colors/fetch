@@ -80,7 +80,6 @@ bf=$(cat $b_full)
 bn=$(cat $b_now)
 charge=$(printf $(( 100 * bn / bf )))
 
-# shellcheck disable=2194
 case 1 in
   $((charge <= 15)))
     color='31'
@@ -103,7 +102,6 @@ printf "   \e[0;${color}m%-4s \e[1;${color}m%-5s %-25s \n" " vol" "$vol%" "$(dra
 
 #█▓▒░ temperature
 temp=$(sensors | awk '/Core 0/ {gsub(/\+/,"",$3); gsub(/\..+/,"",$3)    ; print $3}')
-# shellcheck disable=2194
 case 1 in
   $((temp <= 50)))
     color='34'
