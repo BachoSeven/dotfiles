@@ -32,17 +32,25 @@ M move-to-window-line
 ^e down-line
 ^y up-line
 ^d scroll-half-screen-down
+d scroll-half-screen-down
 ^u scroll-half-screen-up
+u scroll-half-screen-up
 # '0zt' scrolls until the cursor line is at the top of the screen
 zt redraw-display
+^c abort-key
 
 ^o history-node
 ^h list-visited-nodes
 # This is actually ^/, but for some reason it is expressed as ^_
 ^_ clear-search
+n search-next
+N search-previous
 
 i virtual-index
 I index-apropos
+
+:q quit
+ZZ quit
 
 # \kx is the Backspace key on my keyboard
 \kx move-to-prev-xref
@@ -61,3 +69,6 @@ I index-apropos
 #var
 highlight-searches=On
 scroll-behavior=Page Only
+link-style=magenta
+active-link-style=magenta,bold
+match-style=underline,bold,bgblack,green
