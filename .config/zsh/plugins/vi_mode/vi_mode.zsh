@@ -76,23 +76,21 @@
 		return $(( 128 + $1 ))
 	}
 
-# ci", ci', ci`, di", etc
 	autoload -U select-quoted
+	autoload -U select-bracketed
 	zle -N select-quoted
+	zle -N select-bracketed
+# ci", ci', ci`, di", etc
 	for m in visual viopp; do
-	  for c in {a,i}{\',\",\`}; do
-	    bindkey -M $m $c select-quoted
-	  done
+		for c in {a,i}{\',\",\`}; do
+			bindkey -M $m $c select-quoted
+		done
+# ci{, ci(, ci<, di{, etc
+		for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+			bindkey -M $m $c select-bracketed
+		done
 	done
 
-# ci{, ci(, ci<, di{, etc
-  autoload -U select-bracketed
-  zle -N select-bracketed
-  for m in visual viopp; do
-    for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
-      bindkey -M $m $c select-bracketed
-    done
-  done
 
 # Edit line in insert mode with Ctrl+x+e:
 	autoload edit-command-line; zle -N edit-command-line
@@ -133,6 +131,11 @@
 	bindkey -M vicmd '/' history-incremental-search-forward
 	bindkey -M viins '^k' history-incremental-search-backward
 	bindkey -M viins '^j' history-incremental-search-forward
+
+# Ctrl+arrows
+	bindkey '^[[1;5C' vi-forward-blank-word   # move forward wordwise with ctrl-arrow
+	bindkey '^[[1;5D' vi-backward-blank-word  # move backward wordwise with ctrl-arrow
+
 
 # Fix broken keys
 ## ^w, backspace and ^h working even after returning from command mode (annoying)
