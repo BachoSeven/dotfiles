@@ -109,7 +109,6 @@
 	alias vent='nbfc status'
 	alias uotz='kitty whatscli'
 	alias mx='kitty weechat'
-	alias tuwu='kitty toot tui'
 	alias tg='kotatogram-desktop'
 	alias phonic='vieb --erwic ~/.config/primephonic/primephonic.json --datafolder ~/.config/primephonic'
 	alias flix='chromium --app=https://netflix.com/browse'
