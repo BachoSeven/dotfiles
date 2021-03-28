@@ -56,6 +56,7 @@
 	export PYTHONHISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
 
 ## Various programs settings:
+	export NO_AT_BRIDGE=1 # dbus accessibility bridge (https://bbs.archlinux.org/viewtopic.php?id=237697)
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 	# shellcheck opts to avoid having .shellcheckrc in ~ (https://github.com/koalaman/shellcheck/wiki)
 	export SHELLCHECK_OPTS='--exclude=SC1003,SC1071,SC1087,SC1090,SC1091,SC2001,SC2015,SC2034,SC2038,SC2059,SC2068,SC2086,SC2115,SC2128,SC2139,SC2145,SC2153,SC2155'
@@ -236,4 +237,4 @@ fi
 	if [ -z "$(ls /dev/input/by-id | grep Anne)" ]; then sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null; fi
 
 # Start graphical server on tty1 if not already running.
-	if [ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1; then exec startx "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xinitrc" -- "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xserverrc" &>/dev/null; fi
+	if [ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1; then exec startx "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xinitrc" -- "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xserverrc" &>/dev/null 2>&1; fi

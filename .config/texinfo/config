@@ -73,6 +73,7 @@ ZZ quit
 ^w= tile-windows
 
 # Misc
+\mh get-info-help-node
 ^c abort-key
 # \kx is the Backspace
 \kx move-to-prev-xref
