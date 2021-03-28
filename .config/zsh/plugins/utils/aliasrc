@@ -132,35 +132,6 @@
 	alias psg='ps axch -o cmd:18,%mem,pid --sort -%mem|&rg' # psgrep
 	alias psh='printf "\033[1;96mCPU\033[0;0m\n\n" && ps -eo cmd,fname,pid,pcpu,time --sort=-pcpu | head -n 11 && printf "\n\033[1;35mMEMORY\033[0;0m\n\n" && ps -eo cmd,fname,pid,pmem,rss --sort=-rss | head -n 9' # pshead
 
-# cf... shortcuts
-	alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
-	alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
-	alias cfa='nvim $ZDOTDIR/plugins/utils/aliasrc'
-	alias cfb='nvim $ZDOTDIR/plugins/utils/bindkeysrc'
-	alias cff='nvim $ZDOTDIR/plugins/utils/functionsrc'
-	alias cfp='nvim $ZDOTDIR/.zprofile'
-	alias cfd='nvim $XDG_CONFIG_HOME/directories'
-	alias cfl='nvim $XDG_CONFIG_HOME/lf/lfrc'
-	alias cfi='nvim $XDG_CONFIG_HOME/ignorelist'
-	alias cfz='nvim $ZDOTDIR/.zshrc'
-	alias cfzp='nvim $ZDOTDIR/plugins'
-	alias cfzv='nvim $ZDOTDIR/plugins/vi_mode/vi_mode.zsh'
-	alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
-	alias cfvp='nvim $XDG_CONFIG_HOME/nvim/plug'
-	alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'
-	alias cfr='nvim $XDG_CONFIG_HOME/X11/Xresources'
-	alias xg='nvim $XDG_CONFIG_HOME/X11/Xresources.d/gruvbox'
-	alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
-	alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
-	alias cfc='nvim $XDG_CONFIG_HOME/cava/config'
-	alias cfy='nvim $XDG_CONFIG_HOME/yt/subs'
-	alias cfk='nvim $XDG_CONFIG_HOME/kitty/kitty.conf'
-	alias cfu='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
-	alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
-	alias cfg='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/browser/cfg'
-	alias cvb='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/Vieb/viebrc'
-	alias src='nvim $HOME/.local/src'
-
 # Rice
 	alias ep='nvim ~/.local/src/AARGH/progs.csv' # Edit programs
 	alias mim='nvim $XDG_CONFIG_HOME/mimi/mimi.conf'
