@@ -10,4 +10,3 @@ fi
 [ -f "$XDG_CONFIG_HOME/X11/xprofile" ] && . "$XDG_CONFIG_HOME/X11/xprofile"
 
 ssh-agent gpg-agent "${WM:-dwm}"
-# ssh-agent gpg-agent --daemon dwm

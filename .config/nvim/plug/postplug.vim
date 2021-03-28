@@ -91,8 +91,7 @@
 	let g:vimtex_compiler_method='tectonic'
 	" let g:vimtex_compiler_method='generic'
 	let g:vimtex_compiler_generic = {
-		\	'cmd': 'watchexec --exts tex "tectonic --synctex --keep-logs"',
-		\ 'build_dir' : '',
+		\	'cmd': 'ls *.tex | entr -c tectonic /_ --synctex --keep-logs',
 		\}
 	let g:vimtex_compiler_latexmk = {
 		\ 'background' : 1,
