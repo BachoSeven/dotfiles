@@ -18,7 +18,7 @@
 	PS1( "\\[\\033[01;32m\\][\\W] \\[\\033[01;34m\\] \\[\\033[0m\\]" )
 
 # Use gnuplot
-	setenv ("GNUTERM", "wxt")
+	setenv ("GNUTERM", "qt")
 	graphics_toolkit ("gnuplot")
 
 # Neovim as editor
