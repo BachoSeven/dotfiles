@@ -20,6 +20,10 @@ st.alpha: 0.8
 st.bellvolume: 0
 st.blinktimeout: 666
 
+!! Xcursor (some X11 programs may read it from here, i.e. wezterm)
+Xcursor.theme: ArchCursorTheme
+Xcursor.size: 27
+
 !! Appearance
 Xft.antialias: true
 Xft.hinting: true
