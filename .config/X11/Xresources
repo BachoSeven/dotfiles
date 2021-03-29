@@ -24,6 +24,23 @@ st.blinktimeout: 666
 Xcursor.theme: ArchCursorTheme
 Xcursor.size: 27
 
+!! gnuplot
+! enable support for various linestyles
+gnuplot*dashed: on
+gnuplot*borderDashes:   0
+gnuplot*axisDashes:    16
+gnuplot*line1Dashes:    0
+gnuplot*line2Dashes:   42
+gnuplot*line3Dashes:   13
+gnuplot*line4Dashes:   44
+gnuplot*line5Dashes:   15
+gnuplot*line6Dashes: 4441
+gnuplot*line7Dashes:   42
+gnuplot*line8Dashes:   13
+! UTF-8 text support for labels/titles
+gnuplot*font: mbfont:-misc-fixed-medium-r-normal-*-*-*-100-100-*-*-iso10646-*
+gnuplot*encoding: utf-8
+
 !! Appearance
 Xft.antialias: true
 Xft.hinting: true
