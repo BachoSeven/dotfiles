@@ -1,23 +1,27 @@
 # vim: ft=octave
 
 # Xdg stuff
-source /usr/share/octave/site/m/startup/octaverc;
-pkg prefix ~/.local/share/octave/packages ~/.local/share/octave/packages;
-pkg local_list ~/.local/share/octave/octave_packages;
+	source /usr/share/octave/site/m/startup/octaverc;
+	pkg prefix ~/.local/share/octave/packages ~/.local/share/octave/packages;
+	pkg local_list ~/.local/share/octave/octave_packages;
 
 # Prevent octave-workspace from being created on "crash"
-crash_dumps_octave_core(0);
+	crash_dumps_octave_core(0);
 
 # Use man as help
-function man(name = 'help');
-    mlock();    # Lock in memory so it's not removed by clear all
-    help(char (name));
-endfunction
+	function man(name = 'help');
+			mlock();    # Lock in memory so it's not removed by clear all
+			help(char (name));
+	endfunction
 
 # Appearance
-PS1( "\\[\\033[01;32m\\][\\W] \\[\\033[01;34m\\] \\[\\033[0m\\]" )
+	PS1( "\\[\\033[01;32m\\][\\W] \\[\\033[01;34m\\] \\[\\033[0m\\]" )
+
+# Use gnuplot
+	setenv ("GNUTERM", "wxt")
+	graphics_toolkit ("gnuplot")
 
 # Neovim as editor
-edit mode sync
-edit home .
-EDITOR('nvim > /dev/tty 2>&1 < /dev/tty %s')
+	edit mode sync
+	edit home .
+	EDITOR('nvim > /dev/tty 2>&1 < /dev/tty %s')
