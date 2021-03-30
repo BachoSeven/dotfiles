@@ -88,8 +88,8 @@
 	let g:vimtex_compiler_progname = 'nvr'
 	let g:vimtex_fold_enabled = 1
 	let g:vimtex_view_method='zathura'
-	let g:vimtex_compiler_method='tectonic'
-	" let g:vimtex_compiler_method='generic'
+	" let g:vimtex_compiler_method='tectonic'
+	let g:vimtex_compiler_method='generic'
 	let g:vimtex_compiler_generic = {
 		\	'cmd': 'ls *.tex | entr -c tectonic /_ --synctex --keep-logs',
 		\}
@@ -109,7 +109,8 @@
 	" Compile on initialization, cleanup on quit
 	aug vimtex_event_1
 		au!
-		au User VimtexEventInitPost call vimtex#compiler#compile()
+    au User VimtexEventQuit     VimtexClean
+    au User VimtexEventInitPost VimtexCompile
 	aug END
 	" Close viewers when VimTeX buffers are closed
 	fu! CloseViewers()
