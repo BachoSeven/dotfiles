@@ -13,15 +13,16 @@ These are my dotfiles set up as a bare git repo and managed with [dotbare](https
 <!-- vim-markdown-toc GFM -->
 
 * [Current Setup](#current-setup)
-    * [Eye-candy](#eye-candy)
-    * [Various](#various)
-    * [Screens](#screens)
-        * [Dwm](#dwm)
-            * [Gruvboxy](#gruvboxy)
-            * [Blue(s)](#blues)
-            * [Greenish](#greenish)
-            * [Pink :3](#pink-3)
-        * [Lama](#lama)
+  * [Eye-candy](#eye-candy)
+  * [Various](#various)
+  * [Screens](#screens)
+    * [Dwm](#dwm)
+      * [Gruvboxy](#gruvboxy)
+      * [Purple](#purple)
+      * [Blues](#blues)
+      * [Greenish](#greenish)
+      * [Pink :3](#pink-3)
+    * [Lama](#lama)
 
 <!-- vim-markdown-toc -->
 # Current Setup
