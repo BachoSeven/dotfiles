@@ -7,7 +7,7 @@
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
 ![](https://i.imgur.com/YdrqaJj.png)
-![](https://i.imgur.com/0gV1ofK.jpg)
+![](https://i.imgur.com/G8a7O1h.png)
 <a href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"></a><br><br>
 These are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
 <!-- vim-markdown-toc GFM -->
@@ -81,7 +81,11 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 ![](https://i.imgur.com/PO04uQ5.png)
 ![](https://i.imgur.com/djwXszG.jpg)
 
-#### Blue(s)
+#### Purple
+![](https://i.imgur.com/0gV1ofK.jpg)
+![](https://i.imgur.com/AAuPeKH.png)
+
+#### Blues
 ![](https://i.imgur.com/UsjYLmZ.jpg)
 ![](https://i.imgur.com/DpSvfuw.png)
 
