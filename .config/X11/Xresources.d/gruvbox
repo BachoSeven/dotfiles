@@ -33,7 +33,7 @@ dwm.normbordercolor:	C0
 dwm.selbordercolor:	C7
 dwm.borderbar:		C0
 !! Bar
-dwm.topbar:		0
+dwm.topbar:		1
 dwm.tagnormbg:		BG
 dwm.tagnormfg:		C8
 dwm.tagselbg:		C0
