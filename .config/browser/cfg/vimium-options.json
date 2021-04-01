@@ -15,7 +15,7 @@
   "newTabUrl": "file:///home/fra/.config/browser/startpage/index.html",
   "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
   "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
-  "regexFindMode": false,
+  "regexFindMode": true,
   "ignoreKeyboardLayout": true,
   "scrollStepSize": 60,
   "smoothScroll": true,
