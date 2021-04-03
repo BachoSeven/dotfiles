@@ -52,6 +52,7 @@
 > Install sci-hub plugin manually (crx is in this repo)
 
 ### Utils
+- netflix 1080p: https://github.com/jangxx/netflix-1080p (disable VP9)
 - custom ntp extension
 - linux speed scroll fix: (set speed to 1.66)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
