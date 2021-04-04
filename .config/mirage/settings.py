@@ -47,7 +47,7 @@ class Notifications:
     # - "enable" (notifications will work normally)
     # - "highlights_only" (notify only for highlights, e.g. replies, keywords)
     # - "mute" (don't notify for anything)
-    start_level: str = "enable"
+    start_level: str = "mute"
 
     # Use HTML formatting in notification bubbles.
     # This option has no effect on Windows and OSX.
