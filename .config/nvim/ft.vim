@@ -30,7 +30,7 @@ aug END
   au FileType octave setl keywordprg=:te\ info\ octave\ --init-file\ ~/.config/texinfo/config\ --index-search
 
 " Enable spell-checking for certain files
-	au FileType markdown setl spell spelllang=en_us
+	au FileType markdown,mail setl spell spelllang=en_us
 
 " Limit line length for text files
 	au FileType text,markdown,tex setl textwidth=180

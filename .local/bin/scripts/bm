@@ -17,6 +17,10 @@ BM='/home/fra/.config/chromium/Default/Bookmarks'
 jq_script='def ancestors: while(. | length >= 2; del(.[-1,-2]));
 	. as $in | paths(.url?) as $key | $in | getpath($key) | {name,url, path: [$key[0:-2] | ancestors as $a | $in | getpath($a) | .name?] | reverse | join("/") } | .path + "/" + .name + "\t" + .url'
 
+# useful:
+# 'getpath(paths(.url?)).url'
+# 'getpath(paths(.url?)) | .url + " " + .name'
+
 jq -r "$jq_script" < "$BM" \
 		| sed -E $'s/(.*)\t(.*)/\\1\t\x1b[36m\\2\x1b[m/g'	\
 		| cut -d/ -f2-	\
