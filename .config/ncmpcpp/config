@@ -170,13 +170,13 @@ use_console_editor = yes
 ## progressbar_elapsed_color, player_state_color, statusbar_time_color,
 ## alternative_ui_separator_color.
 colors_enabled = yes
-empty_tag_color = 8_1
-header_window_color = 13_1
+empty_tag_color = 8
+header_window_color = 13
 volume_color = yellow
 state_line_color = blue
 state_flags_color = green:b
 main_window_color = white
-progressbar_color = black
+progressbar_color = 1_1
 progressbar_elapsed_color = blue:b
 statusbar_color = magenta
 statusbar_time_color = cyan:b
