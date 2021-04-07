@@ -21,7 +21,7 @@ sqlite3 -separator "$sep" "$temp_hist"							\
 	fzf --bind "=:execute%echo {} | sed 's#.*\(https*://\)#\1#'			\
 	| xclip -r -sel c %" --ansi --multi						\
 	--preview " echo {-1} | xargs  readable -q | w3mwrap -T text/html"			\
-	--preview-window=right:30% $opts						|
+	--preview-window=right:35% $opts						|
 	sed 's#.*\(https*://\)#\1#'							|
 	setsid -f xargs -r $BROWSER >/dev/null
 
