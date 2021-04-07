@@ -2,7 +2,7 @@
 https://www.archlinux.org/feeds/news/
 https://aur.archlinux.org/rss/
 " "
-"⚜️  mathematics─────────────────────────────────────────────"
+"⚜️  mathematics──────────────────────────────────────"
 https://golem.ph.utexas.edu/category/atom10.xml
 https://www.youtube.com/feeds/videos.xml?channel_id=UC6jM0RFkr4eSkzT5Gx0HOAw
 https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw
@@ -22,12 +22,12 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA
 https://www.youtube.com/feeds/videos.xml?channel_id=UClcE-kVhqyiHCcjYwcpfj9w # Live Overflow
 " "
 
-"⚜️  comics─────────────────────────────────────────────"
+"⚜️  comics───────────────────────────────────────────"
 https://xkcd.com/rss.xml
 https://www.smbc-comics.com/comic/rss
 " "
 
-"⚜️  music─────────────────────────────────────────────"
+"⚜️  music────────────────────────────────────────────"
 https://classicalguitarcomposers.libsyn.com/rss
 https://www.youtube.com/feeds/videos.xml?channel_id=UC120Njw4gouQwZMnUJae9RQ
 https://www.youtube.com/feeds/videos.xml?channel_id=UCcBlJq-SafDY6kPGbeBlVjQ
@@ -50,3 +50,6 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCKmKCcwzzFTL8HgsOhPu5mg
 https://www.youtube.com/feeds/videos.xml?channel_id=UCyWDmyZRjrGHeKF-ofFsT5Q
 https://www.youtube.com/feeds/videos.xml?channel_id=UCGSGPehp0RWfca-kENgBJ9Q
 https://www.youtube.com/feeds/videos.xml?channel_id=UCd0zIZlbgvEifm_hd3FwlBQ
+" "
+
+"⚜️  new─────────────────────────────────────────────"

@@ -11,18 +11,18 @@
 #
 # NOTE: You might want to install w3m for the preview window in fzf.
 
-[ "$1" = popup ] && opts="--height=100%"
 BM='/home/fra/.config/chromium/Default/Bookmarks'
+[ "$1" = popup ] && opts="--height=100%"
 
-     jq_script='def ancestors: while(. | length >= 2; del(.[-1,-2]));
-        . as $in | paths(.url?) as $key | $in | getpath($key) | {name,url, path: [$key[0:-2] | ancestors as $a | $in | getpath($a) | .name?] | reverse | join("/") } | .path + "/" + .name + "\t" + .url'
+jq_script='def ancestors: while(. | length >= 2; del(.[-1,-2]));
+	. as $in | paths(.url?) as $key | $in | getpath($key) | {name,url, path: [$key[0:-2] | ancestors as $a | $in | getpath($a) | .name?] | reverse | join("/") } | .path + "/" + .name + "\t" + .url'
 
-    jq -r "$jq_script" < "$BM" \
-        | sed -E $'s/(.*)\t(.*)/\\1\t\x1b[36m\\2\x1b[m/g'	\
-				| cut -d/ -f2-	\
-        | fzf --bind "=:execute%echo {} | cut -d$'\t' -f2	| xclip -r -sel c %"	\
-					--ansi --multi --no-hscroll --tiebreak=begin	\
-					--preview "echo {-1} | xargs readable -q | w3mwrap -T text/html"	\
-					--preview-window=right:35% $opts	\
-        | cut -d$'\t' -f2						\
-        | setsid -f xargs -r $BROWSER >/dev/null
+jq -r "$jq_script" < "$BM" \
+		| sed -E $'s/(.*)\t(.*)/\\1\t\x1b[36m\\2\x1b[m/g'	\
+		| cut -d/ -f2-	\
+		| fzf --bind "=:execute%echo {} | cut -d$'\t' -f2	| xclip -r -sel c %"	\
+			--ansi --multi --no-hscroll --tiebreak=begin	\
+			--preview "echo {-1} | xargs readable -q | w3mwrap -T text/html"	\
+			--preview-window=right:35% $opts	\
+		| cut -d$'\t' -f2						\
+		| setsid -f xargs -r $BROWSER >/dev/null
