@@ -12,7 +12,7 @@ gotourl() {
 	then
 		# change layout to us because xdotool spasms with non-latin layouts
 		layout="$(setxkbmap -query | awk '/^layout:/{ print $2 }')"
-		[ "$layout" = "us" ] && reset=false || setxkbmap -layout us
+		if [ "$layout" = "us" ]; then reset=false; else setxkbmap -layout us; fi
 		xdotool key --clearmodifiers "$pre" key --clearmodifiers "$shortcut" \
 			type --clearmodifiers --delay 2 "$choice"
 		xdotool key --clearmodifiers Return
@@ -42,7 +42,7 @@ xprop -root | grep -q '^_NET_ACTIVE_WINDOW' && {
 		Opera) nbrowser='opera' ;;
 		qutebrowser) nbrowser='qutebrowser' ;;
 		Vivaldi) nbrowser='vivaldi' ;; # not tested
-		Brave) nbrowser='brave' ;; # not tested
+		Brave-browser) nbrowser='brave' ;; # not tested
 		Conkeror) nbrowser='conkeror' ;; # not tested
 		Palemoon) nbrowser='palemoon' ;; # not tested
 		Iceweasel) nbrowser='iceweasel' ;; # not tested
@@ -62,7 +62,7 @@ xprop -root | grep -q '^_NET_ACTIVE_WINDOW' && {
 				winid="" ;;
 	esac
 	[ -n "$pname" ] && case "$pname" in
-		w3m) pre="o" shortcut="ctrl+u" ;; # my custom binding
+		w3m) pre="o"; shortcut="ctrl+u" ;; # my custom binding
 		lynx|elinks|links) shortcut="g" ;;
 		*) winid="" ;;
 	esac
@@ -73,7 +73,7 @@ trap 'rm "$tmpfile"' 0 1 15
 printf '%s\n%s\n' "$uricur" "$1" > "$tmpfile"
 cat "$bookmarks" >> "$tmpfile"
 sed -i -E '/^(#|$)/d' "$tmpfile"
-choice="$(dmenu -i -p "Go:" -w "$winid" < "$tmpfile")" || exit 1
+choice="$(dmenu -i -c -l 10 -w "$winid" < "$tmpfile")" || exit 1
 
 # Detect links without protocol (This is WIP)
 protocol='^(https?|ftps?|mailto|about|file):///?'

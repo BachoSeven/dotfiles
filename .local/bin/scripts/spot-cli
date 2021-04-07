@@ -54,7 +54,7 @@ usage() {
 
 send() {
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1"
-	spotup # This updates the spotify module for my dwm status bar, dwmblocks
+	sleep 1 && spotup # This updates the spotify module for my dwm status bar, dwmblocks
 }
 
 seek() { #__ We need to convert to microseconds __#
