@@ -13,7 +13,7 @@ gotourl() {
 		# change layout to us because xdotool spasms with non-latin layouts
 		layout="$(setxkbmap -query | awk '/^layout:/{ print $2 }')"
 		[ "$layout" = "us" ] && reset=false || setxkbmap -layout us
-		xdotool key --clearmodifiers "$shortcut" \
+		xdotool key --clearmodifiers "$pre" key --clearmodifiers "$shortcut" \
 			type --clearmodifiers --delay 2 "$choice"
 		xdotool key --clearmodifiers Return
 		$reset && setxkbmap -layout "$layout"
@@ -62,7 +62,7 @@ xprop -root | grep -q '^_NET_ACTIVE_WINDOW' && {
 				winid="" ;;
 	esac
 	[ -n "$pname" ] && case "$pname" in
-		w3m) shortcut="o" ;; # my custom binding
+		w3m) pre="o" shortcut="ctrl+u" ;; # my custom binding
 		lynx|elinks|links) shortcut="g" ;;
 		*) winid="" ;;
 	esac
