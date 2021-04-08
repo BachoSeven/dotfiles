@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 
 return {
   font = wezterm.font("Hack Nerd Font"),
-  font_size = 24.0,
+  font_size = 23.0,
 
   hide_tab_bar_if_only_one_tab = true,
   scrollback_lines=5000,

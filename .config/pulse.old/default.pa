@@ -1,0 +1,8 @@
+# vim: ft=cfg
+
+# Load defaults
+.include /etc/pulse/default.pa
+
+## Overrides
+# Automatically switch to newly-connected devices
+load-module module-switch-on-connect
