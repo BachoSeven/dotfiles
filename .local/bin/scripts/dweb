@@ -2,7 +2,7 @@
 
 browser='chromium'
 engine='https://duckduckgo.com/?q=%s'
-bookmarks="$HOME/bm"
+bookmarks="$XDG_CONFIG_HOME/browser/bkp/bm/plain"
 
 gotourl() {
 	if [ "$nbrowser" = surf ]
