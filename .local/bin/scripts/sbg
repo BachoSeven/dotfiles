@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# 2020 Francesco Minnocci <ascoli.minnocci@gmail.com>
+# 2020 Francesco Minnocci <ascoli dot minnocci at gmail dot com>
 #
 # POSIX compliant script to set images or gif animations as a desktop background,
 # supports using pywal to extract a colorscheme for Xresources and (neo)vim.

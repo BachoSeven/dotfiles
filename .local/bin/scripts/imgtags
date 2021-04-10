@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# 2020 Francesco Minnocci <ascoli dot minnocci at gmail dot com>
+
+#### Example usage:
+#
+#  fd -j5 -e gif -e gifv -e jpeg -e jpg -e png --exec imgtags {} > ~/tags
+#
+####
+
+f="$1"
+printf "$f: $(exiv2 -qpi pr "$f" | awk '$1~"Keywords" { printf("%s,", $4); }')\n" | grep -Uv ".*: $" # last command greps out empty tags
