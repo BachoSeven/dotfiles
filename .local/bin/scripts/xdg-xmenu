@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Source: https://github.com/jzbor/dotfiles/blob/master/.scripts/de/xdg-xmenu
 
 # XDG directories
