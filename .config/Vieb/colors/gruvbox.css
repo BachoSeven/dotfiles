@@ -110,7 +110,7 @@ body[current-mode=command] #mode { color: var(--fg);}
 #app {flex-direction: column-reverse;}
 #url-hover {bottom: 4em;}
 #suggest-dropdown {top: auto;bottom: 2.1em;flex-direction: column-reverse;}
-#mode-suggestions {top: auto;bottom: 2em;flex-direction: column-reverse;}
+#mode-suggestions {left: 0;top: auto;bottom: 2em;flex-direction: column-reverse;}
 .bottomright {right: .7em;bottom: 4em;;}
 .bottomleft {left: .7em;bottom: 4em;}
 .topright {right: .7em;top: .7em;}
