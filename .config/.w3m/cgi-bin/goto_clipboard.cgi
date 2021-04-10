@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/env/bin bash
 #GOTO url in clipboard in current page. If the clipboard has a
 #"non url string/nothing" an blank page is shown.
 printf "%s\r\n" "W3m-control: GOTO $(xclip -o -sel c)";
