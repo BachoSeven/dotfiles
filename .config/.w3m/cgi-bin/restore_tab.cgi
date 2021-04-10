@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/env/bin bash
 #Open the last closed tab
 last_tab=$(tail -n 1 ~/.w3m/RestoreTab.txt);
 #limit of tabs stored
