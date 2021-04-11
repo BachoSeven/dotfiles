@@ -93,6 +93,17 @@ aurupdate() {
 	done
 	$AURHELPER -Rs namcap
 }
+upbootloader() {
+	if (( UID )); then
+		printf "You must be root.\n" >&2
+		return 1
+	fi
+
+	$AURHELPER -Syu limine &&
+	sudo rm /boot/EFI/BOOT/BOOTX64.EFI &&
+	sudo cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/ &&
+	$AURHELPER -R limine
+}
 
 # Git
 ## No arguments: `git status`; with arguments: acts like `git`
