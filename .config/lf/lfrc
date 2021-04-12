@@ -144,6 +144,7 @@ cmd Link %{{
     elif [[ "$mode" == move ]]; then
 	ln $files -t .
     fi
+    lf -remote 'send clear'
 }}
 
 cmd mount ${{
