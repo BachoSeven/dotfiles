@@ -1,0 +1,24 @@
+#!/bin/sh
+
+quit() {
+	pgrep copyq >/dev/null && copyq exit
+}
+
+start() {
+	setsid -f copyq
+}
+
+toggle() {
+	quit || start
+}
+
+fixgeom() {
+	rm $HOME/.config/copyq/copyq_geometry.ini 2>/dev/null
+	quit
+	start
+}
+
+[ -z $1 ] && fixgeom
+[ "$1" = "toggle" ] && toggle
+
+exit 0

@@ -1,0 +1,8 @@
+#!/bin/sh
+# Clipboard manager
+
+if pgrep copyq >/dev/null 2>&1; then
+	copyq toggle
+else
+	clipmenu -i -f -c -l 15 -bw 7 -nb '#458588' -nf '#ebdbb2' -sb '#689d6a' -sf '#fbf1c7' -nhb '#282828' -shb '#1d2021' -fn Monospace-15
+fi
