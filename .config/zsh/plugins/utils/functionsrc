@@ -131,10 +131,11 @@ gac() { # Aur git clone
 dirs=(
 	~/.config/mpv/scripts/mpvSockets
 	~/.config/browser/vimium
-	~/.local/src/subs
-	~/.local/src/colors/
+	~/.local/src/colors
 	~/.local/src/dmenu
+	~/.local/src/idasen
 	~/.local/src/st
+	~/.local/src/subs
 	/dati/AP2_QMK/annepro-qmk
 	/dati/AP2_QMK/annepro2-shine
 	/dati/AP2_QMK/AnnePro2-Tools
