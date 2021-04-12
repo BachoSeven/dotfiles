@@ -82,7 +82,6 @@ map <C-q> <:quit>
 map <C-r> <action.reload>
 map <C-s> <:write>
 map <C-t> <action.openNewTab><action.toExploreMode>
-map <C-w> <action.closeTab>
 map <C-Tab> <action.nextTab>
 map <C-S-Tab> <action.previousTab>
 map <C-S-PageUp> <action.moveTabBackward>
