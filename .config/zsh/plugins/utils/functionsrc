@@ -879,13 +879,13 @@ wgetext() {
 		return 1
 	fi
 
-	extensions="$1";
-	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$extensions")"; shift
+	extensions="$1"; shift
+	outputdir_name="$(awk -F/ '{print $(NF-1);}' <<< "$extensions")"
 	mkdir -pv "$outputdir_name"
 	cd "$outputdir_name"
 
 	for f in $@; do
-		wget -c -r -l1 -H -t1 -nd -N -np -A "$extensions" -erobots=off "$f"
+		wget -c -r -l3 -H -t1 -nd -N -np -A "$extensions" -erobots=off "$f"
 	done
 }
 

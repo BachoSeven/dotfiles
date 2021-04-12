@@ -184,7 +184,6 @@
 	)
 	for i in ${dot_cmds[@]}; alias "${i}= dotbare ${i}";
 ## _exists stuff
-	_exists clipmenu && alias clearclip='clipdel -d ".*"'
 	_exists html2text && alias html2text='html2text -nobs -style pretty'
 	_exists pacgraph && alias pacgraph='pacgraph -b "#1e2021" -l "#848388" -t "#d93420" -d "#c78930" -p 8 98'
 	_exists nyancat || alias nyancat="telnet nyancat.acc.umu.se"

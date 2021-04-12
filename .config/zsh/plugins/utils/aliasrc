@@ -49,7 +49,8 @@
 	alias cmatrix='unimatrix -n -s 96 -c "cyan" -l "o"'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias drt='dragon-drag-and-drop -t -x'
-	alias xclip='xclip -sel c -r'
+	alias xclip='xclip -r -sel c'
+	alias clearclip='clipdel -d ".*"'
 	alias rm='rm -v'
 	alias cp='cp -v'
 	alias mv='mv -v'
@@ -116,8 +117,8 @@
 	alias findbg='xdg-open http://imgops.com/"$(imgur.sh "$(realpath ~/.local/share/bg)")"'
 	alias upbat='price bat "Basic Attention Token" 🦁 && less -R ~/.local/share/crypto-prices/bat-chart'
 # Desk
-	alias sit='idasen moveto 1170'
-	alias stand='idasen moveto 4425'
+	alias sit='idasen moveto 1150' # since the script always overshoots, both values are adjusted accordingly
+	alias stand='idasen moveto 4400'
 
 ## Disks
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'
