@@ -11,25 +11,28 @@ connected() {
 	fi
 }
 
+miscfixes() {
+	sbg # redraw background
+	dunstreload # Reload dunst configuration
+	cqctl # Reset copyq geometry
+}
+
 main() {
   int=${int:-eDP-1}
   ext=${ext:-DP-1}
 	while getopts ":elm" o; do
 		case "${o}" in
 			e) # External
-				connected && xrandr --output $int --off --output $ext --auto --dpi 144 ;;
+				connected && xrandr --output $int --off --output $ext --auto --dpi 144 && miscfixes ;;
 			l) # Laptop
 				xrandr --output $ext --off --output $int --auto --dpi 96 ;;
 			m) # Multi
-				connected && xrandr --output $int --auto --output $ext --primary --auto --right-of eDP-1 --dpi 144 ;;
+				connected && xrandr --output $int --auto --output $ext --primary --auto --right-of eDP-1 --dpi 144 && miscfixes ;;
 			*)
 				printf "Invalid option: -%s\n" "$OPTARG"
 				printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;
 		esac
 	done
-	sbg # redraw background
-	dunstreload # Reload dunst configuration
-	cqctl # Reset copyq geometry
 }
 
 # The actual script starts here
