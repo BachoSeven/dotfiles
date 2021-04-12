@@ -22,8 +22,7 @@
 	_ redshift			# Color temperature
 	togcomp -y			# Compositor
 	remaps					# Switch caps/super and one-tap_caps/esc
-	# copyq &					# Clipboard manager
-	clipmenud &				# Clipboard manager
+	copyq &					# Clipboard manager
 	gebaard -b			# Gesture daemon
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	xdg-xmenu -u &	# Update xmenu entries
