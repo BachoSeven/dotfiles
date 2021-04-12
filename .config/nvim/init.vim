@@ -51,19 +51,53 @@
 	se ignorecase
 	se smartcase
 	se infercase " For insert mode completion
-	se clipboard=unnamed,unnamedplus
 
 "		 +--------------+
 "		 | Key Mappings |
 "		 +--------------+
 "
 " Clipboard utilities
-"" Unlink system clipboard from vim's paste buffer
-	nn <leader>U :se clipboard=<CR>
-"" Don't copy in my system clipboard when I use these
-	no c "_c
-	no x "_x
-	no s "_s
+""" Standard method to interface with the system clipboard
+	" se clipboard=unnamed,unnamedplus
+" "" Unlink system clipboard from vim's paste buffer
+	" nn <leader>U :se clipboard=<CR>
+" "" Don't copy in my system clipboard when I use these
+	" no c "_c
+	" no x "_x
+	" no s "_s
+""" Alternative method
+	fu! X11Copy()
+			silent %w !setsid xclip -r -sel c
+	endfu
+	fu! X11CopyRegister(reg)
+			let l:ignore = system('setsid xclip -r -sel c', getreg(a:reg))
+	endfu
+	fu! X11PasteClipboard()
+			r !xclip -sel c -o
+	endfu
+	fu! X11PastePrimary()
+			r !xclip -o
+	endfu
+	nmap <Leader>x :call X11Copy()<CR>
+	vmap <Leader>x "xy:call X11CopyRegister('x')<CR>
+	nmap <Leader>p :call X11PasteClipboard()<CR>
+	nmap <Leader>P :call X11PastePrimary()<CR>
+
+" Printing from Vim is complicated due to UTF-8. The author of the PS
+" driver explained it here:
+" http://vim.1045645.n5.nabble.com/Printing-with-utf-8-characters-on-Windows-td1193441.html
+" So, just use plain old "lp" as a workaround.
+fun! Hardcopy()
+    " CUPS documentation says about "-o page-*":
+    " The value argument is the margin in points; each point is 1/72
+    " inch or 0.35mm.
+    " http://www.cups.org/documentation.php/doc-1.7/options.html
+    " I want a margin of about 1.8cm.
+    exe "!lp -o media=A4 -o page-left=50 -o page-right=50"
+        \" -o page-top=50 -o page-bottom=50 -o prettyprint"
+        \(&pdev != "" ? " -d " . &pdev : "") . " " . expand("%")
+endfun
+command! Hardcopy :call Hardcopy()
 
 " Fix syntax higlighting on the fly (https://vim.fandom.com/wiki/Fix_syntax_highlighting)
 	nn <leader>sy :syntax sync fromstart<CR>
