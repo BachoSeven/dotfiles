@@ -22,3 +22,10 @@ snip.rv = snip.basename or "class_name"`}
 	end
 end
 endsnippet
+
+snippet fun "function" b
+function ${1:}${3:`!p snip.rv = snip.basename`}($4)
+{
+	${VISUAL}$0
+}
+endsnippet
