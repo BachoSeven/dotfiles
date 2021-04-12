@@ -223,6 +223,12 @@ command! Hardcopy :call Hardcopy()
 	endfu
 	nn gx :cal OpenURLUnderCursor()<CR>
 
+" Sessions
+	let g:session_dir = '~/.config/nvim/sessions'
+	let g:session#default_opener = 'edit'
+	exec 'nn <Leader>ss :mks! ~/.config/nvim/sessions/'
+	exec 'nn <Leader>sl :so ~/.config/nvim/sessions/<C-D>'
+
 "		 +---------+
 "		 | Plugins |
 "		 +---------+
