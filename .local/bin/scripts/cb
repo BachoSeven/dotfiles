@@ -4,5 +4,5 @@
 if pgrep copyq >/dev/null 2>&1; then
 	copyq toggle
 else
-	clipmenu -i -f -c -l 15 -bw 7 -nb '#458588' -nf '#ebdbb2' -sb '#689d6a' -sf '#fbf1c7' -nhb '#282828' -shb '#1d2021' -fn Monospace-15
+	clipmenu -i -f -c -l 15 -bw 7 -nb '#32302f' -nf '#83a598' -sb '#282828' -sf '#fbf1c7' -nhf '#8ec07c' -shf '#d3869b' -nhb '#1d2021' -shb '#1d2021' -fn Monospace-16
 fi
