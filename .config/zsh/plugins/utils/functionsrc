@@ -94,11 +94,6 @@ aurupdate() {
 	$AURHELPER -Rs namcap
 }
 upbootloader() {
-	if (( UID )); then
-		printf "You must be root.\n" >&2
-		return 1
-	fi
-
 	$AURHELPER -Syu limine &&
 	sudo rm /boot/EFI/BOOT/BOOTX64.EFI &&
 	sudo cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/ &&
@@ -137,6 +132,7 @@ dirs=(
 	~/.config/mpv/scripts/mpvSockets
 	~/.config/browser/vimium
 	~/.local/src/subs
+	~/.local/src/colors/
 	~/.local/src/dmenu
 	~/.local/src/st
 	/dati/AP2_QMK/annepro-qmk
@@ -862,6 +858,9 @@ readw3m() {
 readlynx() {
 	readable -q $@ |
 	lynx -editor=nvim -stdin -force_html
+}
+wifipwd() {
+	sudo grep -r '^psk=' /etc/NetworkManager/system-connections/ | grep -i "$1"
 }
 ## A wget wrapper
 wgetext() {
