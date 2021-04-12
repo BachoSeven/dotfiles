@@ -12,7 +12,6 @@
 	nn <Space> <Nop>
 	let mapleader =" " " This is so comfy
 	se shell=/usr/bin/zsh
-	se clipboard=unnamed,unnamedplus
 	se nu
 	se path+=** " fuzzy find
 	se wildmenu
@@ -33,8 +32,8 @@
 	se inccommand=split " this is amazing for :%substitute
 	se hidden " hide buffers, don't close them
 	se sb spr " better split defaults
-	se acd " automatically cd into active vim buffer
-	se lazyredraw
+	se acd " automatically cd into active vim buffer, useful i.e. for :Lf
+	se lz
 	se list " show invisibles
 	se listchars=
 	se listchars+=tab:·\
@@ -52,13 +51,19 @@
 	se ignorecase
 	se smartcase
 	se infercase " For insert mode completion
+	se clipboard=unnamed,unnamedplus
 
 "		 +--------------+
 "		 | Key Mappings |
 "		 +--------------+
 "
-" Unlink system clipboard from vim's paste buffer
+" Clipboard utilities
+"" Unlink system clipboard from vim's paste buffer
 	nn <leader>U :se clipboard=<CR>
+"" Don't copy in my system clipboard when I use these
+	no c "_c
+	no x "_x
+	no s "_s
 
 " Fix syntax higlighting on the fly (https://vim.fandom.com/wiki/Fix_syntax_highlighting)
 	nn <leader>sy :syntax sync fromstart<CR>
@@ -89,10 +94,6 @@
 	nn <leader>[ :bprev<CR>
 	nn <leader>] :bnext<CR>
 	nn <leader>d :bdelete<CR>
-" Don't copy in my system clipboard when I use these
-	no c "_c
-	no x "_x
-	no s "_s
 " Make Y work the way you'd expect
 	nn Y y$
 " Move lines with Alt+{j,k} in normal mode

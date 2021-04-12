@@ -1,12 +1,14 @@
 #!/bin/sh
 
-# Simple script to control my Idasen desk through https://github.com/newAM/idasen
+# Simple script to control my Idasen desk
 mictog="pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+sit='idasen moveto 1170'
+stand='idasen moveto 4425'
 
 ! pidof Xorg >/dev/null 2>&1 && exit 0
 
 notify-send "Stand up in 10 seconds!"; sleep 10s
-$mictog && idasen stand && $mictog && sleep 10m
+$mictog && $stand && $mictog && sleep 10m
 
 notify-send "Sitting down soon..."; sleep 5s;
-$mictog && idasen sit && $mictog
+$mictog && $sit && $mictog
