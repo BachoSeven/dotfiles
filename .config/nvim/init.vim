@@ -129,9 +129,6 @@
 " Compile document, be it groff/LaTeX/markdown/etc.
 	map <leader>C :w! \| !compiler <c-r>%<CR>
 
-" Open corresponding .pdf/.html or preview
-	map <leader>P :!opout <c-r>%<CR><CR>
-
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 	cm w!! w !sudo tee > /dev/null %
 
