@@ -7,8 +7,8 @@ x-scheme-handler/http=vieb.desktop;
 x-scheme-handler/https=vieb.desktop;
 x-scheme-handler/mailto=mail.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
-x-scheme-handler/tg=userapp-Kotatogram Desktop-CGMB00.desktop
+x-scheme-handler/tg=userapp-Kotatogram Desktop-KVW610.desktop
 
 [Added Associations]
 image/png=vimiv.desktop;
-x-scheme-handler/tg=userapp-Kotatogram Desktop-CGMB00.desktop;
+x-scheme-handler/tg=userapp-Kotatogram Desktop-CGMB00.desktop;userapp-Kotatogram Desktop-KVW610.desktop;
