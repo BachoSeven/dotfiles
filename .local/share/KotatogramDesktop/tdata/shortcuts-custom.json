@@ -18,5 +18,9 @@
     {
         "command": "jump_to_date",
         "keys": "ctrl+shift+j"
+    },
+    {
+        "command": "show_contacts",
+        "keys": "ctrl+h"
     }
 ]
