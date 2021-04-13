@@ -30,6 +30,10 @@ linknotif() {
 	[ -d "$1" ] && ln -sf "$( fd --search-path "$(realpath "$1")" -e png -e jpg -e jpeg -e gifv -e gif -e tif -e tiff -t f | shuf -n 1)" "$bgloc" >/dev/null 2>&1 && notify-send -i "$bgloc" "choosing a nice wallpaper for ya..."
 }
 
+screendim() {
+	dim="$(xwininfo -root | awk -F':' '/Width|Height/ {printf $2}' | cut -d' ' -f2- | sed 's/ /x/g')"
+}
+
 while getopts ":hi:w:cmt" o; do
 	case "${o}" in
 		h) printf "Usage :\\n'$0'\\n\\t [ -h, -help: Show this message ]\\n\\t [ -i, -input \"path/to/img\" ]\\n\\t [ -w, -wal \"path/to/img\" \"backend\" : use pywal if installed ]\\n\\t [ -c, -center ]\\n\\t [ -m, -maximize: maximize wallpaper ( default format is \"--zoom\" ) ]\\n\\t [ -t, -tile ]\\n" && exit 0 ;;
@@ -56,7 +60,16 @@ done
 # Use gifview for gifs, or else use hsetroot
 mime="$( file --dereference --brief --mime-type -- "$bgloc" )"
 if [ "$mime" = "image/gif" ]; then
-	setsid -f gifbg "$bgloc"
+	if [ "$( identify -format "%n\n" "$(realpath "$bgloc")" )" = 1 ]; then
+		screendim
+		cp -L "$bgloc" /tmp/tiled
+		rm "$bgloc"
+		convert -size $dim tile:/tmp/tiled PNG:"$bgloc"
+		rm /tmp/tiled
+		hsetroot -cover "$bgloc" >/dev/null 2>&1
+	else
+		setsid -f gifbg "$bgloc"
+	fi
 else
 	$full || bgcol="$(imgextcol "$bgloc")"
 	hsetroot -solid "${bgcol:-#252525}" "${format:--cover}" "$bgloc" >/dev/null 2>&1

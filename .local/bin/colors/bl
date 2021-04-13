@@ -13,4 +13,4 @@
 	rm -f $XDG_DATA_HOME/bg
 
 # Save color for the aforementioned purpose
-	echo "#$c" > $XDG_CACHE_HOME/bgcol
+	echo "#$c" > ${XDG_CACHE_HOME:-$HOME/.cache}/bgcol
