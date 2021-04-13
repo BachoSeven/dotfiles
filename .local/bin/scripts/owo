@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Credits: https://github.com/kittenmilk/owo
+# Inspiration: https://github.com/kittenmilk/owo
 
 # Parse options
 while getopts ":hv" o; do

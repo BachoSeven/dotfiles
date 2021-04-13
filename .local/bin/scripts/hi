@@ -10,7 +10,7 @@ local cols sep temp_hist opts
 cols=$(( COLUMNS / 3 ))
 sep='{::}'
 temp_hist="$(mktemp -u)"
-[[ $1 = popup ]] && opts="--height=100%"
+[ "$1" = popup ] && opts="--height=100%"
 
 command cp -f "$HOME"/.config/chromium/Default/History "$temp_hist"
 
