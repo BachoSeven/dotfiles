@@ -2,8 +2,8 @@
 
 # Simple script to control my Idasen desk
 mictog="pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-sit='idasen moveto 1170'
-stand='idasen moveto 4425'
+stand="$HOME/.local/bin/scripts/idasen moveto 4425"
+sit="$HOME/.local/bin/scripts/idasen moveto 1170"
 
 ! pidof Xorg >/dev/null 2>&1 && exit 0
 
