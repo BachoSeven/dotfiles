@@ -1,11 +1,11 @@
 local wezterm = require 'wezterm'
 
 return {
-  font = wezterm.font("Hack Nerd Font"),
-  font_size = 23.0,
+  font = wezterm.font("scientifica"),
+  font_size = 24.0,
 
   hide_tab_bar_if_only_one_tab = true,
-  scrollback_lines=5000,
+  scrollback_lines=1000,
   line_height=0.91,
 
   window_padding = {
