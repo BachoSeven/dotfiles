@@ -45,6 +45,7 @@
 
     /* special pages */
     --link-color: #458488;
+    --link-underline: var(--link-color);
     --scrollbar-bg: #383838;
     --scrollbar-thumb: #ccc;
     --button-disabled: #777;
