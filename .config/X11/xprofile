@@ -22,6 +22,7 @@
 	_ redshift			# Color temperature
 	togcomp -y			# Compositor
 	remaps					# Switch caps/super and one-tap_caps/esc
+	systemctl --user start clipmenud.service # Clipboard management
 	gebaard -b			# Gesture daemon
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	xdg-xmenu -u &	# Update xmenu entries
