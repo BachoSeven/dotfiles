@@ -1,0 +1,76 @@
+#!/bin/sh
+
+# suckless.org patch downloader
+# dependencies: "dmenu" "sed" "curl"
+
+# usage
+# pdl <program>
+# example
+# pdl dwm
+
+Program=${1:-dwm}
+
+case $Program in
+	st|dwm|surf)
+		PatchesUrl="https://${Program}.suckless.org/patches/"
+		;;
+	dmenu|sent|quark|ii|tabbed|slock)
+		PatchesUrl="https://tools.suckless.org/${Program}/patches/"
+		;;
+	*)
+		printf "%s\n" "$Program not supported"
+		exit 1
+		;;
+esac
+
+TempFile=$(mktemp)
+
+Menu () {
+	dmenu -l 30 -p "Patch($Program):"
+}
+
+curl -s "$PatchesUrl"   > "$TempFile"
+
+sed -i -n -E '/a.*href.*patches\/[^"<]/s_.*"(.*)".*_https:\1_p'  "$TempFile"
+
+read IFS=- Name Url <<EOF
+$(
+while IFS= read -r PatchUrl; do
+	Name=${PatchUrl%/}
+	Name=${Name##*/}
+	printf "%s\n" "$Name - $PatchUrl"
+done < "$TempFile" | Menu
+)
+EOF
+
+[ -z "$Url" ] && exit
+
+curl -s "$Url" > "$TempFile"
+
+sed -i -n -E '/^<div id="main">/,${s/<[^>]*>//g;s/&#(..|...|....);//g;/^[[:space:]]*$/d;p}' "$TempFile"
+Diffs=$(sed -n -E 's/\b([^ ]*\.diff).*/\1/p' < "$TempFile")
+
+printf "===============\n"
+cat "$TempFile"
+printf "===============\n%s\n" "$Diffs"
+printf "= = = = = = = =\n%s" "Prompt patch to download?[y/N] "
+
+IFS= read -r Choice
+
+case $Choice in
+	[Yy]|[Yy]es)
+		;;
+	*)
+		exit
+		;;
+esac
+
+Diff=$( printf "%s\n" "$Diffs" | Menu )
+
+[ -z "$Diff" ] && exit
+
+DiffUrl="${Url}${Diff}"
+
+curl -O "$DiffUrl"
+
+rm -f "$TempFile"
