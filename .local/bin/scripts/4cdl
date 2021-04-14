@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# Downloads media from a 4chan thread
+# Dependencies "jq" "curl"
+# Usage:
+# 4cdl <board> <thread number>
+# Example:
+# 4cdl w 2175954
+
+Prog="4chan-down"
+
+TempFile=$(mktemp --tmpdir "${Prog}.tmp.XXXXXXXX")
+JsonFile=$(mktemp --tmpdir "${Prog}.json.XXXXXXXX")
+
+Err () {
+	printf "$1\n"
+	exit ${2:-1}
+}
+
+[ "$1" = "--help" ] || [ "$1" = "-h" ] && Err "USAGE: $Prog <board> <thread number>" 0
+[ -z "$2" ] && Err "USAGE: $Prog <board> <thread number>"
+
+Board=${1}
+Thread=${2}
+
+# Fetching Data
+curl -s "https://a.4cdn.org/$Board/thread/${Thread}.json" > "$JsonFile"
+
+# Checking data is non empty
+read _Word < "$JsonFile" || [ -n "$_Word" ] ||
+	Err "Incorrect thread/board. No media found.\nUSAGE: $Prog <board> <thread number>"
+
+mkdir -p "${Board}_${Thread}"
+cd "${Board}_${Thread}"
+
+# start flags
+printf "parallel\n" > "$TempFile"
+PreUrl="https://i.4cdn.org/$Board/"
+
+# json to curl config file
+jq -r '.posts|.[]|select(.tim !=null)|
+	"url = \"'"$PreUrl"'\(.tim)\(.ext)\"\nremote-name\n"
+	' <"$JsonFile" >> "$TempFile"
+
+curl -K "$TempFile"
+
+rm -f "$TempFile" "$JsonFile"
