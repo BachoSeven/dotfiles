@@ -14,7 +14,7 @@ connected() {
 miscfixes() {
 	sbg # redraw background
 	dunstreload # Reload dunst configuration
-	cqctl # Reset copyq geometry
+	cqctl magic
 }
 
 main() {

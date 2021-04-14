@@ -13,13 +13,24 @@ toggle() {
 	quit && clipctl enable || start
 }
 
-fixgeom() {
+reset() {
 	rm $HOME/.config/copyq/copyq_geometry.ini 2>/dev/null
+}
+
+fixgeom() {
 	quit
+	reset
 	start
 }
 
-[ -z $1 ] && fixgeom
-[ "$1" = "toggle" ] && toggle
+if [ -z $1 ]; then
+	fixgeom
+elif [ "$1" = "magic" ]; then
+	quit && reset && start
+elif [ "$1" = "toggle" ]; then
+	toggle
+else
+	printf "Unrecognised argument: %s\n" "$1"
+fi
 
 exit 0
