@@ -37,7 +37,7 @@
     "native_decorations": false,
     "net_speed_boost": 0,
     "profile_top_mute": true,
-    "qt_scale": true,
+    "qt_scale": false,
     "recent_stickers_limit": 25,
     "replaces": [
     ],
