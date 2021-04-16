@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Uses xwinwrap to display animated .gif on the root window
 # Dependencies:
 #	- gifsicle

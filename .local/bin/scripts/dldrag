@@ -1,4 +1,5 @@
 #!/bin/sh
+
 # Provides the ability to download a file by dropping it into a window
 
 url=$(dragon-drag-and-drop -t -x)

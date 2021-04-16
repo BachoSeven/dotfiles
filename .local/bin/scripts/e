@@ -1,5 +1,5 @@
 #!/bin/sh
-#
+
 # e [iters] [scale] - calculate e
 # (c) Kiëd Llaentenn <kiedtl@tilde.team>
 #

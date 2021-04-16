@@ -1,4 +1,5 @@
 #!/bin/sh
+
 files=$(dragon-drag-and-drop -t -x)
 
 for file in $files

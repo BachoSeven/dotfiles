@@ -1,6 +1,9 @@
 #!/bin/sh
 
-# define values
+# Script used to change the screen brightness.
+# Uses dunstify to only show one notification for "continuos" increase/decrease in brightness(i.e. when holding a keybinding)
+
+# You should change this according to your system
 cbr=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
 msgId="192838"
 [ "$cbr" -gt 50 ] && dimbr=$((cbr-30)) || dimbr=20

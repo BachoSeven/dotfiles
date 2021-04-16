@@ -2,17 +2,16 @@
 #
 # http://github.com/mitchweaver/bin
 #
-# toggle a file between executable / non-executable
-#
+# toggle a file's executable / non-executable flag
 
-for file ; do
-    if [ -f "$file" ] ; then
-        if [ -x "$file" ] ; then
-            chmod -x "$file"
+for f; do
+    if [ -f "$f" ] ; then
+        if [ -x "$f" ] ; then
+            chmod -x "$f"
         else
-            chmod +x "$file"
+            chmod +x "$f"
         fi
     else
-        >&2 printf 'Error: %s does not exist.\n' "$file"
+        >&2 printf 'Error: %s does not exist.\n' "$f"
     fi
 done

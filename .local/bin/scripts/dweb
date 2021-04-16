@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Credits: https://efe.kim/en/websearch
+
 browser='chromium'
 engine='https://duckduckgo.com/?q=%s'
 bookmarks="$XDG_CONFIG_HOME/browser/bkp/bm/plain"

@@ -80,7 +80,6 @@
 	alias sqm='w3mwrap https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias tb='taskbook'
 	alias octave='octave -q'
-	alias chill='mpv https://tinyurl.com/wbl4fya'
 	alias anonradio='mpv --no-video http://anonradio.net:8000/anonradio'
 	alias P='patch -p1 <'
 	alias nf='neofetch'
