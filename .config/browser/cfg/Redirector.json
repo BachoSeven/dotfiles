@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-03-26T15:48:45.854Z",
+    "createdAt": "2021-04-16T11:12:53.140Z",
     "redirects": [
         {
             "description": "ytbleh",
@@ -67,7 +67,7 @@
             "redirectUrl": "https://old.reddit.com$1",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame"

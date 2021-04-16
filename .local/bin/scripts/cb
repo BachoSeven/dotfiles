@@ -1,5 +1,6 @@
 #!/bin/sh
-# Clipboard manager
+
+# Switch between the clipmenu and copyq clipboard managers
 
 if pgrep copyq >/dev/null 2>&1; then
 	copyq toggle

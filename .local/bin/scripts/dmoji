@@ -1,10 +1,11 @@
-#!/bin/zsh
+#!/bin/sh
+
 # dmoji - dmenu based emoji picker
 
 # GNU cut doesn't grok UTF-8.
 EMOJI=$(sed '1,/^exit/d' $0 | dmenu -i -r -l 20 | grep -Po '^[^ ]*')
 if [ -n "$EMOJI" ]; then
-	ifinstalled copyq && printf '%s' "$EMOJI" | copyq copy -
+	printf '%s' "$EMOJI" | xclip -sel c
 	exit $?
 fi
 # made with: curl -sL https://raw.githubusercontent.com/milesj/emojibase/master/packages/data/en/raw.json | jq -r '.[] | .emoji + "  " + .name + "  " + (.tags | map("#" + .) | join(" "))'

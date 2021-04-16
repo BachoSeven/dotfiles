@@ -1,7 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# This is for a customised w3m config, credits:
-# https://github.com/felipesaa/A-vim-like-firefox-like-configuration-for-w3m/tree/master/scripts_in_path
+# Used in my w3m config
 
 # copy to clipboard
 printf "%s" "$1" | xclip -sel c

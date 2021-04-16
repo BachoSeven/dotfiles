@@ -1,9 +1,8 @@
 #!/bin/sh -e
-#
+
 # http://github.com/mitchweaver
-#
 # concatenate all given video files into one
-#
+
 
 usage() {
     >&2 printf 'Usage: %s [files]\n' "${0##*/}"

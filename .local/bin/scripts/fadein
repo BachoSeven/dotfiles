@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# TODO: add to mpc bindings(WIP)
+
 vol="$(mpc volume | cut -c 8-10)"
 step=$((vol/10))
 mpc volume 0

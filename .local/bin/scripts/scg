@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## Script generator
+# Script generator (used together with `dscg`)
 
 path="$HOME/.local/bin"
 editor="st -c Scripting -e nvim -c 'set ft=sh'"

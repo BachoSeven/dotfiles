@@ -47,7 +47,6 @@
 - gtk (gruvbox)
 
 ## Plugins
-~~PACKAGED: `chromium-keepassxc-browser stylus-git chromium-ublock-origin chromium-extension-https-everywhere`~~
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
 > Install sci-hub plugin manually (crx is in this repo)
 
@@ -67,7 +66,6 @@
 ### Privacy-focused
 - ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it, import List(s)]
 - I don't care about cookies
-- HTTPS Everywhere
 - ClearURLs
 
 searchengs:

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Script which controls copyq and resets its geometry,
+# useful when switching between different monitor setups.
+
 quit() {
 	pgrep copyq >/dev/null && copyq exit
 }

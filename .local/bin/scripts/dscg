@@ -1,6 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# NOTE: This requires 'scg' script
+# Dmenu-based script  and browser
+# NOTE: This requires the `scg` script
+
 path="$HOME/.local/bin"
 
 # dmenu options
@@ -8,17 +10,17 @@ lines="-l 14"
 prompt="-p Script:"
 
 # list only executable non-binay files
-list="$(fd . $path --type executable \
+fd . $path --type executable \
        | sed 's|^'$path/'||' \
        | sort \
-       )"
+       > /tmp/scriptslist
 
 # output list to dmenu
-select="$(dmenu $prompt $lines <<< $list)"
+sel="$(cat /tmp/scriptslist | dmenu $prompt $lines)"
 
-# run 'scg' with the selected file name
-if [[ -n "$select" ]]; then
-    eval scg "$select"
+# run scg with the selected file name
+if [ -n "$sel" ]; then
+    eval scg "$sel"
 fi
 
 exit 0;
