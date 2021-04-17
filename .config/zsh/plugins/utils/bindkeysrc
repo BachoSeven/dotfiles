@@ -135,7 +135,7 @@
 	alias cvb='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/Vieb/viebrc'
 	alias src='nvim $HOME/.local/src'
 # Default to human readable figures and colorize
-	alias tl="tldr --list | fzf --preview 'tldr {} --color always' |xargs tldr" # really nice
+	alias tl="tldr --list | fzf --preview 'tldr {} --color always' | xargs tldr" # noice
 	alias df='df --print-type'
 	alias ls='ls --classify --group-directories-first --hyperlink=auto'
 	alias l='ls --color -lA'
