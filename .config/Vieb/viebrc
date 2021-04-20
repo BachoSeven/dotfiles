@@ -125,22 +125,41 @@ cmap bp<CR> <action.previousTab>
 
 " Normal mode mappings
 nmap ZZ <:quit>
-nmap o <action.toExploreMode>
-nmap O <action.openNewTab><action.toExploreMode>
 "" Toggle tab/nav bars
 nmap <lt> <:set guitabbar=onupdate guinavbar=onupdate>
 nmap > <:set guitabbar=always guinavbar=always>
-" Copy links
+"" Copy links
 nmap x <pointer.start><action.startFollowCurrentTab>
 fmap <Esc> <action.toNormalMode>
-" Copy mouse selection (vvy)
+"" Copy mouse selection (vvy)
 nmap y <pointer.start><pointer.startVisualSelect><pointer.copyAndStop>
+"" :nohlsearch
+nmap <CR> <action.emptySearch>
+
+" Vimium muscle-memory
+"" Omnibar focus
+vmap c <Esc><pointer.start>
+nmap o <action.toExploreMode>
+nmap O <action.openNewTab><action.toExploreMode>
 " Copy current url
 nmap yy <action.pageToClipboard>
-" :nohlsearch
-nmap <Space><Space> <action.emptySearch>
-" vimium-like duplicate tab and searching through opened tabs (TODO)
-unmap T
+" duplicate tab
 nmap yt <action.openNewTabWithCurrentUrl><CR>
+" searching through opened tabs (WIP)
+nmap T <action.toCommandMode>buffer<Space>
+" nmap v <pointer.start><pointer.startVisualSelect>
+nmap gi <action.insertAtFirstInput>
+nmap g0 <:buffer 0>
+nmap g$ <:buffer 999>
+"" Misc
+nmap <A-p> <:pin>
+nmap <A-m> <:mute>
+nmap ? <:help>
+
+" vimium's caret mode bindings
+vmap c <Esc><pointer.start>
+vmap 0 <pointer.moveLeftMax>
+
+" UNMAPPED: X
 
 " vim: ft=vim
