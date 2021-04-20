@@ -1,5 +1,4 @@
 ## Functions
-# Some of this was stolen, amongst others, from https://github.com/SmartFinn/dotfiles. Thanks!
 
 # System configuration backup
 syscp() {
@@ -9,7 +8,7 @@ syscp() {
 	cp -Pvut "$reldir" "$@"
 }
 
-# noice
+# Credits to https://github.com/SmartFinn/dotfiles for these:
 _exists() { (( $+commands[$1] )) }
 _run() { # run command if it exists
 	local -a saved_cmd=("$@")
