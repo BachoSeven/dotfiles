@@ -140,6 +140,8 @@ nmap <CR> <action.emptySearch>
 "" Navigation
 nmap d <action.scrollPageDownHalf>
 nmap u <action.scrollPageUpHalf>
+nmap zH <action.scrollPageLeft>
+nmap zL <action.scrollPageRight>
 "" Closing tabs
 nmap x <action.closeTab>
 nmap X <action.reopenTab>
@@ -163,5 +165,6 @@ nmap ? <:help>
 "" vimium's caret mode bindings
 vmap c <Esc><pointer.start>
 vmap 0 <pointer.moveLeftMax>
+pmap 0 <pointer.moveLeftMax>
 
 " vim: ft=vim
