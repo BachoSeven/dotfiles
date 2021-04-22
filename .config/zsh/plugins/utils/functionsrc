@@ -73,24 +73,24 @@ cleanup() {
 aurpublish() {
 	PKG="$1"
 	_run git clone ssh://aur@aur.archlinux.org/"$PKG".git; cp PKGBUILD $PKG; cd $PKG
-	_run $AURHELPER -S namcap && namcap PKGBUILD; $AURHELPER -Rs namcap
+	# _run $AURHELPER -S namcap && namcap PKGBUILD; $AURHELPER -Rs namcap
 	_run makepkg -fs && makepkg --printsrcinfo > .SRCINFO; echo "*" > .gitignore
 	_run git add -f PKGBUILD .SRCINFO && git commit -a && git push
 }
 aurupdate() {
 	repodir="$1"; shift
 	cd $repodir
-	$AURHELPER -S --needed namcap
+	# $AURHELPER -S --needed namcap
 	for repo in $@; do
 		cp ../"$repo"/PKGBUILD -t "$repo"
 		cd "$repo"
-		namcap PKGBUILD
+		# namcap PKGBUILD
 		makepkg -fs && makepkg --printsrcinfo > .SRCINFO &&
 		git commit -a
 		git push
 		cd ..
 	done
-	$AURHELPER -Rs namcap
+	# $AURHELPER -Rs namcap
 }
 upbootloader() {
 	$AURHELPER -Syu limine &&

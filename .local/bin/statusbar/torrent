@@ -8,8 +8,8 @@ out="$(qbt torrent list --format csv:delimiter=\| --url http://localhost:9091 2>
 	s/StalledUpload/Z 🌱/;
 	s/PausedUpload/N ☑/;
 	s/StalledDownload/B 💤/;
-	s/Uploading/L /;
-	s/Downloading/M /" \
+	s/Uploading/L ∆/;
+	s/Downloading/M ∇/" \
 	| sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ')"
 
 [ -n "$out" ] && echo "$out" || echo "🐉"
