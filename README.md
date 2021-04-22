@@ -10,7 +10,7 @@
 
 ```
 ![](https://i.imgur.com/IR6OcxA.png)
-~[](https://i.imgur.com/uyTxonn.jpg)
+![](https://i.imgur.com/uyTxonn.jpg)
 ![](https://i.imgur.com/G8a7O1h.png)
 <a href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/Arch-BTW-blue?logo=arch%20linux"></a><br><br>
 These are my dotfiles set up as a bare git repo and managed with [dotbare](https://github.com/kazhala/dotbare)
