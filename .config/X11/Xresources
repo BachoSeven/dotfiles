@@ -42,10 +42,10 @@ gnuplot*font: mbfont:-misc-fixed-medium-r-normal-*-*-*-100-100-*-*-iso10646-*
 gnuplot*encoding: utf-8
 
 !! Appearance
-Xft.antialias: true
-Xft.hinting: true
+Xft.antialias: 1
+Xft.hinting: 1
 Xft.rgba: rgb
-Xft.autohint: false
+Xft.autohint: 0
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
-*.scrollBar: false
+*.scrollBar: 0
