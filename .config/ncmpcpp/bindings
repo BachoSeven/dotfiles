@@ -106,6 +106,8 @@ def_key "right"
   slave_screen
 def_key "left"
   master_screen
+def_key "/"
+  apply_filter
 
 #def_key "mouse"
 #  mouse_event
@@ -321,9 +323,6 @@ def_key "left"
 #
 #def_key "ctrl-r"
 #  reverse_playlist
-#
-#def_key "ctrl-f"
-#  apply_filter
 #
 #def_key "ctrl-_"
 #  select_found_items

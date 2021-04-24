@@ -1,15 +1,10 @@
-#
-# ~/.bashrc
-#
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# don't source if not interactive
+[[ $- =~ i ]] || return
 
 export HISTFILE=""
 shopt -s globstar
 
 # Make colorcoding available for everyone
-
 Red='\[\e[0;31m\]'              # Red
 BRed='\[\e[1;31m\]'             # Bold Red
 Green='\[\e[0;32m\]'            # Green
