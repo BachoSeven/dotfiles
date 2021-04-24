@@ -1,2 +1,4 @@
-[Icon Theme]
+[icon theme]
 Inherits=ArchCursorTheme
+
+# vim: ft=cfg
