@@ -1,0 +1,36 @@
+#!/bin/sh
+
+play() {
+	vol="$(mpc volume | cut -c 8-10)"
+	step=$((vol/10))
+	mpc volume 0
+	mpc play
+	for i in [1 2 3 4 5 6 7 8 9 10] ; do
+					mpc volume +$step >/dev/null;
+					sleep 0.07;
+	done
+}
+
+pause() {
+	vol="$(mpc volume | cut -c 8-10)"
+	step=$((vol/10))
+	for i in [1 2 3 4 5 6 7 8 9 10] ; do
+					mpc volume -$step >/dev/null;
+					sleep 0.07;
+	done
+	mpc pause >/dev/null
+	mpc volume $vol >/dev/null
+}
+
+stop() {
+	vol="$(mpc volume | cut -c 8-10)"
+	step=$((vol/10))
+	for i in [1 2 3 4 5 6 7 8 9 10] ; do
+					mpc volume -$step >/dev/null;
+					sleep 0.07;
+	done
+	mpc stop >/dev/null
+	mpc volume $vol >/dev/null
+}
+
+# toggle() {
