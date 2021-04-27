@@ -84,6 +84,8 @@ cal plug#begin(g:plugin_location)
 "" Syntax highlighting
 	Plug 'VebbNix/lf-vim', { 'as': 'lf-syntax' }
 	Plug 'McSinyx/vim-octave'
+""" Org Mode
+	Plug 'jceb/vim-orgmode'
 
 cal plug#end()
 " }}}
