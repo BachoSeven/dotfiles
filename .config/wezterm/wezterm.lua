@@ -35,6 +35,7 @@ return {
     {key="DownArrow", mods="CTRL", action=wezterm.action{ActivatePaneDirection="Down"}},
     {key="UpArrow", mods="CTRL", action=wezterm.action{ActivatePaneDirection="Up"}},
   },
+
   colors = {
     background = "#282828",
     foreground = "#ebdbb2",

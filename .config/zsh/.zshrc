@@ -5,7 +5,7 @@
 #      (_)   \/_____/ \/_____/ \/_/\/_/ \/_/ /_/ \/_____/
 
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+[[ $- =~ i ]] || return
 
 ## Plugins
 	function zsh_load_plugins() {
