@@ -182,20 +182,20 @@ CHR  37;44
 #############################################################################
 ### By file attributes
 
-# Orphaned symlinks (blinking white on red)
+# Orphaned symlinks (white on red)
 # Blink may or may not work (works on iTerm dark or light, and Putty dark)
-ORPHAN  05;37;41
+ORPHAN  37;41
 # ... and the files that orphaned symlinks point to (blinking white on red)
-MISSING 05;37;41
+MISSING 37;41
 
-# files with execute permission
+# files with execute permission (cyan)
 EXEC 01;36  # Unix
-.cmd 01;31  # Win
-.exe 01;31  # Win
-.com 01;31  # Win
-.bat 01;31  # Win
-.reg 01;31  # Win
-.app 01;31  # OSX
+.cmd 01;36  # Win
+.exe 01;36  # Win
+.com 01;36  # Win
+.bat 01;36  # Win
+.reg 01;36  # Win
+.app 01;36  # OSX
 
 #############################################################################
 ### By extension
