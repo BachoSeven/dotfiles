@@ -44,7 +44,6 @@ set devtoolsposition=vsplit
 set guihidetimeout=3000
 set guinavbar=onupdate
 set guitabbar=onupdate
-set tabclosefocusright
 
 " Insert mode edit
 set vimcommand="st -e nvim"
@@ -53,6 +52,10 @@ set vimcommand="st -e nvim"
 set norestoretabs
 set startuppages="file:///home/fra/.config/browser/startpage/index.html"
 set suggesttopsites=0
+
+" Closing tabs
+set tabclosefocusright
+set quitonlasttabclose
 
 " General Mappings
 map <Up> <action.scrollUp>
@@ -153,7 +156,7 @@ nmap O <action.openNewTab><action.toExploreMode>
 nmap yy <action.pageToClipboard>
 "" duplicate tab
 nmap yt <action.openNewTabWithCurrentUrl><CR>
-"" searching through opened tabs (WIP)
+"" searching through opened tabs
 nmap T <action.toCommandMode>buffer<Space>
 nmap gi <action.insertAtFirstInput>
 nmap g0 <:buffer 0>
