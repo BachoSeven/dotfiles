@@ -1,15 +1,4 @@
-
 #compdef lf
-
-# Autocompletion for zsh shell.
-#
-# You need to rename this file to _lf and add containing folder to $fpath in
-# ~/.zshrc file:
-#
-#     fpath=(/path/to/directory/containing/the/file $fpath)
-#     autoload -U compinit
-#     compinit
-#
 
 local arguments
 
