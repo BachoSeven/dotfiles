@@ -324,6 +324,7 @@ Thumbs.db
 .config/chromium/Default/Service Worker
 .config/chromium/Default/Application Cache
 .config/chromium/Default/History Index *
+.config/chromium/Default/IndexedDB
 
 #Vieb:
 .config/Vieb/Local Storage
