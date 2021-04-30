@@ -26,6 +26,7 @@ These are my dotfiles set up as a bare git repo and managed with [dotbare](https
       * [Blues](#blues)
       * [Greenish](#greenish)
       * [Pink :3](#pink-3)
+      * [Madness](#madness)
     * [Lama](#lama)
 
 <!-- vim-markdown-toc -->
@@ -101,6 +102,9 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 #### Pink :3
 ![](https://i.imgur.com/h6j1n2K.jpg)
 ![](https://i.imgur.com/IAu5mkU.jpg)
+
+#### Madness
+![](https://i.imgur.com/28QH4zb.jpg)
 
 ### Lama
 here be lamas
