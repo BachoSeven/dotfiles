@@ -1,7 +1,6 @@
 #!/bin/sh
 
-# Macho: smart man pages
-# Credits to https://hiphish.github.io/blog/2020/05/31/macho-man-command-on-steroids/ and to Distro Tube
+# Credits: https://hiphish.github.io/blog/2020/05/31/macho-man-command-on-steroids
 
 while getopts ":hifs:" opt; do
     case $opt in

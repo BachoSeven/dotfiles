@@ -9,10 +9,13 @@ local cols sep temp_hist opts
 
 cols=$(( COLUMNS / 3 ))
 sep='{::}'
-temp_hist="$(mktemp -u)"
+temp_hist="$(mktemp -u /tmp/histbkp.XXXXXX)"
 [ "$1" = popup ] && opts="--height=100%"
 
 command cp -f "$HOME"/.config/chromium/Default/History "$temp_hist"
+
+# for plain text:
+#	sqlite3 -separator "$sep" "$temp_hist" "select url from urls order by last_visit_time desc"
 
 sqlite3 -separator "$sep" "$temp_hist"							\
 	"select substr(title, 1, $cols), url from urls order by last_visit_time desc"	|

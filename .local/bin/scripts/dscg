@@ -4,6 +4,7 @@
 # NOTE: This requires the `scg` script
 
 path="$HOME/.local/bin"
+temp="$(mktemp /tmp/dscg.XXXXXX)"
 
 # dmenu options
 lines="-l 14"
@@ -13,14 +14,14 @@ prompt="-p Script:"
 fd . $path --type executable \
        | sed 's|^'$path/'||' \
        | sort \
-       > /tmp/scriptslist
+       > "$temp"
 
 # output list to dmenu
-sel="$(cat /tmp/scriptslist | dmenu $prompt $lines)"
+sel="$(cat "$temp" | dmenu $prompt $lines)"
 
 # run scg with the selected file name
 if [ -n "$sel" ]; then
     eval scg "$sel"
 fi
 
-exit 0;
+rm "$temp"
