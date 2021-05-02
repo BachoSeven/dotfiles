@@ -200,7 +200,22 @@ command! Hardcopy :call Hardcopy()
 	let g:netrw_altv=1          " open splits to the right
 	let g:netrw_browse_split=4
 	let g:netrw_liststyle=3     " tree view
-	let g:netrw_browsex_viewer="xdg-open" " Use xdg-open(mimi) to open files externally
+
+" Doesn't work because of gh#vim/vim#4738
+	" let g:netrw_browsex_viewer="xdg-open" " Use xdg-open(mimi) to open files externally
+	let g:netrw_nogx=1
+
+" This is just temporary workaround until the above issue is truly resolved.
+" https://github.com/vim/vim/issues/4738#issuecomment-830820565
+	function! OpenURLUnderCursor()
+		let s:uri = expand('<cfile>')
+		echom "s:uri = " . s:uri
+		if s:uri != ''
+			silent exec "!xdg-open '".s:uri."' > /dev/null"
+			:redraw!
+		endif
+	endfunction
+	nnoremap gx :call OpenURLUnderCursor()<CR>
 
 " make inline more readable
 	fu! UnMinify()
@@ -212,16 +227,6 @@ command! Hardcopy :call Hardcopy()
 		normal ggVG=
 	endfu
 	nn <silent> <leader>y <esc>:cal UnMinify()<CR><esc>
-" This is needed because of a bug in netrw, see https://github.com/vim/vim/issues/4738
-	fu! OpenURLUnderCursor()
-		let s:uri = expand('<cWORD>')
-		let s:uri = matchstr(s:uri, "[a-z]*:\/\/[^ >,;)'\"]*")
-		if s:uri != ''
-			silent exec "!xdg-open '".s:uri."' > /dev/null"
-			:redraw!
-		endif
-	endfu
-	nn gx :cal OpenURLUnderCursor()<CR>
 
 " Sessions
 	let g:session_dir = '~/.config/nvim/sessions'
