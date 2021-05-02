@@ -4,7 +4,7 @@
 
 browser='chromium'
 engine='https://duckduckgo.com/?q=%s'
-bookmarks="$XDG_CONFIG_HOME/browser/bkp/bm/plain"
+[ "$0" = "dweb-hist" ] && bookmarks="$XDG_CONFIG_HOME/browser/bkp/hist/plain" || bookmarks="$XDG_CONFIG_HOME/browser/bkp/bm/plain"
 
 gotourl() {
 	if [ "$nbrowser" = surf ]
