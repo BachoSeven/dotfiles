@@ -66,12 +66,12 @@ if [ -n "$cmd" ]; then
 
 		# open a command up in a terminal
 		# a second semicolon uses sudo -A
-	if [[ $cmd == *';;' ]]; then
-		cmdexec="xdotool mousemove - 1 mousemove restore; sudo -Ai '$cmdexec'"
-	elif [[ $cmd == *";" ]]; then
-		cmdexec="st -e $cmdexec"
-	fi
+		if [[ $cmd == *';;' ]]; then
+			cmdexec="xdotool mousemove - 1 mousemove restore; sudo -Ai '$cmdexec'"
+		elif [[ $cmd == *";" ]]; then
+			cmdexec="st -e $cmdexec"
+		fi
 
 		# Workaround to run aliases
-		echo "$cmdexec" | bash -i
+		echo "$cmdexec" | bash
 fi
