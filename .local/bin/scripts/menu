@@ -22,7 +22,6 @@ cache=$( compgen -a; compgen -c | grep -vxF "$(compgen -a)" | sort | tail -n +10
 sorted=$(sort <<< "$history" | uniq -c | sort -hr | colrm 1 8)
 filter=$(sed 's/[*;]*$//' <<< "$sorted")
 
-echo "$filter"
 # grep removes the duplicates from the unsorted list
 cache_deduped=$(grep -vxF "$filter" <<< "$cache")
 
