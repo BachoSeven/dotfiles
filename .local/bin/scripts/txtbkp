@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Plain text chromium backup
+
+## Bookmarks
+jq -r 'getpath(paths(.url?)).url' ~/.config/chromium/Default/Bookmarks > bm/plain
+
+## History
+sep='{::}'
+temp="$(mktemp -u)"
+cp -f "$HOME"/.config/chromium/Default/History "$temp"
+sqlite3 -separator "$sep" "$temp" "select url from urls order by last_visit_time desc" > hist/plain
