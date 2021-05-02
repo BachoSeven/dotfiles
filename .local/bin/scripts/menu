@@ -72,8 +72,6 @@ if [ -n "$cmd" ]; then
 		cmdexec="st -e $cmdexec"
 	fi
 
-		# Workaround to run functions...
-		echo "$cmdexec" | compgen -F "$cmdexec" 2>/dev/null| bash -i
-		# ...and aliases
+		# Workaround to run aliases
 		echo "$cmdexec" | bash -i
 fi
