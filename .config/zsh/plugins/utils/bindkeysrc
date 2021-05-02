@@ -106,6 +106,8 @@
 	bindkey "^m" magic-abbrev-expand-and-accept
 
 ## These aliases are here because they're either too short for, or useless to, the `menu` script.
+# Enable aliases to be sudo’ed
+	alias sudo='sudo '
 # cf... shortcuts
 	alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
 	alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
