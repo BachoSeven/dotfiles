@@ -27,7 +27,7 @@ Tab: complete
 
 set editing-mode vi
 $if mode=vi
-	# $if Octave # TODO: Use this for `octave --gui`
+	# $if Octave # NOTE: Uncomment this if-clause for `octave --gui`
 		# set show-mode-in-prompt off
 	# $else
 		set show-mode-in-prompt on
