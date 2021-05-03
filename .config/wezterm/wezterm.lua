@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 
 return {
-  font = wezterm.font("scientifica"),
+  -- font = wezterm.font("scientifica"),
   font_size = 25.0,
 
   hide_tab_bar_if_only_one_tab = true,
