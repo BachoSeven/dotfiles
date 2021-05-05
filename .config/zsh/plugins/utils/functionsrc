@@ -650,6 +650,14 @@ vidvolume() {
 }
 
 # Useful general-purpose shell utilities
+cpuctl() {
+    case $1 in
+       performance|ondemand|powersave|schedutil|conservative) echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null ;;
+       status) cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor ;;
+			 monitor) watch -n1 grep \"cpu MHz\" /proc/cpuinfo ;;
+       *) echo "Invalid argument. Valid governor values:\n 'performance', 'ondemand', 'powersave', 'conservative', 'schedutil'.\n\nOther options:\n 'status', 'monitor'." ;;
+    esac
+}
 ## List processes - update the list by pressing CTRL-R
 lps() {
 	ps -ef | fzf --bind 'ctrl-r:reload(ps -ef)' --header 'Press CTRL-R to reload' \

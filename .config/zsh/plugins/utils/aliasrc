@@ -91,9 +91,6 @@
 	alias startcups='sudo systemctl start cups avahi-daemon.service'
 	alias cbh='connectHeadphones'
 	alias uefi='sudo systemctl reboot --firmware-setup'
-	alias performance='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null'
-	alias powersave='echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null'
-	alias cpufreq='watch grep \"cpu MHz\" /proc/cpuinfo'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias xr="xrandr"
 	alias glow='glow -p'
