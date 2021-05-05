@@ -8,7 +8,6 @@ set window-title-home-tilde true
 set statusbar-home-tilde true
 set page-padding 1
 
-
 set font "monospace normal 16"
 set window-height 1024
 set window-width 768
@@ -40,7 +39,7 @@ set scroll-full-overlap 0.01
 set scroll-step 50
 set incremental-search true
 set guioptions ""
-map <M-s> toggle_statusbar
+map b toggle_statusbar
 
 map [normal] ZZ quit
 map [normal] ZQ quit

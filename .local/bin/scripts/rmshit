@@ -11,6 +11,8 @@ shittyfiles = [
     '~/.local/share/recently-used.xbel',
     '~/.local/state',
     '~/.local/share/cargo', # Build files
+    '~/.local/share/go', # Build files
+    '~/.local/share/NuGet', # Build files
     '~/Desktop',            # Firefox creates this
     '~/Downloads',          # Spotify creates this
     '~/.thumbnails',

@@ -10,6 +10,7 @@
 # SSH
 	alias phc='export TERM=xterm-256color; ssh minnocci@poisson.phc.dm.unipi.it'
 	alias server='ssh arciere@192.168.1.107'
+	alias serveron='wol 60:a4:4c:59:6d:ec'
 	alias vote='ssh aur@aur.archlinux.org vote'
 
 ## Backup
