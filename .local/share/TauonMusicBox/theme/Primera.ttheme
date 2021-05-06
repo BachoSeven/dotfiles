@@ -1,0 +1,111 @@
+#Tauon Music Box theme file
+
+
+#-Backgrounds------
+
+23,21,38        top panel
+23,21,38        tracklist panel
+23,21,38        side panel
+13,11,18        bottom panel
+23,21,38        queue panel
+23,21,38        gallery background
+
+#-Playlist---------
+
+110,113,191     track line
+110,113,191     track time
+110,113,191     track index
+152,195,121     track artist
+150,106,133     track album
+
+152,195,121     track playing
+152,195,121     index playing
+152,195,121     artist playing
+152,195,121     album playing
+152,195,121     time playing
+
+249,159,177     track missing
+
+152,195,121     fav line
+33,31,48        folder line
+150,106,133     folder title
+
+30,28,49,255    playing highlight
+97,175,239,40   select highlight
+152,195,121     gallery highlight
+
+30,28,49        column bar background
+
+#-Menu-------------
+
+30,28,49        menu background
+23,21,38        menu highlight
+150,106,133     menu border
+110,113,191     menu text
+65,49,104       menu disable text
+65,49,104       menu icons
+
+#-Top Panel--------
+
+30,28,49        tab active text
+110,113,191     tab text
+30,28,49        tab over
+150,106,133     tab active background
+23,21,38        tab background
+152,195,121     music vis
+
+23,21,38        window buttons background
+30,28,49        window buttons off
+97,175,239      window buttons on
+23,21,38        window buttons icon over
+
+#-Bottom Panel-----
+
+33,38,64        buttons off
+152,195,121     buttons over
+224,108,117     buttons active
+
+152,195,121     playing time
+
+152,195,121     seek bar
+30,28,49        seek bg
+30,28,49        volume bg
+152,195,121     volume bar
+110,113,191     scroll bar
+
+33,38,64        mode off
+152,195,121     mode over
+224,108,117     mode on
+
+152,195,121     bottom title
+
+#-Dialog Box-------
+
+23,21,38        box background
+150,106,133     box border
+110,113,191     box title text
+118,100,160     box text label
+110,113,191     box text normal
+110,113,191     box sub text
+110,113,191     box input text
+33,38,64        box text border
+33,38,64        box button background normal
+54,56,108       box button background highlight
+33,38,64        box button border
+
+#-Artist Info-------
+23,21,38        artist bio background
+110,113,191     artist bio text
+
+#-Side Panel-------
+
+152,195,121     title info
+110,113,191     extra info
+152,195,121     art border
+
+#-Mini Mode--------
+
+30,28,49        mini bg
+110,113,191     mini border
+152,195,121     mini text 1
+97,175,239      mini text 2

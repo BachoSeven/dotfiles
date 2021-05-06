@@ -72,7 +72,7 @@
 	alias sort='sort --parallel 8 -S 16M'
 	alias dr='drive'
 	alias nmdm='networkmanager_dmenu'
-	alias rnm='sudo systemctl reload NetworkManager unbound'
+	alias rnm='sudo systemctl restart NetworkManager restart unbound'
 	alias nn='nordvpn'
 	alias w3m='w3mwrap -s -B'
 	alias sqm='w3mwrap https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
