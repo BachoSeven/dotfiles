@@ -9,6 +9,8 @@ if pgrep ncspot >/dev/null 2>&1; then
 	player="ncspot"
 elif pgrep spotify >/dev/null 2>&1; then
 	player="spotify"
+elif pgrep tauon >/dev/null 2>&1; then
+	player="tauon"
 else
 	active="false"
 fi
