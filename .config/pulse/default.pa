@@ -3,6 +3,11 @@
 # Load defaults
 .include /etc/pulse/default.pa
 
+## https://wiki.archlinux.org/title/PulseAudio/Troubleshooting#Pops_when_starting_and_stopping_playback
+.nofail
+unload-module module-suspend-on-idle
+.fail
+
 ## Overrides
 # Automatically switch to newly-connected devices
 load-module module-switch-on-connect
