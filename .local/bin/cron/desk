@@ -8,7 +8,7 @@ sit="$HOME/.local/bin/scripts/idasen moveto 1170"
 ! pidof Xorg >/dev/null 2>&1 && exit 0
 
 notify-send "Stand up in 10 seconds!"; sleep 10s
-$mictog && $stand && $mictog && sleep 10m
+$mictog && $stand && $mictog && sleep 15m
 
 notify-send "Sitting down soon..."; sleep 5s;
 $mictog && $sit && $mictog
