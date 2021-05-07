@@ -88,12 +88,14 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 ![](https://i.imgur.com/djwXszG.jpg)
 
 #### Purple
-![](https://i.imgur.com/0gV1ofK.jpg)
+![](https://i.imgur.com/yo20YAA.png)
 ![](https://i.imgur.com/AAuPeKH.png)
+![](https://i.imgur.com/0gV1ofK.jpg)
 
 #### Blues
-![](https://i.imgur.com/UsjYLmZ.jpg)
 ![](https://i.imgur.com/DpSvfuw.png)
+![](https://i.imgur.com/23JEvML.png)
+![](https://i.imgur.com/UsjYLmZ.jpg)
 
 #### Greenish
 ![](https://i.imgur.com/j8bcPCM.jpg)
