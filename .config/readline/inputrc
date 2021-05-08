@@ -9,6 +9,7 @@ set blink-matching-paren		on
 set comment-begin			#
 set completion-prefix-display-length	111
 set completion-query-items		200
+set keyseq-timeout 			100
 set input-meta				on
 set convert-meta			off
 set output-meta				on
