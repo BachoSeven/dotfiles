@@ -26,4 +26,3 @@
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	xdg-xmenu -u &	# Update xmenu entries
 	_ subs -d				# Start custom yt daemon
-	systemctl --user start clipmenud.service # Clipboard management
