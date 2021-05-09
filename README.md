@@ -93,9 +93,9 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 ![](https://i.imgur.com/0gV1ofK.jpg)
 
 #### Blues
-![](https://i.imgur.com/DpSvfuw.png)
-![](https://i.imgur.com/23JEvML.png)
+![](https://i.imgur.com/G82E481.jpg)
 ![](https://i.imgur.com/UsjYLmZ.jpg)
+![](https://i.imgur.com/DpSvfuw.png)
 
 #### Greenish
 ![](https://i.imgur.com/j8bcPCM.jpg)
