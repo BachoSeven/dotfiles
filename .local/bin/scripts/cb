@@ -5,8 +5,9 @@
 if pgrep copyq >/dev/null 2>&1; then
 	copyq toggle
 else
-	if [[ -z "$(pgrep -u "$(id -u)" -nf 'clipmenud$')" ]]; then
+	if [ -z "$(pgrep -u "$(id -u)" -nf 'clipmenud$')" ]; then
 		systemctl --user start clipmenud.service
 	fi
 	clipmenu -i -f -c -l 15 -bw 7 -nb '#32302f' -nf '#83a598' -sb '#282828' -sf '#fbf1c7' -nhf '#8ec07c' -shf '#d3869b' -nhb '#1d2021' -shb '#1d2021' -fn Monospace-16 >/dev/null 2>&1
 fi
+exit 0
