@@ -27,7 +27,7 @@
 
 100,100,100		fav line
 40,40,40		folder line
-120,120,120		folder title 
+120,120,120		folder title
 
 148,44,0,50		playing highlight
 148,76,0,40		select highlight
@@ -66,7 +66,7 @@
 25,25,25		tab background
 40,40,40		tab over
 45,45,45		tab active background
-180,180,180		music vis
+131,165,152		music vis
 
 #-Side panel--------
 
