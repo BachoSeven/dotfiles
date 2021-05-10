@@ -7,7 +7,7 @@ filesize=$(du -Hh "$1" | awk '{print $1}')
 
 geometry="${2}x${3}"
 
-## This is cool, but in my entire image collection only 4 images have tags...
+## This is cool, but in my entire collection only 4 images have tags(might be a wrong estimate)... not worth the performance lag.
 # tags=$(exiv2 -qpi pr "$1" | awk '$1~"Keywords" { printf("%s,", $4); }')
 # tags=${tags%,}
 

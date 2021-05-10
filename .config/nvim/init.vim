@@ -185,7 +185,7 @@ command! Hardcopy :call Hardcopy()
 
 " Terminal mappings
 "" Open Terminal
-	nn <leader>t :te<CR>a
+	nn <leader>t :te<CR>
 "" Leave terminal easily
 	tno <leader><Esc> <C-\><C-n>
 
