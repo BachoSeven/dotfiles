@@ -47,7 +47,7 @@
 " NerdCommenter
 	let g:NERDSpaceDelims = 1
 	let g:NERDCompactSexyComs = 1
-	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' } }	" Fix lfrc comments
+	let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, 'octave': { 'left': '#' } }
 
 "" FZF
 	nn <silent> <C-p> :FZF -m<CR>
