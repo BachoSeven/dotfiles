@@ -1,7 +1,7 @@
 ## History file configuration
 	HISTFILE="$XDG_DATA_HOME/zsh/history"
-	HISTSIZE=128000
-	SAVEHIST=128000
+	HISTSIZE=12800
+	SAVEHIST=$((HISTSIZE/2))
 ## History command configuration
 	setopt append_history
 	setopt sharehistory
