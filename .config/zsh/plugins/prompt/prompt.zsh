@@ -36,8 +36,12 @@
 	RPS2=$RPS1
 
 
+# Nice PS1
+# PS1="┌─[%{$fg[cyan]%}%m%{$fg_bold[blue]%} %~%{$fg_no_bold[yellow]%}%(0?.. %?)%{$reset_color%}]
+# └─╼ "
 
 
+# TODO: git info
 ## Basic git info using zsh's built-in vcs_info
 	# autoload -Uz vcs_info
 	# zstyle ':vcs_info:*' enable git svn

@@ -852,6 +852,8 @@ compresspdf() {
 short() {
 	curl -F"shorten=$*" https://0x0.st
 }
+## External IP
+wmip() { printf "External IP: %s\n" $(curl -s  http://icanhazip.com/) ;}
 ## Upload-file | Usage : share /path/to/file.foo (256 Mib limit)
 share() {
 	if [[ $# == 0 ]]; then
