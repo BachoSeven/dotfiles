@@ -15,12 +15,23 @@
 	bindkey -M menuselect "+" accept-and-menu-complete
 # Select and confirm the selection with Return
 	bindkey -M menuselect "^m" .accept-line
+# application widgets
+	btm-widget() {
+		btm -b <$TTY
+		zle redisplay
+	}
+	neomutt-widget() {
+		neomutt <$TTY
+		zle redisplay
+	}
+	zle -N btm-widget
+	zle -N neomutt-widget
+	bindkey '^g' btm-widget
+	bindkey '^[n' neomutt-widget
 # Do not save these in history:
-	bindkey -s '^g' ' btm -b\r'
 	bindkey -s '^v' ' v\r'
 	bindkey -s '^s' ' up2date\r'
 	bindkey -s '^q' ' pacbrowse\r'
-	bindkey -s '\en' ' neomutt\r'
 	bindkey -s '\ef' ' fedit\r'
 	bindkey '\eq' push-input # Push current input on a stack and pop it on next newline
 	(( $+commands[lf] )) && bindkey -s '^o' '\eq lfcd\r' && alias \
