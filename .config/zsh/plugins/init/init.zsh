@@ -77,3 +77,5 @@
 ## Misc
 # Zsh's Builtin Ncurses Tetris game :)
 	autoload -Uz tetriscurses
+# list trap SIGUSR1 in order to rehash through a pacman hook
+	trap 'rehash' USR1
