@@ -7,6 +7,10 @@
 	}
 	zle -N clip-line
 	bindkey "^x^x" clip-line
+# Make ^D always exit shell
+	function zexit() { exit }
+	zle -N zexit
+	bindkey '^d' zexit
 # Pick but stay in completion menu
 	bindkey -M menuselect "+" accept-and-menu-complete
 # Select and confirm the selection with Return
