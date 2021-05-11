@@ -43,6 +43,17 @@ gradient_color_8 = '#b8bb26'
 # gradient_color_7 = '#87c095'
 # gradient_color_8 = '#d8caac'
 
+# # Purple shades [https://github.com/ChocolateBread799/Geometry/blob/main/.config/cava/config]
+# gradient_count = 8
+# gradient_color_8 = "#ab96a0"
+# gradient_color_7 = "#9b8998"
+# gradient_color_6 = "#917a8f"
+# gradient_color_5 = "#89748f"
+# gradient_color_4 = "#806d8b"
+# gradient_color_3 = "#736386"
+# gradient_color_2 = "#68587f"
+# gradient_color_1 = "#615481"
+
 [smoothing]
 integral = 77
 monstercat = 1
