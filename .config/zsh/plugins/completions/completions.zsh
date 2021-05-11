@@ -43,7 +43,6 @@
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-  zstyle ':completion:*' rehash true # Do not require running "rehash" manually
   # If you end up using a directory as argument, this will remove the trailing slash (usefull in ln)
   zstyle ':completion:*' squeeze-slashes true
 # Use caching to improve completion for commands related to packages or kernel modules
