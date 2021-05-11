@@ -17,11 +17,13 @@ esac
 # Query amixer for the current volume and whether or not the speaker is muted
 volume="$(pamixer --get-volume)"
 mute="$(pamixer --get-mute)"
-if [[ "$volume" = 0 || "$mute" = "true" ]]; then
-    # Show the sound muted notification
-    dunstify -a "changeVolume" -u low -i audio-volume-muted-blocked-panel -r "$msgId" "Volume muted"
-else
-    # Show the volume notification
-    dunstify -a "changeVolume" -u low -i audio-volume-high-panel -r "$msgId" \
-    "Volume: ${volume}%"
+if pidof Xorg >/dev/null 2>&1; then
+	if [[ "$volume" = 0 || "$mute" = "true" ]]; then
+			# Show the sound muted notification
+			dunstify -a "changeVolume" -u low -i audio-volume-muted-blocked-panel -r "$msgId" "Volume muted"
+	else
+			# Show the volume notification
+			dunstify -a "changeVolume" -u low -i audio-volume-high-panel -r "$msgId" \
+			"Volume: ${volume}%"
+	fi
 fi
