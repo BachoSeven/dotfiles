@@ -1,5 +1,5 @@
 [Unit]
-Description=Stand up every hour for 10 minutes
+Description=Stand up every hour for 15 minutes
 
 [Timer]
 OnCalendar=hourly
