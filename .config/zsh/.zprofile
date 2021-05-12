@@ -86,7 +86,7 @@
 	export SUBS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/yt/subs"
 	export SUBS_MENU_PROG="dmenu -bw 7 -nb #458588 -nf #ebdbb2 -sb #cc241d -sf #fbf1c7 -nhb #282828 -shb #1d2021 -c -f -r -i -l 10 -p YT"
 
-# Mpd
+# Mpc
 	export MPD_HOST="127.0.0.1"
 	export MPD_PORT="6602"
 
