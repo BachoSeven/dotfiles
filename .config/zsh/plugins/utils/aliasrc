@@ -5,7 +5,7 @@
 
 # Arch
 	alias pacbrowse="pacman -Qqe | fzf --preview 'pacman -Qi {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
-	alias np="pacman -Qq | wc -l"
+	alias np='pacman -Qq | wc -l'
 
 # SSH
 	alias phc='export TERM=xterm-256color; ssh minnocci@poisson.phc.dm.unipi.it'
@@ -33,8 +33,8 @@
 	alias cls='clear'
 	alias fork='setsid -f'
 	alias perms='stat -c "%A %a %n"'
-	alias mine="sudo chown -R $(whoami):$(whoami)" # Take ownership of file or directory
-	alias yours="sudo find . -perm -u+x -exec chmod a+x {} \; && sudo find . -perm -u+r -exec chmod a+r {} \;" # allow others to read/execute
+	alias mine='sudo chown -R $(whoami):$(whoami)' # Take ownership of file or directory
+	alias yours='sudo find . -perm -u+x -exec chmod a+x {} \; && sudo find . -perm -u+r -exec chmod a+r {} \;' # allow others to read/execute
 	alias 1='cd -'
 	alias 2='cd -2'
 	alias 3='cd -3'
@@ -92,13 +92,12 @@
 	alias cbh='connectHeadphones'
 	alias uefi='sudo systemctl reboot --firmware-setup'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
-	alias xr="xrandr"
+	alias xr='xrandr'
 	alias glow='glow -p'
 	alias ud='s -p udict'
-	alias spo='st -c ncspot ncspot && spotup'
-	alias spi='spotify && spotup && rmdir ~/Downloads'
 	alias smi='sudo make clean install'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; kitty --hold wa'
+	alias flix='chromium --app=https://netflix.com/browse'
 	alias scr='ffmpeg -f x11grab -i :0.0 -frames:v 1 "$HOME/screen-$(date "+%y%m%d-%H%M-%S").png"'
 	alias mictog='pactl set-source-mute @DEFAULT_SOURCE@ toggle'
 # Misc
@@ -109,11 +108,14 @@
 	alias uotz='kitty whatscli'
 	alias mx='kitty weechat'
 	alias tg='kotatogram-desktop'
-	alias phonic='vieb --erwic ~/.config/primephonic/primephonic.json --datafolder ~/.config/primephonic'
-	alias flix='chromium --app=https://netflix.com/browse'
 	alias mimi='xdg-open'
 	alias findbg='xdg-open http://imgops.com/"$(imgur.sh "$(realpath ~/.local/share/bg)")"'
 	alias upbat='price bat "Basic Attention Token" 🦁 && less -R ~/.local/share/crypto-prices/bat-chart'
+# Media
+	alias nc2='MPD_PORT="6603" ncmpcpp -c ~/.config/ncmpcpp/config2'
+	alias phonic='vieb --erwic ~/.config/primephonic/primephonic.json --datafolder ~/.config/primephonic'
+	alias spo='st -c ncspot ncspot && spotup'
+	alias spi='spotify && spotup && rmdir ~/Downloads'
 # Desk
 	alias sit='idasen moveto 1150' # since the script always overshoots, both values are adjusted accordingly
 	alias stand='idasen moveto 4400'
