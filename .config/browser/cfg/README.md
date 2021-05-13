@@ -14,26 +14,47 @@
 ``` sh
 # Hardware acceleration
 --ignore-gpu-blocklist
---use-gl=desktop
 --enable-gpu-rasterization
---enable-accelerated-video-decode
+--enable-zero-copy
+--use-gl=desktop
 --disable-gpu-driver-bug-workarounds
 
 # Appearance
 --force-device-scale-factor=1.1
 --force-dark-mode
 --enable-smooth-scrolling
+--disable-dinosaur-easter-egg
+--disable-top-sites # on ntp
+
+# Security
+--enable-strict-mixed-content-checking # Blocks all insecure requests from secure contexts (http requests from an http site)
+--no-pings # Disables link tracking via ping attribute
 
 # Miscellaneous
 --no-default-browser-check
---enable-features=WebUIDarkMode,CSSColorSchemeUARendering,CompositorThreadedScrollbarScrolling,NativeNotifications,QuietNotificationPrompts,ReaderMode
 
-# ungoogled-specific flags
+# ungoogled flags
+## Aesthetic options
+--enable-stacked-tab-strip # This is comfy for enormous amounts of tabs
+--show-avatar-button=never # Unclutter chromium UI
+--bookmark-bar-ntp=never # Bookmarks on about:newtab,new-tab-page(I don't use the latter)
+## Fingerprinting
+--fingerprinting-canvas-image-data-noise
+--fingerprinting-canvas-measuretext-noise
+--fingerprinting-client-rects-noise
+## Other
+--popups-to-tabs # Makes popups open in new tabs
 --disable-search-engine-collection
+--omnibox-autocomplete-filtering=search-chrome
 --extension-mime-request-handling=always-prompt-for-install
 --pdf-plugin-name=chrome
---enable-features=SetIpv6ProbeFalse
---bookmark-bar-ntp=never # Bookmarks on about:new-tab-page (which I don't even use but whatevs)
+--keep-old-history # Disables deletion of history after 90 days (!)
+
+# Features
+--enable-features=WebUIDarkMode,CSSColorSchemeUARendering,NativeNotifications,QuietNotificationPrompts,ReaderMode,OverlayScrollbar,VaapiVideoDecoder,SetIpv6ProbeFalse # The last one is ungoogled-specific
+--disable-features=GlobalMediaControls,WebUSB
+
+# vim: ft=cfg
 ```
 
 ## Bookmarks
