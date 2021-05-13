@@ -8,7 +8,6 @@ regex = true
 default_time_value = 77777
 time_delta = 17777
 hide_table_gap = true
-color = "gruvbox"
 
 # Layout
 [[row]]
