@@ -18,7 +18,6 @@ findplayer() {
 	if [ -z "$t" ] || [ "$player" = "tauon" ]; then
 		active="false"
 	fi
-
 }
 
 terms=kitty:st:alacritty:$TERMINAL

@@ -71,6 +71,10 @@ if [ "$mime" = "image/gif" ]; then
 		setsid -f gifbg "$bgloc"
 	fi
 else
-	$full || bgcol="$(imgextcol "$bgloc")"
-	hsetroot -solid "${bgcol:-#252525}" "${format:--cover}" "$bgloc" >/dev/null 2>&1
+	if echo "$(realpath "$bgloc")" | grep "tiled" >/dev/null 2>&1; then
+		format="-tile"
+	else
+		$full || bgcol="$(imgextcol "$bgloc")"
+	fi
+		hsetroot -solid "${bgcol:-#252525}" "${format:--cover}" "$bgloc" >/dev/null 2>&1
 fi
