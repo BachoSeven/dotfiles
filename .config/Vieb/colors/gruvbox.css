@@ -11,10 +11,10 @@
     --mode-follow-fg: #b16286;
     --mode-insert-fg: #8ec07c;
     --mode-explore-fg: #859900;
-    --mode-search-fg: #fabd2f;
+    --mode-search-fg: #d79921;
     --mode-pointer-fg: #076678;
     --mode-pointer-bg: none;
-    --mode-visual-fg: #83a598;
+    --mode-visual-fg: #83a598; //
     --mode-visual-bg: none;
 
     --suggestions-border: #787878;
@@ -71,37 +71,43 @@
 #pointer, #cookiespage img, #downloadspage img, #historypage img {filter: invert(1);}
 #historypage img.favicon {filter: none;}
 
-[current-mode=normal] { --mode-fg: var(--mode-normal-fg);}
-[current-mode=command] { --mode-fg: var(--mode-command-fg);}
-[current-mode=insert] { --mode-fg: var(--mode-insert-fg);}
-[current-mode=follow] { --mode-fg: var(--mode-follow-fg);}
-[current-mode=explore] { --mode-fg: var(--mode-explore-fg);}
-[current-mode=search] { --mode-fg: var(--mode-search-fg);}
-[current-mode=pointer] { --mode-fg: var(--mode-pointer-fg);}
-[current-mode=visual] { --mode-fg: var(--mode-visual-fg);}
+[current-mode=normal] {--mode-fg: var(--mode-normal-fg);}
+[current-mode=command] {--mode-fg: var(--mode-command-fg);}
+[current-mode=insert] {--mode-fg: var(--mode-insert-fg);}
+[current-mode=follow] {--mode-fg: var(--mode-follow-fg);}
+[current-mode=explore] {--mode-fg: var(--mode-explore-fg);}
+[current-mode=search] {--mode-fg: var(--mode-search-fg);}
+[current-mode=pointer] {--mode-fg: var(--mode-pointer-fg);}
+[current-mode=visual] {--mode-fg: var(--mode-visual-fg);}
 
 /* navbar && tabbar */
-#url { background: #383838; border: solid .15em ;}
+#url {background: #383838; border: solid .1em ;}
 
-#navbar, #tabs { background: #383838;}
-#tabs > span { color: var(--fg);}
+#navbar, #tabs {background: #383838;}
+#tabs > span {color: var(--fg);}
 
-body { --mode-theme-bg: var(--mode-fg);}
-body[current-mode=normal] { --mode-theme-bg: #383838;}
-#navbar, #tabs { background: var(--mode-theme-bg);}
+body {--mode-theme-bg: var(--mode-fg);}
+body[current-mode=normal] {--mode-theme-bg: #383838;}
+#navbar, #tabs {background: var(--mode-theme-bg);}
 
-body #mode { color: #1d2021;}
-body[current-mode=normal] #mode { color: var(--fg);}
-body[current-mode=pointer] #mode { color: var(--fg);}
-body[current-mode=follow] #mode { color: var(--fg);}
-body[current-mode=command] #mode { color: var(--fg);}
-[current-mode=normal] #url { background: #383838; color: var(--fg);}
+body #mode {color: #1d2021;}
+body[current-mode=normal] #mode {color: var(--fg);}
+body[current-mode=pointer] #mode {color: var(--fg);}
+body[current-mode=follow] #mode {color: var(--fg);}
+body[current-mode=command] #mode {color: var(--fg);}
+body[current-mode=explore] #mode {color: var(--mode-explore-fg);}
+body[current-mode=visual] #mode {color: var(--mode-visual-fg);}
+body[current-mode=insert] #mode {color: var(--mode-insert-fg);}
+body[current-mode=search] #mode {color: var(--mode-search-fg);}
+[current-mode=normal] #url {background: #383838; color: var(--fg);}
 
-/* lower-case mode indicators */
-#mode { text-transform: none; font-size: 110%;}
-#mode-suggestions { text-transform: none; background: var(--fg);}
+/* Single-letter mode indicators */
+#mode {position: fixed; bottom: .2em; left: .2em; width: 1ch; overflow: hidden; font-size: 150%;}
+#mode-suggestions {display: none;}
+/* Full-width navbar */
+#mode-container {width: 2.5ch;}
 
-/* logo */
+/* hide logo */
 #logo {display: none}
 
 /*
@@ -111,7 +117,6 @@ body[current-mode=command] #mode { color: var(--fg);}
 #app {flex-direction: column-reverse;}
 #url-hover {bottom: 4em;}
 #suggest-dropdown {top: auto;bottom: 2.1em;flex-direction: column-reverse;}
-#mode-suggestions {left: 0;top: auto;bottom: 2em;flex-direction: column-reverse;}
 .bottomright {right: .7em;bottom: 4em;;}
 .bottomleft {left: .7em;bottom: 4em;}
 .topright {right: .7em;top: .7em;}
