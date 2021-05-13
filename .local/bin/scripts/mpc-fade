@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# A script to fade volume when toggling MPD via mpc
+
+mpc=`which mpc`
+
+SINKAPP="mpd"
+SECS=2.0
+
+sinks=$(pactl list sink-inputs)
+sinkbinaryindex=$(awk -v sinks="$sinks" -v app="$SINKAPP" 'BEGIN {print index(sinks,app)}'  )
+sink=$(echo "${sinks:0:$sinkbinaryindex}" | tr "\n" "[racecar]" | rev | tr "[racecar]" "\n" | grep -m 1 "tupnI" | tr -d "#" | awk '{print $1}' | rev )
+
+VOLUME=$(pactl list sink-inputs | sed -n "/Sink Input #$sink/,\$p" | tail -n +2 | sed '/Sink Input/q' | awk '/Volume: /{print substr($5, 1, length($5)-1)}')
+
+# volume commands, customize here
+decrease="pactl set-sink-input-volume $sink -1%"
+increase="pactl set-sink-input-volume $sink +1%"
+resetvolume="pactl set-sink-input-volume $sink $VOLUME%"
+mutevolume="pactl set-sink-input-volume $sink 0%"
+
+for arg in "$@"
+do
+  if [ "$arg" == "--help" ] || [ "$arg" == "-h" ]
+  then
+    echo "usage: mpc-fade -p <volume fade percentage> -s <fade length in secs>"
+    exit 1
+  fi
+done
+
+while getopts h:p:s: option ; do
+  case "${option}"
+    in
+    p) VOLUME=${OPTARG};;
+    s) SECS=${OPTARG};;
+  esac
+done
+
+fade() {
+  SLEEP=$(echo "scale=4; $SECS/$VOLUME" | bc)
+  while [ $VOLUME -ge 1 ] ; do
+    $1
+    VOLUME=$(($VOLUME-1))
+    sleep $SLEEP
+  done
+}
+
+playing=$(mpc status | grep "playing")
+
+if [ ${#playing} -gt 0 ] ; then
+  fade "$decrease"
+  mpc toggle -q
+  eval "$resetvolume"
+else
+  eval "$mutevolume"
+  mpc toggle -q
+  fade "$increase"
+fi
+
+exit 0
