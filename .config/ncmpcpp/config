@@ -1,8 +1,6 @@
 # mpd settings
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.local/share/lyrics
-mpd_host = 127.0.0.1
-mpd_port = 6602
 mpd_connection_timeout = 5
 mpd_music_dir = "~/slsk/music"
 mpd_crossfade_time = 3
