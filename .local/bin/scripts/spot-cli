@@ -1,19 +1,25 @@
 #!/bin/sh
 
 # Franceso Minnocci 2020
-# NOTE: This probably only works well with `ncspot` and/or the official client
+# NOTE: This has been tested with ncspot, the official spotify client and tauon, but it could be used
+#				with any player which supports MPRIS via dbus. Just add its name to the `players` array.
+#				You should set active=false below for players which do not support spotify URL/URIs.
 
-# Determine currently active spotify player;
-# and if there are none, only prompt for opening one (only when trying to open URL/URIs)
-if pgrep ncspot >/dev/null 2>&1; then
-	player="ncspot"
-elif pgrep spotify >/dev/null 2>&1; then
-	player="spotify"
-elif pgrep tauon >/dev/null 2>&1; then
-	player="tauon"
-else
-	active="false"
-fi
+# Determine currently active spotify player
+# When trying to open URL/URIs, we prompt to open a player if there are none
+players=ncspot:spotify:tauon
+findplayer() {
+	IFS=:
+	for p in $players; do
+		if pgrep "$p" >/dev/null 2>&1; then
+			player="$p"
+		fi
+	done
+	if [ -z "$t" ] || [ "$player" = "tauon" ]; then
+		active="false"
+	fi
+
+}
 
 terms=kitty:st:alacritty:$TERMINAL
 findterm() {
@@ -40,7 +46,7 @@ prompt() { #__ cool interactive stuff __#
 			elif [ "$player" = "ncspot" ]; then
 				if findterm; then
 					setsid -f $localt --class ncspot -e ncspot	||	# kitty
-					setsid -f $localt -c ncspot -e ncspot				||	# st (and others)
+					setsid -f $localt -c ncspot -e ncspot				||	# st (and many others)
 					setsid -f $localt -e ncspot	# Fallback to not setting the terminal's class
 					sleep 3
 				fi
