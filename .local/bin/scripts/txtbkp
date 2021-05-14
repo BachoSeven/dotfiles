@@ -8,6 +8,6 @@ jq -r 'getpath(paths(.url?)).url' ~/.config/chromium/Default/Bookmarks > bm/plai
 
 ## History
 sep='{::}'
-temp="$(mktemp -u plainhistbkp.XXXXXX)"
+temp="$(mktemp -u /tmp/plainhistbkp.XXXXXX)"
 cp -f "$HOME"/.config/chromium/Default/History "$temp"
 sqlite3 -separator "$sep" "$temp" "select url from urls order by last_visit_time desc" > hist/plain
