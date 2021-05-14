@@ -5,7 +5,7 @@
 #				with any player which supports MPRIS via dbus. Just add its name to the `players` array.
 #				You should set active=false below for players which do not support spotify URL/URIs.
 
-# Determine currently active spotify player
+# Determine currently active spotify player (first one found from the array is use for pause/play/toggle)
 # When trying to open URL/URIs, we prompt to open a player if there are none
 players=ncspot:spotify:tauon
 findplayer() {
@@ -37,12 +37,12 @@ findterm() {
 
 prompt() { #__ cool interactive stuff __#
 	if ! $active; then
-		player="$(printf "ncspot\nspotify\n" | dmenu -p "Would you like to open:" -f -i -c -l 2 -bw 7 )"
-		if [ -n "$player" ]; then
-			if [ "$player" = "spotify" ]; then
+		promptplayer="$(printf "ncspot\nspotify\n" | dmenu -p "Would you like to open:" -f -i -c -l 2 -bw 7 )"
+		if [ -n "$promptplayer" ]; then
+			if [ "$promptplayer" = "spotify" ]; then
 				spotify
 				sleep 4
-			elif [ "$player" = "ncspot" ]; then
+			elif [ "$promptplayer" = "ncspot" ]; then
 				if findterm; then
 					setsid -f $localt --class ncspot -e ncspot	||	# kitty
 					setsid -f $localt -c ncspot -e ncspot				||	# st (and many others)
@@ -60,15 +60,18 @@ usage() {
 }
 
 send() {
+	findplayer
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1" >/dev/null 2>&1
 	sleep 1 && spotup # This updates the spotify module for my dwm status bar, dwmblocks
 }
 
 seek() { #__ We need to convert to microseconds __#
+	findplayer
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Seek int64:"$1"000000 >/dev/null 2>&1
 }
 
 setPos() { #__ Here we also need to specify objpath __#
+	findplayer
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.SetPosition objpath:'/3' int64:"$1"000000 >/dev/null 2>&1
 															# /3 is mpris:trackid from Metadata
 }
@@ -81,6 +84,7 @@ url() { #__ Some parsing logic for URLs __#
 	string="$(echo "$*" | rev | cut -d/ -f1-2 | rev)"
 	typ="${string%/*}"
 	key="${string#*/}"
+	findplayer
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:$typ:$key >/dev/null 2>&1
 	sleep 2 && spotup
 }
@@ -89,6 +93,7 @@ uri() { #__ This is slightly more complex because spotify would like to include 
 	prompt
 	typ="$(echo "$*" | cut -d":" -f1,2)"
 	key="$(echo "$*" | cut -d":" -f3 | head --bytes=22)"
+	findplayer
 	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:"$typ:$key" >/dev/null 2>&1
 	sleep 2 && spotup
 }

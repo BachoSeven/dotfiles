@@ -16,7 +16,6 @@ if [ "$1" = "-w" ]; then
 		sed -i 's/se termguicolors/" notermgui/g' $XDG_CONFIG_HOME/nvim/init.vim
 	touch ~/.cache/wal/active
 	sed -i "$(sed -n '/'"$lightline"'/ =' $XDG_CONFIG_HOME/nvim/plug/postplug.vim | tail -n 1)"' s/'"$lightline"'/wal/' $XDG_CONFIG_HOME/nvim/plug/postplug.vim # wow.
-	sed -i 's/# Wal/include ~\/.cache\/wal\/colors-kitty.conf/g' $XDG_CONFIG_HOME/kitty/kitty.conf
 elif [ "$1" = "-x" ]; then
   ! grep -q '" colwal' $XDG_CONFIG_HOME/nvim/init.vim &&
 		sed -i 's/colo wal/" colwal/g' $XDG_CONFIG_HOME/nvim/init.vim
@@ -25,7 +24,6 @@ elif [ "$1" = "-x" ]; then
 		sed -i 's/" notermgui/se termguicolors/g' $XDG_CONFIG_HOME/nvim/init.vim
 	[ -f $active ] && rm -f $active || exit 1
 	sed -i 's/wal/'"$lightline"'/g' $XDG_CONFIG_HOME/nvim/plug/postplug.vim
-	sed -i 's/include ~\/.cache\/wal\/colors-kitty.conf/# Wal/g' $XDG_CONFIG_HOME/kitty/kitty.conf
 fi
 
 dunstreload
