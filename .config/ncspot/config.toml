@@ -4,6 +4,7 @@ default_keybindings = false
 use_nerdfont = true
 notify = true
 gapless = true
+flip_status_indicators=true
 shuffle = true
 repeat = 'off'
 
