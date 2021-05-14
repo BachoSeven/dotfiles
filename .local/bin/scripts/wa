@@ -12,7 +12,7 @@
 
 #  Requirements
 #  ------------
-#  You can use text only api and **optionaly** use [terminal that supports images](https://sw.kovidgoyal.net/kitty/)
+#  You can use text only api and **optionaly** use [terminal that supports images](https://wezfurlong.org/wezterm/, https://sw.kovidgoyal.net/kitty/)
 #  **or** `sudo apt-get install imagemagick` to view images
 
 #  Usage
