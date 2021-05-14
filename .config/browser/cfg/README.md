@@ -80,7 +80,7 @@
 		/* Temporary fix, suggested here: https://github.com/philc/vimium/issues/3732 */
 		.vimiumUIComponentVisible { color-scheme: light; }
 	to the `vimium.css` file
-- vimium_helper
+- vimium_helper(disable on youtube, github)
 - stylus(beta)[backup,alt+shift+s]
 - Redirector
 
