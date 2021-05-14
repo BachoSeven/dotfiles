@@ -105,7 +105,7 @@
 	alias tnt='nvim ~/stuff/web-stuff/various_dumps/dump_release_tntvillage_2019-08-30/dump_release_tntvillage_2019-08-30.csv'
 	alias kd='killall desk'
 	alias vent='nbfc status -s'
-	alias uotz='kitty whatscli'
+	alias uotz='wezterm start -- /bin/whatscli'
 	alias mx='kitty weechat'
 	alias tg='kotatogram-desktop'
 	alias mimi='xdg-open'

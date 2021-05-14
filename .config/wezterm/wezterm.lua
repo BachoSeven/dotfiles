@@ -4,7 +4,7 @@ return {
   font_size = 24.0,
 
   hide_tab_bar_if_only_one_tab = true,
-  scrollback_lines=1000,
+  scrollback_lines=20000,
   line_height=0.91,
 
   window_padding = {
