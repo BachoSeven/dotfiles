@@ -9,7 +9,7 @@ message_delay_time = 1
 
 ## visualizer
 visualizer_data_source = /tmp/mpd2.fifo
-visualizer_output_name = Visualizer
+visualizer_output_name = Visualizer2
 visualizer_in_stereo = yes
 visualizer_autoscale = yes
 visualizer_fps = 60
