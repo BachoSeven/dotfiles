@@ -20,7 +20,7 @@ findplayer() {
 	fi
 }
 
-terms=kitty:st:alacritty:$TERMINAL
+terms=st:alacritty:$TERMINAL
 findterm() {
 	IFS=:
 	for t in $terms; do
@@ -36,6 +36,7 @@ findterm() {
 }
 
 prompt() { #__ cool interactive stuff __#
+	findplayer
 	if ! $active; then
 		promptplayer="$(printf "ncspot\nspotify\n" | dmenu -p "Would you like to open:" -f -i -c -l 2 -bw 7 )"
 		if [ -n "$promptplayer" ]; then
@@ -44,7 +45,6 @@ prompt() { #__ cool interactive stuff __#
 				sleep 4
 			elif [ "$promptplayer" = "ncspot" ]; then
 				if findterm; then
-					setsid -f $localt --class ncspot -e ncspot	||	# kitty
 					setsid -f $localt -c ncspot -e ncspot				||	# st (and many others)
 					setsid -f $localt -e ncspot	# Fallback to not setting the terminal's class
 					sleep 3
