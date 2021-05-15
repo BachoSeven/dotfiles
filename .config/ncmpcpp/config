@@ -186,22 +186,22 @@ header_visibility = "no" # For classic interface
 user_interface = alternative
 enable_window_title = no
 connected_message_on_startup = no
-song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
+song_status_format = $b{{$8%t}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
 song_library_format = {%n - }{%t}|{%f}
 alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
-alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
-current_item_inactive_column_prefix = $(magenta)$r
-current_item_inactive_column_suffix = $/r$(end)
+alternative_header_second_line_format = {$b{$6%a$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
 
 # Normal
-now_playing_prefix = "$b"
-now_playing_suffix = $/b
-current_item_prefix = $(cyan)$r$b
-current_item_suffix = $/r$(end)$/b
+now_playing_prefix = "$b$3$8 "
+now_playing_suffix = $/b$8
+current_item_prefix = $(blue)$b
+current_item_suffix = $(end)$/b
+current_item_inactive_column_prefix = $(green)
+current_item_inactive_column_suffix = $(end)
 song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3%l$9}
+
 # Customized
-# now_playing_prefix = "$b$8      "
-# now_playing_suffix = "$/b$8 $b $3$8 $/b"
+#
 # current_item_prefix = "$/b$b $7 $8 $/b "
 # current_item_suffix = "      $8"
 # song_list_format = " {%t $R   $8%a$8}|{%f $R   $8%l$8} $8" # This does nothing(?)
@@ -246,7 +246,6 @@ song_columns_list_format = (7f)[magenta]{l} (25)[cyan]{a} (50)[white]{t|f:Title}
 #browser_playlist_prefix = "$2playlist$9 "
 
 #selected_item_prefix = $6
-
 #selected_item_suffix = $9
 
 #modified_item_prefix = $3> $9
