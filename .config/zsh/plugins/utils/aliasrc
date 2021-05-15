@@ -117,7 +117,7 @@
 	alias findbg='xdg-open http://imgops.com/"$(imgur.sh "$(realpath ~/.local/share/bg)")"'
 	alias upbat='price bat "Basic Attention Token" 🦁 && less -R ~/.local/share/crypto-prices/bat-chart'
 # Media
-	alias nc2='MPD_PORT="6600" ncmpcpp -c ~/.config/ncmpcpp2/config'
+	alias nc2='MPD_PORT="6600" st -c ncmpcpp -e ncmpcpp -c ~/.config/ncmpcpp2/config'
 	alias phonic='vieb --erwic ~/.config/primephonic/primephonic.json --datafolder ~/.config/primephonic'
 	alias spo='st -c ncspot ncspot && spotup'
 	alias spi='spotify && spotup && rmdir ~/Downloads'
