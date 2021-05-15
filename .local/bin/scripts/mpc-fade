@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # A script to fade volume when toggling MPD via mpc
+# Example: mpc-fade -s 0
+# TODO: avoid statusbar lag when using this
 
 mpc=`which mpc`
 
