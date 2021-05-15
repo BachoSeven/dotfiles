@@ -1,5 +1,5 @@
 # mpd settings
-ncmpcpp_directory = ~/.config/ncmpcpp
+ncmpcpp_directory = ~/.config/ncmpcpp2
 lyrics_directory = ~/.local/share/lyrics
 mpd_connection_timeout = 10
 mpd_music_dir = "http://192.168.1.107/Musica"
@@ -55,15 +55,14 @@ playlist_editor_display_mode = columns
 # progressbar_look = "▀▀ "
 # progressbar_look = "━■"
 # progressbar_look = "⠒⠒⠐"
-# progressbar_look = "◾◾◽"
 # progressbar_look = "━╋━"
 # progressbar_look = "━━━"
 # progressbar_look = "━━─"
 # progressbar_look = "─╼─"
 # progressbar_look = "╼·"
-# progressbar_look = "░█ "
 # progressbar_look = "=>"
 # progressbar_look = "─- "
+# progressbar_look = "░█ "
 # progressbar_look = "▒▒░"
 progressbar_look = "▒▓░"
 # progressbar_look = "▃▃▃" # Very minimalistic
@@ -73,6 +72,7 @@ progressbar_look = "▒▓░"
 # progressbar_look = "─┅─"
 # progressbar_look = "▪▪▪"
 # progressbar_look = "▪▪▫"
+# progressbar_look = "◾◾◽"
 # progressbar_look = "───"
 # progressbar_look = "▁▁▁"
 # progressbar_look = "‒‒‒"
