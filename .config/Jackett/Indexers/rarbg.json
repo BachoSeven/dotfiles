@@ -1,0 +1,57 @@
+[
+  {
+    "id": "sitelink",
+    "type": "inputstring",
+    "name": "Site Link",
+    "value": "https://rarbg.to/"
+  },
+  {
+    "id": "cookieheader",
+    "type": "hiddendata",
+    "name": "CookieHeader",
+    "value": "__cf_bm=0022a498997f133f1615fa29185829f7bf7e2c94-1621111049-1800-AYw33x2VRVxDjK5UBrhbIf5/bI613QODezNGk0E6asOlRw6wg68cp7YtUWDaXTidOWmqjOxuJGEFktyzFpi5F34="
+  },
+  {
+    "id": "lasterror",
+    "type": "hiddendata",
+    "name": "LastError",
+    "value": null
+  },
+  {
+    "id": "apiurl",
+    "type": "inputstring",
+    "name": "API URL",
+    "value": "https://torrentapi.org/pubapi_v2.php"
+  },
+  {
+    "id": "sortrequestedfromsite",
+    "type": "inputselect",
+    "name": "Sort requested from site",
+    "value": "last",
+    "options": {
+      "last": "created",
+      "seeders": "seeders",
+      "leechers": "leechers"
+    }
+  },
+  {
+    "id": "numberofretries",
+    "type": "inputselect",
+    "name": "Number of retries",
+    "value": "2",
+    "options": {
+      "0": "No retries (fail fast)",
+      "1": "1 retry (0.5s delay)",
+      "2": "2 retries (1s delay)",
+      "3": "3 retries (2s delay)",
+      "4": "4 retries (4s delay)",
+      "5": "5 retries (8s delay)"
+    }
+  },
+  {
+    "id": "tags",
+    "type": "inputtags",
+    "name": "Tags",
+    "value": ""
+  }
+]

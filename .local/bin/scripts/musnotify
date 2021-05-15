@@ -42,7 +42,7 @@ check_mpc_data
 		fi
 
 		# Extract album cover using perl-image-exiftool
-		exiftool -b "$PICTURE_TAG" "$SONG"  > "$TMP_COVER_PATH"
+		exiftool -b "$PICTURE_TAG" "$SONG"  > "$TMP_COVER_PATH" 2>/dev/null
 	else
 		#Extract image using ffmpeg
 		cp "$MUSIC_DIR/$(mpc --format %file% current)" "$TMP_SONG"
