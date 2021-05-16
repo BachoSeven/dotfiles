@@ -16,7 +16,7 @@ distro="arch linux"
 kernel=$(uname -r)
 pkgs=$(pacman -Qq | wc -l)
 colors='gruvbox'
-font='hack nerd font 16'
+font='mononoki nerd font 24'
 wm='dwm'
 
 #█▓▒░ progress bar
