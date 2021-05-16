@@ -1,8 +1,5 @@
 #!/bin/sh
 
 # Should be faster than piping directly to `xmenu`.
-m="$(xdg-xmenu)"
+m="$(xdgxm -l)"
 echo "$m" | xmenu | sh &
-
-# Update cache
-xdg-xmenu -u &
