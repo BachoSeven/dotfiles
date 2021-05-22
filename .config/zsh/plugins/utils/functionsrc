@@ -668,15 +668,16 @@ lps() {
 }
 ## Efficient way to select a line to print to stdout: https://unix.stackexchange.com/questions/29878/can-i-access-nth-line-number-of-standard-output
 line() {
-	awk "NR==$1{print;exit}"
+	a="$1"
+	b="${2:-a}"
+	for i in {$a..$b}; do
+		awk "NR==$i{print;exit}"
+	done
 }
-## ccat: highlight with kat
 _exists highlight &&
-hcat() {
+ccat() {
 	highlight --replace-tabs=8 --out-format=xterm256 --style=pablo --force "$1"
 }
-_exists kat &&
-ccat() { hcat "$1" | kat }
 ## create a new directory and enter it
 md() {
 	mkdir -p $@ && cd ${@:$#}

@@ -138,8 +138,6 @@ command! Hardcopy :call Hardcopy()
 	vn <A-j> :m '>+1<CR>gv=gv
 	vn <A-k> :m '<-2<CR>gv=gv
 " Move visually selected lines with {J,K} in visual mode.
-	vno J :m .+1<CR>==
-	vno K :m .-2<CR>==
 	vno J :m '>+1<CR>gv=gv
 	vno K :m '<-2<CR>gv=gv
 " These are amazing.
