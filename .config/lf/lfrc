@@ -224,7 +224,7 @@ cmd extract &{{
 	    rpm2cpio "$f" | cpio -dium ;;
     *.xz)   unxz -k -- "$f"    ;;
     *.[zZ]) uncompress -- "$f" ;;
-    *.zip)  unzip -- "$f"      ;;
+    *.zip|*.osz)  unzip -- "$f"      ;;
     *.zst)  unzstd -- "$f"     ;;
     *.AppImage) ./"$f" --appimage-extract ;;
     *)
