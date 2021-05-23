@@ -55,6 +55,7 @@
 	export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg" # Oof.
 	export GPG_TTY=$(tty)
 	export PYTHONHISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
+	export OSHU_HOME="$HOME/stuff/games/osu"
 
 ## Various programs settings:
 	export BC_LINE_LENGTH=80
