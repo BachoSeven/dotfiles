@@ -7,18 +7,18 @@
 # Example:
 # 4cdl w 2175954
 
-Prog="4chan-down"
+program="4chan-dl"
 
-TempFile=$(mktemp --tmpdir "${Prog}.tmp.XXXXXXXX")
-JsonFile=$(mktemp --tmpdir "${Prog}.json.XXXXXXXX")
+TempFile=$(mktemp --tmpdir "${program}.tmp.XXXXXXXX")
+JsonFile=$(mktemp --tmpdir "${program}.json.XXXXXXXX")
 
 Err () {
 	printf "$1\n"
 	exit ${2:-1}
 }
 
-[ "$1" = "--help" ] || [ "$1" = "-h" ] && Err "USAGE: $Prog <board> <thread number>" 0
-[ -z "$2" ] && Err "USAGE: $Prog <board> <thread number>"
+[ "$1" = "--help" ] || [ "$1" = "-h" ] && Err "USAGE: $program <board> <thread number>" 0
+[ -z "$2" ] && Err "USAGE: $program <board> <thread number>"
 
 Board=${1}
 Thread=${2}
@@ -28,7 +28,7 @@ curl -s "https://a.4cdn.org/$Board/thread/${Thread}.json" > "$JsonFile"
 
 # Checking data is non empty
 read _Word < "$JsonFile" || [ -n "$_Word" ] ||
-	Err "Incorrect thread/board. No media found.\nUSAGE: $Prog <board> <thread number>"
+	Err "Incorrect thread/board. No media found.\nUSAGE: $program <board> <thread number>"
 
 mkdir -p "${Board}_${Thread}"
 cd "${Board}_${Thread}"
