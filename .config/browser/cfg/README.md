@@ -71,6 +71,20 @@
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
 > Install sci-hub plugin manually (crx is in this repo)
 
+### installed extensions ids string (a part from ntp and sci-hub)
+```
+Stylus (beta)|apmmpaebfobifelkijhaljbmpcgbjbdo
+uBlock Origin|cjpalhdlnbpafiamejdnhcphjbkeiagm
+Vimium Helper|cmlapekgcdddhkfcobppgamdgjbkoffm
+I don't care about cookies|fihnjjcciajhdojfnbdddfaoknhalnja
+ClearURLs|lckanjgmijmafbedllaakclkaicjfmnk
+Linux Scroll Speed Fix|mlboohjioameadaedfjcpemcaangkkbp
+KeePassXC-Browser|oboonakemofpalcgghocfoadofidjkkk
+Chromium Web Store|ocaahdebbfolfmndjeplogmgcagdmblk|https://raw.githubusercontent.com/NeverDecaf/chromium-web-store/master/updates.xml
+Redirector|ocgpenflpmgnfapjedencafcfakcekcd
+Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
+```
+
 ### Utils
 - netflix 1080p: https://github.com/jangxx/netflix-1080p (disable VP9)
 - custom ntp extension
