@@ -145,7 +145,7 @@ Thumbs.db
 .config/Microsoft
 .local/share/gem
 .local/share/TelegramDesktop
-.config/zsh/.zsh_history
+.local/share/KotatogramDesktop
 .local/lib
 .config/yarn/global/node_modules
 .config/waterfox
@@ -325,6 +325,8 @@ Thumbs.db
 .config/chromium/Default/Application Cache
 .config/chromium/Default/History Index *
 .config/chromium/Default/IndexedDB
+
+.config/Replit Desktop/Partitions
 
 #Vieb:
 .config/Vieb/Local Storage

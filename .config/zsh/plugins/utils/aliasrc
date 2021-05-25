@@ -32,8 +32,8 @@
 # T5 ssd
 	alias t5hdry='rsync -aAXH --info=progress2 -n --delete --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/backup/home'
 	alias t5hbkp='rsync -aAXH --info=progress2 --delete --exclude-from=/home/fra/.config/ignorelist /home/fra/ /mnt/backup/home'
-	alias t5rdry='rsync -aAXH --info=progress2 -n --delete --exclude={"/swapfile","/dev/*","/dati/*","/home/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /mnt/backup/root'
-	alias t5rbkp='rsync -aAXH --info=progress2 --delete --exclude={"/swapfile","/dev/*","/dati/*","/home/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /mnt/backup/root'
+	alias t5rdry='sudo rsync -aAXH --info=progress2 -n --delete --exclude={"/swapfile","/dev/*","/dati/*","/home/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /mnt/backup/root'
+	alias t5rbkp='sudo rsync -aAXH --info=progress2 --delete --exclude={"/swapfile","/dev/*","/dati/*","/home/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /mnt/backup/root'
 
 ## Utils
 	alias cls='clear'
