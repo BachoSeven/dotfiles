@@ -2,9 +2,9 @@
 inode/directory=file.desktop;
 image/png=img.desktop;
 image/jpeg=img.desktop;
-text/html=vieb.desktop;
-x-scheme-handler/http=vieb.desktop;
-x-scheme-handler/https=vieb.desktop;
+text/html=chromium.desktop;
+x-scheme-handler/http=chromium.desktop;
+x-scheme-handler/https=chromium.desktop;
 x-scheme-handler/mailto=mail.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 x-scheme-handler/tg=userapp-Kotatogram Desktop-KVW610.desktop
