@@ -73,8 +73,6 @@ map <F7> <pointer.start>
 map <F12> <:devtools>
 map <C-PageUp> <action.previousTab>
 map <C-PageDown> <action.nextTab>
-map <C-F4> <action.closeTab>
-map <C-F5> <action.reloadWithoutCache>
 map <C-f> <action.toSearchMode>
 map <C-h> <:history>
 map <C-j> <:downloads>
@@ -122,7 +120,7 @@ cmap <Up> <action.commandHistoryPrevious>
 cmap <Down> <action.commandHistoryNext>
 cmap <C-p> <action.commandHistoryPrevious>
 cmap <C-n> <action.commandHistoryNext>
-cmap bd<CR> <action.closeTab>
+cmap bd<CR> <:close>
 cmap bn<CR> <action.nextTab>
 cmap bp<CR> <action.previousTab>
 
@@ -134,8 +132,6 @@ nmap > <:set guitabbar=always guinavbar=always>
 "" Copy links (need to press y afterwards to actually copy)
 nmap yf <pointer.start><action.startFollowCurrentTab>
 fmap <Esc> <action.toNormalMode>
-"" Copy mouse selection (vvy)
-nmap y <pointer.start><pointer.startVisualSelect><pointer.copyAndStop>
 "" :nohlsearch
 nmap <CR> <action.emptySearch>
 
@@ -146,7 +142,7 @@ nmap u <action.scrollPageUpHalf>
 nmap zH <action.scrollPageLeft>
 nmap zL <action.scrollPageRight>
 "" Closing tabs
-nmap x <action.closeTab>
+nmap x <:close>
 nmap X <action.reopenTab>
 "" Omnibar focus
 vmap c <Esc><pointer.start>
