@@ -127,7 +127,7 @@
 " fzf integration for vimtex
 	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<CR>
 
-	" UltiSnips
+" UltiSnips
 	let g:UltiSnipsExpandTrigger = '<tab>'
 	let g:UltiSnipsJumpForwardTrigger = '<tab>'
 	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
@@ -135,17 +135,12 @@
 	nn <leader>se :UltiSnipsEdit<CR>
 	let g:UltiSnipsEditSplit="vertical"
 
-" completion-nvim
-	let g:completion_enable_snippet = 'UltiSnips'
-	let g:completion_enable_auto_hover = 0
-	let g:completion_matching_smart_case = 1
-"" Use <Tab> and <S-Tab> to navigate through popup menu
-	ino <expr> <Tab>	 pumvisible() ? "\<C-n>" : "\<Tab>"
-	ino <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-"" Set completeopt to have a better completion experience
-	se completeopt=menuone,noinsert,noselect
-"" Avoid showing message extra message when using completion
-	se shortmess+=c
+" Nvim-compe
+	ino <silent><expr> <C-Space> compe#complete()
+	ino <silent><expr> <CR>      compe#confirm('<CR>')
+	ino <silent><expr> <C-e>     compe#close('<C-e>')
+	ino <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+	ino <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 " UndoTree
 	let g:undotree_WindowLayout = 3

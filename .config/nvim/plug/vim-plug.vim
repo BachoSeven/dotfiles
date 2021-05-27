@@ -55,7 +55,7 @@ cal plug#begin(g:plugin_location)
 " Lsp
 	Plug 'neovim/nvim-lspconfig'
 " completion-nvim
-	Plug 'nvim-lua/completion-nvim'
+	Plug 'hrsh7th/nvim-compe'
 " Fuzzy lsp integration
 	Plug 'ojroques/nvim-lspfuzzy'
 
