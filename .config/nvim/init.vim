@@ -51,6 +51,8 @@
 	se ignorecase
 	se smartcase
 	se infercase " For insert mode completion
+	se completeopt=menuone,noinsert,noselect " Set completeopt to have a better completion experience
+	se shortmess+=c " Avoid showing message extra message when using completion
 
 "		 +--------------+
 "		 | Key Mappings |

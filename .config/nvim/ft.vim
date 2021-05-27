@@ -12,13 +12,6 @@ aug init-md
     \ formatoptions+=croq
 aug END
 
-" Enable completion-nvim (for snippets)
-"" this might take ~12ms
-aug ft-snipcomp
-	au!
-	au FileType tex,c,cpp,markdown,text,sh,zsh,snippets,octave,conf lua require'completion'.on_attach()
-aug END
-
 " Set some general options
 	au FileType sh,zsh,octave,c,cpp se shiftwidth=2 tabstop=2 softtabstop=2
 
