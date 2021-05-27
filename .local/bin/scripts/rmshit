@@ -8,7 +8,6 @@ shittyfiles = [
     '~/.adobe',              # Flash crap
     '~/.macromedia',         # Flash crap
     '~/.recently-used',
-    '~/.local/share/recently-used.xbel',
     '~/.local/state',
     '~/.local/share/cargo', # Build files
     '~/.local/share/go', # Build files
