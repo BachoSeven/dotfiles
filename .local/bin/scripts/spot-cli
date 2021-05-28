@@ -7,7 +7,8 @@
 
 # Determine currently active spotify player (first one found from the array is use for pause/play/toggle)
 # When trying to open URL/URIs, we prompt to open a player if there are none
-players="$(dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames |&rg mpris | cut -d. -f 4- | cut -d'"' -f -1)":ncspot:spotify:tauon
+
+players="$(dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep mpris | cut -d. -f 4- | cut -d'"' -f -1)":ncspot:spotify:tauon
 findplayer() {
 	IFS=:
 	for p in $players; do
@@ -15,7 +16,7 @@ findplayer() {
 			player="$p"
 		fi
 	done
-	if [ -z "$player" ] || [ "$player" = "tauon" ] || [ "${player%.*}" = "chromium" ] ; then
+	if ! echo "$player" | grep -q spot ; then
 		active="false"
 	fi
 }
