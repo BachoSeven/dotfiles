@@ -3,11 +3,14 @@
 if [ "$(basename $0)" = "spotup" ]; then
 	kill -47 "$(pidof dwmblocks)"
 else
-	if pgrep ncspot >/dev/null 2>&1; then
-		player="ncspot"
-	elif pgrep spotify >/dev/null 2>&1; then
-		player="spotify"
-	else
+	players="$(dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep mpris | cut -d. -f 4- | cut -d'"' -f -1)":ncspot:spotify
+	IFS=:
+	for p in $players; do
+		if pgrep "${p%.*}" >/dev/null 2>&1; then
+			player="$p"
+		fi
+	done
+	if [ -z "$player" ] ; then
 		active="false"
 	fi
 
