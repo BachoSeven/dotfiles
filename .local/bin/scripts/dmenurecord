@@ -9,7 +9,7 @@
 #
 # If there is already a running instance, user will be prompted to end it.
 
-updateicon() { \
+updateicon() {
 	echo "$1" > /tmp/recordingicon
 	pkill -RTMIN+9 dwmblocks
 	}
@@ -27,7 +27,7 @@ killrecording() {
 	exit
 	}
 
-screencast() { \
+screencast() {
 	ffmpeg -y \
 	-f x11grab \
 	-framerate 60 \
@@ -39,9 +39,23 @@ screencast() { \
 	"$HOME/screencast-$(date '+%y%m%d-%H%M-%S').mp4" &
 	echo $! > /tmp/recordingpid
 	updateicon "⏺️🎙️"
-       	}
+}
 
-video() { ffmpeg \
+vaapicast() {
+	ffmpeg -y \
+	-vaapi_device /dev/dri/renderD128 \
+	-f x11grab \
+	-video_size $(xdpyinfo | grep dimensions | awk '{print $2;}') -framerate 60 \
+	-r 30 -i $DISPLAY -f pulse -i default -vf 'hwupload,scale_vaapi=format=nv12' \
+	-c:v h264_vaapi -qp 24 -c:a aac \
+	-f mp4 \
+	"$HOME/screencast-$(date '+%y%m%d-%H%M-%S').mp4" &
+	echo $! > /tmp/recordingpid
+	updateicon "⏺️🎙️"
+}
+
+video() {
+	ffmpeg \
 	-f x11grab \
 	-s "$(xdpyinfo | grep dimensions | awk '{print $2;}')" \
 	-i "$DISPLAY" \
@@ -49,38 +63,52 @@ video() { ffmpeg \
 	"$HOME/video-$(date '+%y%m%d-%H%M-%S').mkv" &
 	echo $! > /tmp/recordingpid
 	updateicon "⏺️"
-	}
+}
 
-webcamhidef() { ffmpeg \
+vaapivideo() { \
+	ffmpeg -y \
+	-vaapi_device /dev/dri/renderD128 \
+	-f x11grab \
+	-video_size $(xdpyinfo | grep dimensions | awk '{print $2;}') -framerate 60 \
+	-i $DISPLAY -vf 'hwupload,scale_vaapi=format=nv12' \
+	-c:v h264_vaapi \
+	-qp 24 -f matroska \
+	"$HOME/video-$(date '+%y%m%d-%H%M-%S').mkv" &
+	echo $! > /tmp/recordingpid
+	updateicon "⏺️"
+}
+
+webcamhidef() {
+	ffmpeg \
 	-f v4l2 \
 	-i /dev/video0 \
 	-video_size 1920x1080 \
 	"$HOME/webcam-$(date '+%y%m%d-%H%M-%S').mkv" &
 	echo $! > /tmp/recordingpid
 	updateicon "🎥"
-	}
+}
 
-webcam() { ffmpeg \
+webcam() {
+	ffmpeg \
 	-f v4l2 \
 	-i /dev/video0 \
 	-video_size 640x480 \
 	"$HOME/webcam-$(date '+%y%m%d-%H%M-%S').mkv" &
 	echo $! > /tmp/recordingpid
 	updateicon "🎥"
-	}
+}
 
-
-audio() { \
+audio() {
 	ffmpeg \
 	-f pulse -i default \
 	-c:a flac \
 	"$HOME/audio-$(date '+%y%m%d-%H%M-%S').flac" &
 	echo $! > /tmp/recordingpid
 	updateicon "🎙️"
-	}
+}
 
-askrecording() { \
-	choice=$(printf "screencast\\nvideo\\nvideo selected\\naudio\\nwebcam\\nwebcam (hi-def)" | dmenu -i -p "Select recording style:")
+askrecording() {
+	choice=$(printf "screencast\\nvideo\\nvideo selected\\naudio\\nwebcam\\nwebcam (hi-def)\\nvaapicast\\nvaapivideo" | dmenu -i -p "Select recording style:")
 	case "$choice" in
 		screencast) screencast;;
 		audio) audio;;
@@ -88,16 +116,17 @@ askrecording() { \
 		*selected) videoselected;;
 		webcam) webcam;;
 		"webcam (hi-def)") webcamhidef;;
+		vaapicast) vaapicast;;
+		vaapivideo) vaapivideo;;
 	esac
-	}
+}
 
-asktoend() { \
+asktoend() {
 	response=$(printf "No\\nYes" | dmenu -i -p "Recording still active. End recording?") &&
 	[ "$response" = "Yes" ] &&  killrecording
-	}
+}
 
-videoselected()
-{
+videoselected() {
 	slop -f "%x %y %w %h" > /tmp/slop
 	read -r X Y W H < /tmp/slop
 	rm /tmp/slop
