@@ -2,7 +2,7 @@
 ncmpcpp_directory = ~/.config/ncmpcpp2
 lyrics_directory = ~/.local/share/lyrics
 mpd_connection_timeout = 10
-mpd_music_dir = "http://192.168.1.107/Musica"
+mpd_music_dir = "http://192.168.1.107:8083/Musica"
 mpd_crossfade_time = 3
 playlist_disable_highlight_delay = 1
 message_delay_time = 1
