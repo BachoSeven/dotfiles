@@ -12,7 +12,7 @@
   au BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid -f dwmblocks }
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
-  au BufRead,BufNewFile xresources,xdefaults set filetype=xdefaults
+  au BufRead,BufNewFile Xresources,Xdefaults,xresources,xdefaults set filetype=xdefaults
 	au BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
 	au BufWritePost *yt/subs !subs -g
 

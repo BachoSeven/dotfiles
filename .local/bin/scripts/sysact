@@ -4,15 +4,15 @@
 
 # For non-systemd init systems.
 case "$(realpath /sbin/init)" in
-	*runit*) hib="sudo -A zzz" ;;
+	*runit*) slp="sudo -A zzz -z" ;;
 	*openrc*) reb="sudo -A openrc-shutdown -r"; shut="sudo -A openrc-shutdown -p" ;;
 esac
 
 cmds="\
-🔒 lock		slock
+🔒 lock	slock
 ✨ refresh	kill -HUP $(pidof -s dwm)
 🚪 bye	kill -TERM $(pidof -s dwm)
-💤 'night	${hib:-sudo -A systemctl suspend}
+💤 'night	${slp:-sudo -A systemctl suspend}
 🔃 reboot	${reb:-sudo -A reboot}
 🖥 shutdown	${shut:-sudo -A shutdown -h now}"
 

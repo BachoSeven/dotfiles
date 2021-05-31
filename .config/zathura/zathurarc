@@ -19,6 +19,7 @@ set synctex-editor-command "nvr --remote +%{line} %{file}"
 set sandbox none
 
 # Navigation
+map g goto top
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
@@ -27,6 +28,7 @@ map <C-d> navigate next
 
 map r reload
 map R rotate
+
 map i recolor
 map p print
 

@@ -9,8 +9,6 @@
 	    pgrep -x "$1" > /dev/null ||
 		{ "$@" & }
 	}
-	_ dunst
-	_ mpd
 	xsetroot -cursor_name left_ptr # Needed because of hsetroot
 	mon -e					# Monitor selection
 	[ -f "$XDG_CONFIG_HOME/X11/Xresources" ] && xrdb -load ~/.config/X11/Xresources
@@ -19,9 +17,11 @@
 	else
 		hsetroot -solid "$(cat $XDG_CACHE_HOME/bgcol)"
 	fi
+	_ mpd
+	remaps					# Switch caps/super and one-tap_caps/esc
+	_ dunst
 	_ redshift			# Color temperature
 	togcomp -y			# Compositor
-	remaps					# Switch caps/super and one-tap_caps/esc
 	gebaard -b			# Gesture daemon
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	xdgxm -e &			# Update menu entries

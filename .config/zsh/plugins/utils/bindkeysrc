@@ -179,8 +179,7 @@
 	alias d=' dotbare'
 	alias dfc='d commit -a'
 	alias dfp='d push'
-	alias dlol=" GIT_PAGER='fzf --ansi' \
-	d -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" ## Use fzf as a git pager for this.
+	alias dlol=" GIT_PAGER='fzf --ansi' d -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'"
 	alias dupdsub="d submodule foreach git pull origin master"
 	local dot_cmds=(
 		fadd
