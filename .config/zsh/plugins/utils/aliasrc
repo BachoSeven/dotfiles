@@ -108,7 +108,7 @@
 	alias mictog='pactl set-source-mute @DEFAULT_SOURCE@ toggle'
 # Misc
 	alias txs='nvim ~/.config/nvim/UltiSnips/tex.snippets'
-	alias tnt='nvim ~/slsk/$Useful_stuff/torrent/various_dumps/dump_release_tntvillage_2019-08-30/dump_release_tntvillage_2019-08-30.csv'
+	alias tnt='nvim ~/slsk/\$Useful_stuff/p2p/various_dumps/dump_release_tntvillage_2019-08-30/dump_release_tntvillage_2019-08-30.csv'
 	alias kd='killall desk'
 	alias vent='nbfc status -s'
 	alias uotz='wezterm start -- /bin/whatscli'
@@ -119,7 +119,7 @@
 	alias upbat='price bat "Basic Attention Token" 🦁 && less -R ~/.local/share/crypto-prices/bat-chart'
 # Media
 	alias nc2='MPD_PORT="6600" st -c ncmpcpp -e ncmpcpp -c ~/.config/ncmpcpp2/config'
-	alias phonic='vieb --erwic ~/.config/primephonic/primephonic.json --datafolder ~/.config/primephonic'
+	alias phonic='vieb --erwic=~/.config/primephonic/primephonic.json --datafolder=~/.config/primephonic'
 	alias spo='st -c ncspot ncspot && spotup'
 	alias spi='spotify && spotup && rmdir ~/Downloads'
 # Desk
