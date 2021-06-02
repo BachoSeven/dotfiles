@@ -25,6 +25,15 @@ gradient = 1
 # gradient_color_7 = '#a7b44b'
 # gradient_color_8 = '#b8bb26'
 
+# # Cozy && vaporwave
+# gradient_color_7 = "#7cd3f1"
+# gradient_color_6 = "#82ccf3"
+# gradient_color_5 = "#8dbcf4"
+# gradient_color_4 = "#9badf7"
+# gradient_color_3 = "#a5a1f8"
+# gradient_color_2 = "#b392fb"
+# gradient_color_1 = "#a874e2"
+
 # # Blueish/light palette [https://github.com/Eloysheyin/Minimalist-Dots/blob/master/.config/cava/config]
 # gradient_count = 6
 # gradient_color_1 = '#7575a3'
@@ -35,15 +44,15 @@ gradient = 1
 # gradient_color_6 = '#ffb3b3'
 
 # Forester [https://github.com/loki7990/Forester/blob/main/.config/cava/config]
-gradient_count = 8
-gradient_color_1 = '#868d80'
-gradient_color_2 = '#e68183'
-gradient_color_3 = '#a7c080'
-gradient_color_4 = '#d9bb80'
-gradient_color_5 = '#89beba'
-gradient_color_6 = '#d3a0bc'
-gradient_color_7 = '#87c095'
-gradient_color_8 = '#d8caac'
+gradient_count = 7
+# gradient_color_1 = '#868d80'
+# gradient_color_2 = '#e68183'
+# gradient_color_3 = '#a7c080'
+# gradient_color_4 = '#d9bb80'
+# gradient_color_5 = '#89beba'
+# gradient_color_6 = '#d3a0bc'
+# gradient_color_7 = '#87c095'
+# gradient_color_8 = '#d8caac'
 
 # # Purple shades [https://github.com/ChocolateBread799/Geometry/blob/main/.config/cava/config]
 # gradient_count = 8
