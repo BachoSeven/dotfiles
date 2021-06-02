@@ -27,6 +27,7 @@ These are my dotfiles set up as a bare git repo and managed with [dotbare](https
       * [Greenish](#greenish)
       * [Pink :3](#pink-3)
       * [Madness](#madness)
+      * [Blasphemy](#blasphemy)
     * [Lama](#lama)
 
 <!-- vim-markdown-toc -->
@@ -107,6 +108,9 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 
 #### Madness
 ![](https://i.imgur.com/28QH4zb.jpg)
+
+#### Blasphemy
+![](https://i.imgur.com/aoZHTFC.jpg)
 
 ### Lama
 here be lamas
