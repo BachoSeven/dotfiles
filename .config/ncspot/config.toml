@@ -91,7 +91,7 @@ repeat = 'off'
 "Ctrl+e" = "move down 1"
 "Ctrl+y" = "move up 1"
 "l" = "move right 1"
-"." = "moveplaying"
+"." = "move playing"
 "q" = "back"
 
 ######################################
