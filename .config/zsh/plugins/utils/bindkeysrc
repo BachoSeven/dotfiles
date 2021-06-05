@@ -11,9 +11,9 @@
 	function zexit() { exit }
 	zle -N zexit
 	bindkey '^d' zexit
-# Pick but stay in completion menu
+# + to select but stay in completion menu
 	bindkey -M menuselect "+" accept-and-menu-complete
-# Select and confirm the selection with Return
+# Return selects and confirms the selection
 	bindkey -M menuselect "^m" .accept-line
 # application widgets
 	btm-widget() {
