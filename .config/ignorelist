@@ -326,8 +326,6 @@ Thumbs.db
 .config/chromium/Default/History Index *
 .config/chromium/Default/IndexedDB
 
-.config/Replit Desktop/Partitions
-
 #Vieb:
 .config/Vieb/Local Storage
 .config/Vieb/Session Storage
