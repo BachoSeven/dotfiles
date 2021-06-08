@@ -109,42 +109,37 @@ lf -remote "send $id $cmd \"$res\""
 }}
 
 cmd paste &{{
-    load=$(lf -remote 'load')
-    mode=$(echo "$load" | sed -n '1p')
-    list=$(echo "$load" | sed '1d')
-    if [ $mode = 'copy' ]; then
-	rsync -av --ignore-existing --progress $list . \
-	| stdbuf -i0 -o0 -e0 tr '\r' '\n' \
-	| while read line; do
-	    lf -remote "send $id echo $line"
-	done
-    elif [ $mode = 'move' ]; then
-	mv -n $list .
-    fi
-    lf -remote 'send load'
-    lf -remote 'send clear'
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    case "$mode" in
+        copy)
+            rsync -av --ignore-existing --progress -- "$@" . |
+            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
+            while IFS= read -r line; do
+                lf -remote "send $id echo $line"
+            done
+            ;;
+        move) mv -n -- "$@" .;;
+    esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
 }}
 
-cmd Link %{{
-    for file in $(lf -remote 'load'); do
-	if [ ! -n "${mode+1}" ]; then
-	    mode="$file"
-	    continue
-	fi
-	files+=("$file")
-    done
-    if [ "${#files[@]}" -lt 1 ]; then
-	lf -remote "send $id echo no files to link files: ${files}"
-	exit 0
+cmd link %{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    if [ "$#" -lt 1 ]; then
+        lf -remote "send $id echo no files to link"
+        exit 0
     fi
-    # symbolically  copy mode is indicating a soft link
-    if [[ "$mode" == copy ]]; then
-	ln -sr $files -t .
-    # while a move mode is indicating a hard link
-    elif [[ "$mode" == move ]]; then
-	ln $files -t .
-    fi
-    lf -remote 'send clear'
+    case "$mode" in
+        # symbolically copy mode is indicating a soft link
+        copy) ln -sr -t . -- "$@";;
+        # while a move mode is indicating a hard link
+        move) ln -t . -- "$@";;
+    esac
 }}
 
 cmd mount ${{
