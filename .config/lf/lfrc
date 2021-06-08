@@ -126,7 +126,7 @@ cmd paste &{{
     lf -remote "send clear"
 }}
 
-cmd link %{{
+cmd Link %{{
     set -- $(cat ~/.local/share/lf/files)
     mode="$1"
     shift
@@ -140,6 +140,8 @@ cmd link %{{
         # while a move mode is indicating a hard link
         move) ln -t . -- "$@";;
     esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
 }}
 
 cmd mount ${{
