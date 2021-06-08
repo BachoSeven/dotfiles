@@ -14,8 +14,7 @@
 " \ ' (:   / "\ (:      "||    \    \ |   \\   /    /\  |\ |.  \    /:  |',
 " \ '  \_______) \_______) \___|\____\)    \__/    (__\_|_)|___|\__/|___|',
 " \]
-	" let g:startify_custom_header = s:center(s:header)
-	let g:startify_custom_header =[
+	let s:header =[
     \'          ▀████▀▄▄              ▄█ ',
     \'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
     \'    ▄        █          ▀▀▀▀▄  ▄▀  ',
@@ -26,6 +25,7 @@
     \'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
     \'   █   █  █      ▄▄           ▄▀   ',
     \]
+	let g:startify_custom_header = s:center(s:header)
 	let g:startify_skiplist = [
 	\ 'COMMIT_EDITMSG',
 	\ ]
