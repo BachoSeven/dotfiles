@@ -23,11 +23,12 @@ main() {
 	while getopts ":elm" o; do
 		case "${o}" in
 			e) # External
-				connected && xrandr --output $int --off --output $ext --mode 2560x1440 --dpi 120 && miscfixes ;;
+				# connected && xrandr --output $int --off --output $ext --auto --dpi 144 && miscfixes ;;
+				connected && xrandr --output $int --off --output $ext --mode 2560x1440 && miscfixes ;;
 			l) # Laptop
 				xrandr --output $ext --off --output $int --auto --dpi 96 && miscfixes ;;
 			m) # Multi
-				connected && xrandr --output $int --auto --output $ext --primary --auto --right-of $int --dpi 120 && miscfixes ;;
+				connected && xrandr --output $int --auto --output $ext --primary --auto --right-of $int --dpi 108 && miscfixes ;;
 			*)
 				printf "Invalid option: -%s\n" "$OPTARG"
 				printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;
