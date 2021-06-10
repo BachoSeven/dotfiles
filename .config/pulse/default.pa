@@ -1,16 +1,22 @@
 # vim: ft=cfg
 
-# Load defaults
+## Load defaults
 .include /etc/pulse/default.pa
 
-## https://wiki.archlinux.org/title/PulseAudio/Troubleshooting#Pops_when_starting_and_stopping_playback
+## Fix annoying pops
+# https://wiki.archlinux.org/title/PulseAudio/Troubleshooting#Pops_when_starting_and_stopping_playback
 .nofail
 unload-module module-suspend-on-idle
 .fail
 
-## Overrides
-# Automatically switch to newly-connected devices
+## Enable Echo/Noise-Cancellation
+# https://wiki.archlinux.org/title/PulseAudio#Microphone_echo/noise_cancellation
+load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args="analog_gain_control=0\ digital_gain_control=1" source_name=echoCancel_source sink_name=echoCancel_sink
+set-default-source echoCancel_source
+set-default-sink echoCancel_sink
+
+## Automatically switch to newly-connected devices
 load-module module-switch-on-connect
 
-# Fix for mpd running as root not being able to speak to pulse
+## Fix for mpd running as root not being able to speak to pulse
 load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
