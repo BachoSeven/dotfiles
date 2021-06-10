@@ -99,6 +99,28 @@ upbootloader() {
 	sudo cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/ &&
 	$AURHELPER -R limine
 }
+qmkinstall() {
+	$AURHELPER -S python-argcomplete python-colorama python-hjson python-milc python-pygments bootloadhid avr-binutils arm-none-eabi-gcc arm-none-eabi-newlib avrdude
+	sudo pacman -U https://archive.archlinux.org/packages/a/avr-gcc/avr-gcc-8.3.0-1-x86_64.pkg.tar.xz
+	sudo pacman -S avr-libc
+}
+qmkremove() {
+	$AURHELPER -R \
+		python-argcomplete \
+		python-colorama \
+		python-hjson \
+		python-milc \
+		python-pygments \
+		bootloadhid \
+		avr-binutils \
+		libftdi \
+		arm-none-eabi-gcc \
+		arm-none-eabi-binutils \
+		arm-none-eabi-newlib \
+		avrdude \
+		avr-libc \
+		avr-gcc
+}
 
 # Git
 ## No arguments: `git status`; with arguments: acts like `git`
