@@ -13,7 +13,8 @@ connected() {
 
 miscfixes() {
 	sbg # redraw background
-	dunstreload # Reload dunst configuration
+	dunstreload # reload dunst configuration
+	remaps
 	cqctl magic
 }
 
