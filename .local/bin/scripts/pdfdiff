@@ -62,7 +62,7 @@ do
 	MD5_1=$(md5sum out/$i.ppm | awk '{print $1}')
 	MD5_2=$(md5sum out/${i}_white.ppm | awk '{print $1}')
 
-	if [ "x${MD5_1}" == "x${MD5_2}" ]; then
+	if [ "${MD5_1}" = "${MD5_2}" ]; then
 	    rm  \
 	      out/$i.pdf out/${i}_*.ppm
 

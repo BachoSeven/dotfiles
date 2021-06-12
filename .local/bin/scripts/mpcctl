@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## WIP
+## WIP (should be much smoother)
 
 play() {
 	vol="$(mpc volume | cut -c 8-10)"

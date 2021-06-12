@@ -45,7 +45,7 @@ vaapicast() {
 	ffmpeg -y \
 	-vaapi_device /dev/dri/renderD128 \
 	-f x11grab \
-	-video_size $(xdpyinfo | grep dimensions | awk '{print $2;}') -framerate 60 \
+	-video_size "$(xdpyinfo | grep dimensions | awk '{print $2;}')" -framerate 60 \
 	-r 30 -i $DISPLAY -f pulse -i default -vf 'hwupload,scale_vaapi=format=nv12' \
 	-c:v h264_vaapi -qp 24 -c:a aac \
 	-f mp4 \
@@ -69,7 +69,7 @@ vaapivideo() { \
 	ffmpeg -y \
 	-vaapi_device /dev/dri/renderD128 \
 	-f x11grab \
-	-video_size $(xdpyinfo | grep dimensions | awk '{print $2;}') -framerate 60 \
+	-video_size "$(xdpyinfo | grep dimensions | awk '{print $2;}')" -framerate 60 \
 	-i $DISPLAY -vf 'hwupload,scale_vaapi=format=nv12' \
 	-c:v h264_vaapi \
 	-qp 24 -f matroska \

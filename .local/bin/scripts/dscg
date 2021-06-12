@@ -17,7 +17,7 @@ fd . $path --type executable \
        > "$temp"
 
 # output list to dmenu
-sel="$(cat "$temp" | dmenu $prompt $lines)"
+sel="$(< "$temp" dmenu $prompt $lines)"
 
 # run scg with the selected file name
 if [ -n "$sel" ]; then

@@ -12,11 +12,11 @@
 # Dependencies:
 #	- `hsetroot`
 # Optional:
-# - `fd` (can be easily replaced with `find`)
+# - `fd` (since it can be easily replaced with `find`)
 #	- [`gifsicle` + `shantz-xwinwrap-bzr` + custom `gifbg` and `imgextcol`(optionally with `roficolsel`) scripts] for GIFs;
 # -	[`pywal` + custom `ww` script] for integration with `wal` and with `wal.vim`
 #	NOTE:
-# - I also use a custom `ifinstalled` script to notify about missing programs
+# - I also use a custom `ifinstalled` script to notify missing programs for the optional functionalities
 #	-	`-w` and `-i` are supposed to be mutually exclusive
 
 bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}"/bg
@@ -71,10 +71,10 @@ if [ "$mime" = "image/gif" ]; then
 		setsid -f gifbg "$bgloc"
 	fi
 else
-	if echo "$(realpath "$bgloc")" | grep "tiled" >/dev/null 2>&1; then
+	if realpath "$bgloc" | grep "tiled" >/dev/null 2>&1; then
 		format="-tile"
 	else
 		$full || bgcol="$(imgextcol "$bgloc")"
 	fi
-		hsetroot -solid "${bgcol:-#252525}" "${format:--cover}" "$bgloc" >/dev/null 2>&1
+	hsetroot -solid "${bgcol:-#252525}" "${format:--cover}" "$bgloc" >/dev/null 2>&1
 fi
