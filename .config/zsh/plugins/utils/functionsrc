@@ -114,6 +114,7 @@ qmkremove() {
 		bootloadhid \
 		avr-binutils \
 		libftdi \
+		confuse \
 		arm-none-eabi-gcc \
 		arm-none-eabi-binutils \
 		arm-none-eabi-newlib \
@@ -818,8 +819,8 @@ scck() {
 	scripts=(
 		/home/fra/.local/bin/statusbar
 		/home/fra/.local/bin/scripts
-		/home/fra/.local/bin/cron
-		/home/fra/.local/bin/colors
+		# /home/fra/.local/bin/cron
+		# /home/fra/.local/bin/colors
 	)
 	for dir in $scripts; do
 		while read script; do

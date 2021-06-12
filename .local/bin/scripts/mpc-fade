@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# A script to fade volume when toggling MPD via mpc
+# (WIP) A script to fade volume when toggling MPD via mpc
 # Example: mpc-fade -s 0
 # TODO: avoid statusbar lag when using this
 
-mpc=`which mpc`
+mpc=$(which mpc)
 
 SINKAPP="mpd"
 SECS=2.0
@@ -21,18 +21,15 @@ increase="pactl set-sink-input-volume $sink +1%"
 resetvolume="pactl set-sink-input-volume $sink $VOLUME%"
 mutevolume="pactl set-sink-input-volume $sink 0%"
 
-for arg in "$@"
-do
-  if [ "$arg" == "--help" ] || [ "$arg" == "-h" ]
-  then
-    echo "usage: mpc-fade -p <volume fade percentage> -s <fade length in secs>"
-    exit 1
-  fi
-done
+usage() {
+	echo "usage: mpc-fade -p <volume fade percentage> -s <fade length in secs>"
+	exit 0
+}
 
-while getopts h:p:s: option ; do
+while getopts :h:p:s: option ; do
   case "${option}"
     in
+    h) usage;;
     p) VOLUME=${OPTARG};;
     s) SECS=${OPTARG};;
   esac
@@ -42,7 +39,7 @@ fade() {
   SLEEP=$(echo "scale=4; $SECS/$VOLUME" | bc)
   while [ $VOLUME -ge 1 ] ; do
     $1
-    VOLUME=$(($VOLUME-1))
+    VOLUME=$((VOLUME-1))
     sleep $SLEEP
   done
 }
