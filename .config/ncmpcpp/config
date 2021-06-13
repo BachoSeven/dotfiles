@@ -1,20 +1,22 @@
-# mpd settings
-ncmpcpp_directory = ~/.config/ncmpcpp
-lyrics_directory = ~/.local/share/lyrics
+[mpd]
 mpd_connection_timeout = 5
 mpd_music_dir = "~/slsk/music"
 mpd_crossfade_time = 3
+
+[global]
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.local/share/lyrics
 playlist_disable_highlight_delay = 1
 message_delay_time = 1
+colors_enabled = yes
 
-## visualizer
+[visualizer]
 visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = Visualizer
 visualizer_in_stereo = yes
 visualizer_autoscale = yes
 visualizer_fps = 60
-
-## spectrum
+[[spectrum]]
 visualizer_type = spectrum
 visualizer_look = "●▮"
 visualizer_color = blue, cyan, green, yellow, magenta, red
@@ -30,8 +32,7 @@ visualizer_spectrum_hz_max = 20000
 ## Custom command that will be executed each time song changes
 execute_on_song_change = musnotify
 # execute_on_song_change = notify-send -i ~/.local/share/icons/vinyl.svg "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
-
-# Misc
+[misc]
 discard_colors_if_item_is_selected = yes
 show_duplicate_tags = no
 incremental_seeking = yes
@@ -40,48 +41,7 @@ volume_change_step = 5
 autocenter_mode = yes
 centered_cursor = yes
 data_fetching_delay = "no" # useful for remote servers
-
-# Display mode
-playlist_display_mode = columns
-browser_display_mode = columns
-search_engine_display_mode = columns
-playlist_editor_display_mode = columns
-
-## Progressbars
-## Yes, I have gathered all of the best-looking progressbar for ncmpcpp from all over the internet.
-# progressbar_look = "•••"
-# progressbar_look = "---"
-# progressbar_look = "─>─"
-# progressbar_look = "▀▀ "
-# progressbar_look = "━■"
-# progressbar_look = "⠒⠒⠐"
-# progressbar_look = "━╋━"
-# progressbar_look = "━━━"
-# progressbar_look = "━━─"
-# progressbar_look = "─╼─"
-# progressbar_look = "╼·"
-# progressbar_look = "=>"
-# progressbar_look = "─- "
-# progressbar_look = "░█ "
-# progressbar_look = "▒▒░"
-progressbar_look = "▒▓░"
-# progressbar_look = "▃▃▃" # Very minimalistic
-# progressbar_look = "┅┅┄"
-# progressbar_look = "─⊙┄"
-# progressbar_look = "─➞─"
-# progressbar_look = "─┅─"
-# progressbar_look = "▪▪▪"
-# progressbar_look = "▪▪▫"
-# progressbar_look = "◾◾◽"
-# progressbar_look = "───"
-# progressbar_look = "▁▁▁"
-# progressbar_look = "‒‒‒"
-# progressbar_look = "■◣ "
-# progressbar_look = "◈◆◇"
-# progressbar_look = "→→"
-
-## Available values: artist, album_artist, date, genre, composer, performer.
-media_library_primary_tag = album_artist
+media_library_primary_tag = album_artist # artist, album_artist, date, genre, composer, performer.
 media_library_sort_by_mtime = yes
 default_find_mode = wrapped
 lyrics_fetchers = azlyrics, genius, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
@@ -90,7 +50,6 @@ fetch_lyrics_for_current_song_in_background = yes
 store_lyrics_in_song_dir = no
 generate_win32_compatible_filenames = no
 allow_for_physical_item_deletion = no
-
 space_add_mode = add_remove
 show_hidden_files_in_local_browser = no
 
@@ -167,7 +126,6 @@ use_console_editor = yes
 ## state_line_color, state_flags_color, progressbar_color,
 ## progressbar_elapsed_color, player_state_color, statusbar_time_color,
 ## alternative_ui_separator_color.
-colors_enabled = yes
 empty_tag_color = 8
 header_window_color = 13
 volume_color = yellow
@@ -181,7 +139,46 @@ statusbar_time_color = cyan:b
 player_state_color = default
 alternative_ui_separator_color = blue
 
-# Ui elements
+[modes]
+playlist_display_mode = columns
+browser_display_mode = columns
+search_engine_display_mode = columns
+playlist_editor_display_mode = columns
+
+[appearance]
+[[progressbar]]
+## Yes, I have gathered all of the best-looking progressbar for ncmpcpp from all over the internet.
+# progressbar_look = "•••"
+# progressbar_look = "---"
+# progressbar_look = "─>─"
+# progressbar_look = "▀▀ "
+# progressbar_look = "━■"
+# progressbar_look = "⠒⠒⠐"
+# progressbar_look = "━╋━"
+# progressbar_look = "━━━"
+# progressbar_look = "━━─"
+# progressbar_look = "─╼─"
+# progressbar_look = "╼·"
+# progressbar_look = "=>"
+# progressbar_look = "─- "
+# progressbar_look = "░█ "
+# progressbar_look = "▒▒░"
+progressbar_look = "▒▓░"
+# progressbar_look = "▃▃▃" # Very minimalistic
+# progressbar_look = "┅┅┄"
+# progressbar_look = "─⊙┄"
+# progressbar_look = "─➞─"
+# progressbar_look = "─┅─"
+# progressbar_look = "▪▪▪"
+# progressbar_look = "▪▪▫"
+# progressbar_look = "◾◾◽"
+# progressbar_look = "───"
+# progressbar_look = "▁▁▁"
+# progressbar_look = "‒‒‒"
+# progressbar_look = "■◣ "
+# progressbar_look = "◈◆◇"
+# progressbar_look = "→→"
+[ui]
 header_visibility = "no" # For classic interface
 user_interface = alternative
 enable_window_title = no
@@ -190,7 +187,6 @@ song_status_format = $b{{$8%t}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
 song_library_format = {%n - }{%t}|{%f}
 alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 alternative_header_second_line_format = {$b{$6%a$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
-
 # Normal
 now_playing_prefix = "$b$3$8 "
 now_playing_suffix = $/b$8
@@ -199,7 +195,6 @@ current_item_suffix = $(end)$/b
 current_item_inactive_column_prefix = $(green)
 current_item_inactive_column_suffix = $(end)
 song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3%l$9}
-
 # Customized
 #
 # current_item_prefix = "$/b$b $7 $8 $/b "
