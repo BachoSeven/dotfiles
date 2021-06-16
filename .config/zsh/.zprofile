@@ -20,7 +20,6 @@
 	export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 	export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/readline/inputrc"
 	export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
-	export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/settings.ini"
 	export NBRC_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/nb/nbrc"
 	export NB_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nb"
 	export NB_HIST="${XDG_DATA_HOME:-$HOME/.local/share}/nb_history"
