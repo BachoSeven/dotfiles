@@ -45,7 +45,7 @@
     "scales": [
     ],
     "show_chat_id": 0,
-    "show_phone_in_drawer": false,
+    "show_phone_in_drawer": true,
     "sticker_height": 130,
     "sticker_scale_both": true,
     "use_telegram_panel_icon": false,
