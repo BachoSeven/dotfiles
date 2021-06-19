@@ -670,7 +670,7 @@ vidvolume() {
 
 # Useful general-purpose shell utilities
 gensum() {
-	sha512sum "$1" | cut -f1 -d' ' | xclip
+	sha512sum "$1" | cut -f1 -d' ' | xclip -r -sel c
 }
 cpuctl() {
     case $1 in
