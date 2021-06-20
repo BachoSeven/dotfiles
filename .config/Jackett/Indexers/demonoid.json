@@ -1,0 +1,45 @@
+[
+  {
+    "id": "sitelink",
+    "type": "inputstring",
+    "name": "Site Link",
+    "value": "https://www.demonoid.is/"
+  },
+  {
+    "id": "cookieheader",
+    "type": "hiddendata",
+    "name": "CookieHeader",
+    "value": "cf_chl_2=6591b28ddde139e; cf_chl_prog=x8; cf_clearance=1bc63c2d644ee18e6104e1dc4a6a04e6a7545b16-1624193229-0-150"
+  },
+  {
+    "id": "lasterror",
+    "type": "hiddendata",
+    "name": "LastError",
+    "value": null
+  },
+  {
+    "id": "cookie",
+    "type": "inputstring",
+    "name": "Cookie",
+    "value": "cf_chl_2=edf9ffb7b2d26e6; cf_chl_prog=a10; cf_clearance=4d1afacd6672d80ebd86e19b3c67979f76e03f60-1624186120-0-150"
+  },
+  {
+    "id": "sortrequestedfromsite",
+    "type": "inputselect",
+    "name": "Sort requested from site",
+    "value": "S",
+    "options": {
+      "_": "created",
+      "S": "seeders desc",
+      "s": "seeders asc",
+      "B": "size desc",
+      "b": "size asc"
+    }
+  },
+  {
+    "id": "tags",
+    "type": "inputtags",
+    "name": "Tags",
+    "value": ""
+  }
+]

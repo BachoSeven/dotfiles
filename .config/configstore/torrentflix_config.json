@@ -4,6 +4,22 @@
 			"name": "Rarbg",
 			"url": "https://torrentapi.org"
 		},
+		"eztv": {
+			"name": "Eztv",
+			"url": "https://www.eztv.ag"
+		},
+		"zooqle": {
+			"name": "Zooqle",
+			"url": "https://zooqle.com"
+		},
+		"yts": {
+			"name": "YTS",
+			"url": "https://yts.mx"
+		},
+		"nyaa": {
+			"name": "Nyaa",
+			"url": "http://www.nyaa.si"
+		},
 		"leetx": {
 			"name": "1337x",
 			"url": "https://1337x.to/"
@@ -16,33 +32,17 @@
 			"name": "LimeTorrents",
 			"url": "https://www.limetorrents.info"
 		},
-		"yts": {
-			"name": "YTS",
-			"url": "https://yts.mx"
-		},
 		"sky": {
 			"name": "Sky Torrents",
 			"url": "https://skytorrents.lol"
-		},
-		"nyaa": {
-			"name": "Nyaa",
-			"url": "http://www.nyaa.si"
 		},
 		"tokyotosho": {
 			"name": "Tokiotosho",
 			"url": "https://www.tokyotosho.info"
 		},
-		"eztv": {
-			"name": "Eztv",
-			"url": "https://www.eztv.ag"
-		},
 		"kickass": {
 			"name": "Kickass",
 			"url": "https://kat.cr"
-		},
-		"zooqle": {
-			"name": "Zooqle",
-			"url": "https://zooqle.com"
 		},
 		"xbit": {
 			"name": "x[BiT]",

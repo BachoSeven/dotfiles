@@ -12,10 +12,16 @@
     "value": false
   },
   {
-    "id": "captchainfo",
-    "type": "displayinfo",
-    "name": "Captcha Info",
-    "value": "<b>About Captcha:</b> If the Captcha Image is missing then leave the Captcha Text empty."
+    "id": "movefirsttagstoendofreleasetitle",
+    "type": "inputbool",
+    "name": "Move first tags to end of release title",
+    "value": false
+  },
+  {
+    "id": "movealltagstoendofreleasetitle",
+    "type": "inputbool",
+    "name": "Move all tags to end of release title",
+    "value": false
   },
   {
     "id": "username",
@@ -27,7 +33,7 @@
     "id": "password",
     "type": "inputstring",
     "name": "Password",
-    "value": "CfDJ8CPEPNLQaPdEgCTysTYvs6SaHu7P6gh79noiimkjDqD0U7fakzAPpJwP3oa5TmHsQc_eCgQ144kYnG6lQU_TmTygvEYMANW0N6YVVgFdpDMoGXk4b4Ng5kUdQhPAIY8ySg"
+    "value": "CfDJ8GYoP8DOc3VNodrcST7v83uEHkSUGQJiLcGEdDGpJf7ZM7GVZ10XJvgjJip8GGHC7cWlhcJm4c2weYrrgePYq_mRqQHnYs_NwpKXW9uc24qCarssPl2ZLbdbeasdLkOt4w"
   },
   {
     "id": "captchatext",
@@ -39,12 +45,6 @@
     "id": "captchacookie",
     "type": "hiddendata",
     "name": "Captcha Cookie",
-    "value": ""
-  },
-  {
-    "id": "",
-    "type": "displayinfo",
-    "name": "",
     "value": null
   },
   {
@@ -58,5 +58,11 @@
     "type": "hiddendata",
     "name": "LastError",
     "value": null
+  },
+  {
+    "id": "tags",
+    "type": "inputtags",
+    "name": "Tags",
+    "value": ""
   }
 ]
