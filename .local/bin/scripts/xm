@@ -1,5 +1,3 @@
 #!/bin/sh
 
-# Should be faster than piping directly to `xmenu`.
-m="$(xdgxm -l)"
-echo "$m" | xmenu | sh &
+xdgxm -l | xmenu | sh &
