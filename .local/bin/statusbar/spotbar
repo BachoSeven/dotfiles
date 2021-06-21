@@ -3,7 +3,8 @@
 if [ "$(basename $0)" = "spotup" ]; then
 	kill -47 "$(pidof dwmblocks)"
 else
-	players="$(dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep mpris | cut -d. -f 4- | cut -d'"' -f -1)":ncspot:spotify
+	# I didn't add tauon here, was it working(?)
+	players="$(dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep mpris | cut -d. -f 4- | cut -d'"' -f -1)":spotify:ncspot
 	IFS=:
 	for p in $players; do
 		if pgrep "${p%.*}" >/dev/null 2>&1; then
