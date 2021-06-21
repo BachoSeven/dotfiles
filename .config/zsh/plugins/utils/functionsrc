@@ -81,8 +81,8 @@ aurpublish() {
 aurupdate() {
 	repodir="$1"; shift
 	cd $repodir
-	# $AURHELPER -S --needed namcap
-	for repo in $@; do
+	$AURHELPER -S --needed namcap
+	for repo in "$@"; do
 		cp ../"$repo"/PKGBUILD -t "$repo"
 		cd "$repo"
 		# namcap PKGBUILD
@@ -91,7 +91,7 @@ aurupdate() {
 		git push
 		cd ..
 	done
-	# $AURHELPER -Rs namcap
+	$AURHELPER -Rs namcap
 }
 upbootloader() {
 	$AURHELPER -Syu limine &&
@@ -145,7 +145,7 @@ ghc() { # Github clone, personal or otherwise
 }
 gac() { # Aur git clone
 	local PKG
-	for PKG in $@; do
+	for PKG in "$@"; do
 		git clone ssh://aur@aur.archlinux.org/"$PKG".git
 	done
 }
@@ -281,7 +281,7 @@ sloc() {
 	if [ -z "$1" ]; then
 		fd -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
 	else
-		for i in $@; do
+		for i in "$@"; do
 			if [ -d "$i" ]; then
 				printf "%s: " "$i"
 				fd --full-path "$i" -t f --exec-batch sed '/^\s*'"${del:-#}"'/d;/^\s*$/d' | wc -l
@@ -307,9 +307,10 @@ mpvDisk-alt() {
 resumempv() { # This is a dirty hack
 	echo '{ "command": ["set_property", "pause", false] }' | socat - "/tmp/mpvSockets/$(\ls /tmp/mpvSockets/ | head -1)"
 }
-ytw() {
-	local vid="$1"
-	mpv "https://youtube.com/watch?v=$vid" || { ifinstalled nordvpn && nordvpn connect UK && mpv "https://youtube.com/watch?v=$vid" }
+ytdl() {
+	for id in "$@"; do
+		youtube-dl -ic -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata "https://youtube.com/watch?v=$id"
+	done
 }
 
 ## DICTIONARY FUNCTIONS ##
@@ -364,7 +365,7 @@ engturk() {
 
 # simple wrapper to format files for use with `tt`
 ttconv() {
-	for f in $@; do
+	for f in "$@"; do
 		name="$(basename $f)"
 		iconv -f utf-8 -t ascii//translit $f | sed 's/--/-/g' | sed '/^$/d' | sed 's/^[ \t]*//' | sed 's/\(^.\{1,80\}\).*/\1/' > $name.tt
 	done
@@ -409,7 +410,7 @@ most-used-commands() {
 
 # xdg-open wrapper
 open() {
-	for f in $@; do
+	for f in "$@"; do
 		setsid -f $OPENER $f >/dev/null 2>&1
 	done
 }
@@ -716,7 +717,7 @@ vscp() {
 	fi
 	declare -a targs=()
 	echo "Editing Remote Files"
-	for iarg in $@; do
+	for iarg in "$@"; do
 		targ="scp://$(echo $iarg | sed -e 's@:/@//@' | sed -e 's@:@/@')"
 		targs=("${targs[@]}" $targ)
 	done
@@ -921,7 +922,7 @@ wgetext() {
 	mkdir -pv "$outputdir_name"
 	cd "$outputdir_name"
 
-	for f in $@; do
+	for f in "$@"; do
 		wget -c -r -l3 -H -t1 -nd -N -np -A "$extensions" -erobots=off "$f"
 	done
 }
