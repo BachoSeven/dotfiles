@@ -52,7 +52,7 @@ Here are some of the programs I use:
 - **[sxiv](https://github.com/muennich/sxiv)** image viewer
 - **[zathura](.config/zathura/zathurarc)** pdf & djvu reader
 - **[ytop](https://github.com/cjbassi/ytop)** system monitoring
-- **[copyq](https://github.com/hluk/CopyQ/)** clipboard manager
+- **[copyq](https://github.com/hluk/CopyQ)** clipboard manager
 - **[dunst](.config/dunst/dunstrc)** notification manager
 - **[redshift](.config/redshift/redshift.conf)** sets the color temperature
 - **[newsboat](.config/newsboat)** is my RSS reader
@@ -63,21 +63,21 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 
 ## Eye-candy
 
-- I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, copyq, all suckless config and anywhere else (although I tried to keep a commented solarized alternative where I could for nostalgia). I even set them in the **[tty](https://www.reddit.com/r/unixporn/comments/igdhic/etcissue_material_gruvbox_virtual_console_login/)**.
+- I set `gruvbox` colors in Xresources, zathura, ncspot, dircolors, dunst, neovim, copyq, all suckless config and anywhere else (although I tried to keep a commented solarized alternative where I could for nostalgia). I even set them in the **[tty](https://www.reddit.com/r/unixporn/comments/igdhic/etcissue_material_gruvbox_virtual_console_login)**.
 - I also use `pywal` now and then, you will find various attempts at integrating it with other programs across this repo
-- The compositor is `picom` ([picom-ibhagwan-git](https://aur.archlinux.org/packages/picom-ibhagwan-git/) fork)
-- Icons are Joypixels ([ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/))
+- The compositor is `picom` ([picom-git](https://aur.archlinux.org/packages/picom-git) is required for dual-kawase blur at the moment)
+- Emoji font is [noto-fonts-emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji)
 - The GTK theme is [gruvbox-material-gtk](https://github.com/sainnhe/gruvbox-material-gtk)
-- My font is `Hack Nerd`, although I sometimes use [`scientifica`](https://github.com/NerdyPepper/scientifica) and [`cozette`](https://github.com/slavfox/Cozette) inside the terminal.
+- My main fonts are `mononoki` and `Hack Nerd`, although I sometimes use [`scientifica`](https://github.com/NerdyPepper/scientifica) and [`cozette`](https://github.com/slavfox/Cozette).
 
 ## Various
 
 - I like using vim bindings whenever possible.
-- For browsing I mainly use ungoogled-chromium, find my setup in [here](.config/browser). To improve its aesthetics, I use the Gtk  theme and duckduckgo with `gruvboxytheme` pass phrase. I also like using [`Vieb`](https://vieb.dev/), which is an Electron vim-based browser.
+- For browsing I mainly use ungoogled-chromium, find my setup in [here](.config/browser). To improve its aesthetics, I use the Gtk  theme and duckduckgo with `gruvboxytheme` pass phrase. I also like using [`Vieb`](https://vieb.dev), which is an Electron vim-based browser.
 - I use a custom startpage, check it out [here](https://github.com/BachoSeven/startpage)!
 - [This](https://github.com/BachoSeven/sysdots) is a repository with my system-wide configuration files, specifically stuff from `/etc` and `/root`.
 - [Here](https://drive.google.com/drive/folders/19O9qHXYdETtf-l67Gnrl_FZVswLn23ER?usp=sharing) are some of the wallpapers I use.
-- [Pacgraph](http://github.com/keenerd/pacgraph/) output:
+- [Pacgraph](http://github.com/keenerd/pacgraph) output:
 ![](https://i.imgur.com/uIR9tHw.png)
 
 ## Screens
