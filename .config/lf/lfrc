@@ -48,6 +48,7 @@ cmd open ${{
 	    lf -remote "send $id mount \"$f\"" ;;
 	*.pdf|*.djvu|*.ps|*.epub) setsid -f zathura $fx >/dev/null 2>&1 ;;
 	*.vixl) vixl44 $f >/dev/null 2>&1 ;;
+	*.dsf) mpv --audio-display=no $f ;;
 	*)
 	    case $(file --mime-type $f -b) in
 		inode/symlink) setsid -f $OPENER $(realpath $f) >/dev/null 2>&1 ;;
