@@ -5,8 +5,7 @@
 ##	Depends: maim, tesseract, xclip
 
 # Setup
-lang=eng
-[ -n "$1" ] && lang="$1"
+lang="${1:-eng}"
 ifinstalled tesseract || exit 1
 
 tmpfile_in="$(mktemp -u).png"
