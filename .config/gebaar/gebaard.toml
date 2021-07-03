@@ -7,7 +7,7 @@ left = "xdotool key Alt_L+Right"
 [swipe.commands.four]
 right = "xdotool key Super_L+g"
 # This is not working :<
-left = "xdotool key Super_L+;"
+left = "xdotool key Super_L+semicolon"
 up = "vol up 10"
 down = "vol down 10"
 
