@@ -243,6 +243,6 @@ fi
 	fi
 
 # Start graphical server on tty1 if not already running.
-	if [ "$(tty)" = "/dev/tty1" ] && [ -z "$DISPLAY" ]; then
-		exec startx "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xinitrc" -- "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xserverrc" &>/dev/null 2>&1
+	if [ "${XDG_VTNR}" -eq 1 ] && [ -z "${DISPLAY}" ]; then
+		exec sx &>/dev/null 2>&1
 	fi
