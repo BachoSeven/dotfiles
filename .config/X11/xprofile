@@ -6,7 +6,7 @@
 	xidlehook --not-when-fullscreen --not-when-audio --timer 600 "systemctl suspend" - &
 
 	_() {	# Used to start daemons which have not been started yet
-	    pgrep -x "$1" > /dev/null ||
+	    pgrep -x "$1" >/dev/null ||
 		{ "$@" & }
 	}
 	xsetroot -cursor_name left_ptr # Needed because of hsetroot

@@ -244,5 +244,5 @@ fi
 
 # Start graphical server on tty1 if not already running.
 	if [ "${XDG_VTNR}" -eq 1 ] && [ -z "${DISPLAY}" ]; then
-		exec sx >/dev/null
+		exec sx 2>/dev/null
 	fi
