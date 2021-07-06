@@ -1,0 +1,50 @@
+@binding-set gtk-vi-text-entry {
+  bind "<ctrl>u" { "delete-from-cursor" (paragraph-ends, -1) };
+  bind "<ctrl>h" { "delete-from-cursor" (chars, -1) };
+  bind "<ctrl>w" { "delete-from-cursor" (word-ends, -1) }; /* delete word */
+}
+
+@binding-set gtk-vi-text-view {
+    bind "<ctrl>d" { "move-cursor" (display-lines, 5, 0) };      /* 5 lines down */
+    bind "<ctrl>f" { "move-cursor" (display-lines, 5, 0) };      /* 5 lines down */
+    bind "<ctrl>u" { "move-cursor" (display-lines, -5, 0) };     /* 5 lines up */
+    bind "<ctrl>b" { "move-cursor" (display-lines, -5, 0) };     /* 5 lines up */
+    bind "<ctrl>e" { "move-cursor" (display-lines, -1, 0) };     /* down */
+    bind "<ctrl>y" { "move-cursor" (display-lines, 1, 0) };      /* up */
+    bind "j" { "move-cursor" (display-lines, 1, 0) };            /* down */
+    bind "k" { "move-cursor" (display-lines, -1, 0) };           /* up */
+    bind "l" { "move-cursor" (logical-positions, 1, 0) };        /* right */
+    bind "h" { "move-cursor" (logical-positions, -1, 0) };       /* left */
+}
+
+@binding-set gtk-vi-tree-view {
+    bind "slash" { "start-interactive-search" () };
+    bind "j" { "move-cursor" (display-lines, 1) };               /* selection down */
+    bind "k" { "move-cursor" (display-lines, -1) };              /* selection up */
+    bind "l" { "move-cursor" (logical-positions, 1) };           /* selection right */
+    bind "h" { "move-cursor" (logical-positions, -1) };          /* selection left */
+}
+
+@binding-set gtk-vi-menu
+{
+  bind "<ctrl>n" { "move-current" (next) };
+  bind "<ctrl>p" { "move-current" (prev) };
+  bind "<ctrl>f" { "move-current" (child) };
+  bind "<ctrl>b" { "move-current" (parent) };
+}
+
+entry {
+  -gtk-key-bindings: gtk-vi-text-entry;
+}
+
+textview {
+  -gtk-key-bindings: gtk-vi-text-entry, gtk-vi-text-view;
+}
+
+treeview {
+  -gtk-key-bindings: gtk-vi-tree-view;
+}
+
+GtkMenuShell {
+  -gtk-key-bindings: gtk-vi-menu;
+}

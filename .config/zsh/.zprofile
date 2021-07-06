@@ -56,6 +56,7 @@
 	export GPG_TTY=$(tty)
 	export PYTHONHISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
 	export OSHU_HOME="$HOME/stuff/games/osu"
+	export XCURSOR_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/icons" # Needed for custom cursor
 
 ## Various programs settings:
 	export BC_LINE_LENGTH=80
@@ -109,7 +110,6 @@
 	export PF_COL3=6
 
 ## Appearance
-	export XCURSOR_PATH="~/.local/share/icons" # Needed for custom cursor
 	export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 	[ -f ${XDG_CONFIG_HOME:-$HOME/.config}/dircolors/dircolors.dark ] && eval `dircolors -b ${XDG_CONFIG_HOME:-$HOME/.config}/dircolors/dircolors.dark`
 	export GREP_COLOR='1;92;40'
