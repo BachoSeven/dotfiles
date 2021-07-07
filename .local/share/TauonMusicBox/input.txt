@@ -112,3 +112,5 @@ jump-playlist-6 6 Ctrl
 jump-playlist-7 7 Ctrl
 jump-playlist-8 8 Ctrl
 jump-playlist-9 9 Ctrl
+
+transfer-playtime-to P Ctrl Shift
