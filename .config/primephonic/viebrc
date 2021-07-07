@@ -28,8 +28,6 @@ set permissioncamera=ask
 set permissionmicrophone=ask
 set permissionnotifications=block
 
-" Redirects
-
 " Appearance
 colorscheme flipped
 set fontsize=18
