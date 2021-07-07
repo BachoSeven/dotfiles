@@ -33,15 +33,16 @@
   bind "<ctrl>b" { "move-current" (parent) };
 }
 
-entry {
+GtkEntry {
   -gtk-key-bindings: gtk-vi-text-entry;
 }
 
-textview {
+GtkTextView  {
   -gtk-key-bindings: gtk-vi-text-entry, gtk-vi-text-view;
 }
 
-treeview {
+
+GtkTreeView {
   -gtk-key-bindings: gtk-vi-tree-view;
 }
 
