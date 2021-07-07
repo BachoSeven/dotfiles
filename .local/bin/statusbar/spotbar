@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Symlink used to control the bar from spot-cli
 if [ "$(basename $0)" = "spotup" ]; then
 	kill -47 "$(pidof dwmblocks)"
 else
