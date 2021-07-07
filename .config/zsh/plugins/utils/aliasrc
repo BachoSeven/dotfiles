@@ -111,7 +111,6 @@
 	alias tnt='nvim ~/slsk/resources/p2p/various_dumps/dump_release_tntvillage_2019-08-30/dump_release_tntvillage_2019-08-30.csv'
 	alias kd='killall desk'
 	alias vent='nbfc status -s'
-	alias uotz='wezterm start -- /bin/whatscli'
 	alias tg='kotatogram-desktop'
 	alias qm='tabbed -k -c quickmedia launcher -e'
 	alias mimi='xdg-open'
