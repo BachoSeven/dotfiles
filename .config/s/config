@@ -13,7 +13,7 @@ customProviders [
   }
   {
     name: libgen
-    url: "http://93.174.95.27/search.php?req=%s"
+    url: "http://80.82.78.42/search.php?req=%s"
     tags: [education]
   }
   {
