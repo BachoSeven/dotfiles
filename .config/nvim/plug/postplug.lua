@@ -64,7 +64,6 @@ lsp.bashls.setup{
 
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
-
 }
 lsp.vimls.setup{
 	on_attach = custom_lsp_attach,

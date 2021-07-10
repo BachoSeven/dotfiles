@@ -153,7 +153,6 @@ gac() { # Aur git clone
 # Updates
 dirs=(
 	~/.config/mpv/scripts/mpvSockets
-	~/.config/browser/vimium
 	~/.local/src/colors
 	~/.local/src/dmenu
 	~/.local/src/idasen
