@@ -41,6 +41,7 @@
 	se listchars+=extends:»
 	se listchars+=precedes:«
 	se listchars+=nbsp:░
+	se listchars+=eol:¬
 	se fcs=vert:▒,eob:\ " " Remove annoying tilde characters and set split style
 	se autoread " Automatically re-read file if a change was detected outside of vim
 	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down.
