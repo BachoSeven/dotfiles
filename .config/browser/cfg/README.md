@@ -153,6 +153,7 @@ nh:	https://nhentai.net/search/?q=%s nh
 oeis:	https://oeis.org/search?q=%s oeis
 om:	https://www.openstreetmap.org/search?query=%s openstreetmap
 os:	https://www.opensubtitles.com/en/it/search-all/q-%s/hearing_impaired-include/machine_translated-/trusted_sources-
+prog: http://www.progarchives.com/google-search-results.asp?cx=artists&q=%s#gsc.tab=0&gsc.q=%s&gsc.page=1 prograrchives
 pip:	https://pypi.org/search/?q=%s PyPI
 r:	https://www.reddit.com/search/?q=%s Reddit
 repo:	https://repology.org/projects/?search=%s repology
