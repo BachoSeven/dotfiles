@@ -1,16 +1,16 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-04-16T11:12:53.140Z",
+    "createdAt": "2021-07-12T13:11:23.756Z",
     "redirects": [
         {
             "description": "ytbleh",
-            "exampleUrl": "https://www.youtube.com/watch?v=2-us9oTs7Jw",
-            "exampleResult": "https://tube.cadence.moe/watch?v=2-us9oTs7Jw",
+            "exampleUrl": "https://www.youtube.com/watch?v=owYT1aTWScI&t=198",
+            "exampleResult": "https://tube.cadence.moe/watch?v=owYT1aTWScI&t=198",
             "error": null,
-            "includePattern": "^(?:https?://)(?:www.)youtube\\.(?:com|au|de|co\\.uk)/watch\\?v=(...........)",
+            "includePattern": "^(?:https?://)(?:www.)youtube\\.(?:com|au|de|co\\.uk)/watch\\?v=(...........)(&t=.*)?",
             "excludePattern": "",
             "patternDesc": "this redirects youtube to tube.cadence.moe",
-            "redirectUrl": "https://tube.cadence.moe/watch?v=$1",
+            "redirectUrl": "https://tube.cadence.moe/watch?v=$1$2",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
@@ -67,7 +67,7 @@
             "redirectUrl": "https://old.reddit.com$1",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": true,
+            "disabled": false,
             "grouped": false,
             "appliesTo": [
                 "main_frame"
