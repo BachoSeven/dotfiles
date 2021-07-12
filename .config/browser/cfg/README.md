@@ -96,7 +96,7 @@ Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
 	to the `vimium.css` file
 - vimium_helper(disable on youtube, github)
 - stylus(beta)[backup,alt+shift+s]
-- Redirector
+- Redirector[alt+shift+r]
 
 ### Privacy-focused
 - ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it, import List(s)]
@@ -140,7 +140,7 @@ imslp:	https://www.google.com/search?q=site:imslp.org+%s imslp
 j:	http://localhost:9117/UI/Dashboard#search=%s Jackett
 ki:	https://kickass.cm/usearch/?q=%s kickass
 ka:	https://kissanime.ac/Search/?s=%s kissanime
-l:	http://80.82.78.42/search.php?req=%s libgen
+l:	http://80.82.78.11/search.php?req=%s libgen
 lk:	https://www.google.com/search?q=%s&btnI I'm feeling lucky...
 lp:	https://launchpad.net/+search?field.text=%s launchpad
 lt:	https://www.limetorrents.cc/search/all/%s/ limetorrents
