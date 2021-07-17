@@ -107,10 +107,14 @@ qmkinstall() {
 qmkremove() {
 	$AURHELPER -R \
 		python-argcomplete \
-		python-colorama \
 		python-hjson \
 		python-milc \
+		python-halo \
+		python-colorama \
 		python-pygments \
+		python-log_symbols \
+		python-spinners \
+		python-termcolor \
 		bootloadhid \
 		avr-binutils \
 		libftdi \

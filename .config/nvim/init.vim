@@ -41,7 +41,6 @@
 	se listchars+=extends:»
 	se listchars+=precedes:«
 	se listchars+=nbsp:░
-	se listchars+=eol:¬
 	se fcs=vert:▒,eob:\ " " Remove annoying tilde characters and set split style
 	se autoread " Automatically re-read file if a change was detected outside of vim
 	se updatetime=100 " useful for fast markdown previews; reduce if it slows things down.
@@ -90,17 +89,17 @@
 " driver explained it here:
 " http://vim.1045645.n5.nabble.com/Printing-with-utf-8-characters-on-Windows-td1193441.html
 " So, just use plain old 'lp' as a workaround.
-fun! Hardcopy()
-    " CUPS documentation says about '-o page-*':
-    " The value argument is the margin in points; each point is 1/72
-    " inch or 0.35mm.
-    " http://www.cups.org/documentation.php/doc-1.7/options.html
-    " I want a margin of about 1.8cm.
-    exe "!lp -o media=A4 -o page-left=50 -o page-right=50"
-        \" -o page-top=50 -o page-bottom=50 -o prettyprint"
-        \(&pdev != "" ? " -d " . &pdev : "") . " " . expand("%")
-endfun
-command! Hardcopy :call Hardcopy()
+	fun! Hardcopy()
+			" CUPS documentation says about '-o page-*':
+			" The value argument is the margin in points; each point is 1/72
+			" inch or 0.35mm.
+			" http://www.cups.org/documentation.php/doc-1.7/options.html
+			" I want a margin of about 1.8cm.
+			exe "!lp -o media=A4 -o page-left=50 -o page-right=50"
+					\" -o page-top=50 -o page-bottom=50 -o prettyprint"
+					\(&pdev != "" ? " -d " . &pdev : "") . " " . expand("%")
+	endfun
+	command! Hardcopy :call Hardcopy()
 
 " Fix syntax higlighting on the fly (https://vim.fandom.com/wiki/Fix_syntax_highlighting)
 	nn <leader>sy :syntax sync fromstart<CR>
