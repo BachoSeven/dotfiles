@@ -33,7 +33,7 @@ curl -s "$PatchesUrl"   > "$TempFile"
 
 sed -i -n -E '/a.*href.*patches\/[^"<]/s_.*"(.*)".*_https:\1_p'  "$TempFile"
 
-read IFS=- Name Url <<EOF
+read -r IFS=- Name Url <<EOF
 $(
 while IFS= read -r PatchUrl; do
 	Name=${PatchUrl%/}
@@ -47,6 +47,7 @@ EOF
 
 curl -s "$Url" > "$TempFile"
 
+# shellcheck disable=SC2016
 sed -i -n -E '/^<div id="main">/,${s/<[^>]*>//g;s/&#(..|...|....);//g;/^[[:space:]]*$/d;p}' "$TempFile"
 Diffs=$(sed -n -E 's/\b([^ ]*\.diff).*/\1/p' < "$TempFile")
 

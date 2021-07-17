@@ -134,6 +134,8 @@ nmap yf <pointer.start><action.startFollowCurrentTab>
 fmap <Esc> <action.toNormalMode>
 "" :nohlsearch
 nmap <CR> <action.emptySearch>
+"" Copy with mouse
+nmap <C-c> <p.copyText>
 
 " Vimium muscle-memory
 "" Navigation

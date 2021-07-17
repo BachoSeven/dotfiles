@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck disable=SC1036,SC1088,SC2211
 
 # dmoji - dmenu based emoji picker
 

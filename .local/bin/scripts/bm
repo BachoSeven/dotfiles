@@ -14,6 +14,7 @@
 BM='/home/fra/.config/chromium/Default/Bookmarks'
 [ "$1" = popup ] && opts="--height=100%"
 
+# shellcheck disable=SC2016
 jq_script='def ancestors: while(. | length >= 2; del(.[-1,-2]));
 	. as $in | paths(.url?) as $key | $in | getpath($key) | {name,url, path: [$key[0:-2] | ancestors as $a | $in | getpath($a) | .name?] | reverse | join("/") } | .path + "/" + .name + "\t" + .url'
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function 1337() {
-  echo $@ | tr '[:upper:]' '[:lower:]' | \
+  echo "$@" | tr '[:upper:]' '[:lower:]' | \
   sed 's/l/1/g' | \
   sed 's/e/3/g' | \
   sed 's/t/7/g' | \
