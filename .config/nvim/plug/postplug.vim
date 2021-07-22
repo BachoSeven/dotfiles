@@ -46,6 +46,10 @@
 	let g:lf_replace_netrw = 1 " open lf when a directory is opened with vim
 	nn <leader>F :LfNewTab<CR>
 
+" Xplr
+	com! XPLR FloatermNew xplr
+	nn <leader>X :XPLR<CR>
+
 " csv.vim
 " Only consider the first 100 lines to determine the delimiter
 	let g:csv_start = 1

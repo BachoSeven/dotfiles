@@ -31,9 +31,6 @@ aug END
 " Contains CSS for markdown + page + highlight
 	let g:mkdp_markdown_css = '/home/fra/.config/nvim/mkdp/customStyle.css'
 
-" Use vieb
-	let g:mkdp_browser = 'vieb'
-
 " Trick plugin into hosting colors.css so we get nice themes
 	let g:mkdp_highlight_css = '/home/fra/.config/nvim/mkdp/colors.css'
 " set to 1, preview server available to others in your network

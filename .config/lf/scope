@@ -5,8 +5,8 @@ IFS="$(printf '%b_' '\n')"; IFS="${IFS%_}"
 
 # Script arguments
 FILE_PATH="$(realpath "${1}")"         # Full path of the highlighted file
-WIDTH="${2}"
-HEIGHT="${3}"
+WIDTH="${2:-20}"
+HEIGHT="${3:-20}"
 
 #FILE_EXTENSION="${FILE_PATH##*.}"
 #FILE_EXTENSION_LOWER=$(echo ${FILE_EXTENSION} | tr '[:upper:]' '[:lower:]')
