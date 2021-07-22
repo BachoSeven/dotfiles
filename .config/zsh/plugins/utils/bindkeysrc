@@ -34,6 +34,7 @@
 	bindkey -s '^q' ' pacbrowse\r'
 	bindkey -s '\ef' ' fedit\r'
 	bindkey '\eq' push-input # Push current input on a stack and pop it on next newline
+	(( $+commands[xplr] )) && bindkey -s '\ew' '\eq xcd\r'
 	(( $+commands[lf] )) && bindkey -s '^o' '\eq lfcd\r' && alias \
 		inc='lfcd ~/slsk/incoming' \
 		people='lfcd /mnt/01D5707D40B081F0/Users/ascol/People' \
@@ -152,11 +153,9 @@
 	alias src='nvim $HOME/.local/src'
 	alias df='df --print-type'
 	alias ls='ls --classify --group-directories-first --hyperlink=auto'
-	alias l='ls --color -lA'
 	alias rd='rmdir'
 	alias mkdir='mkdir -p --verbose'
 	alias dmesg='journalctl -ko short-monotonic --no-hostname' # See https://bbs.archlinux.org/viewtopic.php?pid=1947018#p1947018
-	alias h="history -i -29"
 	alias diff="diff --color=always --unified"
 	alias ip='ip -color=always'
 	alias path='echo $PATH | tr : "\n"'
@@ -165,13 +164,16 @@
 # Shorter commands
 	alias \
 		g='git' \
-		ka='killall' \
-		p='pacman' \
-		y='paru' \
+		h="history -i -29" \
 		gd='g diff' \
 		gg='g pull' \
 		gp='g push' \
 		gca='g commit -a && g push' \
+		ka='killall' \
+		l='ls --color -lA' \
+		p='pacman' \
+		x='xplr' \
+		y='paru' \
 		glol="GIT_PAGER='fzf --ansi'; git -p log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'" # GIT_PAGER='fzf --ansi --bind \'F1:cosa complicata per vedere la roba di quella commit con sed + less (?)\' '
 
 # Dotbare

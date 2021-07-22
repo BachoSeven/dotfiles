@@ -37,6 +37,7 @@
 		completions
 		history
 		lf
+		xplr
 		utils
 		vi_mode
 		fzf
