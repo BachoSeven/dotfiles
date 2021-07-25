@@ -157,6 +157,16 @@ gac() { # Aur git clone
 # Updates
 dirs=(
 	~/.config/mpv/scripts/mpvSockets
+	~/.config/xplr/plug/completion
+	~/.config/xplr/plug/paste-rs
+	~/.config/xplr/plug/fzf
+	~/.config/xplr/plug/dua-cli
+	~/.config/xplr/plug/comex
+	~/.config/xplr/plug/icons
+	~/.config/xplr/plug/dragon
+	~/.config/xplr/plug/xargs
+	~/.config/xplr/plug/zoxide
+	~/.config/xplr/plug/material-landscape
 	~/.local/src/colors
 	~/.local/src/dmenu
 	~/.local/src/idasen

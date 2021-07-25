@@ -66,15 +66,8 @@
 	always_run_script = true
 	title = Dunst
 	class = Dunst
-	startup_notification = false
-	verbosity = crit
 	# corner_radius = 7
 	force_xinerama = false
-[shortcuts]
-	close = ctrl+space
-	close_all = ctrl+shift+space
-	history = ctrl+Escape
-	context = ctrl+shift+period
 [urgency_low]
 	background = "#282828"
 	foreground = "#928374"

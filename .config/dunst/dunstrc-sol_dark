@@ -9,6 +9,9 @@
 #   ░░░░░░  ░░░░░░ ░░░   ░░ ░░░░░░     ░░  ░░░     ░░░░░
 
 # sol_dark
+
+## TODO: remove deprecated vars from here as well
+
 [global]
     monitor = 0
     follow = keyboard
