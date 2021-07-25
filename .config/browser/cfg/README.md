@@ -20,9 +20,8 @@
 --disable-gpu-driver-bug-workarounds
 
 # Appearance
---force-device-scale-factor=1.1
 --force-dark-mode
---enable-smooth-scrolling
+--force-device-scale-factor=1.1
 --disable-dinosaur-easter-egg
 --disable-top-sites # on ntp
 
@@ -51,8 +50,8 @@
 --keep-old-history # Disables deletion of history after 90 days (!)
 
 # Features
---enable-features=WebUIDarkMode,CSSColorSchemeUARendering,NativeNotifications,QuietNotificationPrompts,ReaderMode,OverlayScrollbar,VaapiVideoDecoder,SetIpv6ProbeFalse # The last one is ungoogled-specific
---disable-features=GlobalMediaControls,WebUSB
+--enable-features=GlobalMediaControlsModernUI,WebUIDarkMode,CSSColorSchemeUARendering,NativeNotifications,QuietNotificationPrompts,ReaderMode,OverlayScrollbar,VaapiVideoDecoder,TabHoverCardImages:page_not_ready_delay/0/page_loading_delay/0/page_loaded_delay/0,SetIpv6ProbeFalse # The last one is ungoogled-specific
+--disable-features=WebUSB
 
 # vim: ft=cfg
 ```
