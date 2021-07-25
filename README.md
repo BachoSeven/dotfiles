@@ -46,13 +46,13 @@ Here are some of the programs I use:
 - **[ncmpcpp](.config/ncmpcpp)** as a music player (with `mpd`)
 - **[cava](.config/cava/config)** music visualizer
 - **[kunst](https://github.com/sdushantha/kunst)** to display album art from `mpd`.
-- **[ncspot](https://github.com/hrkfdn/ncspot)** as a tui spotify client
+- **[ncspot](https://github.com/hrkfdn/ncspot)** as a TUI spotify client
 - **[lf](https://github.com/gokcehan/lf)** as my file manager
 - **[neomutt](.config/mutt)** as an email client
 - **[ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium)** browser
 - **[sxiv](https://github.com/muennich/sxiv)** image viewer
 - **[zathura](.config/zathura/zathurarc)** pdf & djvu reader
-- **[ytop](https://github.com/cjbassi/ytop)** system monitoring
+- **[bottom](https://github.com/ClementTsang/bottom)** system monitor
 - **[copyq](https://github.com/hluk/CopyQ)** clipboard manager
 - **[dunst](.config/dunst/dunstrc)** notification manager
 - **[redshift](.config/redshift/redshift.conf)** sets the color temperature
