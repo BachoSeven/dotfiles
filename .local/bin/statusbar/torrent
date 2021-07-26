@@ -1,18 +1,6 @@
 #!/bin/sh
 
-out="$(qbt torrent list --format csv:delimiter=\| --url http://localhost:9091 2>/dev/null \
-	| cut -d\| -f15  \
-	| tail -n +2 \
-	| sed " # The letters are just for sorting
-	s/PausedDownload/A 🛑/;
-	s/StalledUpload/Z 🌱/;
-	s/PausedUpload/N ☑/;
-	s/StalledDownload/B 💤/;
-	s/Uploading/L ∆/;
-	s/Downloading/M ∇/" \
-	| sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ')"
-
-[ -n "$out" ] && echo "$out" || echo "🐉"
+	pidof qbittorrent >/dev/null && echo "$(qbt torrent list --format csv:delimiter=\| --url http://localhost:9091 2>/dev/null | cut -d\| -f15 | tail -n +2 | sed 's/PausedDownload/A 🛑/; s/StalledUpload/Z 🌱/; s/PausedUpload/N ☑/; s/StalledDownload/B 💤/; s/Uploading/L ∆/; s/Downloading/M ∇/' | sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ')" || echo "🐉"
 
 case $BLOCK_BUTTON in
 	1) torwrap ;;
