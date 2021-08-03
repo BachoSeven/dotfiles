@@ -30,8 +30,8 @@ main() {
 			l) # Laptop
 				xrandr --output $ext --off --output $int --auto --dpi 96 && miscfixes ;;
 			m) # Multi
-				# connected && xrandr --output $int --auto --output $ext --primary --auto --right-of $int --dpi 108 && miscfixes ;;
-				connected && xrandr --output $int --auto --output $ext --primary --mode 2560x1440 --right-of $int && miscfixes ;;
+				# connected && xrandr --output $int --auto --output $ext --primary --auto --left-of $int --dpi 108 && miscfixes ;;
+				connected && xrandr --output $int --auto --output $ext --primary --mode 2560x1440 --left-of $int && miscfixes ;;
 			*)
 				printf "Invalid option: -%s\n" "$OPTARG"
 				printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;

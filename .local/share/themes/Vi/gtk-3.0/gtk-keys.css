@@ -41,7 +41,6 @@ GtkTextView  {
   -gtk-key-bindings: gtk-vi-text-entry, gtk-vi-text-view;
 }
 
-
 GtkTreeView {
   -gtk-key-bindings: gtk-vi-tree-view;
 }
