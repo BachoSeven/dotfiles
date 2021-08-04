@@ -11,6 +11,7 @@
 #	brightness file and maximum value once you know them.
 # Dependencies: fd [you can use find, but if you want this to be fast on any machine without configuration use fd]
 #
+#
 # max_file="$(fd max_brightness /sys/class/backlight/*)"
 # max=$(cat $max_file)
 # brdir=$(dirname $max_file)

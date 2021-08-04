@@ -119,3 +119,73 @@
 	# precmd() { vcs_info }
 
 	# RPROMPT='${vcs_info_msg_0_}'
+
+
+
+	# # Async git prompt by reddit guy on r/zsh
+	#
+	# PS1='%F{%(?,10,9)}%#%f '
+	# # znap prompt                 # Make the left side of the primary prompt visible, immediately.
+
+	# ZLE_RPROMPT_INDENT=0        # Right prompt margin
+	# setopt transientrprompt     # Auto-remove the right side of each prompt.
+
+	# # Reduce prompt latency by fetching git status asynchronously.
+	# autoload -Uz add-zsh-hook
+	# add-zsh-hook precmd .prompt.git-status.async
+	# zle -N .prompt.git-status.callback
+	# .prompt.git-status.async() {
+		# local fd
+		# exec {fd}< <( .prompt.git-status )
+		# zle -Fw "$fd" .prompt.git-status.callback
+	# }
+	# .prompt.git-status.callback() {
+		# local fd=$1 REPLY
+		# {
+			# zle -F "$fd"  # Unhook this callback.
+			# [[ $2 != (|hup) ]] &&
+					# return  # Error occured.
+			# read -ru $fd
+			# .prompt.git-status.update "$REPLY"
+		# } always {
+			# exec {fd}<&-  # Close file descriptor.
+		# }
+	# }
+
+	# # Periodically sync git status in prompt.
+	# TMOUT=2  # Update interval in seconds
+	# trap .prompt.git-status.update ALRM
+	# .prompt.git-status.update() {
+		# local rps1=${1-$( .prompt.git-status )}
+		# [[ $rps1 == $RPS1 ]] &&
+				# return 1
+		# RPS1=$rps1
+		# zle .reset-prompt
+	# }
+
+	# .prompt.git-status() {
+		# local MATCH MBEGIN MEND
+		# local -a lines
+		# if ! lines=( ${(f)"$( git status -sbu 2> /dev/null )"} ); then
+			# print
+			# return
+		# fi
+		# local -aU symbols=( ${(@MSu)lines[2,-1]##[^[:blank:]]##} )
+		# print -r -- "${${lines[1]/'##'/$symbols}//(#m)$'\C-[['[;[:digit:]]#m/%{${MATCH}%\}}"
+	# }
+
+	# # Shown after output that doesn't end in a newline.
+	# PROMPT_EOL_MARK='%F{cyan}%S%#%f%s'
+
+	# # Continuation prompt
+	# () {
+		# local -a indent=( '%('{1..36}'_,  ,)' )
+		# PS2="${(j::)indent}" RPS2='%F{11}%^'
+	# }
+
+	# # Debugging prompt
+	# () {
+		# local -a indent=( '%('{1..36}"e,$( echoti cuf 2 ),)" )
+		# local i=$'\t'${(j::)indent}
+		# PS4=$'\r%(?,,'$i$'  -> %F{9}%?%f\n)%{\e[2m%}%F{10}%1N%f\r'$i$'%I%b %(1_,%F{11}%_%f ,)'
+	# }

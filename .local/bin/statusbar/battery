@@ -1,29 +1,33 @@
 #!/bin/sh
 
-# Prints all batteries, their percentage remaining and an emoji corresponding
-# to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
-
 case $BLOCK_BUTTON in
 	4) br inc 10 ;;
 	5) br dec 10 ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-# Loop through all attached batteries and format the info
-for battery in /sys/class/power_supply/BAT?*; do
-	# If non-first battery, print a space separator.
-	[ -n "${capacity+x}" ] && printf " "
-	# Sets up the status and capacity
-	case "$(cat "$battery/status")" in
-		"Full") status="⚡" ;;
-		"Discharging") status="🔋" ;;
-		"Charging") status="🔌" ;;
-		"Not charging") status="🛑" ;;
-		"Unknown") status="♻️" ;;
-	esac
-	capacity=$(cat "$battery/capacity")
-	# Will make a warn variable if discharging and low
-	[ "$status" = "🔋" ] && [ "$capacity" -le 35 ] && warn="❗"
-	# Prints the info
-	printf "%s%s%d%%" "$status" "$warn" "$capacity"; unset warn
-done && exit 0
+main() {
+	# Loop through all attached batteries and format the info
+	for battery in /sys/class/power_supply/BAT?*; do
+		# If non-first battery, print a space separator.
+		[ -n "${capacity+x}" ] && printf " "
+		# Sets up the status and capacity
+
+		read -r cap < "$battery/capacity"
+		read -r stat < "$battery/status"
+
+		case "$stat" in
+			"Full") status="⚡" ;;
+			"Discharging") status="🔋" ;;
+			"Charging") status="🔌" ;;
+			"Not charging") status="🛑" ;;
+			"Unknown") status="♻️" ;;
+		esac
+		# Will make a warn variable if discharging and low
+		[ "$status" = "🔋" ] && [ "$cap" -le 35 ] && warn="❗"
+		# Prints the info
+		printf "%s%s%d%%" "$status" "$warn" "$cap"; unset warn
+	done
+}
+
+main && exit 0
