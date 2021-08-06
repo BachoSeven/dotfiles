@@ -9,9 +9,7 @@ y:               file:/cgi-bin/search_engines.cgi?%s
 se:              file:/cgi-bin/search_engines.cgi?%s
 azlyrics:        file:/cgi-bin/search_engines.cgi?%s
 darklyrics:      file:/cgi-bin/search_engines.cgi?%s
-
-#pending
-#goo:             https://www.google.com/search?q=%s
+goo:             https://www.google.com/search?q=%s
 
 #Interpret "ttp://" as "http://"
 ttp: h%s
