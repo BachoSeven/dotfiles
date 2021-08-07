@@ -112,7 +112,6 @@
 	alias kd='killall desk'
 	alias vent='nbfc status -s'
 	alias tg='kotatogram-desktop'
-	# alias tg='chromium --app=https://web.telegram.org'
 	alias mimi='xdg-open'
 	alias findbg='xdg-open http://imgops.com/"$(imgur.sh "$(realpath ~/.local/share/bg)")"'
 	alias upbat='price bat "Basic Attention Token" 🦁 && less -R ~/.local/share/crypto-prices/bat-chart'
