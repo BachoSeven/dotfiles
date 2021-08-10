@@ -4,8 +4,8 @@
 
 # For non-systemd init systems.
 case "$(realpath /sbin/init)" in
-	*runit*) slp="sudo -A zzz -z" ;;
-	*openrc*) reb="sudo -A openrc-shutdown -r"; shut="sudo -A openrc-shutdown -p" ;;
+	*runit*) hib="sudo -A zzz"; slp="sudo -A zzz -z" ;;
+	*openrc*) reb="sudo -A openrc-shutdown -r"; shut="sudo -A openrc-shutdown -p 0" ;;
 esac
 
 cmds="\
@@ -14,6 +14,7 @@ cmds="\
 🚪 bye	kill -TERM $(pidof -s dwm)
 💤 'night	${slp:-sudo -A systemctl suspend}
 🔃 reboot	${reb:-sudo -A reboot}
+🐻 hibernate	slock ${hib:-systemctl hibernate -i}
 🖥 shutdown	${shut:-sudo -A shutdown -h now}"
 
 choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -c -l 6)" || exit 1
