@@ -942,8 +942,9 @@ wgetext() {
 
 # Games
 gog() {
-	local sel=$(fd -t f start.sh ~/slsk/games/GOG | cut -d/ -f7 | ccze -A | head -n -1| fzf --ansi	| head --bytes -2)
-	[ -n "$sel" ] && ~/slsk/games/GOG/"$sel"/start.sh
+	local p="$HOME/stuff/games/GOG"
+	local sel=$(fd -t f start.sh "$p" | cut -d/ -f7 | ccze -A | head -n -1| fzf --ansi	| head --bytes -2)
+	[ -n "$sel" ] && "$p"/"$sel"/start.sh
 }
 
 # Locate wrappers

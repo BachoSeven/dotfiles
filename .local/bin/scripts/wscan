@@ -12,7 +12,7 @@ ssid="$(nmcli -colors yes d w s ifname $ifname | grep SSID | uniq | fzf --header
 if [ -n "$ssid" ]; then
 	if [ -n "$ifname" ]; then
 		nmcli d w rescan
-		nmcli d w c $ssid ifname $ifname -a
+		nmcli d w c "$ssid" ifname $ifname -a
 	else
 		echo "No interface selected, exiting..."
 	fi
