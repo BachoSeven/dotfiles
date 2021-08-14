@@ -5,7 +5,11 @@
 
 main() {
 	subdir=$1
-	[ "$subdir" = "4k" ] || opts="-t f" # symlinks are only needed for 4k folder
+	if [ "$subdir" = "4k" ] || [ "$subdir" = "fav" ]; then
+		opts="-t l" # symlinks are needed for 4k and favorites folders
+	else
+		opts="-t f"
+	fi
 	topdir=~/pics/papes
 	[ -n "$2" ] && count="-n $2"
 	fd -e png -e jpg -e jpeg -e gifv -e gif -e tif -e tiff --search-path $topdir/$subdir $opts | shuf $count | sxiv -ba -
