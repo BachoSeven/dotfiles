@@ -130,8 +130,6 @@
 	nn <leader>[ :bprev<CR>
 	nn <leader>] :bnext<CR>
 	nn <leader>d :bdelete<CR>
-" Make Y work the way you'd expect
-	nn Y y$
 " Move lines with Alt+{j,k} in normal mode
 	nn <A-j> :m .+1<CR>==
 	nn <A-k> :m .-2<CR>==
