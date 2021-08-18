@@ -32,6 +32,7 @@ main() {
 			m) # Multi
 				# connected && xrandr --output $int --auto --output $ext --primary --auto --left-of $int --dpi 108 && miscfixes ;;
 				connected && xrandr --output $int --auto --output $ext --primary --mode 2560x1440 --left-of $int && miscfixes ;;
+				# connected && xrandr --output $int --auto --pos 0x1440 --output $ext --primary --mode 2560x1440 --pos 0x0 && miscfixes ;;
 			*)
 				printf "Invalid option: -%s\n" "$OPTARG"
 				printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;
