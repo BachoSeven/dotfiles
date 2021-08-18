@@ -95,7 +95,6 @@
 	alias bctl='bluetoothctl'
 	alias rsb='sudo systemctl restart bluetooth'
 	alias startcups='sudo systemctl start cups avahi-daemon.service'
-	alias cbh='connectHeadphones'
 	alias uefi='sudo systemctl reboot --firmware-setup'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias xr='xrandr'

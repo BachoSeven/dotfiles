@@ -155,7 +155,7 @@ nmap yy <pageToClipboard>
 "" duplicate tab
 nmap yt <openNewTabWithCurrentUrl><CR>
 "" searching through opened tabs
-nmap T <toCommandMode>buffer<Space>
+nmap T <toCommandMode>b<Space>
 nmap gi <insertAtFirstInput>
 nmap g0 <:buffer 0>
 nmap g$ <:buffer 999>
