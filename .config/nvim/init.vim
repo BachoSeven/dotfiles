@@ -103,6 +103,13 @@
 
 " Fix syntax higlighting on the fly (https://vim.fandom.com/wiki/Fix_syntax_highlighting)
 	nn <leader>sy :syntax sync fromstart<CR>
+" change <C-L> redraw mapping, which is useful in neovim as it also clears search highlighting and updates diffs
+	nn <leader>L <Cmd>nohlsearch<Bar>diffupdate<CR><C-L>
+" <CR> clears hlsearch, but only after doing a search.
+	nn <silent> <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
+" Toggle search highlight
+	nn <silent> <esc><esc> :let v:hlsearch=!v:hlsearch<CR>
+
 
 " Edit vimrc/zshrc and load vimrc bindings
 	nn <leader>ev :vsp $XDG_CONFIG_HOME/nvim/init.vim<CR>
@@ -171,11 +178,6 @@
 
 " Shift the section of the line after the cursor downwards.
 	nn <leader>J maa<CR><ESC>`a
-
-" <CR> clears hlsearch, but only after doing a search.
-	nn <silent> <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
-" Toggle search highlight
-	nn <silent> <esc><esc> :let v:hlsearch=!v:hlsearch<CR>
 
 " C compiling
 	nn <leader>co :!gcc -Wall -pedantic % -o %:r<CR>
