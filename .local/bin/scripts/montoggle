@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mon="/home/fra/.local/bin/scripts/mon"
+
+if grep -q "\bconnected" /sys/class/drm/card0-DP-1/status || grep -q "\bconnected" /sys/class/drm/card0/card0-HDMI-A-2/status; then
+	$mon -e
+else
+	$mon -l
+fi
+
+exit 0
