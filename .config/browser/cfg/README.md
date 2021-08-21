@@ -148,7 +148,6 @@ mo:	https://mathoverflow.net/search?q=%s mathoverflow
 ms:	https://math.stackexchange.com/search?q=%s mathstackexchange
 mw:	https://mathworld.wolfram.com/search/?query=%s mathworld
 nc:	https://ncatlab.org/nlab/search?query=%s ncatlab
-nh:	https://nhentai.net/search/?q=%s nh
 oeis:	https://oeis.org/search?q=%s oeis
 om:	https://www.openstreetmap.org/search?query=%s openstreetmap
 os:	https://www.opensubtitles.com/en/it/search-all/q-%s/hearing_impaired-include/machine_translated-/trusted_sources-
