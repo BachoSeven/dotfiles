@@ -62,7 +62,7 @@
 ## Passwords manager
 - [keepassxc+extension(backup)]
 
-## theme
+## Theme
 - sol ref dark(favs)
 - gtk (gruvbox)
 
@@ -102,9 +102,8 @@ Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
 - I don't care about cookies
 - ClearURLs
 
-searchengs:
-{
-
+#### Search Engines:
+``` cfg
 a:	https://www.amazon.it/s/?field-keywords=%s Amazon
 abs:	https://www.archlinux.org/packages/?q=%s,
 alib:	https://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&CatId=&SearchText=%s alibaba
@@ -165,8 +164,7 @@ w:	https://wikipedia.org/w/index.php?search=%s Wikipedia
 wa:	https://www.wolframalpha.com/input/?i=%s Wolfram|Alpha
 y:	https://www.youtube.com/results?search_query=%s Youtube
 yr:	https://yandex.ru/search/?text=%s yandex.ru
-
-}
+```
 
 ## Cadence
 https://tube.cadence.moe/formapi/importsession/lvBtddNCiyjBY3qQ__HJ0A8q
