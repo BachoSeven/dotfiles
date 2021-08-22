@@ -2,10 +2,12 @@
 
 # System configuration backup
 syscp() {
-	relpath="${$(realpath -s "$1")#/}"
-	reldir="$(dirname ~/.local/src/sysdots/$relpath)"
-	[ ! -d "$reldir" ] && mkdir -vp "$reldir"
-	cp -Pvut "$reldir" "$@"
+	for f in "$@"; do
+		relpath="${$(realpath -s "$f")#/}"
+		reldir="$(dirname ~/.local/src/sysdots/$relpath)"
+		[ ! -d "$reldir" ] && mkdir -vp "$reldir"
+		cp -Pvut "$reldir" "$f"
+	done
 }
 
 # Credits to https://github.com/SmartFinn/dotfiles for these:
