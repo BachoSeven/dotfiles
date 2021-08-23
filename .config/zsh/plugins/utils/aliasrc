@@ -157,8 +157,5 @@
 
 # Games
 	alias typ='typiskt'
-	alias typ='typiskt'
 	alias gt='typiskt -e'
 	alias sol='ttysolitaire --no-background-color'
-	alias tboi='cd ~/stuff/games/TBOI/The_Binding_of_Isaac_Afterbirth; ./run-x64.sh && cd -'
-	alias cele='~/stuff/games/Celeste/Celeste/start.sh'

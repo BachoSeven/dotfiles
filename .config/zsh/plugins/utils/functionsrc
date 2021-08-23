@@ -943,10 +943,10 @@ wgetext() {
 }
 
 # Games
-gog() {
-	local p="$HOME/stuff/games/GOG"
-	local sel=$(fd -t f start.sh "$p" | cut -d/ -f7 | ccze -A | head -n -1| fzf --ansi	| head --bytes -2)
-	[ -n "$sel" ] && "$p"/"$sel"/start.sh
+play() {
+	local p="$HOME/stuff/games"
+	local sel=$(fd -t f start.sh "$p" | cut -d/ -f6 | fzf	| head)
+	[ -n "$sel" ] && "$p"/"$sel"/start.sh || echo "No game selected :P"
 }
 
 # Locate wrappers
