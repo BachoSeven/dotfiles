@@ -1,0 +1,7 @@
+paths:
+- /home/fra/stuff/games
+vars:
+  download-limit: ''
+  proxy: ''
+  terminal: st
+  upload-limit: ''

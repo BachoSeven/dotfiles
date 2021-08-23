@@ -95,6 +95,7 @@
 	alias bctl='bluetoothctl'
 	alias rsb='sudo systemctl restart bluetooth'
 	alias startcups='sudo systemctl start cups avahi-daemon.service'
+	alias stopcups='sudo systemctl stop cups avahi-daemon.service avahi-daemon.socket'
 	alias uefi='sudo systemctl reboot --firmware-setup'
 	alias screendim="xrandr | grep '*' | awk '{print \$1}'"
 	alias xr='xrandr'
@@ -156,7 +157,8 @@
 
 # Games
 	alias typ='typiskt'
+	alias typ='typiskt'
 	alias gt='typiskt -e'
 	alias sol='ttysolitaire --no-background-color'
-	alias tboi='cd ~/slsk/games/TBOI/The_Binding_of_Isaac_Afterbirth; ./run-x64.sh && cd -'
-	alias cele='~/slsk/games/Celeste/Celeste/run.sh'
+	alias tboi='cd ~/stuff/games/TBOI/The_Binding_of_Isaac_Afterbirth; ./run-x64.sh && cd -'
+	alias cele='~/stuff/games/Celeste/Celeste/start.sh'
