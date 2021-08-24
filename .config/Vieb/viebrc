@@ -136,11 +136,6 @@ fmap <Esc> <toNormalMode>
 nmap <CR> <emptySearch>
 "" Copy with mouse
 nmap <C-c> <p.copyText>
-"" Remap movements to pointer movements since some websites aren't 'scrollable'
-nmap j <p.scrollDown>
-nmap k <p.scrollUp>
-nmap h <p.scrollLeft>
-nmap l <p.scrollRight>
 
 " Vimium muscle-memory
 "" Navigation
