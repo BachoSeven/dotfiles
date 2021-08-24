@@ -37,7 +37,7 @@ set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spo
 
 " Appearance
 colorscheme gruvbox
-set fontsize=17
+set fontsize=18
 set mintabwidth=0
 set windowtitle=full
 set devtoolsposition=vsplit
@@ -136,6 +136,15 @@ fmap <Esc> <toNormalMode>
 nmap <CR> <emptySearch>
 "" Copy with mouse
 nmap <C-c> <p.copyText>
+"" Remap movements to pointer movements since some websites aren't 'scrollable'
+nmap j <p.scrollDown>
+nmap k <p.scrollUp>
+nmap h <p.scrollLeft>
+nmap l <p.scrollRight>
+nmap gg <p.startOfPage>
+nmap G <p.endOfPage>
+nmap <C-u> <p.moveFastUp>
+nmap <C-d> <p.moveFastDown>
 
 " Vimium muscle-memory
 "" Navigation
