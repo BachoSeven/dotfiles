@@ -13,7 +13,11 @@ start() {
 }
 
 toggle() {
-	quit && clipctl enable || start
+	if quit; then
+		clipctl enable
+	else
+		start
+	fi
 }
 
 reset() {
