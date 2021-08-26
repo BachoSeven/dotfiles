@@ -26,7 +26,7 @@ main() {
 		# Will make a warn variable if discharging and low
 		[ "$status" = "🔋" ] && [ "$cap" -le 35 ] && warn="❗"
 		# Prints the info
-		printf "%s%s%d%%" "$status" "$warn" "$cap"; unset warn
+		printf "%s%s%d%%\n" "$status" "$warn" "$cap"; unset warn
 	done
 }
 
