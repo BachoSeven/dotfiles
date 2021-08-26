@@ -45,6 +45,7 @@ shittyfiles = [
     '~/.config/configstore/update-notifier-npm.json',
     '~/.config/configstore/update-notifier-taskbook.json',
     '~/.pki/',
+    '~/.mono/',
     '~/.java/',
     '~/.oracle_jre_usage/',
     '~/.jssc/',
