@@ -8,7 +8,7 @@
 
 # NOTE: use the following lines instead of the ones below to automatically
 #	find the correct file, but it's much faster to use the specific
-#	brightness file and maximum value once you know them.
+#	brightness file and ratio once you know them.
 # Dependencies: fd [you can use find, but if you want this to be fast on any machine without configuration use fd]
 #
 #
@@ -16,9 +16,11 @@
 # max=$(cat $max_file)
 # brdir=$(dirname $max_file)
 # current=$(($(cat $brdir/brightness)/($max/100)))
+# ratio=$($max/100)
 
 # Set variables
-current=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
+ratio=75
+current=$(($(cat /sys/class/backlight/intel_backlight/brightness)/$ratio))
 def=60
 defu=80
 defd=20
@@ -43,12 +45,12 @@ case "$1" in
 esac
 
 # Set brightness value
-val="$((valnorm*75))"
+val="$((valnorm*$ratio))"
 echo $val | sudo tee /sys/class/backlight/intel_backlight/brightness
 
 # Notify
 if command -v dunst >/dev/null; then
-	new=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
+	new=$(($(cat /sys/class/backlight/intel_backlight/brightness)/$ratio))
 	dunstify -a "changeBrightness" -u low -i display-brightness -r "$msgId" \
 	"Brightness: ${new}%"
 fi
