@@ -166,5 +166,10 @@ y:	https://www.youtube.com/results?search_query=%s Youtube
 yr:	https://yandex.ru/search/?text=%s yandex.ru
 ```
 
-## Cadence
+### Cadence
 https://tube.cadence.moe/formapi/importsession/lvBtddNCiyjBY3qQ__HJ0A8q
+
+### Redirector
+#### old patterns
+- includePattern: `^(?:https?://)open.spotify.com/(.*)/(\w{22})`
+- redirectUrl: `https://open.spotify.com/go?uri=spotify%3A$1%3A$2&rtd=1`
