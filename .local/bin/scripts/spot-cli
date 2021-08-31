@@ -42,15 +42,14 @@ prompt() { #__ cool interactive stuff __#
 		promptplayer="$(printf "ncspot\nspotify\n" | dmenu -p "Would you like to open:" -f -i -c -l 2 -bw 7 )"
 		if [ -n "$promptplayer" ]; then
 			if [ "$promptplayer" = "spotify" ]; then
-				spotify
-				sleep 4
+				setsid -f spotify
 			elif [ "$promptplayer" = "ncspot" ]; then
 				if findterm; then
 					setsid -f $localt -c ncspot -e ncspot				||	# st (and many others)
 					setsid -f $localt -e ncspot	# Fallback to not setting the terminal's class
-					sleep 3
 				fi
 			fi
+			sleep 3
 		fi
 	fi
 }
@@ -92,10 +91,12 @@ url() { #__ Some parsing logic for URLs __#
 
 uri() { #__ This is slightly more complex because spotify would like to include additional context after the item key, which ncspot does not support... __#
 	prompt
-	typ="$(echo "$*" | cut -d":" -f1,2)"
-	key="$(echo "$*" | cut -d":" -f3 | head --bytes=22)"
+	# typ="$(echo "$*" | cut -d":" -f2)"
+	# key="$(echo "$*" | cut -d":" -f3 | head --bytes=22)"
+	typ="$(echo "$*" | cut -d"/" -f3)"
+	key="$(echo "$*" | cut -d"/" -f4 | head --bytes=22)"
 	findplayer
-	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:"$typ:$key" >/dev/null 2>&1
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:"spotify:$typ:$key" >/dev/null 2>&1
 	sleep 2 && spotup
 }
 
