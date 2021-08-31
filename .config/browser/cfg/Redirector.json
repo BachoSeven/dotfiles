@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-07-12T13:11:23.756Z",
+    "createdAt": "2021-08-31T10:35:32.438Z",
     "redirects": [
         {
             "description": "ytbleh",
@@ -23,12 +23,12 @@
         {
             "description": "spot",
             "exampleUrl": "https://open.spotify.com/album/5Efak5dDtW5RgVylqBBiPy",
-            "exampleResult": "https://open.spotify.com/go?uri=spotify%3Aalbum%3A5Efak5dDtW5RgVylqBBiPy&rtd=1",
+            "exampleResult": "https://open.spotify.com/album/5Efak5dDtW5RgVylqBBiPy?go=1",
             "error": null,
-            "includePattern": "^(?:https?://)open.spotify.com/(.*)/(\\w{22})",
+            "includePattern": "^(?:https?://)open.spotify.com/(.*)/(\\w{22})(?!\\?go=1)",
             "excludePattern": "",
             "patternDesc": "this redirects the https spotify website to the desktop spotify protocol",
-            "redirectUrl": "https://open.spotify.com/go?uri=spotify%3A$1%3A$2&rtd=1",
+            "redirectUrl": "https://open.spotify.com/$1/$2?go=1",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,

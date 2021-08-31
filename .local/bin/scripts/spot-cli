@@ -45,7 +45,7 @@ prompt() { #__ cool interactive stuff __#
 				setsid -f spotify
 			elif [ "$promptplayer" = "ncspot" ]; then
 				if findterm; then
-					setsid -f $localt -c ncspot -e ncspot				||	# st (and many others)
+					setsid -f $localt -c ncspot -e ncspot	||	# st (and many others)
 					setsid -f $localt -e ncspot	# Fallback to not setting the terminal's class
 				fi
 			fi
