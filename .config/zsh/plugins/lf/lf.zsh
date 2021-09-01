@@ -1,21 +1,28 @@
 lfcd () {
-    tmp="$(mktemp)"
-    fid="$(mktemp)"
-    lf -command '$printf $id > '"$fid"'' -last-dir-path="$tmp" "$@"
-    id="$(cat "$fid")"
-    archivemount_dir="/tmp/__lf_archivemount_$id"
-    if [ -f "$archivemount_dir" ]; then
-        cat "$archivemount_dir" | \
-            while read -r line; do
-                sudo umount "$line"
-                rmdir "$line"
-            done
-        rm -f "$archivemount_dir"
-    fi
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp" >/dev/null
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-    return 0
+	local file="$HOME/.cache/lf-last-dir-path"
+
+	# Run in a subshell so cleanup works as expected
+	(
+	# The file that will contain all the directories mounted inside of lf
+	export LF_MOUNTS=$(mktemp)
+
+	cleanup () {
+		# Unmount any directories that were mounted inside of lf
+		if [ -f "$LF_MOUNTS" ]; then
+			while IFS= read -r mnt; do
+				umount "$mnt"
+				rmdir "$mnt"
+			done < "$LF_MOUNTS"
+			rm "$LF_MOUNTS"
+		fi
+	}
+	trap cleanup EXIT
+
+	lf -last-dir-path "$file" -- "$@"
+	)
+
+	dir="$(cat "$file")"
+	if [ -d "$dir" ] && [ "$dir" != "$(pwd)" ]; then
+		cd "$dir"
+	fi
 }
