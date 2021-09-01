@@ -102,11 +102,10 @@
 	let g:vimtex_quickfix_mode = 2
 	let g:vimtex_compiler_progname = 'nvr'
 	let g:vimtex_fold_enabled = 1
-	let g:vimtex_view_method='zathura'
-	let g:vimtex_compiler_method='tectonic'
-	" let g:vimtex_compiler_method='generic'
+	let g:vimtex_view_method = 'zathura'
+	let g:vimtex_compiler_method = 'tectonic'
 	let g:vimtex_compiler_generic = {
-		\	'cmd': 'ls *.tex | entr -n -c tectonic /_ --synctex --keep-logs',
+		\	'command': 'ls *.tex | entr -n -c tectonic /_ --synctex --keep-logs',
 		\}
 	let g:vimtex_compiler_latexmk = {
 		\ 'background' : 1,
@@ -122,22 +121,20 @@
 		\ ],
 		\}
 	" Compile on initialization, cleanup on quit
-	aug vimtex_event_1
+	aug vimtex_init
 		au!
-    au User VimtexEventQuit     VimtexClean
     au User VimtexEventInitPost VimtexCompile
 	aug END
 	" Close viewers when VimTeX buffers are closed
-	fu! CloseViewers()
-		" Close viewers on quit
+	fu! OnQuit()
 		if executable('xdotool') && exists('b:vimtex')
 				\ && exists('b:vimtex.viewer') && b:vimtex.viewer.xwin_id > 0
 			call system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
 		endif
 	endfu
-	aug vimtex_event_2
+	aug vimtex_quit
 		au!
-		au User VimtexEventQuit call CloseViewers()
+		au User VimtexEventQuit call OnQuit()
 	aug END
 " fzf integration for vimtex
 	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<CR>
