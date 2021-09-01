@@ -1,5 +1,28 @@
 #!/bin/sh
-# Little workaround to view archives in lf needed
-# because .desktop files need to have argument as last Exec argument
+# Little script to preview archives in lf
 
-lf -command "mount '$1'"
+_f="$(basename "$1")"
+mnt="_${_f%.*}"
+mkdir $mnt
+archivemount "$1" "$mnt" -o nosave
+
+if [ "$LF_MOUNTS" ]; then
+	# If running lfcd, go to currently running instance; lfcd wrapper handles the unmounting
+	lf -remote "send $id cd \"$mnt\""
+	echo "$mnt" >> "$LF_MOUNTS"
+else
+	# if [ -n "$LF_LEVEL" ]; then
+		# # If running lf without lfcd, go to currently running instance
+		# lf -remote "send $id cd \"$mnt\""
+	# else
+		# Otherwise spawn lf
+		lf -- "$mnt"
+	# fi
+
+	# Cleanup on exit
+	cleanup () {
+		umount "$mnt"
+		rmdir "$mnt"
+	}
+	trap cleanup EXIT
+fi
