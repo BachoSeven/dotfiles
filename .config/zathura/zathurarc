@@ -14,7 +14,7 @@ set window-width 768
 set render-loading false
 set adjust-open "best-fit"
 set synctex true
-set synctex-editor-command "nvr --remote +%{line} %{file}"
+set synctex-editor-command "nvr --remote-silent +%{line} %{input}"
 # Fix following links(!)
 set sandbox none
 
