@@ -690,10 +690,10 @@ gensum() {
 }
 cpuctl() {
     case $1 in
-       performance|ondemand|powersave|schedutil|conservative) echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null ;;
+       performance|ondemand|powersave|schedutil|conservative|userspace) echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null ;;
        status) cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor | uniq ;;
 			 monitor) watch -n1 grep \"cpu MHz\" /proc/cpuinfo ;;
-       *) echo "Invalid argument. Valid governor values:\n 'performance', 'ondemand', 'powersave', 'conservative', 'schedutil'.\n\nOther options:\n 'status', 'monitor'." ;;
+       *) echo "Invalid argument. Valid governor values:\n 'performance', 'ondemand', 'powersave', 'conservative', 'schedutil', 'userspace'.\n\nOther options:\n 'status', 'monitor'." ;;
     esac
 }
 tl() { # noice
