@@ -1,7 +1,7 @@
 #!/bin/sh
 
 msgId="2298"
-deviceId="$(xinput list | grep "Touchpad" | sed -n -e 's/^.*id=//p'|cut -f1)"
+deviceId="$(xinput list | grep -i "touchpad" | sed -n -e 's/^.*id=//p'|cut -f1)"
 
 on() {
 	dunstify -u normal -t 3000 -r $msgId "🖲️ Touchpad enabled"
