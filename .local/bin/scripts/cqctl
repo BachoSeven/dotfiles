@@ -8,8 +8,7 @@ quit() {
 }
 
 start() {
-	setsid -f copyq
-	clipctl disable
+	setsid -f copyq && clipctl disable
 }
 
 toggle() {

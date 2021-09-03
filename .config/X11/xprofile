@@ -21,8 +21,10 @@
 	remaps					# Switch caps/super and one-tap_caps/esc
 	_ dunst
 	_ redshift			# Color temperature
+	_ redshift -l "$(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq '.location.lat, .location.lng' | tr '\n' ':' | sed 's/:$//')"
 	togcomp -y			# Compositor
 	gebaard -b			# Gesture daemon
+	xdotool mousemove 1000 700 # position cursor at approx. the center of the screen
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	xdgxm -e &			# Update menu entries
 	_ subs -d				# Start custom yt daemon
