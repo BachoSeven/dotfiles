@@ -18,8 +18,8 @@
 # set background
 	if [ $noise ]; then
 		tmp="/tmp/tile.png"
-		convert -size 128x128 canvas:\#$c -separate -seed 1000 \
-			-attenuate 0.13 +noise gaussian -combine -colorspace sRGB "$tmp"
+		convert -size 512x512 canvas:\#$c -separate -seed 1000 \
+			-attenuate 0.11 +noise gaussian -combine -colorspace sRGB "$tmp"
 		hsetroot -tile "$tmp"
 	else
 		hsetroot -solid \#$c &
