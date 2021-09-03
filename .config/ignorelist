@@ -221,81 +221,16 @@ Thumbs.db
 # cached plugin data, recreated
 .mozilla/firefox/*/pluginreg.dat
 
-#SeaMonkey-specific (see also Profile folder):
-
-# .mozilla/seamonkey/*/Cache
-# # in case Fx crashes dumps will be stored in this
-# .mozilla/seamonkey/*/minidumps
-# # session-specific
-# .mozilla/seamonkey/*/.parentlock
-# # blacklisted extensions
-# .mozilla/seamonkey/*/blocklist.xml
-# # extension database, recreated on startup
-# .mozilla/seamonkey/*/extensions.sqlite
-# .mozilla/seamonkey/*/extensions.rdf
-# .mozilla/seamonkey/*/extensions.ini
-# # cached UI data, recreated
-# .mozilla/seamonkey/*/xpti.dat
-# .mozilla/seamonkey/*/compreg.dat
-# # cached plugin data, recreated
-# .mozilla/seamonkey/*/pluginreg.dat
-
-# # Thunderbird Cache in your profile folder
-# .thunderbird/*/Cache
-
-#Opera-specific (related question on Superuser.com: Is documentation available on files and directories in the Opera profile folder?):
-
-# .opera/temporary_downloads
-# .opera/cache
-# .opera/thumbnails
-# .opera/opcache
-# .opera/icons
-# .opera/application_cache
-# .opera/widgets/*/cache
-# .opera/lock
-
-# Keychain dir (manage SSH and GPG keys, front-end to ssh-agent and ssh-add)
-/.keychain
-
 # Go
 .local/go
 
-
-#Komodo Edit:
-
-# .komodoedit/*/codeintel/db
-# .komodoedit/*/host-*/*/codeintel
-# .komodoedit/*/XRE/Cache
-# .komodoedit/*/XRE/.activatestate/komodo edit/Crash Reports
-# .komodoedit/*/XRE/.activatestate/komodo edit/*/Cache
-# .komodoedit/*/XRE/.activatestate/komodo edit/*/minidump
-# .komodoedit/*/XRE/.parentlock
-# .komodoedit/*/XRE/extensions.rdf
-# .komodoedit/*/XRE/extensions.ini
-# .komodoedit/*/XRE/extensions.cache
-# .komodoedit/*/XRE/XPC.mfasl
-# .komodoedit/*/XRE/XUL.mfasl
-# .komodoedit/*/XRE/xpti.dat
-# .komodoedit/*/XRE/pluginreg.dat
-# .komodoedit/*/XRE/compreg.dat
-# .komodoedit/*/XRE/*.sqlite-journal
-# .komodoedit/*/pystdout.log
-# .komodoedit/*/pystderr.log
-# .komodoedit/*/history.sqlite.bak
-# .komodoedit/*/running.lock
-# .komodoedit/*/mutex.lock
-# .komodoedit/*/*.xmlc
-# .komodoedit/*/startup-env.tmp
-# .komodoedit/*/commandments.fifo
-# .komodoedit/*/history.sqlite
-
 #GnuPG:
 
-.gnupg/rnd
-.gnupg/random_seed
-.gnupg/.#*
-.gnupg/*.lock
-.gnupg/gpg-agent-info-*
+.local/share/gnupg/rnd
+.local/share/gnupg/random_seed
+.local/share/gnupg/.#*
+.local/share/gnupg/*.lock
+.local/share/gnupg/gpg-agent-info-*
 
 #Google Earth:
 # .googleearth/Temp
