@@ -5,7 +5,7 @@
 	xss-lock -n "/home/fra/.local/bin/scripts/dim" -- /usr/local/bin/slock &
 	xidlehook --not-when-fullscreen --not-when-audio --timer 600 "systemctl suspend" - &
 
-	_() {	# Used to start daemons which have not been started yet
+	_() { # Used to start daemons which have not been started yet
 	    pgrep -x "$1" >/dev/null ||
 		{ "$@" & }
 	}
@@ -17,11 +17,10 @@
 	else
 		hsetroot -solid "$(cat $XDG_CACHE_HOME/bgcol)"
 	fi
-	_ mpd
+	_ mpd						# Music server
 	remaps					# Switch caps/super and one-tap_caps/esc
-	_ dunst
-	_ redshift			# Color temperature
-	_ redshift -l "$(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq '.location.lat, .location.lng' | tr '\n' ':' | sed 's/:$//')"
+	_ dunst					# Notification daemon
+	_ redshift -l "$(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq '.location.lat, .location.lng' | tr '\n' ':' | sed 's/:$//')" # Color temperature
 	togcomp -y			# Compositor
 	gebaard -b			# Gesture daemon
 	xdotool mousemove 1000 700 # position cursor at approx. the center of the screen
