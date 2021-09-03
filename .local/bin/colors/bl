@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Wrapper to set a solid color as background
+# wrapper to set a solid color as background
 
-# Cleanup
+# cleanup
 	killall -q xrootgif xwinwrap &
 
 
@@ -15,7 +15,7 @@
 # defs
 	c=${1:-252525}
 
-# Set background
+# set background
 	if [ $noise ]; then
 		tmp="/tmp/tile.png"
 		convert -size 128x128 canvas:\#$c -separate -seed 1000 \
@@ -25,8 +25,8 @@
 		hsetroot -solid \#$c &
 	fi
 
-# Unset background to enable restoring solid color on reboot
+# unset background to enable restoring solid color on reboot
 	rm -f $XDG_DATA_HOME/bg
 
-# Save color for the aforementioned purpose
+# save color for the aforementioned purpose
 	echo "#$c" > ${XDG_CACHE_HOME:-$HOME/.cache}/bgcol
