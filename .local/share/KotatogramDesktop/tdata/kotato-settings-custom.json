@@ -7,13 +7,16 @@
     "adaptive_bubbles": true,
     "always_show_scheduled": true,
     "always_show_top_userpic": false,
+    "auto_scroll_unfocused": false,
     "big_emoji_outline": true,
     "chat_list_lines": 2,
     "confirm_before_calls": true,
     "custom_app_icon": 0,
     "disable_tray_counter": true,
     "disable_up_edit": false,
-    "file_dialog_type": 0,
+    "ffmpeg_multithread": true,
+    "ffmpeg_thread_count": 0,
+    "file_dialog_type": 1,
     "folders": {
         "count_unmuted_only": true,
         "default": {
@@ -26,6 +29,7 @@
     },
     "fonts": {
         "semibold_is_bold": true,
+        "size": 0,
         "use_original_metrics": false,
         "use_system_font": true
     },
@@ -47,6 +51,7 @@
     "show_phone_in_drawer": true,
     "sticker_height": 130,
     "sticker_scale_both": true,
+    "telegram_sites_autologin": true,
     "use_telegram_panel_icon": false,
     "userpic_corner_type": 2
 }
