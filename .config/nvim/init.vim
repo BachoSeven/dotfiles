@@ -159,12 +159,13 @@
 	map <c-t>h :tabp<CR>
 	map <c-t>l :tabn<CR>
 	map <c-t>n :tabnew<CR>
-" Remappings for the optimistic typist
+" Remapping for the optimistic [use Ctrl+BS for normal BS]
 	ino <Backspace> <C-w>
-	ino <S-Right> <esc>Ea
-	ino <S-Left> <esc>gEa
+" Arrows behave like Ctrl+arrows, and Shift+arrows goes to the end of whole words.
 	ino <Right> <esc>ea
 	ino <Left> <esc>gea
+	ino <S-Right> <esc>Ea
+	ino <S-Left> <esc>gEa
 
 " Perform dot commands over visual blocks:
 	vn . :normal .<CR>
