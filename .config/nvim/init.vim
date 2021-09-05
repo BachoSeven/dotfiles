@@ -159,6 +159,12 @@
 	map <c-t>h :tabp<CR>
 	map <c-t>l :tabn<CR>
 	map <c-t>n :tabnew<CR>
+" Remappings for the optimistic typist
+	ino <Backspace> <C-w>
+	ino <S-Right> <esc>Ea
+	ino <S-Left> <esc>gEa
+	ino <Right> <esc>ea
+	ino <Left> <esc>gea
 
 " Perform dot commands over visual blocks:
 	vn . :normal .<CR>
