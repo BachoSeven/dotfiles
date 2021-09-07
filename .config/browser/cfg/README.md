@@ -1,10 +1,10 @@
 # UNGOOGLED-CHROMIUM
 
 ## Options
-- keep local cookies
+- uncheck clear cookies
 - gtk theme
 - font_size=large, minimum size=8
-- add italian as spellchecking language
+- add italian as spellchecking language (and enable spell check)
 - block notifications globally from "Site settings"(!)
 - setup search engines: Searx as default, add ddg, and keep nosearch; use just Tab as shortcut.
 - chrome://settings/content/pdfDocuments: download instead of horrible pdf viewer.
