@@ -1,7 +1,7 @@
 # UNGOOGLED-CHROMIUM
 
 ## Options
-- keep local cookies
+- uncheck clear cookies
 - gtk theme
 - font_size=large, minimum size=8
 - add italian as spellchecking language
