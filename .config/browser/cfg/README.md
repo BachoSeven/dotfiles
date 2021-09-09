@@ -94,9 +94,9 @@ Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
 - Redirector[alt+shift+r]
 
 ### Privacy-focused
-- ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it, import List(s)]
+- ublock Origin[ctrl+b delete elements, ctrl+u activate it, import List(s)]
 - I don't care about cookies
-- ClearURLs
+- ClearURLs [backup]
 
 #### Search Engines:
 ``` cfg
