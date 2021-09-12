@@ -39,8 +39,6 @@
 	alias cls='clear'
 	alias fork='setsid -f'
 	alias perms='stat -c "%A %a %n"'
-	alias mine='sudo chown -R $(whoami):$(whoami)' # Take ownership of file or directory
-	alias yours='sudo find . -perm -u+x -exec chmod a+x {} \; && sudo find . -perm -u+r -exec chmod a+r {} \;' # allow others to read/execute
 	alias 1='cd -'
 	alias 2='cd -2'
 	alias 3='cd -3'
@@ -79,7 +77,6 @@
 	alias dr='drive'
 	alias nmdm='networkmanager_dmenu'
 	alias rnm='sudo systemctl reload NetworkManager'
-	alias nn='nordvpn'
 	alias w3m='w3mwrap -s -B'
 	alias sqm='w3mwrap https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
 	alias octave='octave -q'
@@ -104,7 +101,6 @@
 	alias smi='sudo make clean install'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; WA_VIEWER="wezterm imgcat" wezterm  --config "exit_behavior=\"Hold\"" start -- wa'
 	alias flix='chromium --app=https://netflix.com/browse'
-	alias scr='ffmpeg -f x11grab -i :0.0 -frames:v 1 "$HOME/screen-$(date "+%y%m%d-%H%M-%S").png"'
 	alias mictog='pactl set-source-mute @DEFAULT_SOURCE@ toggle'
 # Misc
 	alias txs='nvim ~/.config/nvim/UltiSnips/tex.snippets'
@@ -117,7 +113,7 @@
 	alias upbat='price bat "Basic Attention Token" 🦁 && less -R ~/.local/share/crypto-prices/bat-chart'
 # Media
 	alias nc2='MPD_PORT="6600" st -c ncmpcpp -e ncmpcpp -c ~/.config/ncmpcpp2/config'
-	alias phonic='vieb --erwic=~/.config/primephonic/primephonic.json --datafolder=~/.config/primephonic'
+	alias appmus='vieb --erwic=~/.config/appmus/appmus.json --datafolder=~/.config/appmus'
 	alias spo='st -c ncspot ncspot && spotup'
 	alias spi='spotify && spotup && rmdir ~/Downloads'
 # Desk
