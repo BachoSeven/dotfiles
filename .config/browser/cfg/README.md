@@ -60,7 +60,7 @@
 - Import from file.
 
 ## Passwords manager
-- [keepassxc+extension(backup)]
+- [keepassxc+extension(backup)] {Ctrl+Shift+k}
 
 ## Theme
 - sol ref dark(favs)
@@ -89,18 +89,14 @@ Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
 - custom ntp extension
 - linux speed scroll fix: (set speed to 1.66)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
-	- Append
-		/* Temporary fix, suggested here: https://github.com/philc/vimium/issues/3732 */
-		.vimiumUIComponentVisible { color-scheme: light; }
-	to the `vimium.css` file
 - vimium_helper(disable on youtube, github)
 - stylus(beta)[backup,alt+shift+s]
 - Redirector[alt+shift+r]
 
 ### Privacy-focused
-- ublock Origin[ctrl+b delete elements, ctrl+shift+u activate it, import List(s)]
+- ublock Origin[ctrl+b delete elements, ctrl+u activate it, import List(s)]
 - I don't care about cookies
-- ClearURLs
+- ClearURLs [backup]
 
 #### Search Engines:
 ``` cfg
