@@ -14,7 +14,6 @@ set search="https://duckduckgo.com/?q=%s&ia=web"
 set downloadmethod=ask
 set downloadpath=~/
 set ignorecase
-set mouse
 set mousefocus
 set containernewtab=s:usecurrent
 

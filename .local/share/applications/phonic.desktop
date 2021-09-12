@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Primephonic
-Exec=vieb --erwic=~/.config/primephonic/primephonic.json --datafolder=~/.config/primephonic
-Icon=/home/fra/.local/share/icons/primephonic.png
-Terminal=false
-Categories=Audio;Music;Player;
