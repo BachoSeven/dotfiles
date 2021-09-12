@@ -170,6 +170,9 @@ dirs=(
 	~/.config/xplr/plug/zoxide
 	~/.config/xplr/plug/material-landscape
 	~/.local/src/colors
+	~/.local/src/AARGH
+	~/.local/src/aur
+	~/.local/src/sysdots
 	~/.local/src/dmenu
 	~/.local/src/idasen
 	~/.local/src/st
