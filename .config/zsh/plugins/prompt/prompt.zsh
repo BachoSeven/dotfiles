@@ -24,7 +24,7 @@
   if [ "$TERM" = "linux" ]; then # TTY prompt
     PS1="%B$colorbg{blue}$mytime$uncolorbg %F{green}[$username]%f %b%F{magenta}$curdir%f $rootorwhat "
   else
-    PS1=$'%B%F{blue} %F{blue}$schars[333]$schars[262]$schars[261]$schars[260]%(!.%F{red}.%F{yellow})%n%F{green}@%F{12}%m%F{blue}$schars[333]$schars[262]$schars[261]$schars[260] %F{magenta}%~\n%(?.%F{cyan}.%F{red}) %b%f'
+    PS1=$'%B%F{blue} %F{blue}$schars[333]$schars[262]$schars[261]$schars[260]%(!.%F{red}.%F{yellow})%n%F{green}@%F{12}%m%F{blue}$schars[333]$schars[262]$schars[261]$schars[260] %F{magenta}%~\n%(?.%F{cyan}.%F{red}) %b%f'
   fi
 	PS2='%B%F{magenta}•%b%f '
 	setopt transientrprompt	# self-explanatory
