@@ -17,7 +17,6 @@ set searchwords+=aw~https://wiki.archlinux.org/index.php/Special:Search/%s,aur~h
 set downloadmethod=ask
 set downloadpath=~/
 set ignorecase
-set mouse
 set mousefocus
 
 " Notifications

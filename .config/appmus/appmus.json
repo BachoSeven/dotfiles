@@ -1,10 +1,10 @@
 {
-    "name": AppMus",
+    "name": "AppMus",
     "icon": "~/.local/share/icons/vinyl.png",
     "apps": [
         {
             "container": "appmus",
-            "url": "https://music.apple.com/it/"
+            "url": "https://music.apple.com/it"
         }
     ]
 }
