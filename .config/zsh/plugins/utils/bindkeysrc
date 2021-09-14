@@ -82,12 +82,12 @@
 		"L"	"| ${PAGER:-less}"
 		"H"	"| head"
 		"T"	"| tail"
-		"G"     "|&rg"
+		"G"	"|&rg"
 		"C"	"| wc -l"
 		"N"	"&>/dev/null"
 		"X"	"| xclip"
 		"A"	"| xargs "
-		"V"    "|& nvim -"
+		"V"	"|& nvim -"
 	)
 
 	magic-abbrev-expand() {
