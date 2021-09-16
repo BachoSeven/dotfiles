@@ -185,7 +185,6 @@ up2date() {
 	_run $AURHELPER
 	_run sudo pacnews
 	_run nvim +PU +quitall
-	_run zsh_update_plugins
 	_run src_update
 }
 
@@ -659,7 +658,7 @@ genplaylist() {
 		rm -i $playlist
 	fi
 	for f in *.$ext; do
-		echo "$(pwd)/$f" >> "$playlist"
+		echo "$f" >> "$playlist"
 	done
 }
 
