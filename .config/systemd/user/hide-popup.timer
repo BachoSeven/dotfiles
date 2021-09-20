@@ -2,7 +2,7 @@
 Description=Check if there are screen sharing popups every 10 seconds
 
 [Timer]
-OnBootSec=180
+OnBootSec=60
 OnUnitActiveSec=10
 RandomizedDelaySec=1s
 AccuracySec=1
