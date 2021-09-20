@@ -11,6 +11,8 @@
 	function zexit() { exit }
 	zle -N zexit
 	bindkey '^d' zexit
+# Make alt+. go through previous lines' $! arguments
+	bindkey '\e.' insert-last-word
 # + to select but stay in completion menu
 	bindkey -M menuselect "+" accept-and-menu-complete
 # Return selects and confirms the selection
