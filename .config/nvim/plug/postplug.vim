@@ -120,7 +120,7 @@
 		\		'-interaction=nonstopmode',
 		\ ],
 		\}
-	" Compile on initialization, cleanup on quit
+	" Compile on initialization
 	aug vimtex_init
 		au!
     au User VimtexEventInitPost VimtexCompile
