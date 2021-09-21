@@ -103,7 +103,7 @@
 	let g:vimtex_compiler_progname = 'nvr'
 	let g:vimtex_fold_enabled = 1
 	let g:vimtex_view_method = 'zathura'
-	let g:vimtex_compiler_method = 'tectonic'
+	let g:vimtex_compiler_method = 'generic'
 	let g:vimtex_compiler_generic = {
 		\	'command': 'ls *.tex | entr -n -c tectonic /_ --synctex --keep-logs',
 		\}
