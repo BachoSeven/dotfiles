@@ -83,9 +83,9 @@
 	nn <leader><Enter> :Buffers<CR>
 
 " Vimtex Configuration
+	se cole=2
 	let g:matchup_override_vimtex = 1
 	let g:vimtex_matchparen_deferred = 1
-	se cole=2
 	let g:vimtex_syntax_conceal_defaul = 0
 	let g:vimtex_syntax_conceal = {
 	\ 'accents' : 1,
@@ -105,7 +105,7 @@
 	let g:vimtex_view_method = 'zathura'
 	let g:vimtex_compiler_method = 'generic'
 	let g:vimtex_compiler_generic = {
-		\	'command': 'ls *.tex | entr -n -c tectonic /_ --synctex --keep-logs',
+		\	'command': 'ls *.tex | setsid -f entr -n -c tectonic /_ --synctex --keep-logs',
 		\}
 	let g:vimtex_compiler_latexmk = {
 		\ 'background' : 1,
