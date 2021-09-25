@@ -11,10 +11,12 @@
 [global]
 	monitor = 0
 	follow = keyboard
-	geometry = "0x150-15+15" # this should be in sync with dwm gaps
+	# these should be in sync with dwm gaps
+	origin = top-right
+	offset = 15x15
+	height = 150
 	indicate_hidden = yes
 	transparency = 20
-	notification_height = 0
 	separator_height = 2
 	padding = 0
 	horizontal_padding = 8
