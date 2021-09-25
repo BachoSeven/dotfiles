@@ -2,11 +2,13 @@
 
 if ! pidof Xorg >/dev/null 2>&1 || ! pidof chromium >/dev/null 2>&1; then
 	exit 0
-fi
+else
+	rm -rf ~/.pki ~/.cache/chromium
 
-xdotool search --name "is sharing your screen" \
-	| while read -r wid; do
-	if xwininfo -id "$wid" >/dev/null 2>&1; then
-		xdotool windowclose "$wid"
-	fi
-done
+	xdotool search --name "is sharing your screen" \
+		| while read -r wid; do
+		if xwininfo -id "$wid" >/dev/null 2>&1; then
+			xdotool windowclose "$wid"
+		fi
+	done
+fi
