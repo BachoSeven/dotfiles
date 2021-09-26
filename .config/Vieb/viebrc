@@ -12,7 +12,7 @@ set favicons=30day
 set redirecttohttp
 set search="https://duckduckgo.com/?q=%s&ia=web"
 set searchwords=y~youtube.com/results?search_query=%s,r~reddit.com/search?q=%s
-set searchwords+=w~https://wikipedia.org/w/index.php?search=%s,l~http://80.82.78.11/search.php?req=%s
+set searchwords+=w~https://wikipedia.org/w/index.php?search=%s,l~https://libgen.rs/search.php?req=%s
 set searchwords+=aw~https://wiki.archlinux.org/index.php/Special:Search/%s,aur~https://aur.archlinux.org/packages.php?K=%s,gh~https://github.com/search?q=%s
 set downloadmethod=ask
 set downloadpath=~/
