@@ -14,6 +14,7 @@ auth on
 tls on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
 logfile /home/fra/.config/msmtp/msmtp.log
+# tls_starttls
 
 account ad17fmin@uwcad.it
 host smtp.gmail.com
@@ -22,7 +23,7 @@ from ad17fmin@uwcad.it
 user ad17fmin@uwcad.it
 passwordeval "pass ad17fmin@uwcad.it"
 auth on
-tls_starttls off
+tls on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
 logfile /home/fra/.config/msmtp/msmtp.log
-
+tls_starttls off
