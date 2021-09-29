@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# SLOC: 36
+
+# Variables
+LINK="https://www.youtube.com/watch?v=5qap5aO4i9A"
+TREES=0
+prog="$(basename "$0")"
+
+_ctrlC() {
+	_notify
+	exit 0
+}
+trap _ctrlC INT
+
+_notify() { notify-send "Trees grown: ${TREES}"; }
+
+# Parse arguments
+while getopts ":hl:" opt; do
+	case $opt in
+		l)
+			LINK="${OPTARG}" ;;
+		h)
+			cat << EOF
+$prog is a simple POSIX script to help you concentrate
+
+Usage: $prog [OPTIONS]
+
+optional arguments:
+		-l URL      Specify source of the music that will play in the background
+		-h          Show help
+EOF
+		exit 0 ;;
+	\?)
+		echo "Invalid option: -$OPTARG" >&2
+		exit 1;;
+	:)
+		echo "Option -$OPTARG requires an argument." >&2
+		exit 1;;
+	esac
+done
+
+mpv "${LINK}" --no-video --really-quiet &
+
+while true; do
+	cbonsai  -plL 40 -t 7
+
+	TREES=$((TREES+1))
+	_notify
+done
