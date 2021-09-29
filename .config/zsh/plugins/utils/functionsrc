@@ -321,8 +321,9 @@ mpvDisk() {
 mpvDisk-alt() {
 	mpv --lavfi-complex='[aid1]asplit[ao][a1];[a1]avectorscope=r=25:m=lissajous_xy:bc=200:gc=100:rc=75:bf=5:gf=3:rf=1:zoom=2[vo]' --really-quiet --vo=tct $@
 }
-resumempv() { # This is a dirty hack
-	echo '{ "command": ["set_property", "pause", false] }' | socat - "/tmp/mpvSockets/$(\ls /tmp/mpvSockets/ | head -1)"
+resumempv() {
+	sock="$(find /tmp/mpvSockets -type s | head -1)" # uhmmmmm
+	[ -n "$sock" ] && echo '{ "command": ["set_property", "pause", false] }' | socat - "$sock"
 }
 ytdl() {
 	for id in "$@"; do
