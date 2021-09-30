@@ -14,7 +14,7 @@ cmds="\
 🚪 ciao	kill -TERM $(pidof -s dwm)
 💤 'notte	${slp:-sudo -A systemctl suspend}
 🔃 riavvia	${reb:-sudo -A reboot}
-🐻 letargo	slock ${hib:-systemctl hibernate -i}
+🐻 letargo	${hib:-systemctl hibernate -i}
 🖥 spegni	${shut:-sudo -A shutdown -h now}"
 
 choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -c -l 7)" || exit 1
