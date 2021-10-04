@@ -6,5 +6,4 @@
 # Francesco Minnocci 2020
 
 MPV_SOCKET="$(find /tmp/mpvSockets/ -type s | head -1)"
-videoname="$1"
-echo "loadfile \"${videoname}\" append-play" | socat - $MPV_SOCKET
+[ -n "$MPV_SOCKET" ] && echo "loadfile \"${1}\" append-play" | socat - $MPV_SOCKET

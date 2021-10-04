@@ -42,9 +42,11 @@ done
 
 mpv "${LINK}" --no-video --really-quiet &
 
-while true; do
-	cbonsai  -plL 40 -t 7
+if ifinstalled cbonsai; then
+	while true; do
+		cbonsai -plL 40 -t 7
 
-	TREES=$((TREES+1))
-	_notify
-done
+		TREES=$((TREES+1))
+		_notify
+	done
+fi
