@@ -53,6 +53,7 @@
 	export ADB_VENDOR_KEY="${XDG_CONFIG_HOME:-$HOME/.config}/android"   # Deprecated(?)
 	export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 	export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg" # Oof.
+	export STACK_ROOT="$XDG_DATA_HOME"/stack
 	export GPG_TTY=$(tty)
 	export PYTHONHISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
 	export OSHU_HOME="$HOME/stuff/games/osu"
