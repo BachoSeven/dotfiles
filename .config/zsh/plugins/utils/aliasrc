@@ -51,6 +51,7 @@
 	alias 10='cd -10'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias drt='dragon-drag-and-drop -t -x'
+	alias dra='dragon-drag-and-drop -a -x'
 	alias xclip='xclip -r -sel c'
 	alias caps='tr "[:lower:]" "[:upper:]" <<<'
 	alias clearclip='clipdel -d ".*"'
