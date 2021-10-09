@@ -44,7 +44,6 @@ $if mode=vi
 		set keymap vi-command
 		# these are for vi-command mode
 		Control-l: clear-screen
-		Control-a: beginning-of-line
 		j: history-search-forward
 		k: history-search-backward
 
@@ -54,6 +53,7 @@ $if mode=vi
 		Control-n: next-history
 		Control-l: clear-screen
 		Control-a: beginning-of-line
+		Control-e: end-of-line
 		# `kj` enters normal mode.
 		"kj": vi-movement-mode
 		# switch to block cursor before executing a command
