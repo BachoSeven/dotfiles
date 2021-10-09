@@ -93,7 +93,7 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 #### Purple
 ![](https://i.imgur.com/yo20YAA.png)
 ![](https://i.imgur.com/AAuPeKH.png)
-![](https://i.imgur.com/BS2cXib.jpg)
+![](https://i.imgur.com/TPba8H4.jpg)
 
 #### Blues
 ![](https://i.imgur.com/G82E481.jpg)
