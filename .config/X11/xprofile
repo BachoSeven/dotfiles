@@ -18,6 +18,7 @@
 		hsetroot -solid "$(cat $XDG_CACHE_HOME/bgcol)"
 	fi
 	_ mpd						# Music server
+	_ pulseeffects --gapplication-service # equalizer
 	remaps					# Switch caps/super and one-tap_caps/esc
 	_ dunst					# Notification daemon
 	togcomp -y			# Compositor
