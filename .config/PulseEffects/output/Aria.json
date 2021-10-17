@@ -1,11 +1,11 @@
 {
     "spectrum": {
-        "show": "true",
+        "show": "false",
         "n-points": "100",
         "height": "120",
         "use-custom-color": "false",
-        "fill": "true",
-        "show-bar-border": "true",
+        "fill": "false",
+        "show-bar-border": "false",
         "sampling-freq": "10",
         "line-width": "2",
         "type": "Bars",
