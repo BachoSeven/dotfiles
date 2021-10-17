@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if ! pidof Xorg >/dev/null 2>&1 || ! pidof chromium >/dev/null 2>&1; then
+if ! pidof chromium >/dev/null 2>&1 && ! pidof vieb >/dev/null 2>&1 && ! pidof spotify >/dev/null 2>&1 ; then
 	exit 0
 else
-	rm -rf ~/.pki ~/.cache/chromium
+	rm -rf ~/.pki ~/.cache/chromium ~/Downloads
 
 	xdotool search --name "is sharing your screen" \
 		| while read -r wid; do
