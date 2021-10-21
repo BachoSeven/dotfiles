@@ -209,9 +209,6 @@
 	let g:netrw_browse_split=4
 	let g:netrw_liststyle=3     " tree view
 
-" Because of gh#vim/vim#4738
-	nn <silent> gx :execute 'silent! !xdg-open ' . shellescape(expand('<cWORD>'), 1)<CR>
-
 " make inline more readable
 	fu! UnMinify()
 		%s/{\ze[^\r\n]/{\r/e
