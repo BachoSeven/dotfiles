@@ -108,7 +108,6 @@
 		\	'command': 'ls *.tex | setsid -f entr -n -c tectonic /_ --synctex --keep-logs',
 		\}
 	let g:vimtex_compiler_latexmk = {
-		\ 'background' : 1,
 		\ 'build_dir' : '',
 		\ 'callback' : 1,
 		\ 'continuous' : 1,
@@ -123,7 +122,7 @@
 	" Compile on initialization
 	aug vimtex_init
 		au!
-    au User VimtexEventInitPost VimtexCompile
+		au User VimtexEventInitPost VimtexCompile
 	aug END
 	" Close viewers when VimTeX buffers are closed
 	fu! OnQuit()
@@ -216,7 +215,7 @@
 		elseif &fileformat ==? 'mac'
 			let fileformat = ''
 		endif
-		retu winwidth(0) > 70 ? fileformat : ''
+		retu winwidth(0) > 70 ? faccina#face() . fileformat : ''
 	endfu
 	fu! LlType()
 		let symbol = mpi#get(expand('%:t'))
