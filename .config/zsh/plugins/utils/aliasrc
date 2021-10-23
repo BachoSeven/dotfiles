@@ -67,7 +67,7 @@
 	alias guides='cd ~/.local/src/guides && glow; cd - >/dev/null'
 
 # Remove spaces, curly+squared brackets and commas
-	alias rsf="autoload -U zmv && zmv '* *' '\$f:gs/ /_'"
+	# alias rsf="autoload -U zmv && zmv '* *' '\$f:gs/ /_'"
 	# alias rsbf="autoload -U zmv && zmv '*(*)*' '\$f:gs/(|)|[|]/'"
 	# alias rscf="autoload -U zmv && zmv '*,*' '\$f:gs/,/_'"
 
