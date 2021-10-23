@@ -236,6 +236,8 @@
 " Lua configurations
 	so $XDG_CONFIG_HOME/nvim/plug/postplug.vim
 	so $XDG_CONFIG_HOME/nvim/plug/postplug.lua
+" Custom plugins
+	so $XDG_CONFIG_HOME/nvim/plug/faccina.vim
 
 "		 +----------+
 "		 | Autocmds |
