@@ -75,8 +75,7 @@ trap 'rm "$tmpfile"' 0 1 15
 printf '%s\n%s\n' "$uricur" "$1" > "$tmpfile"
 cat "$bookmarks" >> "$tmpfile"
 sed -i -E '/^(#|$)/d' "$tmpfile"
-# TODO: understand why dweb-hist has a different width
-choice="$(dmenu -i -f -c -l 10 -w "$winid" < "$tmpfile")" || exit 1
+choice="$(dmenu -i -f -l 10 -w "$winid" < "$tmpfile")" || exit 1
 
 # Detect links without protocol (This is WIP)
 protocol='^(https?|ftps?|mailto|about|file):///?'
