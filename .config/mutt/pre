@@ -1,3 +1,4 @@
+# vim: filetype=neomuttrc
 set copy=no
 unset help                           # No help bar at the top of index
 macro pager V ":set mailcap_path=~/.config/mutt/mailcap<enter>JK:set mailcap_path=/usr/share/mutt-wizard/mailcap<enter>" "view readable message in w3m"
