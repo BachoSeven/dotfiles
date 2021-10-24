@@ -87,7 +87,7 @@
 
 " Printing from Vim is complicated due to UTF-8. The author of the PS
 " driver explained it here:
-" http://vim.1045645.n5.nabble.com/Printing-with-utf-8-characters-on-Windows-td1193441.html
+" https://web.archive.org/web/20200814175948/http://vim.1045645.n5.nabble.com/Printing-with-utf-8-characters-on-Windows-td1193441.html
 " So, just use plain old 'lp' as a workaround.
 	fun! Hardcopy()
 			" CUPS documentation says about '-o page-*':
