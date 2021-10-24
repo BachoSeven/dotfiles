@@ -1,6 +1,4 @@
 
-
-
 IMAPStore ascoli.minnocci@gmail.com-remote
 Host imap.gmail.com
 Port 993
@@ -25,7 +23,6 @@ SyncState *
 MaxMessages 0
 ExpireUnread no
 # End profile
-
 
 IMAPStore ad17fmin@uwcad.it-remote
 Host imap.gmail.com
