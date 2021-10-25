@@ -32,8 +32,11 @@ do
 		"f")
 			convert -flop "$file" "$file" ;;
 		"x")
-			ln -s "$(realpath "$file")" "$HOME/pics/papes/fav" &&
-			notify-send -i "$(realpath "$file")" "$file aggiunto ai preferiti" & ;;
+			if [ -f "$HOME/pics/papes/fav/$file" ]; then
+				rm "$HOME/pics/papes/fav/$file" && notify-send -i "$(realpath "$file")" "$file rimosso dai preferiti" &
+			else
+				ln -s "$(realpath "$file")" "$HOME/pics/papes/fav" && notify-send -i "$(realpath "$file")" "$file aggiunto ai preferiti" &
+			fi ;;
 		"y")
 			printf "$file" | tr -d '\n' | xclip -sel c -r &&
 			notify-send "$file copied to clipboard" & ;;
