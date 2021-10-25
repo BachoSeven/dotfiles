@@ -171,13 +171,14 @@
 		\		'left': [ [ 'mode', 'paste' ],
 		\							[ 'filename' ] ],
 		\		'right': [ [ 'percent', 'lineinfo' ],
-		\						 [ 'fileformat', 'fileencoding', 'filetype' ] ]
+		\						 [ 'ascii', 'fileformat', 'fileencoding', 'filetype' ] ]
 		\ },
 		\ 'component_function': {
 		\		'filename': 'LlName',
 		\		'fileformat': 'LlFormat',
 		\		'filetype': 'LlType',
 		\		'fileencoding': 'LlEncoding',
+		\		'ascii': 'LlAscii'
 		\	},
 		\	'mode_map': {
 		\		'n' : 'N',
@@ -190,7 +191,7 @@
 		\		's' : 'S',
 		\		'S' : 'SL',
 		\		"\<C-s>": 'SB',
-		\		't': 'T',
+		\		't': 'T'
 		\ },
 		\ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
 		\ 'subseparator': { 'left': '▒', 'right': '░' }
@@ -215,7 +216,10 @@
 		elseif &fileformat ==? 'mac'
 			let fileformat = ''
 		endif
-		retu winwidth(0) > 70 ? faccina#face() . fileformat : ''
+		retu winwidth(0) > 70 ? fileformat : ''
+	endfu
+	fu! LlAscii()
+		retu winwidth(0) > 70 ? faccina#face() : ''
 	endfu
 	fu! LlType()
 		let symbol = mpi#get(expand('%:t'))
