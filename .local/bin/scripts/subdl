@@ -1,0 +1,137 @@
+#!/bin/sh
+
+# Download subtitles from opensubtitles.org
+# Based on: https://forum.opensubtitles.org/viewtopic.php?f=8&t=16453#p39771
+# Dependencies: grep, curl, hexdump, jq, mktemp, tr, tput, gzip
+
+usage="usage: $0 [-e episode] [-i imdbid] [-b moviebytesize] [-h moviehash] [-s season] [-l sublanguageid] [-t tag] [-r results] [-c (no cut)] [-d (non-interactive)] [query]"
+
+tmpfile=$(mktemp /tmp/subdl-XXXXXX)
+
+trap 'rm "$tmpfile"' 0 1 15
+
+urlencode() {
+	printf "%s" "$1" | tr '[:upper:]' '[:lower:]' | \
+		printf "%%%s" $(hexdump -v -e '/1 "%20x\n"') # Do NOT quote!
+}
+
+checknum() {
+	echo "$1" | grep '^[0-9]\+$' > /dev/null || {
+		echo season, episode, results and bytesize must be natural numbers.
+		exit 1
+	}
+}
+
+checklang() {
+	echo "$1" | grep '^[a-z]\{3\}\(,[a-z]\{3\}\)*$' > /dev/null || {
+		echo language code must be 3 letters.
+		echo multiple languages are separated with comma.
+		exit 1
+	}
+}
+
+checkhash() {
+	if [ -z "$moviebytesize" ] ||
+		echo "$1" | grep -v '^[[:alnum:]]\{16\}$' > /dev/null
+	then
+		echo hash must have 16 characters.
+		echo hash must be set after moviebytesize.
+		exit 1
+	fi
+}
+
+checkimdbid() {
+	echo "$1" | grep '^[0-9]\{7\}$' > /dev/null || {
+		echo imdbid must be 7 figures
+		echo imdbid should exclude property prefix
+		exit 1
+	}	
+}
+
+
+while getopts r:cde:i:b:h:s:l:t: opt
+do
+	case $opt in
+		r) rows="$OPTARG"               ;;
+		c) cols="0"                     ;;
+		d) dontask="1"                  ;;
+		e) checknum "$OPTARG"
+		   episode="$OPTARG"            ;;
+		i) checkimdbid "$OPTARG"
+		   imdbid="$OPTARG"             ;;
+		b) checknum "$OPTARG"
+		   moviebytesize="$OPTARG"      ;;
+		h) checkhash "$OPTARG"
+		   moviehash="$OPTARG"          ;;
+		s) checknum "$OPTARG"
+		   season="$OPTARG"             ;;
+		l) checklang "$OPTARG"
+		   sublanguageid="$OPTARG"      ;;
+		t) tag=$(urlencode "$OPTARG")   ;;
+		\?) echo "$usage" ; exit 1      ;;
+	esac
+done
+shift $(( OPTIND - 1 ))
+
+if [ -n "$1" ] && [ -z "$query" ]
+then
+	query=$(urlencode "$*")
+elif [ -z "$1" ] && [ "$OPTIND" -eq 1 ]
+then
+	echo "$usage"
+	exit 1
+fi
+
+if [ -z "$rows" ]
+then
+	rows=$(( $(tput lines) - 2 ))	
+	[ "$rows" -lt 4 ] && rows=4
+elif echo "$1" | grep -v '^[0-9]\+$' > /dev/null
+then
+	checknum "$rows"
+	[ "$rows" -eq 0 ] && {
+		echo results must be greater than zero.
+		exit 1
+	}
+fi
+
+[ -z "$cols" ] && cols=$(tput cols)
+
+curl -s -S -A 'TemporaryUserAgent' "https://rest.opensubtitles.org/search\
+${episode:+/episode-}${episode}\
+${imdbid:+/imdbid-}${imdbid}\
+${moviebytesize:+/moviebytesize-}${moviebytesize}\
+${moviehash:+/moviehash-}${moviehash}\
+${query:+/query-}${query}\
+${season:+/season-}${season}\
+${sublanguageid:+/sublanguageid-}${sublanguageid}\
+${tag:+/tag-}${tag}" > "$tmpfile"
+
+[ -z "$dontask" ] && {
+	jq -e -j -M --argjson rows "$rows" --argjson cols "$cols" '
+	del(.[$rows:]) |
+	if length == 0
+	then
+		"no result.\n" | halt_error(1)
+	else
+		[[range(length) | tostring] , [.[].SubFileName]] |
+		transpose | .[] | " " +  .[0] + ": " + .[1] |
+		if $cols != 0
+		then
+			.[:$cols] | . + "\n"
+		else
+			. + "\n"
+		end
+	end' "$tmpfile" || exit 1
+
+	printf "Subtitle number: "
+	read -r nu
+}
+
+[ -z "$nu" ] && nu=0
+checknum "$nu"
+
+dlurl=$(jq -j -M --argjson nu "$nu" '.[$nu].SubDownloadLink' "$tmpfile")
+filename=$(jq -j -M --argjson nu "$nu" '.[$nu].SubFileName' "$tmpfile")
+
+curl -s -S "$dlurl" | gzip -d > "$filename" && echo Done!
