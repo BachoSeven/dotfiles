@@ -208,7 +208,6 @@
 		tty-clock="tty-clock -C 4"   \
 		cl="tty-clock -cs"		\
 		rcl="tty-clock -BDr"
-	_exists s && alias cs='. /usr/share/bash-completion/completions/s; cls'
 	_exists mconnect && alias \
 			mc='mconnect'g \
 			mctl='mconnectctl'g \
