@@ -751,7 +751,7 @@ ca() {
 	if [ "$#" -gt 0 ]; then
 		cal "$@"
 	else
-		cal -3 | sed -e "s/$(date +%e)/$(printf '\e[1;32m')$(date +%e)$(printf '\e[00m')/"
+		cal -3 | sed -e "s/ $(date +%e) / $(printf '\e[1;32m')$(date +%e)$(printf '\e[00m') /"
 	fi
 }
 stopwatch() {
