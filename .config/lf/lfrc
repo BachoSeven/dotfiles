@@ -319,6 +319,7 @@ map . set hidden!
 map <enter> shell
 map t :set sortby time; set info time; set reverse!	#set by most recent
 map gg top
+map gG cd /dati/games
 map gm cd /mnt
 map gd cd /dati
 map gu cd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi
