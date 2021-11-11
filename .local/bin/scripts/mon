@@ -3,11 +3,15 @@
 # Francesco Minnocci 2020
 # This takes care of my external monitor setup, mostly for non-interactive purposes.
 
-usbC="/sys/class/drm/card1-DP-1/status"
-hdmi="/sys/class/drm/card1/card1-HDMI-A-2/status"
+# edit these on other systems
 int="eDP-1"
 ext1="DP-1"
 ext2="HDMI-2"
+ext2_class="HDMI-A-2"
+card="card1"
+
+usbC="/sys/class/drm/$card-$ext1/status"
+hdmi="/sys/class/drm/$card-$ext2_class/status"
 
 miscfixes() {
 	sbg # redraw background
