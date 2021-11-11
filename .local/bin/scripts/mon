@@ -3,6 +3,9 @@
 # Francesco Minnocci 2020
 # This takes care of my external monitor setup, mostly for non-interactive purposes.
 
+usbC="/sys/class/drm/card1-DP-1/status"
+hdmi="/sys/class/drm/card1/card1-HDMI-A-2/status"
+
 miscfixes() {
 	sbg # redraw background
 	dunstreload # reload dunst configuration
@@ -10,32 +13,55 @@ miscfixes() {
 	cqctl magic
 }
 
+
+toggle() {
+	if grep -q "\bconnected" $usbC || grep -q "\bconnected" $hdmi; then
+		external
+	else
+		laptop
+	fi
+}
+
+external() {
+	if grep -q "\bconnected" $usbC; then
+		ext="DP-1"
+		xrandr --output $int --off --output $ext --auto --dpi 144 && miscfixes
+	elif grep -q "\bconnected" $hdmi; then
+		ext="HDMI-2"
+		xrandr --output $int --off --output $ext --mode 2560x1440 && miscfixes
+	fi
+}
+
+laptop() {
+	xrandr --output DP-1 --off --output HDMI-2 --off --output $int --auto --dpi 96 && miscfixes
+}
+
+multiple() {
+	if grep -q "\bconnected" $usbC; then
+		ext="DP-1"
+		xrandr --output $int --auto --output $ext --primary --auto --dpi 108 --left-of $int && miscfixes
+		## If positioning laptop *below* monitor
+		# xrandr --output $int --auto --pos 0x2160 --output $ext --primary --auto --dpi 108 --pos 0x0 && miscfixes
+	elif grep -q "\bconnected" $hdmi; then
+		ext="HDMI-2"
+		xrandr --output $int --auto --output $ext --primary --mode 2560x1440 --left-of $int && miscfixes
+		## If positioning laptop *below* monitor
+		# xrandr --output $int --auto --pos 0x1440 --output $ext --primary --mode 2560x1440 --pos 0x0 && miscfixes
+	fi
+}
+
 main() {
-  int="eDP-1"
-	while getopts ":elm" o; do
+	int="eDP-1"
+	while getopts ":elmt" o; do
 		case "${o}" in
 			e) # External
-				if grep -q "\bconnected" /sys/class/drm/card0-DP-1/status; then
-					ext="DP-1"
-					xrandr --output $int --off --output $ext --auto --dpi 144 && miscfixes
-				elif grep -q "\bconnected" /sys/class/drm/card0/card0-HDMI-A-2/status; then
-					ext="HDMI-2"
-					xrandr --output $int --off --output $ext --mode 2560x1440 && miscfixes
-				fi ;;
+				external ;;
 			l) # Laptop
-				xrandr --output DP-1 --off --output HDMI-2 --off --output $int --auto --dpi 96 && miscfixes ;;
+				laptop ;;
 			m) # Multi
-				if grep -q "\bconnected" /sys/class/drm/card0-DP-1/status; then
-					ext="DP-1"
-					xrandr --output $int --auto --output $ext --primary --auto --dpi 108 --left-of $int && miscfixes
-					## If positioning laptop *below* monitor
-					# xrandr --output $int --auto --pos 0x2160 --output $ext --primary --auto --dpi 108 --pos 0x0 && miscfixes
-				elif grep -q "\bconnected" /sys/class/drm/card0/card0-HDMI-A-2/status; then
-					ext="HDMI-2"
-					xrandr --output $int --auto --output $ext --primary --mode 2560x1440 --left-of $int && miscfixes
-					## If positioning laptop *below* monitor
-					# xrandr --output $int --auto --pos 0x1440 --output $ext --primary --mode 2560x1440 --pos 0x0 && miscfixes
-				fi ;;
+				multiple ;;
+			t) # Toggle
+				toggle ;;
 			*)
 				printf "Invalid option: -%s\n" "$OPTARG"
 				printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;
