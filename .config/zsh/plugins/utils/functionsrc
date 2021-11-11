@@ -177,6 +177,7 @@ dirs=(
 	~/.local/src/idasen
 	~/.local/src/st
 	~/.local/src/subs
+	~/.local/src/wiki
 	/dati/AP2_QMK/annepro-qmk
 	/dati/AP2_QMK/annepro2-shine
 	/dati/AP2_QMK/AnnePro2-Tools
