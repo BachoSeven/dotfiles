@@ -3,8 +3,16 @@
 # Francesco Minnocci 2020
 # This takes care of my external monitor setup, mostly for non-interactive purposes.
 
-usbC="/sys/class/drm/card1-DP-1/status"
-hdmi="/sys/class/drm/card1/card1-HDMI-A-2/status"
+# edit these on other systems
+int="eDP-1"
+ext1="DP-1"
+ext1_class="$ext1"
+ext2="HDMI-2"
+ext2_class="HDMI-A-2"
+card="card1"
+
+usbC="/sys/class/drm/$card-$ext1_class/status"
+hdmi="/sys/class/drm/$card-$ext2_class/status"
 
 miscfixes() {
 	sbg # redraw background
@@ -24,26 +32,26 @@ toggle() {
 
 external() {
 	if grep -q "\bconnected" $usbC; then
-		ext="DP-1"
+		ext="$ext1"
 		xrandr --output $int --off --output $ext --auto --dpi 144 && miscfixes
 	elif grep -q "\bconnected" $hdmi; then
-		ext="HDMI-2"
+		ext="$ext2"
 		xrandr --output $int --off --output $ext --mode 2560x1440 && miscfixes
 	fi
 }
 
 laptop() {
-	xrandr --output DP-1 --off --output HDMI-2 --off --output $int --auto --dpi 96 && miscfixes
+	xrandr --output "$ext1" --off --output "$ext2" --off --output $int --auto --dpi 96 && miscfixes
 }
 
 multiple() {
 	if grep -q "\bconnected" $usbC; then
-		ext="DP-1"
+		ext="$ext1"
 		xrandr --output $int --auto --output $ext --primary --auto --dpi 108 --left-of $int && miscfixes
 		## If positioning laptop *below* monitor
 		# xrandr --output $int --auto --pos 0x2160 --output $ext --primary --auto --dpi 108 --pos 0x0 && miscfixes
 	elif grep -q "\bconnected" $hdmi; then
-		ext="HDMI-2"
+		ext="$ext2"
 		xrandr --output $int --auto --output $ext --primary --mode 2560x1440 --left-of $int && miscfixes
 		## If positioning laptop *below* monitor
 		# xrandr --output $int --auto --pos 0x1440 --output $ext --primary --mode 2560x1440 --pos 0x0 && miscfixes
@@ -51,7 +59,6 @@ multiple() {
 }
 
 main() {
-	int="eDP-1"
 	while getopts ":elmt" o; do
 		case "${o}" in
 			e) # External
