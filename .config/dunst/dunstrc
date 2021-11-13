@@ -11,6 +11,7 @@
 [global]
 	monitor = 0
 	follow = keyboard
+	# these should be in sync with dwm gaps
 	origin = top-right
 	offset = 15x15
 	height = 150
@@ -63,7 +64,6 @@
 	always_run_script = true
 	title = Dunst
 	class = Dunst
-	# these should be in sync with dwm gaps
 	corner_radius = 7
 	force_xinerama = false
 [urgency_low]
