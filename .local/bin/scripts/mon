@@ -9,7 +9,7 @@ ext1="DP-1"
 ext1_class="$ext1"
 ext2="HDMI-2"
 ext2_class="HDMI-A-2"
-card="card1"
+card="card0"
 
 usbC="/sys/class/drm/$card-$ext1_class/status"
 hdmi="/sys/class/drm/$card-$ext2_class/status"
