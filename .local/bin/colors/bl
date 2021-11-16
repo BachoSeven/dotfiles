@@ -5,7 +5,6 @@
 # cleanup
 	killall -q xrootgif xwinwrap &
 
-
 # -?
 	if [ "$1" = "-n" ]; then
 		noise=1
