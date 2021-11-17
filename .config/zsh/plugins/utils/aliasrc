@@ -6,6 +6,7 @@
 # Arch
 	alias pacbrowse="pacman -Qqe | fzf --preview 'pacman -Qi {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 	alias np='pacman -Qq | wc -l'
+	alias whose='pacman -Qo'
 
 # SSH
 	alias phc='export TERM=xterm-256color; ssh minnocci@poisson.phc.dm.unipi.it'
