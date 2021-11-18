@@ -6,25 +6,25 @@
 # Dependencies: dmenu, dunst [optional]
 
 
-# NOTE: use the following lines instead of the ones below to automatically
-#	find the correct file, but it's much faster to use the specific
-#	brightness file and ratio once you know them.
-# Dependencies: fd [you can use find, but if you want this to be fast on any machine without configuration use fd]
-#
-#
-# max_file="$(fd max_brightness /sys/class/backlight/*)"
-# max=$(cat $max_file)
-# brdir=$(dirname $max_file)
-# current=$(($(cat $brdir/brightness)/($max/100)))
-# ratio=$($max/100)
+# NOTE:	use the commented lines to automatically set the
+#				parameters with fd [or find, but it'll be slower]
+#				However, it's much faster to use the specific
+#				brightness file and ratio, once you know them.
 
 # Set variables
-ratio=75
-current=$(($(cat /sys/class/backlight/intel_backlight/brightness)/$ratio))
 def=60
 defu=80
 defd=20
 msgId="981141"
+path=/sys/class/backlight
+brdir=intel_backlight
+ratio=75
+current=$(($(cat $path/$brdir/brightness)/$ratio))
+
+# max_file="$(fd max_brightness $path/*)"
+# brdir=$(dirname $max_file)
+# ratio=$(($(cat $max_file)/100))
+# current=$(($(cat $path/$brdir/brightness)/$ratio))
 
 # Handle arguments
 case "$1" in
