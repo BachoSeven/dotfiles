@@ -153,6 +153,12 @@
 	nn <leader>n :vne<CR>
 " Quick macros
 	nn <silent> Q @q
+" Apply macro on visual selection, only on matching lines
+	fu! ExecuteMacroOverVisualRange()
+		echo "@".getcmdline()
+		execute ":'<,'>normal @".nr2char(getchar())
+	endfu
+	xn @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 " Tabs
 	map <c-t>k :tabr<CR>
 	map <c-t>j :tabl<CR>
