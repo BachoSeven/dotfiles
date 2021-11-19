@@ -16,15 +16,14 @@ def=60
 defu=80
 defd=20
 msgId="981141"
-path=/sys/class/backlight
-brdir=intel_backlight
-ratio=75
-current=$(($(cat $path/$brdir/brightness)/$ratio))
-
-# max_file="$(fd max_brightness $path/*)"
+basepath=/sys/class/backlight
+# max_file="$(fd max_brightness $basepath/*)"
 # brdir=$(dirname $max_file)
 # ratio=$(($(cat $max_file)/100))
-# current=$(($(cat $path/$brdir/brightness)/$ratio))
+brdir=$basepath/intel_backlight
+ratio=75
+current=$(($(cat $brdir/brightness)/$ratio))
+
 
 # Handle arguments
 case "$1" in
