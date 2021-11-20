@@ -6,6 +6,7 @@ arguments=(
 	'-h, --help[Display usage instructions]'
 	'-n, --next[Next song]'
 	'-p, --prev[Previous song]'
+	'-q, --query-player[Return current player]'
 	'-t, --toggle[Play/Pause]'
 	'-s, --stop[Stop]'
 	'--pause[Pause song]'
