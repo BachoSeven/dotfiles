@@ -3,57 +3,59 @@ while read -r file
 do
 	case "$1" in
 		w)
-		 sbg -i "$file" ;;
+			sbg -i "$file" ;;
 		W)
-		 sbg -w wal "$file" ;;
+			sbg -w wal "$file" ;;
 		Z)
-		 sbg -w colorz "$file" ;;
+			sbg -w colorz "$file" ;;
 		M)
-		 sbg -i "$file" -m ;;
+			sbg -i "$file" -m ;;
 		T)
-		 sbg -i "$file" -t ;;
+			sbg -i "$file" -t ;;
 		C)
-		 sbg -i "$file" -c ;;
+			sbg -i "$file" -c ;;
 		F)
-		 killall -q xwinwrap xrootgif
-		 setsid -f xrootgif -Q "$file" --daemon & ;;
+			killall -q xwinwrap xrootgif
+			setsid -f xrootgif -Q "$file" --daemon & ;;
 		c)
-		 [ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
-		 [ -z "$destdir" ] && exit
-		 cp "$file" "$destdir" && notify-send -i "$(realpath "$file")" "$file copied to $destdir." & ;;
+			[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
+			[ -z "$destdir" ] && exit
+			cp "$file" "$destdir" && notify-send -i "$(realpath "$file")" "$file copied to $destdir." & ;;
 		m)
-		 [ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Move file(s) to where?" | sed "s|~|$HOME|g")"
-		 [ -z "$destdir" ] && exit
-		 mv "$file" "$destdir" && notify-send -i "$(realpath "$file")" "$file moved to $destdir." & ;;
+			[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Move file(s) to where?" | sed "s|~|$HOME|g")"
+			[ -z "$destdir" ] && exit
+			mv "$file" "$destdir" && notify-send -i "$(realpath "$file")" "$file moved to $destdir." & ;;
 		r)
-		 convert -rotate 90 "$file" "$file" ;;
+			convert -rotate 90 "$file" "$file" ;;
 		R)
-		 convert -rotate -90 "$file" "$file" ;;
+			convert -rotate -90 "$file" "$file" ;;
 		f)
-		 convert -flop "$file" "$file" ;;
+			convert -flop "$file" "$file" ;;
 		x)
-		 if [ -L "$file" ]; then
-		 	rm "$file" && notify-send -i "$(realpath "$file")" "$file rimosso dai preferiti" &
-		 else
-		 	ln -s "$(realpath "$file")" "$HOME/pics/papes/fav" && notify-send -i "$(realpath "$file")" "$file aggiunto ai preferiti" &
-		 fi ;;
+			if [ -L "$file" ]; then
+				rm "$file" && notify-send -i "$(realpath "$file")" "$file rimosso dai preferiti" &
+			elif [ -L "$HOME/pics/papes/fav"/"$file" ]; then
+				rm "$HOME/pics/papes/fav"/"$file" && notify-send -i "$(realpath "$file")" "$file rimosso dai preferiti" &
+			else
+				ln -s "$(realpath "$file")" "$HOME/pics/papes/fav" && notify-send -i "$(realpath "$file")" "$file aggiunto ai preferiti" &
+			fi ;;
 		y)
-		 printf "$file" | tr -d '\n' | xclip -sel c -r &&
-		 notify-send "$file copied to clipboard" & ;;
+			printf "$file" | tr -d '\n' | xclip -sel c -r &&
+			notify-send "$file copied to clipboard" & ;;
 		Y)
-		 realpath "$file" | tr -d '\n' | xclip -sel c -r &&
-		 notify-send "$(realpath "$file") copied to clipboard" & ;;
+			realpath "$file" | tr -d '\n' | xclip -sel c -r &&
+			notify-send "$(realpath "$file") copied to clipboard" & ;;
 		d)
-		 [ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
+			[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
 		D)
-		 dragon-drag-and-drop -x "$file" ;;
+			dragon-drag-and-drop -x "$file" ;;
 		g)
-		 ifinstalled gimp && setsid -f gimp "$file" ;;
+			ifinstalled gimp && setsid -f gimp "$file" ;;
 		i)
-		 dmenuimginfo "$file" & ;;
+			dmenuimginfo "$file" & ;;
 		n)
-		 notify-send "File information" "$(mediainfo "$file")" ;;
+			notify-send "File information" "$(mediainfo "$file")" ;;
 		I)
-		 imgur.sh "$file" >/dev/null | head -n 1 | xclip -sel c -r ;;
+			imgur.sh "$file" >/dev/null | head -n 1 | xclip -sel c -r ;;
 	esac
 done
