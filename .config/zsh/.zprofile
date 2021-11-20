@@ -61,6 +61,7 @@
 
 ## Various programs settings:
 	export BC_LINE_LENGTH=80
+	export PARALLEL="--eta"
 	export SYSTEMD_LESS=FRXMKij4 # omitting 'S' to disable "chopping" long lines
 	export NO_AT_BRIDGE=1 # dbus accessibility bridge (https://bbs.archlinux.org/viewtopic.php?id=237697)
 	export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
