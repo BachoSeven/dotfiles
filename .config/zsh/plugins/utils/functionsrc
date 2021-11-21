@@ -74,7 +74,7 @@ cleanup() {
 # AUR [not amazing for non-standard packages...]
 aurpublish() {
 	PKG="$1"
-	_run git clone ssh://aur@aur.archlinux.org/"$PKG".git; cp PKGBUILD $PKG; cd $PKG
+	_run git clone ssh://aur@aur.archlinux.org/"$PKG".git; cp $PKG.install PKGBUILD -t $PKG; cd $PKG
 	_run $AURHELPER -S --noconfirm namcap && namcap PKGBUILD; $AURHELPER -Rs --noconfirm namcap
 	_run makepkg -fs && makepkg --printsrcinfo > .SRCINFO
 	ls .gitignore 2>/dev/null || echo "*" > .gitignore
