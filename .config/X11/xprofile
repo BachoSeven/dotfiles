@@ -18,11 +18,12 @@
 		hsetroot -solid "$(cat $XDG_CACHE_HOME/bgcol)"
 	fi
 	_ mpd						# Music server
+	[[ -z $(pgrep -xU $UID mpdscribble) ]] && mpdscribble & # Mpd scrobbler
 	remaps					# Switch caps/super and one-tap_caps/esc
 	_ dunst					# Notification daemon
 	togcomp -y			# Compositor
 	gebaard -b			# Gesture daemon
-	xdotool mousemove 1000 700 # position cursor at approx. the center of the screen
+	xdotool mousemove 1000 700 # Position cursor at approx. the center of the screen
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	xdgxm -e &			# Update menu entries
 	_ subs -d				# Start custom yt daemon
