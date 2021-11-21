@@ -28,9 +28,10 @@ filechooser.playlist.lastdir file:///home/fra/.config/deadbeef/playlists
 gtkui.color.bar_foreground 17733 34181 34952
 gtkui.color.tabstrip_light 13364 13364 13364
 gtkui.color.tabstrip_mid 12850 12336 12079
-gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"23","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"702","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"110","align":"1","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"408","align":"0","color_override":"0","color":"#ff000000"},{"title":"Year","id":"-1","format":"%year%","sort_format":"","size":"100","align":"0","color_override":"0","color":"#ffd4be98"},{"title":"Bitrate","id":"-1","format":"%bitrate%","sort_format":"","size":"100","align":"0","color_override":"0","color":"#ffd4be98"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"323","align":"0","color_override":"0","color":"#ff000000"}]
+gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"23","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"910","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"98","align":"1","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"455","align":"0","color_override":"0","color":"#ff000000"},{"title":"Year","id":"-1","format":"%year%","sort_format":"","size":"72","align":"0","color_override":"0","color":"#ffd4be98"},{"title":"Bitrate","id":"-1","format":"%bitrate%","sort_format":"","size":"84","align":"0","color_override":"0","color":"#ffd4be98"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"99","align":"0","color_override":"0","color":"#ff000000"}]
 gtkui.embolden_current_track 1
 gtkui.eq.visible 0
+gtkui.font.tabstrip_text Hack Nerd Font 15
 gtkui.hide_tray_icon 1
 gtkui.italic_selected_tracks 1
 gtkui.last_playlist_save_name /home/fra/.config/deadbeef/playlists/music.dbpl
@@ -48,7 +49,7 @@ gui_plugin GTK3
 headerbarui.button_spacing 5.000000
 headerbarui.combined_playpause 1
 headerbarui.disable 0
-headerbarui.embed_menubar 1
+headerbarui.embed_menubar 0
 headerbarui.hide_playback_buttons 0
 headerbarui.hide_seekbar_on_streaming 0
 headerbarui.show_designmode_button 1
@@ -100,10 +101,10 @@ logwindow.geometry.h 443
 logwindow.geometry.w 1455
 logwindow.geometry.x 102
 logwindow.geometry.y 155
-mainwin.geometry.h 1345
-mainwin.geometry.w 2556
-mainwin.geometry.x -5142
-mainwin.geometry.y 2
+mainwin.geometry.h 1303
+mainwin.geometry.w 1365
+mainwin.geometry.x 17
+mainwin.geometry.y 17
 mp3.id3v1_encoding iso8859-1
 mp3.id3v2_version 3
 mp3.write_id3v1 1
@@ -119,20 +120,20 @@ playback.loop 1
 playback.order 0
 playback.volume 0.0000000
 playlist.current 0
-playlist.cursor.0 10580
+playlist.cursor.0 10004
 playlist.cursor.1 0
-playlist.scroll.0 295971
+playlist.scroll.0 -10004
 playlist.scroll.1 0
 playlist.scroll.cursorfollowplayback 1
 playlist.tab.00000 Default
 prefwin.geometry.h 884
 prefwin.geometry.w 1634
-prefwin.geometry.x 143
-prefwin.geometry.y 87
-resume.paused 0
+prefwin.geometry.x 59
+prefwin.geometry.y 159
+resume.paused 1
 resume.playlist 0
-resume.position 0.0928798
-resume.track 10590
+resume.position 931.43609
+resume.track 10004
 searchwin.geometry.h 150
 searchwin.geometry.w 450
 searchwin.geometry.x 0
