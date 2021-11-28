@@ -18,7 +18,6 @@
 		hsetroot -solid "$(cat $XDG_CACHE_HOME/bgcol)"
 	fi
 	_ mpd						# Music server
-	[[ -z $(pgrep -xU $UID mpdscribble) ]] && mpdscribble & # Mpd scrobbler
 	remaps					# Switch caps/super and one-tap_caps/esc
 	_ dunst					# Notification daemon
 	togcomp -y			# Compositor
