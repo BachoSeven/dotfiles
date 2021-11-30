@@ -11,6 +11,7 @@
 	export LOCATION="Buti" # weather script
 	export AURHELPER="paru"
 	export SUDO_ASKPASS="$HOME/.local/bin/scripts/dmenupass"
+	export DO_NOT_TRACK=1 # respected by docker and other apps
 
 # XDG Base Directory locations
 	export XDG_CONFIG_HOME="$HOME/.config"
