@@ -27,3 +27,15 @@ tls on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
 logfile /home/fra/.config/msmtp/msmtp.log
 tls_starttls off
+
+account minnocci@mail.dm.unipi.it
+host student.dm.unipi.it
+port 465
+from minnocci@mail.dm.unipi.it
+user minnocci
+passwordeval "pass minnocci@mail.dm.unipi.it"
+auth on
+tls on
+tls_trust_file	/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/student.dm.unipi.it.pem
+logfile /home/fra/.config/msmtp/msmtp.log
+tls_starttls off
