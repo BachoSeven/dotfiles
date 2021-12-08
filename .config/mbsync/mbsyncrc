@@ -48,3 +48,28 @@ SyncState *
 MaxMessages 0
 ExpireUnread no
 # End profile
+
+IMAPStore minnocci@mail.dm.unipi.it-remote
+Host student.dm.unipi.it
+Port 993
+User minnocci
+PassCmd "pass minnocci@mail.dm.unipi.it"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/student.dm.unipi.it.pem
+
+MaildirStore minnocci@mail.dm.unipi.it-local
+Subfolders Verbatim
+Path /home/fra/.local/share/mail/minnocci@mail.dm.unipi.it/
+Inbox /home/fra/.local/share/mail/minnocci@mail.dm.unipi.it/INBOX
+
+Channel minnocci@mail.dm.unipi.it
+Expunge Both
+Far :minnocci@mail.dm.unipi.it-remote:
+Near :minnocci@mail.dm.unipi.it-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
