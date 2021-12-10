@@ -260,16 +260,28 @@ Thumbs.db
 .config/chromium/Default/Application Cache
 .config/chromium/Default/History Index *
 .config/chromium/Default/IndexedDB
+.config/chromium-backup/Default/Local Storage
+.config/chromium-backup/Default/Session Storage
+.config/chromium-backup/Default/Service Worker
+.config/chromium-backup/Default/Application Cache
+.config/chromium-backup/Default/History Index *
+.config/chromium-backup/Default/IndexedDB
+.config/chromium-back-ovfs/Default/Local Storage
+.config/chromium-back-ovfs/Default/Session Storage
+.config/chromium-back-ovfs/Default/Service Worker
+.config/chromium-back-ovfs/Default/Application Cache
+.config/chromium-back-ovfs/Default/History Index *
+.config/chromium-back-ovfs/Default/IndexedDB
 
 #Vieb:
 .config/Vieb/Local Storage
 .config/Vieb/Session Storage
 .config/Vieb/Partitions
 .config/Vieb/favicons
-.config/primephonic/Local Storage
-.config/primephonic/Session Storage
-.config/primephonic/Partitions
-.config/primephonic/favicons
+.config/appmus/Local Storage
+.config/appmus/Session Storage
+.config/appmus/Partitions
+.config/appmus/favicons
 
 .config/Element-Nightly
 
