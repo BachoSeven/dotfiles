@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-echo Inserisci il nome del file da stampare senza estenzione
-read -r a
-cp $a.pdf /tmp/Temporaneo.pdf
-scp /tmp/Temporaneo.pdf minnocci@lab1.cs.dm.unipi.it:~/
-ssh -XY minnocci@lab1.cs.dm.unipi.it okular ~/Temporaneo.pdf --print
-ssh minnocci@lab1.cs.dm.unipi.it rm ~/Temporaneo.pdf
+cp $1 /tmp/Temporaneo.pdf
+scp /tmp/Temporaneo.pdf minnocci@ssh1.dm.unipi.it:/student/home/minnocci/
+ssh -XY minnocci@ssh1.dm.unipi.it okular /student/home/minnocci/Temporaneo.pdf --print
+ssh minnocci@ssh1.dm.unipi.it rm /student/home/minnocci/Temporaneo.pdf
 rm /tmp/Temporaneo.pdf
 echo "File temporanei eliminati "

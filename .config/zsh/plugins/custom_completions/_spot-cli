@@ -1,19 +1,20 @@
 #compdef spot-cli
 
-local arguments
+_spot-cli() {
+	_arguments \
+		'(-h --help)'{-h,--help}'[Display usage instructions]'::'()'\
+		'(-n --next)'{-n,--next}'[Next song]'::'()'\
+		'(-p --prev)'{-p,--prev}'[Previous song]'::'()'\
+		'(-q --query-player)'{-q,--query-player}'[Return current player]'::'()'\
+		'(-t --toggle)'{-t,--toggle}'[Play/Pause]'::'()'\
+		'(-s --stop)'{-s,--stop}'[Stop]'::'()'\
+		'(--pause)'--pause'[Pause song]'::'()'\
+		'(--play)'--play'[Play song]'::'()' \
+		'(--seek)'--seek'[Seek/Rewind (seconds)]'::'()' \
+		'(--set)'--set'[Jump to (seconds)]'::'()' \
+		'(--uri)'--uri'[Open URI (spotify:* format)]'::'()' \
+		'(-u --url)'{-u,--url}'[Open URL]'::'()'\
+    '*::arg:->args'
+}
 
-arguments=(
-	'-h, --help[Display usage instructions]'
-	'-n, --next[Next song]'
-	'-p, --prev[Previous song]'
-	'-t, --toggle[Play/Pause]'
-	'-s, --stop[Stop]'
-	'--pause[Pause song]'
-	'--play[Play song]'
-	'-u, --url [Open URL]'
-	'--uri [Open URI (spotify:* format)]'
-	'--seek [Seek/Rewind (seconds)]'
-	'--set [Jump to (seconds)]'
-)
-
-_arguments -s $arguments
+_spot-cli "$@"

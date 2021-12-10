@@ -54,9 +54,9 @@ cmd open ${{
 		inode/symlink) $OPENER $(realpath $f) >/dev/null 2>&1 ;;
 		text/*|application/json|application/csv|*opendocument.text) $EDITOR $fx;;
 		application/pdf|application/epub*|image/vnd.djvu) setsid -f zathura $fx >/dev/null 2>&1 ;;
-		image/x-xcf|image/svg+xml) display -- $f ;;
 		# image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gifv\|gif\|webp\|tif\|tiff\|bmp\|ico\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;; ## This is slower but more accurate
 		image/*) sxiv -ao $f 2>/dev/null | lf-select ;;
+		image/x-xcf|image/svg+xml) display -- $f ;;
 		audio/*) mpv --audio-display=no $f ;;
 		video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
 		*) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
@@ -320,6 +320,8 @@ map <enter> shell
 map t :set sortby time; set info time; set reverse!	#set by most recent
 map gg top
 map gG cd /dati/games
+map gp cd ~/pics/papes
+map gP cd ~/pics/papes/etc/pixel
 map gm cd /mnt
 map gd cd /dati
 map gu cd /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Corsi

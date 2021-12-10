@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# to use upon update of ungoogled marmaduke build
+# execute from /opt/ungoogled-chromium_VERSION.vaapi_linux
+
+mv chrome_sandbox chrome-sandbox && chmod 4755 chrome-sandbox && sudo -A chown :root chrome-sandbox
+ln -sf $(realpath chrome) ~/.local/bin/ungoogled

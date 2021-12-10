@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if ! pidof chromium vieb spotify teams-insiders >/dev/null 2>&1 ; then
+if ! pidof chromium chrome vieb spotify teams-insiders >/dev/null 2>&1 ; then
 	exit 0
 else
 	rm -rf ~/.pki ~/.cache/chromium ~/Downloads
