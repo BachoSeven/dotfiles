@@ -81,4 +81,6 @@
 	TRAPUSR1() { rehash }
 
 # z
-	eval "$(zoxide init zsh)"
+	if [ "$USER" = "fra" ]; then
+		eval "$(zoxide init zsh)"
+	fi

@@ -3,14 +3,20 @@
 s="  " # field separator
 
 filename="${1##*/}"
+ext="${1##*.}"
 filesize=$(du -Hh "$1" | awk '{print $1}')
 
 geometry="${2}x${3}"
 
-## This is cool, but in my entire collection only 4 images have tags(might be a wrong estimate)... not worth the performance lag.
-# tags=$(exiv2 -qpi pr "$1" | awk '$1~"Keywords" { printf("%s,", $4); }')
-# tags=${tags%,}
-
 timestamp="$(exiv2 -qg Exif.Image.DateTime -Pv "$1")"
 
-echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}${timestamp:+${s}${timestamp}}"
+if [ "$ext" = "jpg" ] || [ "$ext" = "jpeg" ]; then
+	quality="$(identify -format %Q -- "$1[0]")%"
+fi
+
+## This is cool, but in my entire collection only 4 images have tags (might be wrong though)... probably not worth the lag.
+# tags=$(exiv2 -qpi pr "$1" | awk '$1~"Keywords" { printf("%s,", $4); }')
+# tags=${tags%,}
+# echo "${filesize}${s}${geometry}${quality:+$s}${quality}${s}${tags:+$s}${tags}${s}${filename}${timestamp:+${s}${timestamp}}"
+
+echo "${filesize}${s}${geometry}${quality:+$s}${quality}${s}${filename}${timestamp:+${s}${timestamp}}"

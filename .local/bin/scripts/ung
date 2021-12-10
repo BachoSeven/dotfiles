@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat ~/.config/chromium-flags.conf | sed "s/#.*$//" | xargs ungoogled

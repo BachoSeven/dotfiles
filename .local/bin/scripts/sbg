@@ -48,9 +48,7 @@ while getopts ":hi:w:cmt" o; do
 			if [ -n "$2" ]; then backend="$2"; [ -f "$3" ] && linknotif "$3"; fi
 			if ifinstalled wal; then
 				wal --backend "${backend:-wal}" -i "$(realpath "$bgloc")" >/dev/null 2>&1 && ww -w
-			else
-				exit 1
-			fi ;;
+			else exit 1; fi ;;
 		c) full=false; format="-center" ;;
 		m) full=false; format="-full" ;;
 
