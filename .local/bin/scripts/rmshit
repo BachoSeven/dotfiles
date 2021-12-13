@@ -6,6 +6,7 @@ import shutil
 
 shittyfiles = [
     '~/.adobe',              # Flash crap
+    '~/.appdata',            # Air crap
     '~/.macromedia',         # Flash crap
     '~/.recently-used',
     '~/.local/state',

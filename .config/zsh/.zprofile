@@ -237,7 +237,7 @@ fi
 	export KUNST_SIZE="240x240"
 	export KUNST_POSITION="-25+15" # This should be in sync with dwm gaps.
 	export KUNST_MUSIC_DIR="$HOME/slsk/music"
-	export KUNST_COVER_NAMES='folder|cover|front|thumbnail'
+	export KUNST_COVER_NAMES='cover|folder|front|thumbnail'
 	export KUNST_COVER_EXT='jpg|png|jpeg'
 
 # Remap Caps Lock
