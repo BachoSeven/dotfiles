@@ -146,8 +146,10 @@ ghc() { # Github clone, personal or otherwise
 	local ghuser
 	local ghrepo
 	[ -n "$2" ] && ghuser="$1" || ghrepo="$1"
-	[ -z "$ghrepo" ] && ghrepo="$2"
-	git clone git@github.com:${ghuser:-BachoSeven}/$ghrepo.git
+	shift
+	[ -z "$ghrepo" ] && ghrepo="$1"
+	shift
+	git clone git@github.com:${ghuser:-BachoSeven}/$ghrepo.git "$@"
 }
 gac() { # Aur git clone
 	local PKG
