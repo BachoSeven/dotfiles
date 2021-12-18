@@ -101,6 +101,7 @@
 	alias glow='glow -p'
 	alias ud='s -p udict'
 	alias smi='sudo make clean install'
+	alias gentags='ctags --recurse -f tags *'
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; WA_VIEWER="wezterm imgcat" wezterm  --config "exit_behavior=\"Hold\"" start -- wa'
 	alias flix='chromium --app=https://netflix.com/browse'
 	alias jelly='chromium --app=http://192.168.1.107:8096/web/index.html#!/home.html'
