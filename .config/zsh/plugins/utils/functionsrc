@@ -145,8 +145,12 @@ gc() { # Clone and `cd`.
 ghc() { # Github clone, personal or otherwise
 	local ghuser
 	local ghrepo
-	[ -n "$2" ] && ghuser="$1" || ghrepo="$1"
-	shift
+	if [ -n "$2" ]; then
+		ghuser="$1"
+		shift
+	else
+		ghrepo="$1"
+	fi
 	[ -z "$ghrepo" ] && ghrepo="$1"
 	shift
 	git clone git@github.com:${ghuser:-BachoSeven}/$ghrepo.git "$@"
