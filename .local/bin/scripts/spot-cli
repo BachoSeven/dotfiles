@@ -117,30 +117,30 @@ if [ -z "$1" ] ; then
 else
 	case $1 in
 	-h|--help)
-		usage;;
+		usage ;;
 	-n|--next)
-		send Next;;
+		send Next ;;
 	-p|--prev)
-		send Previous;;
+		send Previous ;;
 	-q|--query)
-		findplayer output;;
+		findplayer output ;;
 	-s|--stop)
-		send Stop;;
+		send Stop ;;
 	-t|--toggle)
-		send PlayPause;;
+		send PlayPause ;;
 	--play)
-		send Play;;
+		send Play ;;
 	--pause)
-		send Pause;;
+		send Pause ;;
 	--seek)
-		seek "$2";;
+		seek "$2" ;;
 	--set)
-		setPos "$2";;
+		setPos "$2" ;;
 	--uri)
-		uri "$2";;
+		uri "$2" ;;
 	-u|--url)
-		url "$2";;
+		url "$2" ;;
 	*)
-		error "Invalid option: $1";;
+		error "Invalid option: $1" ;;
 	esac
 fi

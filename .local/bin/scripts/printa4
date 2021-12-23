@@ -3,12 +3,38 @@
 # Semplice shellscript che permette di stampare un file in una stampante del Dipartimento di Matematica
 # da una qualsiasi shell Unix (Linux, MacOS, BSD...). Funziona anche da remoto!
 #
-# Utilizzo:
+#
+# Esempio di utilizzo:
 #						printa4 /percorso/al/Documento.pdf
+#
+#
 
-cp $1 /tmp/Temporaneo.pdf
-scp /tmp/Temporaneo.pdf minnocci@ssh1.dm.unipi.it:/student/home/minnocci/
-ssh -XY minnocci@ssh1.dm.unipi.it okular /student/home/minnocci/Temporaneo.pdf --print
-ssh minnocci@ssh1.dm.unipi.it rm /student/home/minnocci/Temporaneo.pdf
-rm /tmp/Temporaneo.pdf
-echo "File temporanei eliminati "
+main() {
+	cp $1 /tmp/Temporaneo.pdf
+	scp /tmp/Temporaneo.pdf minnocci@ssh1.dm.unipi.it:/student/home/minnocci/
+	ssh -XY minnocci@ssh1.dm.unipi.it okular /student/home/minnocci/Temporaneo.pdf --print
+	ssh minnocci@ssh1.dm.unipi.it rm /student/home/minnocci/Temporaneo.pdf
+	rm /tmp/Temporaneo.pdf
+	echo "File temporanei eliminati "
+}
+
+usage() {
+	printf "\nCome utilizzare questo script: $(basename $0) <DOCUMENTO> \n\nAd esempio:\n\n\t$(basename $0) ~/tesi.pdf\n\n"
+}
+
+error() {
+	printf "$@\n\n" 1>&2
+	usage
+}
+
+if [ -z "$1" ] ; then
+	error "Non hai specificato nessun file..."
+else
+	case $1 in
+	-h|--help)
+		usage ;;
+	-*)
+		error "Opzione invalida: $1" ;;
+	*) main $1 ;;
+	esac
+fi
