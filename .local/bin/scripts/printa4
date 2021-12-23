@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+
+# Semplice shellscript che permette di stampare un file in una stampante del Dipartimento di Matematica
+# da una qualsiasi shell Unix (Linux, MacOS, BSD...). Funziona anche da remoto!
+#
+# Utilizzo:
+#						printa4 /percorso/al/Documento.pdf
+
 cp $1 /tmp/Temporaneo.pdf
 scp /tmp/Temporaneo.pdf minnocci@ssh1.dm.unipi.it:/student/home/minnocci/
 ssh -XY minnocci@ssh1.dm.unipi.it okular /student/home/minnocci/Temporaneo.pdf --print
