@@ -6,31 +6,24 @@ https://chromium.woolyss.com/feed/linux
 " "
 "⚜️  mathematics──────────────────────────────────────"
 https://golem.ph.utexas.edu/category/atom10.xml math
-https://www.youtube.com/feeds/videos.xml?channel_id=UC6jM0RFkr4eSkzT5Gx0HOAw math
 https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw math
 https://terrytao.wordpress.com/feed/
 " "
 
 "⚜️  tech─────────────────────────────────────────────"
-https://ianthehenry.com/feed.xml
+https://dataswamp.org/~solene/rss.xml blog
+https://ianthehenry.com/feed.xml blog
 https://developer.run/feed.rss blog
-https://denshi.org/rss.xml
-http://kmkeen.com/rss.xml blog
 https://www.fosskers.ca/en/rss blog
-https://lore.kernel.org/lkml/20200907094843.1949-1-Jason@zx2c4.com/t.atom
 https://github.com/BachoSeven.private.atom?token=ANHEHMIWYBVKLUM3OT45HEV6GVFDI personal
 https://www.uninformativ.de/blog/feeds/en.atom blog
 https://kasad.com/blog/index.xml blog
 https://cadence.moe/blog/rss.xml?limit=30 blog
 https://ebin.city/~werwolf/index.xml blog
-https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local videos
-https://landchad.net/rss.xml
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg videos
-https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCi8XrDg1bK_MJ0goOnbpTMQ videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCFzGyNKXPAglNq28qWYTDFA videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA videos
-https://www.youtube.com/feeds/videos.xml?channel_id=UClcE-kVhqyiHCcjYwcpfj9w videos
 " "
 
 "⚜️  comics───────────────────────────────────────────"
@@ -40,7 +33,6 @@ https://www.smbc-comics.com/comic/rss meme
 
 "⚜️  music────────────────────────────────────────────"
 https://classicalguitarcomposers.libsyn.com/rss music
-https://hasitleaked.com/leakedfeed/ music
 https://www.youtube.com/feeds/videos.xml?channel_id=UC120Njw4gouQwZMnUJae9RQ videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCcBlJq-SafDY6kPGbeBlVjQ videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCdkkQvJoB0kGgYHCYwSkdww videos
@@ -54,14 +46,9 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCLuHOqDilyLQT4NPXQuVN4Q vid
 "⚜️  misc─────────────────────────────────────────────"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCFAiFyGs6oDiF1Nf-rRJpZA videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrNiNV2v5GlY0bGHs1TenHg videos
-https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA videos
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg videos
-https://www.youtube.com/feeds/videos.xml?channel_id=UCcXhhVwCT6_WqjkEniejRJQ videos
-https://www.youtube.com/feeds/videos.xml?channel_id=UCKmKCcwzzFTL8HgsOhPu5mg videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCyWDmyZRjrGHeKF-ofFsT5Q videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCGSGPehp0RWfca-kENgBJ9Q videos
-https://www.youtube.com/feeds/videos.xml?channel_id=UCd0zIZlbgvEifm_hd3FwlBQ videos
 " "
 
 "⚜️  new─────────────────────────────────────────────"
