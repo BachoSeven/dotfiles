@@ -57,7 +57,7 @@ map <PageDown> <scrollPageDown>
 map <Home> <scrollTop>
 map <End> <scrollBottom>
 map <F3> <toSearchMode>
-map <F5> <reload>
+map <F5> <refreshTab>
 map <F6> <toExploreMode>
 map <F7> <pointer.start>
 map <F12> <:devtools>
@@ -70,7 +70,7 @@ map <C-k> :help<CR>
 map <C-l> <toExploreMode>
 map <C-p> <:hardcopy>
 map <C-q> <:quit>
-map <C-r> <reload>
+map <C-r> <refreshTab>
 map <C-s> <:write>
 map <C-t> <openNewTab><toExploreMode>
 map <C-Tab> <nextTab>
