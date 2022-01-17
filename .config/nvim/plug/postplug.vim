@@ -256,3 +256,5 @@
 		Limelight!
 	endf
 	au! User GoyoLeave nested cal <SID>goyo_leave()
+" Gutentags
+	let g:gutentags_cache_dir = $XDG_CACHE_HOME . '/gutentags'
