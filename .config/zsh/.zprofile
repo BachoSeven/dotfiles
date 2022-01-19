@@ -57,8 +57,9 @@
 	export STACK_ROOT="$XDG_DATA_HOME"/stack
 	export GPG_TTY=$(tty)
 	export PYTHONHISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
-	export OSHU_HOME="$HOME/stuff/games/osu"
 	export XCURSOR_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/icons" # Needed for custom cursor
+	export OSHU_HOME="$HOME/stuff/games/osu"
+	export SQLITE_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/sqlite_history"
 
 ## Various programs settings:
 	export BC_LINE_LENGTH=80
