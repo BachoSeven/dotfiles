@@ -91,7 +91,6 @@
 		done
 	done
 
-
 # Edit line in insert mode with Ctrl+x+e:
 	autoload edit-command-line; zle -N edit-command-line
 	bindkey "^x^e" edit-command-line
@@ -135,7 +134,6 @@
 # Ctrl+arrows
 	bindkey '^[[1;5C' vi-forward-blank-word   # move forward wordwise with ctrl-arrow
 	bindkey '^[[1;5D' vi-backward-blank-word  # move backward wordwise with ctrl-arrow
-
 
 # Fix broken keys
 ## ^w, backspace and ^h working even after returning from command mode (annoying)
