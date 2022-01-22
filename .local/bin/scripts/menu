@@ -73,6 +73,5 @@ if [ -n "$cmd" ]; then
 		fi
 
 		# Workaround to run aliases
-		# NOTE: I removed the `-i` flag from bash, see if it breaks anything.
 		echo "$cmdexec" | bash
 fi

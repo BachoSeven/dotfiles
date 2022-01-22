@@ -1,6 +1,6 @@
 # Ensure that a non-login, non-interactive shell has a defined environment.
-	if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-	  source "${ZDOTDIR:-$HOME}/.zprofile"
+	if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME/.config/zsh}/.zprofile" ]]; then
+	  source "${ZDOTDIR:-$HOME/.config/zsh}/.zprofile"
 	fi
 
 # XDG paths
