@@ -81,7 +81,7 @@
 	zstyle ':completion:*:*:kill:*' menu yes # same thing as below but for kill processes completion
 # History
 ## When using history-complete-(newer/older), complete with the first item on the first request (as opposed to 'menu select' which only shows the menu on the first request)
-## NOTE: this uses Alt+/ backwards, Alt+, forwards, and Alt+ to complete the current argument (last one is in bindkeysrc).
+## NOTE: this uses Alt+/ backward and Alt+, forward to complete the current argument and Alt+. to go through the previous lines' last argument (latter is in bindkeysrc).
   zstyle ':completion:history-words:*' menu yes
   zstyle ':completion:*:history-words' stop yes
   zstyle ':completion:*:history-words' remove-all-dups yes
