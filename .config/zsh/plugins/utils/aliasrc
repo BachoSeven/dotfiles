@@ -122,7 +122,7 @@
 	alias spo='st -c ncspot ncspot && spotup'
 	alias spi='spotify && spotup && rmdir ~/Downloads'
 # Desk
-	alias sit='idasen moveto 1150' # since the script always overshoots, both values are adjusted accordingly
+	alias sit='idasen moveto 1100' # since the script always overshoots, both values are adjusted accordingly
 	alias stand='idasen moveto 4400'
 
 ## Disks

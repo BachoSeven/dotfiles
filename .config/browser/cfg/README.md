@@ -86,6 +86,8 @@ Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
 
 ### Utils
 - netflix 1080p: https://github.com/jangxx/netflix-1080p (disable VP9)
+- refined prime video
+- web scrobbler
 - custom ntp extension
 - linux speed scroll fix: (set speed to 1.66)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
