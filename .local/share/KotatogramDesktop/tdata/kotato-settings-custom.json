@@ -9,6 +9,7 @@
     "always_show_top_userpic": false,
     "auto_scroll_unfocused": false,
     "big_emoji_outline": true,
+    "block_users_in_groups": false,
     "chat_list_lines": 2,
     "confirm_before_calls": true,
     "custom_app_icon": 0,
@@ -47,6 +48,7 @@
     "profile_top_mute": true,
     "qt_scale": false,
     "recent_stickers_limit": 25,
+    "remember_compress_images": true,
     "replaces": [
     ],
     "scales": [
