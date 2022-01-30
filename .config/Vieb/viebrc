@@ -47,9 +47,10 @@ set guitabbar=onupdate
 " Insert mode edit
 set vimcommand="st -e nvim"
 
-" Startup
+" Startup - New tab
 set norestoretabs
 set startuppages="file:///home/fra/.config/browser/startpage/index.html"
+set newtaburl="file:///home/fra/.config/browser/startpage/index.html"
 set suggesttopsites=0
 
 " Closing tabs
