@@ -15,6 +15,7 @@ toggle() {
 	if quit; then
 		clipctl enable
 	else
+		reset
 		start
 	fi
 }
@@ -32,9 +33,9 @@ fixgeom() {
 if [ -z $1 ]; then
 	fixgeom
 elif [ "$1" = "magic" ]; then
-	quit && reset && start
+	quit && (reset; start)
 elif [ "$1" = "toggle" ]; then
-	toggle
+	reset; toggle
 else
 	printf "Unrecognised argument: %s\n" "$1"
 fi
