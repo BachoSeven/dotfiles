@@ -85,6 +85,9 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 
 ### Dwm
 
+#### Down the rabbit __hole__
+![](https://i.imgur.com/I7flFkB.png)
+
 #### Gruvboxy
 ![](https://i.imgur.com/ogkueqS.jpg)
 ![](https://i.imgur.com/PO04uQ5.png)
@@ -111,10 +114,10 @@ Read more about the programs I use in the **[AARGH](https://github.com/BachoSeve
 #### Madness
 ![](https://i.imgur.com/28QH4zb.jpg)
 
-#### Blasphemy
+### Blasphemy
 ![](https://i.imgur.com/aoZHTFC.jpg)
 
-#### Sin
+### Sin
 ![](https://i.imgur.com/kwsafH5.jpg)
 
 ### Lama
