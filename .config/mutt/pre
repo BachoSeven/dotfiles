@@ -1,8 +1,8 @@
 # vim: filetype=neomuttrc
 set copy=no
 unset help                           # No help bar at the top of index
-macro pager V ":set mailcap_path=~/.config/mutt/mailcap<enter>JK:set mailcap_path=/usr/share/mutt-wizard/mailcap<enter>" "view readable message in w3m"
-macro attach V ":set mailcap_path=~/.config/mutt/mailcap<enter>l:set mailcap_path=/usr/share/mutt-wizard/mailcap<enter>" "view readable message in w3m"
+macro pager V ":set mailcap_path=~/.config/mutt/mymailcap<enter>JK:set mailcap_path=/usr/share/mutt-wizard/mailcap<enter>" "view readable message in w3m"
+macro attach V ":set mailcap_path=~/.config/mutt/mymailcap<enter>l:set mailcap_path=/usr/share/mutt-wizard/mailcap<enter>" "view readable message in w3m"
 set crypt_autosign = yes
 set crypt_opportunistic_encrypt = yes
 set pgp_self_encrypt = yes
