@@ -5,7 +5,7 @@ use_nerdfont = true
 notify = true
 gapless = true
 flip_status_indicators=true
-shuffle = true
+shuffle = false
 repeat = 'off'
 
 [keybindings]
