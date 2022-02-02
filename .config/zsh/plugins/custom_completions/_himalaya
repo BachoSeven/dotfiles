@@ -1,0 +1,2333 @@
+#compdef himalaya
+
+autoload -U is-at-least
+
+_himalaya() {
+    typeset -A opt_args
+    typeset -a _arguments_options
+    local ret=1
+
+    if is-at-least 5.2; then
+        _arguments_options=(-s -S -C)
+    else
+        _arguments_options=(-s -C)
+    fi
+
+    local context curcontext="$curcontext" state line
+    _arguments "${_arguments_options[@]}" \
+'-c+[Forces a specific config path]' \
+'--config=[Forces a specific config path]' \
+'-a+[Selects a specific account]' \
+'--account=[Selects a specific account]' \
+'-o+[Defines the output format]: :(plain json)' \
+'--output=[Defines the output format]: :(plain json)' \
+'-l+[Defines the logs level]: :(error warn info debug trace)' \
+'--log-level=[Defines the logs level]: :(error warn info debug trace)' \
+'-m+[Specifies the source mailbox]' \
+'--mailbox=[Specifies the source mailbox]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+":: :_himalaya_commands" \
+"*::: :->himalaya" \
+&& ret=0
+    case $state in
+    (himalaya)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:himalaya-command-$line[1]:"
+        case $line[1] in
+            (completions)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':shell:(zsh bash fish powershell elvish)' \
+&& ret=0
+;;
+(compl)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':shell:(zsh bash fish powershell elvish)' \
+&& ret=0
+;;
+(compe)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':shell:(zsh bash fish powershell elvish)' \
+&& ret=0
+;;
+(comp)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':shell:(zsh bash fish powershell elvish)' \
+&& ret=0
+;;
+(completion)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':shell:(zsh bash fish powershell elvish)' \
+&& ret=0
+;;
+(idle)
+_arguments "${_arguments_options[@]}" \
+'-k+[Specifies the keepalive duration]' \
+'--keepalive=[Specifies the keepalive duration]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(notify)
+_arguments "${_arguments_options[@]}" \
+'-k+[Specifies the keepalive duration]' \
+'--keepalive=[Specifies the keepalive duration]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(watch)
+_arguments "${_arguments_options[@]}" \
+'-k+[Specifies the keepalive duration]' \
+'--keepalive=[Specifies the keepalive duration]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(mailbox)
+_arguments "${_arguments_options[@]}" \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(mboxes)
+_arguments "${_arguments_options[@]}" \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(mbox)
+_arguments "${_arguments_options[@]}" \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(mb)
+_arguments "${_arguments_options[@]}" \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(m)
+_arguments "${_arguments_options[@]}" \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(mailboxes)
+_arguments "${_arguments_options[@]}" \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(flags)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+":: :_himalaya__flag_commands" \
+"*::: :->flag" \
+&& ret=0
+case $state in
+    (flag)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:himalaya-flag-command-$line[1]:"
+        case $line[1] in
+            (a)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(add)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(s)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(change)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(c)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(set)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(rem)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(rm)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(r)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(del)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(d)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(remove)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(flg)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+":: :_himalaya__flag_commands" \
+"*::: :->flag" \
+&& ret=0
+case $state in
+    (flag)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:himalaya-flag-command-$line[1]:"
+        case $line[1] in
+            (a)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(add)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(s)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(change)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(c)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(set)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(rem)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(rm)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(r)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(del)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(d)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(remove)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(flag)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+":: :_himalaya__flag_commands" \
+"*::: :->flag" \
+&& ret=0
+case $state in
+    (flag)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:himalaya-flag-command-$line[1]:"
+        case $line[1] in
+            (a)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(add)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(s)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(change)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(c)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(set)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(rem)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(rm)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(r)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(del)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(d)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(remove)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(tpl)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+":: :_himalaya__template_commands" \
+"*::: :->template" \
+&& ret=0
+case $state in
+    (template)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:himalaya-template-command-$line[1]:"
+        case $line[1] in
+            (n)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(new)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(rep)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'-A[Includes all recipients]' \
+'--all[Includes all recipients]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(r)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'-A[Includes all recipients]' \
+'--all[Includes all recipients]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(reply)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'-A[Includes all recipients]' \
+'--all[Includes all recipients]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(fwd)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(fw)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(f)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(forward)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(template)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+":: :_himalaya__template_commands" \
+"*::: :->template" \
+&& ret=0
+case $state in
+    (template)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:himalaya-template-command-$line[1]:"
+        case $line[1] in
+            (n)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(new)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(rep)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'-A[Includes all recipients]' \
+'--all[Includes all recipients]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(r)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'-A[Includes all recipients]' \
+'--all[Includes all recipients]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(reply)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'-A[Includes all recipients]' \
+'--all[Includes all recipients]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(fwd)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(fw)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(f)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(forward)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(attachment)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(att)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(a)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(attachments)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(lst)
+_arguments "${_arguments_options[@]}" \
+'-s+[Page size]' \
+'--size=[Page size]' \
+'-p+[Page number]' \
+'--page=[Page number]' \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(l)
+_arguments "${_arguments_options[@]}" \
+'-s+[Page size]' \
+'--size=[Page size]' \
+'-p+[Page number]' \
+'--page=[Page number]' \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(list)
+_arguments "${_arguments_options[@]}" \
+'-s+[Page size]' \
+'--size=[Page size]' \
+'-p+[Page number]' \
+'--page=[Page number]' \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(s)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(query)
+_arguments "${_arguments_options[@]}" \
+'-s+[Page size]' \
+'--size=[Page size]' \
+'-p+[Page number]' \
+'--page=[Page number]' \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':query -- IMAP query:_files' \
+&& ret=0
+;;
+(q)
+_arguments "${_arguments_options[@]}" \
+'-s+[Page size]' \
+'--size=[Page size]' \
+'-p+[Page number]' \
+'--page=[Page number]' \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':query -- IMAP query:_files' \
+&& ret=0
+;;
+(search)
+_arguments "${_arguments_options[@]}" \
+'-s+[Page size]' \
+'--size=[Page size]' \
+'-p+[Page number]' \
+'--page=[Page number]' \
+'-w+[Defines a maximum width for the table]' \
+'--max-width=[Defines a maximum width for the table]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':query -- IMAP query:_files' \
+&& ret=0
+;;
+(write)
+_arguments "${_arguments_options[@]}" \
+'*-a+[Adds attachment to the message]' \
+'*--attachment=[Adds attachment to the message]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+(send)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+'::message:_files' \
+&& ret=0
+;;
+(save)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+'::message:_files' \
+&& ret=0
+;;
+(read)
+_arguments "${_arguments_options[@]}" \
+'-t+[MIME type to use]: :(plain html)' \
+'--mime-type=[MIME type to use]: :(plain html)' \
+'-r[Reads raw message]' \
+'--raw[Reads raw message]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(rep)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'-A[Includes all recipients]' \
+'--all[Includes all recipients]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(r)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(reply)
+_arguments "${_arguments_options[@]}" \
+'*-a+[Adds attachment to the message]' \
+'*--attachment=[Adds attachment to the message]' \
+'-A[Includes all recipients]' \
+'--all[Includes all recipients]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(fwd)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(f)
+_arguments "${_arguments_options[@]}" \
+'-s+[Overrides the Subject header]' \
+'--subject=[Overrides the Subject header]' \
+'*-f+[Overrides the From header]' \
+'*--from=[Overrides the From header]' \
+'*-t+[Overrides the To header]' \
+'*--to=[Overrides the To header]' \
+'*-c+[Overrides the Cc header]' \
+'*--cc=[Overrides the Cc header]' \
+'*-b+[Overrides the Bcc header]' \
+'*--bcc=[Overrides the Bcc header]' \
+'*-h+[Overrides a specific header]' \
+'*--header=[Overrides a specific header]' \
+'-B+[Overrides the body]' \
+'--body=[Overrides the body]' \
+'-S+[Overrides the signature]' \
+'--signature=[Overrides the signature]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(forward)
+_arguments "${_arguments_options[@]}" \
+'*-a+[Adds attachment to the message]' \
+'*--attachment=[Adds attachment to the message]' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(cp)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+':mbox-target -- Specifies the targetted mailbox:_files' \
+&& ret=0
+;;
+(c)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(copy)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+':mbox-target -- Specifies the targetted mailbox:_files' \
+&& ret=0
+;;
+(mv)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+':mbox-target -- Specifies the targetted mailbox:_files' \
+&& ret=0
+;;
+(move)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+':mbox-target -- Specifies the targetted mailbox:_files' \
+&& ret=0
+;;
+(del)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(d)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(remove)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq -- Specifies the targetted message:_files' \
+&& ret=0
+;;
+(rm)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+':seq-range -- Specifies targetted message(s):_files' \
+':flags -- IMAP flags:_files' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+}
+
+(( $+functions[_himalaya_commands] )) ||
+_himalaya_commands() {
+    local commands; commands=(
+        "completion:Generates the completion script for the given shell" \
+"notify:Notifies when new messages arrive in the given mailbox" \
+"watch:Watches IMAP server changes" \
+"mailboxes:Lists mailboxes" \
+"flag:Handles flags" \
+"template:Generates a message template" \
+"attachments:Downloads all message attachments" \
+"list:Lists all messages" \
+"search:Lists messages matching the given IMAP query" \
+"write:Writes a new message" \
+"send:Sends a raw message" \
+"save:Saves a raw message" \
+"read:Reads text bodies of a message" \
+"reply:Answers to a message" \
+"forward:Forwards a message" \
+"copy:Copies a message to the targetted mailbox" \
+"move:Moves a message to the targetted mailbox" \
+"delete:Deletes a message" \
+"help:Prints this message or the help of the given subcommand(s)" \
+    )
+    _describe -t commands 'himalaya commands' commands "$@"
+}
+(( $+functions[_a_commands] )) ||
+_a_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'a commands' commands "$@"
+}
+(( $+functions[_himalaya__a_commands] )) ||
+_himalaya__a_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya a commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__a_commands] )) ||
+_himalaya__flag__a_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag a commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__add_commands] )) ||
+_himalaya__flag__add_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag add commands' commands "$@"
+}
+(( $+functions[_att_commands] )) ||
+_att_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'att commands' commands "$@"
+}
+(( $+functions[_himalaya__att_commands] )) ||
+_himalaya__att_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya att commands' commands "$@"
+}
+(( $+functions[_attachment_commands] )) ||
+_attachment_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'attachment commands' commands "$@"
+}
+(( $+functions[_himalaya__attachment_commands] )) ||
+_himalaya__attachment_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya attachment commands' commands "$@"
+}
+(( $+functions[_himalaya__attachments_commands] )) ||
+_himalaya__attachments_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya attachments commands' commands "$@"
+}
+(( $+functions[_c_commands] )) ||
+_c_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'c commands' commands "$@"
+}
+(( $+functions[_himalaya__c_commands] )) ||
+_himalaya__c_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya c commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__c_commands] )) ||
+_himalaya__flag__c_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag c commands' commands "$@"
+}
+(( $+functions[_himalaya__change_commands] )) ||
+_himalaya__change_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya change commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__change_commands] )) ||
+_himalaya__flag__change_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag change commands' commands "$@"
+}
+(( $+functions[_comp_commands] )) ||
+_comp_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'comp commands' commands "$@"
+}
+(( $+functions[_himalaya__comp_commands] )) ||
+_himalaya__comp_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya comp commands' commands "$@"
+}
+(( $+functions[_compe_commands] )) ||
+_compe_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'compe commands' commands "$@"
+}
+(( $+functions[_himalaya__compe_commands] )) ||
+_himalaya__compe_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya compe commands' commands "$@"
+}
+(( $+functions[_compl_commands] )) ||
+_compl_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'compl commands' commands "$@"
+}
+(( $+functions[_himalaya__compl_commands] )) ||
+_himalaya__compl_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya compl commands' commands "$@"
+}
+(( $+functions[_himalaya__completion_commands] )) ||
+_himalaya__completion_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya completion commands' commands "$@"
+}
+(( $+functions[_completions_commands] )) ||
+_completions_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'completions commands' commands "$@"
+}
+(( $+functions[_himalaya__completions_commands] )) ||
+_himalaya__completions_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya completions commands' commands "$@"
+}
+(( $+functions[_himalaya__copy_commands] )) ||
+_himalaya__copy_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya copy commands' commands "$@"
+}
+(( $+functions[_cp_commands] )) ||
+_cp_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'cp commands' commands "$@"
+}
+(( $+functions[_himalaya__cp_commands] )) ||
+_himalaya__cp_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya cp commands' commands "$@"
+}
+(( $+functions[_d_commands] )) ||
+_d_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'd commands' commands "$@"
+}
+(( $+functions[_himalaya__d_commands] )) ||
+_himalaya__d_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya d commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__d_commands] )) ||
+_himalaya__flag__d_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag d commands' commands "$@"
+}
+(( $+functions[_del_commands] )) ||
+_del_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'del commands' commands "$@"
+}
+(( $+functions[_himalaya__del_commands] )) ||
+_himalaya__del_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya del commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__del_commands] )) ||
+_himalaya__flag__del_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag del commands' commands "$@"
+}
+(( $+functions[_himalaya__delete_commands] )) ||
+_himalaya__delete_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya delete commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__delete_commands] )) ||
+_himalaya__flag__delete_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag delete commands' commands "$@"
+}
+(( $+functions[_f_commands] )) ||
+_f_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'f commands' commands "$@"
+}
+(( $+functions[_himalaya__f_commands] )) ||
+_himalaya__f_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya f commands' commands "$@"
+}
+(( $+functions[_himalaya__template__f_commands] )) ||
+_himalaya__template__f_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template f commands' commands "$@"
+}
+(( $+functions[_himalaya__flag_commands] )) ||
+_himalaya__flag_commands() {
+    local commands; commands=(
+        "add:Adds flags to a message" \
+"set:Replaces all message flags" \
+"remove:Removes flags from a message" \
+"help:Prints this message or the help of the given subcommand(s)" \
+    )
+    _describe -t commands 'himalaya flag commands' commands "$@"
+}
+(( $+functions[_flags_commands] )) ||
+_flags_commands() {
+    local commands; commands=(
+        "add:Adds flags to a message" \
+"set:Replaces all message flags" \
+"remove:Removes flags from a message" \
+"help:Prints this message or the help of the given subcommand(s)" \
+    )
+    _describe -t commands 'flags commands' commands "$@"
+}
+(( $+functions[_flg_commands] )) ||
+_flg_commands() {
+    local commands; commands=(
+        "add:Adds flags to a message" \
+"set:Replaces all message flags" \
+"remove:Removes flags from a message" \
+"help:Prints this message or the help of the given subcommand(s)" \
+    )
+    _describe -t commands 'flg commands' commands "$@"
+}
+(( $+functions[_himalaya__forward_commands] )) ||
+_himalaya__forward_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya forward commands' commands "$@"
+}
+(( $+functions[_himalaya__template__forward_commands] )) ||
+_himalaya__template__forward_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template forward commands' commands "$@"
+}
+(( $+functions[_himalaya__fw_commands] )) ||
+_himalaya__fw_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya fw commands' commands "$@"
+}
+(( $+functions[_himalaya__template__fw_commands] )) ||
+_himalaya__template__fw_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template fw commands' commands "$@"
+}
+(( $+functions[_fwd_commands] )) ||
+_fwd_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'fwd commands' commands "$@"
+}
+(( $+functions[_himalaya__fwd_commands] )) ||
+_himalaya__fwd_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya fwd commands' commands "$@"
+}
+(( $+functions[_himalaya__template__fwd_commands] )) ||
+_himalaya__template__fwd_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template fwd commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__help_commands] )) ||
+_himalaya__flag__help_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag help commands' commands "$@"
+}
+(( $+functions[_himalaya__help_commands] )) ||
+_himalaya__help_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya help commands' commands "$@"
+}
+(( $+functions[_himalaya__template__help_commands] )) ||
+_himalaya__template__help_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template help commands' commands "$@"
+}
+(( $+functions[_himalaya__idle_commands] )) ||
+_himalaya__idle_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya idle commands' commands "$@"
+}
+(( $+functions[_idle_commands] )) ||
+_idle_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'idle commands' commands "$@"
+}
+(( $+functions[_himalaya__l_commands] )) ||
+_himalaya__l_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya l commands' commands "$@"
+}
+(( $+functions[_l_commands] )) ||
+_l_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'l commands' commands "$@"
+}
+(( $+functions[_himalaya__list_commands] )) ||
+_himalaya__list_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya list commands' commands "$@"
+}
+(( $+functions[_himalaya__lst_commands] )) ||
+_himalaya__lst_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya lst commands' commands "$@"
+}
+(( $+functions[_lst_commands] )) ||
+_lst_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'lst commands' commands "$@"
+}
+(( $+functions[_himalaya__m_commands] )) ||
+_himalaya__m_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya m commands' commands "$@"
+}
+(( $+functions[_m_commands] )) ||
+_m_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'm commands' commands "$@"
+}
+(( $+functions[_himalaya__mailbox_commands] )) ||
+_himalaya__mailbox_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya mailbox commands' commands "$@"
+}
+(( $+functions[_mailbox_commands] )) ||
+_mailbox_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'mailbox commands' commands "$@"
+}
+(( $+functions[_himalaya__mailboxes_commands] )) ||
+_himalaya__mailboxes_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya mailboxes commands' commands "$@"
+}
+(( $+functions[_himalaya__mb_commands] )) ||
+_himalaya__mb_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya mb commands' commands "$@"
+}
+(( $+functions[_mb_commands] )) ||
+_mb_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'mb commands' commands "$@"
+}
+(( $+functions[_himalaya__mbox_commands] )) ||
+_himalaya__mbox_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya mbox commands' commands "$@"
+}
+(( $+functions[_mbox_commands] )) ||
+_mbox_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'mbox commands' commands "$@"
+}
+(( $+functions[_himalaya__mboxes_commands] )) ||
+_himalaya__mboxes_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya mboxes commands' commands "$@"
+}
+(( $+functions[_mboxes_commands] )) ||
+_mboxes_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'mboxes commands' commands "$@"
+}
+(( $+functions[_himalaya__move_commands] )) ||
+_himalaya__move_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya move commands' commands "$@"
+}
+(( $+functions[_himalaya__mv_commands] )) ||
+_himalaya__mv_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya mv commands' commands "$@"
+}
+(( $+functions[_mv_commands] )) ||
+_mv_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'mv commands' commands "$@"
+}
+(( $+functions[_himalaya__n_commands] )) ||
+_himalaya__n_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya n commands' commands "$@"
+}
+(( $+functions[_himalaya__template__n_commands] )) ||
+_himalaya__template__n_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template n commands' commands "$@"
+}
+(( $+functions[_himalaya__template__new_commands] )) ||
+_himalaya__template__new_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template new commands' commands "$@"
+}
+(( $+functions[_himalaya__notify_commands] )) ||
+_himalaya__notify_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya notify commands' commands "$@"
+}
+(( $+functions[_himalaya__q_commands] )) ||
+_himalaya__q_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya q commands' commands "$@"
+}
+(( $+functions[_q_commands] )) ||
+_q_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'q commands' commands "$@"
+}
+(( $+functions[_himalaya__query_commands] )) ||
+_himalaya__query_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya query commands' commands "$@"
+}
+(( $+functions[_query_commands] )) ||
+_query_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'query commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__r_commands] )) ||
+_himalaya__flag__r_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag r commands' commands "$@"
+}
+(( $+functions[_himalaya__r_commands] )) ||
+_himalaya__r_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya r commands' commands "$@"
+}
+(( $+functions[_himalaya__template__r_commands] )) ||
+_himalaya__template__r_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template r commands' commands "$@"
+}
+(( $+functions[_r_commands] )) ||
+_r_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'r commands' commands "$@"
+}
+(( $+functions[_himalaya__read_commands] )) ||
+_himalaya__read_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya read commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__rem_commands] )) ||
+_himalaya__flag__rem_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag rem commands' commands "$@"
+}
+(( $+functions[_himalaya__rem_commands] )) ||
+_himalaya__rem_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya rem commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__remove_commands] )) ||
+_himalaya__flag__remove_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag remove commands' commands "$@"
+}
+(( $+functions[_himalaya__remove_commands] )) ||
+_himalaya__remove_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya remove commands' commands "$@"
+}
+(( $+functions[_remove_commands] )) ||
+_remove_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'remove commands' commands "$@"
+}
+(( $+functions[_himalaya__rep_commands] )) ||
+_himalaya__rep_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya rep commands' commands "$@"
+}
+(( $+functions[_himalaya__template__rep_commands] )) ||
+_himalaya__template__rep_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template rep commands' commands "$@"
+}
+(( $+functions[_rep_commands] )) ||
+_rep_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'rep commands' commands "$@"
+}
+(( $+functions[_himalaya__reply_commands] )) ||
+_himalaya__reply_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya reply commands' commands "$@"
+}
+(( $+functions[_himalaya__template__reply_commands] )) ||
+_himalaya__template__reply_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya template reply commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__rm_commands] )) ||
+_himalaya__flag__rm_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag rm commands' commands "$@"
+}
+(( $+functions[_himalaya__rm_commands] )) ||
+_himalaya__rm_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya rm commands' commands "$@"
+}
+(( $+functions[_rm_commands] )) ||
+_rm_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'rm commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__s_commands] )) ||
+_himalaya__flag__s_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag s commands' commands "$@"
+}
+(( $+functions[_himalaya__s_commands] )) ||
+_himalaya__s_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya s commands' commands "$@"
+}
+(( $+functions[_s_commands] )) ||
+_s_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 's commands' commands "$@"
+}
+(( $+functions[_himalaya__save_commands] )) ||
+_himalaya__save_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya save commands' commands "$@"
+}
+(( $+functions[_himalaya__search_commands] )) ||
+_himalaya__search_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya search commands' commands "$@"
+}
+(( $+functions[_himalaya__send_commands] )) ||
+_himalaya__send_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya send commands' commands "$@"
+}
+(( $+functions[_himalaya__flag__set_commands] )) ||
+_himalaya__flag__set_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya flag set commands' commands "$@"
+}
+(( $+functions[_himalaya__template_commands] )) ||
+_himalaya__template_commands() {
+    local commands; commands=(
+        "new:Generates a new message template" \
+"reply:Generates a reply message template" \
+"forward:Generates a forward message template" \
+"help:Prints this message or the help of the given subcommand(s)" \
+    )
+    _describe -t commands 'himalaya template commands' commands "$@"
+}
+(( $+functions[_tpl_commands] )) ||
+_tpl_commands() {
+    local commands; commands=(
+        "new:Generates a new message template" \
+"reply:Generates a reply message template" \
+"forward:Generates a forward message template" \
+"help:Prints this message or the help of the given subcommand(s)" \
+    )
+    _describe -t commands 'tpl commands' commands "$@"
+}
+(( $+functions[_himalaya__watch_commands] )) ||
+_himalaya__watch_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya watch commands' commands "$@"
+}
+(( $+functions[_himalaya__write_commands] )) ||
+_himalaya__write_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'himalaya write commands' commands "$@"
+}
+
+_himalaya "$@"
