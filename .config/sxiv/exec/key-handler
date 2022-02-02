@@ -36,6 +36,8 @@ do
 				rm "$file" && notify-send -i "$(realpath "$file")" "$file rimosso dai preferiti" &
 			elif [ -L "$HOME/pics/papes/fav"/"$file" ]; then
 				rm "$HOME/pics/papes/fav"/"$file" && notify-send -i "$(realpath "$file")" "$file rimosso dai preferiti" &
+			elif [ -L "$HOME/pics/papes/fav"/"$(basename "$file")" ]; then
+				rm "$HOME/pics/papes/fav"/"$(basename "$file")" && notify-send -i "$(realpath "$file")" "$file rimosso dai preferiti" &
 			else
 				ln -s "$(realpath "$file")" "$HOME/pics/papes/fav" && notify-send -i "$(realpath "$file")" "$file aggiunto ai preferiti" &
 			fi ;;
