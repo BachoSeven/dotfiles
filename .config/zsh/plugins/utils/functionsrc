@@ -144,8 +144,9 @@ src_update() {
 		git -C "$dir" pull 2>/dev/null || echo "Unable to upgrade."
 	done
 }
-gc() { # Clone and `cd`.
-	git clone $@ && cd $(basename "$1" .git)
+gc() { # Clone and `cd`. Arguments should go *after* the clone URI
+	git clone $@ &&
+		cd "${1##*/}"
 }
 ghc() { # Github clone, personal or otherwise
 	local ghuser
