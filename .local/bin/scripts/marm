@@ -3,7 +3,13 @@
 # to use upon update of ungoogled marmaduke build
 # execute from /opt/ungoogledChromium
 
+sudo rm -rf /opt/ungoogledChromium
+sudo mv ungoogled-chromium* /opt/ungoogledChromium
+cd /opt/ungoogledChromium
+rm chrome-wrapper product_logo_48.png xdg-mime xdg-settings
+rm -rf extensions gen resources
 mv chrome_sandbox chrome-sandbox
 chmod 4755 chrome-sandbox
-sudo -A chown :root chrome-sandbox
+sudo chown root:root chrome-sandbox
 sudo mv chrome chromium
+cd -
