@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # to use upon update of ungoogled marmaduke build
-# execute from /opt/ungoogledChromium
+# launch as `marm PATH/TO/UNGOOGLED_FOLDER`
 
 sudo rm -rf /opt/ungoogledChromium
-sudo mv ungoogled-chromium* /opt/ungoogledChromium
+sudo mv "$1" /opt/ungoogledChromium
 cd /opt/ungoogledChromium
 rm chrome-wrapper product_logo_48.png xdg-mime xdg-settings
 rm -rf extensions gen resources
