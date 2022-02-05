@@ -1,4 +1,4 @@
-version = "0.17.1"
+version = "0.17.2"
 
 package.path = os.getenv("XDG_CONFIG_HOME") .. "/xplr/?/init.lua"
 
