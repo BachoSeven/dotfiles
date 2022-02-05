@@ -109,7 +109,7 @@ ali:	https://www.aliexpress.com/wholesale?&SearchText=%s aliexpress
 ab:	https://www.amazon.it/s/?url=search-alias%3Dstripbooks&field-keywords=%s amazonbooks
 ae:	https://www.amazon.it/s/?url=search-alias%3Delectronics&field-keywords=%s amazonelectronics
 au:	https://askubuntu.com/search?q=%s askubuntu
-aur:	https://aur.archlinux.org/packages.php?K=%s AUR
+aur:  https://aur.archlinux.org/packages?K=%s AUR
 aw:	https://wiki.archlinux.org/index.php/Special:Search/%s archwiki
 ax:	https://arxiv.org/search?query=%s&searchtype=all&source=header arxiv
 bg:	https://it.banggood.com/search/%s.html bangood
