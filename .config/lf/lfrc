@@ -22,7 +22,7 @@ set mouse
 
 # adjust coloumn width to terminal
 %{{
-	w=$(tput cols)
+	w=$COLUMNS
 	if [ $w -le 80 ]; then
 		lf -remote "send $id set ratios 1:2"
 	elif [ $w -le 160 ]; then
