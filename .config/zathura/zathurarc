@@ -88,8 +88,7 @@ set render-loading-fg           "#ebdbb2" # fg
 # Recolor book content's color
 # set recolor-lightcolor          "#282828" # bg
 set recolor-lightcolor		rgba(40,40,40,0.0) # bg(transparent)
-set recolor-darkcolor           "#ebdbb2" # fg
-
+set recolor-darkcolor           "#d4be98" # fg0
 
 # # Base16 Solarized Dark
 # # Author: Ethan Schoonover (modified by aramisgithub)
