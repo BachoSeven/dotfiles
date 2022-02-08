@@ -60,6 +60,7 @@
 	export XCURSOR_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/icons" # Needed for custom cursor
 	export OSHU_HOME="$HOME/stuff/games/osu"
 	export SQLITE_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/sqlite_history"
+	export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 
 ## Various programs settings:
 	export BC_LINE_LENGTH=80
