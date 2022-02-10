@@ -607,10 +607,10 @@ avekbps() {
 	mediainfo --Output=JSON *.$format | grep '"BitRate":' | cut -d: -f2 | sed "s/\"//g;s/,//g;s/ //g" | awk '{ total += $1 } END { print total/(1000*NR) }'
 }
 awkcompose() {
-[ "$#" -lt 1 ] && printf "Usage: awkcompose OUTPUT_NAME [SAMPLE_RATE:-48000]\n" && return 1
-output="awk_$1"
-rate=${2:-48000}
-awk -v rate="$rate" 'function wl() {
+	[ "$#" -lt 1 ] && printf "Usage: awkcompose OUTPUT_NAME [SAMPLE_RATE:-48000]\n" && return 1
+	output="awk_$1"
+	rate=${2:-48000}
+	awk -v rate="$rate" 'function wl() {
 				return (rate/160)*(0.87055^(int(rand()*10)))};
 		BEGIN {
 				srand();
