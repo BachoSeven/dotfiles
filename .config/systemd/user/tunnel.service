@@ -1,0 +1,10 @@
+[Unit]
+Description=SSH reverse tunnel
+
+[Service]
+Restart=always
+RestartSec=5
+ExecStart=/usr/bin/ssh -o ServerAliveInterval=60 -NTD 9999 minnocci@poisson.phc.dm.unipi.it
+
+[Install]
+WantedBy=default.target
