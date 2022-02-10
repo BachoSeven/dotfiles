@@ -604,7 +604,7 @@ colours() {
 avekbps() {
 	[ "$#" -lt 1 ] && printf "No format specified... (i.e. $0 mp3)\n" && return 1
 	format="$1"
-	mediainfo --Output=JSON *.$format | grep '"BitRate":' | cut -d: -f2 | sed "s/\"//g;s/,//g;s/ //g" | awk '{ total += $1 } END { print total/(1000*NR) }'
+	mediainfo --Output=JSON *.$format | grep '"BitRate":' | cut -d: -f2 | sed "s/\"//g;s/,//g;s/ //g" | awk '{ total += $1 } END {print total/(1000*NR)}'
 }
 awkcompose() {
 	[ "$#" -lt 1 ] && printf "Usage: awkcompose OUTPUT_NAME [SAMPLE_RATE:-48000]\n" && return 1
@@ -728,9 +728,7 @@ lps() {
 line() {
 	a="$1"
 	b="${2:-$a}"
-	for i in {$a..$b}; do
-		awk "NR==$i{print;exit}"
-	done
+	awk "NR>=$a && NR<=$b {print}"
 }
 _exists highlight &&
 ccat() {
