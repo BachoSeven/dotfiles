@@ -4,6 +4,7 @@
 [user]
 	name = Francesco Minnocci
 	email = ad17fmin@uwcad.it
+	signingkey = ad17fmin@uwcad.it
 [credential]
 	helper = cache --timeout=7200
 [color]
@@ -20,3 +21,5 @@
 	requireForce = false
 [pull]
 	rebase = false
+[commit]
+	gpgsign = true
