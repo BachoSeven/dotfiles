@@ -5,21 +5,22 @@
 # indirizzo: http://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html
 
 usage() {
-cat << EOF
-Utilizzo: $name [codiceCorso] [anno]
+	_name="$(basename "$0")"
+	cat << EOF
+Utilizzo: ${_name} [codiceCorso] [anno]
 
 Note:
 	- Per scaricare anche i pdf, digita 'pdf=true' prima di chiamare lo script.
 
 Esempi:
 
-	$name AM1 17
+	${_name} AM1 17
 
-	pdf=true $name Precorsi 09
+	pdf=true ${_name} Precorsi 09
 
-	$name AM2 18
+	${_name} AM2 18
 
-	$name IstAM 21
+	${_name} IstAM 21
 
 Bug Noti:
 	- I precorsi del 2008 e 2009 hanno una numerazione diversa,
@@ -88,7 +89,6 @@ main () {
 }
 
 # Esecuzione dello script
-name=$(basename $0)
 p=${pdf:-false}
 [ "$#" -lt 2 ] && usage
 main "$@"

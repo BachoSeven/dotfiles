@@ -15,4 +15,4 @@ main() {
 	fd -e png -e jpg -e jpeg -e gifv -e gif -e tif -e tiff --search-path $topdir/$subdir $opts | shuf $count | sxiv -ba -
 }
 
-main $@
+main "$@"

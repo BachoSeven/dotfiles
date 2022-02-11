@@ -1,17 +1,18 @@
 #!/bin/sh
 
 usage() {
-cat << EOF
+	_name="$(basename "$0")"
+	cat << EOF
 Converts HEX to RGB
 Usage:
 
-	$name rrggbb
-	$name "#rrggbb"
+	${_name} rrggbb
+	${_name} "#rrggbb"
 
 For example:
 
-	$name 282828
-	$name "#282828"
+	${_name} 282828
+	${_name} "#282828"
 
 EOF
 exit 1
@@ -26,7 +27,6 @@ main() {
 }
 
 # Actual script
-name=$(basename $0)
 if [ "$#" -ne 1 ]; then
 	usage
 fi

@@ -19,7 +19,7 @@ main() {
 }
 
 usage() {
-	printf "\nCome utilizzare questo script: $(basename $0) <DOCUMENTO> \n\nAd esempio:\n\n\t$(basename $0) ~/tesi.pdf\n\n"
+	printf "\nCome utilizzare questo script: $(basename $0) <DOCUMENTO> \n\nAd esempio:\n\n\t$(basename "$0") ~/tesi.pdf\n\n"
 }
 
 error() {

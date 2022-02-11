@@ -36,7 +36,7 @@ screendim() {
 
 while getopts ":hi:w:cmt" o; do
 	case "${o}" in
-		h) printf "Usage :\\n'$0'\\n\\t [ -h, -help: Show this message ]\\n\\t [ -i, -input \"path/to/img\" ]\\n\\t [ -w, -wal \"path/to/img\" \"backend\" : use pywal if installed ]\\n\\t [ -c, -center ]\\n\\t [ -m, -maximize: maximize wallpaper ( default format is \"--zoom\" ) ]\\n\\t [ -t, -tile ]\\n" && exit 0 ;;
+		h) printf "Usage: $(basename "$0")\\n\\n\\t [ -h, -help: Show this message ]\\n\\t [ -i, -input \"path/to/img\" ]\\n\\t [ -w, -wal \"path/to/img\" \"backend\" : use pywal if installed ]\\n\\t [ -c, -center ]\\n\\t [ -m, -maximize: maximize wallpaper ( default format is \"--zoom\" ) ]\\n\\t [ -t, -tile ]\\n" && exit 0 ;;
 
 		i)
 			ww -x
