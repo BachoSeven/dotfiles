@@ -1,19 +1,20 @@
 #!/bin/sh
 
 usage() {
-cat << EOF
+	_name="$(basename "$0")"
+	cat << EOF
 Converts RGB to HEX
 Usage:
 
-	$name R G B
-	$name "R G B"
-	$name "(R G B)"
-	$name "(R,G,B)"
+	${_name} R G B
+	${_name} "R G B"
+	${_name} "(R G B)"
+	${_name} "(R,G,B)"
 
 For example:
 
-	$name "(40,40,40)"
-	$name "40 40 40"
+	${_name} "(40,40,40)"
+	${_name} "40 40 40"
 
 EOF
 exit 1
@@ -28,7 +29,6 @@ main() {
 }
 
 # Actual script
-name=$(basename $0)
 if [ "$#" -ne 1 ] && [ "$#" -ne 3 ]; then
 	usage
 fi

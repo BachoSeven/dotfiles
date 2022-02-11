@@ -61,6 +61,7 @@ multiple() {
 }
 
 main() {
+	_name="$(basename "$0")"
 	while getopts ":elmt" o; do
 		case "${o}" in
 			e) # External
@@ -73,11 +74,10 @@ main() {
 				toggle ;;
 			*)
 				printf "Invalid option: -%s\n" "$OPTARG"
-				printf "usage: $name [-e|-m|-l]\n" && exit 1 ;;
+				printf "usage: ${_name} [-e|-m|-l]\n" && exit 1 ;;
 		esac
 	done
 }
 
 # The actual script starts here
-name="$(basename $0)"
 main "$@"
