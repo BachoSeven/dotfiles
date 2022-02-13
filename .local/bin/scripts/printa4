@@ -5,8 +5,7 @@
 #
 #
 # Esempio di utilizzo:
-#						printa4 /percorso/al/Documento.pdf
-#
+#						printa4 /percorso/del/Documento.pdf
 #
 
 main() {
