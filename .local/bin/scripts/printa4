@@ -1,24 +1,29 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Semplice shellscript che permette di stampare un file in una stampante del Dipartimento di Matematica
 # da una qualsiasi shell Unix (Linux, MacOS, BSD...). Funziona anche da remoto!
 #
 #
-# Esempio di utilizzo:
+# Utilizzo: modifica lo script inserendo il tuo username
+#						al posto di "minnocci" nella variabile _user,
+#						e poi esegui lo script così:
+#
 #						printa4 /percorso/del/Documento.pdf
 #
 
+_user="minnocci"
+
 main() {
-	cp $1 /tmp/Temporaneo.pdf
-	scp /tmp/Temporaneo.pdf minnocci@ssh1.dm.unipi.it:/student/home/minnocci/
-	ssh -XY minnocci@ssh1.dm.unipi.it okular /student/home/minnocci/Temporaneo.pdf --print
-	ssh minnocci@ssh1.dm.unipi.it rm /student/home/minnocci/Temporaneo.pdf
-	rm /tmp/Temporaneo.pdf
+	for f in $@; do
+		scp $f ${_user}@ssh1.dm.unipi.it:/student/home/${_user}/printa4-$f
+		ssh -XY ${_user}@ssh1.dm.unipi.it okular /student/home/${_user}/printa4-*.pdf --print
+		ssh ${_user}@ssh1.dm.unipi.it rm /student/home/${_user}/printa4-$f
+	done
 	echo "File temporanei eliminati "
 }
 
 usage() {
-	printf "\nCome utilizzare questo script: $(basename $0) <DOCUMENTO> \n\nAd esempio:\n\n\t$(basename "$0") ~/tesi.pdf\n\n"
+	printf "\nCome utilizzare questo script: $(basename $0) <DOCUMENTO> <...>\n\nAd esempio:\n\n\t$(basename "$0") ~/tesi.pdf\n\n"
 }
 
 error() {
@@ -34,6 +39,7 @@ else
 		usage ;;
 	-*)
 		error "Opzione invalida: $1" ;;
-	*) main $1 ;;
+	*)
+		main $@ ;;
 	esac
 fi
