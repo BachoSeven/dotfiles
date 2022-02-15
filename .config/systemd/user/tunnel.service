@@ -5,6 +5,7 @@ Description=SSH reverse tunnel
 Restart=always
 RestartSec=5
 ExecStart=/usr/bin/ssh -o ServerAliveInterval=60 -NTD 9999 minnocci@poisson.phc.dm.unipi.it
+; ExecStart=/usr/bin/ssh -o ServerAliveInterval=60 -NTD 9999 -J minnocci@poisson.phc.dm.unipi.it -p 2233 minnocci@kolmogorov.phc.dm.unipi.it
 
 [Install]
 WantedBy=default.target
