@@ -725,10 +725,20 @@ lps() {
 		--header-lines=1 --layout=reverse
 }
 ## Efficient way to select a line to print to stdout: https://unix.stackexchange.com/questions/29878/can-i-access-nth-line-number-of-standard-output
-line() {
+lines() {
 	a="$1"
 	b="${2:-$a}"
 	awk "NR>=$a && NR<=$b {print}"
+}
+extract() {
+	# Usage: extract file "opening marker" "closing marker"
+	while IFS=$'\n' read -r line; do
+		[[ $extract && $line != "$3" ]] &&
+			printf '%s\n' "$line"
+
+		[[ $line == "$2" ]] && extract=1
+		[[ $line == "$3" ]] && extract=
+	done < "$1"
 }
 _exists highlight &&
 ccat() {
