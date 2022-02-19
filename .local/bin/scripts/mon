@@ -49,18 +49,18 @@ multiple() {
 		ext="$ext1"
 		## If positioning monitor *to the left of* laptop
 		# xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --left-of $int && miscfixes
-		# If positioning monitor *to the right of* laptop
-		xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --right-of $int && miscfixes
-		## If positioning monitor *above* laptop
-		# xrandr --output $int --auto --pos 0x2160 --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --pos 0x0 && miscfixes
+		## If positioning monitor *to the right of* laptop
+		# xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --right-of $int && miscfixes
+		# If positioning monitor *above* laptop
+		xrandr --output $int --auto --pos 0x2160 --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --pos 0x0 && miscfixes
 	elif grep -q "\bconnected" $hdmi; then
 		ext="$ext2"
 		## If positioning monitor *to the left of* laptop
 		# xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --mode 2560x1440 --left-of $int && miscfixes
-		# If positioning monitor *to the right of* laptop
-		xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --mode 2560x1440 --right-of $int && miscfixes
-		## If positioning monitor *above* laptop
-		# xrandr --output $int --auto --pos 0x1440 --output $ext --rotate ${1:-normal} --primary --mode 2560x1440 --pos 0x0 && miscfixes
+		## If positioning monitor *to the right of* laptop
+		# xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --mode 2560x1440 --right-of $int && miscfixes
+		# If positioning monitor *above* laptop
+		xrandr --output $int --auto --pos 0x1440 --output $ext --rotate ${1:-normal} --primary --mode 2560x1440 --pos 0x0 && miscfixes
 	fi
 }
 
