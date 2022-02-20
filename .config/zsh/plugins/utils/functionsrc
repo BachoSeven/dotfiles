@@ -600,6 +600,10 @@ colours() {
 }
 
 ## Audio
+_exists sox &&
+spek() {
+	sox $1 -n spectrogram
+}
 # Calculate average bitrate of files in current folder
 avekbps() {
 	[ "$#" -lt 1 ] && printf "No format specified... (i.e. $0 mp3)\n" && return 1
