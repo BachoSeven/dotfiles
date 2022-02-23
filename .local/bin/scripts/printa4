@@ -16,7 +16,7 @@ _user="minnocci"
 main() {
 	for f in $@; do
 		scp $f ${_user}@ssh1.dm.unipi.it:/student/home/${_user}/printa4-$f
-		ssh -XY ${_user}@ssh1.dm.unipi.it okular /student/home/${_user}/printa4-*.pdf --print
+		ssh -XY ${_user}@ssh1.dm.unipi.it okular /student/home/${_user}/printa4-$f --print
 		ssh ${_user}@ssh1.dm.unipi.it rm /student/home/${_user}/printa4-$f
 	done
 	echo "File temporanei eliminati "
