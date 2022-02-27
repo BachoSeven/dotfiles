@@ -59,6 +59,7 @@ fi
 if [ -n "$cmd" ]; then
 		# remember which commands have been run
 		echo "$cmd" >> $freq
+
 		cmdexec=$(alias | grep "${cmd/;/}=" | cut -f2 -d "'" | tr -d "'")
 		if [ -z "$cmdexec" ]; then
 				cmdexec=${cmd/;/}
