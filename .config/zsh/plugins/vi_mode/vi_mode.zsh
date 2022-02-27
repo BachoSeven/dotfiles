@@ -121,7 +121,7 @@
 # Classic movements
 	bindkey -M viins "^a" beginning-of-line
 	bindkey -M viins "^e" end-of-line
-	bindkey -M viins '^u' kill-whole-line
+	bindkey -M viins '^u' vi-kill-line
 	bindkey -M viins '^b' backward-char
 	bindkey -M viins '^f' forward-char
 
