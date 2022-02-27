@@ -88,7 +88,7 @@
 	alias P='patch -p1 <'
 	alias nf='neofetch'
 	alias pf='pfetch'
-	alias pf='pulsemixer'
+	alias pm='pulsemixer'
 	alias sys='systemctl'
 	alias sysu='systemctl --user'
 	alias jctl='journalctl -p3 --pager-end'
