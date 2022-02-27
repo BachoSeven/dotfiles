@@ -15,20 +15,28 @@
     "disable_chat_themes": false,
     "disable_tray_counter": true,
     "disable_up_edit": false,
+    "emoji_sidebar": true,
+    "emoji_sidebar_right_click": false,
     "ffmpeg_multithread": true,
     "ffmpeg_thread_count": 0,
     "file_dialog_type": 1,
     "folders": {
         "count_unmuted_only": true,
         "default": {
+            "1013218280": 0
         },
         "hide_all_chats": true,
         "hide_edit_button": true,
         "hide_names": true,
         "local": {
+            "1013218280": [
+            ]
         }
     },
     "fonts": {
+        "main": "",
+        "monospaced": "",
+        "semibold": "",
         "semibold_is_bold": true,
         "size": 0,
         "use_original_metrics": false,
@@ -40,12 +48,9 @@
     "forward_on_click": true,
     "forward_remember_mode": true,
     "forward_retain_selection": false,
-    "hover_emoji_panel": false,
     "monospace_large_bubbles": false,
-    "native_decorations": false,
     "net_speed_boost": 0,
     "profile_top_mute": true,
-    "qt_scale": false,
     "recent_stickers_limit": 25,
     "remember_compress_images": true,
     "replaces": [
@@ -58,5 +63,6 @@
     "sticker_scale_both": true,
     "telegram_sites_autologin": true,
     "use_telegram_panel_icon": false,
-    "userpic_corner_type": 2
+    "userpic_corner_type": 2,
+    "view_profile_on_top": false
 }
