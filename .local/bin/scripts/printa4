@@ -23,11 +23,11 @@ main() {
 }
 
 usage() {
-	printf "\nCome utilizzare questo script: $(basename $0) <DOCUMENTO> <...>\n\nAd esempio:\n\n\t$(basename "$0") ~/tesi.pdf\n\n"
+	printf "\nScript che consente di stampare in Aula 4\n\nUtilizzo: $(basename $0) <DOCUMENTO> <...>\n\nAd esempio:\n\n\t$(basename "$0") ~/GAAL.pdf\n\nNOTA: La variabile del nome utente usato per stampare va modificato all'interno dello script\n\n"
 }
 
 error() {
-	printf "$@\n\n" 1>&2
+	printf "$@\n" 1>&2
 	usage
 }
 
