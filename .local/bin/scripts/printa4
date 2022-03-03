@@ -3,27 +3,58 @@
 # Semplice shellscript che permette di stampare un file in una stampante del Dipartimento di Matematica
 # da una qualsiasi shell Unix (Linux, MacOS, BSD...). Funziona anche da remoto!
 #
-#
 # Utilizzo: modifica lo script inserendo il tuo username
-#						al posto di "minnocci" nella variabile _user,
-#						e poi esegui lo script così:
-#
-#						printa4 /percorso/del/Documento.pdf
-#
+# al posto di "minnocci" nella variabile _user.
+# È consigliato aggiungere la propria chiave ssh nella
+# macchina `ssh1` tramite il comando `ssh-copy-id`, in
+# modo da non dover inserire la password ogni volta.
 
+## CAMBIA QUESTO
 _user="minnocci"
 
 main() {
-	for f in $@; do
-		scp $f ${_user}@ssh1.dm.unipi.it:/student/home/${_user}/printa4-$f
-		ssh -XY ${_user}@ssh1.dm.unipi.it okular /student/home/${_user}/printa4-$f --print
-		ssh ${_user}@ssh1.dm.unipi.it rm /student/home/${_user}/printa4-$f
-	done
-	echo "File temporanei eliminati "
+	if $NO_CLI; then
+		for f in "$@"; do
+			scp "$f" ${_user}@ssh1.dm.unipi.it:/home/${_user}/printa4-"'$(basename "$f")'"
+			ssh -XY ${_user}@ssh1.dm.unipi.it okular /home/${_user}/printa4-"'$(basename "$f")'" --print
+			ssh ${_user}@ssh1.dm.unipi.it rm /home/${_user}/printa4-"'$(basename "$f")'"
+		done
+	else
+		options="$1"; shift
+		for f in "$@"; do
+			scp "$f" ${_user}@ssh1.dm.unipi.it:/home/${_user}/printa4-"'$(basename "$f")'"
+			ssh ${_user}@ssh1.dm.unipi.it lp $options /home/${_user}/printa4-"'$(basename "$f")'"
+			ssh ${_user}@ssh1.dm.unipi.it rm /home/${_user}/printa4-"'$(basename "$f")'"
+		done
+	fi
 }
 
 usage() {
-	printf "\nScript che consente di stampare in Aula 4\n\nUtilizzo: $(basename $0) <DOCUMENTO> <...>\n\nAd esempio:\n\n\t$(basename "$0") ~/GAAL.pdf\n\nNOTA: La variabile del nome utente usato per stampare va modificato all'interno dello script\n\n"
+	cat <<EOF
+Script che consente di stampare in Aula 4
+
+Utilizzo: $(basename $0) <DOCUMENTO> <...>
+
+Ad esempio:
+
+	$(basename "$0") ~/GAAL.pdf
+
+	$(basename "$0") alg2.pdf commRingTheory.pdf
+
+> NOTA: La variabile del nome utente usato per stampare va modificato all'interno dello script
+
+Per stampare tramite "lp" invece che da interfaccia grafica tramite "okular", è
+possibile passare l'opzione "-c" o "--cli", seguita dagli argomenti di stampa
+per "lp" fra virgolette, e passando come ultimo argomento i file PDF da stampare:
+
+	$(basename "$0") --cli "-o number-up=2 -o sides=two-sided-short-edge" MR-impaginato.pdf
+
+(funziona pure con più file ma usa le stesse opzioni per ciascun file)
+
+> NOTA: L'esempio qua sopra usa le opzioni necessarie per poter stampare un file
+> creato con lo script "impagina", per rilegare le dispense a libretto in A5.
+
+EOF
 }
 
 error() {
@@ -32,14 +63,16 @@ error() {
 }
 
 if [ -z "$1" ] ; then
-	error "Non hai specificato nessun file..."
+	error "Non hai specificato nessun file...\n"
 else
-	case $1 in
+	case "$1" in
 	-h|--help)
 		usage ;;
+	-c|--cli)
+		NO_CLI=false; shift; main "$@" ;;
 	-*)
 		error "Opzione invalida: $1" ;;
 	*)
-		main $@ ;;
+		main "$@" ;;
 	esac
 fi
