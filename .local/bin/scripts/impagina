@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Initialize variables
+input="$1"
+inputMul4="/tmp/${input%.pdf}-Mul4.pdf"
+outputImpaginato="${input%.pdf}-Impaginato.pdf"
+empty="/tmp/empty.pdf"
+n="$(pdftk "$input" dump_data | grep NumberOfPages | cut -d' ' -f2)"
+
+# Add empty pages
+echo .bp | groff -T pdf > "$empty"
+
+pdftk F=$input E="$empty" cat F1-$n $(for x in $(seq 1 $((4-n%4))); do printf 'E1 '; done) output $inputMul4
+
+# Generate alternating page ranges
+n=$((n+(4-n%4)))
+range=
+k=1
+while [ "$k" -lt $((n/2)) ]; do
+	range="$range$k $((n/2+k)) $((n/2+k+1)) $((k+1)) "
+	k=$((k+2))
+done
+
+# Output final pdf
+pdftk $inputMul4 cat $range output $outputImpaginato
+
+rm "$empty" $inputMul4

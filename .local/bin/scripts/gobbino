@@ -10,7 +10,7 @@ usage() {
 Utilizzo: ${_name} [codiceCorso] [anno]
 
 Note:
-	- Per scaricare anche i pdf, digita 'pdf=true' prima di chiamare lo script.
+	Per scaricare anche i pdf, digita 'pdf=true' prima di chiamare lo script.
 
 Esempi:
 
@@ -21,6 +21,19 @@ Esempi:
 	${_name} AM2 18
 
 	${_name} IstAM 21
+
+Lista di Corsi implementati:
+	PCM 07
+	AM1 17, AM1 15
+	AM 13, AM 12, AM 11, AM 10, AM 09
+	AM2 20, AM2 18, AM2 16, AM2 14
+	C 07
+	T 08, T 07
+	AL 19, AL 15, AL 14
+	SA 13, SA 11, SA 10, SA 15, SA 14, SA 12
+	IstAM 21, IstAM 20, IstAM 19
+	CdV 18, CdV 17, CdV 16
+	Freiberg 17
 
 Bug Noti:
 	- I precorsi del 2008 e 2009 hanno una numerazione diversa,
