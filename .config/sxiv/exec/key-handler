@@ -50,7 +50,7 @@ do
 		d)
 			[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
 		D)
-			dragon-drag-and-drop -x "$file" ;;
+			dragon-drop -x "$file" ;;
 		g)
 			ifinstalled gimp && setsid -f gimp "$file" ;;
 		i)

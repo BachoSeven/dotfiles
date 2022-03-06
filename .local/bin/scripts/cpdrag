@@ -1,6 +1,6 @@
 #!/bin/sh
 
-files=$(dragon-drag-and-drop -t -x)
+files=$(dragon-drop -t -x)
 
 for file in $files
 do

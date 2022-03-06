@@ -2,7 +2,7 @@
 
 # Provides the ability to download a file by dropping it into a window
 
-url=$(dragon-drag-and-drop -t -x)
+url=$(dragon-drop -t -x)
 
 if [ -n "$url" ]; then
   printf "File Name: "
