@@ -266,7 +266,7 @@ cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 cmd touch $touch "$(echo $* | tr ' ' '\ ')"
 
 # Dragon cmds
-cmd dragon %dragon-drop -a -x -A $fx
+cmd dragon %dragon-drop -a -x $fx
 cmd dragon-stay %dragon-drop -a $fx
 cmd dragon-individual %dragon-drop $fx
 cmd cpdrag %cpdrag

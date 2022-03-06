@@ -54,6 +54,14 @@ per "lp" fra virgolette, e passando come ultimo argomento i file PDF da stampare
 > NOTA: L'esempio qua sopra usa le opzioni necessarie per poter stampare un file
 > creato con lo script "impagina", per rilegare le dispense a libretto in A5.
 
+Altre opzioni utili da passare ad "lp":
+	-d destination               stampante da usare ("lpstat -d -p" mostra le stampanti disponibili)
+	-n num-copies                numero di copie da stampare
+	-P page-list                 per specificare le pagine da stampare, ad esempio "1,4-7,15"
+	-o media=SIZE                dove SIZE può essere ad esempio "a4", "letter" o "legal"
+	-o number-up=NUM             per stampare NUM pagine per foglio
+	-o orientation-requested=5   per stampare in orizzontale (landscape)
+	-o sides=two-sided-long-edge per stampare in fronte-retro ("-o sides=two-sided-short-edge" per landscape)
 EOF
 }
 
