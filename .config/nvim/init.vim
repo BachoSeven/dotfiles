@@ -239,7 +239,7 @@
 	so $XDG_CONFIG_HOME/nvim/plug/vim-plug.vim
 " Icons
 	so $XDG_CONFIG_HOME/nvim/plug/mpi.vim
-" Lua configurations
+" Plugins
 	so $XDG_CONFIG_HOME/nvim/plug/postplug.vim
 	so $XDG_CONFIG_HOME/nvim/plug/postplug.lua
 " Custom plugins

@@ -90,5 +90,7 @@ cal plug#begin(g:plugin_location)
 	Plug 'McSinyx/vim-octave'
 	Plug 'jceb/vim-orgmode'
 
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 cal plug#end()
 " }}}
