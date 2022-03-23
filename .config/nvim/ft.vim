@@ -13,7 +13,7 @@ aug init-md
 aug END
 
 " Set some general options
-	au FileType sh,zsh,octave,c,cpp se shiftwidth=2 tabstop=2 softtabstop=2
+	au FileType sh,zsh,octave,c,cpp,go se shiftwidth=2 tabstop=2 softtabstop=2
 	au FileType asm se shiftwidth=4 tabstop=4 softtabstop=4
 
 " enable accessing GNU Octave documentation from vim using GNU TexInfo (lol)
