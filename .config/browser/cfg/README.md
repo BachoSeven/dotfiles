@@ -57,7 +57,7 @@
 ```
 
 ## Bookmarks
-- Import from file.
+- Floccus, see below
 
 ## Passwords manager
 - [keepassxc+extension(backup)] {Ctrl+Shift+k}
@@ -70,18 +70,22 @@
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
 > Install sci-hub plugin manually (crx is in this repo)
 
-### installed extensions ids string (a part from ntp and sci-hub)
+### installed extensions ids string (a part from ntp)
 ```
 Stylus (beta)|apmmpaebfobifelkijhaljbmpcgbjbdo
 uBlock Origin|cjpalhdlnbpafiamejdnhcphjbkeiagm
 Vimium Helper|cmlapekgcdddhkfcobppgamdgjbkoffm
 I don't care about cookies|fihnjjcciajhdojfnbdddfaoknhalnja
+floccus bookmarks sync|fnaicdffflnofjppbagibeoednhnbjhg
+Web Scrobbler|hhinaapppaileiechjoiifaancjggfjm
 ClearURLs|lckanjgmijmafbedllaakclkaicjfmnk
 Linux Scroll Speed Fix|mlboohjioameadaedfjcpemcaangkkbp
 KeePassXC-Browser|oboonakemofpalcgghocfoadofidjkkk
 Chromium Web Store|ocaahdebbfolfmndjeplogmgcagdmblk|https://raw.githubusercontent.com/NeverDecaf/chromium-web-store/master/updates.xml
 Redirector|ocgpenflpmgnfapjedencafcfakcekcd
 Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
+Refined Prime Video|pieemlagbhnombolehnjdoaoojpphedd
+xBrowserSync|lcbjdhceifofjlpecfpeimnnphbcjgnc
 ```
 
 ### Utils
@@ -92,7 +96,8 @@ Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
 - linux speed scroll fix: (set speed to 1.66)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
 - vimium_helper(disable on youtube, github)
-- stylus(beta)[backup,alt+shift+s]
+- stylus(beta)[WebDAV,alt+shift+s]
+- floccus [WebDAV,alt+space]
 - Redirector[alt+shift+r]
 
 ### Privacy-focused
