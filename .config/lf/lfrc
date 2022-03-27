@@ -28,7 +28,7 @@ set mouse
 	elif [ $w -le 160 ]; then
 		lf -remote "send $id set ratios 1:2:3"
 	else
-		lf -remote "send $id set ratios 1:2:3:5"
+		lf -remote "send $id set ratios 1:2:4:5"
 	fi
 }}
 
