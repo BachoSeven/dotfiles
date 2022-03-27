@@ -973,7 +973,7 @@ wgetext() {
 # Games
 play() {
 	local p="$HOME/stuff/games"
-	local sel=$(fd -t f -t l start.sh "$p" | cut -d/ -f6 | fzf | head)
+	local sel=$(fd -t f -t l start\\.sh "$p" | cut -d/ -f6 | fzf | head)
 	if [ -n "$sel" ]; then
 		if [ "$sel" = "Celeste" ] || [ "$sel" = "Hollow Knight" ]; then
 			MANGOHUD_DLSYM=1 mangohud "$p"/"$sel"/start.sh
