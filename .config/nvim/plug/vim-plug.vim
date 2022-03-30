@@ -53,17 +53,6 @@ cal plug#begin(g:plugin_location)
 "" Markdown Table of Contents
 	Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown', 'vim-plug'] }
 
-" Lsp
-	Plug 'neovim/nvim-lspconfig'
-" completion-nvim
-	Plug 'hrsh7th/nvim-compe'
-" Fuzzy lsp integration
-	Plug 'ojroques/nvim-lspfuzzy'
-
-" Vimtex
-	Plug 'lervag/vimtex', { 'for': 'tex' }
-	Plug 'sirver/ultisnips'
-
 " Various filetypes support
 	Plug 'Konfekt/vim-office'
 	Plug 'HiPhish/info.vim'
@@ -72,6 +61,28 @@ cal plug#begin(g:plugin_location)
 " Html
 	Plug 'mattn/emmet-vim'
 
+" F#
+	Plug 'ionide/Ionide-vim'
+
+" Go
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Lsp
+	Plug 'neovim/nvim-lspconfig'
+"	Neovim completion
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
+" Fuzzy lsp integration
+	Plug 'ojroques/nvim-lspfuzzy'
+
+" Vimtex
+	Plug 'lervag/vimtex', { 'for': 'tex' }
+	Plug 'sirver/ultisnips'
+" nvim-cmp integration
+	Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Expand vim's % motion beyond just brackets and quotes
 	Plug 'andymass/vim-matchup'
 
@@ -89,8 +100,6 @@ cal plug#begin(g:plugin_location)
 	Plug 'VebbNix/lf-vim', { 'as': 'lf-syntax' }
 	Plug 'McSinyx/vim-octave'
 	Plug 'jceb/vim-orgmode'
-
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 cal plug#end()
 " }}}

@@ -3,14 +3,18 @@ local map = function(mode, key, result)
 	vim.api.nvim_buf_set_keymap(0, mode, key, "<cmd>lua " .. result .. "<CR>", {noremap = true, silent = true})
 end
 
+
 -- LSP
 -- Aliases
-local lsp = require 'lspconfig'
+local lsp = require'lspconfig'
 
 -- Custom attach function
-local custom_lsp_attach = function(client)
+local custom_lsp_attach = function(client,bufnr)
 	-- Fuzzy integration
-	require('lspfuzzy').setup {}
+	require'lspfuzzy'.setup {}
+
+	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+	buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 	-- keybindings
 	map('n','K','vim.lsp.buf.hover()')
@@ -25,38 +29,82 @@ local custom_lsp_attach = function(client)
 end
 
 -- Completion
-require'compe'.setup {
-	enabled = true,
-	autocomplete = true,
-	debug = false,
-	min_length = 1,
-	preselect = 'enable',
-	throttle_time = 80,
-	source_timeout = 200,
-	incomplete_delay = 400,
-	max_abbr_width = 100,
-	max_kind_width = 100,
-	max_menu_width = 100,
-	documentation = true,
-	source = {
-		omni = {
-			filetypes = {'tex'},
-		},
-		ultisnips = {
-			filetypes = {'tex','c','cpp','markdown','text','sh','zsh','snippets','octave','conf'},
-		},
-		path = true,
-		buffer = true,
-		nvim_lsp = true,
+-- require'compe'.setup {
+	-- enabled = true,
+	-- autocomplete = true,
+	-- debug = false,
+	-- min_length = 1,
+	-- preselect = 'enable',
+	-- throttle_time = 80,
+	-- source_timeout = 200,
+	-- incomplete_delay = 400,
+	-- max_abbr_width = 100,
+	-- max_kind_width = 100,
+	-- max_menu_width = 100,
+	-- documentation = true,
+	-- source = {
+		-- omni = {
+			-- filetypes = {'tex'},
+		-- },
+		-- ultisnips = {
+			-- filetypes = {'tex','c','cpp','markdown','text','sh','zsh','snippets','octave','conf'},
+		-- },
+		-- path = true,
+		-- buffer = true,
+		-- nvim_lsp = true,
+	-- },
+-- }
+
+local cmp = require'cmp'
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			vim.fn["UltiSnips#Anon"](args.body)
+		end,
 	},
-}
+	mapping = {
+		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+		['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+		['<C-e>'] = cmp.mapping({
+			i = cmp.mapping.abort(),
+			c = cmp.mapping.close(),
+		}),
+		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+	},
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'ultisnips' },
+	}, {
+		{ name = 'buffer' },
+	})
+})
 
--- Enable lsp snippets for nvim-compe
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+cmp.setup.cmdline('/', {
+	sources = {
+		{ name = 'buffer' }
+	}
+})
 
+cmp.setup.cmdline(':', {
+	sources = cmp.config.sources({
+		{ name = 'path' }
+	}, {
+		{ name = 'cmdline' }
+	})
+})
+
+-- Enable lsp snippets for completions
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Servers
+local ionide=require'ionide'
+ionide.setup{
+	autostart = true,
+	on_attach = custom_lsp_attach,
+	capabilities = capabilities
+}
 lsp.bashls.setup{
 	cmd={"bash-language-server", "start"},
 	cmd_env={GLOB_PATTERN="*@(.sh|.inc|.bash|.command)"},
@@ -69,7 +117,7 @@ lsp.vimls.setup{
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.texlab.setup {
+lsp.texlab.setup{
 	settings = {
 		latex = {
 			forwardSearch = {
@@ -77,7 +125,7 @@ lsp.texlab.setup {
 				args = { "%p" },
 				onSave = true
 			},
-			lint = { -- pretty useful
+			lint = {
 				onChange = true,
 				onSave = true
 			}

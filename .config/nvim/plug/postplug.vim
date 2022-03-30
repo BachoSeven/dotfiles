@@ -135,7 +135,7 @@
 		au!
 		au User VimtexEventQuit call OnQuit()
 	aug END
-" fzf integration for vimtex
+	" FZF integration for VimTeX
 	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<CR>
 
 " UltiSnips
@@ -146,12 +146,14 @@
 	nn <leader>se :UltiSnipsEdit<CR>
 	let g:UltiSnipsEditSplit="vertical"
 
-" Nvim-compe
-	ino <silent><expr> <C-Space> compe#complete()
-	ino <silent><expr> <CR>      compe#confirm('<CR>')
-	ino <silent><expr> <C-e>     compe#close('<C-e>')
-	ino <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-	ino <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+" F#
+" Required: to be used with nvim-cmp.
+	let g:fsharp#lsp_auto_setup = 0
+	let g:fsharp#fsautocomplete_command =
+				\ [ 'dotnet',
+				\   'fsautocomplete',
+				\   '--background-service-enabled'
+				\ ]
 
 " UndoTree
 	let g:undotree_WindowLayout = 3
