@@ -59,15 +59,11 @@
 "		 +--------------+
 "
 " Clipboard utilities
-""" Standard method to interface with the system clipboard
-	" se clipboard=unnamed,unnamedplus
-" "" Unlink system clipboard from vim's paste buffer
-	" nn <leader>U :se clipboard=<CR>
-" "" Don't copy in my system clipboard when I use these
-	" no c "_c
-	" no x "_x
-	" no s "_s
-""" Alternative method
+"" Don't fill the unnamed register with these
+	no c "_c
+	no x "_x
+	no s "_s
+"" Interface with the system clipboard
 	fu! X11Copy()
 			silent %w !setsid xclip -r -sel c
 	endfu
@@ -84,22 +80,10 @@
 	vmap <Leader>x "xy:call X11CopyRegister('x')<CR>
 	nmap <Leader>p :call X11PasteClipboard()<CR>
 	nmap <Leader>P :call X11PastePrimary()<CR>
-
-" Printing from Vim is complicated due to UTF-8. The author of the PS
-" driver explained it here:
-" https://web.archive.org/web/20200814175948/http://vim.1045645.n5.nabble.com/Printing-with-utf-8-characters-on-Windows-td1193441.html
-" So, just use plain old 'lp' as a workaround.
-	fun! Hardcopy()
-			" CUPS documentation says about '-o page-*':
-			" The value argument is the margin in points; each point is 1/72
-			" inch or 0.35mm.
-			" http://www.cups.org/documentation.php/doc-1.7/options.html
-			" I want a margin of about 1.8cm.
-			exe "!lp -o media=A4 -o page-left=50 -o page-right=50"
-					\" -o page-top=50 -o page-bottom=50 -o prettyprint"
-					\(&pdev != "" ? " -d " . &pdev : "") . " " . expand("%")
-	endfun
-	command! Hardcopy :call Hardcopy()
+" "" Old alternative
+	" se clipboard=unnamed,unnamedplus
+" "" Unlink system clipboard from vim's paste buffer
+	" nn <leader>U :se clipboard=<CR>
 
 " Fix syntax higlighting on the fly (https://vim.fandom.com/wiki/Fix_syntax_highlighting)
 	nn <leader>sy :syntax sync fromstart<CR>
@@ -109,7 +93,6 @@
 	nn <silent> <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 " Toggle search highlight
 	nn <silent> <esc><esc> :let v:hlsearch=!v:hlsearch<CR>
-
 
 " Edit vimrc/zshrc and load vimrc bindings
 	nn <leader>ev :vsp $XDG_CONFIG_HOME/nvim/init.vim<CR>
@@ -165,14 +148,14 @@
 	map <c-t>h :tabp<CR>
 	map <c-t>l :tabn<CR>
 	map <c-t>n :tabnew<CR>
-" "" Remapping for the optimistic typist
-" " add Ctrl or Shift for Backspace
-	" ino <Backspace> <C-w>
-" " Arrows behave like Ctrl+arrows, and Shift+arrows goes to the end of whole words.
-	" ino <Right> <esc>ea
-	" ino <Left> <esc>gea
-	" ino <S-Right> <esc>Ea
-	" ino <S-Left> <esc>gEa
+"" Remapping for the optimistic typist
+" add Ctrl or Shift for Backspace
+	ino <Backspace> <C-w>
+" Arrows behave like Ctrl+arrows, and Shift+arrows goes to the end of whole words.
+	ino <Right> <esc>ea
+	ino <Left> <esc>gea
+	ino <S-Right> <esc>Ea
+	ino <S-Left> <esc>gEa
 
 " Perform dot commands over visual blocks:
 	vn . :normal .<CR>
