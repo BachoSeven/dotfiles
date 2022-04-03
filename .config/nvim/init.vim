@@ -240,8 +240,10 @@
 " Icons
 	so $XDG_CONFIG_HOME/nvim/plug/mpi.vim
 " Plugins
-	so $XDG_CONFIG_HOME/nvim/plug/postplug.vim
-	so $XDG_CONFIG_HOME/nvim/plug/postplug.lua
+	if !exists('g:vscode')
+		so $XDG_CONFIG_HOME/nvim/plug/postplug.vim
+		so $XDG_CONFIG_HOME/nvim/plug/postplug.lua
+	endif
 " Custom plugins
 	so $XDG_CONFIG_HOME/nvim/plug/faccina.vim
 
