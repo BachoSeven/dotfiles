@@ -3,7 +3,6 @@ local map = function(mode, key, result)
 	vim.api.nvim_buf_set_keymap(0, mode, key, "<cmd>lua " .. result .. "<CR>", {noremap = true, silent = true})
 end
 
-
 -- LSP
 -- Aliases
 local lsp = require'lspconfig'
