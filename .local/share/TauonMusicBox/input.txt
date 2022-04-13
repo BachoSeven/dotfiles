@@ -117,3 +117,8 @@ shift-up Up Shift
 shift-down Down Shift
 vol-up Up Ctrl
 vol-down Down Ctrl
+
+shift-up Up Shift
+shift-down Down Shift
+vol-up Up Ctrl
+vol-down Down Ctrl
