@@ -734,8 +734,8 @@ lines() {
 	b="${2:-$a}"
 	awk "NR>=$a && NR<=$b {print}"
 }
-extract() {
-	# Usage: extract file "opening marker" "closing marker"
+extractFrom() {
+	# Usage: extractFrom file "opening marker" "closing marker"
 	while IFS=$'\n' read -r line; do
 		[[ $extract && $line != "$3" ]] &&
 			printf '%s\n' "$line"
