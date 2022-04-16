@@ -15,16 +15,16 @@ _user="minnocci"
 main() {
 	if $NO_CLI; then
 		for f in "$@"; do
-			scp "$f" ${_user}@ssh1.dm.unipi.it:/home/${_user}/printa4-"'$(basename "$f")'"
-			ssh -XY ${_user}@ssh1.dm.unipi.it okular /home/${_user}/printa4-"'$(basename "$f")'" --print
-			ssh ${_user}@ssh1.dm.unipi.it rm /home/${_user}/printa4-"'$(basename "$f")'"
+			scp "$f" ${_user}@ssh1.dm.unipi.it:/home/${_user}/printa4-"$(basename "$f")"
+			ssh -XY ${_user}@ssh1.dm.unipi.it okular /home/${_user}/printa4-"$(basename "$f")" --print
+			ssh ${_user}@ssh1.dm.unipi.it rm /home/${_user}/printa4-"$(basename "$f")"
 		done
 	else
 		options="$1"; shift
 		for f in "$@"; do
-			scp "$f" ${_user}@ssh1.dm.unipi.it:/home/${_user}/printa4-"'$(basename "$f")'"
-			ssh ${_user}@ssh1.dm.unipi.it lp $options /home/${_user}/printa4-"'$(basename "$f")'"
-			ssh ${_user}@ssh1.dm.unipi.it rm /home/${_user}/printa4-"'$(basename "$f")'"
+			scp "$f" ${_user}@ssh1.dm.unipi.it:/home/${_user}/printa4-"$(basename "$f")"
+			ssh ${_user}@ssh1.dm.unipi.it lp $options /home/${_user}/printa4-"$(basename "$f")"
+			ssh ${_user}@ssh1.dm.unipi.it rm /home/${_user}/printa4-"$(basename "$f")"
 		done
 	fi
 }
