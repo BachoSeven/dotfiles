@@ -5,7 +5,7 @@ if ! pidof chromium vieb spotify teams-insiders >/dev/null 2>&1 ; then
 else
 	rm -rf ~/.pki ~/.cache/chromium ~/Downloads
 
-	xdotool search --name "is sharing your screen" \
+	xdotool search --name "is sharing" \
 		| while read -r wid; do
 		if xwininfo -id "$wid" >/dev/null 2>&1; then
 			xdotool windowclose "$wid"
