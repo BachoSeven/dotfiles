@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if ! pidof chromium vieb spotify teams-insiders >/dev/null 2>&1 ; then
+if ! pidof chromium vieb spotify teams-insiders codium >/dev/null 2>&1 ; then
 	exit 0
 else
-	rm -rf ~/.pki ~/.cache/chromium ~/Downloads
+	rm -rf ~/.pki ~/.cache/chromium ~/Downloads ~/.vscode-oss
 
 	xdotool search --name "is sharing" \
 		| while read -r wid; do

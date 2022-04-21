@@ -149,6 +149,7 @@
 	alias za='tabbed -c -r 2 zathura -e id'
 	alias zarc='nvim $XDG_CONFIG_HOME/zathura/zathurarc'
 	alias bash='bash --init-file $XDG_CONFIG_HOME/bash/bashrc -i'
+	alias cod='codium --extensions-dir $XDG_DATA_HOME/vscode-extensions'
 	alias xreload='xrdb $XDG_CONFIG_HOME/X11/Xresources'
 	alias preload='source $ZDOTDIR/.zprofile'
 	alias pipes='pipes -rR'
