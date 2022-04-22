@@ -7,51 +7,53 @@
 - add italian as spellchecking language (and enable spell check)
 - block notifications globally from "Site settings"(!)
 - setup search engines: Searx as default, add ddg, and keep nosearch; use just Tab as shortcut.
-- chrome://settings/content/pdfDocuments: download instead of horrible pdf viewer.
 - startup: continue where you left off
 
 ## Cli flags [now in chromium-flags.conf]
 ``` sh
-# Hardware acceleration
---ignore-gpu-blocklist
---enable-gpu-rasterization
---enable-zero-copy
---use-gl=desktop
---disable-gpu-driver-bug-workarounds
+# startup
+--class="Chromium" # this is for picom
+--no-default-browser-check
+--disk-cache-dir=/run/user/1000/chromium-cache
+# --proxy-server="socks5://localhost:9999"
+# --proxy-bypass-list="192.168.1.*"
 
-# Appearance
+# appearance
 --force-dark-mode
 --force-device-scale-factor=1.1
 --disable-dinosaur-easter-egg
 --disable-top-sites # on ntp
+--smooth-scrolling
 
-# Security
---enable-strict-mixed-content-checking # Blocks all insecure requests from secure contexts (http requests from an http site)
---no-pings # Disables link tracking via ping attribute
-
-# Miscellaneous
---no-default-browser-check
+# security
+--enable-strict-mixed-content-checking # blocks all insecure requests from secure contexts (http requests from an http site)
+--no-pings # disables link tracking via ping attribute
 
 # ungoogled flags
-## Aesthetic options
---enable-stacked-tab-strip # This is comfy for enormous amounts of tabs
---show-avatar-button=never # Unclutter chromium UI
---bookmark-bar-ntp=never # Bookmarks on about:newtab,new-tab-page(I don't use the latter)
-## Fingerprinting
+## aesthetic options
+--enable-stacked-tab-strip # this is comfy for enormous amounts of tabs
+--show-avatar-button=never # unclutter chromium UI
+--bookmark-bar-ntp=never # bookmarks on about:newtab, new-tab-page (useless)
+--remove-tabsearch-button
+--remove-grab-handle
+--disable-qr-generator
+## fingerprinting
 --fingerprinting-canvas-image-data-noise
 --fingerprinting-canvas-measuretext-noise
 --fingerprinting-client-rects-noise
-## Other
---popups-to-tabs # Makes popups open in new tabs
+## other
+--popups-to-tabs # makes popups open in new tabs
 --disable-search-engine-collection
 --omnibox-autocomplete-filtering=search-chrome
 --extension-mime-request-handling=always-prompt-for-install
---pdf-plugin-name=chrome
---keep-old-history # Disables deletion of history after 90 days (!)
+--keep-old-history # disables deletion of history after 90 days
 
-# Features
---enable-features=GlobalMediaControlsModernUI,WebUIDarkMode,CSSColorSchemeUARendering,NativeNotifications,QuietNotificationPrompts,ReaderMode,OverlayScrollbar,VaapiVideoDecoder,TabHoverCardImages:page_not_ready_delay/0/page_loading_delay/0/page_loaded_delay/0,SetIpv6ProbeFalse # The last one is ungoogled-specific
---disable-features=WebUSB
+# hardware acceleration
+--use-vulkan
+
+# features
+--enable-features=VaapiVideoDecoder,WebUIDarkMode,CSSColorSchemeUARendering,SystemNotifications,QuietNotificationPrompts,ParallelDownloading,ReaderMode,OverlayScrollbar,DisableQRGenerator,SetIpv6ProbeFalse # last two are ungoogled-specific
+--disable-features=WebUSB,UseChromeOSDirectVideoDecoder # last one is for hw acc
 
 # vim: ft=cfg
 ```
@@ -77,12 +79,14 @@ uBlock Origin|cjpalhdlnbpafiamejdnhcphjbkeiagm
 Vimium Helper|cmlapekgcdddhkfcobppgamdgjbkoffm
 I don't care about cookies|fihnjjcciajhdojfnbdddfaoknhalnja
 floccus bookmarks sync|fnaicdffflnofjppbagibeoednhnbjhg
+Return YouTube Dislike|gebbhagfogifgggkldgodflihgfeippi
 Web Scrobbler|hhinaapppaileiechjoiifaancjggfjm
 ClearURLs|lckanjgmijmafbedllaakclkaicjfmnk
 Linux Scroll Speed Fix|mlboohjioameadaedfjcpemcaangkkbp
 KeePassXC-Browser|oboonakemofpalcgghocfoadofidjkkk
 Chromium Web Store|ocaahdebbfolfmndjeplogmgcagdmblk|https://raw.githubusercontent.com/NeverDecaf/chromium-web-store/master/updates.xml
 Redirector|ocgpenflpmgnfapjedencafcfakcekcd
+PDF Viewer|oemmndcbldboiebfnladdacbdfmadadm
 Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
 Refined Prime Video|pieemlagbhnombolehnjdoaoojpphedd
 xBrowserSync|lcbjdhceifofjlpecfpeimnnphbcjgnc
@@ -93,6 +97,8 @@ xBrowserSync|lcbjdhceifofjlpecfpeimnnphbcjgnc
 - refined prime video
 - web scrobbler
 - custom ntp extension
+- return youtube dislike
+- Pdf Viewer (pdf.js)
 - linux speed scroll fix: (set speed to 1.66)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
 - vimium_helper(disable on youtube, github)
