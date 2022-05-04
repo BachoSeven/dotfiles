@@ -15,7 +15,7 @@
 	if [ -f "$XDG_DATA_HOME/bg" ]; then # Check if there is an active wallpaper
 		[ -f "$XDG_CACHE_HOME/wal/active" ] && wal -R || sbg # Dirty trick to check if pywal was on at shutdown
 	else
-		hsetroot -solid "$(cat $XDG_CACHE_HOME/bgcol)"
+		hsetroot -solid $(<$XDG_CACHE_HOME/bgcol)
 	fi
 	_ mpd						# Music server
 	remaps					# Switch caps/super and one-tap_caps/esc
@@ -26,4 +26,9 @@
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	xdgxm -e &			# Update menu entries
 	_ subs -d				# Start custom yt daemon
-	_ redshift -l "$(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq '.location.lat, .location.lng' | tr '\n' ':' | sed 's/:$//')" # Color temperature
+	if [ -f "$XDG_CACHE_HOME/redshift" ] && [ $((($(date +%s)-$(date -r $XDG_CACHE_HOME/redshift "+%s"))/86400)) -lt 7 ]; then
+		_ redshift -l $(<$XDG_CACHE_HOME/redshift) # Color temperature
+	else
+		curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq '.location.lat, .location.lng' | tr '\n' ':' | sed 's/:$//' > $XDG_CACHE_HOME/redshift
+		_ redshift -l $(<$XDG_CACHE_HOME/redshift)
+	fi
