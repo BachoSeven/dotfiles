@@ -300,9 +300,7 @@ archive() {
 }
 
 sfont() {
-	fc-list		|
-	cut -f2 -d:	|
-	grep -i "$1"
+	fc-list | cut -f2 -d: | sort | uniq | sed 's/^ //'| fzf
 }
 
 # Source Lines Of Code
