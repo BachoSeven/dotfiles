@@ -1,4 +1,1 @@
-#!/bin/sh
-
-url="${1#*:}"
-curl $url | zathura -
+/home/fra/.local/src/pdfExt/wza

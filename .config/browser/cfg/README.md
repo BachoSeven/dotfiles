@@ -98,7 +98,7 @@ xBrowserSync|lcbjdhceifofjlpecfpeimnnphbcjgnc
 - web scrobbler
 - custom ntp extension
 - return youtube dislike
-- Pdf Viewer (pdf.js)
+- Pdf Viewer (pdf.js) || wza (from ~/.local/src/pdfExt)
 - linux speed scroll fix: (set speed to 1.66)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
 - vimium_helper(disable on youtube, github)
