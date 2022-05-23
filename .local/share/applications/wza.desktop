@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Wza
+NoDisplay=true
+MimeType=x-scheme-handler/wza;
+Exec=wza %u

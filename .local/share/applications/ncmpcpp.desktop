@@ -3,5 +3,4 @@ Type=Application
 Name=ncmpcpp
 Exec=st -c ncmpcpp -e ncmpcpp
 Icon=/home/fra/.local/share/icons/vinyl.svg
-Terminal=false
 Categories=Audio;Music;Player;
