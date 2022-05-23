@@ -1,3 +1,4 @@
 #!/bin/sh
 
-curl $1 | zathura -
+url="${1#*:}"
+curl $url | zathura -
