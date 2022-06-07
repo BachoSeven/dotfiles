@@ -10,7 +10,7 @@ n="$(pdftk "$input" dump_data | grep NumberOfPages | cut -d' ' -f2)"
 # Add empty pages
 echo .bp | groff -T pdf > "$empty"
 
-pdftk F="$input" E="$empty" cat F1-$n "$(for x in $(seq 1 $((4-n%4))); do printf 'E1 '; done)" output "$inputMul4"
+pdftk F="$input" E="$empty" cat F1-$n $(for x in $(seq 1 $((4-n%4))); do printf 'E1 '; done) output "$inputMul4"
 
 # Generate alternating page ranges
 n=$((n+(4-n%4)))
@@ -22,6 +22,6 @@ while [ "$k" -lt $((n/2)) ]; do
 done
 
 # Output final pdf
-pdftk $inputMul4 cat $range output $outputImpaginato
+pdftk "$inputMul4" cat $range output "$outputImpaginato"
 
-rm "$empty" $inputMul4
+rm "$empty" "$inputMul4"
