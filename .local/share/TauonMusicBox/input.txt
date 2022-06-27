@@ -122,3 +122,10 @@ shift-up Up Shift
 shift-down Down Shift
 vol-up Up Ctrl
 vol-down Down Ctrl
+
+escape Escape
+toggle-mute M Ctrl
+
+toggle-artistinfo O Ctrl
+cycle-theme ] Ctrl
+cycle-theme-reverse [ Ctrl
