@@ -236,7 +236,7 @@ fi
 # Stardict/sdcv dictionaries
 	export SDCV_PAGER="sed 's/\ \ \([1-9]\)/\n\n◆ \1/g' |less -FX"
 # Kunst
-	export KUNST_SIZE="240x240"
+	export KUNST_SIZE="250x250"
 	export KUNST_POSITION="-25+15" # This should be in sync with dwm gaps.
 	export KUNST_MUSIC_DIR="$HOME/slsk/music"
 	export KUNST_COVER_NAMES='cover|folder|front|thumbnail'
