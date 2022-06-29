@@ -36,7 +36,6 @@ set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spo
 
 " Appearance
 colorscheme gruvbox
-set fontsize=18
 set mintabwidth=0
 set windowtitle=full
 set devtoolsposition=vsplit
