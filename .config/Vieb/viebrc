@@ -19,6 +19,10 @@ set downloadpath=~/
 set ignorecase
 set mousefocus
 
+" Extensions
+" set darkreader
+set sponsorblock
+
 " Notifications
 set notificationduration=7777
 set notificationposition=topright

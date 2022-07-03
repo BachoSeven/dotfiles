@@ -99,6 +99,10 @@
 	nn <leader>ez :vsp ~/.config/zsh/.zshrc<CR>
 	nn <leader>sv :so $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
+" Read text out loud (thanks to https://boris-marinov.github.io/vim-awesome for the inspiration)
+	vmap <leader>s :'<,'>w !say<CR>
+	nmap <leader>S V<leader>s
+
 " vsplit file under cursor; c-w+f for hsplit (https://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split)
 	nn <c-W><c-F> <c-W>vgf
 
