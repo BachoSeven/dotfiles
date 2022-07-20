@@ -74,6 +74,7 @@ repeat = 'off'
 "F3" = "focus search"
 "1" = "focus queue"
 "2" = "focus library"
+"Ctrl+q" = "focus queue"
 # Go to the playing track
 "." = "move playing"
 # Navigation
