@@ -15,11 +15,18 @@
 [mergetool]
 	prompt = false
 [mergetool "vimdiff"]
+	# automatically launch merge tool without displaying a prompt
 	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-# automatically launch merge tool without displaying a prompt
 [clean]
 	requireForce = false
 [pull]
 	rebase = false
 [commit]
 	gpgsign = true
+[alias]
+	fuzzy = !dotbare -g
+	fedit = fuzzy fedit
+	fgrep = fuzzy fgrep
+	flog = fuzzy flog
+	fstat = fuzzy fstat
+	funtrack = fuzzy fstat

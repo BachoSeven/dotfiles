@@ -67,6 +67,9 @@ cal plug#begin(g:plugin_location)
 " Go
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" Julia
+	Plug 'JuliaEditorSupport/julia-vim'
+
 " Lsp
 	Plug 'neovim/nvim-lspconfig'
 "	Neovim completion
