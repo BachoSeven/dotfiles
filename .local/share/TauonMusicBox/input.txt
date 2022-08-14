@@ -129,3 +129,10 @@ toggle-mute M Ctrl
 toggle-artistinfo O Ctrl
 cycle-theme ] Ctrl
 cycle-theme-reverse [ Ctrl
+
+escape Escape
+toggle-mute M Ctrl
+
+toggle-artistinfo O Ctrl
+cycle-theme ] Ctrl
+cycle-theme-reverse [ Ctrl
