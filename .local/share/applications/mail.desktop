@@ -4,5 +4,4 @@ Name=Mail
 MimeType=x-scheme-handler/mailto;
 Icon=mutt
 Categories=Network;Email;
-Terminal=true
-Exec=neomutt %u
+Exec=mailto %u
