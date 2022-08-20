@@ -103,9 +103,11 @@
 	let g:vimtex_compiler_progname = 'nvr'
 	let g:vimtex_fold_enabled = 1
 	let g:vimtex_view_method = 'zathura'
-	let g:vimtex_compiler_method = 'latexmk'
+	let g:vimtex_compiler_method = 'generic'
+" Using `setsid -f` for entr fixes the pdf non opening, but breaks
+" forward-backwards sync.
 	let g:vimtex_compiler_generic = {
-		\	'command': 'ls *.tex | setsid -f entr -n -c tectonic /_ --synctex --keep-logs',
+		\	'command': 'ls *.tex | entr -n -c tectonic /_ --synctex --keep-logs',
 		\}
 	let g:vimtex_compiler_latexmk = {
 		\ 'build_dir' : '',

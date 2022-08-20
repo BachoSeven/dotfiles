@@ -13,10 +13,11 @@ set window-height 1024
 set window-width 768
 set render-loading false
 set adjust-open "best-fit"
-set synctex true
-set synctex-editor-command "nvr --remote-silent +%{line} %{input}"
-# Fix following links(!)
+# Fix following links feature
 set sandbox none
+# already default
+set synctex true
+set dbus-service true
 
 # Navigation
 map g goto top
