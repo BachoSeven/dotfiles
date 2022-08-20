@@ -82,7 +82,7 @@ cal plug#begin(g:plugin_location)
 	Plug 'ojroques/nvim-lspfuzzy'
 
 " Vimtex
-	Plug 'lervag/vimtex', { 'for': 'tex' }
+	Plug 'lervag/vimtex'
 	Plug 'sirver/ultisnips'
 " nvim-cmp integration
 	Plug 'quangnguyen30192/cmp-nvim-ultisnips'
@@ -100,7 +100,7 @@ cal plug#begin(g:plugin_location)
 "" Lightline
 	Plug 'itchyny/lightline.vim'
 "" Syntax highlighting
-	Plug 'VebbNix/lf-vim', { 'as': 'lf-syntax' }
+	Plug 'camnw/lf-vim', { 'as': 'lf-syntax' }
 	Plug 'McSinyx/vim-octave'
 	Plug 'jceb/vim-orgmode'
 
