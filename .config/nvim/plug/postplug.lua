@@ -28,32 +28,6 @@ local custom_lsp_attach = function(client,bufnr)
 end
 
 -- Completion
--- require'compe'.setup {
-	-- enabled = true,
-	-- autocomplete = true,
-	-- debug = false,
-	-- min_length = 1,
-	-- preselect = 'enable',
-	-- throttle_time = 80,
-	-- source_timeout = 200,
-	-- incomplete_delay = 400,
-	-- max_abbr_width = 100,
-	-- max_kind_width = 100,
-	-- max_menu_width = 100,
-	-- documentation = true,
-	-- source = {
-		-- omni = {
-			-- filetypes = {'tex'},
-		-- },
-		-- ultisnips = {
-			-- filetypes = {'tex','c','cpp','markdown','text','sh','zsh','snippets','octave','conf'},
-		-- },
-		-- path = true,
-		-- buffer = true,
-		-- nvim_lsp = true,
-	-- },
--- }
-
 local cmp = require'cmp'
 cmp.setup({
 	snippet = {
@@ -73,9 +47,9 @@ cmp.setup({
 		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	},
 	sources = cmp.config.sources({
+		{ name = 'omni', },
 		{ name = 'nvim_lsp' },
 		{ name = 'ultisnips' },
-	}, {
 		{ name = 'buffer' },
 	})
 })
