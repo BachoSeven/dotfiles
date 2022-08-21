@@ -121,4 +121,4 @@ require("auto-save").setup {
 		return false -- can't save
 	end,
 }
-vim.api.nvim_set_keymap("n", "<leader>n", ":ASToggle<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>a", ":ASToggle<CR>", {})
