@@ -35,8 +35,9 @@ snippet temp "Basic template" b
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[italian]{babel}
-\usepackage{amsmath, amssymb}
-\usepackage{tikz-cd}
+\usepackage{amsmath, amssymb, amsthm}
+% for \lightning
+\usepackage{stmaryd}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
@@ -44,6 +45,8 @@ snippet temp "Basic template" b
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\Im}{\operatorname{Im}}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 

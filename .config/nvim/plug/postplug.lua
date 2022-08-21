@@ -107,3 +107,18 @@ lsp.texlab.setup{
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
+require("auto-save").setup {
+	condition = function(buf)
+		local fn = vim.fn
+		local utils = require("auto-save.utils.data")
+
+		if
+			fn.getbufvar(buf, "&modifiable") == 1 and
+			utils.not_in(fn.getbufvar(buf, "&filetype"), {}) and
+			fn.getbufvar(buf, "&filetype") == "tex" then
+			return true -- met condition(s), can save
+		end
+		return false -- can't save
+	end,
+}
+vim.api.nvim_set_keymap("n", "<leader>n", ":ASToggle<CR>", {})
