@@ -88,6 +88,7 @@ cal plug#begin(g:plugin_location)
 	Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Expand vim's % motion beyond just brackets and quotes
 	Plug 'andymass/vim-matchup'
+	Plug 'XXiaoA/auto-save.nvim', { 'branch' : 'new' }
 
 " Appearance
 "" Color highlighting

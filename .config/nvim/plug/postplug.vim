@@ -122,9 +122,11 @@
 		\ ],
 		\}
 	" Compile on initialization
-	aug vimtex_init
+	aug vimtex_events
 		au!
 		au User VimtexEventInitPost VimtexCompile
+		au User VimtexEventQuit call OnQuit()
+		au User VimtexEventCompileStarted VimtexView
 	aug END
 	" Close viewers when VimTeX buffers are closed
 	fu! OnQuit()
@@ -133,10 +135,6 @@
 			call system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
 		endif
 	endfu
-	aug vimtex_quit
-		au!
-		au User VimtexEventQuit call OnQuit()
-	aug END
 	" FZF integration for VimTeX
 	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<CR>
 
