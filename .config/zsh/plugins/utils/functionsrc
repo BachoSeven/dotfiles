@@ -338,7 +338,7 @@ resumempv() {
 }
 ytdl() {
 	for id in "$@"; do
-		youtube-dl -ic -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-srt --sub-lang en --add-metadata "https://youtube.com/watch?v=$id"
+		youtube-dl -ic -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' --write-subs --sub-lang en --add-metadata "https://youtube.com/watch?v=$id"
 	done
 }
 
