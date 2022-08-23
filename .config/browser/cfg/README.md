@@ -131,7 +131,7 @@ cd:	javascript:location='https://www.google.com/search?num=100&q=site:'%20+%20es
 ct:	https://tube.cadence.moe/search?q=%s cloudtube
 d:	https://duckduckgo.com/?q=%s DuckDuckGo
 dw:	https://www.merriam-webster.com/dictionary/%s Merriam-Webster
-eb:	https://www.ebay.com/sch/i.html?_nkw=%s ebay
+eb:	https://www.ebay.it/sch/i.html?_nkw=%s ebay
 fb:	https://www.facebook.com/search/top/?q=%s facebook
 g:	https://www.google.com/search?q=%s Google
 gd:	https://drive.google.com/drive/search?q=%s gdrive
