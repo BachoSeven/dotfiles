@@ -3,7 +3,6 @@
 # comp=xcompmgr
 comp=picom
 [ "$comp" = "xcompmgr" ] && opts="-cCf -D3 -t-5 -l-5 -r5 -o.50"
-[ "$comp" = "picom" ] && opts="--experimental-backends"
 
 [ "$1" = "-y" ] && setsid -f $comp $opts && exit 0
 
