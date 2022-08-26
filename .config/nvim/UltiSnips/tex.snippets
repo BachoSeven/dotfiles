@@ -37,7 +37,7 @@ snippet temp "Basic template" b
 \usepackage[italian]{babel}
 \usepackage{amsmath, amssymb, amsthm}
 % for \lightning
-\usepackage{stmaryd}
+\usepackage{stmaryrd}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
@@ -46,14 +46,12 @@ snippet temp "Basic template" b
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\Z}{\mathbb{Z}}
 
-\newcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Im}{\operatorname{Im}}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
-\newtheorem{proof}{Proof}
-\newcounter{prf}
 \newtheorem{definition}{Definition}
 
 \newcounter{examplecounter}

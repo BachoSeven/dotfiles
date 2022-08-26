@@ -106,7 +106,7 @@ upbootloader() {
 	$AURHELPER -R limine
 }
 qmkinstall() {
-	$AURHELPER -S python-argcomplete python-colorama python-hjson python-milc python-pygments bootloadhid avr-binutils arm-none-eabi-gcc arm-none-eabi-newlib avrdude clang
+	$AURHELPER -S --needed python-argcomplete python-colorama python-hjson python-milc python-pygments bootloadhid avr-binutils arm-none-eabi-gcc arm-none-eabi-newlib avrdude clang
 	sudo pacman -U https://archive.archlinux.org/packages/a/avr-gcc/avr-gcc-8.3.0-1-x86_64.pkg.tar.xz
 	sudo pacman -S avr-libc
 }
