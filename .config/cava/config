@@ -2,10 +2,10 @@
 framerate = 60
 
 [input]
-# method = pulse
-# source = auto
-method = fifo
-source = /tmp/mpd.fifo
+method = pulse
+source = auto
+# method = fifo
+# source = /tmp/mpd.fifo
 
 [output]
 method = ncurses
