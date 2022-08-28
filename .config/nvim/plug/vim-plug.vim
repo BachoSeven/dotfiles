@@ -45,7 +45,7 @@ cal plug#begin(g:plugin_location)
 	Plug 'jamessan/vim-gnupg' " Automatically decrypt on buffer enter
 	Plug 'mhinz/vim-startify'
 	Plug 'jdhao/better-escape.vim'
-	Plug 'ludovicchabant/vim-gutentags'
+	" Plug 'ludovicchabant/vim-gutentags'
 
 " Markdown
 "" Live Preview
