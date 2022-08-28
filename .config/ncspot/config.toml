@@ -120,7 +120,7 @@ repeat = 'off'
 [theme]
 background = "default"
 primary = "#a89984"
-secondary = "#32302f"
+secondary = "#928374"
 title = "#8ec07c"
 playing = "#689d6a"
 playing_bg = "#383838"
