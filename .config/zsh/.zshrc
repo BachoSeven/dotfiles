@@ -36,6 +36,7 @@
 		init
 		completions
 		history
+		jq.plugin
 		lf
 		xplr
 		utils
