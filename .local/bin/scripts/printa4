@@ -3,28 +3,34 @@
 # Semplice shellscript che permette di stampare un file in una stampante del Dipartimento di Matematica
 # da una qualsiasi shell Unix (Linux, MacOS, BSD...). Funziona anche da remoto!
 #
-# Utilizzo: modifica lo script inserendo il tuo username
-# al posto di "minnocci" nella variabile _user.
+# Utilizzo: modifica lo script inserendo il tuo username di ateneo
+# al posto di "f.minnocci" nella variabile _user.
 # È consigliato aggiungere la propria chiave ssh nella
-# macchina `ssh1` tramite il comando `ssh-copy-id`, in
-# modo da non dover inserire la password ogni volta.
+# macchina `login` (o `ssh1`, se userete il server vecchio)
+# tramite il comando `ssh-copy-id`, in modo da non dover
+# inserire la password ogni volta.
 
 ## CAMBIA QUESTO
-_user="minnocci"
+_user="f.minnocci"
+_home="/home/unipi"
+_server="login"
+# _user="minnocci"
+# _home="/home"
+# _server="ssh1"
 
 main() {
 	if $NO_CLI; then
 		for f in "$@"; do
-			scp "$f" ${_user}@ssh1.dm.unipi.it:/home/${_user}/printa4-"$(basename "$f")"
-			ssh -XY ${_user}@ssh1.dm.unipi.it okular /home/${_user}/printa4-"$(basename "$f")" --print
-			ssh ${_user}@ssh1.dm.unipi.it rm /home/${_user}/printa4-"$(basename "$f")"
+			scp "$f" ${_user}@${_server}.dm.unipi.it:${_home}/${_user}/printa4-"$(basename "$f")"
+			ssh -XY ${_user}@${_server}.dm.unipi.it okular ${_home}/${_user}/printa4-"$(basename "$f")" --print
+			ssh ${_user}@${_server}.dm.unipi.it rm ${_home}/${_user}/printa4-"$(basename "$f")"
 		done
 	else
 		options="$1"; shift
 		for f in "$@"; do
-			scp "$f" ${_user}@ssh1.dm.unipi.it:/home/${_user}/printa4-"$(basename "$f")"
-			ssh ${_user}@ssh1.dm.unipi.it lp $options /home/${_user}/printa4-"$(basename "$f")"
-			ssh ${_user}@ssh1.dm.unipi.it rm /home/${_user}/printa4-"$(basename "$f")"
+			scp "$f" ${_user}@${_server}.dm.unipi.it:${_home}/${_user}/printa4-"$(basename "$f")"
+			ssh ${_user}@${_server}.dm.unipi.it lp $options ${_home}/${_user}/printa4-"$(basename "$f")"
+			ssh ${_user}@${_server}.dm.unipi.it rm ${_home}/${_user}/printa4-"$(basename "$f")"
 		done
 	fi
 }
