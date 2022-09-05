@@ -157,9 +157,9 @@
 	ino <Backspace> <C-w>
 " Arrows behave like Ctrl+arrows, and Shift+arrows goes to the end of whole words.
 	ino <Right> <esc>ea
-	ino <Left> <esc>gea
+	ino <Left> <esc>bi
 	ino <S-Right> <esc>Ea
-	ino <S-Left> <esc>gEa
+	ino <S-Left> <esc>Bi
 
 " Perform dot commands over visual blocks:
 	vn . :normal .<CR>
