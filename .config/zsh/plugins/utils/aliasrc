@@ -12,6 +12,7 @@
 	alias phc='ssh minnocci@poisson.phc.dm.unipi.it'
 	alias kol='ssh -J minnocci@poisson.phc.dm.unipi.it -p 2233 minnocci@kolmogorov.phc.dm.unipi.it'
 	alias gam='ssh -J minnocci@poisson.phc.dm.unipi.it minnocci@gamera.phc.dm.unipi.it'
+	alias lab='ssh -p 2222 root@lab.phc.dm.unipi.it'
 	alias server='ssh arciere@server -p 27'
 	alias serveron='wol 60:a4:4c:59:6d:ec'
 	alias serveroff='server sudo shutdown -h now'
