@@ -21,6 +21,8 @@ set dbus-service true
 
 # Navigation
 map g goto top
+map <C-g> scroll page-top
+map <C-G> scroll page-bottom
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
