@@ -72,7 +72,7 @@
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
 > Install sci-hub plugin manually (crx is in this repo)
 
-### installed extensions ids string (a part from ntp)
+### installed extensions ids string (a part from ntp, which is local [allow file access])
 ```
 Stylus (beta)|apmmpaebfobifelkijhaljbmpcgbjbdo
 uBlock Origin|cjpalhdlnbpafiamejdnhcphjbkeiagm
@@ -98,7 +98,7 @@ xBrowserSync|lcbjdhceifofjlpecfpeimnnphbcjgnc
 - web scrobbler
 - custom ntp extension
 - return youtube dislike
-- Pdf Viewer (pdf.js) || wza (from ~/.local/src/pdfExt)
+- Pdf Viewer (pdf.js) && wza (from ~/.local/src/pdfExt)
 - linux speed scroll fix: (set speed to 1.66)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
 - vimium_helper(disable on youtube, github)
