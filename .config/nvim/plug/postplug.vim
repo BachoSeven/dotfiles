@@ -207,7 +207,7 @@
 	endfu
 	fu! LlName() " Trim bar between filename and modified sign
 		let filename = expand('%:t') !=# '' ? expand('%:t') : '<0x0>'
-		let modified = &modified ? ' ' : ''
+		let modified = &modified ? ' ≠' : ''
 		retu filename . ('' != LlRO() ? LlRO() : modified)
 	endfu
 	fu! LlFormat()
