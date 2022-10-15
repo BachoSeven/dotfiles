@@ -159,7 +159,7 @@ snippet iff "iff" Ai
 endsnippet
 
 snippet mk "Math" wA
-\(${1}\)`!p
+$${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
 	snip.rv = ' '
 else:
@@ -168,7 +168,7 @@ else:
 endsnippet
 
 snippet dm "Math" wA
-\[ ${1:${VISUAL}} .\]
+$$ ${1:${VISUAL}} .$$
 endsnippet
 
 snippet ali "Align" bA
@@ -602,7 +602,7 @@ snippet nnn "bigcap" iA
 endsnippet
 
 snippet OO "emptyset" iA
-\O
+\emptyset
 endsnippet
 
 snippet RR "real" iA
