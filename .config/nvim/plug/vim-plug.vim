@@ -81,6 +81,9 @@ cal plug#begin(g:plugin_location)
 " Fuzzy lsp integration
 	Plug 'ojroques/nvim-lspfuzzy'
 
+" Treesitter
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " Vimtex
 	Plug 'lervag/vimtex'
 	Plug 'sirver/ultisnips'

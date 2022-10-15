@@ -69,7 +69,7 @@ cmp.setup.cmdline(':', {
 })
 
 -- Enable lsp snippets for completions
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Servers
 local ionide=require'ionide'
@@ -122,3 +122,12 @@ require("auto-save").setup {
 	end,
 }
 vim.api.nvim_set_keymap("n", "<leader>a", ":ASToggle<CR>", {})
+
+-- Treesitter
+require("nvim-treesitter.configs").setup({
+	ensure_installed = { "c", "go", "vim", "latex", "toml", "bash", "html", "javascript", "json" },
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
+})
