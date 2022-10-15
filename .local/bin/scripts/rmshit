@@ -9,7 +9,6 @@ shittyfiles = [
     '~/.appdata',            # Air crap
     '~/.macromedia',         # Flash crap
     '~/.recently-used',
-    '~/.local/state',
     '~/.local/share/cargo', # Build files
     '~/.local/share/NuGet', # Build files
     '~/Desktop',            # Firefox creates this
