@@ -128,6 +128,7 @@ require("nvim-treesitter.configs").setup({
 	ensure_installed = { "c", "go", "vim", "latex", "toml", "bash", "html", "javascript", "json" },
 	highlight = {
 		enable = true,
+		disable = { "latex" },
 		additional_vim_regex_highlighting = false,
 	},
 })
