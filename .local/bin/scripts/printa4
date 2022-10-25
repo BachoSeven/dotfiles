@@ -11,12 +11,12 @@
 # inserire la password ogni volta.
 
 ## CAMBIA QUESTO
-# _user="r.divirgilio"
-# _home="/home/unipi"
-# _server="login"
-_user="divirgilio"
-_home="/home"
-_server="ssh1"
+_user="m.marello"
+_home="/home/unipi"
+_server="login"
+# _user="divirgilio"
+# _home="/home"
+# _server="ssh1"
 
 main() {
 	if $NO_CLI; then
