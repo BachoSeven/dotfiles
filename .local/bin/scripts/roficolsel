@@ -4,5 +4,5 @@
 #		<span color='#RRGGBB' weight='normal' fallback='true' >  whatever </span>
 pangomarkedup="$1"
 
-rofi -dmenu -markup-rows -width 17 -lines 5 -p 'Color' -padding 2 -theme /usr/share/rofi/themes/Pop-Dark.rasi -font 'mono 20' -i -threads 5 < $pangomarkedup \
+rofi -dmenu -markup-rows -width 17 -lines 5 -p 'Color' -padding 2 -theme /usr/share/rofi/themes/gruvbox-dark-soft.rasi -font 'mono 20' -i -threads 5 < $pangomarkedup \
 	| cut -d"'" -f2

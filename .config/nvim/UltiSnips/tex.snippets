@@ -9,11 +9,19 @@ snippet temp "Basic template" b
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[italian]{babel}
+\usepackage{hyperref}
 \usepackage{amsmath, amssymb, amsthm}
 % for \lightning
 \usepackage{stmaryrd}
 \usepackage{geometry}
 \usepackage{tikz-cd}
+
+\hypersetup{
+	colorlinks = true, % links instead of boxes
+	urlcolor   = blue, % external hyperlinks
+	linkcolor  = blue, % internal links
+	citecolor  = red   % citations
+}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
@@ -27,15 +35,21 @@ snippet temp "Basic template" b
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
 
-\newcounter{examplecounter}
-\newenvironment{example}{%
-\refstepcounter{examplecounter}%
-\textbf{Example \arabic{examplecounter}}%
-}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Esercizio}[section]
+\newtheorem*{exercise*}{Esercizio}
 
 \begin{document}
 	$0
@@ -49,6 +63,7 @@ snippet pres "Beamer" b
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[italian]{babel}
+\usepackage{hyperref}
 \usepackage{amsmath, amssymb, amsthm}
 % for \lightning
 \usepackage{stmaryrd}
@@ -56,9 +71,17 @@ snippet pres "Beamer" b
 \usepackage{empheq}
 \usepackage{tikz-cd}
 
+\hypersetup{
+	colorlinks = true, % links instead of boxes
+	urlcolor   = blue, % external hyperlinks
+	linkcolor  = blue, % internal links
+	citecolor  = red   % citations
+}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\K}{\mathbb{K}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -67,15 +90,21 @@ snippet pres "Beamer" b
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
 
-\newcounter{examplecounter}
-\newenvironment{example}{%
-\refstepcounter{examplecounter}%
-\textbf{Example \arabic{examplecounter}}%
-}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Esercizio}[section]
+\newtheorem*{exercise*}{Esercizio}
 
 % usage: \boxedeq{description}{equation}
 \newcommand{\boxedeq}[2]{\begin{empheq}[box={\fboxsep=6pt\fbox}]{align}\label{#1}#2\end{empheq}}
