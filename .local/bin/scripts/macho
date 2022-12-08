@@ -7,7 +7,7 @@ while getopts ":hifs:" opt; do
 	h ) printf "Usage: -i for interactive mode, -f to pass a string to find, -s to pass a section number.";;
 	i ) interactive=true;;
 	f ) FIND=$OPTARG;;
-	s ) SECTION=$OPTARG; shift; shift;;
+	s ) SECTION=$OPTARG; shift 2;;
 	\?) echo "Invalid option: -$OPTARG" >&2; exit 1;;
 	: ) echo "Option -$OPTARG requires an argument" >&2; exit 1;;
     esac

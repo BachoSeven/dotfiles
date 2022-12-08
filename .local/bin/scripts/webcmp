@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+#
+# Thanks to https://gist.github.com/aziis98/bc534d70ab48ef79a1f1c4e445db19f2
+
+STORAGE_FILE="webpage.sum"
+
+init() {
+	while [[ "$1" == -* ]]; do
+		case "$1" in
+			-s|--storage)
+				STORAGE_FILE="$2"
+				shift 2
+				;;
+		esac
+	done
+
+	URL="$1"
+	echo -n > "$STORAGE_FILE"
+	echo "$URL" >> "$STORAGE_FILE"
+	curl -s "$URL" | cksum -a sha256 >> "$STORAGE_FILE"
+	printf 'Initialized webcmp storage file "%s"\n' "$STORAGE_FILE"
+}
+
+refresh() {
+	OVERWRITE=0
+
+	while [[ "$1" == -* ]]; do
+		case "$1" in
+			-o|--overwrite)
+				OVERWRITE="1"
+				shift 1
+				;;
+			-s|--storage)
+				STORAGE_FILE="$2"
+				shift 2
+				;;
+		esac
+	done
+
+	URL="$(head -n 1 "$STORAGE_FILE")"
+
+	echo -n > "$STORAGE_FILE.new"
+	echo "$URL" >> "$STORAGE_FILE.new"
+	curl -s "$URL" | cksum -a sha256 >> "$STORAGE_FILE.new"
+	if cmp -s "$STORAGE_FILE" "$STORAGE_FILE.new"; then
+		echo "No news";
+	else
+		echo "Webpage changed!";
+	fi
+
+	if [[ "$OVERWRITE" = "1" ]]; then
+		mv "$STORAGE_FILE.new" "$STORAGE_FILE";
+	else
+		rm "$STORAGE_FILE.new";
+	fi
+}
+
+case "$1" in
+	init)
+		shift
+		init $*
+		;;
+	refresh)
+		shift
+		refresh $*
+		;;
+	*)
+		printf 'Invalid subcommand "%s"\n' "$1"
+		exit 1
+		;;
+esac
