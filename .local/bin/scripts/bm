@@ -27,7 +27,7 @@ jq -r "$jq_script" < "$BM" \
 		| cut -d/ -f2-	\
 		| fzf --bind "=:execute%echo {} | cut -d$'\t' -f2	| xclip -r -sel c %"	\
 			--ansi --multi --no-hscroll --tiebreak=begin	\
-			--preview "echo {-1} | xargs readable -q | w3mwrap -T text/html"	\
+			--preview "echo {-1} | xargs readable -q | w3m -T text/html"	\
 			--preview-window=right:35% $opts	\
 		| cut -d$'\t' -f2						\
 		| setsid -f xargs -r $BROWSER >/dev/null

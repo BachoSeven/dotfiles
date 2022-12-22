@@ -339,7 +339,7 @@ map <c-space> :toggle; up
 map <c-a> embed neomutt -a
 map P embed lpr # Print files
 map Q embed mpvq
-map m embed w3mwrap -s
+map m embed w3m -s
 map w pager
 map <c-q> quit
 map W embed dotbare add
