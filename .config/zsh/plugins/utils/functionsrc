@@ -933,7 +933,7 @@ cheat() {
 ## Readable
 readw3m() {
 	readable -q $@ |
-	w3mwrap -T text/html
+	w3m -T text/html
 }
 readlynx() {
 	readable -q $@ |

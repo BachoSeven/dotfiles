@@ -81,10 +81,9 @@
 	alias dr='drive'
 	alias nmdm='networkmanager_dmenu'
 	alias rnm='sudo systemctl reload NetworkManager'
-	alias w3m='w3mwrap -s -B'
-	alias sqm='w3mwrap https://student-web1.dm.unipi.it/squirrelmail/src/login.php'
+	alias w3m='w3m -s -B'
 	alias octave='octave -q'
-	alias chill='mpv --no-video https://invidious.snopyta.org/watch?v=5qap5aO4i9A'
+	alias chill='mpv --no-video https://yewtu.be/watch?v=jfKfPfyJRdk'
 	alias anonradio='mpv --no-video http://anonradio.net:8000/anonradio'
 	alias matrix='unimatrix -a -f -b -s 96 -l m'
 	alias P='patch -p1 <'
@@ -124,7 +123,7 @@
 # Media
 	alias nc2='MPD_PORT="6600" st -c ncmpcpp -e ncmpcpp -c ~/.config/ncmpcpp2/config'
 	alias spo='st -c ncspot ncspot && spotup'
-	alias spi='spotify && spotup && rmdir ~/Downloads'
+	alias spi='spotify-launcher && spotup && rmdir ~/Downloads'
 # Desk
 	alias sit='idasen moveto 1100' # since the script always overshoots, both values are adjusted accordingly
 	alias stand='idasen moveto 4400'

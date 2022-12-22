@@ -45,7 +45,7 @@ prompt() { #__ cool interactive stuff __#
 		promptplayer="$(printf "ncspot\nspotify\n" | dmenu -p "Would you like to open:" -f -i -c -l 2 -bw 7 )"
 		if [ -n "$promptplayer" ]; then
 			if [ "$promptplayer" = "spotify" ]; then
-				setsid -f spotify
+				setsid -f spotify-launcher
 			elif [ "$promptplayer" = "ncspot" ]; then
 				if findterm; then
 					setsid -f $localt -c ncspot -e ncspot	||	# st (and many others)

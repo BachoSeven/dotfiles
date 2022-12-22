@@ -22,7 +22,7 @@ handle_mime() {
 		*.md) glow -w 80 "${FILE_PATH}" ;;
 		*)
 			case "${mimetype}" in
-			text/html) w3mwrap -dump "${FILE_PATH}" ;;
+			text/html) w3m -dump "${FILE_PATH}" ;;
 			text/troff) man ./ "${FILE_PATH}" | col -b ;;
 			text/* | */xml | */json)
 					if [ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]; then
