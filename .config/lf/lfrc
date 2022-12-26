@@ -21,7 +21,7 @@ set promptfmt "\033[33;1m%u\033[0m\033[32;1m@\033[0m\033[34;1m%h\033[0m:\033[35;
 set mouse
 
 # adjust coloumn width to terminal
-%{{
+$ {{
     if [ $lf_width -le 80 ]; then
         lf -remote "send $id set ratios 1:2"
     elif [ $lf_width -le 160 ]; then
@@ -289,7 +289,6 @@ cmd pager ${{
 #			Unmap some defaults
 map gh
 map d
-map m
 
 #			File Operations
 map x cut
@@ -305,7 +304,7 @@ map T push :touch<space>
 map E extract
 map <a-e> extract_sub
 map C copyto
-map M moveto
+map m moveto
 map D delete
 map p paste
 map S Link
@@ -339,7 +338,6 @@ map <c-space> :toggle; up
 map <c-a> embed neomutt -a
 map P embed lpr # Print files
 map Q embed mpvq
-map m embed w3m -s
 map w pager
 map <c-q> quit
 map W embed dotbare add
