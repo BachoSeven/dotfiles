@@ -170,6 +170,7 @@
 		gd='g diff' \
 		gg='g pull' \
 		gp='g push' \
+		gb='g branch' \
 		gca='g commit -a && g push' \
 		ka='killall' \
 		l='ls --color -lA' \
