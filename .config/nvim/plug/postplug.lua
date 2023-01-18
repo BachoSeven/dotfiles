@@ -90,6 +90,30 @@ lsp.vimls.setup{
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
+lsp.tsserver.setup{
+	on_attach = custom_lsp_attach,
+	capabilities = capabilities
+}
+lsp.eslint.setup{
+	on_attach = custom_lsp_attach,
+	capabilities = capabilities
+}
+lsp.cssls.setup{
+	on_attach = custom_lsp_attach,
+	capabilities = capabilities
+}
+lsp.html.setup{
+	on_attach = custom_lsp_attach,
+	capabilities = capabilities
+}
+lsp.jsonls.setup{
+	on_attach = custom_lsp_attach,
+	capabilities = capabilities
+}
+lsp.emmet_ls.setup{
+	on_attach = custom_lsp_attach,
+	capabilities = capabilities
+}
 lsp.texlab.setup{
 	settings = {
 		latex = {
