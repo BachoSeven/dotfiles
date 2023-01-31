@@ -22,14 +22,14 @@ main() {
 	if $NO_CLI; then
 		for f in "$@"; do
 			scp "$f" "${_user}@${_server}.dm.unipi.it:${_home}/${_user}/printa4-$(basename "$f")"
-			ssh -XY ${_user}@${_server}.dm.unipi.it okular "${_home}/${_user}/printa4-$(basename "$f")" --print
+			ssh -XY ${_user}@${_server}.dm.unipi.it "okular \"${_home}/${_user}/printa4-$(basename "$f")\" --print"
 			ssh ${_user}@${_server}.dm.unipi.it "rm \"${_home}/${_user}/printa4-$(basename "$f")\""
 		done
 	else
 		options="$1"; shift
 		for f in "$@"; do
 			scp "$f" "${_user}@${_server}.dm.unipi.it:${_home}/${_user}/printa4-$(basename "$f")"
-			ssh ${_user}@${_server}.dm.unipi.it lp $options "${_home}/${_user}/printa4-$(basename "$f")"
+			ssh ${_user}@${_server}.dm.unipi.it "lp $options \"${_home}/${_user}/printa4-$(basename "$f")\""
 			ssh ${_user}@${_server}.dm.unipi.it "rm \"${_home}/${_user}/printa4-$(basename "$f")\""
 		done
 	fi
