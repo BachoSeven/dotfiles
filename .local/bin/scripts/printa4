@@ -53,11 +53,9 @@ Per stampare tramite "lp" invece che da interfaccia grafica tramite "okular", è
 possibile passare l'opzione "-c" o "--cli", seguita dagli argomenti di stampa
 per "lp" fra virgolette, e passando come ultimo argomento i file PDF da stampare:
 
-	$(basename "$0") --cli "-o number-up=2 -o sides=two-sided-short-edge" MR-impaginato.pdf
+	$(basename "$0") --cli "-o sides=two-sided-short-edge" MR-impaginato.pdf
 
-(funziona pure con più file ma usa le stesse opzioni per ciascun file)
-
-> NOTA: L'esempio qua sopra usa le opzioni necessarie per poter stampare un file
+> N.B.: L'esempio qua sopra usa le opzioni necessarie per poter stampare un file
 > creato con lo script "impagina", per rilegare le dispense a libretto in A5.
 
 Altre opzioni utili da passare ad "lp":
