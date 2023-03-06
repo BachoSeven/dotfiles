@@ -20,9 +20,9 @@ main() {
 	input="$(realpath "$1")"
 	basename="$(basename "$1")"
 	inputMul4="/tmp/${basename%.pdf}-Mul4.pdf"
+	outputTemporaneo="${basename%.pdf}-Temporaneo.pdf"
 	outputImpaginato="${basename%.pdf}-Impaginato.pdf"
 	empty="/tmp/empty.pdf"
-	echo "$input $basename $inputMul4 $outputImpaginato" > ~/log
 	n="$(pdftk "$input" dump_data | grep NumberOfPages | cut -d' ' -f2)"
 
 	# Add empty pages
@@ -40,9 +40,10 @@ main() {
 	done
 
 	# Output final pdf
-	pdftk "$inputMul4" cat $range output "$outputImpaginato"
+	pdftk "$inputMul4" cat $range output "$outputTemporaneo" &&
+	pdfjam --landscape --nup 2x1 "$outputTemporaneo" --outfile "$outputImpaginato"
 
-	rm "$empty" "$inputMul4"
+	rm -f "$empty" "$inputMul4" "$outputTemporaneo"
 }
 
 if [ -z "$1" ] ; then

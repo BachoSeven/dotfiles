@@ -34,7 +34,7 @@
 	se sb spr " better split defaults
 	se acd " automatically cd into active vim buffer, useful i.e. for :Lf
 	se lz
-	se list " show invisibles
+	" se list " show invisibles
 	se listchars=
 	se listchars+=tab:·\
 	se listchars+=trail:•
