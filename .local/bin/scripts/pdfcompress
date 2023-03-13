@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# Credits: https://git.phc.dm.unipi.it/aziis98/chatgpt-scripts/
+
+set -euo pipefail
+
+help_message="$(cat <<END
+usage: $(basename "$0") [OPTIONS...] INPUT_PDF OUTPUT_PDF
+
+Converts a PDF file to a series of JPEG images to reduce the quality
+and then merges them back in a single pdf.
+
+Options:
+    -q, --quality    Set the JPEG quality (default: 75)
+    -h, --help       Display this help message
+
+END
+)"
+
+function show_usage() {
+    echo "$help_message"
+    exit 1
+}
+
+quality=75
+
+while [[ $# -gt 0 ]]
+do
+    key="$1"
+
+    case $key in
+        -q|--quality)
+            quality="$2"
+            shift # past argument
+            shift # past value
+            ;;
+        -h|--help)
+            show_usage
+            ;;
+        -*)
+            echo "Unknown option: $key"
+            show_usage
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+    show_usage
+fi
+
+input_file="$1"
+output_file="$2"
+
+temp_pages_dir="$(mktemp -d)"
+
+function logf {
+    printf "$@"
+}
+
+logf "Rendering each page to a jpeg image (quality = $quality)\n"
+pdftoppm -r 300 -jpeg -jpegopt "quality=$quality,optimize=y" -progress $input_file "$temp_pages_dir/page"
+
+for f in "$temp_pages_dir"/page-*.jpg; do
+    logf "Wrapping $f into ${f/.jpg/.pdf}\n"
+    gs -dNOSAFER  -sDEVICE=pdfwrite -o "${f/.jpg/.pdf}" /usr/share/ghostscript/lib/viewjpeg.ps -c "($f)" viewJPEG
+done
+
+logf "Merging compressed pages to a single PDF\n"
+pdfunite "$temp_pages_dir"/page-*.pdf $output_file
+
+rm -r "$temp_pages_dir"
+logf "Done\n"
