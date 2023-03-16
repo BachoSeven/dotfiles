@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Text editor
-MimeType=text/x-tex;text/plain;text/markdown;application/x-sharedlib;application/json;application/x-abook-addressbook;
+MimeType=text/plain;text/x-tex;text/markdown;application/x-sharedlib;application/json;application/x-abook-addressbook;
 Terminal=true
 NoDisplay=true
 Exec=nvim %u
