@@ -10,7 +10,7 @@
 set cache=full
 set favicons=30day
 set redirecttohttp
-set search="https://duckduckgo.com/?q=%s&ia=web"
+set searchengine="https://duckduckgo.com/?q=%s&ia=web"
 set searchwords=y~youtube.com/results?search_query=%s,r~reddit.com/search?q=%s
 set searchwords+=w~https://wikipedia.org/w/index.php?search=%s,l~https://libgen.rs/search.php?req=%s
 set searchwords+=aw~https://wiki.archlinux.org/index.php/Special:Search/%s,aur~https://aur.archlinux.org/packages.php?K=%s,gh~https://github.com/search?q=%s
@@ -51,14 +51,14 @@ set guitabbar=onupdate
 set vimcommand="st -e nvim"
 
 " Startup - New tab
-set norestoretabs
+set restoretabs=none
 set startuppages="file:///home/fra/.config/browser/startpage/index.html"
 set newtaburl="file:///home/fra/.config/browser/startpage/index.html"
 set suggesttopsites=0
 
 " Closing tabs
-set tabclosefocusright
-set quitonlasttabclose
+set tabclosefocusright=true
+set quitonlasttabclose=true
 
 " General Mappings
 map <Up> <scrollUp>
