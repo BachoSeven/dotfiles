@@ -67,6 +67,7 @@
 	title = Dunst
 	class = Dunst
 	corner_radius = 14
+	progress_bar_corner_radius = 4
 	force_xinerama = false
 [urgency_low]
 	background = "#282828"
