@@ -292,12 +292,12 @@ map d
 
 #			File Operations
 map x cut
-map A rename # at the very end
-map c push A<c-u> # new rename
-map I push A<c-a> # at the very beginning
-map i push A<a-b><a-b><a-f> # before extention
-map a push A<a-b> # after extention
-map R push A<c-u> # rename completely
+map i rename # before extention
+map c push i<c-u> # new rename
+map I push i<c-a> # at the very beginning
+map a push i<a-f><a-b> # after extention
+map A push i<c-e> # at the very end
+map R push i<c-e><c-u> # rename completely
 map B $vidir
 map o push :mkdir<space>
 map T push :touch<space>
