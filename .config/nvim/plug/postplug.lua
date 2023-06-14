@@ -73,12 +73,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Servers
 local ionide=require'ionide'
-ionide.setup{
+ionide.setup {
 	autostart = true,
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.bashls.setup{
+lsp.bashls.setup {
 	cmd={"bash-language-server", "start"},
 	cmd_env={GLOB_PATTERN="*@(.sh|.inc|.bash|.command)"},
 	filetypes = {"sh"},
@@ -86,35 +86,35 @@ lsp.bashls.setup{
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.vimls.setup{
+lsp.vimls.setup {
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.tsserver.setup{
+lsp.tsserver.setup {
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.eslint.setup{
+lsp.eslint.setup {
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.cssls.setup{
+lsp.cssls.setup {
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.html.setup{
+lsp.html.setup {
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.jsonls.setup{
+lsp.jsonls.setup {
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.emmet_ls.setup{
+lsp.emmet_ls.setup {
 	on_attach = custom_lsp_attach,
 	capabilities = capabilities
 }
-lsp.texlab.setup{
+lsp.texlab.setup {
 	settings = {
 		latex = {
 			forwardSearch = {
@@ -156,3 +156,12 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = false,
 	},
 })
+
+-- Lean
+require('lean').setup {
+  abbreviations = { builtin = true },
+  lsp = { on_attach = custom_lsp_attach },
+  lsp3 = { on_attach = custom_lsp_attach },
+  mappings = true,
+  capabilities = capabilities
+}

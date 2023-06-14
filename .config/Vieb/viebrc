@@ -57,7 +57,7 @@ set newtaburl="file:///home/fra/.config/browser/startpage/index.html"
 set suggesttopsites=0
 
 " Closing tabs
-set tabclosefocusright=true
+set tabclosefocus=right
 set quitonlasttabclose=true
 
 " General Mappings
