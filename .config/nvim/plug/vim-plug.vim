@@ -71,6 +71,12 @@ cal plug#begin(g:plugin_location)
 " Julia
 	Plug 'JuliaEditorSupport/julia-vim'
 
+" Lean
+	Plug 'Julian/lean.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+" For Lean switch support
+	Plug 'andrewradev/switch.vim'
+
 " Lsp
 	Plug 'neovim/nvim-lspconfig'
 "	Neovim completion
@@ -91,7 +97,7 @@ cal plug#begin(g:plugin_location)
 " nvim-cmp integration
 	Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Expand vim's % motion beyond just brackets and quotes
-	Plug 'andymass/vim-matchup'
+	" Plug 'andymass/vim-matchup'
 	Plug 'Pocco81/auto-save.nvim'
 
 " Appearance

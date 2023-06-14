@@ -5,24 +5,31 @@ rate = 777
 left_legend = true
 group_processes = true
 regex = true
-default_time_value = 77777
-time_delta = 17777
 hide_table_gap = true
 dot_marker = true
 
-# Layout
-[[row]]
-  ratio=35
-  [[row.child]]
-    type="cpu"
-[[row]]
-  ratio=35
-  [[row.child]]
-    type="temp"
-  [[row.child]]
-    type="proc"
-    default=true
+[temp_filter]
+is_list_ignored = true
+list = ["cpu", "wifi", "hwmon"]
+regex = true
+case_sensitive = false
+whole_word = false
+
 [[row]]
   ratio=30
   [[row.child]]
-    type="mem"
+  type="cpu"
+[[row]]
+    ratio=40
+    [[row.child]]
+      ratio=3
+      [[row.child.child]]
+        type="temp"
+    [[row.child]]
+      ratio=4
+      type="mem"
+[[row]]
+  ratio=30
+  [[row.child]]
+    type="proc"
+    default=true
