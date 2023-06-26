@@ -85,7 +85,7 @@ map <C-p> <:hardcopy>
 map <C-q> <:quit>
 map <C-r> <refreshTab>
 map <C-s> <:write>
-map <C-t> <openNewTab><toExploreMode>
+map <C-t> <:tabnew><toExploreMode>
 map <C-Tab> <nextTab>
 map <C-S-Tab> <previousTab>
 map <C-S-PageUp> <moveTabBackward>
@@ -137,8 +137,6 @@ nmap yf <pointer.start><startFollowCurrentTab>
 fmap <Esc> <toNormalMode>
 "" :nohlsearch
 nmap <CR> <emptySearch>
-"" Copy with mouse
-nmap <C-c> <p.copyText>
 
 " Vimium muscle-memory
 "" Navigation
@@ -152,7 +150,7 @@ nmap X <reopenTab>
 "" Omnibar focus
 vmap c <Esc><pointer.start>
 nmap o <toExploreMode>
-nmap O <openNewTab><toExploreMode>
+nmap O <:tabnew><toExploreMode>
 "" Copy current url
 nmap yy <pageToClipboard>
 "" duplicate tab
