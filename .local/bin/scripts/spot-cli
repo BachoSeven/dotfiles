@@ -1,11 +1,11 @@
 #!/bin/sh
 
 # Franceso Minnocci 2020
-# NOTE: This has been tested with ncspot, the official spotify client and tauon, but it could be used
-#				with any player which supports MPRIS via dbus. Just add its name to the `players` array.
-#				You should set active=false below for players which do not support spotify URL/URIs.
+# NOTE: This has been tested with ncspot, the official spotify client and tauon, but it could be
+#		used with any player which supports MPRIS via dbus. Just add its name to the `players` array.
+#	You should set active=false below for players which do not support spotify URL/URIs.
 
-# Determine currently active spotify player (first one found from the array is use for pause/play/toggle)
+# Determine currently active spotify player (first one found from the array is used for pause/play/toggle)
 # When trying to open URL/URIs, we prompt to open a player if there are none
 
 players="$(dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep mpris | cut -d. -f 4- | cut -d'"' -f -1 | tac | paste -sd:)":spotify:ncspot:tauon

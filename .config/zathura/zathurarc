@@ -49,7 +49,7 @@ map b toggle_statusbar
 map [normal] ZZ quit
 map [normal] ZQ quit
 
-set recolor			true
+set recolor			false
 set recolor-keephue		true
 
 # Base16 Gruvbox

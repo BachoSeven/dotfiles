@@ -1,0 +1,56 @@
+#!/bin/sh
+
+config_file="$XDG_CONFIG_HOME/nvim/init.vim"
+xresources_file="$XDG_CONFIG_HOME/X11/Xresources.d/gruvbox"
+xsettingsd_file="$XDG_CONFIG_HOME/xsettingsd/xsettingsd.conf"
+gtk_settings_file="$XDG_CONFIG_HOME/gtk-3.0/settings.ini"
+bat_settings_file="$XDG_CONFIG_HOME/bat/config"
+dark_wallpaper="$HOME/pics/papes/tech/gruvbox/dark/scalable-dark-linux.svg"
+light_wallpaper="$HOME/pics/papes/tech/gruvbox/light/scalable-light-linux.svg"
+
+toggle_theme() {
+  case "$1" in
+    "dark")
+      sed -i 's/se background=light/se background=dark/g' "$config_file"
+      sed -i 's/#include "light"/#include "dark"/' "$xresources_file"
+      sed -i 's/Net\/ThemeName "gruvbox-light"/Net\/ThemeName "Gruvbox-Material-Dark"/' "$xsettingsd_file"
+      sed -i 's/gtk-theme-name=gruvbox-light/gtk-theme-name=Gruvbox-Material-Dark/' "$gtk_settings_file"
+      sed -i 's/gruvbox-light/gruvbox-dark/' "$bat_settings_file"
+      sed -i 's/gtk-icon-theme-name=gruvbox-light/gtk-icon-theme-name=Gruvbox-Material-Dark/' "$gtk_settings_file"
+      sbg -i "$dark_wallpaper"
+			gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' &
+      ;;
+    "light")
+      sed -i 's/se background=dark/se background=light/g' "$config_file"
+      sed -i 's/#include "dark"/#include "light"/' "$xresources_file"
+      sed -i 's/Net\/ThemeName "Gruvbox-Material-Dark"/Net\/ThemeName "gruvbox-light"/' "$xsettingsd_file"
+      sed -i 's/gtk-theme-name=Gruvbox-Material-Dark/gtk-theme-name=gruvbox-light/' "$gtk_settings_file"
+      sed -i 's/gruvbox-dark/gruvbox-light/' "$bat_settings_file"
+      sed -i 's/gtk-icon-theme-name=Gruvbox-Material-Dark/gtk-icon-theme-name=gruvbox-light/' "$gtk_settings_file"
+      sbg -i "$light_wallpaper"
+			gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' &
+      ;;
+    *)
+      echo "Invalid argument. Please specify 'dark' or 'light'." >&2
+      exit 1
+      ;;
+  esac
+
+  xrdb "$XDG_CONFIG_HOME/X11/Xresources"
+	# reload dwm colors
+	dwmc xrdb
+  killall -HUP xsettingsd 2>/dev/null
+	if pidof st 1>/dev/null 2>&1; then
+		kill -s USR1 $(pidof st)
+	fi
+	for sock in ~/.cache/nvim/nvim-*; do
+		nvim --server $sock --remote-send "<C-\><C-n>:so $XDG_CONFIG_HOME/nvim/init.vim<CR>" &
+	done
+}
+
+# Check if an argument is provided
+if [ -z "$1" ]; then
+  exit 1
+fi
+
+toggle_theme "$1"

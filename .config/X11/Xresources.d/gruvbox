@@ -1,7 +1,6 @@
 !# vim: ft=xdefaults
 
 #include "dark"
-! #include "light"
 ! #include "material-dark"
 ! #include "material-light"
 
