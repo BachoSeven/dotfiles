@@ -8,22 +8,39 @@ scheme=gruvbox-material; lightline=gruvbox_material
 # scheme=gruvbox; lightline=$scheme
 # scheme=NeoSolarized; lightline=$scheme
 
+# Enable color scheme and terminal GUI colors
+enable_wal_colors() {
+  config_file="$XDG_CONFIG_HOME/nvim/init.vim"
+  if ! grep -q "\" col${scheme}" "$config_file"; then
+    sed -i "s/colo ${scheme}/\" col${scheme}/g" "$config_file"
+    sed -i 's/" colwal/colo wal/g' "$config_file"
+  fi
+  if ! grep -q '" notermgui' "$config_file"; then
+    sed -i 's/se termguicolors/" notermgui/g' "$config_file"
+  fi
+  touch "$active"
+  line_number=$(sed -n "/${lightline}/=" "$XDG_CONFIG_HOME/nvim/plug/postplug.vim" | tail -n 1)
+  sed -i "${line_number}s/${lightline}/wal/" "$XDG_CONFIG_HOME/nvim/plug/postplug.vim"
+}
+
+# Disable color scheme and terminal GUI colors
+disable_wal_colors() {
+  config_file="$XDG_CONFIG_HOME/nvim/init.vim"
+  if ! grep -q "\" colwal" "$config_file"; then
+    sed -i 's/colo wal/" colwal/g' "$config_file"
+    sed -i "s/\" col${scheme}/colo ${scheme}/g" "$config_file"
+  fi
+  if ! grep -q 'se termguicolors' "$config_file"; then
+    sed -i 's/" notermgui/se termguicolors/g' "$config_file"
+  fi
+  [ -f "$active" ] && rm -f "$active" || exit 1
+  sed -i "s/wal/${lightline}/g" "$XDG_CONFIG_HOME/nvim/plug/postplug.vim"
+}
+
 if [ "$1" = "-w" ]; then
-	! grep -q '" col'"$scheme"'' $XDG_CONFIG_HOME/nvim/init.vim &&
-		sed -i 's/colo '"$scheme"'/" col'"$scheme"'/g' $XDG_CONFIG_HOME/nvim/init.vim
-		sed -i 's/" colwal/colo wal/g' $XDG_CONFIG_HOME/nvim/init.vim
-	! grep -q '" notermgui' $XDG_CONFIG_HOME/nvim/init.vim &&
-		sed -i 's/se termguicolors/" notermgui/g' $XDG_CONFIG_HOME/nvim/init.vim
-	touch ~/.cache/wal/active
-	sed -i "$(sed -n '/'"$lightline"'/ =' $XDG_CONFIG_HOME/nvim/plug/postplug.vim | tail -n 1)"' s/'"$lightline"'/wal/' $XDG_CONFIG_HOME/nvim/plug/postplug.vim # wow.
+  enable_wal_colors
 elif [ "$1" = "-x" ]; then
-  ! grep -q '" colwal' $XDG_CONFIG_HOME/nvim/init.vim &&
-		sed -i 's/colo wal/" colwal/g' $XDG_CONFIG_HOME/nvim/init.vim
-		sed -i 's/" col'"$scheme"'/colo '"$scheme"'/g' $XDG_CONFIG_HOME/nvim/init.vim
-	! grep -q 'se termguicolors' $XDG_CONFIG_HOME/nvim/init.vim &&
-		sed -i 's/" notermgui/se termguicolors/g' $XDG_CONFIG_HOME/nvim/init.vim
-	[ -f $active ] && rm -f $active || exit 1
-	sed -i 's/wal/'"$lightline"'/g' $XDG_CONFIG_HOME/nvim/plug/postplug.vim
+  disable_wal_colors
 fi
 
 dunstreload

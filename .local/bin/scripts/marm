@@ -5,11 +5,10 @@
 
 sudo rm -rf /opt/ungoogledChromium
 sudo mv "$1" /opt/ungoogledChromium
-cd /opt/ungoogledChromium
+(cd /opt/ungoogledChromium
 rm chrome-wrapper product_logo_48.png xdg-mime xdg-settings
 rm -rf gen resources
 mv chrome_sandbox chrome-sandbox
 chmod 4755 chrome-sandbox
 sudo chown root:root chrome-sandbox
-sudo mv chrome chromium
-cd -
+sudo mv chrome chromium)

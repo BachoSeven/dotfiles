@@ -79,10 +79,10 @@
 	fu! X11PastePrimary()
 			r !xclip -o
 	endfu
-	nmap <Leader>x :call X11Copy()<CR>
-	vmap <Leader>x "xy:call X11CopyRegister('x')<CR>
-	nmap <Leader>p :call X11PasteClipboard()<CR>
-	nmap <Leader>P :call X11PastePrimary()<CR>
+	nmap <leader>x :call X11Copy()<CR>
+	vmap <leader>x "xy:call X11CopyRegister('x')<CR>
+	nmap <leader>p :call X11PasteClipboard()<CR>
+	nmap <leader>P :call X11PastePrimary()<CR>
 " "" Old alternative
 	" se clipboard=unnamed,unnamedplus
 " "" Unlink system clipboard from vim's paste buffer
@@ -110,7 +110,7 @@
 	nn <c-W><c-F> <c-W>vgf
 
 " Spell check bindings
-	ino <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+	ino <c-l> <c-g>u<esc>[s1z=`]a<c-g>u
 	ino <c-K> <c-g>u<esc>u[s2z=gi<c-g>u
 	ino <c-J> <c-g>u<esc>u[s3z=gi<c-g>u
 
@@ -130,8 +130,8 @@
 " Move lines with Alt+{j,k} in normal mode
 	nn <A-j> :m .+1<CR>==
 	nn <A-k> :m .-2<CR>==
-	ino <A-j> <Esc>:m .+1<CR>==gi
-	ino <A-k> <Esc>:m .-2<CR>==gi
+	ino <A-j> <esc>:m .+1<CR>==gi
+	ino <A-k> <esc>:m .-2<CR>==gi
 	vn <A-j> :m '>+1<CR>gv=gv
 	vn <A-k> :m '<-2<CR>gv=gv
 " Move visually selected lines with {J,K} in visual mode.
@@ -177,8 +177,8 @@
 	cm w!! w !sudo tee > /dev/null %
 
 " Insert new lines in Normal Mode
-	nn <leader>o mao<Esc>`a
-	nn <leader>O maO<Esc>`a
+	nn <leader>o mao<esc>`a
+	nn <leader>O maO<esc>`a
 
 " Shift the section of the line after the cursor downwards.
 	nn <leader>J maa<CR><ESC>`a
@@ -191,7 +191,7 @@
 "" Open Terminal
 	nn <leader>t :te<CR>
 "" Leave terminal easily
-	tno <leader><Esc> <C-\><C-n>
+	tno <leader><esc> <C-\><C-n>
 
 	" sHrUg
 	ino ,shrug ¯\_(ツ)_/¯
@@ -219,8 +219,8 @@
 " Sessions
 	let g:session_dir = '~/.config/nvim/sessions'
 	let g:session#default_opener = 'edit'
-	exec 'nn <Leader>ss :mks! ~/.config/nvim/sessions/'
-	exec 'nn <Leader>sl :so ~/.config/nvim/sessions/<C-D>'
+	exec 'nn <leader>ss :mks! ~/.config/nvim/sessions/'
+	exec 'nn <leader>sl :so ~/.config/nvim/sessions/<C-D>'
 
 "		 +---------+
 "		 | Plugins |

@@ -55,7 +55,7 @@
 
 # vim user :)
 	for i in x q qa wq qw X Q QA WQ QW quit; eval alias :${i}=\' exit\'
-	alias v="nvim"
+	alias v="$EDITOR"
 	alias vi="v"
 	alias vim="v"
 	alias vimdiff="v -d"
@@ -89,7 +89,7 @@
 		"N"	"&>/dev/null"
 		"X"	"| xclip"
 		"A"	"| xargs "
-		"V"	"|& nvim -"
+		"V"	"|& $EDITOR -"
 	)
 
 	magic-abbrev-expand() {
@@ -127,32 +127,32 @@
 # Enable aliases to be sudo’ed
 	alias sudo='sudo '
 # cf... shortcuts
-	alias cfx='nvim $XDG_CONFIG_HOME/sxiv/exec/key-handler'
-	alias cfs='nvim $XDG_CONFIG_HOME/ncspot/config.toml'
-	alias cfa='nvim $ZDOTDIR/plugins/utils/aliasrc'
-	alias cfb='nvim $ZDOTDIR/plugins/utils/bindkeysrc'
-	alias cff='nvim $ZDOTDIR/plugins/utils/functionsrc'
-	alias cfp='nvim $ZDOTDIR/.zprofile'
-	alias cfd='nvim $XDG_CONFIG_HOME/directories'
-	alias cfl='nvim $XDG_CONFIG_HOME/lf/lfrc'
-	alias cfi='nvim $XDG_CONFIG_HOME/ignorelist'
-	alias cfz='nvim $ZDOTDIR/.zshrc'
-	alias cfzp='nvim $ZDOTDIR/plugins'
-	alias cfzv='nvim $ZDOTDIR/plugins/vi_mode/vi_mode.zsh'
-	alias cfv='nvim $XDG_CONFIG_HOME/nvim/init.vim'
-	alias cfvp='nvim $XDG_CONFIG_HOME/nvim/plug'
-	alias cfm='nvim $XDG_CONFIG_HOME/mutt/muttrc'
-	alias cfr='nvim $XDG_CONFIG_HOME/X11/Xresources'
-	alias xg='nvim $XDG_CONFIG_HOME/X11/Xresources.d/gruvbox'
-	alias cfmb='nvim $XDG_CONFIG_HOME/ncmpcpp/bindings'
-	alias cfmc='nvim $XDG_CONFIG_HOME/ncmpcpp/config'
-	alias cfc='nvim $XDG_CONFIG_HOME/cava/config'
-	alias cfy='nvim $XDG_CONFIG_HOME/yt/subs'
-	alias cfu='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
-	alias cfn='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
-	alias cfg='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/browser/cfg'
-	alias cvb='nvim ${XDG_CONFIG_HOME:-$HOME/.config}/Vieb/viebrc'
-	alias src='nvim $HOME/.local/src'
+	alias cfx='$EDITOR $XDG_CONFIG_HOME/sxiv/exec/key-handler'
+	alias cfs='$EDITOR $XDG_CONFIG_HOME/ncspot/config.toml'
+	alias cfa='$EDITOR $ZDOTDIR/plugins/utils/aliasrc'
+	alias cfb='$EDITOR $ZDOTDIR/plugins/utils/bindkeysrc'
+	alias cff='$EDITOR $ZDOTDIR/plugins/utils/functionsrc'
+	alias cfp='$EDITOR $ZDOTDIR/.zprofile'
+	alias cfd='$EDITOR $XDG_CONFIG_HOME/directories'
+	alias cfl='$EDITOR $XDG_CONFIG_HOME/lf/lfrc'
+	alias cfi='$EDITOR $XDG_CONFIG_HOME/ignorelist'
+	alias cfz='$EDITOR $ZDOTDIR/.zshrc'
+	alias cfzp='$EDITOR $ZDOTDIR/plugins'
+	alias cfzv='$EDITOR $ZDOTDIR/plugins/vi_mode/vi_mode.zsh'
+	alias cfv='$EDITOR $XDG_CONFIG_HOME/nvim/init.vim'
+	alias cfvp='$EDITOR $XDG_CONFIG_HOME/nvim/plug'
+	alias cfm='$EDITOR $XDG_CONFIG_HOME/mutt/muttrc'
+	alias cfr='$EDITOR $XDG_CONFIG_HOME/X11/Xresources'
+	alias xg='$EDITOR $XDG_CONFIG_HOME/X11/Xresources.d/gruvbox'
+	alias cfmb='$EDITOR $XDG_CONFIG_HOME/ncmpcpp/bindings'
+	alias cfmc='$EDITOR $XDG_CONFIG_HOME/ncmpcpp/config'
+	alias cfc='$EDITOR $XDG_CONFIG_HOME/cava/config'
+	alias cfy='$EDITOR $XDG_CONFIG_HOME/yt/subs'
+	alias cfu='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls'
+	alias cfn='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
+	alias cfg='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/browser/cfg'
+	alias cvb='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/Vieb/viebrc'
+	alias src='$EDITOR $HOME/.local/src'
 	alias df='df --print-type'
 	alias ls='ls --classify --group-directories-first --hyperlink=auto'
 	alias rd='rmdir'

@@ -22,7 +22,10 @@ set mouse
 
 # adjust coloumn width to terminal
 $ {{
-    if [ $lf_width -le 80 ]; then
+    if [ $lf_width -le 40 ]; then
+        lf -remote "send $id set nopreview"
+        lf -remote "send $id set ratios 1"
+    elif [ $lf_width -le 80 ]; then
         lf -remote "send $id set ratios 1:2"
     elif [ $lf_width -le 160 ]; then
         lf -remote "send $id set ratios 1:2:3"
