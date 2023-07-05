@@ -25,6 +25,7 @@ $ {{
     if [ $lf_width -le 40 ]; then
         lf -remote "send $id set nopreview"
         lf -remote "send $id set ratios 1"
+        lf -remote "send $id set info size"
     elif [ $lf_width -le 80 ]; then
         lf -remote "send $id set ratios 1:2"
     elif [ $lf_width -le 160 ]; then
