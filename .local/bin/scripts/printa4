@@ -3,88 +3,83 @@
 # Semplice shellscript che permette di stampare un file in una stampante del Dipartimento di Matematica
 # da una qualsiasi shell Unix (Linux, MacOS, BSD...). Funziona anche da remoto!
 #
-# Utilizzo: modifica lo script inserendo il tuo username di ateneo
-# al posto di "f.minnocci" nella variabile _user.
 # È consigliato aggiungere la propria chiave ssh nella
-# macchina `login` (o `ssh1`, se userete il server vecchio)
+# macchina `login` (aula3/4)
 # tramite il comando `ssh-copy-id`, in modo da non dover
 # inserire la password ogni volta.
 
-## CAMBIA QUESTO
-_user="f.minnocci"
-_home="/home/unipi"
-_server="login"
-# _user="minnocci"
-# _home="/home"
-# _server="ssh1"
+_HOME="/home/unipi"
+_SERVER="login"
+_NO_CLI=true
 
 main() {
-	if $NO_CLI; then
-		for f in "$@"; do
-			scp "$f" "${_user}@${_server}.dm.unipi.it:${_home}/${_user}/printa4-$(basename "$f")"
-			ssh -XY ${_user}@${_server}.dm.unipi.it "okular \"${_home}/${_user}/printa4-$(basename "$f")\" --print"
-			ssh ${_user}@${_server}.dm.unipi.it "rm \"${_home}/${_user}/printa4-$(basename "$f")\""
-		done
-	else
-		options="$1"; shift
-		for f in "$@"; do
-			scp "$f" "${_user}@${_server}.dm.unipi.it:${_home}/${_user}/printa4-$(basename "$f")"
-			ssh ${_user}@${_server}.dm.unipi.it "lp $options \"${_home}/${_user}/printa4-$(basename "$f")\""
-			ssh ${_user}@${_server}.dm.unipi.it "rm \"${_home}/${_user}/printa4-$(basename "$f")\""
-		done
-	fi
+    for f in "$@"; do
+        scp "$f" "${_USER}@${_SERVER}.dm.unipi.it:${_HOME}/${_USER}/printa4-$(basename "$f")"
+        if $_NO_CLI; then
+            ssh -XY ${_USER}@${_SERVER}.dm.unipi.it "okular \"${_HOME}/${_USER}/printa4-$(basename "$f")\" --print"
+        else
+            ssh ${_USER}@${_SERVER}.dm.unipi.it "lp $OPTIONS \"${_HOME}/${_USER}/printa4-$(basename "$f")\""
+        fi
+        ssh ${_USER}@${_SERVER}.dm.unipi.it "rm \"${_HOME}/${_USER}/printa4-$(basename "$f")\""
+    done
 }
 
 usage() {
-	cat <<EOF
+    cat <<EOF
 Script che consente di stampare in Aula 4
 
-Utilizzo: $(basename $0) <DOCUMENTO> <...>
+Utilizzo: $(basename $0) [OPTIONS] <DOCUMENTO> <...>
+
+Opzioni disponibili:
+  -h, --help                  mostra questo messaggio di aiuto
+  -u, --user USER             specifica l'username di ateneo (default: $_USER)
+  -s, --server SERVER         specifica il server (default: $_SERVER)
+  -d, --home HOME             specifica la directory home (default: $_HOME)
+  -c, --cli OPTIONS           stampa tramite "lp" invece che da interfaccia grafica tramite "okular",
+                              passando gli opzioni di stampa per "lp" fra virgolette
 
 Ad esempio:
 
-	$(basename "$0") ~/GAAL.pdf
+  $(basename "$0") ~/GAAL.pdf
 
-	$(basename "$0") alg2.pdf commRingTheory.pdf
+  $(basename "$0") alg2.pdf commRingTheory.pdf
 
-> NOTA: La variabile del nome utente usato per stampare va modificato all'interno dello script
+  $(basename "$0") --cli '-o sides=two-sided-short-edge' MR-impaginato.pdf
 
-Per stampare tramite "lp" invece che da interfaccia grafica tramite "okular", è
-possibile passare l'opzione "-c" o "--cli", seguita dagli argomenti di stampa
-per "lp" fra virgolette, e passando come ultimo argomento i file PDF da stampare:
-
-	$(basename "$0") --cli "-o sides=two-sided-short-edge" MR-impaginato.pdf
-
-> N.B.: L'esempio qua sopra usa le opzioni necessarie per poter stampare un file
-> creato con lo script "impagina", per rilegare le dispense a libretto in A5.
-
+N.B.: L'opzione --cli usa le opzioni necessarie per poter stampare un file
+creato con lo script "impagina", per rilegare le dispense a libretto in A5.
 Altre opzioni utili da passare ad "lp":
-	-d destination               stampante da usare ("lpstat -d -p" mostra le stampanti disponibili)
-	-n num-copies                numero di copie da stampare
-	-P page-list                 per specificare le pagine da stampare, ad esempio "1,4-7,15"
-	-o media=SIZE                dove SIZE può essere ad esempio "a4", "letter" o "legal"
-	-o number-up=NUM             per stampare NUM pagine per foglio
-	-o orientation-requested=5   per stampare in orizzontale (landscape)
-	-o sides=two-sided-long-edge per stampare in fronte-retro ("-o sides=two-sided-short-edge" per landscape)
+  -d destination               stampante da usare ("lpstat -d -p" mostra le stampanti disponibili)
+  -n num-copies                numero di copie da stampare
+  -P page-list                 per specificare le pagine da stampare, ad esempio "1,4-7,15"
+  -o media=SIZE                dove SIZE può essere ad esempio "a4", "letter" o "legal"
+  -o number-up=NUM             per stampare NUM pagine per foglio
+  -o orientation-requested=5   per stampare in orizzontale (landscape)
+  -o sides=two-sided-long-edge per stampare in fronte-retro ("-o sides=two-sided-short-edge" per landscape)
 EOF
 }
 
 error() {
-	printf "$@\n" 1>&2
-	usage
+    printf "$@\n" 1>&2
+    usage
 }
 
-if [ -z "$1" ] ; then
-	error "Non hai specificato nessun file...\n"
+## PARSE OPTIONS
+while [ "$#" -gt 0 ]; do
+    case $1 in
+        -h|--help) usage; exit 0;;
+        -u|--user) _USER="$2"; shift;;
+        -s|--server) _SERVER="$2"; shift;;
+        -d|--home) _HOME="$2"; shift;;
+        -c|--cli) _NO_CLI=false; OPTIONS="$2"; shift;;
+        -*) error "Opzione invalida: $1" ;;
+        *) break ;;
+    esac
+    shift
+done
+
+if [ -z "$1" ]; then
+    error "Non hai specificato nessun file...\n"
 else
-	case "$1" in
-	-h|--help)
-		usage ;;
-	-c|--cli)
-		NO_CLI=false; shift; main "$@" ;;
-	-*)
-		error "Opzione invalida: $1" ;;
-	*)
-		main "$@" ;;
-	esac
+    main "$@"
 fi
