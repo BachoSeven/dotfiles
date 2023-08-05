@@ -41,6 +41,10 @@ do
 			else
 				ln -s "$(realpath "$file")" "$HOME/pics/papes/fav" && notify-send -i "$(realpath "$file")" "$file aggiunto ai preferiti" &
 			fi ;;
+		l)
+				ln -sf "$(realpath "$file")" "$XDG_DATA_HOME/light" ;;
+		L)
+				ln -sf "$(realpath "$file")" "$XDG_DATA_HOME/dark" ;;
 		y)
 			printf "$file" | tr -d '\n' | xclip -sel c -r &&
 			notify-send "$file copied to clipboard" & ;;
@@ -58,6 +62,6 @@ do
 		n)
 			notify-send "File information" "$(mediainfo "$file")" ;;
 		I)
-			imgur.sh "$file" >/dev/null | head -n 1 | xclip -sel c -r ;;
+			imgur.sh "$file" 2>/dev/null | xclip -sel c -r ;;
 	esac
 done

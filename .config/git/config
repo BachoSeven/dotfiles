@@ -30,3 +30,5 @@
 	flog = fuzzy flog
 	fstat = fuzzy fstat
 	funtrack = fuzzy fstat
+[init]
+	defaultBranch = main

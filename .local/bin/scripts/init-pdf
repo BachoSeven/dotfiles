@@ -3,20 +3,20 @@ import subprocess
 import time
 
 # Current topic
-current = "cs"
+current = "tesi"
 
 # Dictionary of PDFs to open
 pdfs = {
-    "tesi": ['guillot', 'harari', 'CFT', 'ADT3'],
-    "ro": [8, 9, 10],
-    "cs": ['Potenze']
+    "tesi": ['guillot', 'harari - galois', 'cft', 'adt3'],
+    "lab": ['bertini', 'system'],
+    "ro": [8, 9, 10]
 }
 
 # Dictionary of PDF search paths for `fd`
 search_paths = {
     "tesi": "/home/fra/math",
-    "ro": "/home/fra/math/uni/RO/appunti/Appunti Scutellà",
-    "cs": "/home/fra/math/uni/Calcolo Scientifico/appunti/robol"
+    "lab": "/home/fra/math/uni/LabComp",
+    "ro": "/home/fra/math/uni/RO/appunti/Appunti Scutellà"
 }
 
 # Skip the second tag

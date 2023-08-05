@@ -56,7 +56,7 @@
 	icon_path = /usr/share/icons/Gruvbox-Material-Dark/16x16/status:/usr/share/icons/Gruvbox-Material-Dark/16x16/devices:/usr/share/icons/Gruvbox-Material-Dark/symbolic/status:/usr/share/icons/Gruvbox-Material-Dark/symbolic/devices:/usr/share/icons/Gruvbox-Material-Dark/16x16/apps:/usr/share/icons/Gruvbox-Material-Dark/16x16/panel
 	min_icon_size = 16
 	max_icon_size = 96
-	enable_recursive_icon_lookup=false
+	enable_recursive_icon_lookup=true
 	sticky_history = no
 	history_length = 20
 	dmenu = /usr/local/bin/dmenu -p dunst:
