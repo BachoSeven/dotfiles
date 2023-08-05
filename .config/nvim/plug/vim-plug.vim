@@ -91,6 +91,9 @@ cal plug#begin(g:plugin_location)
 " Treesitter
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" Copilot
+	Plug 'github/copilot.vim'
+
 " Vimtex
 	Plug 'lervag/vimtex'
 	Plug 'sirver/ultisnips'

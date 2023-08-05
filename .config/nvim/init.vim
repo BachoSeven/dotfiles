@@ -164,7 +164,7 @@
 	ino <S-Right> <esc>Ea
 	ino <S-Left> <esc>Bi
 
-" Perform dot commands over visual blocks:
+" Perform dot commands over visual selections:
 	vn . :normal .<CR>
 
 " Replace all occurrences aliased to S
