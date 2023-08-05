@@ -84,3 +84,21 @@
 	if [ "$USER" = "fra" ]; then
 		eval "$(zoxide init zsh)"
 	fi
+
+
+# https://wiki.archlinux.org/title/Color_output_in_console#Reading_from_stdin
+zmodload zsh/zpty
+
+pty() {
+	zpty pty-${UID} ${1+$@}
+	if [[ ! -t 1 ]];then
+		setopt local_traps
+		trap '' INT
+	fi
+	zpty -r pty-${UID}
+	zpty -d pty-${UID}
+}
+
+ptyless() {
+	pty $@ | less
+}
