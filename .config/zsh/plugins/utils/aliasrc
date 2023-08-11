@@ -10,9 +10,9 @@
 
 # SSH
 	alias phc='ssh minnocci@poisson.phc.dm.unipi.it'
-	alias kol='ssh -J minnocci@poisson.phc.dm.unipi.it -p 2233 minnocci@kolmogorov.phc.dm.unipi.it'
-	alias gam='ssh -J minnocci@poisson.phc.dm.unipi.it minnocci@gamera.phc.dm.unipi.it'
-	alias stef='ssh -J minnocci@poisson.phc.dm.unipi.it minnocci@steffe.cs.dm.unipi.it'
+	alias kol='ssh -p 2233 minnocci@kolmogorov.phc.dm.unipi.it'
+	alias gam='ssh minnocci@gamera.phc.dm.unipi.it'
+	alias rock='ssh rock@steffe.cs.dm.unipi.it'
 	alias lab='ssh -p 2222 root@lab.phc.dm.unipi.it'
 	alias server='ssh arciere@server -p 27'
 	alias serveron='wol 60:a4:4c:59:6d:ec'
@@ -109,6 +109,7 @@
 
 	alias wa='export WA_APPID="$(secret-tool lookup wa_api appid)"; WA_VIEWER="wezterm imgcat" wezterm  --config "exit_behavior=\"Hold\"" start -- wa'
 	alias chpr='ung --proxy-server="socks5://localhost:9999" --proxy-bypass-list="192.168.1.*"'
+	alias bd='fd --base-directory=~/stuff/people -t f "comp$|compli$|bd$" -x sh -c "echo {}; cat \"{}\""'
 	alias flix='ung --app=https://netflix.com/browse'
 	alias jelly='ung --app=http://server:8096/web/index.html#!/home.html'
 	alias mictog='pactl set-source-mute @DEFAULT_SOURCE@ toggle'

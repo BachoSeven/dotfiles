@@ -260,6 +260,9 @@
 " ColorScheme
 	se termguicolors
 	se background=dark
+	fu! SwitchTheme(mode)
+		exe "se background=".a:mode
+	endfu
 	" colwal
 	colo gruvbox-material | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
 	" colo NeoSolarized

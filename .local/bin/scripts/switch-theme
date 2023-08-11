@@ -44,7 +44,7 @@ toggle_theme() {
 		kill -s USR1 $(pidof st)
 	fi
 	for sock in ~/.cache/nvim/nvim-*; do
-		nvim --server $sock --remote-send "<C-\><C-n>:so $XDG_CONFIG_HOME/nvim/init.vim<CR>" &
+		nvim --server $sock --remote-send "<C-\><C-n>:call SwitchTheme('$1')<CR>" &
 	done
 }
 
