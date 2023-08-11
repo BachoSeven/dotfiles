@@ -3,8 +3,8 @@
 case $1 in
 	period-changed)
 		if [ $3 == "daytime" ]; then
-			thtog light
+			switch-theme light
 		elif [ $3 == "night" ]; then
-			thtog dark
+			switch-theme dark
 		fi
 esac

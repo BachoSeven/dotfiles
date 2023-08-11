@@ -7,14 +7,14 @@ current = "tesi"
 
 # Dictionary of PDFs to open
 pdfs = {
-    "tesi": ['guillot', 'harari - galois', 'cft', 'adt3'],
+    "tesi": ['with exercises'],
     "lab": ['bertini', 'system'],
     "ro": [8, 9, 10]
 }
 
 # Dictionary of PDF search paths for `fd`
 search_paths = {
-    "tesi": "/home/fra/math",
+    "tesi": "/home/fra/math/stuff/books",
     "lab": "/home/fra/math/uni/LabComp",
     "ro": "/home/fra/math/uni/RO/appunti/Appunti Scutellà"
 }
