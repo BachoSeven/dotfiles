@@ -14,7 +14,7 @@ aug END
 
 " Set some general options
 	au FileType sh,zsh,octave,c,cpp,go,julia se shiftwidth=2 tabstop=2 softtabstop=2
-	au FileType asm,fsharp,html,json,css,scss,javascriptreact,typescriptreact,lua se shiftwidth=4 tabstop=4 softtabstop=4 et
+	au FileType asm,fsharp,html,json,css,scss,javascriptreact,typescriptreact,lua,tex se shiftwidth=4 tabstop=4 softtabstop=4 et
 
 " enable accessing GNU Octave documentation from vim using GNU TexInfo (lol)
   let s:conditionalEnd = '\(([^()]*\)\@!\<end\>\([^()]*)\)\@!'
