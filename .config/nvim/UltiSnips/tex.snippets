@@ -8,13 +8,18 @@ snippet temp "Basic template" b
 
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage[italian]{babel}
+\usepackage[english]{babel}
 \usepackage{hyperref}
 \usepackage{amsmath, amssymb, amsthm}
 % for \lightning
 \usepackage{stmaryrd}
 \usepackage{geometry}
 \usepackage{tikz-cd}
+
+% Remove indentation globally
+\setlength{\parindent}{0pt}
+% Have blank lines between paragraphs
+\usepackage[parfill]{parskip}
 
 \hypersetup{
 	colorlinks = true, % links instead of boxes
@@ -30,6 +35,7 @@ snippet temp "Basic template" b
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\Z}{\mathbb{Z}}
 
+% use bullets for items
 \renewcommand{\labelitemii}{$\circ$}
 \renewcommand{\Im}{\operatorname{Im}}
 
@@ -86,6 +92,8 @@ snippet pres "Beamer" b
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\Z}{\mathbb{Z}}
 
+% use bullets for items
+\renewcommand{\labelitemii}{$\circ$}
 \renewcommand{\Im}{\operatorname{Im}}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}

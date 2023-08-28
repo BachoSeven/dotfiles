@@ -16,7 +16,7 @@
 	offset = 15x15
 	width = 320
 	height = 220
-	indicate_hidden = yes
+	indicate_hidden = true
 	transparency = 20
 	separator_height = 2
 	padding = 0
@@ -30,7 +30,7 @@
 	#  * anything else will be interpreted as a X color.
 	separator_color = auto
 	# Sort messages by urgency.
-	sort = yes
+	sort = true
 	font = Monospace 14
 	line_height = 0
 	markup = full
@@ -48,16 +48,16 @@
 	alignment = left
 	show_age_threshold = 60
 	ellipsize = middle
-	ignore_newline = no
+	ignore_newline = false
 	stack_duplicates = true
 	hide_duplicate_count = true
-	show_indicators = yes
+	show_indicators = false
 	icon_position = left
 	icon_path = /usr/share/icons/Gruvbox-Material-Dark/16x16/status:/usr/share/icons/Gruvbox-Material-Dark/16x16/devices:/usr/share/icons/Gruvbox-Material-Dark/symbolic/status:/usr/share/icons/Gruvbox-Material-Dark/symbolic/devices:/usr/share/icons/Gruvbox-Material-Dark/16x16/apps:/usr/share/icons/Gruvbox-Material-Dark/16x16/panel
 	min_icon_size = 16
 	max_icon_size = 96
 	enable_recursive_icon_lookup=true
-	sticky_history = no
+	sticky_history = false
 	history_length = 20
 	dmenu = /usr/local/bin/dmenu -p dunst:
 	browser = /usr/bin/chromium
