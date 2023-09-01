@@ -124,6 +124,7 @@
 	alias upbat='price bat "Basic Attention Token" 🦁 && less -R ~/.local/share/crypto-prices/bat-chart'
 # Media
 	alias nc2='MPD_PORT="6600" st -c ncmpcpp -e ncmpcpp -c ~/.config/ncmpcpp2/config'
+	alias mlr='sptlrx -p mpd'
 	alias spo='st -c ncspot ncspot && spotup'
 	alias spi='spotify-launcher && spotup && rmdir ~/Downloads'
 # Desk

@@ -1,0 +1,44 @@
+# cookie: ""
+# player: spotify
+player: mpris
+# player: mpd
+mpris:
+  players: [ncspot, tauon, spotify]
+timerInterval: 200
+updateInterval: 2000
+style:
+  hAlignment: center
+  before:
+    background: ""
+    foreground: ""
+    bold: true
+    italic: false
+    undeline: false
+    strikethrough: false
+    blink: false
+    faint: false
+  current:
+    background: ""
+    foreground: ""
+    bold: true
+    italic: false
+    undeline: false
+    strikethrough: false
+    blink: false
+    faint: false
+  after:
+    background: ""
+    foreground: ""
+    bold: false
+    italic: false
+    undeline: false
+    strikethrough: false
+    blink: false
+    faint: true
+pipe:
+  length: 0
+  overflow: word
+  ignoreErrors: true
+mpd:
+  address: 127.0.0.1:6600
+  password: ""
