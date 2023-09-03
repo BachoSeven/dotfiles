@@ -4,9 +4,9 @@
 	export READER="zathura"
 	export OPENER="xdg-open"
 	export PAGER="less"
-	export EDITOR="nvim"
-	export VISUAL="nvim"
-	export DIFFTOOL="nvim -d"
+	export EDITOR='nvim'
+	export VISUAL='nvim'
+	export DIFFTOOL="$EDITOR -d"
 	export BROWSER="chromium"
 	export LOCATION="Buti" # weather script
 	export AURHELPER="paru"
@@ -16,6 +16,7 @@
 # XDG Base Directory locations
 	export XDG_CONFIG_HOME="$HOME/.config"
 	export XDG_DATA_HOME="$HOME/.local/share"
+	export XDG_STATE_HOME="$HOME/.local/state"
 	export XDG_CACHE_HOME="$HOME/.cache"
 	export XDG_DATA_DIRS="$XDG_DATA_HOME:/usr/share:/usr/local/share"
 	export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
@@ -29,6 +30,7 @@
 	export LESSHISTFILE=-
 	export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 	export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
+	export W3M_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/w3m"
 	export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 	export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 	export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
@@ -61,6 +63,7 @@
 	export OSHU_HOME="$HOME/stuff/games/osu"
 	export SQLITE_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/sqlite_history"
 	export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+	export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
 
 ## Various programs settings:
 	export BC_LINE_LENGTH=80
@@ -135,78 +138,9 @@
 	export LESS_TERMCAP_se="$(printf '%b' '[0m')"        # end standout-mode
 	export LESSOPEN='| LESSQUIET=1 lesspipe.sh %s'
 	export LESSCOLORIZER='pygmentize'
-	export LESS='-iRX --mouse --wheel-lines 2 --jump-target=.5 --status-column --LONG-PROMPT --quit-on-intr --no-histdups'
+	export LESS='-iRX --use-color -Dd+r$Du+b$ --mouse --wheel-lines 2 --jump-target=.5 --status-column --LONG-PROMPT --quit-on-intr --no-histdups'
+	export MANROFFOPT="-c"
 	export MANPAGER="sh -c 'col -bx | bat -l man -p '"
-# Lf icons
-	# export LF_ICONS="tw=:st=:ow=:dt=:di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*.coffee=:*.cpp=:*.css=:*.d=:*.dart=:*.erl=:*.exs=:*.fs=:*.go=:*.h=:*.hh=:*.hpp=:*.hs=:*.html=:*.java=:*.jl=:*.js=:*.json=:*.lua=:*.md=:*.php=:*.pl=:*.pro=:*.py=:*.rb=:*.rs=:*.scala=:*.ts=:*.vim=:*.cmd=:*.ps1=:*.sh=:*.bash=:*.zsh=:*.fish=:*.tar=:*.tgz=:*.arc=:*.arj=:*.taz=:*.lha=:*.lz4=:*.lzh=:*.lzma=:*.tlz=:*.txz=:*.tzo=:*.t7z=:*.zip=:*.z=:*.dz=:*.gz=:*.lrz=:*.lz=:*.lzo=:*.xz=:*.zst=:*.tzst=:*.bz2=:*.bz=:*.tbz=:*.tbz2=:*.tz=:*.deb=:*.rpm=:*.jar=:*.war=:*.ear=:*.sar=:*.rar=:*.alz=:*.ace=:*.zoo=:*.cpio=:*.7z=:*.rz=:*.cab=:*.wim=:*.swm=:*.dwm=:*.esd=:*.jpg=:*.jpeg=:*.mjpg=:*.mjpeg=:*.gif=:*.bmp=:*.pbm=:*.pgm=:*.ppm=:*.tga=:*.xbm=:*.xpm=:*.tif=:*.tiff=:*.png=:*.svg=:*.svgz=:*.mng=:*.pcx=:*.mov=:*.mpg=:*.mpeg=:*.m2v=:*.mkv=:*.webm=:*.ogm=:*.mp4=:*.m4v=:*.mp4v=:*.vob=:*.qt=:*.nuv=:*.wmv=:*.asf=:*.rm=:*.rmvb=:*.flc=:*.avi=:*.fli=:*.flv=:*.gl=:*.dl=:*.xcf=:*.xwd=:*.yuv=:*.cgm=:*.emf=:*.ogv=:*.ogx=:*.aac=:*.au=:*.flac=:*.m4a=:*.mid=:*.midi=:*.mka=:*.mp3=:*.mpc=:*.ogg=:*.ra=:*.wav=:*.oga=:*.opus=:*.spx=:*.xspf=:*.pdf=:*.nix="
-	export LF_ICONS="di=📁:\
-fi=📃:\
-tw=🤝:\
-ow=📂:\
-ln=⛓:\
-or=❌:\
-ex=🎯:\
-*.txt=✍:\
-*.mom=✍:\
-*.me=✍:\
-*.ms=✍:\
-*.png=🖼:\
-*.ico=🖼:\
-*.jpg=📸:\
-*.jpeg=📸:\
-*.gif=🖼:\
-*.svg=🗺:\
-*.xcf=🖌:\
-*.html=🌎:\
-*.xml=📰:\
-*.gpg=🔒:\
-*.css=🎨:\
-*.pdf=📚:\
-*.djvu=📚:\
-*.epub=📚:\
-*.csv=📓:\
-*.xlsx=📓:\
-*.tex=📜:\
-*.md=📘:\
-*.r=📊:\
-*.R=📊:\
-*.rmd=📊:\
-*.Rmd=📊:\
-*.mp3=🎵:\
-*.opus=🎵:\
-*.ogg=🎵:\
-*.m4a=🎵:\
-*.flac=🎼:\
-*.wav=🎼:\
-*.mkv=🎥:\
-*.mp4=🎥:\
-*.webm=🎥:\
-*.mpeg=🎥:\
-*.avi=🎥:\
-*.mov=🎥:\
-*.mpg=🎥:\
-*.wmv=🎥:\
-*.m4b=🎥:\
-*.flv=🎥:\
-*.zip=📦:\
-*.rar=📦:\
-*.7z=📦:\
-*.tar.gz=📦:\
-*.z64=🎮:\
-*.v64=🎮:\
-*.n64=🎮:\
-*.1=ℹ:\
-*.nfo=ℹ:\
-*.info=ℹ:\
-*.log=📙:\
-*.iso=📀:\
-*.img=📀:\
-*.bib=🎓:\
-*.ged=👪:\
-*.part=💔:\
-*.torrent=🔽:\
-*.nix=::\
-"
 
 if [ "$TERM" = "linux" ]; then
 	# gruvbox in TTY ;)
@@ -238,7 +172,7 @@ fi
 # Kunst
 	export KUNST_SIZE="250x250"
 	export KUNST_POSITION="-25+15" # This should be in sync with dwm gaps.
-	export KUNST_MUSIC_DIR="$HOME/slsk/music"
+	export KUNST_MUSIC_DIR="$HOME/mus"
 	export KUNST_COVER_NAMES='cover|folder|front|thumbnail'
 	export KUNST_COVER_EXT='jpg|png|jpeg'
 

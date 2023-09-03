@@ -1,4 +1,6 @@
 lfcd () {
+	# TODO: update for r31 with     cd "$(command lf -print-last-dir "$@")"
+	#                               (+ whatever else for archivemount)
 	local file="$HOME/.cache/lf-last-dir-path"
 
 	# Run in a subshell so cleanup works as expected
