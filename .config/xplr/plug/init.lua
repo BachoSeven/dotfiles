@@ -1,5 +1,5 @@
 local function setup()
-    package.path = os.getenv("XDG_CONFIG_HOME") .. '/xplr/plug/?/src/init.lua'
+    package.path = os.getenv("XDG_CONFIG_HOME") .. '/xplr/plug/?.xplr/src/init.lua'
 
     -- Add as submodules
     require("completion").setup()

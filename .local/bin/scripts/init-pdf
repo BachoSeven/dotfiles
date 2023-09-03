@@ -7,7 +7,7 @@ current = "tesi"
 
 # Dictionary of PDFs to open
 pdfs = {
-    "tesi": ['CFT', 'of Number Fields'],
+    "tesi": ['CFTc', 'of Number Fields'],
     "ro": [8, 9, 10]
 }
 
