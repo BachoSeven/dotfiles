@@ -31,7 +31,7 @@ cmd="$(echo "$sorted"$'\n'"$cache_deduped" | $dmenucmd)"
 # To remove a file from history:
 # Trail the selected item with ;rm
 if [[ $cmd == *";rm" ]]; then
-		cmd=${cmd/;rm/}
+		cmd="$(echo "$cmd" | sed 's/;rm$//')"
 		grep -vx "$cmd" $freq > temp
 		mv temp $freq
 		exit 0
