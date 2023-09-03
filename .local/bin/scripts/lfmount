@@ -1,5 +1,6 @@
 #!/bin/sh
 # Little script to preview archives in lf
+# TODO: update for r31
 
 _f="$(basename "$1")"
 mnt="_${_f%.*}"

@@ -14,6 +14,7 @@ set filesep "\n"  # default already
 set scrolloff 7
 set icons
 set period 1
+# set preserve "mode:timestamps" # uncomment after r31
 set findlen 2
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml:lost+found"
 set incsearch
