@@ -128,8 +128,8 @@
 	alias spo='st -c ncspot ncspot && spotup'
 	alias spi='spotify-launcher && spotup && rmdir ~/Downloads'
 # Desk
-	alias sit='idasen moveto 1100' # since the script always overshoots, both values are adjusted accordingly
-	alias stand='idasen moveto 4400'
+	alias sit='idasen moveto 1200' # since the script always overshoots, both values are adjusted accordingly
+	alias stand='idasen moveto 4500'
 
 ## Disks
 	alias diskwritebench='dd bs=1M count=1024 if=/dev/zero of=test conv=fdatasync'

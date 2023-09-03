@@ -58,7 +58,8 @@
 #.PlayOnLinux
 #
 ## Spotify
-#.config/spotify/Users
+.config/spotify/Users
+.local/share/spotify-launcher
 #
 ## some history files
 #.python_history
@@ -89,7 +90,7 @@
 .cache
 # /.Trash
 # .Trash-1*
-# .local/share/Trash
+.local/share/Trash
 # /Trash
 #
 # useless databases
@@ -137,7 +138,11 @@ Thumbs.db
 # .localised
 # .CFUserTextEncoding
 
+# Julia
+.local/share/julia
+
 # ROBA
+.local/share/iso
 .local/share/mail
 .config/mutt/.mailsynclastrun
 .config/Ferdi
@@ -345,14 +350,18 @@ nohup.out
 .local/share/nvim/swap
 
 # VS Code
-# .vscode-oss/extensions/*
-# .vscode/extensions/*
 # .config/Code - OSS/blob_storage/
 # .config/Code - OSS/GPUCache/
 # .config/Code - OSS/logs/
 # .config/Code/blob_storage/
 # .config/Code/GPUCache/
 # .config/Code/logs/
+
+# VSCodium
+.local/share/vscode-extensions/*
+.config/VSCodium/blob_storage/
+.config/VSCodium/GPUCache/
+.config/VSCodium/logs/
 
 # VirtualBox
 # .config/VirtualBox/VBoxSVC.log*
