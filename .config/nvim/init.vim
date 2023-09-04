@@ -259,7 +259,7 @@
 	hi Comment gui=italic
 " ColorScheme
 	se termguicolors
-	se background=dark
+	se background=light
 	fu! SwitchTheme(mode)
 		exe "se background=".a:mode
 	endfu

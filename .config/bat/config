@@ -1,5 +1,5 @@
 # set theme
---theme="gruvbox-dark"
+--theme="gruvbox-light"
 
 # enable italic
 --italic-text=always
