@@ -124,7 +124,6 @@
 # anti aliasing in the two toolkits
 	export GDK_USE_XFT=1
 	export QT_XFT=true
-# Consistent theming for Qt
 	export QT_QPA_PLATFORMTHEME=gtk3
 # Vieb
 	export VIEB_WINDOW_FRAME=true

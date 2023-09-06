@@ -13,7 +13,7 @@ pdfs = {
 
 # Dictionary of PDF search paths for `fd`
 search_paths = {
-    "tesi": "/home/fra/math/stuff/books",
+    "tesi": "/home/fra/math/stuff/tesi",
     "lab": "/home/fra/math/uni/LabComp",
     "ro": "/home/fra/math/uni/RO/appunti/Appunti Scutellà"
 }
