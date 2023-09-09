@@ -3,12 +3,12 @@ import subprocess
 import time
 
 # Current topic
-current = "tesi"
+current = "ro"
 
 # Dictionary of PDFs to open
 pdfs = {
     "tesi": ['CFTc'],
-    "ro": [8, 9, 10]
+    "ro": [9, 10]
 }
 
 # Dictionary of PDF search paths for `fd`
