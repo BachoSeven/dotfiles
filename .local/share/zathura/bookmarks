@@ -20,13 +20,6 @@ artin=170;0.5;0.86419171443815568;
 localFields=31;0.79326364692218354;0.10264588043255889;
 classFormationDuality=23;0.50128205128205128;0.077723421211696245;
 
-[/home/fra/math/stuff/tesi/mia/Tate - Nakayama Duality/David Harari - Galois Cohomology and Class Field Theory (Universitext)-Springer (2020).pdf]
-dualMod=137;0.51098096632503665;0.40645935901465247;
-locDual=141;0.51098096632503665;0.41863944250353241;
-
-[/home/fra/math/stuff/books/Number Theory/Algebraic Number Theory/Pierre Guillot - A Gentle Course in Local Class Field Theory  Local Number Fields, Brauer Groups, Galois Cohomology-Cambridge University Press (2018).pdf]
-current=22;0.5;0.071095370267504024;
-
 [/home/fra/math/uni/LabComp/Homotopy Continuation/The Numerical Solution of Systems of Polynomials.pdf]
 algo=44;0.5;0.10226498365170353;
 
@@ -43,23 +36,27 @@ proj=79;0.5714285714285714;0.21954381252988506;
 [/home/fra/math/stuff/books/Lecture Notes/Pete Clark/Homological Algebra (with exercises).pdf]
 kaplanskyPair=68;0.5;0.61533840128840922;
 
-[/home/fra/math/stuff/tesi/mia/! Tate - Nakayama Duality/CFTc.pdf]
+[/home/fra/math/stuff/books/Group Theory/Brown - Cohomology of Groups-Springer (1982).pdf]
+specSeq=172;0.5;0.5375440144709922;
+
+[/home/fra/math/stuff/tesi/mia/Tate - Nakayama Duality/David Harari - Galois Cohomology and Class Field Theory (Universitext)-Springer (2020).pdf]
+dualMod=137;0.51098096632503665;0.40645935901465247;
+locDual=141;0.51098096632503665;0.41863944250353241;
+
+[/home/fra/math/stuff/tesi/Tate Duality (mia)/CFTc.pdf]
 CG=76;0.5;0.25506756756756754;
 
-[/home/fra/math/stuff/tesi/mia/! Tate - Nakayama Duality/Neukirch, Schmidt, Wingberg - Cohomology of Number Fields (2020).pdf]
+[/home/fra/math/stuff/tesi/Tate Duality (mia)/Neukirch, Schmidt, Wingberg - Cohomology of Number Fields (2020).pdf]
 Shapiro=76;0.5;0.09002940809299935;
 indMod=45;0.5;0.052976190476190475;
 grSpSeq=146;0.5;0.17327008981895065;
 
-[/home/fra/math/stuff/books/Group Theory/Brown - Cohomology of Groups-Springer (1982).pdf]
-specSeq=172;0.5;0.5375440144709922;
-
-[/home/fra/math/stuff/tesi/mia/! Tate - Nakayama Duality/Charles A. Weibel - An Introduction to Homological Algebra-Cambridge University Press (1994).pdf]
+[/home/fra/math/stuff/tesi/Tate Duality (mia)/Charles A. Weibel - An Introduction to Homological Algebra-Cambridge University Press (1994).pdf]
 spSeq=134;0.5;0.28765639966475098;
 H-S=209;1.3333333333333333;0.44935344827586204;
 
-[/home/fra/math/stuff/tesi/mia/! Tate - Nakayama Duality/Serre - Galois Cohomology-Springer (1997).pdf]
+[/home/fra/math/stuff/tesi/Tate Duality (mia)/Serre - Galois Cohomology-Springer (1997).pdf]
 tateDual=102;0.5;0.46015608409428754;
 
-[/home/fra/math/stuff/tesi/mia/! Tate - Nakayama Duality/Pierre Guillot - A Gentle Course in Local Class Field Theory  Local Number Fields, Brauer Groups, Galois Cohomology-Cambridge University Press (2018).pdf]
+[/home/fra/math/stuff/tesi/Tate Duality (mia)/Pierre Guillot - A Gentle Course in Local Class Field Theory  Local Number Fields, Brauer Groups, Galois Cohomology-Cambridge University Press (2018).pdf]
 cup-products=244;0.5;0.79073221570803776;
