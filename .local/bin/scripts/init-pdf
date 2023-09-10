@@ -8,7 +8,7 @@ current = "ro"
 # Dictionary of PDFs to open
 pdfs = {
     "tesi": ['CFTc'],
-    "ro": [9, 10]
+    "ro": ['15'],
 }
 
 # Dictionary of PDF search paths for `fd`

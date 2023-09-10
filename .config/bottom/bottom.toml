@@ -6,7 +6,6 @@ left_legend = true
 group_processes = true
 regex = true
 hide_table_gap = true
-dot_marker = true
 
 [temp_filter]
 is_list_ignored = true
