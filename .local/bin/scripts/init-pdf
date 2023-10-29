@@ -3,19 +3,19 @@ import subprocess
 import time
 
 # Current topic
-current = "ro"
+current = "tesi"
+#  current = "lean"
 
 # Dictionary of PDFs to open
 pdfs = {
-    "tesi": ['CFTc'],
-    "ro": ['15'],
+    "tesi": ['Neukirch'],
+    "lean": ['mathematics']
 }
 
 # Dictionary of PDF search paths for `fd`
 search_paths = {
     "tesi": "/home/fra/math/stuff/tesi",
-    "lab": "/home/fra/math/uni/LabComp",
-    "ro": "/home/fra/math/uni/RO/appunti/Appunti Scutellà"
+    "lean": "/home/fra/math/uni/Lean"
 }
 
 # Skip the second tag
