@@ -3,15 +3,15 @@
 # Replace in files
 #
 # Usage:
-##	> Replace in files. Uses ripgrep to find files, so all ripgrep arguments work. Use `rg` for dry-run, and then replace it with `wg`.
+##	> Replace in files. Uses ripgrep to find files, so all ripgrep arguments work. Use `rg` for dry-run, and then replace it with `wrg`.
 ##
 ##	- Replace a pattern in a file:
 ##
-##	`wg {{pattern}} {{filename}} --replace {{replacement}}`
+##	`wrg {{pattern}} {{filename}} --replace {{replacement}}`
 ##
 ##	- Replace a pattern in all files:
 ##
-##	`wg {{pattern}} --replace {{replacement}}`
+##	`wrg {{pattern}} --replace {{replacement}}`
 #
 # Based on:
 # https://github.com/lydell/dotfiles/blob/master/bin/pre
@@ -39,7 +39,7 @@ for arg in "$@"; do
 done
 
 if test -z "$seenReplace"; then
-	error 'You should run wg with --replace or -r argument'
+	error 'You should run wrg with --replace or -r argument'
 	exit 1
 fi
 

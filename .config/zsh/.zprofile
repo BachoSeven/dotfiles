@@ -176,7 +176,7 @@ fi
 	export KUNST_COVER_EXT='jpg|png|jpeg'
 
 # Remap Caps Lock
-	if [ -z "$(ls /dev/input/by-id | grep Anne)" ]; then
+	if [ -z "$(ls /dev/input/by-id 2>/dev/null | grep Anne)" ]; then
 		sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null
 	fi
 
