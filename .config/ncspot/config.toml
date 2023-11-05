@@ -1,6 +1,6 @@
 # vim: ft=cfg
 # Basic options
-default_keybindings = false
+default_keybindings = true
 use_nerdfont = true
 notify = true
 gapless = true
@@ -48,7 +48,7 @@ repeat = 'off'
 # Queue
 ##################
 # Add to queue
-" " = "queue"
+"Space" = "queue"
 "Ctrl+s" = "save queue"
 # Move selected song up/down in the queue
 "J" = "shift down 1"
