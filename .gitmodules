@@ -7,3 +7,6 @@
 [submodule ".config/zsh/plugins/fast-syntax-highlighting"]
 	path = .config/zsh/plugins/fast-syntax-highlighting
 	url = git@github.com:BachoSeven/fast-syntax-highlighting.git
+[submodule ".config/zsh/plugins/jq.plugin"]
+	path = .config/zsh/plugins/jq.plugin
+	url = git@github.com:reegnz/jq-zsh-plugin
