@@ -8,7 +8,7 @@ current = "tesi"
 
 # Dictionary of PDFs to open
 pdfs = {
-    "tesi": ['Neukirch'],
+    "tesi": ['Ribes'],
     "lean": ['mathematics']
 }
 
