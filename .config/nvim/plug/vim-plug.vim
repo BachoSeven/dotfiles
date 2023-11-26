@@ -11,7 +11,7 @@ let g:autoload_plug = '/autoload/plug.vim'
 " Find correct locations
 if len(g:xdg_data_home) == 0
 	let g:plug_location = $HOME . '/.local/share/nvim/site'
-	let g:plugin_location = $HOME . '/.local/shared/nvim/plugged'
+	let g:plugin_location = $HOME . '/.local/share/nvim/plugged'
 else
 	let g:plug_location= g:xdg_data_home . '/nvim/site'
 	let g:plugin_location = g:xdg_data_home . '/nvim/plugged'
