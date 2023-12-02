@@ -62,7 +62,7 @@
 - Floccus, see below
 
 ## Passwords manager
-- [keepassxc+extension(backup)] {Ctrl+Shift+k}
+- [bitwarden] {Ctrl+Shift+k}
 
 ## Theme
 - sol ref dark(favs)
@@ -75,30 +75,25 @@
 ### installed extensions ids string (a part from ntp, which is local [allow file access])
 ```
 Stylus (beta)|apmmpaebfobifelkijhaljbmpcgbjbdo
+Netflix 1080p|cankofcoohmbhfpcemhmaaeennfbnmgp
 uBlock Origin|cjpalhdlnbpafiamejdnhcphjbkeiagm
 Vimium Helper|cmlapekgcdddhkfcobppgamdgjbkoffm
+Vimium|dbepggeogbaibhgnhhndojpepiihcmeb
 I don't care about cookies|fihnjjcciajhdojfnbdddfaoknhalnja
 floccus bookmarks sync|fnaicdffflnofjppbagibeoednhnbjhg
 Return YouTube Dislike|gebbhagfogifgggkldgodflihgfeippi
-Web Scrobbler|hhinaapppaileiechjoiifaancjggfjm
 ClearURLs|lckanjgmijmafbedllaakclkaicjfmnk
 Linux Scroll Speed Fix|mlboohjioameadaedfjcpemcaangkkbp
-KeePassXC-Browser|oboonakemofpalcgghocfoadofidjkkk
+Sci-Hub|ngdimemjinhiieikaocpncejnlcmaokm|https://sci-hub.ru/update
+Bitwarden - Gestore di Password Gratis|nngceckbapebfimnlniiiahkandclblb
 Chromium Web Store|ocaahdebbfolfmndjeplogmgcagdmblk|https://raw.githubusercontent.com/NeverDecaf/chromium-web-store/master/updates.xml
 Redirector|ocgpenflpmgnfapjedencafcfakcekcd
 PDF Viewer|oemmndcbldboiebfnladdacbdfmadadm
-Sci-Hub|pcidlfdobgoheodooocmddmckkenkhkb|https://sci-hub.do/update
-Refined Prime Video|pieemlagbhnombolehnjdoaoojpphedd
-xBrowserSync|lcbjdhceifofjlpecfpeimnnphbcjgnc
 ```
 
 ### Utils
-- netflix 1080p: https://github.com/jangxx/netflix-1080p (disable VP9)
-- refined prime video
-- web scrobbler
 - custom ntp extension
-- return youtube dislike
-- Pdf Viewer (pdf.js) && wza (from ~/.local/src/pdfExt)
+- wza (from ~/.local/src/pdfExt)
 - linux speed scroll fix: (set speed to 1.66)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
 - vimium_helper(disable on youtube, github)
