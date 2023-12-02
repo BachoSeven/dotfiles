@@ -20,17 +20,17 @@ basepath=/sys/class/backlight
 # max_file="$(fd max_brightness $basepath/*)"
 # brdir=$(dirname $max_file)
 # ratio=$(($(cat $max_file)/100))
-brdir=$basepath/intel_backlight
-ratio=75
-current=$(($(cat $brdir/brightness)/$ratio))
+brdir=$basepath/amdgpu_bl1
+ratio=2.55
+current=$(echo "$(cat $brdir/brightness) / $ratio" | bc -l)
 
 
 # Handle arguments
 case "$1" in
 	inc*) # increase
-		valnorm="$((current+$2))" ;;
+		valnorm=$(echo "$current + $2" | bc -l) ;;
 	dec*) # decrease
-		valnorm="$((current-$2))" ;;
+		valnorm=$(echo "$current - $2" | bc -l) ;;
 	u*) # up
 		valnorm="$(dmenu -p 'Input brightness [default: 80%]' )"
 		[ -n "$valnorm" ] || valnorm="$defu" ;;
@@ -44,12 +44,14 @@ case "$1" in
 esac
 
 # Set brightness value
-val="$((valnorm*$ratio))"
-echo $val | sudo tee /sys/class/backlight/intel_backlight/brightness
+val=$(echo "$valnorm * $ratio" | bc -s)
+val=$(printf "%.0f" "$val")
+(echo $val | sudo tee $brdir/brightness)
 
 # Notify
 if command -v dunst >/dev/null; then
-	new=$(($(cat /sys/class/backlight/intel_backlight/brightness)/$ratio))
+	new=$(echo "$(cat $brdir/brightness) / $ratio" | bc -l)
+	new=$(printf "%.0f" "$new")
 	dunstify -a "changeBrightness" -u low -i display-brightness -r "$msgId" \
 	"Brightness: ${new}%"
 fi
