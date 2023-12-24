@@ -2,7 +2,7 @@
 
 ! pidof Xorg >/dev/null 2>&1 && exit 0
 
-bat="/sys/class/power_supply/BAT0"
+bat="/sys/class/power_supply/BAT1"
 
 read -r c < "$bat/capacity"
 read -r s < "$bat/status"

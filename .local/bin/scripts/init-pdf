@@ -3,12 +3,12 @@ import subprocess
 import time
 
 # Current topic
-current = "tesi"
+#  current = "tesi"
 #  current = "lean"
 
 # Dictionary of PDFs to open
 pdfs = {
-    "tesi": ['Ribes'],
+    "tesi": ['Harari'],
     "lean": ['mathematics']
 }
 

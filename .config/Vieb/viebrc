@@ -38,7 +38,7 @@ set pdfbehavior=external
 
 " Redirects
 set redirects+=^https?://(www\.)?(reddit\.com.*)~https://old.$2
-set redirects+=^https?://(www\.)?youtube\.com/watch\?v=(...........)~https://tube.cadence.moe/watch?v=$2
+set redirects+=^https?://(www\.)?youtube\.com/watch\?v=(...........)~https://invidious.fdn.fr/watch?v=$2
 set redirects+=^https?://(www\.)?open.spotify.com/(.*)/(\w{22})~https://open.spotify.com/go?uri=spotify%3A$2%3A$3&rtd=1
 
 " Appearance

@@ -4,9 +4,10 @@
 # Uses dunstify to only show one notification for "continuos" increase/decrease in brightness(i.e. when holding a keybinding)
 
 # You should change this according to your system
-cbr=$(($(cat /sys/class/backlight/intel_backlight/brightness)/75))
+ratio=2.55
+cbr=$(echo "$(cat /sys/class/backlight/amdgpu_bl1/brightness) / $ratio" | bc -l)
 msgId="192838"
-[ "$cbr" -gt 50 ] && dimbr=$((cbr-30)) || dimbr=$((cbr/2))
+echo "$cbr > 50" | bc -l && dimbr=$(echo "$cbr" - 30 | bc -l) || dimbr=$(echo "$cbr" / 2 | bc -l)
 
 # trap script to "de-idle" upon keypress or mouse movement and restore previous brightness
 trap 'exit 0' TERM INT
