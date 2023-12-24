@@ -19,8 +19,8 @@ repeat = 'off'
 ##################
 "b" = "seek -1000"
 "f" = "seek +1000"
-"B" = "seek -10000"
-"F" = "seek +10000"
+"Shift+b" = "seek -10000"
+"Shift+f" = "seek +10000"
 
 ##################
 # Play / pause
@@ -32,16 +32,16 @@ repeat = 'off'
 ##################
 # Track manipulation
 ##################
-"H" = "previous"
-"L" = "next"
+"Shift+h" = "previous"
+"Shift+l" = "next"
 "r" = "repeat"
 "z" = "shuffle"
-"D" = "delete"
-"S" = "save"
+"Shift+d" = "delete"
+"Shift+s" = "save"
 # Open context menu
-"O" = "open current"
+"Shift+o" = "open current"
 "o" = "open selected"
-"A" = "goto artist"
+"Shift+a" = "goto artist"
 "a" = "goto album"
 
 ##################
@@ -51,9 +51,9 @@ repeat = 'off'
 "Space" = "queue"
 "Ctrl+s" = "save queue"
 # Move selected song up/down in the queue
-"J" = "shift down 1"
-"K" = "shift up 1"
-"C" = "clear"
+"Shift+j" = "shift down 1"
+"Shift+k" = "shift up 1"
+"Shift+c" = "clear"
 # Open the context menu for a Spotify link in the clipboard
 "Ctrl+v" = "insert"
 
@@ -77,7 +77,7 @@ repeat = 'off'
 "Ctrl+q" = "focus queue"
 # Navigation
 "Down" = "move down 1"
-"G" = "move bottom"
+"Shift+g" = "move bottom"
 "g" = "move top"
 "Left" = "move left 1"
 "Right" = "move right 1"
@@ -97,21 +97,21 @@ repeat = 'off'
 # Sorting
 ######################################
 "t" = "sort added d"
-"T" = "sort title a"
+"Shift+t" = "sort title a"
 
 ######################################
 # Sharing
 ######################################
-"Y" = "share selected"
+"Shift+y" = "share selected"
 "y" = "share current"
 
 ######################################
 # Other
 ######################################
-"Q" = "quit"
-"Z" = "quit"
+"Shift+q" = "quit"
+"Shift+z" = "quit"
 "?" = "help"
-"U" = "update"
+"Shift+u" = "update"
 
 
 # Gruvbox dark [ originally based on base16 by Dawid Kurek (dawikur@gmail.com) ]
