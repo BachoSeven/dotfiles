@@ -8,7 +8,7 @@
 # Determine currently active spotify player (first one found from the array is used for pause/play/toggle)
 # When trying to open URL/URIs, we prompt to open a player if there are none
 
-players="$(dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep mpris | cut -d. -f 4- | cut -d'"' -f -1 | tac | paste -sd:)":spotify:ncspot:tauon
+players="$(dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep mpris | cut -d. -f 4- | cut -d'"' -f -1 | tac | paste -sd:)":spotify:ncspot.instance.*:tauon
 findplayer() {
 	IFS=:
 	for p in $players; do
@@ -93,12 +93,25 @@ url() { #__ Some parsing logic for URLs __#
 
 uri() { #__ This is slightly more complex because spotify would like to include additional context after the item key, which ncspot does not support... __#
 	prompt
-	# typ="$(echo "$*" | cut -d":" -f2)"
-	# key="$(echo "$*" | cut -d":" -f3 | head --bytes=22)"
-	typ="$(echo "$*" | cut -d"/" -f3)"
-	key="$(echo "$*" | cut -d"/" -f4 | head --bytes=22)"
+	echo $player
+	if [ -z "$*" ]; then
+		error notify "Please insert an URI"
+	fi
+	string="$(echo "$*" | rev | cut -d: -f1-2 | rev)"
+	typ="${string%:*}"
+	key="${string#*:}"
 	findplayer
-	dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:"spotify:$typ:$key" >/dev/null 2>&1
+	if [ "$typ" = "track" ]; then
+		dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:track:$key >/dev/null 2>&1
+	elif [ "$typ" = "album" ]; then
+		dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:album:$key >/dev/null 2>&1
+	elif [ "$typ" = "playlist" ]; then
+		dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:playlist:$key >/dev/null 2>&1
+	elif [ "$typ" = "artist" ]; then
+		dbus-send --print-reply --dest=org.mpris.MediaPlayer2."$player" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:spotify:artist:$key >/dev/null 2>&1
+	else
+		error notify "Invalid URI"
+	fi
 	sleep 2 && spotup
 }
 
