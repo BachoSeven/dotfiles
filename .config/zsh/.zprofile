@@ -56,14 +56,15 @@
 	export ADB_VENDOR_KEY="${XDG_CONFIG_HOME:-$HOME/.config}/android"   # Deprecated(?)
 	export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 	export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg" # Oof.
-	export STACK_ROOT="$XDG_DATA_HOME"/stack
+	export STACK_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/stack"
 	export GPG_TTY=$(tty)
-	export PYTHONHISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
+	export PYTHON_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
 	export XCURSOR_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/icons" # Needed for custom cursor
 	export OSHU_HOME="$HOME/stuff/games/osu"
 	export SQLITE_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/sqlite_history"
-	export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
-	export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
+	export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
+	export JULIA_DEPOT_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/julia:$JULIA_DEPOT_PATH"
+	export ELAN_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/elan"
 
 ## Various programs settings:
 	export BC_LINE_LENGTH=80

@@ -1,4 +1,5 @@
 [icon theme]
-Inherits=ArchCursorTheme
+# Inherits=ArchCursorTheme
+Inherits=Miku Cursor
 
 # vim: ft=cfg

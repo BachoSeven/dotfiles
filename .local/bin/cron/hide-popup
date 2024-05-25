@@ -5,7 +5,7 @@ if ! pidof chromium vieb spotify teams-insiders codium >/dev/null 2>&1 ; then
 else
 	rm -rf ~/.pki ~/.cache/chromium ~/Downloads ~/.vscode-oss
 
-	xdotool search --name "is sharing" \
+	xdotool search --name "sta condividendo" \
 		| while read -r wid; do
 		if xwininfo -id "$wid" >/dev/null 2>&1; then
 			xdotool windowclose "$wid"

@@ -6,36 +6,12 @@ logfile	~/.config/msmtp/msmtp.log
 
 account ascoli.minnocci@gmail.com
 host smtp.gmail.com
-port 587
+port 465
 from ascoli.minnocci@gmail.com
 user ascoli.minnocci@gmail.com
 passwordeval "pass ascoli.minnocci@gmail.com"
 auth on
 tls on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
-logfile /home/fra/.config/msmtp/msmtp.log
-# tls_starttls
-
-account ad17fmin@uwcad.it
-host smtp.gmail.com
-port 465
-from ad17fmin@uwcad.it
-user ad17fmin@uwcad.it
-passwordeval "pass ad17fmin@uwcad.it"
-auth on
-tls on
-tls_trust_file	/etc/ssl/certs/ca-certificates.crt
-logfile /home/fra/.config/msmtp/msmtp.log
-tls_starttls off
-
-account minnocci@mail.dm.unipi.it
-host student.dm.unipi.it
-port 465
-from minnocci@mail.dm.unipi.it
-user minnocci
-passwordeval "pass minnocci@mail.dm.unipi.it"
-auth on
-tls on
-tls_trust_file	/mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/student.dm.unipi.it.pem
-logfile /home/fra/.config/msmtp/msmtp.log
+logfile /home/fra/.local/state/msmtp/msmtp.log
 tls_starttls off

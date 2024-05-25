@@ -46,11 +46,12 @@ cal plug#begin(g:plugin_location)
 	Plug 'mhinz/vim-startify'
 	Plug 'jdhao/better-escape.vim'
 	Plug 'tpope/vim-speeddating'
+	Plug 'wfxr/minimap.vim'
 	" Plug 'ludovicchabant/vim-gutentags'
 
 " Markdown
 "" Live Preview
-	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug'] }
+	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 "" Markdown Table of Contents
 	Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown', 'vim-plug'] }
 

@@ -33,6 +33,6 @@ if [ ! "$IMGWH" = "${SCRW}x${SCRH}" ]; then
 	( bg="$(gifextcol "$1" "$IMGW" "$SCRW")" && hsetroot -solid "$bg") &
 fi
 # Display gif
-xwinwrap -g ${IMGWH}+${POSW}+${POSH} -ov -ni -s -nf -- gifview --memory-limit 200 -w WID $1 -a --no-interactive
+xwinwrap -g ${IMGWH}+${POSW}+${POSH} -fdt -ov -b -fs -ni -s -nf -- gifview --memory-limit 200 -w WID $1 -a --no-interactive
 
 exit 0

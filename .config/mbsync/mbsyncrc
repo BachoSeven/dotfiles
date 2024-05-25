@@ -1,4 +1,3 @@
-
 IMAPStore ascoli.minnocci@gmail.com-remote
 Host imap.gmail.com
 Port 993
@@ -17,57 +16,7 @@ Channel ascoli.minnocci@gmail.com
 Expunge Both
 Far :ascoli.minnocci@gmail.com-remote:
 Near :ascoli.minnocci@gmail.com-local:
-Patterns * !"[Gmail]/All Mail"
-Create Both
-SyncState *
-MaxMessages 0
-ExpireUnread no
-# End profile
-
-IMAPStore ad17fmin@uwcad.it-remote
-Host imap.gmail.com
-Port 993
-User ad17fmin@uwcad.it
-PassCmd "pass ad17fmin@uwcad.it"
-AuthMechs LOGIN
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-MaildirStore ad17fmin@uwcad.it-local
-Subfolders Verbatim
-Path /home/fra/.local/share/mail/ad17fmin@uwcad.it/
-Inbox /home/fra/.local/share/mail/ad17fmin@uwcad.it/INBOX
-
-Channel ad17fmin@uwcad.it
-Expunge Both
-Far :ad17fmin@uwcad.it-remote:
-Near :ad17fmin@uwcad.it-local:
-Patterns * !"[Gmail]/All Mail"
-Create Both
-SyncState *
-MaxMessages 0
-ExpireUnread no
-# End profile
-
-IMAPStore minnocci@mail.dm.unipi.it-remote
-Host student.dm.unipi.it
-Port 993
-User minnocci
-PassCmd "pass minnocci@mail.dm.unipi.it"
-AuthMechs LOGIN
-SSLType IMAPS
-CertificateFile /mnt/01D5707D40B081F0/Users/ascol/Documents/UNI/Roba/student.dm.unipi.it.pem
-
-MaildirStore minnocci@mail.dm.unipi.it-local
-Subfolders Verbatim
-Path /home/fra/.local/share/mail/minnocci@mail.dm.unipi.it/
-Inbox /home/fra/.local/share/mail/minnocci@mail.dm.unipi.it/INBOX
-
-Channel minnocci@mail.dm.unipi.it
-Expunge Both
-Far :minnocci@mail.dm.unipi.it-remote:
-Near :minnocci@mail.dm.unipi.it-local:
-Patterns * !"[Gmail]/All Mail"
+Patterns * !"[Gmail]/All Mail" !"*fts-flatcurve*" !"*virtual*"
 Create Both
 SyncState *
 MaxMessages 0

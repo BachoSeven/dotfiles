@@ -14,9 +14,6 @@ do
 			sbg -i "$file" -t ;;
 		C)
 			sbg -i "$file" -c ;;
-		F)
-			killall -q xwinwrap xrootgif
-			setsid -f xrootgif -Q "$file" --daemon & ;;
 		c)
 			[ -z "$destdir" ] && destdir="$(sed "s/\s.*#.*$//;/^\s*$/d" ~/.config/directories | awk '{print $2}' | dmenu -l 20 -i -p "Copy file(s) to where?" | sed "s|~|$HOME|g")"
 			[ -z "$destdir" ] && exit

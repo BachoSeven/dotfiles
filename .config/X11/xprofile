@@ -20,13 +20,14 @@
 	_ mpd						# Music server
 	remaps					# Switch caps/super and one-tap_caps/esc
 	_ dunst					# Notification daemon
+	systemctl --user start xsettingsd # Xsettings daemon
 	togcomp -y			# Compositor
 	gebaard -b			# Gesture daemon
-	xdotool mousemove 1000 700 # Position cursor at approx. the center of the screen
+	xdotool mousemove 1128 752 # Position cursor at approx. the center of the screen
 	xbanish -i shift -i mod4 -i control & # Remove mouse when typing
 	xdgxm -e &			# Update menu entries
 	_ subs -d				# Start custom yt daemon
-	if [ -f "$XDG_CACHE_HOME/redshift" ] && [ $((($(date +%s)-$(date -r $XDG_CACHE_HOME/redshift "+%s"))/86400)) -lt 7 ]; then
+	if [ -f "$XDG_CACHE_HOME/redshift" ] && [ $((($(date +%s)-$(date -r $XDG_CACHE_HOME/redshift "+%s"))/86400)) -lt 30 ]; then
 		_ redshift -l "$(cat $XDG_CACHE_HOME/redshift)" # Color temperature
 	else
 		curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq '.location.lat, .location.lng' | tr '\n' ':' | sed 's/:$//' > $XDG_CACHE_HOME/redshift

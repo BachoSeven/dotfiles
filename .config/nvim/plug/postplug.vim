@@ -103,8 +103,6 @@
 	let g:vimtex_fold_enabled = 1
 	let g:vimtex_view_method = 'zathura'
 	let g:vimtex_compiler_method = 'generic'
-" Using `setsid -f` for entr fixes the pdf non opening, but breaks
-" forward-backwards sync.
 	let g:vimtex_compiler_generic = {
 		\	'command': 'ls *.tex | entr -n -c tectonic /_ --synctex --keep-logs',
 		\}
@@ -261,3 +259,7 @@
 	let g:gutentags_cache_dir = $XDG_CACHE_HOME . '/gutentags'
 " Org Mode
 	let g:org_agenda_files=['~/tech/emacs/emacs.org']
+" Minimap
+	let g:minimap_width = 10
+" Copilot
+  ima <S-Tab> <Plug>(copilot-accept-word)

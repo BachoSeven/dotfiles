@@ -5,9 +5,11 @@
 
 case "$1" in
 	*.tex)
-	file=$(realpath "$1")
+	file=$(readlink -f "$1")
 	dir=$(dirname "$file")
 	base="${file%.*}"
-	find "$dir"  -maxdepth 1 -type f -regextype gnu-awk -regex "^$base((\\.(4tc|xref|tmp|pyc|dvi|pyo|fls|vrb|fdb_latexmk|bak|swp|aux|log|synctex\\(busy\\)|lof|lot|maf|idx|mtc|mtc0|nav|out|snm|toc|run\\.xml|synctex\\.gz|blg|bbl|bcf))|_vimtex\\.(synctex\\.gz|pdf))" -delete ;;
+	find "$dir"  -maxdepth 1 -type f -regextype gnu-awk -regex "^$base\\.(4tc|xref|tmp|pyc|pyg|pyo|fls|vrb|fdb_latexmk|bak|swp|aux|log|synctex\\(busy\\)|lof|lot|maf|idx|mtc|mtc0|nav|out|snm|toc|bcf|run\\.xml|synctex\\.gz|blg|bbl)" -delete
+	rm -rdf "$dir/_minted-$(basename -- "$base")"
+	;;
 	*) printf "Give .tex file as argument.\\n" ;;
 esac

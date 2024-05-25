@@ -6,7 +6,7 @@ syscp() {
 		relpath="${$(realpath -s "$f")#/}"
 		reldir="$(dirname ~/.local/src/sysdots/$relpath)"
 		[ ! -d "$reldir" ] && mkdir -vp "$reldir"
-		cp -Pvut "$reldir" "$f"
+		cp -Pruvt "$reldir" "$f"
 	done
 }
 
@@ -104,34 +104,6 @@ upbootloader() {
 	sudo rm /boot/EFI/BOOT/BOOTX64.EFI &&
 	sudo cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/ &&
 	$AURHELPER -R limine
-}
-qmkinstall() {
-	$AURHELPER -S --needed python-argcomplete python-colorama python-hjson python-milc python-pygments bootloadhid avr-binutils arm-none-eabi-gcc arm-none-eabi-newlib avrdude clang
-	sudo pacman -U https://archive.archlinux.org/packages/a/avr-gcc/avr-gcc-8.3.0-1-x86_64.pkg.tar.xz
-	sudo pacman -S avr-libc
-}
-qmkremove() {
-	$AURHELPER -R \
-		python-argcomplete \
-		python-hjson \
-		python-milc \
-		python-halo \
-		python-colorama \
-		python-pygments \
-		python-log_symbols \
-		python-spinners \
-		python-termcolor \
-		bootloadhid \
-		avr-binutils \
-		libftdi \
-		confuse \
-		arm-none-eabi-gcc \
-		arm-none-eabi-binutils \
-		arm-none-eabi-newlib \
-		avrdude \
-		avr-libc \
-		clang \
-		avr-gcc
 }
 
 # Git

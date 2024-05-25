@@ -38,6 +38,8 @@
 	fi
 	} "$zcachedir"
 
+	# Load completions for dotbare
+	_dotbare_completion_git
 
 # Basic autocomplete with: menu-listing, hyphen- and case-insensitivity, accepts abbreviations after . or _ or - (ie. f.b -> foo.bar), substring complete (ie. bar -> foobar), and colored with LS_COLORS.
 	zstyle ':completion:*:*:*:*:*' menu select

@@ -13,6 +13,7 @@
 	let mapleader =" " " This is so comfy
 	se shell=/usr/bin/zsh
 	se nu
+	se exrc
 	se path+=** " fuzzy find
 	se wildmenu
 		se wildignore+=.git,.hg,.svn
@@ -53,9 +54,6 @@
 	se infercase " For insert mode completion
 	se completeopt=menuone,noinsert,noselect " Set completeopt to have a better completion experience
 	se shortmess+=c " Avoid showing message extra message when using completion
-	"" treesitter based folding
-	" se foldmethod=expr
-	" se foldexpr=nvim_treesitter#foldexpr()
 
 "		 +--------------+
 "		 | Key Mappings |
@@ -90,8 +88,8 @@
 
 " Fix syntax higlighting on the fly (https://vim.fandom.com/wiki/Fix_syntax_highlighting)
 	nn <leader>sy :syntax sync fromstart<CR>
-" change <C-L> redraw mapping, which is useful in neovim as it also clears search highlighting and updates diffs
-	nn <leader>L <Cmd>nohlsearch<Bar>diffupdate<CR><C-L>
+" change <c-L> redraw mapping, which is useful in neovim as it also clears search highlighting and updates diffs
+	nn <leader>L <Cmd>nohlsearch<Bar>diffupdate<CR><c-L>
 " <CR> clears hlsearch, but only after doing a search.
 	nn <silent> <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 " Toggle search highlight
@@ -148,7 +146,7 @@
 		echo "@".getcmdline()
 		execute ":'<,'>normal @".nr2char(getchar())
 	endfu
-	xn @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+	xn @ :<c-u>call ExecuteMacroOverVisualRange()<CR>
 " Tabs
 	map <c-t>k :tabr<CR>
 	map <c-t>j :tabl<CR>
@@ -157,7 +155,7 @@
 	map <c-t>n :tabnew<CR>
 "" Mappings for the optimistic typist
 " add Ctrl or Shift for Backspace
-	" ino <Backspace> <C-w>
+	" ino <Backspace> <c-w>
 " Arrows behave like Ctrl+arrows, and Shift+arrows goes to the end of whole words.
 	ino <Right> <esc>ea
 	ino <Left> <esc>bi
@@ -191,7 +189,7 @@
 "" Open Terminal
 	nn <leader>t :te<CR>
 "" Leave terminal easily
-	tno <leader><esc> <C-\><C-n>
+	tno <leader><esc> <c-\><c-n>
 
 	" sHrUg
 	ino ,shrug ¯\_(ツ)_/¯
@@ -220,22 +218,22 @@
 	let g:session_dir = '~/.config/nvim/sessions'
 	let g:session#default_opener = 'edit'
 	exec 'nn <leader>ss :mks! ~/.config/nvim/sessions/'
-	exec 'nn <leader>sl :so ~/.config/nvim/sessions/<C-D>'
+	exec 'nn <leader>sl :so ~/.config/nvim/sessions/<c-D>'
 
 "		 +---------+
 "		 | Plugins |
 "		 +---------+
-" Definitions
-	so $XDG_CONFIG_HOME/nvim/plug/vim-plug.vim
-" Icons
-	so $XDG_CONFIG_HOME/nvim/plug/mpi.vim
-" Plugins
 	if !exists('g:vscode')
+	" Definitions
+		so $XDG_CONFIG_HOME/nvim/plug/vim-plug.vim
+	" Icons
+		so $XDG_CONFIG_HOME/nvim/plug/mpi.vim
+	" Configuration
 		so $XDG_CONFIG_HOME/nvim/plug/postplug.vim
 		so $XDG_CONFIG_HOME/nvim/plug/postplug.lua
+	" Custom plugins
+		so $XDG_CONFIG_HOME/nvim/plug/faccina.vim
 	endif
-" Custom plugins
-	so $XDG_CONFIG_HOME/nvim/plug/faccina.vim
 
 "		 +----------+
 "		 | Autocmds |

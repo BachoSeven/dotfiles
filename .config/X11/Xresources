@@ -22,8 +22,9 @@ st.bellvolume: 0
 st.blinktimeout: 666
 
 !! Xcursor (some X11 programs may read it from here, i.e. wezterm)
-Xcursor.theme: ArchCursorTheme
-Xcursor.size: 27
+! Xcursor.theme: ArchCursorTheme
+Xcursor.theme: Miku Cursor
+Xcursor.size: 35
 
 !! gnuplot
 ! enable support for various linestyles

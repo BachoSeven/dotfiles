@@ -1,0 +1,58 @@
+{
+    "window.titleBarStyle": "custom",
+    "editor.fontSize": 18,
+    "editor.dragAndDrop": false,
+    "editor.cursorSurroundingLines": 10,
+    "explorer.sortOrder": "type",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "prettier.tabWidth": 4,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDelete": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "latex-workshop.latex.autoClean.run": "onSucceeded",
+    "latex-workshop.latex.recipe.default": "tectonic",
+    "diffEditor.renderSideBySide": false,
+    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "latex-workshop.intellisense.package.enabled": false,
+    "latex-workshop.intellisense.package.env.enabled": false,
+    "latex-workshop.intellisense.optionalArgsEntries.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "window.autoDetectColorScheme": true,
+    "window.zoomLevel": 2,
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Catppuccin Latte",
+    "go.toolsManagement.autoUpdate": true,
+    "explorer.confirmDragAndDrop": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "workbench.tree.indent": 24,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2000
+}
