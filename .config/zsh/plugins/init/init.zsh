@@ -11,9 +11,10 @@
 	setopt prompt_subst					# Command substitution, parameter and arithmetic expansion in prompt.
 	setopt interactive_comments	# Allow comments even in interactive shell
 	setopt magicequalsubst			# ~ substitution and tab completion after a = (for --x=filename args)
-	unsetopt prompt_sp
 	setopt correct							# typos
+	PROMPT_EOL_MARK=''   # See https://unix.stackexchange.com/questions/167582/why-zsh-ends-a-line-with-a-highlighted-percent-symbol/167600
 	correct_ignore='_*'
+
 
 ## History file folder
 (
@@ -35,7 +36,7 @@
 	DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
 	if [[ -f "$DIRSTACKFILE" ]] && (( ${#dirstack} == 0 )); then
 		dirstack=("${(@f)"$(< "$DIRSTACKFILE")"}")
-		[[ -d "${dirstack[1]}" ]] && cd -- "${dirstack[1]}"
+		# [[ -d "${dirstack[1]}" ]] && cd -- "${dirstack[1]}"
 	fi
 	chpwd_dirstack() {
 		print -l -- "$PWD" "${(u)dirstack[@]}" > "$DIRSTACKFILE"

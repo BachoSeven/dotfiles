@@ -12,13 +12,7 @@ if [ "$LF_MOUNTS" ]; then
 	lf -remote "send $id cd \"$mnt\""
 	echo "$mnt" >> "$LF_MOUNTS"
 else
-	# if [ -n "$LF_LEVEL" ]; then
-		# # If running lf without lfcd, go to currently running instance
-		# lf -remote "send $id cd \"$mnt\""
-	# else
-		# Otherwise spawn lf
-		lf -- "$mnt"
-	# fi
+	lf -- "$mnt"
 
 	# Cleanup on exit
 	cleanup () {

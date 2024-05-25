@@ -18,3 +18,11 @@
 
 " Updates file when changed externally (if autoread is set)
 	au FocusGained * :checktime
+
+" Automatically loads folds when opening a file
+augroup load_folds
+  autocmd!
+	" uncomment this to also save folds on exit
+  " autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END

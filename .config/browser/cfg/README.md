@@ -77,7 +77,6 @@
 Stylus (beta)|apmmpaebfobifelkijhaljbmpcgbjbdo
 Netflix 1080p|cankofcoohmbhfpcemhmaaeennfbnmgp
 uBlock Origin|cjpalhdlnbpafiamejdnhcphjbkeiagm
-Vimium Helper|cmlapekgcdddhkfcobppgamdgjbkoffm
 Vimium|dbepggeogbaibhgnhhndojpepiihcmeb
 I don't care about cookies|fihnjjcciajhdojfnbdddfaoknhalnja
 floccus bookmarks sync|fnaicdffflnofjppbagibeoednhnbjhg
@@ -96,7 +95,6 @@ PDF Viewer|oemmndcbldboiebfnladdacbdfmadadm
 - wza (from ~/.local/src/pdfExt)
 - linux speed scroll fix: (set speed to 1.66)
 - vimium(Master) (bkp){allow file access}[ctrl+shift+v]
-- vimium_helper(disable on youtube, github)
 - stylus(beta)[WebDAV,alt+shift+s]
 - floccus [WebDAV,alt+space]
 - Redirector[alt+shift+r]

@@ -1,3 +1,0 @@
-#compdef dotbare
-
-compdef dotbare=git

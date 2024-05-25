@@ -4,10 +4,10 @@
 # This takes care of my external monitor setup, mostly for non-interactive purposes.
 
 # edit these on other systems
-int="eDP"
+int="eDP-1"
 ext1="DisplayPort-1"
 ext1_class="DP-2"
-ext2="DisplayPort-2"
+ext2="DP-3"
 ext2_class="DP-3"
 card="card1"
 
@@ -36,12 +36,12 @@ external() {
 		xrandr --output $int --off --output $ext --rotate ${1:-normal} --auto --dpi 108 && miscfixes
 	elif grep -q "\bconnected" $hdmi; then
 		ext="$ext2"
-		xrandr --output $int --off --output $ext --rotate ${1:-normal} --mode 2560x1440 && miscfixes
+		xrandr --output $int --off --output $ext --rotate ${1:-normal} --auto && miscfixes
 	fi
 }
 
 laptop() {
-	xrandr --output "$ext1" --off --output "$ext2" --off --output $int --auto --dpi 96 && miscfixes
+	xrandr --output "$ext1" --off --output "$ext2" --off --output $int --auto --dpi 120 && miscfixes
 }
 
 multiple() {
@@ -50,17 +50,17 @@ multiple() {
 		## If positioning monitor *to the left of* laptop
 		# xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --left-of $int && miscfixes
 		## If positioning monitor *to the right of* laptop
-		# xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --right-of $int && miscfixes
+		xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --right-of $int && miscfixes
 		## If positioning monitor *above* laptop
-		xrandr --output $int --auto --pos 0x2160 --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --pos 0x0 && miscfixes
+		# xrandr --output $int --auto --pos 0x2160 --output $ext --rotate ${1:-normal} --primary --auto --dpi 108 --pos 0x0 && miscfixes
 	elif grep -q "\bconnected" $hdmi; then
 		ext="$ext2"
 		## If positioning monitor *to the left of* laptop
-		xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --mode 2560x1440 --left-of $int && miscfixes
+		# xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --auto --left-of $int && miscfixes
 		## If positioning monitor *to the right of* laptop
-		# xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --mode 2560x1440 --right-of $int && miscfixes
+		xrandr --output $int --auto --output $ext --rotate ${1:-normal} --primary --auto --right-of $int && miscfixes
 		## If positioning monitor *above* laptop
-		# xrandr --output $int --auto --pos 0x1440 --output $ext --rotate ${1:-normal} --primary --mode 2560x1440 --pos 0x0 && miscfixes
+		# xrandr --output $int --auto --pos 0x1440 --output $ext --rotate ${1:-normal} --primary --auto --pos 0x0 && miscfixes
 	fi
 }
 

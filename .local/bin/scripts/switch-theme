@@ -8,6 +8,7 @@ bat_settings_file="$XDG_CONFIG_HOME/bat/config"
 glow_settings_file="$XDG_CONFIG_HOME/glow/glow.yml"
 dark_wallpaper="$XDG_DATA_HOME/dark"
 light_wallpaper="$XDG_DATA_HOME/light"
+wezterm_config_file="$XDG_CONFIG_HOME/wezterm/wezterm.lua"
 
 toggle_theme() {
 	case "$1" in
@@ -19,6 +20,7 @@ toggle_theme() {
 			sed -i 's/"light"/"dark"/' "$glow_settings_file"
 			sed -i 's/gtk-theme-name=gruvbox-light/gtk-theme-name=Gruvbox-Material-Dark/' "$gtk_settings_file"
 			sed -i 's/gtk-icon-theme-name=gruvbox-light/gtk-icon-theme-name=Gruvbox-Material-Dark/' "$gtk_settings_file"
+			sed -i 's/Gruvbox (Gogh)/Gruvbox Material (Gogh)/' "$wezterm_config_file"
 			sbg -i "$dark_wallpaper"
 			gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' &
 			;;
@@ -30,6 +32,7 @@ toggle_theme() {
 			sed -i 's/"dark"/"light"/' "$glow_settings_file"
 			sed -i 's/gtk-theme-name=Gruvbox-Material-Dark/gtk-theme-name=gruvbox-light/' "$gtk_settings_file"
 			sed -i 's/gtk-icon-theme-name=Gruvbox-Material-Dark/gtk-icon-theme-name=gruvbox-light/' "$gtk_settings_file"
+			sed -i 's/Gruvbox Material (Gogh)/Gruvbox (Gogh)/' "$wezterm_config_file"
 			sbg -i "$light_wallpaper"
 			gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' &
 			;;
@@ -42,7 +45,7 @@ toggle_theme() {
 	xrdb "$XDG_CONFIG_HOME/X11/Xresources"
 	# reload dwm colors
 	dwmc xrdb
-	killall -HUP xsettingsd 2>/dev/null
+	systemctl --user reload xsettingsd.service
 	if pidof st 1>/dev/null 2>&1; then
 		kill -s USR1 $(pidof st)
 	fi

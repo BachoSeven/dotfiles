@@ -30,6 +30,7 @@
 	flog = fuzzy flog
 	fstat = fuzzy fstat
 	funtrack = fuzzy fstat
+	graph = log --decorate --oneline --graph
 [init]
 	defaultBranch = main
 [filter "lfs"]

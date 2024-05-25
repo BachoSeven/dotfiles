@@ -135,7 +135,7 @@ videoselected() {
 	-f x11grab \
 	-framerate 60 \
 	-video_size "$W"x"$H" \
-	-i :0.0+"$X,$Y" \
+	-i $DISPLAY.0+"$X,$Y" \
 	-c:v libx264 -qp 0 -r 30 \
 	"$HOME/box-$(date '+%y%m%d-%H%M-%S').mkv" &
 	echo $! > /tmp/recordingpid

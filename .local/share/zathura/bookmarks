@@ -39,27 +39,36 @@ kaplanskyPair=68;0.5;0.61533840128840922;
 [/home/fra/math/stuff/books/Group Theory/Brown - Cohomology of Groups-Springer (1982).pdf]
 specSeq=172;0.5;0.5375440144709922;
 
-[/home/fra/math/stuff/tesi/Tate Duality (mia)/David Harari - Galois Cohomology and Class Field Theory (Universitext)-Springer (2020).pdf]
+[/home/fra/math/stuff/tesi/tate-duality/fonti/David Harari - Galois Cohomology and Class Field Theory (Universitext)-Springer (2020).pdf]
 dualMod=137;0.51098096632503665;0.40645935901465247;
 locDual=141;0.51098096632503665;0.41863944250353241;
 
-[/home/fra/math/stuff/tesi/Tate Duality (mia)/CFTc.pdf]
+[/home/fra/math/stuff/tesi/tate-duality/fonti/CFTc.pdf]
 CG=76;0.5;0.25506756756756754;
 
-[/home/fra/math/stuff/tesi/Tate Duality (mia)/Neukirch, Schmidt, Wingberg - Cohomology of Number Fields (2020).pdf]
+[/home/fra/math/stuff/tesi/tate-duality/fonti/Neukirch, Schmidt, Wingberg - Cohomology of Number Fields (2020).pdf]
 Shapiro=76;0.5;0.09002940809299935;
 indMod=45;0.5;0.052976190476190475;
 grSpSeq=146;0.5;0.17327008981895065;
 tateDuality=394;0.53312051077414202;0.46874571141685928;
 tateSpSeq=134;0.5;0.15869679744490803;
 
-[/home/fra/math/stuff/tesi/Tate Duality (mia)/Charles A. Weibel - An Introduction to Homological Algebra-Cambridge University Press (1994).pdf]
+[/home/fra/math/stuff/tesi/tate-duality/fonti/Charles A. Weibel - An Introduction to Homological Algebra-Cambridge University Press (1994).pdf]
 spSeq=134;0.5;0.28765639966475098;
 H-S=209;1.3333333333333333;0.44935344827586204;
 
-[/home/fra/math/stuff/tesi/Tate Duality (mia)/Serre - Galois Cohomology-Springer (1997).pdf]
+[/home/fra/math/stuff/tesi/tate-duality/fonti/Serre - Galois Cohomology-Springer (1997).pdf]
 tateDual=102;0.5;0.46015608409428754;
-111=15;0.5;0.067873313384333847;
+dualityFinType=113;0.5;0.50950516630700882;
 
-[/home/fra/math/stuff/tesi/Tate Duality (mia)/Pierre Guillot - A Gentle Course in Local Class Field Theory  Local Number Fields, Brauer Groups, Galois Cohomology-Cambridge University Press (2018).pdf]
+[/home/fra/math/stuff/tesi/tate-duality/fonti/Pierre Guillot - A Gentle Course in Local Class Field Theory  Local Number Fields, Brauer Groups, Galois Cohomology-Cambridge University Press (2018).pdf]
 cup-products=244;0.5;0.79073221570803776;
+
+[L2hvbWUvZnJhL21hdGgvc3R1ZmYvdGVzaS9bTV0gTWVyaWNpIC0gRHVhbGl0aWVzIGluIMOodGFsZSBjb2hvbW9sb2d5LnBkZg==]
+localTateDuality=19;0.67870036101083031;0.10563139677092122;
+
+[L2hvbWUvZnJhL21hdGgvc3R1ZmYvdGVzaS9bTV0gTW9yb3NpbiAtIER1YWxpdHkgdGhlb3JlbXMgYW5kIEtvbHl2YWdpbiBzeXN0ZW1zIGZvciBlbGxpcHRpYyBjdXJ2ZXMucGRm]
+localTateDuality=16;0.5;0.24613730766552916;
+
+[/home/fra/math/stuff/books/Number Theory/Algebraic Number Theory/Pierre Guillot - A Gentle Course in Local Class Field Theory  Local Number Fields, Brauer Groups, Galois Cohomology-Cambridge University Press (2018).pdf]
+Kxn_cpt=93;0.49977827050997781;0.30022658913112776;

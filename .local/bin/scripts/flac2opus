@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Convert all flac files in the current directory to opus
+# Requires ffmpeg
+# Credits to @Kratacoa: https://github.com/Kratacoa/scripts/blob/master/compress-flac-dir-to-opus.fish
+
+fd -t f -e flac --print0 | while IFS= read -r -d $'\0' file; do
+    output_file="${file%.flac}.opus"
+		# if there is no opus version then convert
+		if [ ! -f "$output_file" ]; then
+			echo "Converting $file"
+			ffmpeg -y -nostdin -i "$file" -write_id3v1 1 -id3v2_version 3 -c:a libopus -b:a 192K "$output_file" &
+		fi
+done

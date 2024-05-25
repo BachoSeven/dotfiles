@@ -3,7 +3,7 @@
 # wrapper to set a solid color as background
 
 # cleanup
-	killall -q xrootgif xwinwrap &
+	killall -q xwinwrap &
 
 # -?
 	if [ "$1" = "-n" ]; then

@@ -3,17 +3,16 @@ import subprocess
 import time
 
 # Current topic
-current = "tesi"
+#  current = "tesi"
 
 # Dictionary of PDFs to open
 pdfs = {
-    "tesi": ['classe', 'Villani', 'Merici', 'Morosin']
+    "tesi": [''],
 }
 
 # Dictionary of PDF search paths for `fd`
 search_paths = {
-    "tesi": "/home/fra/math/stuff/tesi",
-    "altro": "/home/fra/math/stuff/articles"
+    "tesi": "/home/fra/math/stuff/tesi"
 }
 
 # Skip the second tag
@@ -21,7 +20,7 @@ tags = [i+1 if i >= 2 else i for i, _ in enumerate(pdfs[current], start=1)]
 
 for j, p in zip(tags, pdfs[current]):
     # Search for the PDF using `fd`
-    output = subprocess.check_output(["fd", str(p), search_paths[current]]).decode().splitlines()
+    output = subprocess.check_output(["fd", "--no-ignore-vcs", str(p), search_paths[current]]).decode().splitlines()
     file_path = output[0] if output else ""
 
     # Open the PDF using `zathura`

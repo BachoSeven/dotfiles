@@ -7,10 +7,12 @@ snippet temp "Basic template" b
 \documentclass[a4paper]{article}
 
 \usepackage[T1]{fontenc}
+% many useful symbols
 \usepackage{textcomp}
 \usepackage[english]{babel}
 \usepackage{hyperref}
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
 % for \lightning
 \usepackage{stmaryrd}
 \usepackage{geometry}
@@ -42,13 +44,13 @@ snippet temp "Basic template" b
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
+\newtheorem{definition}[theorem]{Definition}
 
 \theoremstyle{definition}
-\newtheorem{example}{Example}[section]
+\newtheorem{example}[theorem]{Example}
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
@@ -196,7 +198,7 @@ snippet iff "iff" Ai
 endsnippet
 
 snippet mk "Math" wA
-$${1}$`!p
+\\(${1}\\)`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
 	snip.rv = ' '
 else:
@@ -204,8 +206,10 @@ else:
 `$2
 endsnippet
 
-snippet dm "Math" wA
-$$ ${1:${VISUAL}} .$$
+snippet dm "Math" w
+\[
+${1:${VISUAL}}
+.\] $0
 endsnippet
 
 snippet ali "Align" bA
@@ -217,7 +221,7 @@ endsnippet
 
 context "math()"
 snippet // "Fraction" iA
-\\frac{$1}{$2}$0
+\\${1:s}frac{$2}{$3}$0
 endsnippet
 
 snippet / "Fraction" i
@@ -237,7 +241,7 @@ stripped = match.string[:-1]
 depth = 0
 i = len(stripped) - 1
 while True:
-	if strippe[i] == ')': depth += 1
+	if stripped[i] == ')': depth += 1
 	if stripped[i] == '(': depth -= 1
 	if depth == 0: break;
 	i-=1
