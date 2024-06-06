@@ -17,6 +17,7 @@ set adjust-open "best-fit"
 set sandbox none
 # already default
 set synctex true
+set synctex-editor-command "texlab inverse-search -i %{input} -l %{line}"
 set dbus-service true
 set database "sqlite"
 

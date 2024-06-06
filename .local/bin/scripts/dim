@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Script used to lower the screen brightness before going idle.
-# Uses dunstify to only show one notification for "continuos" increase/decrease in brightness(i.e. when holding a keybinding)
+# Uses dunstify to only show one notification for "continuos" increase/decrease in brightness (i.e. when holding a keybinding)
 
 # You should change this according to your system
 ratio=2.55
@@ -10,10 +10,10 @@ msgId="192838"
 echo "$cbr > 50" | bc -l && dimbr=$(echo "$cbr" - 30 | bc -l) || dimbr=$(echo "$cbr" / 2 | bc -l)
 
 # trap script to "de-idle" upon keypress or mouse movement and restore previous brightness
-trap 'exit 0' TERM INT
-trap 'br set $cbr; kill %%; dunstify -C 192838' EXIT
+trap 'exit 0' TERM INT EXIT
+trap 'br set $cbr; kill %%; dunstify -C 192838' HUP
 
 dunstify -r "$msgId" '💤 Dimming screen, locking in 60 seconds...' && br set $dimbr
 
-sleep 2147483647 &
+sleep infinity &
 wait

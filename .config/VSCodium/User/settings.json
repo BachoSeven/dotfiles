@@ -10,6 +10,7 @@
         "markdown": false,
         "scminput": false
     },
+    "github.copilot.editor.enableAutoCompletions": true,
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -30,7 +31,7 @@
     "latex-workshop.latex.autoClean.run": "onSucceeded",
     "latex-workshop.latex.recipe.default": "tectonic",
     "diffEditor.renderSideBySide": false,
-    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+    "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
     "workbench.preferredLightColorTheme": "Catppuccin Latte",
     "latex-workshop.intellisense.package.enabled": false,
     "latex-workshop.intellisense.package.env.enabled": false,
@@ -54,5 +55,15 @@
     },
     "workbench.tree.indent": 24,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 2000
+    "files.autoSaveDelay": 2000,
+    "texlab.build.executable": "tectonic",
+    "texlab.build.args": ["-X", "compile", "%f", "--synctex", "--keep-logs"],
+    "texlab.build.onSave": true,
+    "texlab.forwardSearch.executable": "zathura",
+    "texlab.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"],
+    "texlab.chktex.additionalArgs": ["-n2", "-n3", "-n7", "-n25", "-n36"],
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "window.menuBarVisibility": "compact",
+    "workbench.activityBar.location": "bottom"
 }
