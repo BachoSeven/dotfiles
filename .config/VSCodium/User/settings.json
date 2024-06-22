@@ -65,5 +65,7 @@
     "window.commandCenter": false,
     "workbench.layoutControl.enabled": false,
     "window.menuBarVisibility": "compact",
-    "workbench.activityBar.location": "bottom"
+    "workbench.activityBar.location": "bottom",
+    "window.customTitleBarVisibility": "windowed",
+    "workbench.editor.showTabs": "none"
 }

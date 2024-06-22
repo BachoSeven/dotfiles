@@ -30,6 +30,6 @@
 	if [ -f "$XDG_CACHE_HOME/redshift" ] && [ $((($(date +%s)-$(date -r $XDG_CACHE_HOME/redshift "+%s"))/86400)) -lt 30 ]; then
 		_ redshift -l "$(cat $XDG_CACHE_HOME/redshift)" # Color temperature
 	else
-		curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq '.location.lat, .location.lng' | tr '\n' ':' | sed 's/:$//' > $XDG_CACHE_HOME/redshift
+		curl -s "https://ipinfo.io" | jq '.loc' | tr ',' ':' | sed 's/:$//;s/"//g' > $XDG_CACHE_HOME/redshift
 		_ redshift -l "$(cat $XDG_CACHE_HOME/redshift)"
 	fi

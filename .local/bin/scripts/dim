@@ -10,8 +10,8 @@ msgId="192838"
 echo "$cbr > 50" | bc -l && dimbr=$(echo "$cbr" - 30 | bc -l) || dimbr=$(echo "$cbr" / 2 | bc -l)
 
 # trap script to "de-idle" upon keypress or mouse movement and restore previous brightness
-trap 'exit 0' TERM INT EXIT
-trap 'br set $cbr; kill %%; dunstify -C 192838' HUP
+trap 'exit 0' TERM INT
+trap 'br set $cbr; kill %%; dunstify -C 192838' HUP EXIT
 
 dunstify -r "$msgId" '💤 Dimming screen, locking in 60 seconds...' && br set $dimbr
 
