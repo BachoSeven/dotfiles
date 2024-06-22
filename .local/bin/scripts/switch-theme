@@ -47,10 +47,14 @@ toggle_theme() {
 	dwmc xrdb
 	systemctl --user reload xsettingsd.service
 	if pidof st 1>/dev/null 2>&1; then
-		kill -s USR1 $(pidof st)
+		for pid in $(pidof st); do
+			kill -s USR1 $pid
+		done
 	fi
 	for sock in ~/.cache/nvim/nvim-*; do
-		nvim --server $sock --remote-send "<C-\><C-n>:call SwitchTheme('$1')<CR>" &
+		# Perché triggera una escape sequence a caso?!
+		# nvim --server $sock --remote-send "<C-\><C-n>:call SwitchTheme('$1')<CR>" &
+		nvim --server $sock --remote-send "<C-\><C-n>:call SwitchTheme('$1')<CR>"
 	done
 }
 
