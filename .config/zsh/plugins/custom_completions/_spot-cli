@@ -5,7 +5,7 @@ _spot-cli() {
 		'(-h --help)'{-h,--help}'[Display usage instructions]'::'()'\
 		'(-n --next)'{-n,--next}'[Next song]'::'()'\
 		'(-p --prev)'{-p,--prev}'[Previous song]'::'()'\
-		'(-q --query-player)'{-q,--query-player}'[Return current player]'::'()'\
+		'(-q --query-player)'{-q,--query}'[Return current player]'::'()'\
 		'(-t --toggle)'{-t,--toggle}'[Play/Pause]'::'()'\
 		'(-s --stop)'{-s,--stop}'[Stop]'::'()'\
 		'(--pause)'--pause'[Pause song]'::'()'\
