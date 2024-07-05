@@ -1,2 +1,2 @@
 #!/bin/sh
-pkill -f /dev/video || mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --geometry=-0-0 --autofit=30% --title="mpvfloat" --profile=low-latency --untimed /dev/video0 -vf "hflip"
+pkill -f /dev/video || mpv --no-osc --input-default-bindings=no --input-conf=/dev/null --geometry=-0-0 --autofit=30% --title="mpvfloat" --profile=low-latency --untimed -vf "hflip" --cache=no --demuxer-lavf-format=video4linux2 --demuxer-lavf-o=video_size=1920x1080,input_format=mjpeg av://v4l2:/dev/video0
