@@ -52,9 +52,10 @@ toggle_theme() {
 		done
 	fi
 	for sock in ~/.cache/nvim/nvim-*; do
-		# Perché triggera una escape sequence a caso?!
-		# nvim --server $sock --remote-send "<C-\><C-n>:call SwitchTheme('$1')<CR>" &
-		nvim --server $sock --remote-send "<C-\><C-n>:call SwitchTheme('$1')<CR>"
+		# POSIX doesn't have nullglob, so we need to check if the glob expands to a non-empty list
+		[ -e "$sock" ] || continue
+		# Mandare il seguente comando in background con & triggera una escape sequence a caso
+		# nvim --server $sock --remote-send "<C-\><C-n>:call SwitchTheme('$1')<CR>"
 	done
 }
 
