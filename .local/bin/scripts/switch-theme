@@ -15,11 +15,10 @@ toggle_theme() {
 		"dark")
 			sed -i 's/se background=light/se background=dark/g' "$config_file"
 			sed -i 's/#include "light"/#include "dark"/' "$xresources_file"
-			sed -i 's/Net\/ThemeName "gruvbox-light"/Net\/ThemeName "Gruvbox-Material-Dark"/' "$xsettingsd_file"
+			sed -i 's/Net\/ThemeName "Colloid-Grey-Light-Gruvbox"/Net\/ThemeName "Gruvbox-Material-Dark"/' "$xsettingsd_file"
 			sed -i 's/gruvbox-light/gruvbox-dark/' "$bat_settings_file"
 			sed -i 's/"light"/"dark"/' "$glow_settings_file"
-			sed -i 's/gtk-theme-name=gruvbox-light/gtk-theme-name=Gruvbox-Material-Dark/' "$gtk_settings_file"
-			sed -i 's/gtk-icon-theme-name=gruvbox-light/gtk-icon-theme-name=Gruvbox-Material-Dark/' "$gtk_settings_file"
+			sed -i 's/gtk-theme-name=Colloid-Grey-Light-Gruvbox/gtk-theme-name=Gruvbox-Material-Dark/' "$gtk_settings_file"
 			sed -i 's/Gruvbox (Gogh)/Gruvbox Material (Gogh)/' "$wezterm_config_file"
 			sbg -i "$dark_wallpaper"
 			gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' &
@@ -27,11 +26,10 @@ toggle_theme() {
 		"light")
 			sed -i 's/se background=dark/se background=light/g' "$config_file"
 			sed -i 's/#include "dark"/#include "light"/' "$xresources_file"
-			sed -i 's/Net\/ThemeName "Gruvbox-Material-Dark"/Net\/ThemeName "gruvbox-light"/' "$xsettingsd_file"
+			sed -i 's/Net\/ThemeName "Gruvbox-Material-Dark"/Net\/ThemeName "Colloid-Grey-Light-Gruvbox"/' "$xsettingsd_file"
 			sed -i 's/gruvbox-dark/gruvbox-light/' "$bat_settings_file"
 			sed -i 's/"dark"/"light"/' "$glow_settings_file"
-			sed -i 's/gtk-theme-name=Gruvbox-Material-Dark/gtk-theme-name=gruvbox-light/' "$gtk_settings_file"
-			sed -i 's/gtk-icon-theme-name=Gruvbox-Material-Dark/gtk-icon-theme-name=gruvbox-light/' "$gtk_settings_file"
+			sed -i 's/gtk-theme-name=Gruvbox-Material-Dark/gtk-theme-name=Colloid-Grey-Light-Gruvbox/' "$gtk_settings_file"
 			sed -i 's/Gruvbox Material (Gogh)/Gruvbox (Gogh)/' "$wezterm_config_file"
 			sbg -i "$light_wallpaper"
 			gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' &

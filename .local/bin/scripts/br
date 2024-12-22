@@ -28,9 +28,11 @@ current=$(echo "$(cat $brdir/brightness) / $ratio" | bc -l)
 # Handle arguments
 case "$1" in
 	inc*) # increase
-		valnorm=$(echo "$current + $2" | bc -l) ;;
+		valnorm=$(echo "$current + $2" | bc -l)
+		valnorm=$(printf "%.0f" "$valnorm") ;;
 	dec*) # decrease
-		valnorm=$(echo "$current - $2" | bc -l) ;;
+		valnorm=$(echo "$current - $2" | bc -l)
+		valnorm=$(printf "%.0f" "$valnorm") ;;
 	u*) # up
 		valnorm="$(dmenu -p 'Input brightness [default: 80%]' )"
 		[ -n "$valnorm" ] || valnorm="$defu" ;;
