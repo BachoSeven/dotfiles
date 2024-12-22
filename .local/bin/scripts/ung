@@ -1,3 +1,0 @@
-#!/bin/sh
-
-sed "s/#.*$//" ~/.config/chromium-flags.conf | xargs /opt/ungoogledChromium/chromium "$@"
