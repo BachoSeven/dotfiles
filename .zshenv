@@ -16,7 +16,7 @@
 	typeset -gU path cdpath fpath manpath
 	path=("$path[@]")
 ## Adds `~/.local/bin` and all subdirs to $PATH
-	export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+	export PATH="${$(find ~/.local/bin -type d -printf %p:)%%:}:$PATH"
 
 ## Necessary to only call compinit from local zshrc
 	skip_global_compinit=1

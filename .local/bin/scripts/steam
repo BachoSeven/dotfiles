@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+args=(
+    --die-with-parent
+
+    --dev-bind /dev /dev
+    --proc /proc
+    --bind /run /run
+    --bind /sys /sys
+    --tmpfs /tmp
+
+    --bind "${HOME}"/stuff/games/FakeSteam "${HOME}" # !!!!!!!! <- CHANGE THIS
+    --chdir "${HOME}"
+
+    # customisations on these don't need to go into your steam bwrap
+    # it will more likely break things than do anything positive
+    --unsetenv XDG_CACHE_HOME
+    --unsetenv XDG_CONFIG_HOME
+    --unsetenv XDG_DATA_HOME
+    --unsetenv XDG_STATE_HOME
+
+    # https://github.com/flatpak/flatpak/blob/be2de97e862e5ca223da40a895e54e7bf24dbfb9/common/flatpak-run.c#L277
+    --tmpfs /tmp/.X11-unix
+)
+
+install -m 1777 -d /tmp/dumps
+args+=(--bind-try /tmp/dumps /tmp/dumps)
+
+# NOTE: might wanna add /opt if you need it for electron apps, dotnet (ffxiv), etc
+for dir in /bin /etc /lib /lib64 /sbin /usr /var; do
+    args+=(--ro-bind "${dir}" "${dir}")
+done
+
+if [[ "${DISPLAY}" == *:* ]]; then
+    display_nr="${DISPLAY/#*:}" # strip host
+    display_nr="${display_nr/%.*}" # strip screen
+    local_socket=/tmp/.X11-unix/X"${display_nr}"
+    args+=(--ro-bind-try "${local_socket}" "${local_socket}")
+fi
+
+exec bwrap "${args[@]}" -- /usr/bin/steam -disable-cef-sandbox "$@"
