@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Console-mode UniPi VPN launcher.
+# Password sources: UNIPI_VPN_PASSWORD, `pass show unipi/vpn`, or a hidden prompt.
+# It is never passed as -p/argv and never appears in shell history.
+#
+# The VPN username is read from the selected profile in profiles.xml.  To use
+# another account, override it for one run:
+#   UNIPI_VPN_USER=other.user UNIPI_VPN_PASS_ENTRY=unipi/vpn2 unipi-vpn
+# Other overridable settings: UNIPI_VPN_PROFILE, UNIPI_VPN_REALM,
+# UNIPI_VPN_SERVER, UNIPI_VPN_PASS_ENTRY.
+: "${UNIPI_VPN_PASS_ENTRY:=unipi/vpn}"
+: "${UNIPI_VPN_PROFILE:=Unipi}"
+: "${UNIPI_VPN_REALM:=Internet attraverso UNIPI}"
+: "${UNIPI_VPN_SERVER:=access.unipi.it}"
+export UNIPI_VPN_PASS_ENTRY UNIPI_VPN_PROFILE
+export UNIPI_VPN_REALM UNIPI_VPN_SERVER
+
+set -euo pipefail
+here="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+. "$here/../../lib/sonicwall-xdg-env.sh"
+exec python3 "$here/../../lib/unipi-vpn.py" "$@"

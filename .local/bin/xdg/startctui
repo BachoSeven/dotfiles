@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+. "${HOME}/.local/lib/sonicwall-xdg-env.sh"
+exec /usr/bin/startctui "$@"
