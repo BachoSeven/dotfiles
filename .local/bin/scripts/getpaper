@@ -1,0 +1,4 @@
+#!/bin/sh
+# getpaper launcher — real code lives in $XDG_DATA_HOME/getpaper/getpaper.py
+# -B: no __pycache__ litter
+exec python3 -B "${XDG_DATA_HOME:-$HOME/.local/share}/getpaper/getpaper.py" "$@"

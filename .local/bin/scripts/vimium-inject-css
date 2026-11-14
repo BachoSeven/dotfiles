@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+"""Inject vimium CSS via CDP into chrome.storage.sync.
+
+Opens the vimium options page (which runs in the extension context with full
+chrome.storage access), sets the CSS via Runtime.evaluate, then closes the
+page. Fast-fails if chromium is closed or CDP port is not available.
+"""
+
+import json, os, socket, struct, sys, time, base64
+
+CDP_PORT = 9222
+VID = "dbepggeogbaibhgnhhndojpepiihcmeb"
+
+CSS_FILE_MAP = {
+    "dark": "vimium_gruvbox.css",
+    "light": "vimium_gruvbox_light.css",
+}
+
+
+def http_request(method, path):
+    s = socket.create_connection(("127.0.0.1", CDP_PORT), timeout=2)
+    s.sendall(f"{method} {path} HTTP/1.1\r\nHost: 127.0.0.1\r\nConnection: close\r\n\r\n".encode())
+    r = b""
+    while True:
+        try:
+            c = s.recv(4096)
+            if not c:
+                break
+            r += c
+        except Exception:
+            break
+    s.close()
+    return r[r.find(b"\r\n\r\n") + 4 :]
+
+
+def ws_connect(ws_path):
+    sock = socket.create_connection(("127.0.0.1", CDP_PORT), timeout=2)
+    key = base64.b64encode(os.urandom(16)).decode()
+    sock.sendall(
+        f"GET {ws_path} HTTP/1.1\r\nHost: 127.0.0.1\r\nUpgrade: websocket\r\n"
+        f"Connection: Upgrade\r\nSec-WebSocket-Key: {key}\r\n"
+        f"Sec-WebSocket-Version: 13\r\n\r\n".encode()
+    )
+    buf = b""
+    while b"\r\n\r\n" not in buf:
+        buf += sock.recv(4096)
+    return sock
+
+
+def ws_send(sock, data):
+    payload = data.encode() if isinstance(data, str) else data
+    mask = os.urandom(4)
+    frame = bytearray([0x81])
+    n = len(payload)
+    if n < 126:
+        frame.append(0x80 | n)
+    else:
+        frame.append(0x80 | 126)
+        frame.extend(struct.pack(">H", n))
+    frame.extend(mask)
+    frame.extend(bytearray(b ^ mask[i % 4] for i, b in enumerate(payload)))
+    sock.sendall(bytes(frame))
+
+
+def ws_recv(sock, timeout=3):
+    sock.settimeout(timeout)
+    try:
+        hdr = sock.recv(2)
+    except Exception:
+        return None
+    if len(hdr) < 2:
+        return None
+    n = hdr[1] & 0x7F
+    if n == 126:
+        n = struct.unpack(">H", sock.recv(2))[0]
+    if hdr[1] & 0x80:
+        mask = sock.recv(4)
+    data = b""
+    while len(data) < n:
+        c = sock.recv(n - len(data))
+        if not c:
+            break
+        data += c
+    if hdr[1] & 0x80:
+        data = bytes(b ^ mask[i % 4] for i, b in enumerate(data))
+    return json.loads(data) if data else None
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: vimium-inject-css <dark|light>", file=sys.stderr)
+        sys.exit(1)
+
+    mode = sys.argv[1]
+    if mode not in CSS_FILE_MAP:
+        print(f"Unknown mode: {mode}", file=sys.stderr)
+        sys.exit(1)
+
+    config_home = os.environ.get("XDG_CONFIG_HOME", os.path.expanduser("~/.config"))
+    css_file = os.path.join(config_home, "browser", "cfg", CSS_FILE_MAP[mode])
+    if not os.path.isfile(css_file):
+        print(f"CSS file not found: {css_file}", file=sys.stderr)
+        sys.exit(1)
+
+    css_content = open(css_file).read()
+    css_value = (
+        '"'
+        + css_content.replace("\\", "\\\\").replace("\n", "\\n").replace('"', '\\"')
+        + '"'
+    )
+
+    # Close any stale vimium options pages
+    try:
+        targets = json.loads(http_request("GET", "/json"))
+        for t in targets:
+            if VID in t.get("url", "") and "options" in t.get("url", ""):
+                http_request("GET", f"/json/close/{t['id']}")
+                time.sleep(0.1)
+    except Exception:
+        pass
+
+    # Open vimium options page
+    try:
+        tab_data = json.loads(
+            http_request("PUT", f"/json/new?chrome-extension://{VID}/pages/options.html")
+        )
+        tab_id = tab_data["id"]
+    except Exception:
+        sys.exit(1)
+
+    time.sleep(0.3)
+
+    try:
+        ws_path = f"/devtools/page/{tab_id}"
+        sock = ws_connect(ws_path)
+
+        # Set CSS via chrome.storage.sync.set from options page context
+        js = (
+            'new Promise((resolve, reject) => {'
+            f'chrome.storage.sync.set({{userDefinedLinkHintCss: {css_value}}}, () => {{'
+            'if (chrome.runtime.lastError) reject(chrome.runtime.lastError.message);'
+            'else resolve("ok");'
+            "});})"
+        )
+        ws_send(
+            sock,
+            json.dumps(
+                {
+                    "id": 1,
+                    "method": "Runtime.evaluate",
+                    "params": {"expression": js, "awaitPromise": True},
+                }
+            ),
+        )
+
+        for _ in range(10):
+            r = ws_recv(sock, timeout=3)
+            if r is None:
+                continue
+            if r.get("id") == 1:
+                result = r.get("result", {}).get("result", {})
+                if result.get("type") == "string" and result.get("value") == "ok":
+                    print(f"vimium CSS updated ({mode})")
+                else:
+                    print(f"vimium CSS update failed: {result}", file=sys.stderr)
+                    sys.exit(1)
+                break
+
+        sock.close()
+    finally:
+        # Close options tab
+        http_request("GET", f"/json/close/{tab_id}")
+
+
+if __name__ == "__main__":
+    main()

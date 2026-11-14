@@ -1,0 +1,225 @@
+#!/usr/bin/env bash
+#
+# find-big-junk: scan a home directory for large, regenerable / cache-like
+# directories and report which ones are NOT already covered by an rsync
+# --exclude-from style ignorelist (default: ~/.config/ignorelist).
+#
+# Fully deterministic: no network, no AI, just du/find plus a pattern table.
+#
+# Usage:
+#   find-big-junk [-d DIR] [-s MIN_SIZE] [-l IGNORELIST] [-w]
+#
+#     -d DIR         directory to scan          (default: $HOME)
+#     -s MIN_SIZE    min size per hit           (default: 50M, e.g. 100M, 2G)
+#     -l IGNORELIST  exclude list to honour     (default: ~/.config/ignorelist)
+#     -w             append suggested lines to the ignorelist (off by default)
+#
+# Exit codes: 0 = hits found (or none), 1 = usage error.
+
+set -euo pipefail
+
+PROG=${0##*/}
+HOME_DIR=$HOME
+MIN_SIZE=${MIN_SIZE:-50M}
+IGNORELIST=${IGNORELIST:-$HOME/.config/ignorelist}
+WRITE=0
+
+usage() {
+    cat <<EOF
+find-big-junk: scan a home directory for large, regenerable / cache-like
+directories and report which ones are NOT already covered by an rsync
+--exclude-from style ignorelist.
+
+Usage:
+  find-big-junk [-d DIR] [-s MIN_SIZE] [-l IGNORELIST] [-w]
+
+    -d DIR         directory to scan          (default: \$HOME)
+    -s MIN_SIZE    min size per hit           (default: 50M, e.g. 100M, 2G)
+    -l IGNORELIST  exclude list to honour     (default: ~/.config/ignorelist)
+    -w             append suggested lines to the ignorelist (off by default)
+EOF
+    exit "${1:-0}"
+}
+
+while getopts "d:s:l:wh" opt; do
+    case $opt in
+        d) HOME_DIR=$OPTARG ;;
+        s) MIN_SIZE=$OPTARG ;;
+        l) IGNORELIST=$OPTARG ;;
+        w) WRITE=1 ;;
+        h) usage 0 ;;
+        *) usage 1 ;;
+    esac
+done
+shift $((OPTIND - 1))
+[[ $# -eq 0 ]] || usage 1
+
+HOME_DIR=${HOME_DIR%/}
+[[ -d $HOME_DIR ]] || { echo "$PROG: not a directory: $HOME_DIR" >&2; exit 1; }
+[[ -f $IGNORELIST ]] || { echo "$PROG: ignorelist not found: $IGNORELIST" >&2; exit 1; }
+
+########################################################################
+# 1. Known junk basenames. Edit freely; case-sensitive exact names.
+########################################################################
+
+JUNK_NAMES=(
+    # chromium / electron profile blobs
+    'Cache'
+    'Code Cache'
+    'GPUCache'
+    'GrShaderCache'
+    'ShaderCache'
+    'DawnCache'
+    'DawnGraphiteCache'
+    'DawnWebGPUCache'
+    'Service Worker'
+    'IndexedDB'
+    'Local Storage'
+    'Session Storage'
+    'blob_storage'
+    'Crashpad'
+    'Crash Reports'
+    'Crashes'
+    'Partitions'
+    'favicons'
+    'Shared Dictionary'
+    'CachedData'
+    'Extension State'
+    'Extension Scripts'
+    'Extension Rules'
+    'Sync Extension Settings'
+    'webrtc_event_logs'
+    'Media Cache'
+    'component_crx_cache'
+    # bundled AI models inside electron apps
+    'OptGuideOnDeviceModel'
+    # language / build tool artefacts
+    'node_modules'
+    '__pycache__'
+    '.venv'
+    'venv'
+    '.tox'
+    '.nox'
+    '.pytest_cache'
+    '.mypy_cache'
+    '.ruff_cache'
+    '.turbo'
+    '.next'
+    '.parcel-cache'
+    '.gradle'
+    '_build'
+    'elm-stuff'
+    'coverage'
+    '.terraform'
+)
+
+########################################################################
+# 2. Load ignorelist and implement rsync exclude-pattern matching:
+#    - pattern without '/'        -> matches basename at any depth
+#    - pattern with '/' (leading slash stripped)
+#      -> anchored to backup root
+#    - '*' matches everything except '/'
+#    - a dir matching a pattern excludes everything below it,
+#      so we test every ancestor prefix too.
+########################################################################
+
+PATTERNS=()
+while IFS= read -r line; do
+    line=${line%$'\r'}
+    [[ -z $line || $line == '#'* ]] && continue
+    PATTERNS+=("$line")
+done < "$IGNORELIST"
+
+is_excluded() {    # $1: absolute path under HOME_DIR
+    local rel=${1#"$HOME_DIR"/}
+    local pat p cur c
+    local -a parts
+    IFS=/ read -ra parts <<< "$rel"
+    for pat in ${PATTERNS+"${PATTERNS[@]}"}; do
+        p=$pat
+        # a trailing '/' only means "match dirs", it does NOT anchor
+        while [[ $p == */ ]]; do p=${p%/}; done
+        if [[ $p == /* ]]; then p=${p#/}; fi
+        if [[ $p != */* ]]; then
+            for c in "${parts[@]}"; do
+                [[ $c == $p ]] && return 0
+            done
+        else
+            cur=''
+            for c in "${parts[@]}"; do
+                cur=${cur:+$cur/}$c
+                [[ $cur == $p ]] && return 0
+            done
+        fi
+    done
+    return 1
+}
+
+########################################################################
+# 3. Find junk dirs, measure them, drop already-excluded ones.
+########################################################################
+
+name_pred=( -name "${JUNK_NAMES[0]}" )
+for n in "${JUNK_NAMES[@]:1}"; do
+    name_pred+=(-o -name "$n")
+done
+
+mapfile -t hits < <(
+    cd "$HOME_DIR" &&
+    find . \( "${name_pred[@]}" \) -prune -print |
+    sed -e 's|^\./||' -e 's|^\.$||' |
+    sort -u
+)
+
+min_bytes=$(numfmt --from=iec "$MIN_SIZE")
+
+declare -a rows=()
+declare -A app_hits=() app_bytes=()
+
+for h in "${hits[@]}"; do
+    [[ -z $h ]] && continue
+    abs="$HOME_DIR/$h"
+    [[ -d $abs ]] || continue
+    is_excluded "$abs" && continue
+    bytes=$(du -sb --exclude-from="$IGNORELIST" "$abs" 2>/dev/null | awk '{print $1}')
+    (( bytes >= min_bytes )) || continue
+    printf -v row '%12s\t%s' "$(numfmt --to=iec "$bytes")" "$h"
+    rows+=("$row")
+
+    # aggregate per top-level app dir (.config/X, .local/share/Y, ...)
+    app=${h%%/*}
+    rest=${h#*/}
+    [[ $rest == "$h" ]] || app+="/${rest%%/*}"
+    app_hits[$app]=$(( ${app_hits[$app]:-0} + 1 ))
+    app_bytes[$app]=$(( ${app_bytes[$app]:-0} + bytes ))
+done
+
+########################################################################
+# 4. Report.
+########################################################################
+
+if ((${#rows[@]} == 0)); then
+    echo "$PROG: nothing new found above $MIN_SIZE (all clean or already excluded)."
+    exit 0
+fi
+
+echo "# big regenerable dirs NOT yet covered by $IGNORELIST"
+printf '%s\n' "${rows[@]}" | sort -t$'\t' -k1,1rh -k2
+
+echo
+echo "# summary per app dir (>= 2 distinct junk dirs)"
+for app in "${!app_hits[@]}"; do
+    (( ${app_hits[$app]} >= 2 )) || continue
+    printf '%12s\t%s (%s junk dirs)\n' \
+        "$(numfmt --to=iec "${app_bytes[$app]}")" "$app" "${app_hits[$app]}"
+done | sort -t$'\t' -k1,1rh
+
+if ((WRITE)); then
+    {
+        echo
+        echo "# added by $PROG on $(date +%F)"
+        printf '%s\n' "${rows[@]}" | cut -f2
+    } >> "$IGNORELIST"
+    echo
+    echo "# appended ${#rows[@]} lines to $IGNORELIST"
+fi

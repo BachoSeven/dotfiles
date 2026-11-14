@@ -1,0 +1,163 @@
+#!/usr/bin/env python3
+"""Update vimium CSS in leveldb while chromium is closed.
+
+Finds the last userDefinedLinkHintCss entry in the Sync Extension Settings
+leveldb log, replaces its value with new CSS, and recalculates CRC.
+All other records are preserved as-is.
+"""
+
+import struct, os, sys
+
+VID = "dbepggeogbaibhgnhhndojpepiihcmeb"
+KEY = b"userDefinedLinkHintCss"
+
+# --- CRC32C (Castagnoli) with LevelDB mask ---
+_CRC32C_TABLE = [0] * 256
+_POLY = 0x82F63B78
+for _i in range(256):
+    _crc = _i
+    for _ in range(8):
+        _crc = ((_crc >> 1) ^ _POLY) if (_crc & 1) else (_crc >> 1)
+    _CRC32C_TABLE[_i] = _crc & 0xFFFFFFFF
+
+
+def _crc32c(buf):
+    crc = 0xFFFFFFFF
+    for b in buf:
+        crc = _CRC32C_TABLE[(crc ^ b) & 0xFF] ^ ((crc >> 8) & 0x00FFFFFF)
+    return (crc ^ 0xFFFFFFFF) & 0xFFFFFFFF
+
+
+def _mask_crc(crc):
+    return (((crc >> 15) | (crc << 17)) + 0xA282EAD8) & 0xFFFFFFFF
+
+
+def encode_varint(n):
+    out = bytearray()
+    while n >= 0x80:
+        out.append((n & 0x7F) | 0x80)
+        n >>= 7
+    out.append(n)
+    return bytes(out)
+
+
+def decode_varint(buf, pos):
+    result = 0
+    shift = 0
+    while pos < len(buf):
+        b = buf[pos]
+        result |= (b & 0x7F) << shift
+        pos += 1
+        if (b & 0x80) == 0:
+            return result, pos
+        shift += 7
+    return result, pos
+
+
+def build_log_record(rec_type, payload):
+    length = len(payload)
+    crc_input = bytes([rec_type]) + payload
+    crc = _crc32c(crc_input)
+    masked = _mask_crc(crc)
+    return struct.pack("<I", masked) + struct.pack("<H", length) + struct.pack("B", rec_type) + payload
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: vimium-ldb-edit <dark|light>", file=sys.stderr)
+        sys.exit(1)
+
+    mode = sys.argv[1]
+    config_home = os.environ.get("XDG_CONFIG_HOME", os.path.expanduser("~/.config"))
+    css_file = os.path.join(
+        config_home, f"browser/cfg/vimium_gruvbox{'_light' if mode == 'light' else ''}.css"
+    )
+    if not os.path.isfile(css_file):
+        print(f"CSS file not found: {css_file}", file=sys.stderr)
+        sys.exit(1)
+
+    css_content = open(css_file).read()
+    new_value = ('"' + css_content.replace("\\", "\\\\").replace("\n", "\\n").replace('"', '\\"') + '"').encode()
+
+    ldb_dir = os.path.expanduser(f"~/.config/chromium/Default/Sync Extension Settings/{VID}")
+    log_file = os.path.join(ldb_dir, "000003.log")
+
+    if not os.path.isfile(log_file):
+        print(f"leveldb log not found: {log_file}", file=sys.stderr)
+        sys.exit(1)
+
+    data = open(log_file, "rb").read()
+
+    # Parse all LevelDB log records
+    records = []  # (rec_start, rec_end, rec_type)
+    pos = 0
+    while pos + 7 <= len(data):
+        rec_type = data[pos + 6]
+        rec_len = struct.unpack("<H", data[pos + 4:pos + 6])[0]
+        if rec_type not in (1, 2, 3, 4) or rec_len == 0 or pos + 7 + rec_len > len(data):
+            break
+        rec_end = pos + 7 + rec_len
+        rec_payload = data[pos + 7:rec_end]
+        records.append((pos, rec_end, rec_type, rec_payload))
+        pos = rec_end
+
+    if not records:
+        print("No records found in log file", file=sys.stderr)
+        sys.exit(1)
+
+    # Find the last record that contains our key
+    last_idx = None
+    for i, (_, _, _, payload) in enumerate(records):
+        if KEY in payload:
+            last_idx = i
+
+    if last_idx is None:
+        print("No userDefinedLinkHintCss entries found", file=sys.stderr)
+        sys.exit(1)
+
+    # Parse the Chrome extension storage internal key format from the payload:
+    #   8-byte LE counter
+    #   5-byte CF+type header (01 00 00 00 01)
+    #   varint key_len, key
+    #   varint val_len, value
+    old_payload = records[last_idx][3]
+    pos = 0
+    counter = old_payload[pos:pos + 8]
+    pos += 8
+    cf_header = old_payload[pos:pos + 5]
+    pos += 5
+
+    key_len, pos = decode_varint(old_payload, pos)
+    pos += key_len
+
+    # Skip old value
+    old_val_len, _ = decode_varint(old_payload, pos)
+
+    # Build new payload with same structure
+    new_payload = bytearray()
+    new_payload.extend(counter)
+    new_payload.extend(cf_header)
+    new_payload.extend(encode_varint(len(KEY)))
+    new_payload.extend(KEY)
+    new_payload.extend(encode_varint(len(new_value)))
+    new_payload.extend(new_value)
+
+    new_record = build_log_record(1, bytes(new_payload))
+
+    # Replace only the last key record; leave all others intact
+    out = bytearray(data)
+    r_start, r_end, _, _ = records[last_idx]
+    out[r_start:r_end] = new_record
+
+    # Write back
+    backup = log_file + ".bak"
+    open(backup, "wb").write(data)
+    open(log_file, "wb").write(bytes(out))
+
+    print(f"Replaced CSS entry at record {last_idx + 1}/{len(records)}")
+    print(f"New CSS: {len(new_value)} bytes ({mode})")
+    print(f"Backup: {backup}")
+
+
+if __name__ == "__main__":
+    main()
