@@ -1,0 +1,22 @@
+{
+  // Automatic quota surfaces. Slash commands remain available when these are disabled.
+  "enableToast": false,
+  "tuiCommandDisplay": "dialog",
+  // Include or hide session input and output token totals.
+  "showSessionTokens": false,
+  // Session token totals: "current" session only, or "tree" including descendants.
+  "sessionTokenScope": "current",
+  // Provider selection: "auto" detects providers; an array tracks only listed providers.
+  "enabledProviders": ["opencode-go"],
+  // Quota presentation and reset-period choices.
+  "formatStyle": "allWindows",
+  "percentDisplayMode": "remaining",
+  // TUI-only surfaces.
+  "tuiSidebarPanel": {
+    "enabled": true
+  },
+  // Optional bundled maintainer Home announcements.
+  "maintainerAnnouncements": {
+    "enabled": false
+  }
+}

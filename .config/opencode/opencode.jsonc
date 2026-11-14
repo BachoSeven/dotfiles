@@ -1,0 +1,16 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // OpenCode Quota: tuiCommandDisplay chooses whether native TUI command output appears in the session transcript or a local popup dialog.
+  // OpenCode Quota: loads the server plugin for slash commands and quota checks.
+  "plugin": [
+    "@slkiser/opencode-quota@latest"
+  ],
+  "provider": {
+    // Detected openrouter authentication; opencode-quota added this global provider declaration.
+    "openrouter": {},
+    // Detected opencode-go authentication; opencode-quota added this global provider declaration.
+    "opencode-go": {},
+    // Detected opencode authentication; opencode-quota added this global provider declaration.
+    "opencode": {}
+  }
+}
