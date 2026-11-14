@@ -1,0 +1,118 @@
+div > .vimiumHintMarker {
+  padding: 2px 3px;
+  background-color: #fbf1c7;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: inset 0 -2px 0 #d5c4a1;
+  background-image: none;
+}
+
+div > .vimiumHintMarker span {
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: none;
+  color: #b57614 !important;
+}
+
+div > .vimiumHintMarker > .matchingCharacter {
+  color: #076678;
+}
+
+/*VOMNIBAR*/
+#vomnibar{
+    background-color: #fbf1c7;
+}
+
+#vomnibar input {
+  color: #3c3836;
+  font: -moz-window;
+  font-size: 20px;
+  height: 34px;
+  margin-bottom: 0;
+  padding: 4px;
+  background-color: #f2e5bc;
+  border-radius: 3px;
+  border: 1px solid #fbf1c7;
+  box-shadow: #add8e6 0px 0px 1px;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#vomnibar .vomnibarSearchArea {
+  display: block;
+  padding: 10px;
+  background-color: #f2e5bc;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 0px solid #add8e6;
+}
+
+#vomnibar ul {
+  background-color: #fbf1c7;
+  border-radius: 0 0 4px 4px;
+  list-style: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-block-start: 2px;
+  margin-block-end: 0px;
+}
+
+#vomnibar li {
+  border-bottom: 1px solid #f2e5bc;
+  line-height: 1.1em;
+  padding: 7px 10px;
+  font-size: 16px;
+  color: #3c3836;
+  position: relative;
+  display: list-item;
+  margin: auto;
+}
+
+#vomnibar li .vomnibarBottomHalf {
+  font-size: 15px;
+  margin-top: 3px;
+  padding: 2px 0;
+}
+
+#vomnibar li .vomnibarSource {
+  color: #689d6a;
+  margin-right: 4px;
+}
+#vomnibar li .vomnibarRelevancy {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  background-color: #f2e5bc;
+  color: #3c3836;
+  font-family: monospace;
+  width: 100px;
+  overflow: hidden;
+}
+
+#vomnibar li .vomnibarUrl {
+   color: #076678;
+}
+
+#vomnibar li .vomnibarMatch {
+  font-weight: bold;
+  color: #3c3836;
+}
+
+#vomnibar li.vomnibarSelected {
+    background-color: #d5c4a1;
+}
+
+#vomnibar li em, #vomnibar li .vomnibarTitle {
+  color: #3c3836;
+  margin-left: 4px;
+  font-weight: normal;
+}
+#vomnibar li em { font-style: italic; }
+#vomnibar li em .vomnibarMatch, #vomnibar li .vomnibarTitle .vomnibarMatch {
+  color: #b57614;
+}
+
+#vomnibarInput::selection {
+  background-color: #458588;
+}

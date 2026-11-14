@@ -1,0 +1,190 @@
+html, body {
+    background-color: var(--surface-0);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+        height: 100svh;
+    justify-content: stretch;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    }
+body.notReady {
+    display: none;
+    }
+#dashboard-nav {
+    align-items: center;
+    background-color: var(--surface-1);
+    border: 0;
+    font-size: 20px;
+    line-height: 25px;
+    margin: 0;
+    border-bottom: 1px solid var(--border-1);
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    overflow-x: hidden;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    }
+#dashboard-nav-widgets {
+    align-items: stretch;
+    display: flex;
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--adn-tab-button-bg);
+    padding: 4px 10px 0;
+    white-space: nowrap;
+    background-color: #000;
+}
+#dashboard-nav > span {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    }
+#dashboard-nav-widgets span {
+    align-items: center;
+    display: inline-flex;
+    padding: 0 0.5em;
+    font-size: 20px;
+    font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+    font-stretch: 47.5%;
+    font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+    display: block;
+    width: 100px;
+    float: left;
+    margin: 5px 0;
+    color: #fff;
+}
+.tabButton {
+		user-select: none;
+    font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+    font-stretch: 47.5%;
+    font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+    text-transform: uppercase;
+    background-color: #222;
+    border: 2px solid var(--adn-tab-button-bg);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-width: 1px;
+    color: #ccc;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 110%;
+    margin: 0 0.2em 0 0;
+    overflow: hidden;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    top: 1px;
+}
+.tabButton:hover{
+  background-color: #333;
+  color:#eee;
+}
+.tabButton:focus {
+    outline: 0;
+    }
+.tabButton:active,.tabButton:visited {
+    /*color: inherit;*/
+    }
+.tabButton.selected {
+    background-color: var(--adn-tab-button-bg);
+    color: #fff;
+    border-color: var(--adn-tab-button-bg);
+    opacity: 1;
+    }
+iframe {
+    background-color: transparent;
+    border: 0;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    }
+#unsavedWarning {
+    box-shadow: rgba(0,0,0,0.4) 0 4px 4px;
+    display: none;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 20;
+    }
+#unsavedWarning.on {
+    display: initial;
+    }
+#unsavedWarning > div:first-of-type {
+    background-color: black;
+    padding: 0.5em;
+    }
+#unsavedWarning > div:last-of-type {
+    height: 100vh;
+        height: 100svh;
+    position: absolute;
+    width: 100vw;
+    }
+
+body .tabButton[data-pane="no-dashboard.html"] {
+    display: none;
+    }
+body.noDashboard #dashboard-nav {
+    display: none;
+    }
+
+@media (max-width: 640px) {
+    #dashboard-nav-widgets {
+        padding: 1px 0 0 0;
+        display: flex;
+        border-bottom:none;
+        white-space: nowrap;
+        width:auto;
+    }
+    .hverbose {
+        display: none !important;
+        }
+    .tabButton {
+        font-size: 90%;
+        border:none;
+        margin:0px;
+        border-top-left-radius:0px;
+        border-top-right-radius:0px;
+        background-color: black;
+        padding: 0.5em 1.4em calc(0.5em - 3px);
+        border-bottom: 3px solid black;
+    }
+    .tabButton.selected {
+        border-bottom: 3px solid var(--adn-purple);
+        background-color: #222;
+    }
+}
+/*ADN - fixing https://github.com/dhowe/AdNauseam/issues/1768
+:root.hidpi .tabButton {
+    font-family: Metropolis, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+*/
+@media (max-width: 320px) {
+    #dashboard-nav-widgets span {
+        display: none;
+    }
+}
+
+/* hover-able devices */
+:root.desktop .tabButton {
+    cursor: default;
+    }
+:root.desktop .tabButton:not(.selected) {
+    cursor: pointer;
+    }
+:root.desktop .tabButton:not(.selected):hover {
+    background-color: var(--dashboard-tab-hover-surface);
+    border-bottom-color: var(--dashboard-tab-hover-border);
+    }
+
+:root.mobile #dashboard-nav .logo {
+    display: none;
+    }

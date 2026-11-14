@@ -1,0 +1,39 @@
+{
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "action": {
+    "default_popup": "options/popup.html"
+  },
+  "description": "Bypass Paywalls of news sites",
+  "homepage_url": "https://github.com/bpc-clone/bypass-paywalls-chrome-clean",
+  "icons": {
+    "128": "bypass.png"
+  },
+  "manifest_version": 3,
+  "minimum_chrome_version": "109",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvLxf4oOeSoz8qKVzKGQWW5zW44hWCoOoQRGXTrObUpyoGfGzhFO8aZHQmBcLrAZMA4O6EA7GaXnHkOPCLKM11seZ4J2azb1gSswApfAlaoeOLnhDnp/Jpzz7Bt6o4HL+nhKRJUOZ9z+GXAyOkOps5O38TwJN5R6z8tLkleRgfYscp19YU/vq1x9PrbXIHJTRB7qtb/iJmiKATKisXGmFY3Nbs5m379TGqcJFBM9bI+8bSJtS4e7t0LHOwSLDq3IVRaWVsFd9P19WEDNTxuzr9+rczOrw1vgmiisNOcElse8cyVIoq4bjepvfHM/9nzDgKwQsNG5OTzujwHu2UUN4cwIDAQAB",
+  "name": "Bypass Paywalls Clean",
+  "update_url": "https://gitflic.ru/project/magnolia1234/bpc_updates/blob/raw?file=updates.xml",
+  "short_name": "Bypass Paywall",
+  "options_ui": {
+    "open_in_tab": true,
+    "page": "options/options.html"
+  },
+  "incognito": "split",
+  "permissions": [
+    "cookies",
+    "storage",
+    "activeTab",
+    "declarativeNetRequestWithHostAccess",
+    "scripting",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "version": "4.4.4.3"
+}

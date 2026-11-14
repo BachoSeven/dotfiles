@@ -1,0 +1,328 @@
+/* ============================================================
+  SETTINGS SPECIFIC
+============================================================ */
+
+ul {
+    padding-left: 1em;
+    padding-right: 0;
+}
+    body {
+    margin-bottom: 6rem;
+}
+.synopsis {
+    font-size: 90%;
+    font-size: var(--font-size-smaller);
+    opacity: var(--medium-em);
+    }
+
+/* surface/ink */
+#themeMood {
+    align-items: stretch;
+    align-self: stretch;
+    display: inline-flex;
+    justify-content: stretch;
+    user-select: none;
+    }
+#themeMood > span {
+    border: 1px solid var(--ink-1);
+    color: var(--ink-1);
+    display: inline-flex;
+    background-color: var(--surface-1);
+    display: inline-block;
+    padding: 0 0.5em;
+    text-align: center;
+    user-select: none;
+    }
+
+/* primary color */
+#themePrimary {
+    align-items: stretch;
+    align-self: stretch;
+    display: inline-flex;
+    justify-content: stretch;
+    position: relative;
+    }
+#themePrimary > span {
+    background-color: rgb(var(--primary-50));
+    display: inline-flex;
+    width: 2em;
+    }
+
+[href="advanced-settings.html"] {
+    display: none;
+}
+body[dir="rtl"] ul {
+    padding-left: 0;
+    padding-right: 1em;
+}
+
+#userSettings {
+  position: relative;
+  padding-left: 0;
+  margin: 50px;
+  margin-top: 20px;
+}
+li {
+  margin-top: 0.25em;
+}
+#userSettings, #userSettings ul {
+  list-style-type: none;
+}
+#userSettings .subgroup {
+  margin: 1em 0 2em;
+}
+#userSettings .subgroup p {
+  margin: 0 22px 0 50px;
+  line-height: 1.5em;
+  float:left;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+#userSettings .subgroup p.last {
+  margin-right:15px;
+  padding-right: 0;
+}
+
+#userSettings .subgroup .subgroupDescription {
+    clear: both;
+}
+#userSettings .subgroup .subgroupDescription p{
+    margin-right: 0em;
+}
+
+#userSettings .fa-icon {
+  margin-left: 0.2em;
+}
+
+div> p:last-child {
+  margin-bottom: 0;
+}
+#userSettings .subgroup> span {
+  font-size: larger;
+  font-weight: bold;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+}
+#userSettings .subgroup .custom-check {
+  padding: 5px 0 15px 44px;
+  clear:both;
+}
+#userSettings .subgroup> ul> li label {
+  margin-left: 5px;
+}
+#userSettings .subgroup> .custom-check .li label {
+  margin-left: 5px;
+}
+#localData > div {
+    margin-bottom: var(--default-gap-small);
+    }
+#localData > div:last-of-type {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    }
+#localData > div:last-of-type > button {
+    margin-bottom: var(--default-gap-small);
+    min-width: 280px;
+    }
+#experimental-enabled {
+  margin-top: 1em;
+}
+#advanced-user-enabled ~ a.fa {
+  display: inline;
+}
+input[type="range"]:focus {
+  outline: none!important;
+}
+input[type="range"]:disabled{
+  overflow: hidden;
+  outline: none!important;
+  border-color: gray;
+}
+input[type="range"]:disabled::-webkit-slider-thumb {
+    box-shadow: -320px 0 0 315px gray;
+    background-color: #BBB;
+}
+input[type=range] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: transparent;
+  height: 10px;
+  width: 95%;
+  border-color: var(--adn-blue);
+  padding:0;
+  margin:0;
+}
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    -moz-apperance: none;
+    box-shadow: -320px 0 0 315px var(--adn-blue);
+    width: 2em;
+    height: 8px;
+    background-color: #004ca5;
+    border-radius: 5px;
+}
+input[type=range]::-moz-range-thumb {
+  background-color: #004ca5;
+  width: 2em;
+  border-radius: 5px;
+  border-style: none;
+}
+input[type=range]:disabled::-moz-range-thumb {
+  background-color: #BBB;
+}
+p#choiceSlider {
+  display: inline-block;
+  padding-right: 2.2em;
+  text-indent: -47px;
+}
+p#choiceSlider2 {
+  text-indent: -47px;
+}
+p:disabled{
+  color: #777;
+}
+input[type=range]::-moz-range-progress {
+  background-color: var(--adn-blue);
+  height: 10px;
+  border-color: var(--adn-blue);
+  margin-right: 5px;
+  padding:0px;
+  border-radius: 2px;
+}
+input[type=range]::-moz-range-track{
+  background-color: transparent;
+}
+
+input[type=range]:disabled::-moz-range-progress {
+  background-color: gray;
+}
+
+#export-dialog{
+    position: fixed;
+    width: 300px;
+    height: 190px;
+    background: black;
+    top: 150px;
+    margin-left: -150px;
+    left: 50%;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    padding: 10px 20px;
+}
+#export-dialog ul {
+  margin-bottom: 20px
+}
+#export-dialog .close {
+  float: right;
+  cursor:pointer;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 0px;
+  padding: 11px 5px 11px 0;
+}
+.close:before {
+    content: "×";
+}
+#export-dialog h5{
+  background:var(--adn-blue);
+  margin:-10px -20px 20px -20px;
+  font-size:22px;
+  font-family: bebas_neue, sans-serif;
+  padding-top: 7px;
+  height:36px;
+  text-align: center;
+  color:white;
+}
+#export-dialog button {
+  width: 100%;
+}
+#export-dialog.hide{
+  display: none;
+}
+
+/* Customize the label (the container) */
+.radioContainer {
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radioContainer input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.radiobtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: black;
+  border-color:var(--adn-blue);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50%;
+}
+/* When the radio button is checked, add a blue background */
+.radioContainer input:checked ~ .radiobtn {
+  background-color: var(--adn-blue);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radiobtn:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radioContainer input:checked ~ .radiobtn:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radioContainer .radiobtn:after {
+  top: 3px;
+  left: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: black;
+}
+
+/* Mobile devices */
+:root.mobile #localData {
+    max-width: 100vw;
+    }
+:root.mobile #localData > div:last-of-type {
+    align-items: stretch;
+    }
+:root.mobile #localData > div:last-of-type > button {
+    min-width: unset;
+    }
+:root.mobile button {
+  width:100%;
+}
+:root.mobile #userSettings .subgroup> ul {
+    padding-left: 20px;
+}

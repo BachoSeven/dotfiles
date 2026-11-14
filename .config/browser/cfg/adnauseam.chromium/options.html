@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>AdNauseam — Settings</title>
+  <link rel="stylesheet" href="css/fonts/stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="css/themes/default.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/dashboard-common.css">
+  <link rel="stylesheet" type="text/css" href="css/settings.css">
+  <link rel="stylesheet" type="text/css" href="css/fa-icons.css">
+</head>
+
+<body>
+  <br>
+  <div id="userSettings">
+    <li class="subgroup row">
+      <div class="question small" data-i18n="adnFirstRunHideAllAds">
+      </div>
+      <div class="switch">
+        <input type="checkbox" data-setting-name="hidingAds" data-setting-type="bool"
+          class="cmn-toggle cmn-toggle-round-flat cmn-toggle-small" id="hidingAds" checked>
+        <label for="hidingAds"></label>
+      </div>
+      <div class="subgroupDescription">
+        <p data-i18n="hidingAdsPrompt" for="hiding-ads"></p>
+      </div>
+      <div class="custom-check">
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" class="hidingAds-child" id="respect-dnt-for-hiding"
+                data-setting-name="disableHidingForDNT" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="disableHidingForDNTPrompt" for="respect-dnt-for-hiding"></span>
+            <span><a class="fa-icon info"
+                href="https://github.com/dhowe/AdNauseam/wiki/FAQ#what-is-the-effs-do-not-track-standard-and-how-it-is-supported-in-adnauseam"
+                target="_blank">info-circle</a></span>
+          </label>
+        </div>
+      </div>
+    </li>
+
+    <li class="subgroup row">
+      <div class="question small" data-i18n="adnFirstRunClickingAds"></div>
+      <div class="switch">
+        <input type="checkbox" data-setting-name="clickingAds" data-setting-type="bool"
+          class="cmn-toggle cmn-toggle-round-flat cmn-toggle-small" id="clickingAds" checked>
+        <label for="clickingAds"></label>
+      </div>
+      <div class="subgroupDescription">
+        <p data-i18n="clickingAdsPrompt" for="clicking-ads"></p>
+      </div>
+      <div class="custom-check">
+        <div class="li dntOption">
+          <label>
+            <span class="input checkbox"><input type="checkbox" class="clickingAds-child" id="respect-dnt-for-clicking"
+                data-setting-name="disableClickingForDNT" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="disableClickingForDNTPrompt" for="respect-dnt-for-clicking"></span>
+            <a class="fa-icon info"
+              href="https://github.com/dhowe/AdNauseam/wiki/FAQ#what-is-the-effs-do-not-track-standard-and-how-it-is-supported-in-adnauseam"
+              target="_blank">info-circle</a>
+          </label>
+        </div>
+        <div>
+          <div id="clickingFrequency">
+            <input class="clickingAds-child" id="slider" type="range" min="0.1" max="1" step="0.05" />
+            <a class="fa-icon info"
+              href="https://github.com/dhowe/AdNauseam/wiki/FAQ#what-is-the-click-probability-setting"
+              target="_blank">info-circle</a>
+            <div id="choiceBorder">
+              <p class="clickingAds-child" data-i18n="ClickingFrequencyRarely" id="choiceSlider"></p>
+              <p class="clickingAds-child" data-i18n="ClickingFrequencySometimes" id="choiceSlider"></p>
+              <p class="clickingAds-child last" data-i18n="ClickingFrequencyAlways" id="choiceSlider"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="subgroup row">
+      <div class="question small" data-i18n="adnFirstRunBlockingMalware">
+      </div>
+      <div class="switch">
+        <input type="checkbox" data-setting-name="blockingMalware" data-setting-type="bool"
+          class="cmn-toggle cmn-toggle-round-flat cmn-toggle-small" id="blockingMalware" checked>
+        <label for="blockingMalware"></label>
+      </div>
+      <div class="subgroupDescription">
+        <p data-i18n="blockingMalwarePrompt" for="blocking-malware"></p>
+        <a class="fa-icon info"
+          href="https://github.com/dhowe/AdNauseam/wiki/FAQ#how-does-adnauseam-block-malicious-ads"
+          target="_blank">info-circle</a>
+      </div>
+      <ul class="custom-check">
+      </ul>
+    </li>
+    <!-- spacer -->
+    <li class="subgroup row">
+      <h2 data-i18n="settingsInterfacePrompt"></h2>
+      <div class="custom-check">
+        <!-- Icon Badge -->
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="icon-badge" data-setting-name="showIconBadge"
+                data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsIconBadgePrompt" for="icon-badge"></span>
+          </label>
+        </div>
+        <!-- context menu enable -->
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="context-menu-enabled"
+                data-setting-name="contextMenuEnabled" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsContextMenuPrompt" for="context-menu-enabled"></span>
+          </label>
+        </div>
+        <!-- tooltips disabled -->
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="tooltips-disabled"
+                data-setting-name="tooltipsDisabled" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsTooltipsPrompt" for="tooltips-disabled"></span>
+          </label>
+        </div>
+        <!-- Color blind friendly -->
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="color-blind-friendly"
+                data-setting-name="colorBlindFriendly" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsColorBlindPrompt" for="color-blind-friendly"></span>
+          </label>
+        </div>
+        <!-- Disable Warning -->
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="disable-warnings"
+                data-setting-name="disableWarnings" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+              <span data-i18n="disableWarnings" for="disable-warnings"></span>
+          </label>
+        </div>
+        <!-- event logging -->
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="event-logging" data-setting-name="eventLogging"
+                data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="eventLoggingPrompt" for="event-logging"></span>
+          </label>
+        </div>
+        <!-- blur collected ads -->
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="blur-collected-ads" data-setting-name="blurCollectedAds"
+                data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="blurCollectedAds" for="blur-collected-ads"></span>
+          </label>
+        </div>
+        <!-- hide dead ads -->
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="hide-dead-ads" data-setting-name="hideDeadAds"
+                data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="hideDeadAds" for="hide-dead-ads"></span>
+          </label>
+        </div>
+      </div>
+    </li>
+    <li class="subgroup">
+      <h2 data-i18n="settingsExtraPrivacyPrompt"></h2>
+      <div class="custom-check">
+
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="removeAdsInPrivate"
+                data-setting-name="removeAdsInPrivate" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="removeAdsInPrivate" for="removeAdsInPrivate"></span>
+          </label>
+        </div>
+
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="prefetching-disabled"
+                data-setting-name="prefetchingDisabled" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsPrefetchingDisabledPrompt" for="prefetching-disabled"></span>
+            <a class="fa-icon info" href="https://wikipedia.org/wiki/Link_prefetching#Issues_and_criticisms"
+              target="_blank">info-circle</a>
+          </label>
+        </div>
+
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="hyperlink-auditing-disabled"
+                data-setting-name="hyperlinkAuditingDisabled" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsHyperlinkAuditingDisabledPrompt" for="hyperlink-auditing-disabled"></span>
+            <a class="fa-icon info"
+                href="http://www.wilderssecurity.com/threads/hyperlink-auditing-aka-a-ping-and-beacon-aka-navigator-sendbeacon.364904/"
+                target="_blank">info-circle</a>
+          </label>
+        </div>
+
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="webrtc-ipaddress-hidden"
+                data-setting-name="webrtcIPAddressHidden" data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsWebRTCIPAddressHiddenPrompt" for="webrtc-ipaddress-hidden"></span>
+            <a class="fa-icon info"
+                href="https://github.com/gorhill/uBlock/wiki/Prevent-WebRTC-from-leaking-local-IP-address"
+                target="_blank">info-circle</a>
+          </label>
+        </div>
+      </div>
+    </li>
+    <li class="subgroup">
+      <h2 data-i18n="settingPerSiteSwitchGroup"></h2>
+      <div class="custom-check">
+        <div class="li">
+          <label class="synopsis"><span data-i18n="settingPerSiteSwitchGroupSynopsis"></span>
+            <a class="fa-icon info" href="https://github.com/gorhill/uBlock/wiki/Per-site-switches"
+              target="_blank">info-circle</a></label>
+        </div>
+
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="strictBlocking" data-setting-name="strictBlockingMode"
+                data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span for="strictBlocking">Strict Blocking Mode</span>
+            <a class="fa-icon info" href="https://github.com/dhowe/AdNauseam/wiki/Strict-blocking"
+              target="_blank">info-circle</a>
+          </label>
+        </div>
+
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="no-large-media" data-setting-name="noLargeMedia"
+                data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsNoLargeMediaPrompt" for="no-large-media"><input data-setting-name="largeMediaSize" type="number" min="0"></span>
+            <a class="fa-icon info"
+              href="https://github.com/gorhill/uBlock/wiki/Per-site-switches#no-large-media-elements"
+              target="_blank">info-circle</a>
+          </label>
+        </div>
+
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="no-remote-fonts" data-setting-name="noRemoteFonts"
+                data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsNoRemoteFontsPrompt" for="no-remote-fonts"></span>
+            <a class="fa-icon info" href="https://github.com/gorhill/uBlock/wiki/Per-site-switches#no-remote-fonts"
+              target="_blank">info-circle</a>
+          </label>
+        </div>
+
+        <div class="li">
+          <label>
+            <span class="input checkbox"><input type="checkbox" id="no-scripting" data-setting-name="noScripting"
+                data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsNoScriptingPrompt" for="no-scripting"></span>
+            <a class="fa-icon info" href="https://github.com/gorhill/uBlock/wiki/Per-site-switches#no-scripting"
+              target="_blank">info-circle</a>
+          </label>
+        </div>
+
+        <!-- Disabled Global Strict Blocking Option https://github.com/dhowe/AdNauseam/issues/2036
+        <li><input id="strict-blocking" type="checkbox" data-setting-name="strictBlockingMode"
+            data-setting-type="bool"><label data-i18n="settingsStrictBlockingMode" for="strict-blocking"></label> <a
+            class="fa-icon info important"
+            href="https://github.com/dhowe/AdNauseam/wiki/Developer-FAQ#what-is-strict-blocking-and-when-should-i-use-it"
+            target="_blank">info-circle</a></li>
+            -->
+    </li>
+    
+      <div class="custom-check">
+        <div class="li disabled">
+          <label>
+            <span class="input checkbox"><input type="checkbox" disabled="disabled" id="advanced-user-enabled" data-setting-name="advancedUserEnabled"
+                data-setting-type="bool"><svg viewBox="0 0 24 24">
+                <path d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+              </svg></span>
+            <span data-i18n="settingsAdvancedUserPrompt" for="advanced-user-enabled"></span>
+            <a class="fa-icon info" href="advanced-settings.html" data-i18n-title="settingsAdvancedUserSettings">cogs</a>
+          </label>
+        </div>
+      </div>
+  </div>
+
+  <div id="localData" style="margin: 0 1em;">
+    <div style="margin: 2.5em 0; border-top: 1px solid #ccc;"></div>
+    <ul>
+      <li></li>
+      <li style="display: none;"><span data-i18n="settingsLastBackupPrompt"></span>
+        <ul>
+          <li></li>
+        </ul>
+      </li>
+
+      <li style="display: none;"><span data-i18n="settingsLastRestorePrompt"></span>
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+
+  <div style="margin: 2.5em 1em;">
+    <p>
+      <button class="custom" type="button" id="exportDialog" data-i18n="aboutBackupDataButton"></button>&ensp;
+      <button class="custom" type="button" id="import" data-i18n="aboutRestoreDataButton"></button>
+      <input id="importFilePicker" type="file" accept="application/json" class="hiddenFileInput">
+      <button class="custom pull-right" type="button" id="resetOptions" data-i18n="aboutResetDataButton"></button>
+    </p>
+  </div>
+
+  <div id="export-dialog" class="hide">
+    <h5 data-i18n="adnMenuExportOptions"><span class="close"></span></h5>
+    <ul>
+      <li>
+        <label class="radioContainer" data-i18n="adnMenuExportSettingsOnly">
+          <input type="radio" id="exportSettings" checked="checked" name="radio">
+          <span class="radiobtn"></span>
+        </label>
+      </li>
+      <li>
+        <label class="radioContainer" data-i18n="adnMenuExportSettingsAndAds">
+          <input type="radio" id="backupUserData" name="radio">
+          <span class="radiobtn"></span>
+        </label>
+      </li>
+      <li>
+        <label class="radioContainer" data-i18n="adnMenuExportAdsOnly">
+          <input type="radio" id="exportAds" name="radio">
+          <span class="radiobtn"></span>
+        </label>
+      </li>
+    </ul>
+
+
+    <button class="custom" type="button" id="export" data-i18n="adnVaultExport"></button>
+
+  </div>
+  <script src="js/fa-icons.js" type="module"></script>
+  <script src="js/vapi.js"></script>
+  <script src="js/vapi-common.js"></script>
+  <script src="js/vapi-client.js"></script>
+  <script src="js/theme.js" type="module"></script>
+  <script src="js/i18n.js" type="module"></script>
+  <script src="js/dashboard-common.js" type="module"></script>
+  <script src="js/adn/options.js" type="module"></script>
+
+</body>
+
+</html>

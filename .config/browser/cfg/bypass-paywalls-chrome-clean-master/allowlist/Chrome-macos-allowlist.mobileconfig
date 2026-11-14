@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadContent</key>
+      <dict>
+        <key>com.google.Chrome</key>
+        <dict>
+          <key>Forced</key>
+          <array>
+            <dict>
+              <key>mcx_preference_settings</key>
+              <dict>
+                <key>ExtensionInstallAllowlist</key>
+                <array>
+                  <string>lkbebcjgcmobigpeffafkodonchffocl</string>
+                </array>
+              </dict>
+            </dict>
+          </array>
+        </dict>
+      </dict>
+      <key>PayloadDisplayName</key>
+      <string>Chrome ExtensionInstallAllowlist - add BPC ID to override browser's restriction</string>
+      <key>PayloadEnabled</key>
+      <true/>
+      <key>PayloadIdentifier</key>
+      <string>com.apple.ManagedClient.preferences.a5c53548-65aa-11e7-907b-a6006ad3dba0</string>
+      <key>PayloadType</key>
+      <string>com.apple.ManagedClient.preferences</string>
+      <key>PayloadUUID</key>
+      <string>6FEE3C76-A9C5-4F24-874F-2AA7B2A6D7B3</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+    </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>Bypass Paywalls Clean</string>
+  <key>PayloadDisplayName</key>
+  <string>Chrome ExtensionInstallAllowlist for Bypass Paywalls Clean</string>
+  <key>PayloadIdentifier</key>
+  <string>com.example.Chrome.example.bpc</string>
+  <key>PayloadOrganization</key>
+  <string>Bypass Paywalls Clean</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadScope</key>
+  <string>User</string>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>066187BA-B555-48A3-8DA2-97F87CAFE2F5</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>

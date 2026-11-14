@@ -1,0 +1,1023 @@
+/* ============================================================
+  RESET
+============================================================ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  height: 500px;
+  width: 320px;
+}
+
+html.mobile {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  line-height: 1;
+  height: 500px;
+  width: 320px;
+  font-size: 75%;
+  border: 0;
+  margin: 0;
+  opacity: 1;
+  overflow: hidden;
+  padding: 0;
+}
+body.mobile {
+  overflow-y: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+#main {
+  height: 100%;
+}
+
+body .container {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+b
+body .footer {
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a img {
+  border: none;
+}
+
+/* ============================================================
+  GLOBALS
+============================================================ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--adn-menu-text);
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  background-color: black;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+
+}
+
+/* clear floated divs */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ============================================================
+  TEMPLATE
+============================================================ */
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 0px;
+  position: fixed;
+  right: 0px;
+}
+
+h2.hide {
+  display: none;
+}
+
+div.hide {
+  display: none;
+}
+
+button.hide {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+button.disabled {
+  cursor: default;
+}
+
+#state_btn-wrapper.disabled {
+  border-color: var(--adn-disabled-button);
+  color: var(--adn-disabled-button);
+  fill: var(--adn-disabled-button);
+  pointer-events: none;
+}
+
+#state_btn-wrapper.disabled svg path {
+  stroke: var(--adn-disabled-button);
+}
+
+#state_btn-wrapper.disabled .btn_radio:checked + .btn_radio_label {
+  background: var(--adn-disabled-button);
+}
+
+.btn_radio:checked + .btn_radio_label .popup_arrow svg path {
+  stroke: var(--adn-button-active);
+}
+
+a.hide {
+  display: none;
+}
+
+button {
+  border: 2px solid var(--adn-blue);
+  border-radius: 5px;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  background: none;
+  box-shadow: none;
+  color: var(--adn-blue);
+  font-size: 20px;
+  height: 30px;
+  padding-top: 2px;
+}
+
+.alert {
+  width: 100%;
+  position: relative;
+}
+
+.recent-ads {
+  font-size: 14px;
+	margin: 125px 0px 20px 0px;
+}
+
+.alert img {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin: -36px 0px 0px -36px;
+  width: 72px;
+  height: auto;
+  box-shadow: 2px 0px 30px #000;
+  background: #000;
+  border-radius: 30px;
+}
+
+.alert p {
+  position: absolute;
+  top: 85px;
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
+  padding: 0px 10%;
+  color: white;
+  text-shadow: 0 0 3px #000;
+}
+
+/* ============================================================
+  HEADER
+============================================================ */
+header{
+  background: #000;
+  height: 100px;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  font-size: 18px;
+}
+
+#toggle-button {
+  display: block;
+  height: 90px;
+  width: 90px;
+  margin: 4px 0 0 7px;
+  background: url(../img/active@2x.png) center center no-repeat;
+  background-size: 100px 100px;
+  float: left;
+  font-size: 18.25px;
+  color: var(--adn-purple);
+  text-align: center;
+  font-weight: 700;
+  line-height: 156px;
+}
+
+#toggle-button:hover{
+  cursor: pointer;
+}
+#stats {
+  text-align: center;
+  margin-left: 105px;
+  padding: 20px 10px 0 0;
+  height: 100px;
+  position: absolute;
+  width: calc(100% - 105px);
+  float: right;
+}
+
+#stats .wrapper {
+  width: 100%;
+  font-size: 16px;
+}
+
+#stats .visited{
+  color: var(--adn-purple);
+}
+
+#stats .found{
+  color: var(--adn-blue);
+}
+
+#vault-btn {
+  position: absolute;
+  width: calc(93%);
+  bottom: 12px;
+}
+
+#vault-btn button {
+  width: 100%;
+}
+
+#vault-btn span {
+  font-size: 14px;
+  color: #000;
+  display: block;
+  background: var(--adn-blue);
+  height: 20px;
+  width: 25px;
+  position: absolute;
+  right: 5px;
+  top: -10px;
+  border-radius: 5px;
+  line-height: 1.5em;
+}
+
+/* ============================================================
+  LIST
+============================================================ */
+#ad-list,
+#settings form{
+  background: #000 url(../img/gray_grid.png);
+  height: 360px;
+  /* position: absolute; */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#ad-list li {
+  height: 80px;
+  border-top: var(--adn-menu-text) 1px solid;
+  border-bottom: #000 1px solid;
+  position: relative;
+}
+
+#ad-list-items.blur img {
+  filter: blur(3px);
+} 
+
+#ad-list-items.blur img:hover {
+  filter: blur(0px);
+}
+
+.ad-item a {
+  display: block;
+  padding: 12px 20px 20px 120px;
+  color: var(--adn-menu-highlight-text);
+}
+
+.thumb-container {
+  margin: 10px;
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid var(--adn-blue);
+}
+
+.thumb {
+  display: block;
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  margin: -30px 0 0 -40px;
+  text-align: center;
+}
+
+@keyframes visit-marker {
+  0%   { width: 0 }
+  50%  { width: 100%; left: 0 }
+  100% { width: 0; left: 100% }
+}
+@keyframes failed-marker {
+  0%   { width: 0 }
+  40%  { width: 100%}
+  100% { width: 0 }
+}
+@keyframes attempting-marker {
+  from { width: 0 }
+  to 	 { width: 5px }
+}
+/* -------------------------------------------------- */
+ .ad-item img {
+    max-height: 60px;
+    max-width: 80px;
+    z-index:1;
+    position:relative;
+    vertical-align: middle;
+    font-size: 14px;
+
+  -webkit-transition:z-index 1s step-end, max-height 1s linear, max-width 1s linear;
+  -moz-transition:z-index 1s step-end, max-height 1s linear, max-width 1s linear;
+  -ms-transition:z-index 1s step-end, max-height 1s linear, max-width 1s linear;
+  -o-transition:z-index 1s step-end, max-height 1s linear, max-width 1s linear;
+  transition:z-index 1s step-end, max-height 1s linear, max-width 1s linear;
+}
+
+
+
+.ad-item img.white-bg {
+  background: white;
+}
+
+.zoomStage {
+/*  position:relative;
+  z-index: 100;*/
+}
+.ad-item img:hover{
+  max-width:280px;
+  max-height: 300px;
+  z-index: 100;
+
+  -webkit-transition:z-index 1s step-start, max-height 1s linear, max-width 1s linear;
+  -moz-transition:z-index 1s step-start, max-height 1s linear, max-width 1s linear;
+  -ms-transition:z-index 1s step-start, max-height 1s linear, max-width 1s linear;
+  -o-transition:z-index 1s step-start, max-height 1s linear, max-width 1s linear;
+  transition: z-index 1s step-start, max-height 1s linear, max-width 1s linear;
+}
+
+.ad-item.visited .thumb-container {
+    border: 1px solid var(--adn-purple);
+}
+.ad-item.dnt-allowed .thumb-container {
+    border: 1px solid #96B96B;
+}
+/*span.adStatus.visible:before {
+ background-position: -25px 70px;
+}
+.visited span.adStatus.visible:before {
+ background-position: -54px 70px;
+}
+.visited span.adStatus:before {
+ background-position: -54px 40px;
+}
+.dnt-allowed span.adStatus.visible:before {
+ background-position: -84px 70px;
+}
+.dnt-allowed span.adStatus:before {
+ background-position: -84px 40px;
+}
+.failed span.adStatus.visible:before {
+ background-position: -113px 70px;
+}
+.failed span.adStatus:before {
+ background-position: -113px 40px;
+}
+
+span.adStatus:before {
+  background: url(../img/visibility.png);
+  background-position: -25px 40px;
+  background-size: 400px;
+  width:16px;
+  height:14px;
+  margin-right: 2px;
+  content:"";
+  display: inline-block;
+  position:relative;
+  z-index:100;
+  top:0;
+  left:0;
+}*/
+
+.ad-item::before,
+.ad-item-text::before {
+  background: var(--adn-blue);
+  content: "";
+  display:block;
+  height: 80px;
+  width: 0px;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  overflow: hidden;
+  line-height: 85px;
+  text-indent: 20px;
+  font-size: 30px;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+}
+.ad-item.just-visited::before,
+.ad-item-text.just-visited::before {
+  background: var(--adn-purple);
+  animation: 900ms ease-in-out visit-marker;
+  content: "VISITED";
+}
+.ad-item.just-failed::before,
+.ad-item-text.just-failed::before,
+.ad-item.just-visited.failed::before,
+.ad-item-text.just-visited.failed::before {
+  background: #B80606;
+  animation: 1200ms ease-in-out failed-marker;
+  content: "FAILED";
+}
+.ad-item.attempting::before,
+.ad-item-text.attempting::before {
+  background: var(--adn-blue);
+  animation: 200ms ease-in-out attempting-marker infinite alternate;
+}
+
+.ad-item.failed img {
+  border-color: #B80606;
+}
+
+.ad-item span.title {
+  display: -webkit-box;
+  width: 100%;
+  overflow: hidden;
+  max-height: 2.3em;
+  line-height: 1.15em;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.ad-item span.adStatus, .ad-item-text span.adStatus {
+  font-size:14px;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  color: var(--adn-menu-text);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  display: -webkit-box;
+  width: 250px;
+  overflow: hidden;
+  max-height: 2.3em;
+  line-height: 1.15em;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+/* -------------------------------------------------- */
+
+.ad-item-text {
+  padding: 10px 20px 0 120px;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.ad-item-text .thumb {
+  height: 54px;
+  width: 54px;
+  border: 2px dashed var(--adn-blue);
+  border-radius: 5px;
+  color: var(--adn-blue);
+  font-size: 16px;
+  line-height: 1em;
+  padding: 10px;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  top: 40px;
+  left: 63px;
+}
+
+.ad-item-text .ads-creative {
+  font-size: 0.8em;
+  color: var(--adn-menu-highlight-text);
+}
+
+.ad-item-text h3 a {
+  color: var(--adn-menu-highlight-text);
+  text-decoration: none;
+  font-size: 0.8em;
+  display: block;
+  width: 100%;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.3em;
+  line-height: 1.15em;
+}
+
+.ad-item-text.visited .thumb {
+
+  border: 2px dashed var(--adn-purple);
+  color: var(--adn-purple);
+}
+
+.ad-item-text.dnt-allowed .thumb {
+
+  border: 2px dashed #96B96B;
+  color: #96B96B;
+}
+
+.ad-item-text.failed .thumb {
+  border: 2px dashed #B80606;
+  color: #B80606;
+}
+
+.ad-item-text.just-visited .thumb {
+  background: none;
+  animation: 1500ms ease-in-out visit;
+}
+
+.ad-item-text.just-failed .thumb,
+.ad-item-text.just-visited.failed .thumb {
+  background: none;
+  animation: 1500ms ease-in-out failed;
+}
+
+#ad-list li cite {
+  display: block;
+  font-style: normal;
+  margin: 2px 0;
+  color: var(--adn-menu-text);
+  font-size: 0.8em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 1.5em;
+}
+
+#log-button a {
+  color: var(--adn-blue);
+  text-decoration: none;
+  text-align: center;
+  margin: 30px;
+  display: block;
+  font-size: 12px;
+}
+
+#version-disp a {
+  color: var(--adn-blue);
+  text-decoration: none;
+  text-align: right;
+  margin:30px 30px 30px 30px;
+  display: block;
+  font-size: 10px;
+}
+
+/* ============================================================
+  FOOTER
+============================================================ */
+footer {
+  background: #000;
+  bottom: 0;
+  position: absolute;
+  width:100%;
+  z-index:200;
+  display: inline-block;
+  height: 40px;
+}
+
+.footer-btn {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+footer > span  {
+  height: 32px;
+  position: absolute;
+  top: 4px;
+}
+
+#btn-settings {
+  right: 5px;
+}
+
+#btn-ublock {
+  left: 5px;
+}
+
+.btn_radio_label {
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 20px;
+  display: block;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+body.en .btn_radio_label {
+  font-size: 20px;
+}
+
+#state_btn-wrapper {
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  border-radius: 5px;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  background: none;
+  box-shadow: none;
+  border: 2px solid var(--adn-blue);
+  color: var(--adn-blue);
+  fill: var(--adn-blue);
+  font-size: 20px;
+  padding: 0px;
+  width: calc(100% - 85px);
+  white-space: nowrap;
+}
+
+.btn_radio_wrapper {
+  position: relative;
+  display: block;
+}
+
+.btn_radio_wrapper-left {
+  width: calc(33.3% - 12px);
+}
+.btn_radio_wrapper-center {
+  width: calc(33.3% - 12px);
+}
+.btn_radio_wrapper-right {
+  width: calc(33.3% + 15px);
+}
+
+.popup_arrow {
+  pointer-events: none;
+  position: absolute;
+  z-index: 9999;
+  right: 1px;
+  padding: 2px;
+  transform: rotate(180deg);
+}
+
+.popup_arrow:hover svg path {
+  stroke: white;
+}
+
+.popup_arrow svg {
+  transform: rotate(180deg);
+}
+
+.popup_arrow.open svg {
+  transform: rotate(0deg);
+}
+
+.btn_radio_wrapper-right label {
+  /* text-align: right !important; */
+}
+
+.btn_radio_wrapper::after {
+  content: none;
+}
+
+#state_btn-wrapper > .btn_radio_wrapper {
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;;
+}
+
+.btn_radio {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 9999;
+  margin: 0;
+  cursor: pointer;
+}
+
+#state_btn-wrapper label {
+  display: block;
+  border-radius: 3px;
+  margin: 2px 1px;
+  padding: 2px 1px;
+  width: 100%;
+  text-align: center;
+}
+
+.btn_radio:checked + .btn_radio_label {
+  background: var(--adn-blue);
+  color: var(--adn-button-active);
+  fill: #000;
+  opacity: 1;
+}
+
+#disable:not(.popup_open):checked + .btn_radio_label .popup_arrow {
+  opacity: 0;
+} 
+
+#on_domain-lbl {
+  text-align: center;
+}
+
+#on_domain-lbl span {
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.btn_radio:checked + .btn_radio_label path {
+  stroke: white;
+}
+
+#state_btn-wrapper div {
+  display: inline-block;
+  position: relative;
+}
+
+.btn_radio:hover + .btn_radio_label {
+  color: var(--adn-text-contrast);
+}
+
+.btn_radio:checked + .btn_radio_label {
+  color: white;
+}
+
+#btn-settings:hover svg path {
+  stroke: white;
+}
+
+#btn-ublock:hover svg path {
+  fill: white;
+}
+
+.inner-popup {
+  display: inline-block;
+  text-align: center;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--adn-menu-border);
+  background: black;
+}
+
+.inner-popup_wrapper {
+  position: absolute;
+  bottom: 42px;
+  right: 15px;
+}
+
+.inner-popup .btn_radio_wrapper:not(:first-child) {
+  border-top: 1px solid var(--adn-menu-border);
+  z-index: 1;
+}
+
+.inner-popup .btn_radio_label {
+  padding: 6px;
+  width: 160px;
+  padding: 10px 0px;
+  color: var(--adn-blue);
+}
+
+.inner-popup_wrapper::after {
+  z-index: 0;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 0;
+  bottom: 1px;
+  border-radius: 1px;
+  left: 75%;
+  box-sizing: border-box;
+  border: 5px solid #fff;
+  border-color: transparent black black transparent;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+  box-shadow: 1px 1px 0px 0px var(--adn-menu-border);
+}
+
+
+/* ============================================================
+  PAUSED
+============================================================ */
+
+#paused-menu {
+  display: none;
+}
+
+.disabled #paused-menu {
+  background: #000 url(../img/gray_grid.png);
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  right: 0px;
+  top: 100px;
+  opacity: 0.95;
+  z-index: 100;
+  text-align: center;
+}
+
+#paused-menu h2 {
+  position: absolute;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  font-size:19px;
+  color: var(--adn-menu-header-text);
+  line-height:28px;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+#paused-on-page {
+  padding: 0 10px;
+}
+#paused-no-hiding {
+  padding: 0 -10px;
+}
+
+select {
+  border: 2px solid var(--adn-blue);
+  border-radius: 5px;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  background: none;
+  box-shadow: none;
+  color: var(--adn-blue);
+  font-size: 20px;
+  height: 30px;
+  padding-top: 1px;
+}
+
+/* ============================================================
+  MEDIA QUERIES
+============================================================ */
+@media all and (max-width: 960px) {
+  /* footer */
+  footer aside {
+    width: 100%;
+    float: none;
+    margin-bottom: 15px;
+  }
+  footer aside:last-child {
+    margin-bottom: 0;
+  }
+  footer aside.logo {
+    text-align: center;
+  }
+  footer ul {
+    text-align: center;
+  }
+  footer ul li {
+    display: inline-block;
+  }
+  footer ul li:after {
+    content: "\2022";
+  }
+  footer ul li:last-child:after {
+    content: none;
+  }
+  footer ul li a {
+    margin: 0 10px;
+  }
+}
+
+@media all and (max-width: 320px) and (max-device-width:320px) {
+  header .branding {
+    padding: 15px 0;
+  }
+  header .branding .container {
+    padding: 0 30px;
+  }
+  header .social {
+    float: none;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+  }
+  header .social a {
+    margin: 0 5px;
+  }
+  header .logo {
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  body.mobile {
+    min-width: 320px;
+    width:100%;
+    height:100%;
+  }
+  /* mobile */
+  #stats {
+    width: 50%;
+  }
+  button.about,button.help {
+    width:8%;
+  }
+  button.pause, button.resume, button.settings {
+    width: 40%;
+    margin-right: 1%;
+  }
+}
+
+.add-to-whitelist{
+  margin: 6px;
+}
+.add-to-whitelist p {
+  font-size: 14px;
+}
+.add-to-whitelist.checked p {
+  color: var(--adn-blue);
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      margin-bottom: 0;
+    }
+}
+
+.fa-icon.info {
+  color: var(--adn-menu-header-text);
+  fill: var(--adn-menu-header-text);
+}
+
+/* fix for cyrillic */
+
+body.cyrilic #vault-button {
+  font-size: 16px;
+}

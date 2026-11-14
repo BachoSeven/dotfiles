@@ -1,0 +1,67 @@
+<!DOCTYPE html []>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="MarkdownViewer++" />
+    <title>README.md</title>
+    <style type="text/css">
+            
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+
+        </style>
+  </head>
+  <body>
+    <h1 id="add-extension-crx-to-allowlist">Add extension (crx) to allowlist</h1>
+    <ul>
+      <li>
+        <a href="#windows">Windows</a>
+      </li>
+      <li>
+        <a href="#macOS">macOS</a>
+      </li>
+      <li>
+        <a href="#linux">Linux</a>
+      </li>
+    </ul>
+    <h3 id="windows">Windows</h3>
+    <p>Advance Notice: after adding the allowlist-policy you'll get a message <em>Your browser is managed by your organisation</em> on the extensions page (and some settings like Secure DNS are disabled).<br />
+To remove this message you'll have to remove the added policy from the registry again (run regedit and search for company/browser in HKEY_LOCAL_MACHINE\SOFTWARE\Policies).</p>
+    <p>If you still want to add the extension to the allowlist:</p>
+    <p>Run as administrator one of the reg-files in allowlist-folder of extension (unzip).<br />
+* for Edge 116+ you may also need to run the <em>Forcelist</em> reg-file (also undo reg-file provided) or switch to <em>Load unpacked</em> installation.<br />
+* for other browsers edit reg-file (xml): chech registry for browser path</p>
+    <p>If you already added extensions to the allowlist than you should change "1" to a new value (also change name of HLM-key for beta/developer versions of browsers).<br />
+To add more extensions to the allowlist you can add more lines.<br />
+Example Chrome-regfile:</p>
+    <pre>
+      <code>Windows Registry Editor Version 5.00  
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist]  
+"1"="lkbebcjgcmobigpeffafkodonchffocl"
+"2"="extension-id2"
+</code>
+    </pre>
+    <p>You can also run the PowerShell script <em>bypass_paywalls_clean_allowlist.ps1</em> (as administrator) to add extension to the allowlist (script checks if extension already allowed or adds new registry-key).<br />
+For the parameter browser enter chrome, edge or brave.</p>
+    <p>* for other browsers edit mobileconfig-file (xml): change PayloadContent (and other browser strings)</p>
+    <h3 id="macos">macOS</h3>
+    <p>Run with admin rights one of the .mobileconfig files in allowlist-folder of extension (unzip).<br />
+Finally restart the browser's process (in the Dock: right click on Chrome, 'Quit', reopen).<br />
+This assumes your device is not being managed by MDM software and you don't have any profile related to the 'ExtensionInstallAllowlist' policy already active.<br />
+To add more extensions to the allowlist you can add more lines.</p>
+    <pre>
+      <code>&lt;key&gt;ExtensionInstallAllowlist&lt;/key&gt;
+&lt;array&gt;
+&lt;string&gt;lkbebcjgcmobigpeffafkodonchffocl&lt;/string&gt;
+&lt;string&gt;extension-id2&lt;/string&gt;
+&lt;/array&gt;
+</code>
+    </pre>
+    <h3 id="linux">Linux</h3>
+    <p>
+      <a href="https://developer.chrome.com/docs/extensions/how-to/distribute#hosting">Chromium-based browsers allow local installations of extensions</a>
+    </p>
+  </body>
+</html>

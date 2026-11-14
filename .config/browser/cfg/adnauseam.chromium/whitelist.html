@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark" />
+<title>uBlock — Whitelist</title>
+
+<link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="lib/codemirror/lib/pastel-on-dark.css">
+<link rel="stylesheet" href="lib/codemirror/addon/search/matchesonscrollbar.css">
+<link rel="stylesheet" href="css/fonts/stylesheet.css">
+<link rel="stylesheet" href="css/themes/default.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/fa-icons.css">
+<link rel="stylesheet" href="css/dashboard-common.css">
+<link rel="stylesheet" href="css/cloud-ui.css">
+<link rel="stylesheet" href="css/3p-filters.css">
+<link rel="stylesheet" href="css/whitelist.css">
+<link rel="stylesheet" href="css/codemirror.css">
+</head>
+
+<body class="custom-check">
+  <div class="body">
+    <ul id="lists">
+      <li class="groupEntry">
+        <span class="geName">External Trusted-Sites Lists</span>
+        <span class="geCount dim">(1)</span>
+        <ul>
+          <div class="li listEntry checked searchMatch isDefault cached" data-role="leaf" data-key="https://www.eff.org/files/effdntlist.txt" data-parent="default">
+            <span class="detailbar">
+                <label>
+                  <span class="input checkbox" disabled>
+                    <input id="effListInput" type="checkbox" disabled="disabled"><svg viewBox="0 0 24 24"><path d="M1.73,12.91 8.1,19.28 22.79,4.59"></path></svg></span>
+                    <span><span class="forinput" alt="EFF DNT Policy is automatically set if Non-tracking Ads are both NOT hidden, and NOT clicked.">
+                      EFF DNT Policy Allowlist‎
+                      <a href="https://www.eff.org/dnt-policy" target="_blank">(www.eff.org)</a>
+                    </span>
+                  </span>
+                </label>
+                <span class="iconbar"><!--
+                 --><a class="fa-icon content" href="asset-viewer.html?url=eff-dnt-whitelist" type="text/html" target="_blank" data-i18n-title="3pViewContent" title="view content"><svg class="fa-icon_eye-open" viewBox="0 0 1792 1152"><path d="m 1664,576 q -152,-236 -381,-353 61,104 61,225 0,185 -131.5,316.5 Q 1081,896 896,896 711,896 579.5,764.5 448,633 448,448 448,327 509,223 280,340 128,576 261,781 461.5,902.5 662,1024 896,1024 1130,1024 1330.5,902.5 1531,781 1664,576 Z M 944,192 q 0,-20 -14,-34 -14,-14 -34,-14 -125,0 -214.5,89.5 Q 592,323 592,448 q 0,20 14,34 14,14 34,14 20,0 34,-14 14,-14 14,-34 0,-86 61,-147 61,-61 147,-61 20,0 34,-14 14,-14 14,-34 z m 848,384 q 0,34 -20,69 -140,230 -376.5,368.5 Q 1159,1152 896,1152 633,1152 396.5,1013 160,874 20,645 0,610 0,576 0,542 20,507 160,278 396.5,139 633,0 896,0 q 263,0 499.5,139 236.5,139 376.5,368 20,35 20,69 z"></path></svg></a><!--
+                 --><a class="fa-icon mustread" href="#" target="_blank"><svg class="fa-icon_info-circle" viewBox="0 0 1536 1536"><path d="m 1024,1248 0,-160 q 0,-14 -9,-23 -9,-9 -23,-9 l -96,0 0,-512 q 0,-14 -9,-23 -9,-9 -23,-9 l -320,0 q -14,0 -23,9 -9,9 -9,23 l 0,160 q 0,14 9,23 9,9 23,9 l 96,0 0,320 -96,0 q -14,0 -23,9 -9,9 -9,23 l 0,160 q 0,14 9,23 9,9 23,9 l 448,0 q 14,0 23,-9 9,-9 9,-23 z M 896,352 896,192 q 0,-14 -9,-23 -9,-9 -23,-9 l -192,0 q -14,0 -23,9 -9,9 -9,23 l 0,160 q 0,14 9,23 9,9 23,9 l 192,0 q 14,0 23,-9 9,-9 9,-23 z m 640,416 q 0,209 -103,385.5 Q 1330,1330 1153.5,1433 977,1536 768,1536 559,1536 382.5,1433 206,1330 103,1153.5 0,977 0,768 0,559 103,382.5 206,206 382.5,103 559,0 768,0 977,0 1153.5,103 1330,206 1433,382.5 1536,559 1536,768 Z"></path></svg></a><!--
+                &ensp;--><span class="fa-icon status updating" data-i18n-title="3pUpdating" title="Updating…"><svg class="fa-icon_spinner" viewBox="0 0 1664 1728"><path d="m 462,1394 q 0,53 -37.5,90.5 -37.5,37.5 -90.5,37.5 -52,0 -90,-38 -38,-38 -38,-90 0,-53 37.5,-90.5 37.5,-37.5 90.5,-37.5 53,0 90.5,37.5 37.5,37.5 37.5,90.5 z m 498,206 q 0,53 -37.5,90.5 Q 885,1728 832,1728 779,1728 741.5,1690.5 704,1653 704,1600 q 0,-53 37.5,-90.5 37.5,-37.5 90.5,-37.5 53,0 90.5,37.5 Q 960,1547 960,1600 Z M 256,896 q 0,53 -37.5,90.5 Q 181,1024 128,1024 75,1024 37.5,986.5 0,949 0,896 0,843 37.5,805.5 75,768 128,768 q 53,0 90.5,37.5 Q 256,843 256,896 Z m 1202,498 q 0,52 -38,90 -38,38 -90,38 -53,0 -90.5,-37.5 -37.5,-37.5 -37.5,-90.5 0,-53 37.5,-90.5 37.5,-37.5 90.5,-37.5 53,0 90.5,37.5 37.5,37.5 37.5,90.5 z M 494,398 q 0,66 -47,113 -47,47 -113,47 -66,0 -113,-47 -47,-47 -47,-113 0,-66 47,-113 47,-47 113,-47 66,0 113,47 47,47 47,113 z m 1170,498 q 0,53 -37.5,90.5 -37.5,37.5 -90.5,37.5 -53,0 -90.5,-37.5 Q 1408,949 1408,896 q 0,-53 37.5,-90.5 37.5,-37.5 90.5,-37.5 53,0 90.5,37.5 Q 1664,843 1664,896 Z M 1024,192 q 0,80 -56,136 -56,56 -136,56 -80,0 -136,-56 -56,-56 -56,-136 0,-80 56,-136 56,-56 136,-56 80,0 136,56 56,56 56,136 z m 530,206 q 0,93 -66,158.5 -66,65.5 -158,65.5 -93,0 -158.5,-65.5 Q 1106,491 1106,398 q 0,-92 65.5,-158 65.5,-66 158.5,-66 92,0 158,66 66,66 66,158 z"></path></svg></span><!--
+                &ensp;--><span class="fa-icon status failed" data-i18n-title="3pNetworkError" title="A network error prevented the resource from being updated."><svg class="fa-icon_unlink" viewBox="0 0 1664 1664"><path d="m 439,1271 -256,256 q -11,9 -23,9 -12,0 -23,-9 -9,-10 -9,-23 0,-13 9,-23 l 256,-256 q 10,-9 23,-9 13,0 23,9 9,10 9,23 0,13 -9,23 z m 169,41 v 320 q 0,14 -9,23 -9,9 -23,9 -14,0 -23,-9 -9,-9 -9,-23 v -320 q 0,-14 9,-23 9,-9 23,-9 14,0 23,9 9,9 9,23 z M 384,1088 q 0,14 -9,23 -9,9 -23,9 H 32 q -14,0 -23,-9 -9,-9 -9,-23 0,-14 9,-23 9,-9 23,-9 h 320 q 14,0 23,9 9,9 9,23 z m 1264,128 q 0,120 -85,203 l -147,146 q -83,83 -203,83 -121,0 -204,-85 L 675,1228 q -21,-21 -42,-56 l 239,-18 273,274 q 27,27 68,27.5 41,0.5 68,-26.5 l 147,-146 q 28,-28 28,-67 0,-40 -28,-68 l -274,-275 18,-239 q 35,21 56,42 l 336,336 q 84,86 84,204 z M 1031,492 792,510 519,236 q -28,-28 -68,-28 -39,0 -68,27 L 236,381 q -28,28 -28,67 0,40 28,68 l 274,274 -18,240 q -35,-21 -56,-42 L 100,652 Q 16,566 16,448 16,328 101,245 L 248,99 q 83,-83 203,-83 121,0 204,85 l 334,335 q 21,21 42,56 z m 633,84 q 0,14 -9,23 -9,9 -23,9 h -320 q -14,0 -23,-9 -9,-9 -9,-23 0,-14 9,-23 9,-9 23,-9 h 320 q 14,0 23,9 9,9 9,23 z M 1120,32 v 320 q 0,14 -9,23 -9,9 -23,9 -14,0 -23,-9 -9,-9 -9,-23 V 32 q 0,-14 9,-23 9,-9 23,-9 14,0 23,9 9,9 9,23 z m 407,151 -256,256 q -11,9 -23,9 -12,0 -23,-9 -9,-10 -9,-23 0,-13 9,-23 l 256,-256 q 10,-9 23,-9 13,0 23,9 9,10 9,23 0,13 -9,23 z"></path></svg></span>
+                </span>
+              <button id="buttonUpdateEff" class="custom" data-i18n="3pPageUpdate"></button></span>
+          </div>
+      </ul>
+    </ul>
+    <div id="cloudWidget" class="hide" data-cloud-entry="whitelistPane"></div>
+
+    <p class="vverbose"><span data-i18n="whitelistPrompt"></span> <a class="fa-icon info" href="https://github.com/gorhill/uBlock/wiki/Dashboard:-Trusted-sites">info-circle</a>
+    </p>
+    <p>
+        <button id="whitelistApply" class="iconified" type="button" disabled><span class="fa-icon">check</span><span data-i18n="whitelistApply">_</span><span class="hover"></span></button>
+        <button id="whitelistRevert" class="iconified" type="button" disabled><span class="fa-icon">undo</span><span data-i18n="genericRevert">_</span><span class="hover"></span></button>
+        &emsp;
+        <button id="importWhitelistFromFile" class="iconified" type="button"><span class="fa-icon">download-alt</span><span data-i18n="whitelistImport">_</span><span class="hover"></span></button>
+        <button id="exportWhitelistToFile" class="iconified" type="button"><span class="fa-icon">upload-alt</span><span data-i18n="whitelistExport">_</span><span class="hover"></span></button>
+    </p>
+    </p>
+</div>
+<div id="whitelist" class="codeMirrorContainer cm-theme-override"></div>
+
+<div class="hidden">
+    <input id="importFilePicker" type="file" accept="text/plain">
+</div>
+
+<script src="lib/codemirror/lib/codemirror.js"></script>
+<script src="lib/codemirror/addon/display/panel.js"></script>
+<script src="lib/codemirror/addon/scroll/annotatescrollbar.js"></script>
+<script src="lib/codemirror/addon/search/searchcursor.js"></script>
+<script src="lib/codemirror/addon/selection/active-line.js"></script>
+<script src="lib/hsluv/hsluv-0.1.0.min.js"></script>
+
+<script src="js/vapi.js"></script>
+<script src="js/vapi-common.js"></script>
+<script src="js/vapi-client.js"></script>
+
+<script src="js/codemirror/search.js" type="module"></script>
+<script src="js/codemirror/search-thread.js"></script>
+
+<script src="js/fa-icons.js" type="module"></script>
+<script src="js/theme.js" type="module"></script>
+<script src="js/i18n.js" type="module"></script>
+<script src="js/dashboard-common.js" type="module"></script>
+<script src="js/cloud-ui.js" type="module"></script>
+<script src="js/whitelist.js" type="module"></script>
+
+</body>
+</html>

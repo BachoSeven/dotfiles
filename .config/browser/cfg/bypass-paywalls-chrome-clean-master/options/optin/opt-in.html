@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bypass Paywalls Clean (opt-in)</title>
+    <link rel="stylesheet" href="../options_all.css"/>
+    <link rel="stylesheet" href="opt-in.css"/>
+    <script src="opt-in.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <p><strong>Bypass Paywalls Clean<br>Opt-in options for additonal functionality/consent.</strong></p>
+      </div>
+    </div>
+    <div id="custom-prompt">
+      <p><strong>custom sites opt-in</strong></p>
+      <p>If you want to enable <a href="../options_custom.html">custom sites</a> (for new sites) and also have the option to remove cookies/block general paywall-scripts of 'unlisted' sites:</br>
+      <p>custom sites enabled: <span id="custom-enabled"></span></p>
+      <div id="custom-container">
+        <button id="custom-enable">Enable</button>
+        <button id="custom-disable">Disable</button>
+        <span id="mv3-remove-perm-msg" style="color: red;">
+      </div>
+    </div>
+    <div id="update-prompt">
+      <p><strong>check update opt-in</strong></p>
+      <p>Check for update of version (on startup and when opening options):</br>
+      <p>check update enabled: <span id="update-enabled"></span></p>
+      <div id="update-container">
+        <button id="update-enable">Enable</button>
+        <button id="update-disable">Disable</button>
+      </div>
+    </div>
+    <div id="fetch-prompt">
+      <p><strong>fetch consent opt-in</strong></p>
+      For some sites (see options) the full article content is fetched from an external site (like archive.is).</br>
+      This requires a 'data transmission' (no data collection by add-on) of the article-url to this external site.</br>
+      If you disable 'fetch consent' (default setting) this add-on will not work for these sites.</br>
+      </p>
+      <p>Fetch enabled: <span id="fetch-enabled"></span></p>
+      <div id="fetch-container">
+        <button id="fetch-enable">Enable</button>
+        <button id="fetch-disable">Disable</button>
+      </div>
+    </div>
+    <div id="opt-in-prompt">
+      <p><strong>setCookie opt-in</strong></p>
+      <p>For some sites a necessary cookie has to be set (this cookie doesn't contain any personal information about the user or device):<br><br>
+      None</p>
+      <p>setCookie opt-in enabled: <span id="opt-in-enabled"></span></p>
+      <div id="optin-container">
+        <button id="optin-enable">Enable</button>
+        <button id="optin-disable">Disable</button>
+    </div>
+	<p>
+  <div style='float:left;padding-bottom:50px'>
+    <small><button><a href="../options.html" style="text-decoration:none;color:inherit">Options</a></button></small>
+    <small><button><a href="../options_custom.html" style="text-decoration:none;color:inherit">Custom sites</a></button></small>
+    <small><button id="button-close">Close</button></small>
+  </div>
+  </p>
+  </body>
+
+</html>

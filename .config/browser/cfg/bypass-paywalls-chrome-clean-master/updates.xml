@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
+  <app appid='lkbebcjgcmobigpeffafkodonchffocl'>
+    <updatecheck codebase='https://gitflic.ru/project/magnolia1234/bpc_uploads/blob/raw?file=bypass-paywalls-chrome-clean-4.4.4.0.crx' version='4.4.4.0' />
+  </app>
+</gupdate>

@@ -1,0 +1,38 @@
+body {
+  margin-bottom: 6rem;
+  padding: 0 0.5em;
+  font-size: 20px;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+}
+#aboutNameVer {
+  color: var(--adn-purple);
+  font-size: 22px;
+  margin-top: 70px;
+  margin-left: 3px;
+}
+#builtOn {
+  margin-left: 13px;
+  font-size: 16px;
+}
+#builtOnVersion {
+  margin-left: 5px;
+  font-size: 16px;
+}
+#uBlock {
+  font-size: 22px;
+}
+ul {
+  margin-__MSG_@@bidi_start_edge__: 1em;
+}
+
+.entries {
+    margin: 0.5em 0;
+    margin-inline-start: 2em;
+    -webkit-margin-start: 2em;
+    }
+.entry {
+    margin: 0.5em 0;
+    /* margin-bottom: 6rem; ublock change, test*/
+    }

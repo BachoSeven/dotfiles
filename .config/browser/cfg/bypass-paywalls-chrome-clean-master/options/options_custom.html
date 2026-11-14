@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bypass Paywalls Clean Options Custom</title>
+  <link rel="stylesheet" href="options_all.css"/>
+</head>
+<body>
+  <h2>Custom Sites</h2>
+  <div id="custom-update"></div>
+  <div style="width:90%;">
+    To add a new site, enter an unique title/domain (without www.).<br>
+    Select options below (<a href="/README.html#add-custom-site" target="_blank">see help</a>); for examples import from online.<br>
+    Custom sites (new) are enabled automatically in <small><button><a href="options.html" style="text-decoration:none;color:inherit">Options</a></button></small> (cookies will be blocked by default unless you enable allow_cookies).<br>
+    If you want to use custom sites (for unlisted sites) enable it in <small><button><a href="optin/opt-in.html" style="text-decoration:none;color:inherit">Opt-in</a></button></small>
+    <strong>Custom sites enabled: <span id="custom-enabled"></span></strong><br>
+    You can also just request host permissions for the custom sites & post-release added sites (below).<br>
+    If host permission is missing the icon badge will contain a 'C' (or '+C' if you can import the custom site from online; when no fix X).
+    <br><br>
+  </div>
+  <div id='add_site'></div>
+    <br>
+  <div id="status_add"></div>
+  <span style='float:left;padding-bottom:5px'>
+    <button id="add">Add</button>
+  </span>
+  <div style="clear:both;"></div>
+  <div>
+    <h3>List of custom sites</h3>
+     * already in default list (double domain)
+    <br>
+  </div>
+  <div id='custom_sites'></div>
+    <br>
+  <div id="status_delete"></div>
+  <span style='float:left;padding-bottom:5px'>
+    <button id="delete">Delete</button>
+    <button id="edit">Edit (re-Add)</button>
+    <button id="delete_default">Delete<br>default (*) sites</button>
+    <button id="perm_request">Request<br>permissions</button>
+    <button id="perm_remove">Remove<br>permissions</button>
+    <input id="search" type="text" size="30" placeholder="Search (domain)name ..."><br><br>
+    permissions granted (for all in custom list + updated): <strong><span id="perm-custom"></span></strong>
+  </span>
+  <div style="clear:both;"></div>
+  <div style="width:90%;">
+    <h3>Json file</h3>
+    You can edit/sort the text area and save (only when json-text is valid). 
+    Clear & save to reset. You can also export/import json-text for new installations.
+  </div>
+  <br>
+  <div id='bypass_sites'></div>
+    <br>
+  <div id="status"></div>
+  <div id="error"></div>
+  <span style='float:left;padding-bottom:50px'>
+    <button id="save">Save</button>
+    <button id="sort">Sort</button>
+    <button id="export">Export</button>
+    <button id="import">Import file</button>
+    <button id="import_local">Import from local</button>
+    <button id="import_online">Import from online</button>
+    <input type="file" id="importInput" accept=".txt, .json" style="display:none"/>
+    <button><a href="options.html" style="text-decoration:none;color:inherit">Options</a></button>
+  </span>
+
+ <script src="../sites.js"></script>
+ <script src="options_custom.js"></script>
+</body>
+</html>

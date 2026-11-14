@@ -1,0 +1,1169 @@
+/* ============================================================
+  RESET
+============================================================ */
+@charset "UTF-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a img {
+  border: none;
+}
+
+/* ============================================================
+  GLOBALS
+============================================================ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	background-image: url(../img/gray_grid.png);
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  color: var(--adn-text);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: var(--adn-blue);
+}
+/*
+a:hover {
+
+}
+*/
+
+/* clear floated divs */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+li {
+  line-height: 1.3em;
+}
+
+a.external-link {
+  background: url("../img/external-link.svg") center center no-repeat;
+  width: 12px;
+  height: 12px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* CUSTOM CHECKBOX */
+
+.custom-check input[type="checkbox"],
+.custom-check #lists input#effListInput[type="checkbox"],
+.custom-check ul li input[type="radio"]{
+  display:none;
+}
+.custom-check #lists input[type="checkbox"]{
+  display: inline-block;
+}
+.custom-check #lists input + label {
+  display: none;
+}
+.custom-check #lists input#effListInput + label {
+  display: inline-block!important;
+}
+.custom-check #lists input[type="checkbox"]::before{
+  margin: 0px 4px 0 0!important;
+  vertical-align: baseline!important;
+}
+.custom-check #clickingFrequency{
+  margin: .5em 0 0 -.5em;
+  padding:.5em 1em .3em .5em;
+  border-radius: 8px;
+  display: inline-block;
+}
+#clickingFrequency a {
+  margin-right: -.5em!important;
+}
+.custom-check ul>label {
+  text-transform: uppercase;
+}
+.custom-check input[type="checkbox"] + label::before,
+.custom-check #lists input[type="checkbox"]:not(#effListInput)::before,
+.custom-check ul li input[type="radio"] + label::before{
+  content: "";
+  display:inline-block;
+  width:12px;
+  height:12px;
+  margin:-1px 4px 0 0;
+  vertical-align:middle;
+  background-color: black;
+  border: 1px solid var(--adn-blue);
+  cursor:pointer;
+  border-radius: 3px;
+}
+.custom-check input[type="checkbox"]:not(#effListInput):checked + label::before,
+.custom-check #lists input[type="checkbox"]:not(#effListInput):checked:before,
+.custom-check ul li input[type="radio"]:checked + label::before{
+  background: var(--adn-blue) url(../img/check.svg) -2px 0px no-repeat;
+  color: black;
+  content: "";
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 12px;
+}
+.custom-check input#effListInput:checked + label::before{
+  background: grey url(../img/check.svg) -2px -3px no-repeat;
+}
+
+.custom-check input[type="checkbox"] + label::before{
+  background-image: none;
+}
+.custom-check input[type="checkbox"]:disabled + label::before{
+  border-color: var(--adn-text-input);
+  border-width: 2px;
+  width: 11px;
+  height: 11px;
+  font-size: 0.6em;
+  text-align: left;
+  line-height: 1em;
+  cursor: not-allowed;
+}
+.custom-check input[type="checkbox"]:disabled:checked + label::before{
+  background-color: var(--adn-text-input);
+}
+
+.custom-check input[type="checkbox"]:disabled + label a {
+  color: var(--adn-text-input);
+  text-decoration: underline;
+}
+
+.custom-check input[type="checkbox"]:disabled + label a:hover {
+  color: #3B96FF;
+}
+
+/* ADN */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
+}
+
+/* ============================================================
+  TEMPLATE
+============================================================ */
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 320px;
+  height: 500px;
+  margin: 0 auto;
+  padding: 0 0px;
+  position: fixed;
+  right: 0px;
+}
+
+div.hide {
+  display: none;
+}
+
+button.hide {
+  display: none;
+}
+
+a.hide {
+  display: none;
+}
+
+button {
+  border: 2px solid var(--adn-blue);
+  border-radius: 5px;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  text-transform: uppercase;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  background: none;
+  box-shadow: none;
+  color: var(--adn-blue);
+  fill: var(--adn-blue);
+  font-size: 20px;
+  line-height: 20px;
+  height: 30px;
+  padding-top: 1px;
+}
+
+button:hover:enabled{
+  background: var(--adn-blue);
+  color: var(--adn-button-active);
+  fill: var(--adn-button-active);
+  cursor: pointer;
+}
+
+button.danger {
+  border-color: #ff3300;
+  color: #ff3300;
+  fill: #ff3300;
+}
+
+button.danger:hover{
+  background: #ff3300;
+  color: #000;
+  fill: #000;
+}
+
+button.large {
+  width: 77%;
+  margin: 0 70px;
+  display: block;
+  line-height: 1.2em;
+}
+
+button.small {
+  font-size: 16px;
+  height: 20px;
+  border-width: 1px;
+  padding: 0 5px;
+  /*border-color: rgba(0,118,255,0.5);*/
+  border: none;
+}
+
+/* I designed the button with: http://charliepark.org/bootstrap_buttons/ */
+button.custom {
+  border: 2px solid var(--adn-blue);
+  border-radius: 5px;
+  background: none;
+  box-shadow: none;
+  color: var(--adn-blue);
+  fill: var(--adn-blue);
+  font-size: 20px;
+  height: 30px;
+  padding-top: 2px;
+  margin:4px 0;
+}
+
+:root.mobile button {
+  height:36px;
+  margin:0px;
+}
+
+:root.mobile button.custom {
+  font-size:18px;
+}
+
+button.custom.disabled,
+button.custom[disabled],
+button.large;.disabled {
+  border-color: var(--adn-button-disabled);
+  color: var(--adn-button-disabled);
+  fill: var(--adn-button-disabled);
+  pointer-events: none;
+}
+
+button.custom:hover {
+  opacity: 1.0;
+}
+
+button.custom#buttonUpdateAdNauseam{
+  font-size:14px;
+  border-width:1px;
+  padding: 1px 4px;
+  height: 24px;
+  margin: 0;
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translate(100%, -50%);
+}
+
+button.important {
+  padding: 1px 2em;
+}
+
+.alert {
+  height: 200;
+  width: 100%;
+  position: relative;
+}
+
+#proceed {
+  margin-bottom: 2em;
+}
+
+/* .recent-ads {
+	margin: 125px 30px 0px 0px;
+} */
+
+.alert img {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin: -36px 0px 0px -36px;
+  width: 72px;
+  height: auto;
+  box-shadow: 2px 0px 30px #000;
+  background: #000;
+  border-radius: 30px;
+}
+
+.alert p {
+  position: absolute;
+  top: 85px;
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
+  padding: 0px 10%;
+  color: white;
+  text-shadow: 0 0 3px #000;
+}
+
+.pull-right {
+  float: right;
+}
+
+/* ============================================================
+  NOTIFICATIONS
+============================================================ */
+
+.notification {
+  height: 39px;
+  background-size: 40px 39px;
+  padding: 5px 5px 5px 44px;
+  line-height: 1.7em;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  font-size: 16.5px;
+  border-bottom: 1px solid;
+  background-position: 3px center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ADN */
+.notification #notify-text {
+  transition: text-indent 0.8s linear; /* ADN */
+  max-width: calc(100% - 20px);
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ADN */
+.notification #notify-link {
+  vertical-align: super;
+  text-indent: 0;
+}
+
+#notify-text #notify-link {
+  vertical-align: initial; /* fix for when notify link is inside notify text */
+}
+
+.notification button{
+  background-image: none !important;
+  font-size: 18px;
+  height: 28px;
+  line-height: 1.3em;
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.notification.long button{
+  display: none;
+}
+.notification.long:hover button{
+  display: block;
+}
+.notification.dnt button,#DNTClickNotHide.notification button{
+  right:-75px;
+  display: block;
+  opacity: 0;
+}
+.notification.dnt.hover > button,#DNTClickNotHide.hover > button{
+  right:10px;
+  opacity: 1;
+  animation-duration: .5s;
+  animation-name: slidefromRight;
+}
+button.warning{
+  background: none !important;
+}
+.notification button.info, .notification button.success, .notification button.warning, .notification button.error {
+  background: none !important;
+  font-size: 18px;
+  height: 28px;
+  line-height: 1.3em;
+}
+.notification.info,
+.notification.info button,
+button.info{
+  color: var(--adn-notification-info);
+  background-color: var(--adn-notification-info-bg);
+  background-image: url(../img/icon_info@2x.png);
+  border-color: var(--adn-notification-info);
+}
+.notification.info button {
+  box-shadow: -7px 0 10px 0 var(--adn-notification-info-bg);
+}
+.notification.info button:hover:enabled,
+.notification.info a.help-mark,
+button.info:hover:enabled{
+  color: var(--adn-notification-info-bg);
+  background-color: var(--adn-notification-info) !important;
+}
+.notification.success,
+.notification.success button,
+button.success{
+  color: var(--adn-notification-dnt);
+  background-color: var(--adn-notification-dnt-bg);
+  background-image: url(../img/icon_success@2x.png);
+  border-color: var(--adn-notification-dnt);
+}
+.notification.success button {
+  box-shadow: -7px 0 10px 0 var(--adn-notification-dnt-bg);
+}
+.notification.dnt,.notification.dnt button,
+.notification.success.dnt button{
+  background-image: url(../img/icon_dnt@2x.png);
+  color: var(--adn-notification-dnt);
+  background-color: var(--adn-notification-dnt-bg);
+  border-color: var(--adn-notification-dnt);
+}
+.notification.success button:hover:enabled,
+.notification.success a.help-mark,
+button.success:hover:enabled,
+.notification.dnt button:hover:enabled,
+.notification.dnt a.help-mark,
+button.dnt:hover:enabled {
+  color: var(--adn-notification-dnt-bg);
+  background-color: var(--adn-notification-dnt) !important;
+
+}
+
+@keyframes slidefromRight {
+  from {
+    right:-75px;
+  }
+
+  to {
+    right:10px;
+  }
+}
+#notificationText{
+  display: none;
+}
+#notify-template {
+  display: none;
+}
+.notification.warning,
+.notification.warning button,
+button.warning{
+  color: #9F6000;
+  background-color: #FEEFB3;
+  background-image: url(../img/icon_warning@2x.png);
+  border-color: #9F6000;
+}
+.notification.warning button {
+  box-shadow: -7px 0 10px 0 #FEEFB3;
+}
+.notification.warning button:hover:enabled,
+.notification.warning a.help-mark,
+button.warning:hover:enabled {
+  color: #FEEFB3;
+  background-color: #9F6000 !important;
+}
+.notification.error,
+.notification.error button,
+button.error{
+  color: var(--adn-notification-error);
+  background-color: var(--adn-notification-error-bg);
+  background-image: url(../img/icon_error@2x.png);
+  border-color: var(--adn-notification-error);
+}
+.notification.error button {
+  box-shadow: -7px 0 10px 0 var(--adn-notification-error-bg);
+}
+.notification.error button:hover:enabled,
+.notification.error a.help-mark,
+ button.error:hover:enabled{
+  color: var(--adn-notification-error-bg);
+  background-color: var(--adn-notification-error) !important;
+}
+
+/* ============================================================
+  MORE
+============================================================ */
+/* https://protocol.mozilla.org/assets/docs/css/protocol.css */
+
+@font-face {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/fontawesome-webfont.ttf') format('truetype');
+    }
+
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+}
+/**
+    Common uBO spacing.
+    Ref: https://github.com/uBlockOrigin/uBlock-issues/issues/1005
+*/
+:root {
+    --default-gap-xxlarge: 40px;
+    --default-gap-xlarge: 32px;
+    --default-gap-large: 24px;
+    --default-gap: 16px;
+    --default-gap-small: 12px;
+    --default-gap-xsmall: 8px;
+    --default-gap-xxsmall: 4px;
+    --button-font-size: max(calc(var(--font-size) * 0.875), 14px);
+    }
+body {
+    font: 14px sans-serif;
+    background-color: var(--surface-1);
+    border: 0;
+    box-sizing: border-box;
+    color: var(--ink-1);
+        fill: var(--ink-1);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    }
+code, .code {
+    background-color: var(--button-surface);
+    font-family: monospace;
+    font-size: var(--monospace-size);
+    padding: 2px 4px;
+    }
+hr {
+    border: 0;
+    border-top: 1px solid var(--hr-ink);
+    margin: 1em 0;
+    }
+.hiddenFileInput {
+    height: 0;
+    visibility: hidden;
+    width: 0;
+}
+textarea {
+    font-size: 90%;
+}
+input, select {
+      border: solid 1px #999;
+      border-radius: 2px;
+}
+a:hover {
+    color: #3B96FF;
+    }
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+}
+.question {
+    position: absolute;
+    left: 70px;
+    line-height: 1.8em;
+}
+.question.large {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--adn-text-contrast);
+  text-transform: uppercase;
+  line-height: 1em;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+}
+.question.small {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--adn-text-contrast);
+  text-transform: uppercase;
+  line-height: 1em;
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+  left: 50px;
+}
+p.option-meta {
+  margin: 5px 0 20px 70px;
+  line-height: 1.2em;
+}
+
+/* ============================================================
+  TOGGLE: SWITCH 2 - ROUND FLAT
+============================================================ */
+input.cmn-toggle-round-flat + label {
+  padding: 2px;
+  width: 60px;
+  height: 30px;
+  background-color: #777;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:before, input.cmn-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+input.cmn-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #000;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 22px;
+  background-color: #777;
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  -ms-border-radius: 22px;
+  -o-border-radius: 22px;
+  border-radius: 22px;
+  -webkit-transition: margin 0.4s, background 0.4s;
+  -moz-transition: margin 0.4s, background 0.4s;
+  -o-transition: margin 0.4s, background 0.4s;
+  transition: margin 0.4s, background 0.4s;
+}
+input.cmn-toggle-round-flat:checked + label {
+  background-color: var(--adn-blue);
+}
+input.cmn-toggle-round-flat:checked + label:after {
+  margin-left: 30px;
+  background-color: var(--adn-blue);
+}
+input.cmn-toggle-round-flat.cmn-toggle-small + label {
+  height: 20px;
+  width: 40px;
+  padding: 1px;
+  float: left;
+  margin: 1px 5px 0 0;
+}
+input.cmn-toggle-round-flat.cmn-toggle-small + label::before{
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+input.cmn-toggle-round-flat.cmn-toggle-small + label::after {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  width: 16px;
+}
+input.cmn-toggle-round-flat.cmn-toggle-small:checked + label::after {
+  margin-left: 20px;
+}
+
+
+
+
+.hidden {
+  display: none !important;
+}
+
+.cost.highlighted{
+	color: var(--adn-ad-cost);
+}
+
+.help-mark {
+	font-size: 14px;
+	border-radius: 3px;
+  background-color: var(--adn-blue);
+	padding: 0 2px 0;
+	display: inline-block;
+	height: 14px;
+	line-height: 1em;
+	position: relative;
+	bottom: 7px;
+	color: #000;
+	text-shadow: none;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+	margin-left: 2px;
+}
+
+.help-mark.cost, .help-mark.dnt {
+  background-color: var(--adn-ad-cost);
+}
+
+.help-mark.sml{
+  font-size: 10px;
+  height: 10px;
+  padding: 0 1px;
+  background-color: #999;
+}
+.help-mark.sml:hover {
+  color: #000;
+  background-color: var(--adn-blue);
+}
+ul {
+    padding: 0;
+    list-style-type: none;
+    }
+#options li {
+    margin-bottom: 0.5em;
+    }
+
+.dim {
+    opacity: 0.75;
+    }
+#buttonApply {
+    display: initial;
+    z-index: 10;
+    }
+body[dir=rtl] #buttonApply {
+    right: auto;
+    left: 1em;
+    }
+/* #buttonApply.disabled {
+    display: none;
+} */
+span.status {
+    border: 1px solid transparent;
+    color: var(--adn-dark-gray);
+    display: inline-block;
+    font-size: smaller;
+    line-height: 1;
+    opacity: 0.8;
+    padding: 1px 2px;
+}
+span.unsecure {
+    color: hsl(0, 100%, 83%);
+    border-color: hsl(0, 100%, 83%);
+    border-radius: 2px;
+    padding: 1px 2px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    }
+span.purge {
+    color: #ddd;
+    border-color: #ddd;
+    border-radius: 2px;
+    padding: 1px 2px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    }
+span.purge:hover {
+    opacity: 1;
+    }
+span.new {
+    background-color: hsl(36, 100%, 80%);
+    border-color: hsl(36, 100%, 75%);
+    }
+#externalListsDiv {
+    margin: 2em auto 0 2em;
+    }
+body[dir=rtl] #externalListsDiv {
+    margin: 2em 2em 0;
+    }
+
+button.custom:hover {
+    opacity: 1.0;
+    }
+button.custom.important {
+    background-color: rgba(0, 118, 255,0.2);
+}
+button.custom.important:hover {
+    background-color: rgb(0, 118, 255,1);
+}
+button.vflex {
+    height: 100%;
+    min-height: unset;
+    padding-bottom: 0;
+    padding-top: 0;
+    }
+/* button:hover {
+    background-color: var(--button-surface-hover);
+    }
+button.active {
+    background-color: var(--button-active-surface);
+    } */
+button.disabled,
+button[disabled],
+button.important.disabled,
+button.important[disabled] {
+    color: var(--adn-button-disabled);
+    fill: var(--adn-button-disabled);
+    border-color: var(--adn-button-disabled);
+    pointer-events: none;
+    }
+    /* Adn
+button.preferred {
+    background-color: var(--button-preferred-surface);
+    color: var(--button-preferred-ink);
+  }
+  */
+button.iconifiable > .fa-icon {
+    padding-left: 0;
+    padding-right: 0.4em;
+    }
+button.iconifiable > .fa-icon {
+    font-size: 120%;
+    }
+body[dir="rtl"] button.iconifiable > .fa-icon {
+    padding-left: 0.4em;
+    padding-right: 0;
+    }
+body[dir] button.iconifiable > .fa-icon:last-child {
+    padding-left: 0;
+    padding-right: 0;
+}
+label {
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    }
+
+/* adn fix for cyrilic fonts */
+
+body.cyrilic button {
+  text-transform: uppercase;
+}
+
+body.cyrilic #vault-button {
+  font-size: 10px;
+}
+
+/**
+    Checkbox design borrowed from:
+    - https://material.io/components/selection-controls
+    Motivation:
+    - To comply with design suggestions to make uBO comply with
+      Firefox Preview design guidelines.
+    - To have a single checkbox design across all platforms.
+*/
+.checkbox {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-shrink: 0;
+    height: var(--checkbox-size);
+    margin: 0;
+    margin-inline-end: var(--checkbox-margin-end);
+    -webkit-margin-end: var(--checkbox-margin-end);
+    position: relative;
+    width: var(--checkbox-size);
+    }
+label:hover .checkbox:not([disabled]) {
+    background-color: var(--surface-2);
+    }
+/* Adn */ 
+label:hover .checkbox:not([disabled]) svg {
+  background-color: var(--surface-2);
+}
+/* end of Adn */
+.checkbox > input[type="checkbox"] {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    min-width: var(--checkbox-size);
+    opacity: var(--native-control-opacity);
+    position: absolute;
+    width: 100%;
+    }
+.checkbox > input[type="checkbox"] + svg {
+    border: 2px solid var(--adn-blue);
+    border-radius: 2px;
+    box-sizing: border-box;
+    fill: none;
+    height: 100%;
+    opacity: calc(1 - var(--native-control-opacity));
+    pointer-events: none;
+    position: absolute;
+    stroke: none;
+    stroke-width: 3.12px;
+    width: 100%;
+    }
+.checkbox > input[type="checkbox"]:checked + svg {
+    background-color: var(--adn-blue);
+    border-color: var(--adn-blue);
+    stroke: var(--adn-button-active);
+    }
+.checkbox[disabled],
+.checkbox[disabled] ~ span {
+    opacity: 0.5;
+    }
+.checkbox:has(input[disabled]) > svg {
+  filter: saturate(0);
+}
+
+.checkbox.partial > input[type="checkbox"]:checked + svg {
+    background-color: var(--surface-1);
+    border-color: var(--checkbox-checked-ink);
+    stroke: var(--checkbox-checked-ink);
+    }
+
+.radio {
+    --margin-end: calc(var(--font-size) * 0.75);
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-shrink: 0;
+    height: calc(var(--checkbox-size) + 2px);
+    margin: 0;
+    margin-inline-end: var(--margin-end);
+    -webkit-margin-end: var(--margin-end);
+    position: relative;
+    width: calc(var(--checkbox-size) + 2px);
+    }
+.radio > input[type="radio"] {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    min-width: var(--checkbox-size);
+    opacity: var(--native-control-opacity);
+    position: absolute;
+    width: 100%;
+    }
+.radio > input[type="radio"] + svg {
+    background-color: transparent;
+    box-sizing: border-box;
+    height: 100%;
+    opacity: calc(1 - var(--native-control-opacity));
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    }
+.radio > input[type="radio"] + svg > path {
+    fill: var(--checkbox-ink);
+    }
+.radio > input[type="radio"] + svg > circle {
+    fill: transparent;
+    }
+label:hover .radio > input[type="radio"]:not(:checked) + svg > circle {
+    fill: var(--surface-3);
+    }
+.radio > input[type="radio"]:checked + svg > path,
+.radio > input[type="radio"]:checked + svg > circle {
+    fill: var(--checkbox-checked-ink);
+    }
+
+select {
+    padding: 2px;
+    }
+
+.searchfield {
+    align-items: center;
+    column-gap: var(--default-gap-xxsmall);
+    display: inline-flex;
+    position: relative;
+    }
+.searchfield .fa-icon {
+    color: var(--ink-4);
+        fill: var(--ink-4);
+    font-size: 1em !important;
+    left: 2px;
+    position: absolute;
+    transform: none;
+    }
+.searchfield input:not(:placeholder-shown) ~ .fa-icon {
+    display: none;
+    }
+
+.hidden {
+    display: none;
+    height: 0;
+    visibility: hidden;
+    width: 0;
+    }
+.fieldset {
+    margin: var(--font-size);
+    }
+.fieldset-header {
+  color: var(--adn-text-contrast);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  /* ADN */
+  font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+  font-stretch: 47.5%;
+  font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+    }
+.ul {
+    margin: 1em 0;
+    }
+.li {
+    align-items: center;
+    display: flex;
+    margin: calc(var(--font-size) * 0.75) 0;
+    }
+.liul {
+    margin: 0.5em 0;
+    margin-inline-start: 2em;
+    -webkit-margin-start: 2em;
+    }
+@media (max-width: 640px) {
+    button.iconifiable > .fa-icon {
+        font-size: 1.2rem;
+        padding: 0;
+        }
+    button.iconified:not(.dontshrink) > [data-i18n] {
+        display: none;
+        }
+    }
+
+.countryFlag {
+    height: var(--font-size);
+    position: relative;
+    top: calc(var(--font-size) / 7);
+    max-width: calc(var(--font-size) * 1.5);
+    }
+
+.logo {
+    align-items: center;
+    display: inline-flex;
+    padding: 0 0.5em;
+    width: 1.25em;
+    }
+.logo > img {
+    width: 100%;
+    }
+
+.ubo-icon {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.1em;
+    position: relative;
+    }
+.ubo-icon > * {
+    pointer-events: none;
+    }
+.ubo-icon.disabled,
+.disabled > .ubo-icon,
+.ubo-icon[disabled],
+[disabled] > .ubo-icon {
+    color: var(--button-disabled-ink);
+    fill: var(--button-disabled-ink);
+    filter: var(--button-disabled-filter);
+    stroke: var(--button-disabled-ink);
+    pointer-events: none;
+    }
+.ubo-icon > svg {
+    height: 1em;
+    width: 1em;
+    }
+
+/*ADN - fixing https://github.com/dhowe/AdNauseam/issues/1768 */
+
+/* high dpi devices
+:root.hidpi button {
+    font-family: Metropolis, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    }
+:root.hidpi .fieldset-header {
+    font-family: Metropolis, sans-serif;
+    }
+*/
+/* touch-screen devices
+:root.mobile label {
+    flex-grow: 1
+    }
+*/

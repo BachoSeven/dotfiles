@@ -1,0 +1,36 @@
+html {
+    height: 100vh;
+        height: 100svh;
+    overflow: hidden;
+    width: 100vw;
+    }
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: stretch;
+    overflow: hidden;
+    width: 100%;
+    }
+.body {
+    flex-shrink: 0;
+    }
+.codeMirrorContainer {
+    flex-grow: 1;
+    }
+#whitelist {
+    text-align: left;
+    }
+#strictBlockList {
+    text-align: left;
+    }
+#lists {
+    padding-top: 0.5em; /* adn */
+}
+
+.geName {
+    font-size: 120%;
+    font-family: bebas_neue,roboto_flex,noto_sans,sans-serif;
+    font-stretch: 47.5%;
+    font-variation-settings: "opsz" 48, "slnt" 0, "GRAD" 0, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+}

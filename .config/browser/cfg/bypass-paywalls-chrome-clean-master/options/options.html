@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bypass Paywalls Clean Options</title>
+  <link rel="stylesheet" href="options_all.css"/>
+</head>
+<body>
+  <h1 id="top">Options | <small><span id="version"></span><br><span id="version_new"></span></small></h1>
+  Changelog <a href="/changelog.txt" target="_blank">local</a> or <a href="https://gitflic.ru/project/magnolia1234/bypass-paywalls-chrome-clean/blob/raw?file=changelog.txt" target="_blank">online</a>
+  | Help <a href="/README.html" target="_blank">local</a> or <a href="https://gitflic.ru/project/magnolia1234/bypass-paywalls-chrome-clean" target="_blank">online</a>
+  <div style="width:90%;">
+    <br>Some selected sites will have their cookies cleared; uncheck the sites (or add to excluded sites) for which you have an account.<br>
+    If you also want to block general paywall-scripts for unlisted sites you have to opt-in to custom sites (host permission for access to all sites is needed).
+    <!-- To view some sites (check list) a necessary cookie has to be set (enable this in opt-in). -->
+  </div>
+  <br>
+  <div style='float:left'>
+    <small><button id="save_top">Save</button></small>
+    <small><button><a href="options_custom.html" style="text-decoration:none;color:inherit">Custom sites</a></button></small>
+    <small><button><a href="optin/opt-in.html" style="text-decoration:none;color:inherit">Opt-in</a></button></small>
+    <small><button id="check_sites_updated">Check updated sites</button></small>
+    <small><button id="clear_sites_updated">Clear updated sites</button></small>
+    <small><button><a href="options_excluded.html" style="text-decoration:none;color:inherit">Excluded sites</a></button></small>
+    <small><button><a href="#save" style="text-decoration:none;color:inherit">Go to bottom</a></button></small>
+    <input id="search" type="text" size="30" placeholder="Search (domain)name ...">
+  </div>
+  <div style="clear:both;"></div>
+  <strong style="color:red;"><div id="perm-custom"></div></strong>
+  <strong style="color:red;"><div id="nofix"></div></strong>
+  <div style="clear:both;"></div>
+  <br>
+  <div id="status_top"></div>
+  <div id='bypass_sites'></div>
+  <br>
+  <div id="status"></div>
+  <div id="error"></div>
+  <span style='float:left;padding-bottom:50px'>
+    <button id="save">Save</button>
+    <button id="select-all">Select all</button>
+    <button id="select-none">Select none</button>
+    <button><a href="options_custom.html" style="text-decoration:none;color:inherit">Custom sites</a></button>
+    <button><a href="options_excluded.html" style="text-decoration:none;color:inherit">Excluded sites</a></button>
+    <button><a href="#top" style="text-decoration:none;color:inherit">Go to top</a></button>
+    <button id="button-close">Close</button>
+  </span>
+  <script src="../sites.js"></script>
+  <script src="options.js"></script>
+  <script src="version.js"></script>
+</body>
+</html>

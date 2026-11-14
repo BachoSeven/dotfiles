@@ -70,7 +70,8 @@
 
 ## Plugins
 > Install plugin manager's .CRX for ung-chromium: https://github.com/NeverDecaf/chromium-web-store/tags
-> Install sci-hub plugin manually (crx is in this repo)
+> Install sci-hub plugin manually (folder is in this repo)
+> Install remove paywall plugin manually (crx is in this repo)
 
 ### installed extensions ids string (a part from ntp, which is local [allow file access])
 ```
@@ -81,10 +82,11 @@ Vimium|dbepggeogbaibhgnhhndojpepiihcmeb
 I don't care about cookies|fihnjjcciajhdojfnbdddfaoknhalnja
 floccus bookmarks sync|fnaicdffflnofjppbagibeoednhnbjhg
 Return YouTube Dislike|gebbhagfogifgggkldgodflihgfeippi
+Unhook - Remove YouTube Recommended & Shorts|khncfooichmfjbepaaaebmommgaepoid
 ClearURLs|lckanjgmijmafbedllaakclkaicjfmnk
+Bypass Paywalls Clean|lkbebcjgcmobigpeffafkodonchffocl|https://gitflic.ru/project/magnolia1234/bpc_updates/blob/raw?file=updates.xml
 Linux Scroll Speed Fix|mlboohjioameadaedfjcpemcaangkkbp
-Sci-Hub|ngdimemjinhiieikaocpncejnlcmaokm|https://sci-hub.ru/update
-Bitwarden - Gestore di Password Gratis|nngceckbapebfimnlniiiahkandclblb
+Bitwarden Password Manager|nngceckbapebfimnlniiiahkandclblb
 Chromium Web Store|ocaahdebbfolfmndjeplogmgcagdmblk|https://raw.githubusercontent.com/NeverDecaf/chromium-web-store/master/updates.xml
 Redirector|ocgpenflpmgnfapjedencafcfakcekcd
 PDF Viewer|oemmndcbldboiebfnladdacbdfmadadm
@@ -100,7 +102,7 @@ PDF Viewer|oemmndcbldboiebfnladdacbdfmadadm
 - Redirector[alt+shift+r]
 
 ### Privacy-focused
-- ublock Origin[ctrl+b delete elements, ctrl+u activate it, import List(s)]
+- ~ublock Origin[ctrl+b delete elements, ctrl+u activate it, import List(s)]~ same but AdNauseam
 - I don't care about cookies
 - ClearURLs [backup]
 
@@ -140,7 +142,7 @@ imslp:	https://www.google.com/search?q=site:imslp.org+%s imslp
 j:	http://localhost:9117/UI/Dashboard#search=%s Jackett
 ki:	https://kickass.cm/usearch/?q=%s kickass
 ka:	https://kissanime.ac/Search/?s=%s kissanime
-l:	https://libgen.rs/search.php?req=%s libgen
+l:  https://libgen.li/index.php?req=%s libgen
 lk:	https://www.google.com/search?q=%s&btnI I'm feeling lucky...
 lp:	https://launchpad.net/+search?field.text=%s launchpad
 lt:	https://www.limetorrents.cc/search/all/%s/ limetorrents

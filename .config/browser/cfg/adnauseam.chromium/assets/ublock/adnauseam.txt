@@ -1,0 +1,929 @@
+# Generics (any page)
+##iframe[src*="mellowads"]
+##iframe[id^=openwrap-ad-]
+##*[class*="Advert"]
+##*[class*="teads-"]
+###gwd-ad
+##ins.adsbygoogle
+##.mv-ad-box
+##iframe[src*="4dsbanner"]
+##img[src*="digiadsply"]
+##.bstn-ad-rail--expanded.bstn-ad-rail
+
+# Generic exceptions
+tweakers.net#@#*[class*="Advert"]
+willhaben.at#@#*[class*="Advert"]
+
+# Google map ads on Search
+google.*##.mnr-c.rl-qs-crs-t._Db > ._gt:has(._mB)
+
+# Generic hide for Google Ads
+##ins[id*="aswift"] > iframe
+###google_image_div
+###mys-content
+##div[data-adtags-width]
+
+# generichide-rules (#1466 etc)
+trustedreviews.com##*[class^="ad-"]
+textmechanic.com##*[class^="google_ads"]
+textmechanic.com##*[class^="img_ad"]
+textmechanic.com##*[class^="adsby"]
+freebitcoin.win##iframe[src*="coinad"]
+freebitcoin.win##iframe[src*="mellowads"]
+rockpapershotgun.com##*[id^="google_ads"]
+
+# facebook
+facebook.com##.ego_section a[href^="https://l.facebook.com/l.php?u="][target="_blank"]
+
+atptour.com##.adtech-wrapper-ad
+
+deathbyfilms.com##img[src*="advert"]
+
+dotabuff.com##.iasId > [class*="-container-"]
+dotabuff.com##[class*="sponsor"]
+dotabuff.com##[class*="placement"]
+||lkqd.net^$domain=www.dotabuff.com
+
+metacritic.com##.sitewide_promo
+
+spiegel.de##div[id*="google_ads_iframe"]
+spiegel.de##div[class*="Anzeige"]
+
+www.nytimes.com##.e12j3pa50
+www.nytimes.com###top-wrapper:has(.ad)
+
+search.yahoo.com##.layoutMiddle
+search.yahoo.com##.kr5yi684e6
+search.yahoo.com###right
+search.yahoo.com##.compTitle.fc-4th
+
+gearslutz.com###noticesContainer
+
+theglobeandmail.com##*[class*="ad-wrapper"]
+
+# www.telegraph.co.uk
+##.premium-promo--wrapper
+
+apply.hkbn.net###promotionBannerId
+
+www.spacious.hk##.page__commercial_display_banner_box__content
+
+##img[src*="/adserve/"]
+##img[src*="ads.guava-affiliate.com"]
+##img[src*="display-ad/"]
+
+# teads inread video ads, found on inc.com and bbc.com
+.teads-inread
+
+analyticsindiamag.com##a[data-wpel-link="external"]
+
+www.ask.com##.tsrc_SAS
+www.ask.com###megaLabel
+www.ask.com###csaBottom
+www.ask.com##.TopAdsPartial
+www.ask.com##.BottomAdsPartial
+
+biometricupdate.com##.ad
+
+www.google.com###adBlock
+
+www.startpage.com###adBlock
+www.startpage.com##*[id^="spon_"]
+##*[id^="sponsored"]
+
+www.google.com###adBlock > .ad.a_
+www.google.com##.ads-ad
+www.google.com###tads
+www.google.com##tadsb
+
+zerohedge.com##.ad__wrapper-element
+www.zam.com##.ad
+##.GoogleActiveViewClass
+
+haaretz.co.il##.modal-wrapper--dark.modal-wrapper--fixed.modal-wrapper
+haaretz.co.il###top_banners
+haaretz.co.il###maavaronWrapper
+
+facebook.com##.ego_unit:has(div.uiScaledImageContainer)
+facebook.com##._5hn6
+
+##.promotion-carousel
+
+# scmp.com
+www.scmp.com##*[id^="teads"]
+www.scmp.com##*[class*="teads"]
+
+#davidwalsh.name
+davidwalsh.name##.x-secondary-large
+davidwalsh.name##.sidebar-sda-large
+
+si.com#@#.ad
+si.com#@#.mobile-ad
+si.com#@#.cm-ad
+
+# piratebay
+##iframe[src*="adxprt"]
+##iframe[src*="exoclick.com"]
+##iframe[src*="thepiratebay.org/static/"]
+piratebay.com##img[src*="exdynsrv.com"]
+www.thepiratebay.org###sky-banner
+www.thepiratebay.org###sky-center
+
+# tvpad.ca
+##img[src*="https://tvpad.ca/media/"]
+
+# marinetraffic.com
+##.home-page.has-ad-space.container-fluid > .upper.row > .hidden-print.vertical-offset-5 > .mtseventwentyeight > a[href^="/en/p/plans"] > img[src="/img/upper_02.gif"]
+
+# abclinuxu.cz
+##a[href*="bbelements.com"]
+
+# asiaxpat
+##.AdBanner
+###pnlStripBanner
+
+# carbon-ads
+##.carbon-wrap
+##.carbon-poweredby
+
+# cpomagazine
+cpomagazine.com##[id*="cpoma"]
+
+# delfi.lt
+delfi.lt###header-top-banner + *[class^="h"]
+
+asiaxpat.com##.header_in1
+asiaxpat.com##.megaBanner
+asiaxpat.com###pnlClassReplaced
+asiaxpat.com##.main_content_rit
+asiaxpat.com###BusyBox6
+asiaxpat.com##.renaud
+asiaxpat.com##.row-banner-target
+hongkong.asiaxpat.com###fade
+hongkong.asiaxpat.com###light
+
+# various torrent sites
+##iframe[src*="wwwpromoter.com"]
+
+# https://www.torrentfunk2.com
+||refnippod.com^$script,important
+torrentfunk2.com##.__fp-img
+torrentfunk2.com##.__fp-a
+
+# documentaryheaven
+##iframe[src*="cse.google.com"]
+
+# columbiagreenemedia.com
+columbiagreenemedia.com###sawyer_container
+
+##iframe[src*='/ad/']
+
+# 163.com
+##.head-ad
+##DIV[id*="IndexFlashBg"]
+163.com##.mod_zheye
+##iframe[src*='kaolaad']
+163.com##iframe[src*='jd.com']
+##iframe[src^='g.163.com']
+163.com##a[href*='AID']
+##a[href*='kaolaad']
+
+www.pinterest.com##div[data-test-signup="true"]
+www.pinterest.com##div[data-test-giftwrap="true"]
+pinterest.com##.zI7.iyn.Hsu:has(:scope video[poster^="http"])
+
+
+# pandora
+pandora.com##*[id*="ad1"]
+
+# root.cz
+root.cz##.owl-stage-outer
+root.cz##.promo
+
+# sohu.com
+sohu.com##DIV[class^="ad_"]
+sohu.com##DIV[id^="ad_"]
+sohu.com##DIV[id^="beans_"]
+##DIV[class^="TurnAD"]
+##iframe[src*='taobaocdn']
+##span[id^="_AdSame"]
+
+# sina.com
+##.sinaad-toolkit-box
+##iframe[src*='sinaads']
+##iframe[src*='2mdn']
+
+# Twitch
+##iframe[src*="imasdk.googleapis.com/js"]
+
+# qq.com
+qq.com##iframe[src*='gtimg']
+##iframe[src*='tanx']
+##DIV[class="l_qq_com"]
+##a[href*='srd.simba.taobao.com']
+
+# zol.com.cn
+##DIV[class*="zmall-ad"]
+##iframe[src*='zol.com.cn/ad/']
+zol.com.cn##DIV[class="ad-box"]
+
+# Fortune.com
+##div[id^="outbrain_widget"]
+##img[src*='dianomi.com/img/']
+##iframe[src*="gobankingrates.com"]
+fortune.com##.ob-strip-layout.ob-widget
+fortune.com##._6yv0lClM
+fortune.com##._21UDzFnr
+fortune.com##._3sDrBk7f
+fortune.com##.small-12.column:nth-of-type(9) > .row
+fortune.com##.small-12.column > .row:nth-of-type(2) > .small-12.column > .row > .large-3.medium-6.small-12.column
+
+# baidu.com
+##.ad-imax
+##.search-aside-adWrap
+##DIV[class^="baidu-adv"]
+##DIV[id*='BAIDU_SSP'] > iframe
+##img[src*="ubmcmm.baidustatic"]
+@@||pos.baidu.com$subdocument,domain=music.baidu.com
+
+##DIV[id*="adcontent"]
+
+# ##.advert
+
+##DIV[class^="ads_inline"]
+##DIV[id="ads_speedbump"]
+mediapost.com##img[src*="ced.sascdn"]
+
+forbes.com##div[id*='ads']
+##DIV[class*="header_ad_container"] > div
+##DIV[class*="rec-ad"]
+/forbesprebidheader
+||brightcove.services^$xhr,domain=www.forbes.com
+
+fmovies.is##.mgline
+
+www.pcmag.com##.deal-widget
+pcmag.com##*[class*="flite"]
+pcmag.com##DIV[id*="pcmedia"]
+pcmag.com##img[src*="ziffty"]
+
+www.sfgate.com##.dealnews
+
+theatlantic.com###tl_main_single
+
+# creativebloq.com
+creativebloq.com##iframe[width="160px"][height="600px"]
+
+# reuters.com (first 2 are cosmetic exceptions)
+reuters.com#@#iframe[id^="google_ads_iframe"]
+reuters.com#@#div[id^="google_ads_iframe_"]
+reuters.com##.CanvasAd_container_sZDIL
+reuters.com##*[class^="AdSlot"]
+reuters.com##*[class^="TwoColumnsLayout-leaderboard-26t3U"]
+reuters.com##[src^="https://www.dianomi.com/"]
+||www.dianomi.com^$third-party
+@@||www.dianomi.com^$domain=reuters.com
+
+# 2021-03-24 https://www.dimsumdaily.hk
+www.dimsumdaily.hk##.ps_instream
+www.dimsumdaily.hk##.adsbyvli
+www.dimsumdaily.hk##div[style*="z-index: 1000000;"]:has([id*="div-gpt-ad"])
+
+# https://g1.globo.com
+g1.globo.com##.publicidade
+
+# wmoov.com
+##a[href*='adsfactor']
+##a[href*='adnxs']
+##iframe[class*='af_space']
+##DIV[id*='aswift']
+##DIV[id*='Zedo-Ad']
+##DIV[id*='MAXI_CRZ']
+##DIV[id*='ucfad']
+##DIV[id*='movie_ad']
+
+##bing.com
+www.bing.com##.adbDef
+www.bing.com##.b_ad
+bing.com##.adsMvC
+bing.com#@#.b_ad:remove()
+# blocking rule for anti-adblocking solutions for text ads on search page
+||www.bing.com/rb/5j/*$script,domain=www.bing.com
+
+# fix anti adblocker in https://www.craiyon.com/
+||www.googletagservices.com/activeview/js/current/rx_lidar.js$script,important
+
+computerworld.com###superadunit
+foxnews.com###sponsored-stories
+time.com##.ab-banner
+wsj.com##DIV[class*="nativo-placement"]
+wsj.com##IFRAME[id*="_mN_dy"]
+wsj.com##DIV[class*="sponsoredSections"]
+
+mingpao.com##iframe[src*="serving-sys.com"]
+mingpao.com##iframe[src*="inskin"]
+mingpao.com##DIV[id*="mainrightad"]
+mingpao.com##DIV[id*="adsense"]
+mingpao.com##DIV[id="tt-wrapper"]
+mingpao.com##DIV[id*="bannerd_ad_container"]
+mingpao.com##DIV[style="visibility: visible;"]
+mingpao.com##image[id*="bg"]
+
+hongkongfp.com##.category-sponsored
+
+bitcoinist.net###colorbox
+bitcoinist.net###cboxOverlay
+bitcoinist.net##iframe[src*='coinser']
+bitcoinist.net##a[href*='ads']
+bitcoinist.net##a[href*='bitstarz']
+
+usatoday.com##DIV#module-position-8
+usatoday.com##DIV.taboola-sidebar-content
+usatoday.com##section#module-position-8
+
+# flashback.org
+flashback.org##.adcontainer
+
+# popups on kickass-top.com
+*$third-party,popup,domain=kickass-top.com
+
+dev.opera.com##.gsc-adBlock
+
+www.pcmag.com###campaign_261312_lightbox
+
+batmanstream.com##iframe[src*="bannerflow"]
+
+cnn.com##div[id*='skinImgDiv']
+cnn.com##*[class^="Promo"]
+cnn.com##*[class$="promo"]
+##*[class^="Ad_"]
+
+www.jobsnhire.com##div[class*="teads"]
+www.jobsnhire.com##span[id*="GGADad"]
+www.jobsnhire.com##span[id*="ad_is"]
+
+www.pcworld.com##div[class*="related-promo-wrapper"]
+www.pcworld.com##aside[class*="nativo-promo"]
+www.pcworld.com##div[id*="amazon-bottom-widget"]
+www.pcworld.com##div[id*="content-recommender"]
+www.pcworld.com##div[id*="network"]
+
+www.overclockers.ru###topbanners > .citi_ban
+www.overclockers.ru###uhi > table > tbody > tr > td:nth-of-type(1)
+www.overclockers.ru###g-yap-R-139088-14 > .yap-adv
+www.overclockers.ru##img[src^="/images/HP_"]
+
+# yandex
+yandex.ru##.sticky_js_inited
+##div[id^="yandex_ad"]
+yandex.ru##*[id^="fu-"]
+yandex.ru##*[class^="desktop_js_inited"]
+
+# tweakers.net
+tweakers.net##.async[data-google-query-id]
+
+# yander email ads
+mail.yandex.ru##.mail-Layout-Content > div:has(div[style="width: 100%;"])
+mail.yandex.ru##.ns-view-left-box > div:has(div[style="width: 100%; height: 100%;"])
+
+# gocurrycracker.com
+##*[id^="amzn_assoc_ad"]
+##iframe[src*="amazon-adsystem.com"]
+##.gqsvbds-single
+
+# startribune.com
+startribune.com##.ad-mod
+
+# mrfreeat33.com
+##a[href*="track.flexlinkspro.com"]
+##a[href*="bluehost.com/track"]
+##a[href*="click.tunnelbear.com/aff"]
+www.mrfreeat33.com##img[src*="i2.wp.com/content.flexlinks.com/sharedimages/products"]
+
+stackoverflow.com#@#.adsbox
+
+# radikal.ru (video)
+radikal.ru##div[id^="DIV_DA_ADP"]
+radikal.ru##div[id^="advertur_"]
+radikal.ru##iframe[id^="advertur_"]
+##iframe[src^="//octoclick.net"]
+##img[src*="delivery.clickganic.com"]
+optoclick.net##.vjs-poster
+
+# convert2mp3
+##iframe[src*="ads/ad"]
+##iframe[src*="liveadexchanger"]
+##a[href*="liveadexchanger"]
+
+# dailymotion.com
+||dmxleo.dailymotion.com/cdn/manifest/video/x*$domain=www.dailymotion.com
+dailymotion.com##.gwd-page-content
+dailymotion.com##.gwd-page-container
+
+# dailymail.co.uk
+dailymail.co.uk###billBoard
+||www.dailymail.co.uk/static/mol-adverts/*$1p
+
+# mac-torrent-download.net
+@@||www.googletagmanager.com^$script,domain=mac-torrent-download.net
+mac-torrent-download.net##.ad-box > a > img
+mac-torrent-download.net##div > .textwidget
+mac-torrent-download.net##.ad-kijisita
+mac-torrent-download.net##iframe[class*="it-client"]
+mac-torrent-download.net##div > .ad-box.round-btn-parent
+mac-torrent-download.net###sidebar > .ad-box
+mac-torrent-download.net#@#.ad-box
+mac-torrent-download.net##.ad-box > .img-center > div:has(script)
+
+# last.fm
+last.fm##.related-ads
+last.fm##.video-ad
+last.fm##.lastfm-ad
+
+# common ad in cz
+##div[id^="bmone"]
+
+www.28hse.com###universal_banner_sq_ads
+
+coinmarketcap.com###enjoin-header
+
+# markdown2pdf.com
+##.imgBannerLink
+markdown2pdf.com##.it-client
+
+#neoseeker.com
+||as.casalemedia.com^$script,domain=www.neoseeker.com
+neoseeker.com##.wrapper > .creative
+neoseeker.com###stitialv2
+neoseeker.com###leaderboardTop.section-ad
+
+theguardian.com##.adverts--within-unbranded .badge
+theguardian.com##.paidfor-container .badge
+theguardian.com##.paid-content .badge
+
+techradar.com##div[class^="slot-"]
+
+hk.yahoo.com###adive_vm
+
+weather.com##.wx-adWrapper
+
+# adbtc.top
+##iframe[src*="-ads.com"]
+##iframe[src*="neon.today"]
+
+bitcohitz.com###wcfloatDiv
+bitcohitz.com##*[id^="sticky-banner"]
+bitcohitz.com##.foot_banners
+
+dailyfreebits.com##*[id^="sticky-banner"]
+
+bitcoin.treasurebits.net##[id^="data_"]
+bitcoin.treasurebits.net##iframe[src="about:blank"]
+
+9anime.to##*[src*="inc"]
+9anime.to##*[class*="crop"]
+9anime.to##*[src*="interbuzznews"]
+9anime.to##*[href*="revrtb"]
+
+# Free WordPress blogs
+##div[class*="rtb"][onclick*="window.open"]
+##.compound-ad-unit
+
+horriblesubs.info##img[src*="play-asia"]
+horriblesubs.info##img[src*="images/b/"]
+
+# Washington Post
+www.washingtonpost.com##div[data-qa="article-body-ad"]
+www.washingtonpost.com##div.dn-hp-xs:has(wp-ad)
+
+# blank header in gizmodo websites
+##.ad-top-banner
+##.ad-container
+##.collapsed-ad
+
+# doodle
+doodle.com##div[id*=bottomAd]
+doodle.com##.AdsSlot
+
+# cointelegraph.com
+cointelegraph.com##.NMM:has(iframe[src="about:blank"])
+
+# infoworld.com
+www.infoworld.com##.brVideoContainer:has(.ad-placement)
+
+
+##################### Blocking rules ########################
+# found on wpri.com
+gfp_video_ads/
+
+# 4archive.prg
+||rawybznxrp.bid/^
+||exosrv.com^
+|https://$script,domain=4archive.org|4chanarchives.cu.cc|randomarchive.com|thebarchive.com
+
+# 10tv.nana10.co.il
+||advsnx.net^$important,third-party
+
+#coinmarketcap.com
+||ctnet2.in^$third-party,important
+
+# crunchyroll.com
+||v.fwmrm.net^$important,third-party,domain=crunchyroll.com
+
+# functionalclam.com
+||functionalclam.com^$third-party
+
+# Blocking rules below here
+||images.sohu.com/bill/s2015/jscript/lib/sjs/matrix/ad/form/bigView.js^$important
+||teads.tv^$important,third-party,domain=mingpao.com
+
+||amazon-adsystem.com^$subdocument
+||www.youtube.com/sw.js$script
+#opensubtitles
+opensubtitles.org###fcninnerbox
+||dc5k8fg5ioc8s.cloudfront.net^
+
+# radikal.ru (video)
+||laim.tv^$important,third-party
+
+# abcnews.com
+||s.abcnews.com/assets/js/prebid.min.js^$important
+||googleadservices.com/pagead/conversion.js^$important
+
+# adage.com
+||gaia.adage.com/assets/js/min/adBlockDetector.js^$important,script,first-party
+
+# www.batmanstream.com
+||adbetnet.advertserve.com^$important,domain=batmanstream.com
+
+# bing.com
+||www.bing.com/rms/rms%20answers%20Identity%20SnrWindowsLiveConnectBootstrap/jc,nj/bf587ad6/f1d86b5a.js^$important
+
+#Washington Post
+||washingtonpost.com/wp-stat/advertising/pseudo-static/^$important
+
+#hdrezka.horse
+||braun634.com^$domain=hdrezka.horse
+
+#nbcnews
+||cdn.krxd.net$domain=www.nbcnews.com^$important
+
+#latimes
+||tribdss.com^$third-party^$important
+
+#kisscartoon
+||ad.kisscartoon.is^
+
+#Malware
+||rtax.criteo.com^$important
+||b3.mookie1.com^$important
+
+#securityaffairs.co
+||contextual.media.net^
+
+#SoundCloud
+||soundcloud.com/audio-ad?
+
+#Trackers[Verified]
+||scorecardresearch.com^$third-party
+||assets.adobedtm.com^third-party
+||postrelease.com^
+||grvcdn.com/moth-min.js
+||pointroll.com^
+||effectivemeasure.net^
+||advertising.com^
+||adnxs.com^
+||revsci.net^
+||pubmatic.com/
+||gravity.com^*/beacons/
+/mbox.orig.js^$important
+/tacoda.^$important
+/tacoda_^$important
+
+# Trackers added according to better.fyi/trackers^$important
+||tiqcdn.com^
+||ak.sail-horizon.com^$important
+||s.ntv.io^$important
+||plugin.mediavoice.com^$important
+||sync.go.sonobi.com/us.gif^$important
+
+# Tracking pixel
+||ad.turn.com/server/pixel.htm^$important
+||atpixel.alephd.com/post_adtech$image^$important
+||cache.btrll.com/default/Pix-1x1.gif^$important
+
+# Ad Tag
+||o.aolcdn.com/ads/adchoices.png^$important
+||tpc.googlesyndication.com/pagead/images/x_button^$important
+||googleads.g.doubleclick.net/pagead/images/abg/icon^$important
+
+# Rubicon tracking section
+||rubiconproject.com/beacon^$important
+||tap-secure.rubiconproject.com^$important
+||secure-assets.rubiconproject.com^$important
+||pixel.rubiconproject.com^$important
+
+# Wired
+||wired.com/cns/services.min.js
+
+# Twitch
+||innovid.com^$important
+||pubads.g.doubleclick.net/gampad/ads$important,xmlhttprequest,domain=imasdk.googleapis.com
+||gcdn.2mdn.net/videoplayback^$important
+
+# google
+||googleads.g.doubleclick.net/pagead/gen^$important
+||pagead2.googlesyndication.com/pagead/gen^$important
+||g.doubleclick.net/pcs/view?^$important
+||pagead2.googlesyndication.com/activeview?avi=^$important
+||google.com/ads/measurement/l?^$important
+
+||cdn.dynamicyield.com/api/*/api_static.js^$important
+||cdn.dynamicyield.com/api/*/api_dynamic.js^$important
+
+||cdn.krxd.net/userdata/get^$important
+||beacon.krxd.net/^$important
+||cdn.krxd.net/controltag^$important
+
+||facebook.com/ajax/bz^$important
+
+# panopticlick
+||eviltracker.net^$important
+||trackersimulator.org^$important
+
+# crunchyroll.com
+||v.fwmrm.net^$important,third-party,domain=crunchyroll.com
+
+||functionalclam.com^$third-party
+
+# observer.com
+||wibbitz.com$domain=observer.com
+
+# 9anime
+||24vunvrv.com
+||9anime.is/$script
+||9anime.to/$script
+||exdynsrv.com^$third-party
+||bebi.com^$third-party
+||bidgear.com^$third-party
+
+# rarbg
+||dyncdn.me/static/20/js/expla*.js$domain=rarbg.to|rarbg2019.org|rarbg2020.org|rarbg2021.org|rarbgaccess.org|rarbgmirror.com|rarbgmirror.org|rarbgmirrored.org|rarbgp2p.org|rarbgproxied.org|rarbgproxy.org|rarbgprx.org|rarbgto.org|rarbgway.org
+
+# nowbitco.in
+||czilladx.com/serve/*.js^
+
+# Ninja Kiwi
+||cdn.nkstatic.com/*$script,domain=ninjakiwi.com
+ninjakiwi.com##.m1sckto
+ninjakiwi.com##.f1scktn
+ninjakiwi.com##.a1scktq
+
+# dailyfreebits.com
+||serve.czilladx.com^$third-party
+||coinad.com^$third-party
+||bitraffic.com^$third-party
+||p3.adhitzads.com^
+||coinad.com/ads^
+
+# cnbc.com
+||ads-pd.nbcuni.com^
+
+# forum2go.nl
+forum2go.nl##.adsbygoogle
+
+# multiple ad elements from runative-syndicate
+##iframe[src*="runative-syndicate.com"]
+##iframe[src*="syndication.exdynsrv.com"]
+##*[id^="rn_ad_native"]
+##*:has(> a[href*="runative-syndicate.com"])
+##*:has(> a[href*="run-syndicate.com"])
+
+# streamtape.com
+||in-page-push.com/400/3395407$script,domain=streamtape.com,important
+
+# gmail fake ads
+||mail-ads.google.com/mail/u/0/ads/*$xhr,domain=mail.google.com,important
+||mail-ads.google.com^
+
+# from multiple stream websites such as mazystreams
+||d2kadvyeq051an.cloudfront.net^$important
+||d1esebcdm6wx7j.cloudfront.net^$important
+##[src^="http://cdnativ.com/"]
+
+! Fixing https://github.com/dhowe/AdNauseam/issues/1907
+||msgose.com^$script,important
+||ndroip.com^$script,important
+||syndication.realsrv.com^$important
+||a.realsrv.com^$important
+
+# notification ads https://github.com/dhowe/AdNauseam/issues/2108
+##a[href^="//ngp1.mybetterck.com/adServe"]
+##a[href^="//ousoasoper.xyz"]
+##a[href^="//eu.messenger-notify.xyz"]
+||d301cxwfymy227.cloudfront.net^$script,important
+||awigglespouter.cam^$important
+||trienestooth.com^$script,important
+##.image_block[href*="https://shapelcounset.xyz"]
+
+# myip.com #1906
+myip.com##.adsbygoogle:style(height: 0px !important)
+myip.com#@#.ads_1
+
+# video ads
+||aniview.com^$important
+||playstream.media^$important
+
+# forums.anandtech.com
+forums.anandtech.com###jwplayer-container-div:has(div.afs_ads)
+
+# machinelearningknowledge.ai
+machinelearningknowledge.ai##.td-visible-desktop > a[href^="https://click.linksynergy.com/"]
+
+##################### Exceptions below here ########################
+
+# Requests that influence visual ads
+
+# From DisabledBlockingRules[Blocking rules from EasyPrivacy]
+@@||googletagservices.com/tag/js/gpt.js
+@@||amazon-adsystem.com/aax2/amzn_ads.js
+@@||stats.g.doubleclick.net^
+@@||googleadservices.com^$third-party
+@@||pixanalytics.com^$third-party
+@@||widgets.outbrain.com/outbrain.js^
+@@||adsafeprotected.com
+@@||serving-sys.com^$third-party
+@@||googleads.g.doubleclick.net^$subdocument
+@@||c.statcounter.com^$ping
+@@||secure.statcounter.com^$script
+
+# Reference Only
+@@||pagead2.googlesyndication.com/pagead/osd.js
+@@||ads.pubmatic.com/AdServer/js/showad.js
+@@||geo-um.btrll.com/v1/map_pixel
+
+# google icon images
+@@||ssl.gstatic.com/gb/images/
+@@||ssl.gstatic.com/images/
+
+# google fonts https://github.com/dhowe/AdNauseam/issues/2072
+@@||gstaticadssl.l.google.com^$~font,third-party,~xmlhttprequest
+
+# pikabu.ru
+@@||an.yandex.ru^$third-party,domain=pikabu.ru
+
+# pandora
+@@||www.pandora.com^
+
+# cisco
+@@||tiqcdn.com$third-party,domain=cisco.com
+
+# tmp solution for issue #1348
+#@#[href*="base64"]
+#@#[href*="data:"]
+#@#[src*="base64"]
+#@#[src*="blob:"]
+#@#[src*="data:"]
+#@#[style*="base64"]
+#@#[style*="blob:"]
+
+# rockpapershotgun
+||cdn.gamer-network.net/plugins/dfp$domain=rockpapershotgun.com
+
+# 2021-08-04 flylordsmag.com
+flylordsmag.com##.td-ss-main-sidebar
+flylordsmag.com##.td-header-header.td-header-row.td-container-header
+
+# trying to better collect google ads #1906
+#@#.adsbygoogle
+#@#.ads_1
+*###ads_1:style(height: 1px !important)
+*##.adsbygoogle:style(height: 1px !important)
+
+# Collecting Youtube Banner Ads #1353
+youtube.com#@#.sparkles-light-cta
+youtube.com#@#ytd-promoted-sparkles-web-renderer
+youtube.com##ytd-promoted-sparkles-web-renderer #sparkles-container:style(height: 0px !important; opacity: 0 !important;) 
+
+www.hktvmall.com##.topBannerGa
+
+# Block ad blocker detector
+||cdn.jsdelivr.net/gh/vli-platform/adb-analytics@77bebb/v1.0.min.js$script,important
+||fundingchoicesmessages.google.com^$script,important
+
+# 2022-08-16 https://ww1.onepunch.online #2154
+ww1.onepunch.online###psdn-slot
+###psadbox
+
+# newyorker.com
+newyorker.com##.teads-inread
+newyorker.com##[class^=".AdWrapper"]
+
+! 2022-10-17 https://www.aftonbladet.se
+www.aftonbladet.se##div:has( > [id^="adPlacement"])
+
+# 2022-11-02 https://5movies.cloud
+5movies.cloud##div[id*="FloatingBanner"]:has-text(Show Ad)
+
+# Fixing https://fmovies.to
+||cdn.sb4you1.com^$important
+
+# Fixing bitsearch.to along with other cases using bharalhallahs ad provider #2265
+##div:not([class]):has(iframe):has(script[src^="//bharalhallahs"])
+
+# metro.co.uk show "disable your adblocker"
+metro.co.uk##div:has(.container-2vnqP)
+metro.co.uk##body.mol-fe-ab-dialog:style(overflow-y: auto !important;)
+
+# unbreak factorioprints.com #2303
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=factorioprints.com,important
+
+# 1337x.to - fixing popups that can't be collected
+||youradexchange.com^$important
+
+# time-time.net https://github.com/dhowe/AdNauseam/issues/2432
+time-time.net##.info-ad-link
+
+# https://www.ekapija.com https://github.com/dhowe/AdNauseam/issues/2447
+www.ekapija.com##div:has(> div[id^="adocean"])
+
+# unbreak milanuncios.com page https://github.com/dhowe/AdNauseam/issues/2452
+milanuncios.com#@#*[class*="Advert"]
+
+# fix detection on bluemedia download
+bluemedialink.online#@##ads-left
+bluemedialink.online#@##ads-right
+bluemedialink.online#@##ads-center
+bluemedialink.online###ads-left iframe
+bluemedialink.online###ads-right iframe
+
+# anime2you.de https://github.com/dhowe/AdNauseam/issues/2487
+||ads.viralize.tv/$domain=www.anime2you.de,important
+
+# fix adn detection in dailymotion
+dailymotion.com#@#.ad_box
+
+# fix ads on vietnamese news websites https://github.com/dhowe/AdNauseam/issues/2512
+
+# https://kienthuc.net.vn
+kienthuc.net.vn##.aanetwork-pto-box-bg
+kienthuc.net.vn##.aanetwork-type-pto.aanetwork-ads-box
+kienthuc.net.vn###bannerRightTop300x250
+kienthuc.net.vn##.aanetwork-ads-box
+# https://tuoitre.vn
+tuoitre.vn###LeaderBoardTop
+tuoitre.vn##[src*="/cmsads/"]
+
+# websites from https://github.com/dhowe/AdNauseam/issues/2508 
+
+# https://ls1tech.com
+ls1tech.com###IL_SR_AD_AREA
+ls1tech.com###primis_container_div
+ls1tech.com##.insearch1.IL_BASE
+ls1tech.com##.insearch2.IL_BASE
+# https://www.thirdgen.org
+www.thirdgen.org###IL_SR_AD_AREA
+www.thirdgen.org###d_IL_INSEARCH > div.IL_BASE
+www.thirdgen.org###primis_container_div
+www.thirdgen.org##.kskddisable.insearch1.IL_BASE
+www.thirdgen.org##.kskddisable.insearch2.IL_BASE
+# https://www.camaroz28.com
+www.camaroz28.com###d_IL_INSEARCH > div.kskddisable.IL_BASE
+www.camaroz28.com##.kskddisable.insearch1.IL_BASE
+www.camaroz28.com##.kskddisable.insearch2.IL_BASE
+www.camaroz28.com###primis_container_div
+
+# reinteractive.com https://github.com/dhowe/AdNauseam/issues/2511
+reinteractive.com##.container-navigation > div.row > .top-menu-banner.container-m
+
+# https://ww8.gogoanimes.org/ #2541
+||d11hjbdxxtogg5.cloudfront.net^$script,important
+||getrunkhomuto.info^$subdocument,important
+||roastoup.com^$xhr,important
+
+# bunkr https://github.com/dhowe/AdNauseam/issues/2547
+bunkr-albums.io##center:has(script[src^="//bullionglidingscuttle.com"])
+bunkr-albums.io##center:has(script[src^="//endowmentoverhangutmost"])
+bunkr.site##center:has(script[src^="//endowmentoverhangutmost"])
+bunkr.site##center:has(script[src^="//bullionglidingscuttle"])
+
+||bullionglidingscuttle.com^$script,important
+||blurbreimbursetrombone.com^$script,important
+
+# snooker.org
+www.snooker.org###stickyAdContainer
+
+# fix ad detection on drakecomic.org
+||drakecomic.org/wp-content/themes/mangareader/script.js$script,important
+
+# fix sainsburys checkout https://github.com/dhowe/AdNauseam/issues/2661
+@@||tags.tiqcdn.com/utag/sainsburys/groceries/prod/utag.sync.js
+
+# temporary fix for #2692
+www.youtube.com#@#+js(trusted-replace-node-text, script, (function serverContract(), '(()=>{if("YOUTUBE_PREMIUM_LOGO"===ytInitialData?.topbar?.desktopTopbarRenderer?.logo?.topbarLogoRenderer?.iconImage?.iconType||location.href.startsWith("https://www.youtube.com/tv#/")||location.href.startsWith("https://www.youtube.com/embed/"))return;document.addEventListener("DOMContentLoaded",(function(){const t=()=>{const t=document.getElementById("movie_player");if(!t)return;if(!t.getStatsForNerds?.()?.debug_info?.startsWith?.("SSAP, AD"))return;const e=t.getProgressState?.();e&&e.duration>0&&(e.loaded<e.duration||e.duration-e.current>1)&&t.seekTo?.(e.duration)};t(),new MutationObserver((()=>{t()})).observe(document,{childList:!0,subtree:!0})}));const t={apply:(t,e,o)=>{const n=o[0];return"function"==typeof n&&n.toString().includes("onAbnormalityDetected")&&(o[0]=function(){}),Reflect.apply(t,e,o)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,t)})();(function serverContract()', sedCount, 1)
+www.youtube.com#@#+js(trusted-edit-inbound-object, JSON.stringify, 0, ..client[?.clientName=="WEB"]+={"clientScreen":"CHANNEL"})
+www.youtube.com#@#+js(trusted-json-edit-fetch-request, ..client[?.clientName=="WEB"]+={"clientScreen":"CHANNEL"}, propsToMatch, /\/(player|get_watch)/)
+
+# fix old.reddit false positive ad collection
+old.reddit.com#@#a.outbound[data-outbound-url]:remove-attr(data-outbound-url)
+old.reddit.com#@#a.outbound[data-outbound-url] 

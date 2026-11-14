@@ -1,0 +1,127 @@
+{
+  "Aachener Zeitung (removed)": {
+    "domain": "aachener-zeitung.de",
+    "allow_cookies": 1,
+    "cs_block": 1,
+    "nofix": 1,
+    "upd_version": "4.4.3.4"
+  },
+  "Anandabazar Patrika (not epaper)": {
+    "domain": "anandabazar.com",
+    "allow_cookies": 1,
+    "block_js_inline": "\\.anandabazar\\.com\\/.+\\/cid\\/",
+    "block_regex": "\\.anandabazar.com\\/subscription-assets\\/js\\/paywall.*\\.js",
+    "cs_code": "[{\"hide_elem\":\"div.paywallouterbox, div.readarticlebox, div.showmorebox, div.adbox\"}, {\"cond\":\"div.readmoreouterbox\", \"rm_attrib\":\"class\", \"elems\":[{\"cond\":\"article#outerboxarticlebox\", \"rm_attrib\":\"id\"}]}, {\"cond\":\"div.expcontainer\", \"rm_attrib\":\"class\"}]",
+    "upd_version": "4.4.3.7"
+  },
+  "Augsburger-allgemeine.de (removed)": {
+    "domain": "augsburger-allgemeine.de",
+    "allow_cookies": 1,
+    "cs_block": 1,
+    "nofix": 1,
+    "upd_version": "4.4.4.1",
+    "upd_version_min": "4.4.3.5"
+  },
+  "Barron's (removed)": {
+    "domain": "barrons.com",
+    "allow_cookies": 1,
+    "cs_block": 1,
+    "nofix": 1,
+    "upd_version": "4.4.3.4"
+  },
+  "Groupe ESH Médias (disabled)": {
+    "domain": "###_ch_esh_medias",
+    "group": [
+      "arcinfo.ch",
+      "lacote.ch",
+      "lenouvelliste.ch"
+    ],
+    "allow_cookies": 1,
+    "cs_block": 1,
+    "upd_version": "4.4.4.3"
+  },
+  "Investor's Business Daily": {
+    "domain": "investors.com",
+    "block_regex": "\\.tinypass\\.com",
+    "cs_block": 1,
+    "upd_version": "4.4.3.5"
+  },
+  "Kleine Zeitung.at (removed)": {
+    "domain": "kleinezeitung.at",
+    "allow_cookies": 1,
+    "cs_block": 1,
+    "nofix": 1,
+    "upd_version": "4.4.3.8"
+  },
+  "Libération.fr": {
+    "domain": "liberation.fr",
+    "allow_cookies": 1,
+    "cs_dompurify": 1,
+    "cs_param": {"paywall_sel": "div#article-body-paywall"},
+    "cs_code": "[{\"add_style\":\"article ~ div[class]:empty {display: none !important}\"}]",
+    "upd_version": "4.4.3.7"
+  },
+  "Nation Media Group": {
+    "domain": "###_ke_nation_media",
+    "group": [
+      "businessdailyafrica.com",
+      "nation.africa"
+    ],
+    "allow_cookies": 1,
+    "cs_block": 1,
+    "cs_code": "[{\"cond\":\"div.modal,[id*='wall'],section.wall-guard\", \"rm_elem\":1, \"elems\":[{\"cond\":\"div.article-page .nmgp\", \"rm_class\":\"nmgp\"}]}, {\"cond\":\"div.article-page aside[hidden]\", \"rm_attrib\":\"hidden\"}]",
+    "upd_version": "4.4.4.3"
+  },
+  "Nederlands Dagblad": {
+    "domain": "nd.nl",
+    "allow_cookies": 1,
+    "block_js_inline": "\\.nd\\.nl\\/.+\\/\\d{7,}\\/",
+    "useragent": "googlebot",
+    "cs_code": "[{\"hide_elem\": \"div.page-header__slideover,div.page-header__submenu,div[class^='banner-']\"}]",
+    "upd_version": "4.4.3.8"
+  },
+  "New Zealand Geographic": {
+    "domain": "nzgeo.com",
+    "remove_cookies_select_drop": ["visits"],
+    "cs_code": "[{\"hide_elem\":\"div#paywall-bottom\"}]",
+    "upd_version": "4.4.3.6"
+  },
+  "Newsweek": {
+    "domain": "newsweek.com",
+    "allow_cookies": 1,
+    "block_regex": "\\.newsweek\\.com\\/api\\/tinypass\\.min\\.js",
+    "upd_version": "4.4.4.0"
+  },
+  "Spacenews": {
+    "domain": "spacenews.com",
+    "allow_cookies": 1,
+    "ld_json_url": "div.newspack-content-gate__gate|div.entry-content",
+    "upd_version": "4.4.4.2"
+  },
+  "Tribune Publishing Company": {
+    "domain": "###_usa_tribune",
+    "group": [
+      "baltimoresun.com",
+      "capitalgazette.com",
+      "chicagotribune.com",
+      "courant.com",
+      "dailypress.com",
+      "mcall.com",
+      "nydailynews.com",
+      "orlandosentinel.com",
+      "pilotonline.com",
+      "sun-sentinel.com"
+    ],
+    "allow_cookies": 1,
+    "block_regex": "(\\.{domain}\\/(script|.+\\/loader-wp\\/static\\/loader\\.min)\\.js|\\.sophi\\.io\\/)",
+    "cs_dompurify": 1,
+    "exception": [{
+        "domain": "chicagotribune.com",
+        "allow_cookies": 1,
+        "block_regex": "(\\.chicagotribune\\.com\\/(script|.+\\/loader-wp\\/static\\/loader\\.min)\\.js|\\.sophi\\.io\\/)",
+        "ld_json_url": "div.sspw-wrapper|div.body-copy|1"
+      }
+    ],
+    "upd_version": "4.4.4.2"
+  }
+}

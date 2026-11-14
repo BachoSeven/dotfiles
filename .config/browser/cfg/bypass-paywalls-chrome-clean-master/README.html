@@ -1,0 +1,1171 @@
+<!DOCTYPE html []>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="MarkdownViewer++" />
+    <title>README.md</title>
+    <style type="text/css">
+            
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+
+        </style>
+  </head>
+  <body>
+    <h1 id="bypass-paywalls-clean-for-chrome">Bypass Paywalls Clean for Chrome</h1>
+    <p>
+      <a href="https://gitflic.ru/project/magnolia1234/bypass-paywalls-chrome-clean">online</a>
+    </p>
+    <p>Extension allows you to read articles from (supported) sites that implement a paywall.<br />
+You can also add a domain as custom site and try to bypass the paywall.<br />
+Weekly updates are released for fixes and new sites.</p>
+    <ul>
+      <li>
+        <a href="#installation">Installation</a>
+      </li>
+      <li>
+        <a href="#update">Update</a>
+      </li>
+      <li>
+        <a href="#android">Android</a>
+      </li>
+      <li>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </li>
+      <li>
+        <a href="#list-of-supported-websites">List of supported websites</a>
+      </li>
+      <li>
+        <a href="#sites-with-limited-number-of-free-articles">Sites with limited number of free articles</a>
+      </li>
+      <li>
+        <a href="#new-site-requests">New site requests</a>
+      </li>
+      <li>
+        <a href="#add-custom-site">Add custom site</a>
+      </li>
+      <li>
+        <a href="#add-excluded-site">Add excluded site</a>
+      </li>
+      <li>
+        <a href="#changelog-releases">Changelog-releases</a>
+      </li>
+      <li>
+        <a href="#license">License</a>
+      </li>
+      <li>
+        <a href="#disclaimer">Disclaimer</a>
+      </li>
+    </ul>
+    <h3 id="installation">Installation</h3>
+    <p>This extension is not available on the Google Chrome Web Store.<br />
+The following instructions are needed to install third-party extensions in <a href="https://en.wikipedia.org/wiki/Chromium_(web_browser)">Chromium</a>-based desktop browsers.<br />
+In extension developer mode you can always install BPC by <em>Load unpacked</em> (latest master, but no automatic updates) or by crx-file (latest release &amp; automatic updates, but possibly you have to add the extension to the allowlist).<br />
+You can add/pin the extension icon to the toolbar with the toolbar extensions menu (jigsaw puzzle shaped icon).</p>
+    <h4 id="load-unpacked-chrome-ms-edge-or-brave-all-desktop">Load unpacked: Chrome, MS Edge or Brave (all desktop)</h4>
+    <p>* or add extension to allowlist and install automatically updating crx-file (see next section)</p>
+    <ol>
+      <li>Download this repository as a zip-file from <a href="https://gitflic.ru/project/magnolia1234/bpc_uploads/blob/raw?file=bypass-paywalls-chrome-clean-master.zip">GitFlic</a></li>
+      <li>Unzip the file and you should have a folder named <em>bypass-paywalls-chrome-clean-master</em></li>
+      <li>Move the folder to a permanent location on your computer (do not delete the folder after installation).</li>
+      <li>Go to the extensions page: <em>chrome://extensions</em></li>
+      <li>Enable Developer Mode.</li>
+      <li>Click <em>Load unpacked</em> and select/open the extension folder (contains file manifest.json).</li>
+    </ol>
+    <p>*  By default BPC has limited host permissions, but you can opt-in to enable custom sites (and also clear cookies/block general paywall-scripts for unlisted sites). You can also just request host permissions for the custom sites you added yourself (or <em>clear cookies</em> (BPC-icon) to ask for host permission for current site).</p>
+    <h4 id="crx-file-other-chromium-browsers-operavivaldiyandex">CRX-file: other Chromium browsers (Opera/Vivaldi/Yandex)</h4>
+    <p>* or add extension to allowlist for Chrome, MS Edge or Brave (see instructions <a href="allowlist/README.html">local</a> or <a href="https://gitflic.ru/project/magnolia1234/bypass-paywalls-chrome-clean/blob?file=allowlist%2FREADME.md">online</a>)</p>
+    <ol>
+      <li>Download the latest release as crx-file from <a href="https://gitflic.ru/project/magnolia1234/bpc_uploads">GitFlic</a></li>
+      <li>In your browser go to the extensions page: <em>chrome://extensions</em></li>
+      <li>Enable Developer Mode.</li>
+      <li>Drag your crx-file anywhere on the page to import it (when you have an active 'load unpacked' installation, first remove it (and backup your custom sites); for automatic updates).</li>
+    </ol>
+    <p>* By default BPC has limited permissions, but you can opt-in to enable custom sites (and also clear cookies/block general paywall-scripts for unlisted sites). You can also just request host permissions for the custom sites you added yourself (or <em>clear cookies</em> (BPC-icon) to ask for host permission for current site).</p>
+    <h3 id="update">Update</h3>
+    <p>For crx-installation: extension will update automatically or check for updates (in chrome://extensions).<br />
+Extension may be disabled (in Chrome/Edge) when extension needs new host permissions for added domains: opt-in/opt-out to custom sites once to disable this 'error' (browser will remember granted host permissions).</p>
+    <p>For zip-installation (load unpacked/developer mode): unzip files to installation folder (&amp; reload extension).</p>
+    <p>You can also check for (post-release) updates of site rules at startup (opt-in); only available until about 10 days after fix-release.<br />
+For new (updated) sites you also have to opt-in to custom sites/request host permissions for new domains (or wait for new release).</p>
+    <h4 id="android">Android</h4>
+    <p>Install <a href="https://play.google.com/store/apps/details?id=net.quetta.browser">Quetta Browser</a> from the Google PlayStore. You have two options:</p>
+    <ul>
+      <li>load the latest release as crx-file from <a href="https://gitflic.ru/project/magnolia1234/bpc_uploads/blob/raw?file=bypass-paywalls-chrome-clean-latest.crx">GitFlic</a> (auto-updating, no allowlist needed)</li>
+      <li>install latest master zip-file (no automatic updates, for custom sites use manifest.json from custom folder).</li>
+    </ul>
+    <p>* for custom sites use <a href="https://gitflic.ru/project/magnolia1234/bpc_uploads/blob/raw?file=bypass-paywalls-chrome-clean-android-custom.crx">android-custom crx-file</a> (no grant of host permissions on Android).<br />
+* Quetta Browser may disable the extension on update (of host permissions): re-enable it or install the android-custom crx-file.<br />
+* <a href="https://play.google.com/store/apps/details?id=com.kiwibrowser.browser">Kiwi Browser</a> is officially abandoned, but this extension will still be updated.<br />
+* Lemur Browser and Edge Canary for Android are still quite buggy (extension not (fully) supported).</p>
+    <h4 id="firefox">Firefox</h4>
+    <p>Visit the <a href="https://gitflic.ru/project/magnolia1234/bypass-paywalls-firefox-clean">Firefox repository on GitFlic</a> of Bypass Paywalls Clean.<br />
+Or install latest release as xpi-file from <a href="https://gitflic.ru/project/magnolia1234/bpc_uploads">GitFlic</a></p>
+    <h4 id="iosipados">iOS/iPadOS</h4>
+    <p>Use adblocker with custom (content)filter &amp; userscript (manager): <a href="https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters">Bypass Paywalls Clean filters</a> (read instructions).</p>
+    <p>Although <a href="https://apps.apple.com/us/app/orion-browser-by-kagi/id1484498200">Orion Browser</a> supports installing this extension, it won't work for a lot of sites (no full support of WebExtensions API on iOS/iPadOS).</p>
+    <h3 id="troubleshooting">Troubleshooting</h3>
+    <ul>
+      <li>If a site doesn't work, first try to turn off your adblocker (or other extension) and refresh page.</li>
+      <li>Make sure the (new) site is checked under Options (or not in no-fix list when you search the domain).</li>
+      <li>Clear cookies by extension's icon (popup) and grant host permission for site (or opt-in to custom sites)</li>
+      <li>You will be logged out for some of the sites you have enabled.</li>
+      <li>Make sure you're running the latest version of Bypass Paywalls Clean.</li>
+      <li>For some sites a change of referer/user-agent is needed (do not block/hide by for example AdGuard's Tracking Protection extreme setting).</li>
+      <li>archive.is/today will not work with Secured DNS by Cloudflare (or when you change referer/user-agent for the archive site)</li>
+      <li>For Google Search/Inspection Tool test url, view tested page, copy html (tab) code to <a href="https://codebeautify.org/htmlviewer">https://codebeautify.org/htmlviewer</a> &amp; <em>Open in New Window</em>: click BPC icon once to clean layout of page (or use tool for desktop &amp; open screenshot in new tab)</li>
+      <li>For some sites a redirect to an amp-page is needed (this may cause a redirect-loop by an amp-to-html extension or browser setting like in Brave &gt; Settings &gt; Privacy and security &gt; Auto-redirect AMP pages, Kiwi Browser (Android) &gt; Settings &gt; Privacy and security &gt; Remove AMP or in Quetta Browser (Android) &gt; Settings &gt; Privacy Guard &gt; Advanced &gt; Auto De-AMP).</li>
+      <li>If none of these work, you can submit an issue on <a href="https://github.com/bpc-clone/bpc_chrome_support/issues">GitHub</a>.</li>
+      <li>Always provide used extension version, paywalled article (url) and describe issue in detail.</li>
+      <li>This extension works best alongside the adblocker <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm">uBlock Origin (mv2)</a> or <a href="https://chromewebstore.google.com/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg">AdGuard AdBlocker</a>.</li>
+      <li>If you live in the EU, also consider adding these filters to your adblocker (in order to remove cookie warnings): <a href="https://secure.fanboy.co.nz/fanboy-cookiemonster.txt">Easylist Cookies</a> | <a href="https://www.i-dont-care-about-cookies.eu/abp">I don't care about cookies custom filter</a>. Some sites need to set a consent-cookie for (social) media.</li>
+    </ul>
+    <p>
+      <a href="#bypass-paywalls-clean-for-chrome">Go to top</a>
+    </p>
+    <h3 id="list-of-supported-websites">List of supported websites</h3>
+    <p>
+      <em>* free articles only.</em>
+    </p>
+    <h5 id="national-usa-news">National USA news</h5>
+    <p>
+      <a href="https://www.bbc.com">BBC USA</a> -
+<a href="https://www.nbcnews.com">NBC News</a> -
+<a href="https://www.reuters.com">Reuters</a> -
+<a href="https://www.nytimes.com">The New York Times</a> -
+<a href="https://www.washingtonpost.com">The Washington Post</a></p>
+    <h5 id="business">Business</h5>
+    <p>
+      <a href="https://www.adweek.com">Adweek</a> -
+<a href="https://americanaffairsjournal.org">American Affairs</a> -
+<a href="https://www.benzinga.com">Benzinga</a> -
+<a href="https://www.bloomberg.com">Bloomberg</a> -
+<a href="https://www.businessinsider.com">Business Insider</a> -
+<a href="https://www.citywire.com">Citywire</a> -
+<a href="https://www.cnbc.com">CNBC</a> -
+<a href="https://www.entrepreneur.com">Entrepreneur</a> -
+<a href="https://www.fastcompany.com">Fast Company</a> -
+<a href="https://www.forbes.com">Forbes</a> -
+<a href="https://fortune.com">Fortune</a> -
+<a href="https://www.hbr.org">Harvard Business Review</a> -
+<a href="https://www.inc.com">Inc.com</a> -
+<a href="https://www.investors.com">Investor's Business Daily</a> -
+<a href="https://www.law.com">Law.com</a> -
+<a href="https://www.marketwatch.com">MarketWatch</a> -
+<a href="https://sloanreview.mit.edu">MIT Sloan Management Review</a> -
+<a href="https://www.ogj.com">Oil &amp; Gas Journal</a> -
+<a href="https://qz.com">Quartz</a> -
+<a href="https://www.spglobal.com">S&amp;P Global</a> -
+<a href="https://stocknews.com">Stock News</a> -
+<a href="https://www.bizjournals.com">The Business Journals</a>* -
+<a href="https://www.businessoffashion.com">The Business of Fashion</a> -
+<a href="https://www.wsj.com">The Wall Street Journal</a> -
+<a href="https://www.voguebusiness.com">Vogue Business</a></p>
+    <p>Grouped in options:<br /><em><a href="https://www.americanbanker.com">American Banker</a> (+ <a href="https://www.arizent.com/brands">Arizent</a></em>; opt-in to custom sites)<br /><em><a href="https://www.bnpmedia.com/our-audiences">BNP Media</a></em> sites (opt-in to custom sites)<br /><em><a href="https://bridgetowermedia.com/markets">Bridge Tower Media</a></em> sites (opt-in to custom sites)<br /><em>California Business Journals</em> sites like<br /><a href="https://labusinessjournal.com">Los Angeles Business Journal</a> -
+<a href="https://www.ocbj.com">Orange County Business Journal</a> -
+<a href="https://www.sdbj.com">San Diego Business Journal</a> -
+<a href="https://www.sfvbj.com">San Fernando Valley Business Journal</a><br /><em>Crain Communications</em> sites like<br /><a href="https://adage.com">Ad Age</a> -
+<a href="https://www.autonews.com">Automotive News</a> -
+<a href="https://www.chicagobusiness.com">Crain's Chicago Business</a> -
+<a href="https://www.crainscleveland.com">Crain's Cleveland Business</a> -
+<a href="https://www.crainsdetroit.com">Crain's Detroit Business</a> -
+<a href="https://www.crainsgrandrapids.com">Crain's Grand Rapids Business</a> -
+<a href="https://www.crainsnewyork.com">Crain's New York Business</a> -
+<a href="https://www.modernhealthcare.com">Modern Healthcare</a> -
+<a href="https://www.pionline.com">Pensions &amp; Investments</a><br />
+Global Polymer Group:
+<a href="https://www.european-rubber-journal.com">European Rubber Journal</a> -
+<a href="https://www.plasticsnews.com">Plastics News</a> -
+<a href="https://www.rubbernews.com">Rubber News</a> -
+<a href="https://www.tirebusiness.com">Tire Business</a> -
+<a href="https://www.utech-polyurethane.com">Urethanes Technology International</a><br /><em>Digiday Media</em> sites like<br /><a href="https://digiday.com">Digiday</a> -
+<a href="https://www.glossy.co">Glossy</a> -
+<a href="https://www.modernretail.co">ModernRetail</a><br /><em><a href="https://www.industrydive.com/publications">Industry Dive</a></em> sites (opt-in to custom sites)<br /><em><a href="https://octomedia.com.au/our-brands/inside-retail">Inside Retail</a></em> sites (opt-in to custom sites)</p>
+    <h5 id="techscience">Tech/Science</h5>
+    <p>
+      <a href="https://thebulletin.org">Bulletin of the Atomic Scientists</a> -
+<a href="https://cen.acs.org">Chemical &amp; Engineering News</a> -
+<a href="https://insights.citeline.com">Citeline Insights</a> -
+<a href="https://www.discovermagazine.com">Discover Magazine</a> -
+<a href="https://www.historytoday.com">History Today</a> -
+<a href="https://www.insidehighered.com">Inside Higher Ed</a> -
+<a href="https://interestingengineering.com">Interesting Engineering</a> -
+<a href="https://www.medscape.com">Medscape</a> -
+<a href="https://www.technologyreview.com">MIT Technology Review</a> -
+<a href="https://www.nationalgeographic.com">National Geographic USA</a> -
+<a href="https://www.nature.com">Nature</a> -
+<a href="https://nautil.us">Nautilus</a> -
+<a href="https://www.newscientist.com">New Scientist</a> -
+<a href="https://www.popsci.com">Popular Science</a> -
+<a href="https://www.science.org">Science</a>* -
+<a href="https://www.sciencenews.org">ScienceNews.org</a> -
+<a href="https://www.scientificamerican.com">Scientific American</a> -
+<a href="https://spacenews.com">Spacenews</a> -
+<a href="https://www.statnews.com">StatNews</a> -
+<a href="https://www.the-scientist.com">The Scientist</a> -
+<a href="https://www.timeshighereducation.com">Times Higher Education</a> -
+<a href="https://www.tomshardware.com">Tom's Hardware</a></p>
+    <p>Grouped in options:<br /><em>Crain Communications</em> sites like<br /><a href="https://www.360dx.com">360Dx</a> -
+<a href="https://www.genomeweb.com">GenomeWeb</a> -
+<a href="https://www.precisionmedicineonline.com">Precision Medicine Online</a><br /><em>TechTarget Group</em> sites like<br /><a href="https://www.computerweekly.com">Computer Weekly</a> -
+<a href="https://www.techtarget.com">TechTarget</a><br /><em>The Chronicle</em> sites like<br /><a href="https://www.chronicle.com">The Chronicle of Higher Education</a> -
+<a href="https://www.philanthropy.com">The Chronicle of Philanthropy</a></p>
+    <h5 id="encyclopediabook-libraryknowledge-base">Encyclopedia/Book library/Knowledge base</h5>
+    <p>
+      <a href="https://www.historyextra.com">BBC History Extra</a> -
+<a href="https://www.britannica.com">Encyclopedia Britannica</a> -
+<a href="https://www.enotes.com">eNotes</a> -
+<a href="https://www.glassdoor.com">Glassdoor</a> -
+<a href="https://www.loebclassics.com">Loeb Classical Library</a> -
+<a href="https://philosophynow.org">Philosophy Now</a> -
+<a href="https://www.quora.com">Quora</a> -
+<a href="https://www.scholastic.com">Scholastic</a> -
+<a href="https://www.slideshare.net">SlideShare</a> -
+<a href="https://study.com">Study.com (only lessons; no videos)</a></p>
+    <h5 id="sports">Sports</h5>
+    <p>
+      <a href="https://www.cyclingnews.com">CyclingNews</a> -
+<a href="https://www.espn.com">ESPN USA</a> -
+<a href="https://www.rotowire.com">Rotowire</a> -
+<a href="https://www.rugbypass.com">RugbyPass</a> -
+<a href="https://www.si.com">Sports Illustrated</a> -
+<a href="https://www.nytimes.com/athletic">The Athletic</a></p>
+    <h5 id="magazinesblogs">Magazines/Blogs</h5>
+    <p>Grouped in options:<br /><em>Medium (custom) domains</em> like (opt-in to custom sites for unlisted)<br /><a href="https://www.medium.com">Medium</a> -
+<a href="https://betterprogramming.pub">Better Programming</a> -
+<a href="https://towardsdatascience.com">Towards Data Science</a></p>
+    <p>
+      <a href="https://www.al-monitor.com">Al-Monitor</a> -
+<a href="https://www.americastestkitchen.com">America's Test Kitchen</a> -
+<a href="https://www.americanpurpose.com">American Purpose</a> -
+<a href="https://www.artforum.com">Artforum</a> -
+<a href="https://www.artnet.com">Artnet</a> -
+<a href="https://magazine.atavist.com">Atavist Magazine</a> -
+<a href="https://www.axios.com">Axios</a> -
+<a href="https://www.theblaze.com">Blaze Media</a> -
+<a href="https://www.commentary.org">Commentary Magazine</a> -
+<a href="https://defector.com">Defector</a> -
+<a href="https://www.dwell.com">Dwell</a> -
+<a href="https://www.fieldandstream.com">Field &amp; Stream</a> -
+<a href="https://www.firstthings.com">First Things</a> -
+<a href="https://www.fmrmagazine.com">FMR</a> -
+<a href="https://www.foreignaffairs.com">Foreign Affairs</a> -
+<a href="https://www.foreignpolicy.com">Foreign Policy</a> -
+<a href="https://harpers.org">Harper's Magazine</a>* -
+<a href="https://www.jazzwise.com">Jazzwise</a> -
+<a href="https://www.nationalreview.com">National Review</a> -
+<a href="https://www.newsweek.com">Newsweek</a> -
+<a href="https://www.outdoorlife.com">Outdoor Life</a> -
+<a href="https://www.pastemagazine.com">Paste Magazine</a> -
+<a href="https://www.politico.com">Politico</a> -
+<a href="https://www.project-syndicate.org">Project Syndicate</a> -
+<a href="https://puck.news">Puck.news</a> -
+<a href="https://worldview.ranenetwork.com">Rane Worldreview</a> -
+<a href="https://slate.com">Slate</a> -
+<a href="https://sofrep.com">SofRep</a> -
+<a href="https://www.stereogum.com">Stereogum</a> -
+<a href="https://www.texasmonthly.com">Texas Monthly</a> -
+<a href="https://www.theamericanconservative.com">The American Conservative</a> -
+<a href="https://www.the-american-interest.com">The American Interest</a> -
+<a href="https://theamericanscholar.org">The American Scholar</a> -
+<a href="https://www.theartnewspaper.com">The Art Newspaper</a> -
+<a href="https://www.theatlantic.com">The Atlantic</a> -
+<a href="https://thebaffler.com">The Baffler</a> -
+<a href="https://www.csmonitor.com">The Christian Science Monitor</a> -
+<a href="https://www.thedailybeast.com">The Daily Beast</a> -
+<a href="https://thediplomat.com">The Diplomat</a> -
+<a href="https://thedispatch.com">The Dispatch</a>* -
+<a href="https://theintercept.com">The Intercept</a> -
+<a href="https://www.thejuggernaut.com">The Juggernaut</a> -
+<a href="https://thelampmagazine.com">The Lamp Magazine</a> -
+<a href="https://www.thenation.com">The Nation</a> -
+<a href="https://www.thenewatlantis.com">The New Atlantis</a> -
+<a href="https://newcriterion.com">The New Criterion</a> -
+<a href="https://newrepublic.com">The New Republic</a> -
+<a href="https://www.nybooks.com">The New York Review of Books</a> -
+<a href="https://thepointmag.com">The Point Magazine</a> -
+<a href="https://theweek.com">The Week</a> -
+<a href="https://www.thewrap.com">The Wrap</a> -
+<a href="https://www.vice.com">Vice</a> -
+<a href="https://www.warontherocks.com">War on the Rocks</a> -
+<a href="https://www.washingtonexaminer.com">Washington Examiner</a></p>
+    <p>Grouped in options:<br /><em>Condé Nast magazines</em> sites like<br /><a href="https://www.architecturaldigest.com">Architectural Digest</a> -
+<a href="https://www.bonappetit.com">Bon Appétit</a> -
+<a href="https://www.vogue.co.uk">British Vogue</a> -
+<a href="https://www.cntraveler.com">Condé Nast Traveler</a> -
+<a href="https://www.epicurious.com">Epicurious</a> -
+<a href="https://www.gq.com">GC</a> -
+<a href="https://www.pitchfork.com">Pitchfork</a> -
+<a href="https://www.newyorker.com">The New Yorker</a> -
+<a href="https://www.vanityfair.com">Vanity Fair</a> -
+<a href="https://www.vogue.com">Vogue USA</a> -
+<a href="https://www.wired.com">Wired</a><br /><em>Hearst Communications magazines</em> sites like<br /><a href="https://www.bicycling.com">Bicycling</a> -
+<a href="https://www.cosmopolitan.com">Cosmopolitan</a> -
+<a href="https://www.countryliving.com">Country Living</a> -
+<a href="https://www.delish.com">Delish</a> -
+<a href="https://www.elledecor.com">Elle Decor</a> -
+<a href="https://www.elle.com">Elle USA</a> -
+<a href="https://www.esquire.com">Esquire</a> -
+<a href="https://www.goodhousekeeping.com">Good Housekeeping</a> -
+<a href="https://www.harpersbazaar.com">Harper's Bazaar</a> -
+<a href="https://www.housebeautiful.com">House Beautiful</a> -
+<a href="https://www.menshealth.com">Men's Health</a> -
+<a href="https://www.oprahdaily.com">Oprah Daily</a> -
+<a href="https://www.popularmechanics.com">Popular Mechanics</a> -
+<a href="https://www.prevention.com">Prevention</a> -
+<a href="https://www.roadandtrack.com">Road &amp; Track</a> -
+<a href="https://www.runnersworld.com">Runner's World</a> -
+<a href="https://www.townandcountrymag.com">Town &amp; Country</a> -
+<a href="https://www.womenshealthmag.com">Women's Health</a><br /><em>Outside magazines</em> sites like<br /><a href="https://www.backpacker.com">Backpacker</a> -
+<a href="https://www.betamtb.com">Beta</a> -
+<a href="https://www.betternutrition.com">Better Nutrition</a> -
+<a href="https://www.cleaneatingmag.com">Clean Eating</a> -
+<a href="https://www.climbing.com">Climbing</a> -
+<a href="https://www.outsideonline.com">Outside</a> -
+<a href="https://www.oxygenmag.com">Oxygen</a> -
+<a href="https://www.skimag.com">SKI</a> -
+<a href="https://www.trailrunnermag.com">Trail Runner</a> -
+<a href="https://www.triathlete.com">Triathlete</a> -
+<a href="https://www.vegetariantimes.com">Vegetarian Times</a> -
+<a href="https://www.womensrunning.com">Women's Running</a> -
+<a href="https://www.yogajournal.com">Yoga Journal</a><br /><em>Penske Media Corporation</em> sites like<br /><a href="https://www.billboard.com">Billboard</a> -
+<a href="https://www.rollingstone.com">Rolling Stone</a> -
+<a href="https://sourcingjournal.com">Sourcing Journal</a> -
+<a href="https://www.sportico.com">Sportico</a> -
+<a href="https://variety.com">Variety</a> -
+<a href="https://wwd.com">WWD</a><br /><em>The Epoch Times</em> sites like (opt-in to custom sites for cz|de|fr|jp sites)<br /><a href="https://epoch.org.il">Epoch.org.il</a> -
+<a href="https://www.theepochtimes.com">The Epoch Times</a><br /><em>Vox Media Group</em> sites like<br /><a href="https://www.curbed.com">Curbed</a> -
+<a href="https://www.grubstreet.com">Grub Street</a> -
+<a href="https://www.nymag.com">New York Magazine</a> -
+<a href="https://www.thecut.com">The Cut</a> -
+<a href="https://www.theverge.com">The Verge</a> -
+<a href="https://www.vox.com">Vox</a> -
+<a href="https://www.vulture.com">Vulture</a></p>
+    <h5 id="local-usa-news">Local USA news</h5>
+    <p>
+      <a href="https://www.abqjournal.com">Albuquerque Journal</a> -
+<a href="https://www.adn.com">Anchorage Daily News</a> -
+<a href="https://chicago.suntimes.com">Chicago Sun-Times</a> -
+<a href="https://www.cnn.com">CNN</a> -
+<a href="https://www.dailyherald.com">Daily Herald</a> -
+<a href="https://www.foxnews.com">Fox News</a> -
+<a href="https://www.staradvertiser.com">Honolulu Star-Advertiser</a> -
+<a href="https://www.reviewjournal.com">Las Vegas Review-Journal</a> -
+<a href="https://www.lasvegassun.com">Las Vegas Sun</a> -
+<a href="https://www.latimes.com">Los Angeles Times</a> -
+<a href="https://www.mv-voice.com">Mountain View Voice</a> -
+<a href="https://nypost.com">New York Post</a> -
+<a href="https://www.newsday.com">Newsday</a> -
+<a href="https://www.paloaltoonline.com">Palo Alto Online</a> -
+<a href="https://www.post-gazette.com">Pittsburgh Post Gazette</a> -
+<a href="https://www.startribune.com">Star Tribune</a> -
+<a href="https://www.tampabay.com">Tampa Bay Times</a> -
+<a href="https://www.ajc.com">The Atlanta Journal-Constitution</a><br /><a href="https://www.thebanner.com">The Baltimore Banner</a> -
+<a href="https://www.bostonglobe.com">The Boston Globe</a> -
+<a href="https://www.columbian.com">The Columbian</a> -
+<a href="https://www.dallasnews.com">The Dallas Morning News</a> -
+<a href="https://thehill.com">The Hill</a> -
+<a href="https://www.nysun.com">The New York Sun</a> -
+<a href="https://www.sfstandard.com">The San Francisco Standard</a> -
+<a href="https://www.seattletimes.com">The Seattle Times</a> -
+<a href="https://www.spokesman.com">The Spokesman-Review</a> -
+<a href="https://www.inquirer.com">The Philadelphia Inquirer</a></p>
+    <p>
+      <a href="https://www.usatoday.com">USA Today</a>
+      <br />
+Grouped in options:<br /><em>Advance Local</em> sites like<br /><a href="https://www.al.com">AL/Alabama</a> -
+<a href="https://www.mlive.com">MLive/Michigan</a> -
+<a href="https://www.nj.com">NJ/New Jersey</a> -
+<a href="https://www.silive.com">Staten Island Advance</a> -
+<a href="https://www.lehighvalleylive.com">The Express-Times</a> -
+<a href="https://www.oregonlive.com">The Oregonian</a> -
+<a href="https://www.pennlive.com">The Patriot-News</a> -
+<a href="https://www.cleveland.com">The Plain Dealer</a> -
+<a href="https://www.syracuse.com">The Post-Standard</a> -
+<a href="https://www.masslive.com">The Republican</a><br /><em><a href="https://www.cnhi.com/newspapers">CNHI Group</a></em> sites (opt-in to custom sites)<br /><em>Cox First Media</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.daytondailynews.com">Dayton Daily News</a><br /><em><a href="https://www.forumcomm.com/brands">Forum Communications</a></em> sites (opt-in to custom sites)<br /><em>Gannett Group (local USA Today)</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.democratandchronicle.com">Democrat and Chronicle</a> -
+<a href="https://www.freep.com">Detroit Free Press</a> -
+<a href="https://www.knoxnews.com">Knoxville News Sentinel</a> -
+<a href="https://www.commercialappeal.com">Memphis Commercial Appeal</a> -
+<a href="https://www.jsonline.com">Milwaukee Journal Sentinel</a> -
+<a href="https://www.azcentral.com">The Arizona Republic</a> -
+<a href="https://www.cincinnati.com">The Cincinnati Enquirer</a> -
+<a href="https://www.dispatch.com">The Columbus Dispatch</a> -
+<a href="https://www.courier-journal.com">The Courier-Journal</a> -
+<a href="https://www.desmoinesregister.com">The Des Moines Register</a> -
+<a href="https://www.detroitnews.com">The Detroit News</a> -
+<a href="https://www.jacksonville.com">The Florida Times-Union</a> -
+<a href="https://www.indystar.com">The Indianapolis Star</a> -
+<a href="https://www.news-press.com">The News-Press</a> -
+<a href="https://www.oklahoman.com">The Oklahoman</a> -
+<a href="https://www.palmbeachpost.com">The Palm Beach Post</a> -
+<a href="https://www.northjersey.com">The Record (North Jersey)</a> -
+<a href="https://www.tennessean.com">The Tennessean</a><br /><em>Hearst Communications (newspapers)</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.timesunion.com">Albany Times Union</a> -
+<a href="https://www.statesman.com">Austin American-Statesman</a> -
+<a href="https://www.ctpost.com">Connecticut Post</a> -
+<a href="https://www.ctinsider.com">CT Insider</a> -
+<a href="https://www.houstonchronicle.com">Houston Chronicle</a> -
+<a href="https://www.nhregister.com">New Haven Register</a> -
+<a href="https://www.expressnews.com">San Antonio Express-News</a> -
+<a href="https://www.sfchronicle.com">San Francisco Chronicle</a><br /><em>Lee Enterprises Group</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://tucson.com">Arizona Daily Star</a> -
+<a href="https://journalstar.com">Lincoln Journal Star</a> -
+<a href="https://omaha.com">Omaha World-Herald</a> -
+<a href="https://richmond.com">Richmond Times-Dispatch</a> -
+<a href="https://www.stltoday.com">St. Louis Post-Dispatch</a> -
+<a href="https://buffalonews.com">The Buffalo News</a> -
+<a href="https://www.nwitimes.com">The Times of Northwest Indiana</a> -
+<a href="https://tulsaworld.com">Tulsa World</a> -
+<a href="https://madison.com">Wisconsin State Journal</a> -
+<a href="https://www.journalnow.com">Winston-Salem Journal</a><br /><em><a href="https://www.metln.org">Maine Trust</a></em> sites (opt-in to custom sites)<br /><em>McClatchy Group</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.bnd.com">Belleville News-Democrat</a> -
+<a href="https://www.elnuevoherald.com">El Nuevo Herald</a> -
+<a href="https://www.star-telegram.com">Fort Worth Star-Telegram</a> -
+<a href="https://www.kentucky.com">Lexington Herald-Leader</a> -
+<a href="https://www.mcclatchydc.com">McClatchy DC</a> -
+<a href="https://www.miamiherald.com">Miami Herald</a> -
+<a href="https://www.charlotteobserver.com">The Charlotte Observer</a> -
+<a href="https://www.fresnobee.com">The Fresno Bee</a> -
+<a href="https://www.kansascity.com">The Kansas City Star</a> -
+<a href="https://www.newsobserver.com">The News &amp; Observer</a> -
+<a href="https://www.sacbee.com">The Sacramento Bee</a> -
+<a href="https://www.thestate.com">The State</a> -
+<a href="https://www.kansas.com">The Wichita Eagle</a> -
+<a href="https://www.tri-cityherald.com">Tri-City Herald</a><br /><em>MediaNews Group</em> sites like (opt-in to custom sites for unlisted/local sites)<br /><a href="https://www.bostonherald.com">Boston Herald</a> -
+<a href="https://www.eastbaytimes.com">East Bay Times</a> -
+<a href="https://www.ocregister.com">Orange County Register</a> -
+<a href="https://www.sandiegouniontribune.com">San Diego Union Tribune</a> -
+<a href="https://www.twincities.com">St. Paul Pioneer Press</a> -
+<a href="https://www.denverpost.com">The Denver Post</a> -
+<a href="https://www.mercurynews.com">The Mercury News</a> -
+<a href="https://www.pressenterprise.com">The Press-Enterprise</a><br /><em><a href="https://www.soundpublishing.com/titles/our-titles">Sound Publishing</a></em> sites (opt-in to custom sites)<br /><em>The (New Orleans) Advocate Group</em> sites like<br /><a href="https://www.theadvocate.com">The Advocate</a> -
+<a href="https://www.nola.com">The New Orleans Advocate/The Times-Picayune</a> -
+<a href="https://www.shreveportbossieradvocate.com">The Shreveport-Bossier City Advocate</a><br /><em>TownNews sites (Blox CMS)</em> (opt-in to custom sites)<br /><em>Tribune Publishing Company</em> sites like<br /><a href="https://www.baltimoresun.com">Baltimore Sun</a> -
+<a href="https://www.capitalgazette.com">Capital Gazette</a> -
+<a href="https://www.chicagotribune.com">Chicago Tribune</a> -
+<a href="https://www.dailypress.com">Daily Press</a> -
+<a href="https://www.courant.com">Hartford Courant</a> -
+<a href="https://www.nydailynews.com">New York Daily News</a> -
+<a href="https://www.orlandosentinel.com">Orlando Sentinel</a> -
+<a href="https://www.sun-sentinel.com">SunSentinel</a> -
+<a href="https://www.mcall.com">The Morning Call</a> -
+<a href="https://www.pilotonline.com">The Virginian-Pilot</a></p>
+    <h4 id="canada">Canada</h4>
+    <p>
+      <a href="https://www.ipolitics.ca">iPolitics</a> -
+<a href="https://www.ledevoir.com">Le Devoir</a> -
+<a href="https://www.theglobeandmail.com">The Globe and Mail</a> -
+<a href="https://www.hilltimes.com">The Hill Times</a> -
+<a href="https://thelogic.co">The Logic</a> -
+<a href="https://www.winnipegfreepress.com">Winnipeg Free Press</a></p>
+    <p>Grouped in options:<br /><em>Groupe Capitales Médias</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.lesoleil.com">Le Soleil</a><br /><em>Groupe Québecor</em> sites like<br /><a href="https://www.journaldemontreal.com">Le Journal de Montréal</a> -
+<a href="https://www.journaldequebec.com">Le Journal de Québec</a><br /><em>Postmedia Network</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://calgaryherald.com">Calgary Herald</a> -
+<a href="https://www.financialpost.com">Financial Post</a> -
+<a href="https://www.nationalpost.com">National Post</a> -
+<a href="https://theprovince.com">The Province</a> -
+<a href="https://torontosun.com">Toronto Sun</a> -
+<a href="https://vancouversun.com">Vancouver Sun</a><br /><em>TorStar</em> sites like<br /><a href="https://www.thestar.com">The Toronto Star</a> and regional sites
+<a href="https://www.niagarafallsreview.ca">Niagara Falls Review</a> -
+<a href="https://www.thepeterboroughexaminer.com">Peterborough Examiner</a> -
+<a href="https://www.stcatharinesstandard.ca">St. Catharines Standard</a> -
+<a href="https://www.thespec.com">The Hamilton Spectator</a> -
+<a href="https://www.therecord.com">Waterloo Region Record</a> -
+<a href="https://www.wellandtribune.ca">Welland Tribune</a><br /><em><a href="https://www.valnetinc.com/our-brands">Valnet Group</a></em> sites (opt-in to custom sites)</p>
+    <h4 id="europe">Europe</h4>
+    <p>
+      <a href="https://balkaninsight.com">Balkan Insight</a> -
+<a href="https://www.bloombergadria.com">Bloomberg Adria</a> -
+<a href="https://euobserver.com">EUobserver</a> -
+<a href="https://www.ftm.eu">Follow the Money (ftm.eu)</a></p>
+    <p>Grouped in options:<br /><em><a href="https://www.thelocal.com">The Local Group</a></em> sites (opt-in to custom sites)</p>
+    <h5 id="united-kingdomireland">United Kingdom/Ireland</h5>
+    <p>
+      <a href="https://www.autocar.co.uk">Autocar</a> -
+<a href="https://www.autosport.com">Autosport</a>* -
+<a href="https://www.businesspost.ie">Business Post</a> -
+<a href="https://www.decanter.com">Decanter</a> -
+<a href="https://www.standard.co.uk">Evening Standard</a> -
+<a href="https://www.fnlondon.com">Financial News</a> -
+<a href="https://www.ft.com">Financial Times</a> -
+<a href="https://www.gbnews.com">GB News</a> -
+<a href="https://granta.com">Granta Magazine</a> -
+<a href="https://inews.co.uk">iNews</a> -
+<a href="https:/iai.tv">Institute of Art and Ideas</a> -
+<a href="https://www.investorschronicle.co.uk">Investors' Chronicle</a> -
+<a href="https://literaryreview.co.uk">Literary Review</a> -
+<a href="https://www.lrb.co.uk">London Review of Books</a> -
+<a href="https://monocle.com">Monocle</a> -
+<a href="https://www.motorsportmagazine.com">Motor Sport Magazine</a> -
+<a href="https://www.musicomh.com">MusicOMH</a> -
+<a href="https://www.prospectmagazine.co.uk">Prospect Magazine</a> -
+<a href="https://www.stylist.co.uk">Stylist</a> -
+<a href="https://www.tes.com/magazine">Tes Magazine</a> -
+<a href="https://thecritic.co.uk">The Critic</a> -
+<a href="https://www.economist.com">The Economist</a> -
+<a href="https://www.irishexaminer.com">The Irish Examiner</a> -
+<a href="https://www.irishnews.com">The Irish News</a> -
+<a href="https://www.irishtimes.com">The Irish Times</a> -
+<a href="https://www.thelawyer.com">The Lawyer</a> -
+<a href="https://www.newstatesman.com">The New Statesman</a> -
+<a href="https://www.thenewworld.co.uk">The New World</a> -
+<a href="https://observer.co.uk">The Observer</a> -
+<a href="https://the-past.com">The Past</a> -
+<a href="https://www.telegraph.co.uk">The Telegraph</a> -
+<a href="https://www.thetimes.com">The Times</a> -
+<a href="https://www.the-tls.com">The Times Literary Supplement</a> -
+<a href="https://unherd.com">UnHerd</a> -
+<a href="https://www.worldeconomics.com">World Economics</a></p>
+    <p>Grouped in options:<br /><em>Daily Mail Group</em> sites like<br /><a href="https://www.dailymail.com">Daily Mail</a> -
+<a href="https://www.thisismoney.co.uk">This is Money</a><br /><em><a href="https://www.dvvmediainternational.com">DVV Media International</a></em> sites (opt-in to custom sites)<br /><em><a href="https://haymarket.com/brands">Haymarket Media Group</a></em> sites (opt-in to custom sites)<br /><em><a href="https://www.haymarketmedicalnetwork.com">Haymarket Medical Network</a></em> sites (opt-in to custom sites)<br /><em>Iconic Media Group</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.scotsman.com">The Scotsman</a> -
+<a href="https://www.yorkshirepost.co.uk">Yorkshire Post</a><br /><em>Oxford University Press</em> sites (opt-in to custom sites)*<br /><em><a href="https://www.newsquest.co.uk/news-brands">Newsquest Media Group</a></em> sites (opt-in to custom sites)<br /><em>Reach Group</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.dailyrecord.co.uk">The Daily Record</a> -
+<a href="https://www.express.co.uk">The Daily Express</a><br /><em>The Independent Group</em> sites like<br /><a href="https://www.independent.co.uk">The Independent UK </a> -
+<a href="https://www.the-independent.com">The Independent USA </a><br /><em>The Spectator Group</em> sites like<br /><a href="https://spectator.com">The Spectator</a> -
+<a href="https://www.spectator.com.au">The Spectator Australia</a> -
+<a href="https://apollo-magazine.com">Apollo Magazine</a><br /><em>The Stage Media</em> sites like:<br /><a href="https://www.thebookseller.com">The Bookseller</a> -
+<a href="https://www.thestage.co.uk">The Stage</a><br /><em>The Sun Group</em> sites like<br /><a href="https://www.thesun.ie">The Irish Sun</a> -
+<a href="https://www.thescottishsun.co.uk">The Scottish Sun</a> -
+<a href="https://www.thesun.co.uk">The Sun UK</a><br /><em><a href="https://www.william-reed.com/what-we-do">William Reed Group</a></em> sites (opt-in to custom sites)</p>
+    <h5 id="bulgaria">Bulgaria</h5>
+    <p>
+      <a href="https://www.capital.bg">Capital</a> -
+<a href="https://www.dnevnik.bg">Dnevnik</a></p>
+    <h5 id="croatia">Croatia</h5>
+    <p>
+      <a href="https://www.telegram.hr">Telegram</a>
+    </p>
+    <h5 id="czechia">Czechia</h5>
+    <p>
+      <a href="https://www.denik.cz">Deník</a>
+    </p>
+    <h5 id="denmark">Denmark</h5>
+    <p>Grouped in options:<br /><em>Berlingske Media</em> sites like<br /><a href="https://www.berlingske.dk">Berlingske</a> -
+<a href="https://www.weekendavisen.dk">Weekendavisen</a><br /><em><a href="https://www.dkmedier.dk">DK Medier</a></em> sites (opt-in to custom sites)</p>
+    <h5 id="finland">Finland</h5>
+    <p>
+      <a href="https://suomensotilas.fi">Suomen Sotilas</a>
+    </p>
+    <h5 id="francewallonia">France/Wallonia</h5>
+    <p>
+      <a href="https://www.60millions-mag.com">60 Millions de consommateurs</a> -
+<a href="https://actu.fr">Actu.fr</a> -
+<a href="https://www.alternatives-economiques.fr">Alternatives Economiques</a> -
+<a href="https://aoc.media">Aoc media</a> -
+<a href="https://atlantico.fr">Atlantico</a> -
+<a href="https://www.autohebdo.fr">Auto Hebdo</a> -
+<a href="https://www.autoplus.fr">Auto Plus</a> -
+<a href="https://www.capital.fr">Capital</a> -
+<a href="https://www.causeur.fr">Causeur</a> -
+<a href="https://www.cerveauetpsycho.fr">Cerveau et Psycho</a> -
+<a href="https://www.challenges.fr">Challenges</a> -
+<a href="https://charliehebdo.fr">Charlie Hebdo</a> -
+<a href="https://www.connaissancedesarts.com">Connaissance des Arts</a> -
+<a href="https://www.cosmopolitan.fr">Cosmopolitan</a> -
+<a href="https://www.courrierinternational.com">Courrier international</a> -
+<a href="https://www.elle.fr">Elle</a> -
+<a href="https://esprit.presse.fr">Esprit</a> -
+<a href="https://www.franc-tireur.fr">Franc-Tireur</a> -
+<a href="https://www.historia.fr">Historia</a> -
+<a href="https://www.jeuneafrique.com">Jeune Afrique</a> -
+<a href="https://lecho.be">L'Écho</a> -
+<a href="https://www.lequipe.fr">L'Équipe</a> -
+<a href="https://www.lexpress.fr">L'Express</a> -
+<a href="https://www.linforme.com">L'Informé</a> -
+<a href="https://loeildelaphotographie.com">L'Oeil de la Photographie (fr/en)</a> -
+<a href="https://www.lopinion.fr">L'Opinion</a> -
+<a href="https://www.la-croix.com">La Croix</a> -
+<a href="https://www.lecanardenchaine.fr">Le Canard enchaîné</a> -
+<a href="https://lecourrierdesstrateges.fr">Le Courrier des Stratèges</a> -
+<a href="https://www.lefigaro.fr">Le Figaro</a> -
+<a href="https://legrandcontinent.eu">Le Grand Continent</a> -
+<a href="https://lejdd.fr">Le Journal du Dimanche</a> -
+<a href="https://www.journaldunet.com">Le Journal du Net</a> -
+<a href="https://www.lemonde.fr">Le Monde</a> -
+<a href="https://www.lenouveleconomiste.fr">Le Nouvel Economiste</a> -
+<a href="https://www.leparisien.fr">Le Parisien</a> -
+<a href="https://www.lepoint.fr">Le Point</a> -
+<a href="https://www.lerevenu.com">Le Revenu</a> -
+<a href="https://le1hebdo.fr">Le Un</a> -
+<a href="https://www.lesechos.fr">Les Échos</a> -
+<a href="https://www.lesinrocks.com">Les Inrockuptibles</a> -
+<a href="https://www.liberation.fr">Libération</a> -
+<a href="https://www.ouest-france.fr">Ouest-France</a> -
+<a href="https://www.parismatch.com">Paris Match</a> -
+<a href="https://www.philonomist.com">Philonomist (fr/en)</a> -
+<a href="https://www.philomag.com">Philosophie Magazine</a> -
+<a href="https://www.pourleco.com">Pour l'Éco</a> -
+<a href="https://www.pourlascience.fr">Pour la Science</a> -
+<a href="https://www.public.fr">Public</a> -
+<a href="https://www.reforme.net">Réforme</a> -
+<a href="https://www.revueconflits.com">Revue Conflits</a> -
+<a href="https://www.science-et-vie.com">Science &amp; Vie</a> -
+<a href="https://www.sciencesetavenir.fr">Sciences et Avenir</a> -
+<a href="https://www.telerama.fr">Télérama</a> -
+<a href="https://www.valeursactuelles.com">Valeurs Actuelles</a> -
+<a href="https://www.revue21.fr">XXI</a></p>
+    <p>Grouped in options:<br /><em>Groupe Centre France</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.lamontagne.fr">La Montagne</a><br /><em>Groupe Infopro Digital</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.usinenouvelle.com">L'Usine Nouvelle</a><br /><em>Groupe EBRA</em> sites like<br /><a href="https://www.dna.fr">Dernières Nouvelles d'Alsace</a> -
+<a href="https://www.lalsace.fr">L'Alsace</a> -
+<a href="https://www.estrepublicain.fr">L'Est Républicain</a> -
+<a href="https://www.bienpublic.com">Le Bien Public</a> -
+<a href="https://www.ledauphine.com">Le Dauphiné Libéré</a> -
+<a href="https://www.lejsl.com">Le Journal de Saône-et-Loire</a> -
+<a href="https://www.leprogres.fr">Le Progrès</a> -
+<a href="https://www.republicain-lorrain.fr">Le Républicain Lorrain</a> -
+<a href="https://www.vosgesmatin.fr">Vosges Matin</a><br /><em>Groupe IPM</em> sites like<br /><a href="https://www.dhnet.be">DH Les Sports+</a> -
+<a href="https://www.lavenir.net">L'Avenir</a> -
+<a href="https://www.lalibre.be">La Libre</a> -
+<a href="https://www.moustique.be">Moustique</a><br /><em>Groupe La Dépêche</em> sites like<br /><a href="https://www.centrepresseaveyron.fr">Centre Presse</a> -
+<a href="https://www.journaldemillau.fr">Journal de Millau</a> -
+<a href="https://www.lindependant.fr">L'Indépendant</a> -
+<a href="https://www.ladepeche.fr">La Dépêche du Midi</a> -
+<a href="https://www.nrpyrenees.fr">La Nouvelle République des Pyrénées</a> -
+<a href="https://www.petitbleu.fr">Le Petit Bleu d'Agen</a> -
+<a href="https://www.midilibre.fr">Midi Libre</a> -
+<a href="https://www.rugbyrama.fr/midi-olympique">Midi Olympique</a><br /><em>Groupe MacGeneration</em> sites like<br /><a href="https://www.igen.fr">iGeneration</a> -
+<a href="https://www.macg.co">MacGeneration</a> -
+<a href="https://www.watchgeneration.fr">WatchGeneration</a><br /><em>Groupe Nice-Matin</em> sites like<br /><a href="https://www.monacomatin.mc">Monaco-Matin</a> -
+<a href="https://www.nicematin.com">Nice-Matin</a> -
+<a href="https://www.varmatin.com">Var-Matin</a><br /><em>Groupe La Manche Libre</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.lamanchelibre.fr">La Manche Libre</a><br /><em>Groupe Profession Santé</em> sites like<br /><a href="https://www.lequotidiendumedecin.fr">Le Quotidien du Médecin</a> -
+<a href="https://www.lequotidiendupharmacien.fr">Le Quotidien du Pharmacien</a><br /><em>Groupe Rossel</em> sites like<br /><a href="https://www.aisnenouvelle.fr">L'Aisne nouvelle</a> -
+<a href="https://www.lardennais.fr">L'Ardennais</a> -
+<a href="https://www.lest-eclair.fr">L'Est-Éclair</a> -
+<a href="https://www.lunion.fr">L'Union</a> -
+<a href="https://www.lavoixdunord.fr">La Voix du Nord</a> -
+<a href="https://www.courrier-picard.fr">Le Courrier picard</a> -
+<a href="https://www.lemessager.fr">Le Messager</a> -
+<a href="https://www.lesoir.be">Le Soir</a> -
+<a href="https://www.liberation-champagne.fr">Libération Champagne</a> -
+<a href="https://www.nordlittoral.fr">Nord Littoral</a> -
+<a href="https://www.paris-normandie.fr">Paris Normandie</a> -
+<a href="https://www.sudinfo.be">SudInfo</a><br /><em>Groupe Sud Ouest</em> sites like<br /><a href="https://www.charentelibre.fr">Charente libre</a> -
+<a href="https://www.larepubliquedespyrenees.fr">La République des Pyrénées</a> -
+<a href="https://www.sudouest.fr">Sud Ouest</a><br /><em><a href="https://synerj.media">Groupe SynerJ Media</a></em> sites (opt-in to custom sites)<br /><em>Groupe Télégramme</em> sites like<br /><a href="https://www.letelegramme.fr">Le Télégramme</a> -
+<a href="https://www.meretmarine.com">Mer et Marine</a><br /><em>Roularta Media Group</em> sites like<br /><a href="https://www.femmesdaujourdhui.be">Femmes d'Aujourd'hui</a> -
+<a href="https://www.flair.be/fr">Flair.be</a> -
+<a href="https://www.levif.be">Le Vif</a><br /><em>TechTarget Group</em> sites like<br /><a href="https://www.lemagit.fr">LeMagIT</a></p>
+    <h5 id="germanyaustria">Germany/Austria</h5>
+    <p>
+      <a href="https://www.aerztezeitung.de">Ärzte Zeitung</a> -
+<a href="https://www.automobilwoche.de">Automobilwoche</a> -
+<a href="https://www.bnn.de">Badische Neueste Nachrichten</a> -
+<a href="https://www.bild.de">Bild</a> -
+<a href="https://www.berliner-zeitung.de">Berliner Zeitung</a> -
+<a href="https://www.boersen-zeitung.de">Börsen-Zeitung</a> -
+<a href="https://www.cicero.de">Cicero</a> -
+<a href="https://www.freitag.de">Der Freitag</a> -
+<a href="https://www.spiegel.de">Der Spiegel</a> -
+<a href="https://www.derstandard.at">Der Standard.at</a> -
+<a href="https://www.tagesspiegel.de">Der Tagesspiegel</a> -
+<a href="https://www.diepresse.com">Die Presse</a> -
+<a href="https://www.rheinpfalz.de">Die Rheinpfalz</a> -
+<a href="https://www.welt.de">Die Welt</a> -
+<a href="https://www.zeit.de">Die Zeit</a> -
+<a href="https://www.focusplus.de">Focus+</a> -
+<a href="https://www.faz.net">Frankfurter Allgemeine Zeitung</a> -
+<a href="https://www.freiepresse.de">Freie Presse</a> -
+<a href="https://www.handelsblatt.com">Handelsblatt</a> -
+<a href="https://www.heise.de">Heise online</a> -
+<a href="https://jacobin.de">Jacobin Magazin</a> -
+<a href="https://www.ksta.de">Kölner Stadt-Anzeiger</a> -
+<a href="https://www.rundschau-online.de">Kölnische Rundschau</a> -
+<a href="https://krautreporter.de">Krautreporter</a> -
+<a href="https://kurier.at">Kurier.at</a> -
+<a href="https://www.mittelbayerische.de">Mittelbayerische Zeitung</a> -
+<a href="https://www.nw.de">Neue Westfälische</a> -
+<a href="https://www.nwzonline.de">Nordwest Zeitung</a> -
+<a href="https://ostdeutscheallgemeine.com">Ostdeutsche Allgemeine</a> -
+<a href="https://www.pnp.de">Passauer Neue Presse</a> -
+<a href="https://www.philomag.de">Philosophie Magazin</a> -
+<a href="https://www.profil.at">Profil.at</a> -
+<a href="https://www.spektrum.de">Spektrum</a> -
+<a href="https://www.springermedizin.de">Springer Medizin</a> -
+<a href="https://www.stern.de">Stern</a> -
+<a href="https://www.sueddeutsche.de">Süddeutsche Zeitung</a> -
+<a href="https://www.vn.at">Vorarlberg Nachrichten</a> -
+<a href="https://www.vol.at">Vorarlberg Online</a> -
+<a href="https://www.weltkunst.de">Weltkunst</a> -
+<a href="https://www.weser-kurier.de">Weser-Kurier</a> -
+<a href="https://www.wiwo.de">WirtschaftsWoche</a></p>
+    <p>Grouped in options:<br /><em><a href="https://www.dfv.de">Deutscher Fachverlag Mediengruppe</a></em> (opt-in to custom sites)<br /><em>Funke Mediengruppe</em> sites like<br /><a href="https://www.morgenpost.de">Berliner Morgenpost</a> -
+<a href="https://www.braunschweiger-zeitung.de">Braunschweiger Zeitung</a> -
+<a href="https://www.abendblatt.de">Hamburger Abendblatt</a> -
+<a href="https://www.ikz-online.de">Iserlohner Kreisanzeiger und Zeitung</a> -
+<a href="https://www.nrz.de">Neue Ruhr Zeitung</a> -
+<a href="https://www.otz.de">Ostthüringer Zeitung</a> -
+<a href="https://www.thueringer-allgemeine.de">Thüringer Allgemeine</a> -
+<a href="https://www.tlz.de">Thüringische Landeszeitung</a> -
+<a href="https://www.waz.de">Westdeutsche Allgemeine Zeitung</a> -
+<a href="https://www.wp.de">Westfalenpost</a> -
+<a href="https://www.wr.de">Westfälische Rundschau</a><br /><em>Ippen.media</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.fr.de">Frankfurter Rundschau</a> -
+<a href="https://www.merkur.de">Münchner Merkur</a> -
+<a href="https://www.ovb-online.de">Oberbayerisches Volksblatt</a><br /><em>Landwirtschaftsverlag</em> sites like<br /><a href="https://www.profi.de">Profi.de</a> -
+<a href="https://www.topagrar.com">Top Agrar</a> -
+<a href="https://www.wochenblatt.com">Wochenblatt für Landwirtschaft &amp; Landleben</a><br /><em>Madsack Mediengruppe</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.haz.de">Hannoversche Allgemeine Zeitung</a> -
+<a href="https://www.kn-online.de">Kieler Nachrichten</a> -
+<a href="https://www.lvz.de">Leipziger Volkszeitung</a> -
+<a href="https://www.ln-online.de">Lübecker Nachrichten</a> -
+<a href="https://www.maz-online.de">Märkische Allgemeine</a> -
+<a href="https://www.neuepresse.de">Neue Presse (Hannover)</a> -
+<a href="https://www.ostsee-zeitung.de">Ostsee-Zeitung</a> -
+<a href="https://www.rnd.de">RedaktionsNetzwerk Deutschland</a> -
+<a href="https://www.saechsische.de">Sächsische Zeitung</a><br /><em><a href="https://www.motorpresse.de">Motor Presse Stuttgart</a></em> sites like<br /><a href="https://www.aerokurier.de">Aerokurier</a> -
+<a href="https://www.auto-motor-und-sport.de">Auto Motor und Sport</a> -
+<a href="https://www.flugrevue.de">Flug Revue</a> -
+<a href="https://www.motorradonline.de">Motorrad</a> -
+<a href="https://www.womenshealth.de">Women's Health</a><br /><em>NOZ/MHN Mediengruppe</em> sites like<br /><a href="https://www.noz.de">Neue Osnabrücker Zeitung</a> -
+<a href="https://www.shz.de">Schleswig-Holsteinischer Zeitungsverlag</a><br />
+Rheinische Post Mediengruppe sites like<br /><a href="https://ga.de">General-Anzeiger Bonn</a> -
+<a href="https://rp-online.de">Rheinische Post</a> -
+<a href="https://www.saarbruecker-zeitung.de">Saarbrücker Zeitung</a> -
+<a href="https://www.volksfreund.de">Trierischer Volksfreund</a><br /><em>Südwest Media Network</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.schwarzwaelder-bote.de">Schwarzwälder Bote</a> -
+<a href="https://www.stuttgarter-nachrichten.de">Stuttgarter Nachrichten</a> -
+<a href="https://www.stuttgarter-zeitung.de">Stuttgarter Zeitung</a><br /><em>Verlagsgruppe Rhein Main</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.allgemeine-zeitung.de">Allgemeine Zeitung (Mainz)</a> -
+<a href="https://www.echo-online.de">Darmstädter Echo</a> -
+<a href="https://www.wiesbadener-kurier.de">Wiesbadener Kurier</a></p>
+    <h5 id="greece">Greece</h5>
+    <p>
+      <a href="https://www.kathimerini.gr">Kathimerini</a>
+    </p>
+    <h5 id="italy">Italy</h5>
+    <p>
+      <a href="https://www.corriere.it">Corriere della Sera</a> -
+<a href="https://www.corrieredellosport.it">Corriere dello Sport</a> -
+<a href="https://editorialedomani.it">Domani</a> -
+<a href="https://eastwest.eu">Eastwest</a> -
+<a href="https://www.ilfattoquotidiano.it">Il Fatto Quotidiano</a>* -
+<a href="https://www.ilfoglio.it">Il Foglio</a> -
+<a href="https://ilmanifesto.it">Il Manifesto</a> -
+<a href="https://24plus.ilsole24ore.com">Il Sole 24 Ore (24+)</a> -
+<a href="https://www.internazionale.it">Internazionale</a> -
+<a href="https://www.italiaoggi.it">Italia Oggi</a> -
+<a href="https://www.gazzetta.it">La Gazzetta dello Sport</a> -
+<a href="https://www.milanofinanza.it">Milano Finanza</a> -
+<a href="https://www.nationalgeographic.it">National Geographic IT</a> -
+<a href="https://sport.sky.it">Sky Sport</a> -
+<a href="https://tg24.sky.it">Sky TG24</a> -
+<a href="https://www.tuttosport.com">Tuttosport</a> -
+<a href="https://www.vanityfair.it">Vanity Fair Italia</a></p>
+    <p>Grouped in options:<br /><em>Gruppo GEDI.it</em> sites like<br /><a href="https://www.italian.tech">Italian.tech</a> -
+<a href="https://www.repubblica.it">La Repubblica</a> -
+<a href="https://www.lastampa.it">La Stampa</a> -
+<a href="https://www.lescienze.it">Le Scienze</a></p>
+    <p>
+      <a href="https://www.ilmessaggero.it">Il Messaggero</a> and regional sites like
+<a href="https://www.corriereadriatico.it">Corriere Adriatico</a> -
+<a href="https://www.ilgazzettino.it">Il Gazzettino</a> -
+<a href="https://www.ilmattino.it">Il Mattino</a> -
+<a href="https://www.quotidianodipuglia.it">Quotidiano di Puglia</a></p>
+    <p>
+      <a href="https://www.quotidiano.net">Quotidiano Nazionale</a> and regional sites like
+<a href="https://www.ilgiorno.it">Il Giorno</a> -
+<a href="https://www.ilrestodelcarlino.it">Il Resto del Carlino</a> -
+<a href="https://www.iltelegrafolivorno.it">Il Telegrafo Livorno</a> -
+<a href="https://www.lanazione.it">La Nazione</a></p>
+    <p>
+      <em>
+        <a href="https://www.grupposae.it/i-quotidiani">Gruppo SAE.it</a>
+      </em>* sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.iltirreno.it">Il Tirreno</a>* -
+<a href="https://www.lanuovasardegna.it">La Nuova Sardegna</a>*</p>
+    <h5 id="netherlandsflanders">Netherlands/Flanders</h5>
+    <p>
+      <a href="https://businessam.be">Business AM</a> -
+<a href="https://www.businessinsider.nl">Business Insider Nederland</a> -
+<a href="https://www.tijd.be">De Tijd</a> -
+<a href="https://doorbraak.be">Doorbraak</a> -
+<a href="https://www.ftm.nl">Follow the Money</a> -
+<a href="https://www.groene.nl">Groene Amsterdammer</a> -
+<a href="https://www.hln.be">Het Laatste Nieuws</a> -
+<a href="https://www.linda.nl">Linda</a> -
+<a href="https://www.nationalgeographic.nl">National Geographic NL</a> -
+<a href="https://www.nd.nl">Nederlands Dagblad</a> -
+<a href="https://www.nrc.nl">NRC Handelsblad</a> -
+<a href="https://www.telegraaf.nl">Telegraaf</a> -
+<a href="https://www.vn.nl">Vrij Nederland</a></p>
+    <p>Grouped in options:<br /><em>Algemeen Dagblad (+ regional/ADR)</em> sites like<br /><a href="https://www.ad.nl">Algemeen Dagblad</a> -
+<a href="https://www.bndestem.nl">BN DeStem</a> -
+<a href="https://www.bd.nl">Brabants Dagblad</a> -
+<a href="https://www.ed.nl">Eindhovens Dagblad</a> -
+<a href="https://www.gelderlander.nl">Gelderlander</a> -
+<a href="https://www.pzc.nl">PZC</a> -
+<a href="https://www.destentor.nl">Stentor</a> -
+<a href="https://tubantia.nl">Tubantia</a><br /><em><a href="https://bdumedia.nl/nieuwsmerk">BDU media</a></em> sites (opt-in to custom sites)<br /><em>DPG Media (not ADR)</em> sites like<br /><a href="https://www.demorgen.be">De Morgen</a> -
+<a href="https://www.volkskrant.nl">De Volkskrant</a> -
+<a href="https://www.flair.nl">Flair.nl</a> -
+<a href="https://www.humo.be">Humo</a> -
+<a href="https://www.libelle.nl">Libelle.nl</a> -
+<a href="https://www.margriet.nl">Margriet</a> -
+<a href="https://www.parool.nl">Parool</a> -
+<a href="https://www.trouw.nl">Trouw</a><br /><em><a href="https://www.entermedia.nl">Enter media</a></em> sites (opt-in to custom sites)<br /><em>Mediahuis België</em> sites like<br /><a href="https://www.standaard.be">De Standaard</a> -
+<a href="https://www.gva.be">Gazet van Antwerpen</a> -
+<a href="https://www.hbvl.be">Het Belang van Limburg</a> -
+<a href="https://www.nieuwsblad.be">Het Nieuwsblad</a><br /><em><a href="https://www.promedia.nl/publicaties">ProMedia Group</a></em> sites (opt-in to custom sites)<br /><em>Roularta Media Group</em> sites like<br /><a href="https://www.beleggersbelangen.nl">Beleggers Belangen</a> -
+<a href="https://www.flair.be/nl">Flair.be</a> -
+<a href="https://www.knack.be">Knack</a> -
+<a href="https://kw.be">Krant van West-Vlaanderen</a> -
+<a href="https://www.libelle.be">Libelle.be</a><br /><em><a href="https://vmnmedia.nl">VmnMedia Group</a></em> sites (opt-in to custom sites)</p>
+    <h5 id="norway">Norway</h5>
+    <p>
+      <a href="https://www.bt.no">Bergens Tidende</a> -
+<a href="https://www.dagsavisen.no">Dagsavisen</a><br />
+Grouped in options:<br /><em>DN Media Group</em> sites like<br /><a href="https://www.dn.no">Dagens Næringsliv</a> -
+<a href="https://www.europower.no">Europower</a> -
+<a href="https://www.fiskeribladet.no">Fiskeribladet</a> -
+<a href="https://www.hydrogeninsight.com">Hydrogen Insight</a> -
+<a href="https://www.intrafish.com">Intrafish</a> -
+<a href="https://www.intrafish.no">Intrafish.no</a> -
+<a href="https://www.kystens.no">Kystens Næringsliv</a> -
+<a href="https://www.rechargenews.com">Recharge</a> -
+<a href="https://www.tradewindsnews.com">TradeWinds</a> -
+<a href="https://www.upstreamonline.com">Upstream</a></p>
+    <h5 id="poland">Poland</h5>
+    <p>
+      <a href="https://oko.press">OKO.press</a> -
+<a href="https://www.polityka.pl">Polityka</a> -
+<a href="https://www.pb.pl">Puls Biznesu</a></p>
+    <p>Grouped in options:<br /><em>GremiMedia.pl Group</em> sites like<br /><a href="https://www.parkiet.com">Parkiet</a> -
+<a href="https://www.rp.pl">Rzeczpospolita</a><br /><em>Ringier Axel Springer Polska</em> sites like<br /><a href="https://www.auto-swiat.pl">Auto Swiat</a> -
+<a href="https://businessinsider.com.pl">Business Insider</a> -
+<a href="https://www.forbes.pl">Forbes</a> -
+<a href="https://www.komputerswiat.pl">Komputer Swiat</a> -
+<a href="https://www.newsweek.pl">Newsweek</a> -
+<a href="https://www.onet.pl">Onet</a><br /><em>Wyborcza Group</em> sites like<br /><a href="https://magazyn-kuchnia.pl">Magazyn-kuchnia.pl</a> -
+<a href="https://wyborcza.biz">Wyborcza.biz</a> -
+<a href="https://wyborcza.pl">Wyborcza.pl</a> -
+<a href="https://www.wysokieobcasy.pl">Wysokieobcasy.pl</a></p>
+    <h5 id="portugal">Portugal</h5>
+    <p>
+      <a href="https://www.dn.pt">Diário de Notícias</a> -
+<a href="https://expresso.pt">Expresso</a> -
+<a href="https://observador.pt">Observador</a> -
+<a href="https://www.sabado.pt">Sábado</a></p>
+    <h5 id="romania">Romania</h5>
+    <p>
+      <a href="https://hotnews.ro">HotNews</a>
+    </p>
+    <h5 id="russia">Russia</h5>
+    <p>
+      <a href="https://www.wonderzine.com">Wonderzine</a>
+    </p>
+    <h5 id="spain">Spain</h5>
+    <p>
+      <a href="https://www.diariodenavarra.es">Diario de Navarra</a> -
+<a href="https://www.elconfidencial.com">El Confidencial</a> -
+<a href="https://www.eldiario.es">El Diario.es</a> -
+<a href="https://www.elespanol.com">El Español</a> -
+<a href="https://elpais.com">El País</a> -
+<a href="https://www.hola.com">Hola</a> -
+<a href="https://www.infolibre.es">InfoLibre</a> -
+<a href="https://www.lavanguardia.com">La Vanguardia</a> -
+<a href="https://www.mundodeportivo.com">Mundo Deportivo</a> -
+<a href="https://www.nationalgeographic.com.es">National Geographic ES</a> -
+<a href="https://www.politicaexterior.com">Política Exterior</a> -
+<a href="https://www.publico.es">Público</a></p>
+    <p>Grouped in options:<br /><em>ARA</em> sites like<br /><a href="https://www.ara.cat">Ara.cat</a> -
+<a href="https://www.arabalears.cat">Ara Balears</a><br /><em>Grupo Joly</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.diariodesevilla.es">Diario de Sevilla</a><br /><em>Grupo Prensa Ibérica</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.diariodemallorca.es">Diario de Mallorca</a> -
+<a href="https://www.eldia.es">El Día</a> -
+<a href="https://www.elperiodico.com">El Periódico de Catalunya</a> -
+<a href="https://www.epe.es">El Periódico de España</a> -
+<a href="https://www.farodevigo.es">Faro de Vigo</a> -
+<a href="https://www.informacion.es">Información</a> -
+<a href="https://www.lne.es">La Nueva España</a> -
+<a href="https://www.laprovincia.es">La Provincia</a> -
+<a href="https://www.levante-emv.com">Levante-EMV</a> -
+<a href="https://www.mallorcazeitung.es">Mallorca Zeitung</a> -
+<a href="https://www.superdeporte.es">Superdeporte</a><br /><em>Grupo Unidad Editorial</em> sites like<br /><a href="https://www.elmundo.es">El Mundo</a> -
+<a href="https://www.expansion.com">Expansión</a> -
+<a href="https://www.marca.com">Marca</a><br /><em>Grupo Vocento</em> sites like<br /><a href="https://www.abc.es">ABC</a> -
+<a href="https://www.canarias7.es">Canarias7</a> -
+<a href="https://www.elcomercio.es">El Comercio</a> -
+<a href="https://www.elcorreo.com">El Correo</a> -
+<a href="https://www.eldiariomontanes.es">El Diario Montañés</a> -
+<a href="https://www.diariovasco.com">El Diario Vasco</a> -
+<a href="https://www.elnortedecastilla.es">El Norte de Castilla</a> -
+<a href="https://www.hoy.es">Hoy</a> -
+<a href="https://www.ideal.es">Ideal</a> -
+<a href="https://www.larioja.com">La Rioja</a> -
+<a href="https://www.laverdad.es">La Verdad</a> -
+<a href="https://www.lavozdigital.es">La Voz de Cádiz</a> -
+<a href="https://www.lasprovincias.es">Las Provincias</a> -
+<a href="https://www.diariosur.es">Sur</a></p>
+    <p>
+      <em>
+        <a href="https://www.sportlifeiberica.es">Sport Life Ibérica</a>
+      </em> sites (opt-in to custom sites)</p>
+    <h5 id="sweden">Sweden</h5>
+    <p>
+      <a href="https://www.fokus.se">Fokus</a> -
+<a href="https://www.nyteknik.se">NyTeknik</a> -
+<a href="https://www.vibilagare.se">Vi Bilägare</a></p>
+    <p>Grouped in options:<br /><em><a href="https://www.bonniernews.se/titlar-och-varumarken">Bonnier News Group</a></em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.dagensmedicin.se">Dagens Medicin</a> -
+<a href="https://www.dn.se">Dagens Nyheter</a> -
+<a href="https://www.hd.se">Helsingborgs Dagblad</a> -
+<a href="https://www.sydsvenskan.se">Sydsvenskan</a><br /><em><a href="https://ernamedia.se">Erna Media</a></em> sites (opt-in to custom sites)</p>
+    <h5 id="switzerland">Switzerland</h5>
+    <p>
+      <a href="https://www.letemps.ch">Le Temps</a> -
+<a href="https://www.nzz.ch">Neue Zürcher Zeitung</a> -
+<a href="https://schweizermonat.ch">Schweizer Monat</a> -
+<a href="https://themarket.ch">The Market</a></p>
+    <p>Grouped in options:<br /><em><a href="https://www.eshmedias.ch">Groupe ESH Médias</a></em> sites like<br /><a href="https://www.arcinfo.ch">ArcInfo</a> -
+<a href="https://www.lacote.ch">La Côte</a> -
+<a href="https://www.lenouvelliste.ch">Le Nouvelliste</a><br /><em>Ringier Gruppe</em> sites like<br /><a href="https://www.blick.ch">Blick</a> -
+<a href="https://www.beobachter.ch">Beobachter</a> -
+<a href="https://www.handelszeitung.ch">Handelszeitung</a><br /><em><a href="https://www.tamedia.ch/de/medien">TAmedia</a></em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.24heures.ch">24 heures</a> -
+<a href="https://www.bazonline.ch">Basler Zeitung</a> -
+<a href="https://www.bernerzeitung.ch">Berner Zeitung</a> -
+<a href="https://www.derbund.ch">Der Bund</a> -
+<a href="https://www.tagesanzeiger.ch">Tages-Anzeiger</a> -
+<a href="https://www.tdg.ch">Tribune de Genève</a></p>
+    <h5 id="ukraine">Ukraine</h5>
+    <p>
+      <a href="https://forbes.ua">Forbes</a> -
+<a href="https://nv.ua">New Voice</a></p>
+    <h4 id="africa">Africa</h4>
+    <h5 id="kenya">Kenya</h5>
+    <p>
+      <a href="https://www.standardmedia.co.ke">The Standard</a> -
+<a href="https://www.the-star.co.ke">The Star</a></p>
+    <p>Grouped in options:<br /><em><a href="https://www.nationmedia.com/brands">Nation Media Group</a></em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.businessdailyafrica.com">Business Daily</a> -
+<a href="https://nation.africa">Daily Nation</a></p>
+    <h5 id="south-africa">South Africa</h5>
+    <p>Grouped in options:<br /><em><a href="https://arena.africa/brands">Arena Holdings</a></em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.businessday.co.za">BusinessDay</a> -
+<a href="https://www.timeslive.co.za">TimesLive</a></p>
+    <h5 id="australianew-zealand">Australia/New Zealand</h5>
+    <p>
+      <a href="https://businessdesk.co.nz">BusinessDesk</a> -
+<a href="https://www.forbes.com.au">Forbes Australia</a> -
+<a href="https://www.inkl.com">Inkl</a> -
+<a href="https://www.macrobusiness.com.au">MacroBusiness</a> -
+<a href="https://www.nzgeo.com">New Zealand Geographic</a> -
+<a href="https://www.nzherald.co.nz">New Zealand Herald</a> -
+<a href="https://www.thesaturdaypaper.com.au">The Saturday Paper</a> -
+<a href="https://thewest.com.au">The West Australian (+ regional/opt-in to custom sites)</a></p>
+    <p>Grouped in options:<br /><em>Australia News Corp</em> sites like<br /><a href="https://www.cairnspost.com.au">Cairns Post</a> -
+<a href="https://www.codesports.com.au">Code Sports</a> -
+<a href="https://www.geelongadvertiser.com.au">Geelong Advertiser</a> -
+<a href="https://www.goldcoastbulletin.com.au">Gold Coast Bulletin</a> -
+<a href="https://www.heraldsun.com.au">Herald Sun</a> -
+<a href="https://www.ntnews.com.au">Northern Territory News</a> -
+<a href="https://www.adelaidenow.com.au">The Advertiser/AdelaideNow</a> -
+<a href="https://www.theaustralian.com.au">The Australian</a> -
+<a href="https://www.thechronicle.com.au">The Chronicle</a> -
+<a href="https://www.couriermail.com.au">The Courier-Mail</a> -
+<a href="https://www.dailytelegraph.com.au">The Daily Telegraph</a> -
+<a href="https://www.themercury.com.au">The Mercury Tasmania</a> -
+<a href="https://www.weeklytimesnow.com.au">The Weekly Times</a> -
+<a href="https://www.townsvillebulletin.com.au">Townsville Bulletin</a><br /><em>Australia Nine Entertainment</em> sites like<br /><a href="https://www.brisbanetimes.com.au">Brisbane Times</a> -
+<a href="https://www.theage.com.au">The Age</a> -
+<a href="https://www.afr.com">The Australian Financial Review</a> -
+<a href="https://www.smh.com.au">The Sydney Morning Herald</a> -
+<a href="https://www.watoday.com.au">WAtoday</a><br /><em>Australian Community Media</em> sites like (opt-in to custom sites for unlisted)<br /><a href="https://www.bendigoadvertiser.com.au">Bendigo Advertiser</a> -
+<a href="https://www.centralwesterndaily.com.au">Central Western Daily</a> -
+<a href="https://www.dailyliberal.com.au">Daily Liberal</a> -
+<a href="https://www.illawarramercury.com.au">Illawarra Mercury</a> -
+<a href="https://www.newcastleherald.com.au">Newcastle Herald</a> -
+<a href="https://www.theadvocate.com.au">The Advocate</a> -
+<a href="https://www.bordermail.com.au">The Border Mail</a> -
+<a href="https://www.canberratimes.com.au">The Canberra Times</a> -
+<a href="https://www.thecourier.com.au">The Courier</a> -
+<a href="https://www.dailyadvertiser.com.au">The Daily Advertiser</a> -
+<a href="https://www.examiner.com.au">The Examiner</a> -
+<a href="https://www.northerndailyleader.com.au">The Northern Daily Leader</a> -
+<a href="https://www.standard.net.au">The Standard</a> -
+<a href="https://www.westernadvocate.com.au">Western Advocate</a><br /><em><a href="https://www.mmg.com.au/portfolio">McPherson Media Group</a></em> sites (opt-in to custom sites)<br /><em><a href="https://www.privatemedia.com.au">Private Media</a></em> sites like<br /><a href="https://www.crikey.com.au">Crikey</a> -
+<a href="https://www.smartcompany.com.au">Smart Company</a> -
+<a href="https://www.themandarin.com.au">The Mandarin</a></p>
+    <h4 id="asia">Asia</h4>
+    <h5 id="china-hong-kong-taiwan">China, Hong Kong &amp; Taiwan</h5>
+    <p>
+      <a href="https://www.cw.com.tw">CommonWealth Magazine Taiwan</a>* -
+<a href="https://www.scmp.com">South China Morning Post</a> -
+<a href="https://www.infzm.com">Southern Weekly</a> -
+<a href="https://www.thenewslens.com">The News Lens</a></p>
+    <h5 id="india">India</h5>
+    <p>
+      <a href="https://www.anandabazar.com">Anandabazar Patrika</a> -
+<a href="https://www.barandbench.com">Bar and Bench</a> -
+<a href="https://www.bhaskar.com">Bhaskar</a> -
+<a href="https://www.business-standard.com">Business Standard</a> -
+<a href="https://www.hindustantimes.com">Hindustan Times</a> -
+<a href="https://inc42.com">Inc42</a> -
+<a href="https://www.indiatoday.in">India Today</a> -
+<a href="https://www.livelaw.in">Live Law</a> -
+<a href="https://www.livemint.com">LiveMint</a> -
+<a href="https://www.manoramaonline.com">Malayala Manorama</a> -
+<a href="https://www.mid-day.com">Mid-Day</a> -
+<a href="https://www.newslaundry.com">Newslaundry</a> -
+<a href="https://www.ndtvprofit.com">NDTV Profit</a> -
+<a href="https://www.outlookindia.com">Outlook</a> -
+<a href="https://www.outlookbusiness.com">Outlook Business</a> -
+<a href="https://swarajyamag.com">Swarajyamag</a> -
+<a href="https://caravanmagazine.in">The Caravan</a> -
+<a href="https://economictimes.indiatimes.com">The Economic Times (ET Prime)</a> -
+<a href="https://www.financialexpress.com">The Financial Express</a> -
+<a href="https://www.thehindu.com">The Hindu</a> -
+<a href="https://www.thehindubusinessline.com">The Hindu BusinessLine</a> -
+<a href="https://indianexpress.com">The Indian Express</a> -
+<a href="https://theleaflet.in">The Leaflet</a> -
+<a href="https://www.thenewsminute.com">The News Minute</a> -
+<a href="https://www.thequint.com">The Quint</a> -
+<a href="https://timesofindia.indiatimes.com">Times of India</a> -
+<a href="https://www.vikatan.com">Vikatan</a></p>
+    <h5 id="indonesia">Indonesia</h5>
+    <p>
+      <a href="https://www.kompas.id">Kompas</a>
+    </p>
+    <h5 id="israel">Israel</h5>
+    <p>
+      <a href="https://www.globes.co.il">Globes</a> -
+<a href="https://www.jpost.com">The Jerusalem Post</a> -
+<a href="https://www.ynet.co.il">Ynet</a></p>
+    <p>Grouped in options:<br /><em>Haaretz Group</em> sites like<br /><a href="https://www.haaretz.co.il">Haaretz.co.il</a> -
+<a href="https://www.haaretz.com">Haaretz.com</a> -
+<a href="https://www.themarker.com">The Marker</a></p>
+    <h5 id="japan">Japan</h5>
+    <p>
+      <a href="https://www.businessinsider.jp">Business Insider Japan</a> -
+<a href="https://asia.nikkei.com">Nikkei Asian Review</a> -
+<a href="https://www.japantimes.co.jp">The Japan Times</a></p>
+    <p>Grouped in options:<br /><em>Chunichi Shimbun Group</em> sites like<br /><a href="https://www.chunichi.co.jp">Chunichi Shimbun</a> -
+<a href="https://www.tokyo-np.co.jp">Tokyo Shimbun</a></p>
+    <h5 id="singapore">Singapore</h5>
+    <p>
+      <a href="https://www.techinasia.com">Tech in Asia</a>
+      <br />
+Grouped in options:<br /><em>SPH Media</em> sites like<br /><a href="https://www.businesstimes.com.sg">The Business Times</a> -
+<a href="https://www.straitstimes.com">The Straits Times</a></p>
+    <h5 id="thailand">Thailand</h5>
+    <p>
+      <a href="https://www.bangkokpost.com">Bangkok Post</a>
+    </p>
+    <h4 id="latin-america">Latin America</h4>
+    <h5 id="argentina">Argentina</h5>
+    <p>
+      <a href="https://www.ambito.com">Ámbito</a> -
+<a href="https://www.cronista.com">El Cronista</a> -
+<a href="https://www.eltribuno.com">El Tribuno</a> -
+<a href="https://www.lagaceta.com.ar">La Gaceta</a> -
+<a href="https://www.lanacion.com.ar">La Nación</a></p>
+    <p>Grouped in options:<br /><em>Grupo Clarín</em> sites like<br /><a href="https://www.clarin.com">Clarín</a> -
+<a href="https://www.lavoz.com.ar">La Voz del Interior</a> -
+<a href="https://www.losandes.com.ar">Los Andes</a> -
+<a href="https://www.ole.com.ar">Olé</a></p>
+    <h5 id="bolivia">Bolivia</h5>
+    <p>
+      <a href="https://eldeber.com.bo">El Deber</a>
+    </p>
+    <h5 id="brazil">Brazil</h5>
+    <p>
+      <a href="https://www.abcmais.com">ABC Mais</a> -
+<a href="https://www.cartacapital.com.br">CartaCapital</a> -
+<a href="https://www.correiodopovo.com.br">Correio do Povo</a> -
+<a href="https://crusoe.com.br">Crusoé</a> -
+<a href="https://www.em.com.br">Estado de Minas</a> -
+<a href="https://exame.com">Exame</a> -
+<a href="https://gauchazh.clicrbs.com.br">GaúchaZH</a> -
+<a href="https://www.gazetadopovo.com.br">Gazeta do Povo</a> -
+<a href="https://grupoabril.com.br">Grupo Abril</a> -
+<a href="https://www.lance.com.br">Lance!</a> -
+<a href="https://diplomatique.org.br">Le Monde Diplomatique Brasil</a> -
+<a href="https://www.nsctotal.com.br">NSC Total</a> -
+<a href="https://estadao.com.br">O Estado de S. Paulo</a> -
+<a href="https://oglobo.globo.com">O Globo</a> -
+<a href="https://revistaoeste.com">Revista Oeste</a> -
+<a href="https://valor.globo.com">Valor Econômico</a></p>
+    <p>Grouped in options:<br /><em>UOL</em> sites like<br /><a href="https://www.folha.uol.com.br">Folha de S. Paulo</a> -
+<a href="https://www.uol.com.br">UOL</a></p>
+    <h5 id="chile">Chile</h5>
+    <p>
+      <a href="https://www.df.cl">Diario Financiero</a> -
+<a href="https://digital.elmercurio.com">El Mercurio</a> -
+<a href="https://www.lasegunda.com">La Segunda</a> -
+<a href="https://www.latercera.com">La Tercera</a></p>
+    <h5 id="colombia">Colombia</h5>
+    <p>
+      <a href="https://www.elespectador.com">El Espectador</a> -
+<a href="https://www.eltiempo.com">El Tiempo</a> -
+<a href="https://www.semana.com">Semana</a></p>
+    <h5 id="ecuador">Ecuador</h5>
+    <p>
+      <a href="https://www.eluniverso.com">El Universo</a>
+    </p>
+    <h5 id="mexico">Mexico</h5>
+    <p>
+      <a href="https://www.eluniversal.com.mx">El Universal</a> -
+<a href="https://mexiconewsdaily.com">Mexico News Daily</a> -
+<a href="https://www.milenio.com">Milenio</a></p>
+    <h5 id="peru">Peru</h5>
+    <p>
+      <em>Grupo El Comercio</em> sites like<br /><a href="https://diariocorreo.pe">Diario Correo</a> -
+<a href="https://elcomercio.pe">El Comercio</a> -
+<a href="https://gestion.pe">Gestión</a></p>
+    <h5 id="uruguay">Uruguay</h5>
+    <p>
+      <a href="https://www.elobservador.com.uy">El Observador</a> -
+<a href="https://www.elpais.com.uy">El País</a> -
+<a href="https://ladiaria.com.uy">La Diaria</a></p>
+    <p>
+      <em>* free articles only.</em>
+    </p>
+    <p>
+      <a href="#bypass-paywalls-clean-for-chrome">Go to top</a>
+    </p>
+    <h3 id="sites-with-limited-number-of-free-articles">Sites with limited number of free articles</h3>
+    <p>The free article limit can normally be bypassed by removing cookies for the site.<br />
+Click on the BPC-icon and then <em>clear cookies</em>-button in the popup (for unsupported sites grant host permission for domain).<br />
+If removing the cookies works you can also add the site as a custom site.</p>
+    <h3 id="new-site-requests">New site requests</h3>
+    <p>You can <a href="https://github.com/bpc-clone/bpc_chrome_support/issues">submit a request for a new website</a><br />
+Please use the issue template, read the following instructions and share your results for a quicker process.<br />
+Remember to check the previous requests before asking for a new website.</p>
+    <ol>
+      <li>Open incognito window.</li>
+      <li>Clear cookies for the site (by this extension: opt-in to custom sites or grant host permission for the site; also enables blocking of general paywall scripts).</li>
+      <li>Disable JavaScript on the site (by browser, uBlock Origin or other extension).</li>
+      <li>Add the domain as custom site for more bypass options.</li>
+      <li>Open page in reader view (by browser or extension).</li>
+      <li>Try one of the archive sites.</li>
+    </ol>
+    <h3 id="add-custom-site">Add custom site</h3>
+    <p>Add your own custom site/group (for group use comma-separated list; set domain like group_...).<br />
+Check 'Options'-link in popup-menu and go to custom sites.<br />
+*  by default BPC has limited host permissions, but you can opt-in to enable custom sites (and also clear cookies/block general paywall-scripts for unlisted sites). You can also just request host permissions for the custom sites you've added yourself (or <em>clear cookies</em> (BPC-icon) to ask for host permission for current site).</p>
+    <p>By default sites' cookies/local storage are blocked/removed (for example to bypass article limit when metered paywall).</p>
+    <p>Additional custom options:</p>
+    <ul>
+      <li>allow/remove cookies (no options selected: cookies are blocked)</li>
+      <li>set useragent to Googlebot, Bingbot, Facebookbot or custom</li>
+      <li>set referer (to Facebook, Google, Twitter or custom; ignored when Googlebot is set)</li>
+      <li>set random ip-address (header X-Forwarded-For)</li>
+      <li>disable JavaScript for (sub)domain(s), external domains (when host permission) and/or inline scripts</li>
+      <li>block regular expression (to block specific script and/or xhr)</li>
+      <li>block_host_perm_add: add additional host permission(s) for blocked content</li>
+      <li>unhide text amp-page</li>
+      <li>redirect to amp-page when paywall(selector)</li>
+      <li>load text from json when paywall|article(selector)</li>
+      <li>load text from archive.is when paywall|article(selector)</li>
+      <li>add external link to archive-site when paywall|article(selector)</li>
+      <li>remove/unhide elements in dom (optional for dev; check examples)</li>
+    </ul>
+    <p>
+      <a href="https://gitflic.ru/project/magnolia1234/bpc_updates/blob/raw?file=sites_custom.json">Download example list of custom sites</a>
+    </p>
+    <h3 id="add-excluded-site">Add excluded site</h3>
+    <p>Add excluded sites/domains (for your subscriptions).<br />
+You can also exclude a specific domain which is grouped in options.</p>
+    <h3 id="changelog-releases">Changelog-releases</h3>
+    <ul>
+      <li>Visit the changelog page: <a href="changelog.txt">local</a> or <a href="https://gitflic.ru/project/magnolia1234/bypass-paywalls-chrome-clean/blob/raw?file=changelog.txt">online</a></li>
+      <li>Download the latest version from <a href="https://gitflic.ru/project/magnolia1234/bpc_uploads">GitFlic</a></li>
+    </ul>
+    <h3 id="license">License</h3>
+    <ul>
+      <li>Bypass Paywalls Clean is <a href="LICENSE.txt">MIT-licensed</a>.</li>
+    </ul>
+    <h3 id="disclaimer">Disclaimer</h3>
+    <ul>
+      <li>This software is provided for educational purposes only and is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</li>
+    </ul>
+    <p>
+      <a href="#bypass-paywalls-clean-for-chrome">Go to top</a>
+    </p>
+  </body>
+</html>
