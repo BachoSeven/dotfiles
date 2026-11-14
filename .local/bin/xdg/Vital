@@ -1,0 +1,4 @@
+#!/bin/sh
+# Vital launcher: preloads libvital-nohome (relocates ~/.vital -> $XDG_CONFIG_HOME/vital)
+# only for this process tree. Keeps any pre-existing LD_PRELOAD intact.
+exec env LD_PRELOAD="$HOME/.local/lib/libvital-nohome.so${LD_PRELOAD:+:$LD_PRELOAD}" /usr/bin/Vital "$@"
