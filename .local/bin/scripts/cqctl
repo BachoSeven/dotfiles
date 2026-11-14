@@ -21,7 +21,8 @@ toggle() {
 }
 
 reset() {
-	rm $HOME/.config/copyq/copyq_geometry.ini 2>/dev/null
+	rm -f "${XDG_STATE_HOME:-$HOME/.local/state}/copyq/copyq_geometry.ini" \
+		"$HOME/.config/copyq/copyq_geometry.ini" 2>/dev/null
 }
 
 fixgeom() {
