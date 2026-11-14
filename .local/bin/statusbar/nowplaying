@@ -21,9 +21,15 @@ case $BLOCK_BUTTON in
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-meta=$(playerctl -p "$player" metadata --format '{{artist}} — {{title}}' 2>/dev/null)
-[ -n "$meta" ] || meta=$(playerctl -p "$player" metadata --format '{{title}}' 2>/dev/null)
-[ -n "$meta" ] || meta=$player
+title=$(playerctl -p "$player" metadata --format '{{title}}' 2>/dev/null)
+[ -n "$title" ] || exit 0
+artist=$(playerctl -p "$player" metadata --format '{{artist}}' 2>/dev/null)
+
+if [ -n "$artist" ] && [ "$artist" != "$title" ]; then
+	meta="$artist — $title"
+else
+	meta=$title
+fi
 meta=$(printf '%s' "$meta" | cut -c1-80)
 
 if [ "$status" = "Paused" ]; then
