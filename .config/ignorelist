@@ -109,6 +109,7 @@
 # Node Package Manager cache
 .npm
 .local/share/npm
+.local/share/pnpm
 
 # Node Version Manager
 .nvm
@@ -227,7 +228,7 @@ Thumbs.db
 .mozilla/firefox/*/pluginreg.dat
 
 # Go
-.local/go
+.local/share/go/
 
 #GnuPG:
 
@@ -271,12 +272,7 @@ Thumbs.db
 .config/chromium-backup/Default/Application Cache
 .config/chromium-backup/Default/History Index *
 .config/chromium-backup/Default/IndexedDB
-.config/chromium-back-ovfs/Default/Local Storage
-.config/chromium-back-ovfs/Default/Session Storage
-.config/chromium-back-ovfs/Default/Service Worker
-.config/chromium-back-ovfs/Default/Application Cache
-.config/chromium-back-ovfs/Default/History Index *
-.config/chromium-back-ovfs/Default/IndexedDB
+.config/chromium-back-ovfs
 
 #Vieb:
 .config/Vieb/Local Storage
@@ -358,10 +354,16 @@ nohup.out
 # .config/Code/logs/
 
 # VSCodium
-.local/share/vscode-extensions/*
+.local/share/vscode-extensions/
 .config/VSCodium/blob_storage/
 .config/VSCodium/GPUCache/
 .config/VSCodium/logs/
+
+# Lean
+.local/share/elan/
+math/uni/Lean/MIL-codespace/lake-packages/
+math/uni/Lean/progetto/.lake/
+math/uni/Lean/ma4n1_2023/lake-packages/
 
 # VirtualBox
 # .config/VirtualBox/VBoxSVC.log*
@@ -370,6 +372,11 @@ nohup.out
 .local/share/cargo
 .local/share/rustup
 
+# Multimedia
+mus/
+stuff/movies/
+tech/phc/DNS/backups
+
 # Erlang artefacts
 # .kerl
 
@@ -377,3 +384,33 @@ nohup.out
 # .ccache/?
 # .ccache/tmp
 # Cache for
+
+# BIG useless cache-y stuff (added 2026-08-21)
+
+# build artefacts / dependency dirs anywhere in home
+node_modules/
+__pycache__/
+*.pyc
+venv/
+.venv/
+target/
+dist-newstyle/
+
+# pnpm store/cache (1.2G)
+.local/share/pnpm
+
+# llama.cpp models (1.5G, re-downloadable)
+.local/share/llama
+
+# chromium crash-recovery backup snapshots (~900M)
+.config/chromium-backup-crashrecovery-*
+
+# electron/browser caches matching any app dir
+.config/*/Cache
+.config/*/Code Cache
+.config/*/GPUCache
+.config/*/DawnGraphiteCache
+.config/*/DawnWebGPUCache
+
+# opencode local caches/sessions
+.local/share/opencode/cache

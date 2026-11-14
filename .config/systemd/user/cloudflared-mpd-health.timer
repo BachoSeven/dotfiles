@@ -1,0 +1,10 @@
+[Unit]
+Description=Run cloudflared MPD tunnel health check periodically
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

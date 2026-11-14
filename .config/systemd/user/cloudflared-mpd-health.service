@@ -1,0 +1,6 @@
+[Unit]
+Description=Cloudflared MPD tunnel health check
+
+[Service]
+Type=oneshot
+ExecStart=/home/fra/.local/bin/cloudflared-mpd-healthcheck.sh

@@ -1,7 +1,6 @@
 "⚜️  arch─────────────────────────────────────────────"
 https://www.archlinux.org/feeds/news/ linux
 https://archlinux.org/feeds/releases/
-https://chromium.woolyss.com/feed/linux
 " "
 "⚜️  mathematics──────────────────────────────────────"
 https://golem.ph.utexas.edu/category/atom10.xml math
@@ -14,6 +13,7 @@ http://www.neverendingbooks.org/feed # le bruyn
 "⚜️  tech─────────────────────────────────────────────"
 https://blog.lenot.re/rss rust osdev blog
 https://dataswamp.org/~solene/rss.xml blog
+https://mmapped.blog/feed.xml blog
 https://www.hillelwayne.com/index.xml blog
 https://ianthehenry.com/feed.xml blog
 https://jcs.org/rss blog
@@ -23,7 +23,6 @@ https://www.uninformativ.de/blog/feeds/en.atom blog
 https://cadence.moe/blog/rss.xml?limit=30 blog
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCi8XrDg1bK_MJ0goOnbpTMQ videos
-https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA videos
 " "
 
 "⚜️  comics───────────────────────────────────────────"
@@ -40,11 +39,9 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCBxEf1UWDjbIEoh2MAQR7zQ vid
 https://www.youtube.com/feeds/videos.xml?channel_id=UCGVB1jTH3__fUh1Lfp53onA videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2VzYhDponbU1QhBl_sOYWQ videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCnkp4xDOwqqJD7sSM3xdUiQ videos
-https://www.youtube.com/feeds/videos.xml?channel_id=UCLuHOqDilyLQT4NPXQuVN4Q videos
 " "
 
 "⚜️  misc─────────────────────────────────────────────"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCFAiFyGs6oDiF1Nf-rRJpZA videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrNiNV2v5GlY0bGHs1TenHg videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg videos
 https://www.youtube.com/feeds/videos.xml?channel_id=UCyWDmyZRjrGHeKF-ofFsT5Q videos

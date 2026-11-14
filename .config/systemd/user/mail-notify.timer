@@ -1,0 +1,12 @@
+[Unit]
+Description=Periodically check Himalaya for new mail
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=5min
+AccuracySec=30s
+RandomizedDelaySec=15s
+Unit=mail-notify.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Himalaya new-mail notifications
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/mail-notify
+Environment=PATH=/home/fra/.local/bin:/usr/local/bin:/usr/bin:/bin
+Environment=GNUPGHOME=/home/fra/.local/share/gnupg
+Environment=PASSWORD_STORE_DIR=/home/fra/.local/share/password-store
+Nice=10
+TimeoutStartSec=60
+SyslogIdentifier=mail-notify

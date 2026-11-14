@@ -1,0 +1,13 @@
+[Unit]
+Description=Cloudflared access TCP for MPD proxy
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Restart=always
+RestartSec=5
+Environment=TUNNEL_CERT_PATH=%h/.local/share/cloudflared/cert.pem
+ExecStart=/usr/bin/cloudflared access tcp --hostname mpdproxy.bachoseven.com --url localhost:6601
+
+[Install]
+WantedBy=default.target

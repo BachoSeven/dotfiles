@@ -1,0 +1,13 @@
+[Unit]
+Description=llama-server (local LLM backend for getpaper, OpenAI-compatible)
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/llama-server --host 127.0.0.1 --port 11434 --model %h/.local/share/llama/models/granite-3.2-2b-instruct.Q4_K_M.gguf --alias granite-3.2-2b-instruct --ctx-size 8192 --no-webui
+Restart=on-failure
+RestartSec=3
+StartLimitIntervalSec=10min
+StartLimitBurst=2
+
+[Install]
+WantedBy=default.target

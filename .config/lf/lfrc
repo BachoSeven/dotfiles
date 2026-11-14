@@ -323,6 +323,7 @@ map <enter> shell
 map t :set sortby time; set info time; set reverse!	#set by most recent
 map gg top
 map gG cd /dati/games
+map gM cd ~/math/uni
 map gp cd ~/pics/papes
 map gP cd ~/pics/papes/etc/pixel
 map gm cd /mnt
