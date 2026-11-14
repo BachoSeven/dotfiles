@@ -44,5 +44,10 @@
 		fzf
 		prompt
 		fast-syntax-highlighting
+		getpaper
 	)
 	zsh_load_plugins $plugins
+
+# st does not answer nvim's startup TUI queries (OSC 11 background etc.) -> E1568.
+# nvim runs these queries BEFORE config, so only an env var works (not :set nottyfast).
+export NVIM_NOTTYFAST=1
