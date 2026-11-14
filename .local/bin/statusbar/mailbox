@@ -1,16 +1,57 @@
 #!/bin/sh
 
-# Displays number of unread mail and an loading icon if updating.
-# When clicked, brings up `neomutt`.
+# One unread segment per Himalaya account, from the cache mail-notify writes.
+# Left click opens himalaya-tui; middle click polls immediately.
+
+state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/himalaya-notify"
 
 case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e neomutt ;;
-	2) setsid -f mw -Y >/dev/null ;;
+	1) setsid "$TERMINAL" -e mail-tui ;;
+	2) setsid -f mail-notify ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-unread="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
+segment() {
+	acct=$1
+	file="$state_dir/$acct.unread"
+	[ -f "$file" ] || return 0
 
-pidof mbsync >/dev/null 2>&1 && icon="🔃"
+	count=$(cat "$file" 2>/dev/null)
+	case "$count" in
+		''|*[!0-9]*) return 0 ;;
+	esac
+	[ "$count" -gt 0 ] || return 0
 
-[ "$unread" = "0" ] && [ "$icon" = "" ] || echo "📬$unread$icon"
+	case "$acct" in
+		unipi) icon="🎓" ;;
+		unipi-ta) icon="💼" ;;
+		gmail) icon="📧" ;;
+		*) icon="✉" ;;
+	esac
+
+	printf '%s%s ' "$icon" "$count"
+}
+
+out=""
+# Keep the two university accounts first, then Gmail.
+for acct in unipi unipi-ta gmail; do
+	part=$(segment "$acct")
+	[ -n "$part" ] && out="$out$part"
+done
+
+# Any additional accounts, if one is ever added.
+for file in "$state_dir"/*.unread; do
+	[ -e "$file" ] || continue
+	acct=${file##*/}
+	acct=${acct%.unread}
+	case "$acct" in
+		unipi|unipi-ta|gmail) continue ;;
+	esac
+	part=$(segment "$acct")
+	[ -n "$part" ] && out="$out$part"
+done
+
+out=${out% }
+pidof mail-notify >/dev/null 2>&1 && out="$out${out:+ }🔃"
+
+[ -n "$out" ] && printf '%s\n' "$out"

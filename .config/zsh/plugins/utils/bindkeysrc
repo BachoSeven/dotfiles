@@ -40,6 +40,7 @@
 	(( $+commands[lf] )) && bindkey -s '^o' '\eq lfcd\r' && alias \
 		inc='lfcd ~/.local/share/nicotine/downloads' \
 		people='lfcd ~/stuff/people' \
+		out='himalaya envelope list -s 6' \
 		uni='lfcd ~/math/uni' \
 		wsp='lfcd ~/stuff/personal/opsec'
 

@@ -1,0 +1,101 @@
+# Himalaya / himalaya-tui configuration (v2 schema).
+# Shared by the `himalaya` CLI and the `himalaya-tui` TUI.
+#
+# OAuth is handled by Ortie: `ortie auth get -a unipi` once, then both tools
+# ask `ortie token show -a unipi` for a fresh access token.
+#
+# The old v1 (Gmail-only) file is kept at config.toml.v1.bak.
+
+keybinds = "vim"
+
+# Recipient completion in the TUI, using the existing abook database.
+contact-command = ["abook", "--mutt-query", "%s"]
+
+[accounts.unipi]
+default = true
+email = "f.minnocci@studenti.unipi.it"
+display-name = "Francesco Minnocci"
+signature = "Best,\nFrancesco"
+signature-delim = "-- \n"
+
+# --- Microsoft 365 / Exchange Online ----------------------------------------
+# Exchange refuses OAUTHBEARER, so use XOAUTH2 for both IMAP and SMTP.
+imap.server = "outlook.office365.com"
+imap.sasl.xoauth2.username = "f.minnocci@studenti.unipi.it"
+imap.sasl.xoauth2.token.command = ["ortie", "token", "show", "-a", "unipi"]
+
+smtp.server = "smtp://smtp.office365.com:587"
+smtp.starttls = true
+smtp.sasl.xoauth2.username = "f.minnocci@studenti.unipi.it"
+smtp.sasl.xoauth2.token.command = ["ortie", "token", "show", "-a", "unipi"]
+
+# SMTP does not file a copy of sent mail; copy it to the Exchange folder.
+message.send.save-copy = "Posta inviata"
+
+# This mailbox is localized in Italian, so map the CLI roles to its names.
+mailbox.alias.sent = "Posta inviata"
+mailbox.alias.drafts = "Bozze"
+mailbox.alias.trash = "Posta eliminata"
+mailbox.alias.junk = "Posta indesiderata"
+mailbox.alias.archive = "Archivio"
+
+envelope.list.page-size = 50
+
+# --- TA / personale mailbox (francesco.minnocci@unipi.it) --------------------
+# The OAuth UPN is the a-number, the public address is an alias.
+[accounts.unipi-ta]
+email = "francesco.minnocci@unipi.it"
+display-name = "Francesco Minnocci"
+signature = "Best,\nFrancesco"
+signature-delim = "-- \n"
+
+imap.server = "outlook.office365.com"
+imap.sasl.xoauth2.username = "a058444@unipi.it"
+imap.sasl.xoauth2.token.command = ["ortie", "token", "show", "-a", "unipi-ta"]
+
+smtp.server = "smtp://smtp.office365.com:587"
+smtp.starttls = true
+smtp.sasl.xoauth2.username = "a058444@unipi.it"
+smtp.sasl.xoauth2.token.command = ["ortie", "token", "show", "-a", "unipi-ta"]
+
+message.send.save-copy = "Posta inviata"
+mailbox.alias.sent = "Posta inviata"
+mailbox.alias.drafts = "Bozze"
+mailbox.alias.trash = "Posta eliminata"
+mailbox.alias.junk = "Posta indesiderata"
+mailbox.alias.archive = "Archivio"
+
+envelope.list.page-size = 50
+
+# --- Gmail -------------------------------------------------------------------
+# Migrated from the old v1 config; the app password already lives in `pass`.
+[accounts.gmail]
+email = "ascoli.minnocci@gmail.com"
+display-name = "Francesco Minnocci"
+
+imap.server = "imaps://imap.gmail.com:993"
+imap.sasl.plain.username = "ascoli.minnocci@gmail.com"
+imap.sasl.plain.password.command = ["pass", "show", "ascoli.minnocci@gmail.com"]
+
+smtp.server = "smtps://smtp.gmail.com:465"
+smtp.sasl.plain.username = "ascoli.minnocci@gmail.com"
+smtp.sasl.plain.password.command = ["pass", "show", "ascoli.minnocci@gmail.com"]
+
+# Gmail already files a copy of what it sends through SMTP.
+message.send.save-copy = false
+
+mailbox.alias.sent = "[Gmail]/Sent Mail"
+mailbox.alias.drafts = "[Gmail]/Drafts"
+mailbox.alias.trash = "[Gmail]/Bin"
+mailbox.alias.junk = "[Gmail]/Spam"
+mailbox.alias.archive = "[Gmail]/All Mail"
+
+envelope.list.page-size = 50
+
+# --- TUI appearance ---------------------------------------------------------
+# Named ANSI by default (inherits the terminal palette). Uncomment one preset
+# if you prefer a fixed palette: default, dracula-dark, one-light, tokyo-night.
+#[theme]
+#preset = "tokyo-night"
+
+
