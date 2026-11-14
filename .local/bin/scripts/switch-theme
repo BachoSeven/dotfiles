@@ -9,6 +9,19 @@ glow_settings_file="$XDG_CONFIG_HOME/glow/glow.yml"
 dark_wallpaper="$XDG_DATA_HOME/dark"
 light_wallpaper="$XDG_DATA_HOME/light"
 wezterm_config_file="$XDG_CONFIG_HOME/wezterm/wezterm.lua"
+zuliprc_files="$XDG_CONFIG_HOME/zulip"/zuliprc*
+opencode_cli="$XDG_CONFIG_HOME/opencode/cli.json"
+vimium_ldb="$HOME/.local/bin/scripts/vimium-ldb-edit"
+vimium_cdp="$HOME/.local/bin/scripts/vimium-inject-css"
+
+# The OpenCode TUI watches cli.json and reloads it live. Rewrite in place
+# (cat >, not mv) so the watch stays on the same inode.
+set_opencode_mode() {
+	[ -f "$opencode_cli" ] || return 0
+	jq --arg m "$1" '.theme.mode = $m' "$opencode_cli" > "$opencode_cli.tmp" &&
+		cat "$opencode_cli.tmp" > "$opencode_cli" &&
+		rm -f "$opencode_cli.tmp"
+}
 
 toggle_theme() {
 	case "$1" in
@@ -20,8 +33,10 @@ toggle_theme() {
 			sed -i 's/"light"/"dark"/' "$glow_settings_file"
 			sed -i 's/gtk-theme-name=Colloid-Grey-Light-Gruvbox/gtk-theme-name=Gruvbox-Material-Dark/' "$gtk_settings_file"
 			sed -i 's/Gruvbox (Gogh)/Gruvbox Material (Gogh)/' "$wezterm_config_file"
+			sed -i 's/theme = gruvbox_light/theme = gruvbox_dark/' $zuliprc_files
 			sbg -i "$dark_wallpaper"
 			gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' &
+			set_opencode_mode dark
 			;;
 		"light")
 			sed -i 's/se background=dark/se background=light/g' "$config_file"
@@ -31,8 +46,10 @@ toggle_theme() {
 			sed -i 's/"dark"/"light"/' "$glow_settings_file"
 			sed -i 's/gtk-theme-name=Gruvbox-Material-Dark/gtk-theme-name=Colloid-Grey-Light-Gruvbox/' "$gtk_settings_file"
 			sed -i 's/Gruvbox Material (Gogh)/Gruvbox (Gogh)/' "$wezterm_config_file"
+			sed -i 's/theme = gruvbox_dark/theme = gruvbox_light/' $zuliprc_files
 			sbg -i "$light_wallpaper"
 			gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' &
+			set_opencode_mode light
 			;;
 		*)
 			echo "Invalid argument. Please specify 'dark' or 'light'." >&2
@@ -44,17 +61,22 @@ toggle_theme() {
 	# reload dwm colors
 	dwmc xrdb
 	systemctl --user reload xsettingsd.service
+	dunstctl reload 2>/dev/null
 	if pidof st 1>/dev/null 2>&1; then
 		for pid in $(pidof st); do
 			kill -s USR1 $pid
 		done
 	fi
-	for sock in ~/.cache/nvim/nvim-*; do
-		# POSIX doesn't have nullglob, so we need to check if the glob expands to a non-empty list
-		[ -e "$sock" ] || continue
-		# Mandare il seguente comando in background con & triggera una escape sequence a caso
-		# nvim --server $sock --remote-send "<C-\><C-n>:call SwitchTheme('$1')<CR>"
+	for sock in /home/fra/.cache/nvim/nvim-*.sock; do
+		[ -S "$sock" ] || continue
+		nvim --server "$sock" --remote-send "<C-\><C-n>:call SwitchTheme('$1')<CR>" 2>/dev/null
 	done
+	# vimium: CDP if running, leveldb if closed
+	if pidof chromium >/dev/null 2>&1; then
+		"$vimium_cdp" "$1" 2>/dev/null &
+	else
+		"$vimium_ldb" "$1" 2>/dev/null &
+	fi
 }
 
 # Check if an argument is provided
