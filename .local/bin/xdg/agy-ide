@@ -1,0 +1,4 @@
+#!/bin/sh
+# Launch Antigravity IDE with a sandboxed HOME so it never writes to ~
+export HOME="/home/fra/.local/share/agy-home"
+exec /opt/antigravity-ide/antigravity-ide "$@"
