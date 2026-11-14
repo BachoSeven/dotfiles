@@ -168,6 +168,9 @@
 " Replace all occurrences aliased to S
 	nn S :%s//g<Left><Left>
 
+" Git blame current line
+	nn <leader>B :!git blame % -L <C-r>=line('.')<CR>,<C-r>=line('.')<CR><CR>
+
 " Compile document, be it groff/LaTeX/markdown/etc.
 	map <leader>C :w! \| !compiler <c-r>%<CR>
 
@@ -216,9 +219,55 @@
 
 " Sessions
 	let g:session_dir = '~/.config/nvim/sessions'
-	let g:session#default_opener = 'edit'
-	exec 'nn <leader>ss :mks! ~/.config/nvim/sessions/'
-	exec 'nn <leader>sl :so ~/.config/nvim/sessions/<c-D>'
+
+	function! s:CloseInfoviews()
+		for l:w in range(winnr('$'), 1, -1)
+			if getwinvar(l:w, '&filetype') ==# 'leaninfo'
+				execute l:w . 'wincmd w'
+				quit!
+			endif
+		endfor
+	endfunction
+
+	function! s:ReopenInfoviews()
+		for l:w in range(1, winnr('$'))
+			if getwinvar(l:w, '&filetype') ==# 'lean'
+				execute l:w . 'wincmd w'
+				silent! LeanInfoviewToggle
+				return
+			endif
+		endfor
+	endfunction
+
+	function! s:FocusFileWindow()
+		for l:w in range(1, winnr('$'))
+			let l:ft = getwinvar(l:w, '&filetype')
+			if l:ft !=# 'leaninfo' && l:ft !=# ''
+				execute l:w . 'wincmd w'
+				return
+			endif
+		endfor
+	endfunction
+
+	function! s:SessionSave()
+		call s:CloseInfoviews()
+		let l:session = input('Save session: ', g:session_dir . '/', 'file')
+		if l:session !=# ''
+			execute 'mks! ' . l:session
+		endif
+		call s:ReopenInfoviews()
+	endfunction
+
+	function! s:SessionLoad()
+		let l:session = input('Session: ', g:session_dir . '/', 'file')
+		if l:session !=# ''
+			execute 'so ' . l:session
+			call s:FocusFileWindow()
+		endif
+	endfunction
+
+	nnoremap <leader>ss :<C-u>call <SID>SessionSave()<CR>
+	nnoremap <leader>sl :<C-u>call <SID>SessionLoad()<CR>
 
 "		 +---------+
 "		 | Plugins |
@@ -245,6 +294,11 @@
 "		 +-----------+
 	so $XDG_CONFIG_HOME/nvim/ft.vim
 
+"		 +-------------+
+"		 | UWC dossier |
+"		 +-------------+
+	so $XDG_CONFIG_HOME/nvim/plug/uwc.vim
+
 "		 +------------+
 "		 | Appearance |
 "		 +------------+
@@ -257,9 +311,15 @@
 	hi Comment gui=italic
 " ColorScheme
 	se termguicolors
-	se background=light
+	se background=dark
 	fu! SwitchTheme(mode)
 		exe "se background=".a:mode
+		exe "colo ".g:colors_name
+		unlet! g:lightline#colorscheme#gruvbox_material#palette
+		exe "source ".globpath(&rtp, 'autoload/lightline/colorscheme/gruvbox_material.vim')
+		call lightline#colorscheme()
+		call lightline#update()
+		redraw!
 	endfu
 	" colwal
 	colo gruvbox-material | hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a

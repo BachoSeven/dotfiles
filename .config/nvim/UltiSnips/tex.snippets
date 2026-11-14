@@ -33,18 +33,34 @@ snippet temp "Basic template" b
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Qbar}{\overline{\Q}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\Z}{\mathbb{Z}}
 
+
+\newcommand{\ssfrac}[2]{
+    \raisebox{+0.3ex}{$#1$}
+    /
+    \raisebox{-0.3ex}{$#2$}
+}
+
+\newcommand{\sfrac}[2]{
+    \raisebox{+0.3ex}{\scalebox{0.9}{$#1$}}
+    /
+    \raisebox{-0.3ex}{\scalebox{0.9}{$#2$}}
+}
+
 % use bullets for items
 \renewcommand{\labelitemii}{$\circ$}
-\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\im}{\operatorname{im}}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{corollary}[theorem]{Corollary}
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
@@ -96,7 +112,7 @@ snippet pres "Beamer" b
 
 % use bullets for items
 \renewcommand{\labelitemii}{$\circ$}
-\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\im}{\operatorname{im}}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 

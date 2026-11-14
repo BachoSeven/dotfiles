@@ -127,18 +127,19 @@
 	aug END
 	" Close viewers when VimTeX buffers are closed
 	fu! OnQuit()
-		if executable('xdotool') && exists('b:vimtex')
-				\ && exists('b:vimtex.viewer') && b:vimtex.viewer.xwin_id > 0
-			call system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
+		if !exists('b:vimtex') || !exists('b:vimtex.viewer') | return | endif
+		let l:pid = b:vimtex.viewer.get_pid()
+		if l:pid > 0
+			call system('kill ' . l:pid)
 		endif
 	endfu
 	" FZF integration for VimTeX
 	nn <localleader>lt :cal vimtex#fzf#run('cti', {'window': '50vnew'} )<CR>
 
 " UltiSnips
-	let g:UltiSnipsExpandTrigger = '<tab>'
-	let g:UltiSnipsJumpForwardTrigger = '<tab>'
-	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+	let g:UltiSnipsExpandTrigger = '<c-l>'
+	let g:UltiSnipsJumpForwardTrigger = '<c-l>'
+	let g:UltiSnipsJumpBackwardTrigger = '<c-h>'
 	let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips']
 	nn <leader>se :UltiSnipsEdit<CR>
 	let g:UltiSnipsEditSplit="vertical"

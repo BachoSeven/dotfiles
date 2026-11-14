@@ -27,13 +27,16 @@ aug END
 	au FileType markdown,mail setl spell spelllang=en_us
 
 " Limit line length for text files
-	au FileType text,markdown,tex setl textwidth=180
+	au FileType text,tex setl textwidth=180
+" Markdown: narrower source lines + soft-wrap long lines readably
+	au FileType markdown setlocal textwidth=100
+		\ wrap linebreak breakindent breakindentopt=shift:2 showbreak=↪
 
 " Contains CSS for markdown + page + highlight
 	let g:mkdp_markdown_css = '/home/fra/.config/nvim/mkdp/customStyle.css'
 
 " Trick plugin into hosting colors.css so we get nice themes
-	let g:mkdp_highlight_css = '/home/fra/.config/nvim/mkdp/colors.css'
+	let g:mkdp_highlight_css = '/home/fra/.config/nvim/mkdp/colors-light.css'
 " set to 1, preview server available to others in your network
 " by default, the server listens on localhost (127.0.0.1)
   let g:mkdp_open_to_the_world = 1

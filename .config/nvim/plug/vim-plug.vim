@@ -42,16 +42,18 @@ cal plug#begin(g:plugin_location)
 	Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 	Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 	Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
-	Plug 'jamessan/vim-gnupg' " Automatically decrypt on buffer enter
+" Automatically decrypt on buffer enter
+	Plug 'jamessan/vim-gnupg'
 	Plug 'mhinz/vim-startify'
 	Plug 'jdhao/better-escape.vim'
 	Plug 'tpope/vim-speeddating'
-	Plug 'wfxr/minimap.vim'
+	" Plug 'wfxr/minimap.vim'
 	" Plug 'ludovicchabant/vim-gutentags'
 
 " Markdown
 "" Live Preview
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+	Plug 'MeanderingProgrammer/render-markdown.nvim'
 "" Markdown Table of Contents
 	Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown', 'vim-plug'] }
 
@@ -88,12 +90,15 @@ cal plug#begin(g:plugin_location)
 	Plug 'hrsh7th/nvim-cmp'
 " Fuzzy lsp integration
 	Plug 'ojroques/nvim-lspfuzzy'
+" LSP progress indicator
+	Plug 'j-hui/fidget.nvim', { 'tag': 'v1.*' }
 
 " Treesitter
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-" Copilot
-	Plug 'github/copilot.vim'
+" Supermaven
+	Plug 'supermaven-inc/supermaven-nvim'
 
 " Vimtex
 	Plug 'lervag/vimtex'
