@@ -55,7 +55,6 @@
 	export ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android" # Deprecated(?)
 	export ADB_VENDOR_KEY="${XDG_CONFIG_HOME:-$HOME/.config}/android"   # Deprecated(?)
 	export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
-	export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg" # Oof.
 	export STACK_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/stack"
 	export GPG_TTY=$(tty)
 	export PYTHON_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/python/history" # This will work once https://github.com/python/cpython/pull/13208 gets merged...
@@ -76,6 +75,7 @@
 	export SHELLCHECK_OPTS='--exclude=SC1003,SC1071,SC1087,SC1090,SC1091,SC2001,SC2015,SC2034,SC2038,SC2059,SC2068,SC2086,SC2115,SC2128,SC2139,SC2145,SC2153,SC2155,SC2164'
 	# Temporary fix for [this](https://chromium.googlesource.com/chromium/src.git/+/671511b00e2d6c374a3079c1c379d2d0dfad32fe) chromium error, found [here](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=918433#10)
 	export MESA_SHADER_CACHE_DISABLE=true
+	export BW_SESSION="$(secret-tool lookup service bitwarden key session 2>/dev/null)"
 
 # Dotbare
 	export DOTBARE_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/dots"
@@ -102,12 +102,12 @@
 	export MPD_PORT="6602"
 
 # A few AMAZING fzf options
-	export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+	export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude .steam --exclude Steam'
 	export FZF_DEFAULT_OPTS="--cycle --layout=reverse --height 60% --border --color fg:15,hl:3,fg+:12,bg+:0,hl+:11,info:13,prompt:6,spinner:14,pointer:12,marker:2,header:7"
 	export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 	export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!vendor/*" 2> /dev/null'
 	export FZF_ALT_C_OPTS="--exact --select-1 --exit-0 --preview 'tree -C {} | head -200'" # this is almost a file manager
-	export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --exclude .git"
+	export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --exclude .git --exclude .steam --exclude mathlib --exclude Steam"
 	export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind 'F1:toggle-preview'"
 
 # pfetch
@@ -176,6 +176,7 @@ fi
 	export KUNST_COVER_NAMES='cover|folder|front|thumbnail'
 	export KUNST_COVER_EXT='jpg|png|jpeg'
 
+
 # Remap Caps Lock
 	if [ -z "$(ls /dev/input/by-id 2>/dev/null | grep Anne)" ]; then
 		sudo -n loadkeys $HOME/.config/ttymaps.kmap 2>/dev/null
@@ -185,3 +186,5 @@ fi
 	if [ "${XDG_VTNR}" -eq 1 ] && [ -z "${DISPLAY}" ]; then
 		exec sx 2>/dev/null
 	fi
+
+export PATH="/home/fra/.local/share/elan/bin:$PATH"
