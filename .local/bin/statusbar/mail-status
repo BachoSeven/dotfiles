@@ -1,0 +1,33 @@
+#!/bin/sh
+# One dwmblocks segment per Himalaya account.
+# Usage: mail-status <account>
+
+acct=${1:?missing account}
+state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/himalaya-notify"
+
+case "$acct" in
+	unipi) icon="🎓" ;;
+	unipi-ta) icon="💼" ;;
+	gmail) icon="📧" ;;
+	*) icon="✉" ;;
+esac
+
+case $BLOCK_BUTTON in
+	1) setsid "${TERMINAL:-st}" -e himalaya-tui -a "$acct" ;;
+	2) setsid -f mail-notify ;;
+	6) "${TERMINAL:-st}" -e "${EDITOR:-nvim}" "$0" ;;
+esac
+
+count=0
+if [ -f "$state_dir/$acct.unread" ]; then
+	count=$(cat "$state_dir/$acct.unread" 2>/dev/null)
+fi
+case "$count" in
+	''|*[!0-9]*) count=0 ;;
+esac
+
+if [ "$count" -gt 0 ]; then
+	printf '%s%s\n' "$icon" "$count"
+else
+	printf '%s\n' "$icon"
+fi

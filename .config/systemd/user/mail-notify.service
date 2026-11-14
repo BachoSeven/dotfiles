@@ -5,8 +5,8 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=%h/.local/bin/mail-notify
-Environment=PATH=/home/fra/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/home/fra/.local/bin/scripts/mail-notify
+Environment=PATH=/home/fra/.local/bin:/home/fra/.local/bin/scripts:/usr/local/bin:/usr/bin:/bin
 Environment=GNUPGHOME=/home/fra/.local/share/gnupg
 Environment=PASSWORD_STORE_DIR=/home/fra/.local/share/password-store
 Nice=10

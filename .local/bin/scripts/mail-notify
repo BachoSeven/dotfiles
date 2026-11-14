@@ -1,0 +1,195 @@
+#!/bin/sh
+# Desktop notifications for Himalaya.
+#
+# Polls the INBOX of each Himalaya account, remembers the highest IMAP UID it
+# has seen, and sends one dunst notification per new unread message.
+# A batch larger than HIMALAYA_NOTIFY_AGGREGATE_THRESHOLD (default 5) is
+# collapsed into one summary, so a backlog or a UID reset does not spam the
+# screen; a single new message is always shown individually.
+# Run `mail-notify --test` to check that notifications reach dunst.
+
+set -u
+
+# Keep GPG and pass XDG-compliant even when the timer or a TUI is started
+# without the login shell's .zprofile.
+data_home="${XDG_DATA_HOME:-$HOME/.local/share}"
+: "${GNUPGHOME:=$data_home/gnupg}"
+: "${PASSWORD_STORE_DIR:=$data_home/password-store}"
+export GNUPGHOME PASSWORD_STORE_DIR
+
+state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/himalaya-notify"
+mkdir -p "$state_dir"
+
+aggregate_threshold="${HIMALAYA_NOTIFY_AGGREGATE_THRESHOLD:-5}"
+case "$aggregate_threshold" in
+	''|*[!0-9]*) aggregate_threshold=5 ;;
+esac
+
+if [ "${1:-}" = "--test" ]; then
+	notify-send \
+		--app-name="Mail" \
+		--icon=mail-unread \
+		--urgency=normal \
+		--expire-time=8000 \
+		"Himalaya" "Per-message notifications are working."
+	exit 0
+fi
+
+# Never let a slow poll overlap with the next timer tick.
+exec 9>"$state_dir/lock"
+flock -n 9 || exit 0
+
+accounts=$(himalaya account list --json 2>/dev/null | jq -r '.accounts[].name')
+[ -n "$accounts" ] || exit 0
+
+# `pass` needs an unlocked GPG agent. A background timer has no terminal, so
+# skip the pass-backed account instead of letting pinentry block the poll.
+if ! printf x | gpg --sign --batch --pinentry-mode error -o /dev/null >/dev/null 2>&1; then
+	accounts=$(printf '%s\n' "$accounts" | rg -v '^gmail$' || true)
+fi
+
+escape() {
+	printf '%s' "$1" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g'
+}
+
+notify_one() {
+	acct=$1
+	id=$2
+	from=$3
+	subject=$4
+
+	[ -n "$from" ] || from="Unknown sender"
+	[ -n "$subject" ] || subject="(no subject)"
+
+	from=$(escape "$from")
+	subject=$(escape "$subject")
+
+	notify-send \
+		--app-name="Mail · $acct" \
+		--icon=mail-unread \
+		--urgency=normal \
+		--expire-time=12000 \
+		--category=email \
+		--hint="string:x-dunst-stack-tag:mail-$acct-$id" \
+		-- "$from" "$subject"
+}
+
+notify_aggregate() {
+	acct=$1
+	count=$2
+	noun=$3
+	body=$4
+	tag=$5
+
+	[ -n "$body" ] || body="$acct inbox"
+	body=$(escape "$body")
+
+	notify-send \
+		--app-name="Mail · $acct" \
+		--icon=mail-unread \
+		--urgency=normal \
+		--expire-time=12000 \
+		--category=email \
+		--hint="string:x-dunst-stack-tag:mail-$acct-$tag" \
+		-- "$count $noun" "$body"
+}
+
+new_tsv() {
+	printf '%s' "$1" | jq -r --argjson last "$2" '
+		.envelopes[]
+		| select((.id | tonumber) > $last)
+		| select(([.flags[]?.iana] | index("seen")) | not)
+		| [
+			.id,
+			(.from[0].name // .from[0].email // "Unknown sender"),
+			(.subject // "(no subject)")
+		  ]
+		| @tsv
+	' 2>/dev/null
+}
+
+handle_batch() {
+	acct=$1
+	json=$2
+	last=$3
+	count=$4
+	one=$5
+	many=$6
+	tag=$7
+
+	tsv=$(new_tsv "$json" "$last")
+	[ -n "$tsv" ] || return 0
+
+	if [ "$count" -gt "$aggregate_threshold" ]; then
+		preview=$(printf '%s\n' "$tsv" | head -n 3 | awk -F '\t' '{ printf "• %s — %s\n", $2, $3 }')
+		[ "$count" -gt 3 ] && preview="$preview…"
+		if [ "$count" -eq 1 ]; then noun=$one; else noun=$many; fi
+		notify_aggregate "$acct" "$count" "$noun" "$preview" "$tag"
+	else
+		printf '%s\n' "$tsv" | while IFS="$(printf '\t')" read -r id from subject; do
+			notify_one "$acct" "$id" "$from" "$subject"
+		done
+	fi
+}
+
+for acct in $accounts; do
+	json=$(timeout 15 himalaya -a "$acct" envelope list -m inbox -s 100 --json 2>/dev/null) || continue
+	printf '%s' "$json" | jq -e '.envelopes | type == "array"' >/dev/null 2>&1 || continue
+
+	# Cache the unread count for the dwmblocks mailbox indicator.
+	unread=$(printf '%s' "$json" | jq -r '[.envelopes[] | select(([.flags[]?.iana] | index("seen")) | not)] | length' 2>/dev/null)
+	case "$unread" in
+		''|*[!0-9]*) unread=0 ;;
+	esac
+	printf '%s\n' "$unread" > "$state_dir/$acct.unread"
+
+	current_max=$(printf '%s' "$json" | jq -r '[.envelopes[].id | tonumber] | max // 0' 2>/dev/null) || continue
+	state_file="$state_dir/$acct.max"
+
+	# First run: seed the UID, but report an existing backlog once.
+	if [ ! -f "$state_file" ]; then
+		if [ "$unread" -gt 0 ]; then
+			handle_batch "$acct" "$json" 0 "$unread" "unread email" "unread emails" "seed"
+		fi
+		printf '%s\n' "$current_max" > "$state_file"
+		continue
+	fi
+
+	last_max=$(cat "$state_file" 2>/dev/null || printf 0)
+	case "$last_max" in
+		''|*[!0-9]*) last_max=0 ;;
+	esac
+
+	# UIDVALIDITY changed (or the mailbox was recreated): reseed, but report
+	# the current backlog once instead of silently swallowing it.
+	if [ "$current_max" -lt "$last_max" ]; then
+		if [ "$unread" -gt 0 ]; then
+			handle_batch "$acct" "$json" 0 "$unread" "unread email" "unread emails" "reset-$(date +%s)"
+		fi
+		printf '%s\n' "$current_max" > "$state_file"
+		continue
+	fi
+
+	[ "$current_max" -eq "$last_max" ] && continue
+
+	new_count=$(printf '%s' "$json" | jq -r --argjson last "$last_max" '
+		[.envelopes[]
+		 | select((.id | tonumber) > $last)
+		 | select(([.flags[]?.iana] | index("seen")) | not)]
+		| length
+	' 2>/dev/null) || new_count=0
+	case "$new_count" in
+		''|*[!0-9]*) new_count=0 ;;
+	esac
+
+	if [ "$new_count" -gt 0 ]; then
+		handle_batch "$acct" "$json" "$last_max" "$new_count" "new email" "new emails" "new-$(date +%s)"
+	fi
+
+	printf '%s\n' "$current_max" > "$state_file"
+done
+
+# The counts just changed; let the three statusbar segments re-render.
+if pidof dwmblocks >/dev/null 2>&1; then
+	pkill -RTMIN+12 dwmblocks 2>/dev/null || true
+fi

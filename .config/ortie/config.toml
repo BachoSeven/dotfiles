@@ -1,0 +1,47 @@
+# Ortie: OAuth 2.0 tokens for Himalaya / himalaya-tui.
+# Docs: https://github.com/pimalaya/ortie
+#
+# One Ortie account per mailbox. Both Microsoft 365 accounts use the same
+# Thunderbird public client (the one unipi's IT docs recommend), so neither
+# needs an admin-approved app registration.
+
+[accounts.unipi]
+default = true
+auto-refresh = true
+
+client-id = "9e5f94bc-e8a4-4e73-b8be-63364c29d753"
+grant = "device"
+endpoints.authorization = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
+endpoints.device-authorization = "https://login.microsoftonline.com/common/oauth2/v2.0/devicecode"
+endpoints.token = "https://login.microsoftonline.com/common/oauth2/v2.0/token"
+endpoints.redirection = "http://localhost"
+scopes = [
+  "offline_access",
+  "https://outlook.office.com/IMAP.AccessAsUser.All",
+  "https://outlook.office.com/SMTP.Send",
+]
+extras.login_hint = "f.minnocci@studenti.unipi.it"
+
+storage.read.command = ["cat", "/home/fra/.local/share/ortie/unipi.json"]
+storage.write.command = "umask 077; cat > /home/fra/.local/share/ortie/unipi.json && chmod 600 /home/fra/.local/share/ortie/unipi.json"
+
+# TA / personale mailbox. UPN is the a-number; the public address is the
+# francesco.minnocci@unipi.it alias.
+[accounts.unipi-ta]
+auto-refresh = true
+
+client-id = "9e5f94bc-e8a4-4e73-b8be-63364c29d753"
+grant = "device"
+endpoints.authorization = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
+endpoints.device-authorization = "https://login.microsoftonline.com/common/oauth2/v2.0/devicecode"
+endpoints.token = "https://login.microsoftonline.com/common/oauth2/v2.0/token"
+endpoints.redirection = "http://localhost"
+scopes = [
+  "offline_access",
+  "https://outlook.office.com/IMAP.AccessAsUser.All",
+  "https://outlook.office.com/SMTP.Send",
+]
+extras.login_hint = "a058444@unipi.it"
+
+storage.read.command = ["cat", "/home/fra/.local/share/ortie/unipi-ta.json"]
+storage.write.command = "umask 077; cat > /home/fra/.local/share/ortie/unipi-ta.json && chmod 600 /home/fra/.local/share/ortie/unipi-ta.json"
