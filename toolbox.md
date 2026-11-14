@@ -36,6 +36,7 @@ Notes for the scripts and shell functions that are not obvious.
 ## music
 
 - `nc2`: ncmpcpp on port 6600 plus `kunst` cover art.
-- `jellyfin-tui` (`jtui`): Jellyfin music TUI from the AUR; exposes MPRIS, so `nowplaying` follows it.
+- `jellyfin-tui` (`jtui`): Jellyfin music TUI; the git master build in `scripts/` avoids the AUR 1.6.0 blank first sync, and exposes MPRIS for `nowplaying`.
+- `jfsh`: Jellyfin video TUI; the git master build in `scripts/` fixes the AUR 0.2.0 empty-resume panic; plays through `mpv`.
 - `nowplaying`: generic MPRIS dwmblocks segment from `playerctl`; excludes MPD, leaving it to `music`.
 - `spot-cli`: the old Spotify/MPRIS transport helper behind `spotbar`; `playerctl`/`nowplaying` supersede it for generic players.
