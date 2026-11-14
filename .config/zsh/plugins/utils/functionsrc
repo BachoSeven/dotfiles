@@ -1,5 +1,12 @@
 ## Functions
 
+# Antigravity CLI: sandbox its HOME so nothing lands in ~
+agy() {
+	local agy_home="${XDG_DATA_HOME:-$HOME/.local/share}/agy-home"
+	mkdir -p "$agy_home"
+	HOME="$agy_home" command agy "$@"
+}
+
 # System configuration backup
 syscp() {
 	for f in "$@"; do
@@ -687,11 +694,11 @@ cpuctl() {
 	esac
 }
 tl() { # noice
-if [ $@ ]; then
-	tldr $@
-else
-	tldr --list | fzf --preview 'tldr {} --color always' | xargs -r tldr
-fi
+	if [ $@ ]; then
+		tldr $@
+	else
+		tldr --list | fzf --preview 'tldr {} --color always' | xargs -r tldr
+	fi
 }
 ## List processes - update the list by pressing CTRL-R
 lps() {
@@ -940,6 +947,14 @@ wgetext() {
 	done
 }
 
+bwunlock() {
+  local s
+  s="$(BW_PASSWORD="$(secret-tool lookup service bitwarden key password)" \
+        bw unlock --passwordenv BW_PASSWORD --raw)" || return 1
+  export BW_SESSION="$s"
+  printf '%s' "$s" | secret-tool store --label='bw session' service bitwarden key session
+}
+
 # Games
 play() {
 	local p="$HOME/stuff/games"
@@ -981,4 +996,11 @@ updatedbmnt() {
 	mkdir -p "$db_file:A:h"
 	updatedb -l 0 -o "$db_file" -U "$1"
 }
+zu() {
+	local choice
+	choice=$(printf 'Redshift\nGLiS\nLean\nLinfa' | fzf --prompt='zulip> ')
+	[ -z "$choice" ] && return
+	zulip-term -c "$HOME/.config/zulip/zuliprc_${choice:l}" --color-depth 24bit "$@"
+}
+
 # vim: ft=zsh
