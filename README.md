@@ -59,8 +59,14 @@ Here are some of the programs I use:
 - **[newsboat](.config/newsboat)** is my RSS reader
 - **[paru](.config/paru/paru.conf)** AUR helper
 - last but not least, **[mimi](https://github.com/BachoSeven/mimi)** is an __improved xdg-open__ using bash and dmenu with a very usable config file.
+- **[getpaper](.local/share/getpaper/getpaper.py)** fetches a paper or book into `~/math` from a link, DOI, arXiv ID or description, using a local LLM to file it
+- **[unipi-vpn](.local/bin/xdg/unipi-vpn)** UniPi VPN launcher, password from `pass`
+- **[find-big-junk](.local/bin/scripts/find-big-junk)** finds large regenerable directories
+
 
 Read more about the programs I use in the **[AARGH](https://github.com/BachoSeven/AARGH) repository (bootstrapping script).**
+
+Notes for the scripts and shell functions: **[toolbox.md](toolbox.md)**
 
 ## Eye-candy
 
