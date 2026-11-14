@@ -26,6 +26,7 @@ Notes for the scripts and shell functions that are not obvious.
 - `getpaper <link|doi|arxiv-id|description>`: fetch a paper into `~/math`; `--list` shows the tree, `aa-login` stores the Anna's Archive session.
 - `vimium-inject-css dark|light`: push the theme into vimium over CDP while chromium runs.
 - `vimium-ldb-edit dark|light`: same, editing leveldb while chromium is closed.
+- `flix`: Jellyfin web app in Chromium; its Media Session appears in `nowplaying`.
 
 ## vpn
 
@@ -35,3 +36,6 @@ Notes for the scripts and shell functions that are not obvious.
 ## music
 
 - `nc2`: ncmpcpp on port 6600 plus `kunst` cover art.
+- `jellyfin-tui` (`jtui`): Jellyfin music TUI from the AUR; exposes MPRIS, so `nowplaying` follows it.
+- `nowplaying`: generic MPRIS dwmblocks segment from `playerctl`; excludes MPD, leaving it to `music`.
+- `spot-cli`: the old Spotify/MPRIS transport helper behind `spotbar`; `playerctl`/`nowplaying` supersede it for generic players.
