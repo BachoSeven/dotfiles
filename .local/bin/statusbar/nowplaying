@@ -1,0 +1,33 @@
+#!/bin/sh
+# Generic MPRIS now-playing segment. MPD/ncmpcpp stay in the `music` block.
+
+players=$(playerctl -l 2>/dev/null | rg -v '^(mpd|mpDris2|ncmpcpp)(\.|$)' || true)
+[ -n "$players" ] || exit 0
+
+player=""
+for p in $players; do
+	[ "$(playerctl -p "$p" status 2>/dev/null)" = "Playing" ] && { player=$p; break; }
+done
+[ -n "$player" ] || player=$(printf '%s\n' "$players" | head -n 1)
+
+status=$(playerctl -p "$player" status 2>/dev/null)
+[ "$status" = "Playing" ] || [ "$status" = "Paused" ] || exit 0
+
+case $BLOCK_BUTTON in
+	1) playerctl -p "$player" play-pause ;;
+	2) playerctl -p "$player" next ;;
+	4) playerctl -p "$player" previous ;;
+	5) playerctl -p "$player" next ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+meta=$(playerctl -p "$player" metadata --format '{{artist}} — {{title}}' 2>/dev/null)
+[ -n "$meta" ] || meta=$(playerctl -p "$player" metadata --format '{{title}}' 2>/dev/null)
+[ -n "$meta" ] || meta=$player
+meta=$(printf '%s' "$meta" | cut -c1-80)
+
+if [ "$status" = "Paused" ]; then
+	printf '⏸ %s\n' "$meta"
+else
+	printf '🎵 %s\n' "$meta"
+fi
