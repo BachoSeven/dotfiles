@@ -1,16 +1,15 @@
 #!/bin/sh
 
-msgId="2298"
 deviceId="$(xinput list | grep -i "touchpad" | sed -n -e 's/^.*id=//p'|cut -f1)"
 
 on() {
-	dunstify -u normal -t 3000 -r $msgId "🖲️ Touchpad enabled"
+	dunstify -u normal -t 3000 -h string:x-dunst-stack-tag:touchpad "🖲️ Touchpad enabled"
 	xinput enable $deviceId
 }
 
 off() {
 	xinput disable $deviceId
-	dunstify -u normal -t 3000 -r $msgId "🖲️ Touchpad disabled"
+	dunstify -u normal -t 3000 -h string:x-dunst-stack-tag:touchpad "🖲️ Touchpad disabled"
 }
 
 xinput list $deviceId | grep -q 'This device is disabled' && on || off

@@ -4,16 +4,27 @@
 # Uses dunstify to only show one notification for "continuos" increase/decrease in brightness (i.e. when holding a keybinding)
 
 # You should change this according to your system
-ratio=2.55
+# (must match the ratio used by the "br" script, which works in percentages)
+ratio=655
 cbr=$(echo "$(cat /sys/class/backlight/amdgpu_bl1/brightness) / $ratio" | bc -l)
-msgId="192838"
-echo "$cbr > 50" | bc -l && dimbr=$(echo "$cbr" - 30 | bc -l) || dimbr=$(echo "$cbr" / 2 | bc -l)
+[ "$(echo "$cbr > 50" | bc -l)" = 1 ] && dimbr=$(echo "$cbr - 30" | bc -l) || dimbr=$(echo "$cbr / 2" | bc -l)
 
 # trap script to "de-idle" upon keypress or mouse movement and restore previous brightness
-trap 'exit 0' TERM INT
-trap 'br set $cbr; kill %%; dunstify -C 192838' HUP EXIT
+# (xss-lock sends SIGHUP on activity, SIGTERM when the locker starts;
+# any keypress — including the dunst close binding — triggers the HUP path)
+sleep_pid=""
+notif_id=""
+cleanup() {
+	br set "$cbr" 2>/dev/null || true
+	[ -n "$sleep_pid" ] && kill "$sleep_pid" 2>/dev/null || true
+	[ -n "$notif_id" ] && dunstify -C "$notif_id" 2>/dev/null || true
+}
+trap 'exit 0' HUP TERM INT
+trap cleanup EXIT
 
-dunstify -r "$msgId" '💤 Dimming screen, locking in 60 seconds...' && br set $dimbr
+notif_id=$(dunstify -p -a "dim" -t 55000 --stack-tag=dim '💤 Dimming screen, locking in 60 seconds...') || true
+br set "$dimbr" || true
 
 sleep infinity &
-wait
+sleep_pid=$!
+wait "$sleep_pid"

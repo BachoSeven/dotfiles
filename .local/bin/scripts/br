@@ -15,13 +15,12 @@
 def=60
 defu=80
 defd=20
-msgId="981141"
 basepath=/sys/class/backlight
 # max_file="$(fd max_brightness $basepath/*)"
 # brdir=$(dirname $max_file)
 # ratio=$(($(cat $max_file)/100))
 brdir=$basepath/amdgpu_bl1
-ratio=2.55
+ratio=655
 current=$(echo "$(cat $brdir/brightness) / $ratio" | bc -l)
 
 
@@ -54,6 +53,6 @@ val=$(printf "%.0f" "$val")
 if command -v dunst >/dev/null; then
 	new=$(echo "$(cat $brdir/brightness) / $ratio" | bc -l)
 	new=$(printf "%.0f" "$new")
-	dunstify -a "changeBrightness" -u low -i display-brightness -r "$msgId" \
+	dunstify -a "changeBrightness" -u low -i display-brightness -h string:x-dunst-stack-tag:brightness \
 	"Brightness: ${new}%"
 fi

@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # changeVolume
 
-# Arbitrary but unique message id
-msgId="991049"
-
 # Change the volume using alsa(might differ if you use pulseaudio)
 case "$1" in
 	u*) # Up
@@ -20,10 +17,10 @@ mute="$(pamixer --get-mute)"
 if pidof Xorg >/dev/null 2>&1; then
 	if [[ "$volume" = 0 || "$mute" = "true" ]]; then
 			# Show the sound muted notification
-			dunstify -a "changeVolume" -u low -i audio-volume-muted-blocked-panel -r "$msgId" "Volume muted"
+			dunstify -a "changeVolume" -u low -i audio-volume-muted-blocked-panel -h string:x-dunst-stack-tag:volume "Volume muted"
 	else
 			# Show the volume notification
-			dunstify -a "changeVolume" -u low -i audio-volume-high-panel -r "$msgId" \
+			dunstify -a "changeVolume" -u low -i audio-volume-high-panel -h string:x-dunst-stack-tag:volume \
 			"Volume: ${volume}%"
 	fi
 fi
