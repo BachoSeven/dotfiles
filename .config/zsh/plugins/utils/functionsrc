@@ -1004,6 +1004,40 @@ zu() {
 }
 
 # Mail
+mail-draft() {
+	emulate -L zsh
+	local account=${1:-unipi}
+	local id choice file editor
+
+	if (( $# >= 2 )); then
+		id=$2
+	else
+		choice=$(himalaya -a "$account" envelope list -m drafts --json 2>/dev/null |
+			jq -r '.envelopes[] | [.id, (.from[0].name // .from[0].email // ""), (.subject // "(no subject)")] | @tsv' |
+			fzf --delimiter=$'\t' --with-nth=2,3 --prompt="Draft ($account)> ") || return
+		[[ -n $choice ]] || return
+		id=${choice%%$'\t'*}
+	fi
+
+	file=$(mktemp --suffix=.eml) || return
+	if ! himalaya -a "$account" message read -m drafts --raw "$id" > "$file"; then
+		print -u2 "Could not read draft $id"
+		rm -f "$file"
+		return 1
+	fi
+
+	editor=${VISUAL:-${EDITOR:-nvim}}
+	"$editor" "$file" || { rm -f "$file"; return 1; }
+
+	if ! himalaya -a "$account" message send "$file"; then
+		print -u2 "Send failed; edited copy kept at $file"
+		return 1
+	fi
+
+	himalaya -a "$account" message delete -m drafts "$id" || true
+	rm -f "$file"
+}
+
 mail-tui() {
 	emulate -L zsh
 	local account
