@@ -1003,4 +1003,23 @@ zu() {
 	zulip-term -c "$HOME/.config/zulip/zuliprc_${choice:l}" --color-depth 24bit "$@"
 }
 
+# Mail
+mail-tui() {
+	emulate -L zsh
+	local account
+	local -a accounts
+	accounts=(${(f)"$(himalaya account list --json 2>/dev/null | jq -r '.accounts[].name')"})
+	(( ${#accounts} )) || { print -u2 'mail-tui: no Himalaya accounts configured'; return 1 }
+
+	if (( $# )); then
+		account=$1
+	elif (( ${#accounts} == 1 )); then
+		account=$accounts[1]
+	else
+		account=$(printf '%s\n' "${accounts[@]}" | dmenu -i -p 'Mail account') || return
+	fi
+	[[ -n $account ]] || return
+	command "${HIMALAYA_TUI:-himalaya-tui}" -a "$account"
+}
+
 # vim: ft=zsh
