@@ -38,6 +38,7 @@ Notes for the scripts and shell functions that are not obvious.
 - `nc2`: ncmpcpp on port 6600 plus `kunst` cover art.
 - `jellyfin-tui-git` (`jtui`): Jellyfin music TUI from the AUR; exposes MPRIS for `nowplaying`.
 - `jfsh-git`: Jellyfin video TUI from the AUR; plays through `mpv` (install `mpv-mpris` for bar integration).
+- `mpvSockets`: skipped by `modules.lua` when a caller already passed `--input-ipc-server`, so `jfsh` keeps its own video socket.
 - `st` and `jellyfin-tui`: set `art: false` in `~/.config/jellyfin-tui/config.yaml`; st has no kitty/sixel image protocol and hangs on album art. Wezterm can keep art enabled.
 - `nowplaying`: generic MPRIS dwmblocks segment from `playerctl`; excludes MPD, leaving it to `music`.
 - `spot-cli`: the old Spotify/MPRIS transport helper behind `spotbar`; `playerctl`/`nowplaying` supersede it for generic players.
