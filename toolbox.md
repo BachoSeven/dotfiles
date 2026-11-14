@@ -32,6 +32,10 @@ Notes for the scripts and shell functions that are not obvious.
 - `unipi-vpn`: UniPi VPN, password from `UNIPI_VPN_PASSWORD`, `pass show unipi/vpn` or a prompt.
 - `startct` / `startctui`: sonicwall with a private `$HOME` under `~/.local/share/sonicwall`.
 
+## mail
+
+- `mail-draft [account] [id]`: pick a saved draft, edit it in `$EDITOR`, send it.
+
 ## music
 
 - `nc2`: ncmpcpp on port 6600 plus `kunst` cover art.
