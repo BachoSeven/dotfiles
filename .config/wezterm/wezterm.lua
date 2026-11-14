@@ -2,12 +2,12 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 config.window_background_opacity = 0.9
-config.color_scheme = 'Gruvbox (Gogh)'
+config.color_scheme = 'Gruvbox Material (Gogh)'
 config.font_size = 20.0
 config.scrollback_lines=20000
 config.line_height=0.91
 config.hide_tab_bar_if_only_one_tab = true
-config.leader = { key="a", mods="CTRL", timeout_milliseconds=400 }
+config.leader = { key="b", mods="CTRL", timeout_milliseconds=400 }
 
 config.window_padding = {
   left = 17,

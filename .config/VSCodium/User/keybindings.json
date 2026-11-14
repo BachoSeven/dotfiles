@@ -54,88 +54,88 @@
         "key": "ctrl+j",
         "command": "-workbench.action.togglePanel"
     },
-    // Latex stuff
-    {
-        "key": "alt+j",
-        "command": "editor.action.insertSnippet",
-        "when": "editorTextFocus",
-        "args": {
-            "langId": "latex",
-            "name": "fraction"
-        }
-    },
-    {
-        "key": "ctrl+b",
-        "command": "editor.action.insertSnippet",
-        "when": "editorTextFocus",
-        "args": {
-            "langId": "latex",
-            "name": "bold"
-        }
-    },
-    {
-        "key": "ctrl+i",
-        "command": "editor.action.insertSnippet",
-        "when": "editorTextFocus",
-        "args": {
-            "langId": "latex",
-            "name": "italic"
-        }
-    },
-    {
-        "key": "ctrl+shift+i",
-        "command": "editor.action.insertSnippet",
-        "when": "editorTextFocus",
-        "args": {
-            "langId": "latex",
-            "name": "itemize"
-        }
-    },
-    {
-        "key": "ctrl+shift+e",
-        "command": "editor.action.insertSnippet",
-        "when": "editorTextFocus",
-        "args": {
-            "langId": "latex",
-            "name": "enumerate"
-        }
-    },
-    {
-        "key": "ctrl+shift+u",
-        "command": "editor.action.insertSnippet",
-        "when": "editorTextFocus",
-        "args": {
-            "langId": "latex",
-            "name": "underbrace"
-        }
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "editor.action.insertSnippet",
-        "when": "editorTextFocus",
-        "args": {
-            "langId": "latex",
-            "name": "overbrace"
-        }
-    },
-    {
-        "key": "ctrl+alt+u",
-        "command": "editor.action.insertSnippet",
-        "when": "editorTextFocus",
-        "args": {
-            "langId": "latex",
-            "name": "underset"
-        }
-    },
-    {
-        "key": "ctrl+alt+o",
-        "command": "editor.action.insertSnippet",
-        "when": "editorTextFocus",
-        "args": {
-            "langId": "latex",
-            "name": "overset"
-        }
-    },
+    // // Latex stuff
+    // {
+    //     "key": "alt+j",
+    //     "command": "editor.action.insertSnippet",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "langId": "latex",
+    //         "name": "fraction"
+    //     }
+    // },
+    // {
+    //     "key": "ctrl+b",
+    //     "command": "editor.action.insertSnippet",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "langId": "latex",
+    //         "name": "bold"
+    //     }
+    // },
+    // {
+    //     "key": "ctrl+i",
+    //     "command": "editor.action.insertSnippet",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "langId": "latex",
+    //         "name": "italic"
+    //     }
+    // },
+    // {
+    //     "key": "ctrl+shift+i",
+    //     "command": "editor.action.insertSnippet",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "langId": "latex",
+    //         "name": "itemize"
+    //     }
+    // },
+    // {
+    //     "key": "ctrl+shift+e",
+    //     "command": "editor.action.insertSnippet",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "langId": "latex",
+    //         "name": "enumerate"
+    //     }
+    // },
+    // {
+    //     "key": "ctrl+shift+u",
+    //     "command": "editor.action.insertSnippet",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "langId": "latex",
+    //         "name": "underbrace"
+    //     }
+    // },
+    // {
+    //     "key": "ctrl+shift+o",
+    //     "command": "editor.action.insertSnippet",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "langId": "latex",
+    //         "name": "overbrace"
+    //     }
+    // },
+    // {
+    //     "key": "ctrl+alt+u",
+    //     "command": "editor.action.insertSnippet",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "langId": "latex",
+    //         "name": "underset"
+    //     }
+    // },
+    // {
+    //     "key": "ctrl+alt+o",
+    //     "command": "editor.action.insertSnippet",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "langId": "latex",
+    //         "name": "overset"
+    //     }
+    // },
     {
         "key": "alt+right",
         "command": "-workbench.action.terminal.focusNextPane",
@@ -182,7 +182,7 @@
         "when": "editorTextFocus && hasPrevTabstop && inSnippetMode"
     },
     {
-        "key": "alt+b",
+        "key": "ctrl+b",
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {

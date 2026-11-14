@@ -6,15 +6,14 @@
 set selection-clipboard clipboard
 set window-title-home-tilde true
 set statusbar-home-tilde true
-set page-padding 1
 
 set font "Open Sans normal 16"
 set window-height 1024
 set window-width 768
 set render-loading false
 set adjust-open "best-fit"
-# Fix following links feature
-set sandbox none
+# Keep the view horizontally centered on zooming after window resizes
+set zoom-center true
 # already default
 set synctex true
 set synctex-editor-command "texlab inverse-search -i %{input} -l %{line}"
@@ -40,10 +39,19 @@ map p print
 map K zoom in
 map J zoom out
 
-# stop at page boundaries
-set scroll-page-aware true
-set scroll-full-overlap 0.01
-set scroll-step 50
+# Until the upstream fix lands (pwmt/zathura#991, touchpad deltas are amplified ~10x (pure vertical) and ~100x (diagonal motion) in 2026.07.x.
+set scroll-page-aware false
+set scroll-step 100
+
+# Smooth scrolling (keys): each event scrolls exactly one scroll-step
+# (30px above), no delta amplification, no page jumps. This restores the
+# GTK3 Ctrl+arrow behavior that broke with the GTK4 port (pwmt/zathura#872,
+# pwmt/zathura#991). `:scroll smooth-down` works interactively as well.
+# NOTE: the touchpad itself still cannot use this — its events are
+# "scroll_bidirectional", which has no identifier in the `map` grammar.
+map <C-Up> scroll smooth-up
+map <C-Down> scroll smooth-down
+
 set incremental-search true
 set guioptions ""
 map b toggle_statusbar
