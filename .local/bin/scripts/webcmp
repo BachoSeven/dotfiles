@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#
+
 # Thanks to https://gist.github.com/aziis98/bc534d70ab48ef79a1f1c4e445db19f2
 
 STORAGE_FILE="webpage.sum"
@@ -17,7 +17,8 @@ init() {
 	URL="$1"
 	echo -n > "$STORAGE_FILE"
 	echo "$URL" >> "$STORAGE_FILE"
-	curl -s "$URL" | cksum -a sha256 >> "$STORAGE_FILE"
+	# curl -s "$URL" | cksum -a sha256 >> "$STORAGE_FILE"
+	curl -s "$URL" | readable -f --base "$URL" | cksum -a sha256 >> "$STORAGE_FILE"
 	printf 'Initialized webcmp storage file "%s"\n' "$STORAGE_FILE"
 }
 
@@ -41,7 +42,8 @@ refresh() {
 
 	echo -n > "$STORAGE_FILE.new"
 	echo "$URL" >> "$STORAGE_FILE.new"
-	curl -s "$URL" | cksum -a sha256 >> "$STORAGE_FILE.new"
+	# curl -s "$URL" | cksum -a sha256 >> "$STORAGE_FILE.new"
+	curl -s "$URL" | readable -f --base "$URL" | cksum -a sha256 >> "$STORAGE_FILE.new"
 	if cmp -s "$STORAGE_FILE" "$STORAGE_FILE.new"; then
 		echo "No news";
 	else

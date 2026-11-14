@@ -9,7 +9,7 @@
 # inserire la password ogni volta.
 
 _HOME="/home/unipi"
-_SERVER="login"
+_SERVER="a4-lab14.cs"
 _NO_CLI=true
 
 main() {
