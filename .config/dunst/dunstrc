@@ -13,9 +13,9 @@
 	follow = keyboard
 	# these should be in sync with dwm gaps
 	origin = top-right
-	offset = 15x15
-	width = 320
-	height = 220
+	offset = (15,15)
+	width = (0, 320)
+	height = (0, 220)
 	indicate_hidden = true
 	transparency = 20
 	separator_height = 2

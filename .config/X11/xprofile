@@ -9,6 +9,7 @@
 	    pgrep -x "$1" >/dev/null ||
 		{ "$@" & }
 	}
+	remaps					# Switch caps/super and one-tap_caps/esc
 	xsetroot -cursor_name left_ptr # Needed because of hsetroot
 	mon -e					# Monitor selection
 	[ -f "$XDG_CONFIG_HOME/X11/Xresources" ] && xrdb -load ~/.config/X11/Xresources
@@ -18,7 +19,6 @@
 		hsetroot -solid "$(cat $XDG_CACHE_HOME/bgcol)"
 	fi
 	_ mpd						# Music server
-	remaps					# Switch caps/super and one-tap_caps/esc
 	_ dunst					# Notification daemon
 	systemctl --user start xsettingsd # Xsettings daemon
 	togcomp -y			# Compositor
@@ -30,6 +30,6 @@
 	if [ -f "$XDG_CACHE_HOME/redshift" ] && [ $((($(date +%s)-$(date -r $XDG_CACHE_HOME/redshift "+%s"))/86400)) -lt 30 ]; then
 		_ redshift -l "$(cat $XDG_CACHE_HOME/redshift)" # Color temperature
 	else
-		curl -s "https://ipinfo.io" | jq '.loc' | tr ',' ':' | sed 's/:$//;s/"//g' > $XDG_CACHE_HOME/redshift
+		loc=$(curl -s "https://ipinfo.io" | jq -r '.loc' | tr ',' ':'); [ -n "$loc" ] && echo "$loc" > "${XDG_CACHE_HOME:-$HOME/.cache}/redshift"
 		_ redshift -l "$(cat $XDG_CACHE_HOME/redshift)"
 	fi
