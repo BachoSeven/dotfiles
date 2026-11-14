@@ -26,7 +26,7 @@ Notes for the scripts and shell functions that are not obvious.
 - `getpaper <link|doi|arxiv-id|description>`: fetch a paper into `~/math`; `--list` shows the tree, `aa-login` stores the Anna's Archive session.
 - `vimium-inject-css dark|light`: push the theme into vimium over CDP while chromium runs.
 - `vimium-ldb-edit dark|light`: same, editing leveldb while chromium is closed.
-- `flix`: Jellyfin web app in Chromium; its Media Session appears in `nowplaying`.
+- `flix`: Jellyfin web app.
 
 ## vpn
 
@@ -36,9 +36,9 @@ Notes for the scripts and shell functions that are not obvious.
 ## music
 
 - `nc2`: ncmpcpp on port 6600 plus `kunst` cover art.
-- `jellyfin-tui-git` (`jtui`): Jellyfin music TUI from the AUR; exposes MPRIS for `nowplaying`.
-- `jfsh-git`: Jellyfin video TUI from the AUR; plays through `mpv` (install `mpv-mpris` for bar integration).
-- `mpvSockets`: skipped by `modules.lua` when a caller already passed `--input-ipc-server`, so `jfsh` keeps its own video socket.
-- `st` and `jellyfin-tui`: set `art: false` in `~/.config/jellyfin-tui/config.yaml`; st has no kitty/sixel image protocol and hangs on album art. Wezterm can keep art enabled.
-- `nowplaying`: generic MPRIS dwmblocks segment from `playerctl`; excludes MPD, leaving it to `music`.
-- `spot-cli`: the old Spotify/MPRIS transport helper behind `spotbar`; `playerctl`/`nowplaying` supersede it for generic players.
+- `music`: MPD status in the bar; click opens ncmpcpp.
+- `jtui`: Jellyfin music TUI.
+- `jfsh`: Jellyfin video TUI; plays through mpv.
+- `nowplaying`: current track in the bar; play/pause and next/previous.
+- `playerctl`: control any MPRIS player.
+- `spot-cli`: Spotify/MPRIS transport controls.
