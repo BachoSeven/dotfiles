@@ -6,6 +6,8 @@
 #
 # The old v1 (Gmail-only) file is kept at config.toml.v1.bak.
 
+# TUI-only options moved under [tui] in himalaya-tui 0.1.0.r92.
+[tui]
 keybinds = "vim"
 
 # Recipient completion in the TUI, using the existing abook database.
@@ -95,7 +97,7 @@ envelope.list.page-size = 50
 # --- TUI appearance ---------------------------------------------------------
 # Named ANSI by default (inherits the terminal palette). Uncomment one preset
 # if you prefer a fixed palette: default, dracula-dark, one-light, tokyo-night.
-#[theme]
+#[tui.theme]
 #preset = "tokyo-night"
 
 
